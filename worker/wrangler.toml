@@ -1,0 +1,14 @@
+name = "shouarchive-path"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+# beakbig.com 존의 이 경로만 이 Worker 가 받는다 (본 사이트의 다른 경로는 영향 없음)
+routes = [
+  { pattern = "beakbig.com/ShouArchive*", zone_name = "beakbig.com" },
+  { pattern = "www.beakbig.com/ShouArchive*", zone_name = "beakbig.com" },
+]
+
+[vars]
+# 사이트 원본. GitHub Pages 대신 Cloudflare Pages 프로젝트를 쓰려면
+# "https://<프로젝트>.pages.dev" 로 바꾸면 된다 (경로 접두어 없이).
+UPSTREAM = "https://beakbig.github.io/shouarchive-site"

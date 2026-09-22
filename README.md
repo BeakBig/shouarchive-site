@@ -2,7 +2,8 @@
 
 ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지입니다. 순수 정적 HTML/CSS 이고 빌드 단계가 없습니다.
 
-- 공개 주소: https://beakbig.github.io/shouarchive-site/ (GitHub Pages, `main` 브랜치 루트)
+- 공개 주소: https://beakbig.com/ShouArchive/ — beakbig.com 의 이 경로를 Cloudflare Worker(`worker/`)가 받아 GitHub Pages 원본을 돌려줍니다
+- 원본(GitHub Pages): https://beakbig.github.io/shouarchive-site/ (`main` 브랜치 루트, Worker 배포 전에도 이 주소는 열립니다)
 - 저장소: `BeakBig/shouarchive-site` (공개)
 
 ## 구성
@@ -16,12 +17,13 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `assets/screenshots/ko/`, `en/` | 갤러리 스크린샷 `01.png` ~ `08.png` (2880×1800) |
 | `assets/samples/` | 심사 · 테스트용 합성 APK · AAB |
 | `.nojekyll` | GitHub Pages 가 Jekyll 처리 없이 그대로 서빙하게 함 |
+| `worker/` | `beakbig.com/ShouArchive/*` 를 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 
 App Store Connect 에 넣는 URL:
 
-- 지원: `https://beakbig.github.io/shouarchive-site/support.html` (영어 `en/support.html`)
-- 마케팅: `https://beakbig.github.io/shouarchive-site/`
-- 개인정보 처리방침: `https://beakbig.github.io/shouarchive-site/privacy.html` (영어 `en/privacy.html`)
+- 지원: `https://beakbig.com/ShouArchive/support.html` (영어 `en/support.html`)
+- 마케팅: `https://beakbig.com/ShouArchive/`
+- 개인정보 처리방침: `https://beakbig.com/ShouArchive/privacy.html` (영어 `en/privacy.html`)
 
 ## 올리기
 
@@ -29,7 +31,7 @@ App Store Connect 에 넣는 URL:
 git add -A && git commit -m "..." && git push
 ```
 
-푸시하면 1분 안팎으로 반영됩니다. 확인: https://beakbig.github.io/shouarchive-site/
+푸시하면 1분 안팎으로 GitHub Pages 에 반영되고, Worker 캐시(5분)가 지나면 beakbig.com/ShouArchive/ 에도 보입니다.
 
 ## 남은 일
 
@@ -39,5 +41,5 @@ git add -A && git commit -m "..." && git push
   sed -i '' 's#APPSTORE_URL_PLACEHOLDER#https://apps.apple.com/app/id<Apple ID>#g' index.html en/index.html
   ```
 
-- `og:image` 는 상대 경로라 SNS 미리보기에는 안 잡힐 수 있습니다. 필요하면 절대 주소(`https://beakbig.github.io/shouarchive-site/assets/icon.png`)로 바꾸세요.
-- 저장소 이름을 `ShouArchiveWeb` 로 바꾸면 공개 주소도 `https://beakbig.github.io/ShouArchiveWeb/` 로 바뀌므로, 바꾼다면 App Store Connect 의 URL 과 `hreflang` 링크도 함께 고쳐야 합니다.
+- Cloudflare Worker 배포 (`worker/README.md`) — 이것이 끝나야 `https://beakbig.com/ShouArchive/` 가 열립니다.
+- 저장소 이름을 바꾸면 GitHub Pages 원본 주소가 바뀌므로 `worker/wrangler.toml` 의 `UPSTREAM` 도 함께 고쳐야 합니다.

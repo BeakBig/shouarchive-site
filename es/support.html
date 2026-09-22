@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte — ShouArchive</title>
+  <meta name="description" content="Soporte de ShouArchive: permitir la carpeta de perfiles, claves de API de App Store Connect, inspección de artefactos, problemas de instalación OTA y cómo ponerte en contacto.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Soporte — ShouArchive">
+  <meta property="og:description" content="Preguntas frecuentes y contacto de ShouArchive.">
+  <meta property="og:image" content="https://beakbig.com/ShouArchive/assets/icon.png">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../support.html">
+  <link rel="alternate" hreflang="en" href="../en/support.html">
+  <link rel="alternate" hreflang="ja" href="../ja/support.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/support.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/support.html">
+  <link rel="alternate" hreflang="es" href="../es/support.html">
+  <link rel="alternate" hreflang="x-default" href="../en/support.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html#features">Funciones</a>
+      <a href="support.html" aria-current="page">Soporte</a>
+      <a href="privacy.html">Privacidad</a>
+      <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../support.html">한국어</option><option value="../en/support.html">English</option><option value="../ja/support.html">日本語</option><option value="../zh-Hans/support.html">简体中文</option><option value="../zh-Hant/support.html">繁體中文</option><option value="../es/support.html" selected>Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Soporte</h1>
+      <p>¿Te has atascado en algún punto de ShouArchive? Revisa primero las preguntas de abajo y, si necesitas más ayuda, escríbenos.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="contact-card">
+        <span><strong>Contacto</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span>Solemos responder en unos días. Los consejos para informar de un problema están <a href="#report">al final</a>.</span>
+      </div>
+
+      <div class="faq">
+        <h2 id="start">Primeros pasos</h2>
+
+        <details open>
+          <summary>La pestaña Perfiles me pide permitir una carpeta. ¿Por qué?</summary>
+          <p>La edición del Mac App Store se ejecuta dentro del sandbox de macOS. Una app en sandbox solo puede leer las carpetas que hayas elegido explícitamente, y la carpeta donde Xcode guarda los perfiles de aprovisionamiento está fuera de la app, así que hay que permitirla una vez.</p>
+          <p>Haz clic en el botón de carpeta de la pestaña Perfiles. Se abre un panel con esa carpeta ya seleccionada: no cambies nada, solo pulsa <strong>Permitir</strong>. El permiso se recuerda entre ejecuciones (marcadores con ámbito de seguridad de macOS).</p>
+          <p>Carpetas que lee la app:</p>
+          <ul>
+            <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 y posteriores</li>
+            <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — versiones anteriores de Xcode</li>
+          </ul>
+          <p><code>~/Library</code> está oculta en el Finder de forma predeterminada. En el panel de apertura, pulsa ⌘⇧G y pega la ruta para ir directamente. Si prefieres no permitir la carpeta, puedes seguir arrastrando archivos <code>.mobileprovision</code> a la ventana o usar «Añadir desde archivo…».</p>
+        </details>
+
+        <details>
+          <summary>¿Qué tipos de archivo se admiten?</summary>
+          <ul>
+            <li><strong>Inspección de artefactos</strong>: <code>.ipa</code> (pestaña iOS), <code>.apk</code> y <code>.aab</code> (pestaña Android)</li>
+            <li><strong>Distribución OTA</strong>: <code>.ipa</code> (iOS), <code>.apk</code> (Android). Los AAB no pueden instalarse directamente en un dispositivo, así que no se aceptan.</li>
+            <li><strong>Perfiles</strong>: <code>.mobileprovision</code></li>
+            <li><strong>Clave de API</strong>: el archivo <code>.p8</code> descargado de App Store Connect</li>
+          </ul>
+          <p>Suelta un archivo en la ventana o usa «Elegir archivo…» (⌘O).</p>
+        </details>
+
+        <details>
+          <summary>¿Por qué esta edición no compila ni exporta IPA/APK?</summary>
+          <p>Las apps del Mac App Store deben ejecutarse en sandbox, y el sandbox no puede lanzar programas externos como <code>xcodebuild</code> o <code>gradle</code>. Por eso esta edición se centra en tres cosas: <strong>inspección, perfiles y OTA</strong>. La inspección de artefactos tampoco depende de herramientas externas: el analizador propio de la app lee los archivos IPA, APK y AAB directamente.</p>
+        </details>
+
+        <h2 id="profiles">Perfiles y la API de App Store Connect</h2>
+
+        <details>
+          <summary>¿Cómo creo una clave de API de App Store Connect?</summary>
+          <ol>
+            <li>Ve a <a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>Usuarios y acceso</strong> › <strong>Integraciones</strong> › <strong>API de App Store Connect</strong>.</li>
+            <li>Genera una <strong>clave de equipo</strong>. Leer y crear perfiles y dispositivos suele requerir el rol de <strong>Administrador</strong>.</li>
+            <li>Introduce el <strong>Issuer ID</strong>, el <strong>Key ID</strong> y el archivo <code>.p8</code> descargado en «Descargar perfil» › «Clave de API» dentro de la app. Al elegir un archivo <code>AuthKey_XXXXXXXX.p8</code>, el Key ID se rellena automáticamente.</li>
+          </ol>
+          <p>Apple solo permite descargar el archivo <code>.p8</code> una vez, así que guárdalo en un lugar seguro. La app nunca usa tu Apple ID ni códigos de verificación en dos pasos.</p>
+        </details>
+
+        <details>
+          <summary>¿Dónde se guarda la clave de API y adónde se envía?</summary>
+          <p>El archivo <code>.p8</code> se queda donde tú lo guardes; la app solo recuerda una referencia a él (un marcador con ámbito de seguridad). Los tokens de las solicitudes se firman en tu Mac y la clave en sí nunca se envía a ningún sitio: la app solo se comunica con la API de App Store Connect de Apple (<code>api.appstoreconnect.apple.com</code>). Quitar una clave en la app no elimina el archivo <code>.p8</code>.</p>
+        </details>
+
+        <details>
+          <summary>¿Qué significan «Vence pronto» y la insignia D-N?</summary>
+          <p>Un perfil que caduca en menos de <strong>30 días</strong> aparece como «Vence pronto» y muestra los días restantes en una insignia naranja <strong>D-N</strong>. Todo lo que ya pasó su fecha entra en «Caducidad» (rojo). «Nuevo» indica que se creó hace poco; «Duplicado» marca dos o más perfiles con el mismo equipo, ID de app y tipo.</p>
+        </details>
+
+        <details>
+          <summary>La tarjeta «Certificado» está vacía.</summary>
+          <p>La lista de certificados de firma de código de tu llavero no puede leerse desde dentro del sandbox, así que esta tarjeta está vacía en la edición del Mac App Store. Los certificados <strong>incrustados en cada perfil</strong> sí se muestran en las vistas de detalle y de comparación, con botones para copiar el SHA-1 y el SHA-256.</p>
+        </details>
+
+        <details>
+          <summary>¿Cuántos dispositivos puedo registrar?</summary>
+          <p>Una cuenta de Apple Developer puede registrar hasta <strong>100 dispositivos por tipo</strong> (iPhone, iPad, Mac, …) por año de membresía. Los dispositivos que desactives siguen ocupando plaza hasta que se renueve la membresía. La pestaña Dispositivos muestra el uso actual por tipo (por ejemplo, iPhone 3 / 100).</p>
+        </details>
+
+        <h2 id="inspect">Inspección de artefactos</h2>
+
+        <details>
+          <summary>¿Inspeccionar un archivo lo modifica o lo sube a algún sitio?</summary>
+          <p>No. El archivo es de <strong>solo lectura</strong>: el original nunca se modifica, no se escribe ningún archivo de resultados junto a él y no se envía nada a ningún servidor. Los resultados se muestran únicamente en la ventana de la app.</p>
+        </details>
+
+        <details>
+          <summary>No sé qué significa un elemento.</summary>
+          <p>Los nombres de elemento con subrayado punteado (permisos, funciones del dispositivo, ajustes del manifiesto, huellas de certificado, entitlements, etc.) abren un panel emergente con <strong>qué es · detalles · a qué prestar atención</strong>. Para la tarjeta de 16 KB, haz clic en la ⓘ junto al título.</p>
+        </details>
+
+        <details>
+          <summary>¿Qué comprueba la verificación del tamaño de página de 16 KB?</summary>
+          <p>A partir de Android 15, algunos dispositivos usan páginas de memoria de 16 KB y Google Play exige bibliotecas nativas compatibles con ellas. La app comprueba la alineación de los segmentos LOAD del ELF en los archivos <code>.so</code> de 64 bits (<code>arm64-v8a</code>, <code>x86_64</code>) y, en los <code>.so</code> almacenados sin comprimir dentro de un APK, su límite de 16 KB dentro del archivo, y enumera las bibliotecas que no cumplen.</p>
+        </details>
+
+        <h2 id="ota">Distribución OTA</h2>
+
+        <details>
+          <summary>Generé los archivos OTA, pero la app no se instala en el dispositivo.</summary>
+          <p>Revisa estos puntos en orden:</p>
+          <ul>
+            <li>El IPA, <code>manifest.plist</code> e <code>install.html</code> deben servirse por <strong>https</strong>. iOS se niega a instalar por http.</li>
+            <li>Abre el enlace de instalación o el código QR en <strong>Safari</strong> en el dispositivo. Las vistas previas de mensajería y los navegadores integrados en apps a menudo no inician la instalación.</li>
+            <li><strong>Ad Hoc</strong>: el UDID del dispositivo debe estar en el perfil. Si no lo está, añade el dispositivo al perfil y vuelve a compilar el IPA.</li>
+            <li><strong>Enterprise</strong>: tras instalar, ve a Ajustes › General › VPN y gestión de dispositivos y marca el desarrollador como de <strong>confianza</strong>.</li>
+            <li>Un IPA firmado con un perfil de distribución de App Store no puede instalarse por OTA. La app te avisa cuando eliges un archivo así.</li>
+            <li>Comprueba que la URL del IPA en el manifest coincide con la ubicación real del archivo y que el nombre del archivo no tiene espacios ni caracteres especiales.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>¿Dónde se guardan los archivos generados?</summary>
+          <p>«Crear archivo de instalación» (⌘↩) te pide una carpeta de salida. Allí crea una carpeta <code>&lt;name&gt;_OTA</code> y coloca en ella una copia del IPA (o APK) junto con <code>&lt;name&gt;.manifest.plist</code>, <code>&lt;name&gt;.install.html</code> y <code>&lt;name&gt;.qr.png</code> (Android: <code>.install.html</code> y <code>.qr.png</code>), sobrescribiendo los archivos con el mismo nombre. La app nunca sube nada, así que súbelos tú junto con el IPA o el APK.</p>
+        </details>
+
+        <details>
+          <summary>¿Cómo funciona la instalación en Android?</summary>
+          <p>Sube el APK, <code>install.html</code> y la imagen QR a la misma carpeta https y abre la página de instalación en el navegador del dispositivo (Chrome). Como la app no procede de Play Store, el dispositivo debe permitir la instalación desde orígenes desconocidos. La página muestra el SHA-256 para que los testers puedan verificar la descarga.</p>
+        </details>
+
+        <h2 id="general">General</h2>
+
+        <details>
+          <summary>¿Cómo cambio el idioma?</summary>
+          <p>Abre el menú del <strong>globo terráqueo</strong> en la barra de herramientas, elige un idioma y confirma «Reiniciar ahora». La app se vuelve a abrir en ese idioma y tu trabajo se conserva. Idiomas disponibles: Español, English, 한국어, 日本語, 简体中文 y 繁體中文.</p>
+        </details>
+
+        <details>
+          <summary>¿Tema y tamaño del texto?</summary>
+          <p>Elige <strong>Claro, Oscuro o Configuración del sistema</strong> en la barra de herramientas. El tamaño del texto va del 85 % al 150 % desde el menú Visualización (Texto más grande ⌘+, Texto más pequeño ⌘-, Predeterminado ⌘0) o en Ajustes (⌘,) › Pantalla.</p>
+        </details>
+
+        <details>
+          <summary>Requisitos del sistema</summary>
+          <p>macOS 15 Sequoia o posterior, en Mac con Apple Silicon o Intel. La clave de API de App Store Connect solo hace falta para descargar y crear perfiles y registrar dispositivos; todo lo demás funciona sin conexión.</p>
+        </details>
+
+        <details id="report">
+          <summary>¿Cómo informo de un problema?</summary>
+          <p>Escribe a <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> con lo siguiente y podremos revisarlo rápido:</p>
+          <ul>
+            <li>Versión de macOS (menú Apple › Acerca de este Mac)</li>
+            <li>Versión de la app (menú ShouArchive › Acerca de ShouArchive)</li>
+            <li>Qué hiciste, paso a paso, y qué ocurrió</li>
+            <li>Una captura de pantalla o el texto exacto del error, si es posible</li>
+          </ul>
+          <p>No hace falta adjuntar archivos IPA, APK ni perfiles. Si se necesita alguno, se te pedirá aparte; y antes de enviar nada, asegúrate de que no contiene archivos de clave (<code>.p8</code>) ni datos sensibles.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="privacy.html">Política de privacidad</a>
+      <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es" aria-current="page">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

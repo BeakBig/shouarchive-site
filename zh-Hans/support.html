@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>支持 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 支持：允许访问描述文件文件夹、App Store Connect API 密钥、产物检查、OTA 安装疑难解答以及联系方式。">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="支持 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 常见问题与联系方式。">
+  <meta property="og:image" content="https://beakbig.com/ShouArchive/assets/icon.png">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../support.html">
+  <link rel="alternate" hreflang="en" href="../en/support.html">
+  <link rel="alternate" hreflang="ja" href="../ja/support.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/support.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/support.html">
+  <link rel="alternate" hreflang="es" href="../es/support.html">
+  <link rel="alternate" hreflang="x-default" href="../en/support.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="index.html#features">功能</a>
+      <a href="support.html" aria-current="page">支持</a>
+      <a href="privacy.html">隐私</a>
+      <label class="lang-switch"><span class="visually-hidden">语言</span><select class="lang-select" aria-label="语言"><option value="../support.html">한국어</option><option value="../en/support.html">English</option><option value="../ja/support.html">日本語</option><option value="../zh-Hans/support.html" selected>简体中文</option><option value="../zh-Hant/support.html">繁體中文</option><option value="../es/support.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>支持</h1>
+      <p>在 ShouArchive 中遇到问题？请先查看下面的常见问题，仍未解决再来信联系。</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="contact-card">
+        <span><strong>联系方式</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span>回复通常需要几天时间。报告问题的建议见<a href="#report">页面底部</a>。</span>
+      </div>
+
+      <div class="faq">
+        <h2 id="start">快速上手</h2>
+
+        <details open>
+          <summary>「描述文件」标签页要求我允许访问一个文件夹，为什么？</summary>
+          <p>Mac App Store 版运行在 macOS 沙盒中。沙盒应用只能读取你明确选择过的文件夹，而 Xcode 存放描述文件的文件夹位于应用之外，因此需要允许一次。</p>
+          <p>点击「描述文件」标签页中的文件夹按钮，会弹出一个已经选中该文件夹的打开面板——什么都不用改，直接按<strong>允许</strong>即可。这次授权会在之后的启动中保留（macOS 安全作用域书签）。</p>
+          <p>应用读取的文件夹：</p>
+          <ul>
+            <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 及更高版本</li>
+            <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — 较早的 Xcode 版本</li>
+          </ul>
+          <p><code>~/Library</code> 在 Finder 中默认是隐藏的。在打开面板中按 ⌘⇧G 并粘贴上面的路径即可直接跳转。如果不想允许该文件夹，也可以把 <code>.mobileprovision</code> 文件拖入窗口，或使用「从文件添加…」。</p>
+        </details>
+
+        <details>
+          <summary>支持哪些文件类型？</summary>
+          <ul>
+            <li><strong>产物检查</strong>：<code>.ipa</code>（iOS 标签页）、<code>.apk</code> 和 <code>.aab</code>（Android 标签页）</li>
+            <li><strong>OTA 分发</strong>：<code>.ipa</code>（iOS）、<code>.apk</code>（Android）。AAB 无法直接安装到设备上，因此不接受。</li>
+            <li><strong>描述文件</strong>：<code>.mobileprovision</code></li>
+            <li><strong>API 密钥</strong>：从 App Store Connect 下载的 <code>.p8</code> 文件</li>
+          </ul>
+          <p>将文件拖到窗口上，或使用「选择文件…」（⌘O）。</p>
+        </details>
+
+        <details>
+          <summary>为什么这个版本没有 IPA/APK 构建或导出功能？</summary>
+          <p>Mac App Store 应用必须运行在沙盒中，而沙盒无法启动 <code>xcodebuild</code>、<code>gradle</code> 之类的外部程序。因此这个版本专注于三件事：<strong>检查、描述文件和 OTA</strong>。产物检查同样不依赖外部工具——应用自带的解析器直接读取 IPA、APK 和 AAB 文件。</p>
+        </details>
+
+        <h2 id="profiles">描述文件与 App Store Connect API</h2>
+
+        <details>
+          <summary>如何创建 App Store Connect API 密钥？</summary>
+          <ol>
+            <li>前往 <a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>用户和访问</strong> › <strong>集成</strong> › <strong>App Store Connect API</strong>。</li>
+            <li>生成一个<strong>团队密钥</strong>。读取和创建描述文件与设备通常需要<strong>管理（Admin）</strong>角色。</li>
+            <li>在应用的「下载描述文件」›「API 密钥」中输入 <strong>Issuer ID</strong>、<strong>Key ID</strong> 和下载的 <code>.p8</code> 文件。选择 <code>AuthKey_XXXXXXXX.p8</code> 文件时会自动填入 Key ID。</li>
+          </ol>
+          <p>Apple 只允许下载一次 <code>.p8</code> 文件，请妥善保管。应用绝不会使用你的 Apple ID 或双重认证验证码。</p>
+        </details>
+
+        <details>
+          <summary>API 密钥保存在哪里？会发送到哪里？</summary>
+          <p><code>.p8</code> 文件留在你存放它的位置，应用只记住对它的引用（安全作用域书签）。请求令牌在你的 Mac 上签名，密钥本身从不发送到任何地方——应用只与 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）通信。在应用中移除密钥不会删除 <code>.p8</code> 文件。</p>
+        </details>
+
+        <details>
+          <summary>「即将过期」和 D-N 徽章是什么意思？</summary>
+          <p><strong>30 天</strong>内到期的描述文件会标记为「即将过期」，并以橙色 <strong>D-N</strong> 徽章显示剩余天数。超过到期日的则标记为「到期」（红色）。「新增」表示最近创建；「重复」标记的是团队、App ID 和类型都相同的两个或多个描述文件。</p>
+        </details>
+
+        <details>
+          <summary>「证书」卡片是空的。</summary>
+          <p>钥匙串中的代码签名证书列表无法在沙盒内读取，因此 Mac App Store 版中这张卡片是空的。<strong>内嵌在各描述文件中</strong>的证书仍会显示在详情和比较视图中，并提供 SHA-1 和 SHA-256 复制按钮。</p>
+        </details>
+
+        <details>
+          <summary>我可以注册多少台设备？</summary>
+          <p>每个 Apple Developer 账户在每个会员年度内，每种类型（iPhone、iPad、Mac……）最多可注册 <strong>100 台设备</strong>。已停用的设备在会员资格续期之前仍会占用名额。「设备」标签页会显示各类型的当前用量（例如 iPhone 3 / 100）。</p>
+        </details>
+
+        <h2 id="inspect">产物检查</h2>
+
+        <details>
+          <summary>检查文件会修改或上传它吗？</summary>
+          <p>不会。文件是<strong>只读</strong>的：原文件绝不会被修改，不会在它旁边写入结果文件，也不会向任何服务器发送任何内容。结果只显示在应用窗口中。</p>
+        </details>
+
+        <details>
+          <summary>我不明白某一项是什么意思。</summary>
+          <p>带虚线下划线的项目名称（权限、设备功能、清单设置、证书指纹、Entitlements 等）点击后会弹出说明，包含<strong>是什么 · 详情 · 注意事项</strong>。16 KB 卡片请点击标题旁的 ⓘ。</p>
+        </details>
+
+        <details>
+          <summary>16 KB 页面大小检查看的是什么？</summary>
+          <p>从 Android 15 开始，部分设备使用 16 KB 内存页，Google Play 要求原生库支持它。应用会检查 64 位（<code>arm64-v8a</code>、<code>x86_64</code>）<code>.so</code> 文件的 ELF LOAD 对齐；对于以未压缩方式存储在 APK 中的 <code>.so</code> 文件，还会检查它们在归档内的 16 KB 边界，并列出不符合要求的库。</p>
+        </details>
+
+        <h2 id="ota">OTA 分发</h2>
+
+        <details>
+          <summary>OTA 文件已经生成，但应用无法安装到设备上。</summary>
+          <p>请按顺序逐项检查：</p>
+          <ul>
+            <li>IPA、<code>manifest.plist</code> 和 <code>install.html</code> 必须全部通过 <strong>https</strong> 提供。iOS 拒绝通过 http 安装。</li>
+            <li>请在设备上的 <strong>Safari</strong> 中打开安装链接或二维码。即时通讯软件的预览和应用内浏览器往往不会触发安装。</li>
+            <li><strong>Ad Hoc</strong>：设备的 UDID 必须包含在描述文件中。如果没有，请把设备加入描述文件并重新构建 IPA。</li>
+            <li><strong>Enterprise</strong>：安装后，前往「设置」›「通用」›「VPN 与设备管理」，<strong>信任</strong>该开发者。</li>
+            <li>使用 App Store 分发描述文件签名的 IPA 无法通过 OTA 安装。选择这类文件时，应用会给出警告。</li>
+            <li>检查清单中的 IPA URL 是否与文件的实际位置一致，且文件名不含空格或特殊字符。</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>生成的文件保存在哪里？</summary>
+          <p>「创建安装文件」（⌘↩）会要求你选择一个输出文件夹。它会在其中创建 <code>&lt;name&gt;_OTA</code> 文件夹，放入 IPA（或 APK）的副本，以及 <code>&lt;name&gt;.manifest.plist</code>、<code>&lt;name&gt;.install.html</code> 和 <code>&lt;name&gt;.qr.png</code>（Android：<code>.install.html</code> 和 <code>.qr.png</code>），同名文件会被覆盖。应用从不上传任何内容，请自行将这些文件连同 IPA 或 APK 一起上传。</p>
+        </details>
+
+        <details>
+          <summary>Android 的安装是怎样进行的？</summary>
+          <p>将 APK、<code>install.html</code> 和二维码图片上传到同一个 https 文件夹，然后在设备的浏览器（Chrome）中打开安装页面。由于应用来自 Play 商店之外，设备需要允许安装未知来源的应用。页面上显示 SHA-256，测试人员可以据此核对下载的文件。</p>
+        </details>
+
+        <h2 id="general">常规</h2>
+
+        <details>
+          <summary>如何更改语言？</summary>
+          <p>打开工具栏中的<strong>地球</strong>图标菜单，选择语言并确认「立即重新启动」。应用会以该语言重新启动，你的工作会被保留。支持：简体中文、繁體中文、English、한국어、日本語 和 Español。</p>
+        </details>
+
+        <details>
+          <summary>主题和文本大小？</summary>
+          <p>在工具栏中选择<strong>浅色、深色或系统设置</strong>。文本大小可在 85 % 到 150 % 之间调整：通过「显示」菜单（放大文本 ⌘+、缩小文本 ⌘-、默认 ⌘0）或设置（⌘,）›「界面」。</p>
+        </details>
+
+        <details>
+          <summary>系统要求</summary>
+          <p>macOS 15 Sequoia 或更高版本，支持 Apple Silicon 和 Intel Mac。App Store Connect API 密钥仅在下载、创建描述文件和注册设备时需要；其他功能均可离线使用。</p>
+        </details>
+
+        <details id="report">
+          <summary>如何报告问题？</summary>
+          <p>请将以下信息发送至 <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a>，以便尽快排查：</p>
+          <ul>
+            <li>macOS 版本（苹果菜单 › 关于本机）</li>
+            <li>应用版本（ShouArchive 菜单 › 关于 ShouArchive）</li>
+            <li>你的操作步骤，以及实际发生了什么</li>
+            <li>如有可能，附上截图或确切的错误文字</li>
+          </ul>
+          <p>无需附上 IPA、APK 或描述文件。如果需要，会另行索取——在发送任何文件之前，请确认其中不含密钥文件（<code>.p8</code>）或敏感数据。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="页脚">
+      <a href="index.html">首页</a>
+      <a href="privacy.html">隐私政策</a>
+      <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans" aria-current="page">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

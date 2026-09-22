@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShouArchive — Mac 上的描述文件管理、IPA/APK 检查与 OTA 安装文件</title>
+  <meta name="description" content="管理描述文件、检查 IPA、APK 和 AAB 文件、生成 OTA 安装页面——一款在本地读取文件的 Mac 应用全部搞定。macOS 15 或更高版本，Mac App Store 上架。">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ShouArchive — 描述文件管理、IPA/APK 检查与 OTA 安装文件">
+  <meta property="og:description" content="管理描述文件、检查 IPA、APK 和 AAB 文件、生成 OTA 安装页面——一款 Mac 应用全部搞定。macOS 15 或更高版本。">
+  <meta property="og:image" content="https://beakbig.com/ShouArchive/assets/icon.png">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../index.html">
+  <link rel="alternate" hreflang="en" href="../en/index.html">
+  <link rel="alternate" hreflang="ja" href="../ja/index.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/index.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/index.html">
+  <link rel="alternate" hreflang="es" href="../es/index.html">
+  <link rel="alternate" hreflang="x-default" href="../en/index.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#features">功能</a>
+      <a href="#screens">界面</a>
+      <a href="support.html">支持</a>
+      <a href="privacy.html">隐私</a>
+      <label class="lang-switch"><span class="visually-hidden">语言</span><select class="lang-select" aria-label="语言"><option value="../index.html">한국어</option><option value="../en/index.html">English</option><option value="../ja/index.html">日本語</option><option value="../zh-Hans/index.html" selected>简体中文</option><option value="../zh-Hant/index.html">繁體中文</option><option value="../es/index.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-icon" src="../assets/icon.png" alt="ShouArchive 应用图标" width="512" height="512">
+      <div>
+        <h1>ShouArchive</h1>
+        <p class="tagline">描述文件、产物检查与 OTA 安装文件——发布前的最后一道检查，一款应用全部搞定。</p>
+        <p class="sub">打开 IPA、APK 或 AAB，即可看到商店将展示的信息、签名方式以及申请的权限。按到期日期把描述文件管理得井井有条。为测试版本生成 OTA 安装页面。你的文件从不离开 Mac。</p>
+        <div class="palette" aria-hidden="true">
+          <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="APPSTORE_URL_PLACEHOLDER">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            在 Mac App Store 下载
+          </a>
+          <a class="btn ghost" href="#features">看看它能做什么</a>
+        </div>
+        <p class="hero-note">macOS 15 Sequoia 或更高版本 · 支持 Apple Silicon 与 Intel</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow cyan">描述文件</p>
+        <h2>描述文件：从到期日期到设备注册，一站管理</h2>
+        <p class="lead">一眼看清 Xcode 安装的所有描述文件。添加 App Store Connect API 密钥后，下载、创建、续期描述文件都无需离开应用。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>已安装的描述文件</h3>
+          <ul>
+            <li>每一行都有 <strong>D-N 到期徽章</strong>——30 天内显示橙色，过期后显示红色</li>
+            <li>筛选：<strong>全部 · 新增 · 重复</strong> / <strong>有效 · 即将过期 · 到期</strong></li>
+            <li>详情视图：设备 UDID、内嵌证书（SHA-1 · SHA-256）和 Entitlements，均可复制</li>
+            <li><strong>并排比较两个描述文件</strong>——列出有差异的设备、证书和 Entitlements</li>
+            <li>拖入 <code>.mobileprovision</code> 文件即可添加；多选可批量删除</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>App Store Connect API</h3>
+          <ul>
+            <li>获取团队的描述文件，<strong>只安装缺少的那些</strong></li>
+            <li>列出已注册设备并<strong>注册新设备</strong>，按类型显示配额（例如 iPhone 3 / 100）</li>
+            <li><strong>创建描述文件</strong>：类型、平台、Bundle ID、证书、设备</li>
+            <li>设备变动或临近到期时，<strong>重新生成或续期</strong></li>
+          </ul>
+          <p class="card-note">只需 Issuer ID、Key ID 和 <code>.p8</code> 文件。密钥保存在你的 Mac 上，请求令牌在本地签名。</p>
+        </article>
+        <article class="card">
+          <h3>历史记录</h3>
+          <ul>
+            <li>下载、创建、重新生成、设备注册、添加与删除，<strong>按日期分组</strong></li>
+            <li>按名称、Bundle ID、UUID 或 UDID 搜索</li>
+            <li>需要追溯什么时候改了什么时，非常方便</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow magenta">产物检查</p>
+        <h2>上传之前，先打开 IPA、APK 或 AAB 看一看</h2>
+        <p class="lead">拖入文件即刻解析，无需任何外部工具。从商店页面信息到签名、权限和安全设置，每一项都附有通俗易懂的说明。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>商店显示信息</h3>
+          <p>可以直接从构建产物中读出的产品页面信息。</p>
+          <ul>
+            <li>图标、名称、提供者、大小、支持的语言</li>
+            <li><strong>iOS</strong>：类别、兼容性、App Tracking Transparency 提示、隐私清单摘要</li>
+            <li><strong>Android</strong>：下载大小、所需 Android 版本、权限数量、应用内结算、广告 ID、支持的设备</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>iOS 签名与权限</h3>
+          <ul>
+            <li>签名、描述文件与 Entitlements</li>
+            <li>权限用途说明（<code>…UsageDescription</code>）——为空时会给出警告</li>
+            <li>框架、应用扩展和 Entitlements 列表完整显示，绝不截断</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android 签名、安全与 16 KB</h3>
+          <ul>
+            <li>证书指纹 <strong>SHA-256 · SHA-1 · MD5</strong>，以及用于 Kakao 和 Facebook 的<strong>密钥哈希</strong></li>
+            <li>权限分类与设备功能</li>
+            <li>清单安全设置：allowBackup、明文 HTTP、导出的组件、深层链接</li>
+            <li>原生库的 <strong>16 KB 页面大小对齐</strong>检查</li>
+            <li>构建、配置与大小明细（DEX、资源、各 ABI 的原生库）</li>
+          </ul>
+        </article>
+      </div>
+      <p class="footnote">只读。文件不会被修改，不会在它旁边写入任何内容，也不会上传到任何地方。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow orange">OTA 分发</p>
+        <h2>一个链接，装好测试版本</h2>
+        <p class="lead">把现有的 IPA 或 APK 变成安装页面和二维码。将文件上传到你自己的 https 服务器，就完成了。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>iOS — Ad Hoc · Enterprise</h3>
+          <ul>
+            <li><code>manifest.plist</code>、<code>install.html</code>，以及 <code>itms-services://</code> 安装链接的<strong>二维码</strong></li>
+            <li>Bundle ID、版本、构建号和应用名称自动从 IPA 中填入</li>
+            <li>你输入的发行说明会直接写入安装页面</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android — APK</h3>
+          <ul>
+            <li><code>install.html</code>：包含图标、版本、SHA-256、安装说明和更新内容</li>
+            <li>指向安装页面的<strong>二维码</strong></li>
+            <li>包名、版本、应用名称和图标自动从 APK 中填入</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>由你来托管</h3>
+          <ul>
+            <li>选择输出文件夹，文件就会写到那里</li>
+            <li>应用不会上传任何内容——请把文件放到团队自己的 https 服务器上</li>
+            <li>iOS 要求使用 https，且链接必须在设备上的 Safari 中打开</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow violet">界面</p>
+        <h2>界面一览</h2>
+        <p class="lead">浅色、深色或系统设置主题，文本大小 85 – 150 %。通过窗口底部的图标菜单切换标签页。</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/01.png" alt="平台选择界面：iOS 与 Android 卡片" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">01</span>选择平台：iOS 或 Android</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/02.png" alt="描述文件列表，带到期徽章和状态筛选" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>描述文件、到期与筛选</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/03.png" alt="IPA 检查：签名证书、描述文件与 Entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>IPA 检查：签名、描述文件、Entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/04.png" alt="IPA 检查：App Store 显示信息" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>IPA 检查：App Store 显示信息</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/05.png" alt="IPA 检查：权限用途说明与隐私" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA 检查：权限与隐私</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/06.png" alt="iOS OTA 安装文件生成界面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>iOS OTA 安装文件</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/07.png" alt="APK 与 AAB 检查：签名方案、证书指纹与密钥哈希" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>APK · AAB 检查：签名、指纹、密钥哈希</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/08.png" alt="Android OTA 安装页面生成界面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>Android OTA 安装页面</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="requirements">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow lime">系统要求</p>
+        <h2>系统要求</h2>
+      </div>
+      <dl class="reqs">
+        <div class="req"><dt>macOS</dt><dd>15 Sequoia 或更高版本<small>Apple Silicon 与 Intel（通用二进制）</small></dd></div>
+        <div class="req"><dt>语言</dt><dd>6 种语言<small>简体中文 · 繁體中文 · English · 한국어 · 日本語 · Español</small></dd></div>
+        <div class="req"><dt>外观</dt><dd>浅色 · 深色 · 系统设置<small>文本大小 85 – 150 %</small></dd></div>
+        <div class="req"><dt>可选</dt><dd>App Store Connect API 密钥<small>仅在下载、创建描述文件和注册设备时需要</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>获取 ShouArchive</h2>
+      <p>描述文件、产物检查与 OTA——发布前的最后一道检查。</p>
+      <a class="btn" href="APPSTORE_URL_PLACEHOLDER">在 Mac App Store 下载</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="页脚">
+      <a href="support.html">支持</a>
+      <a href="privacy.html">隐私政策</a>
+      <span class="footer-langs"><a href="../index.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/index.html" lang="en" hreflang="en">English</a> <a href="../ja/index.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/index.html" lang="zh-Hans" hreflang="zh-Hans" aria-current="page">简体中文</a> <a href="../zh-Hant/index.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/index.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

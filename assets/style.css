@@ -471,3 +471,11 @@ code {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* 언어 전환 (헤더 select · 푸터 링크) */
+.lang-switch { display: inline-flex; align-items: center; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lang-select { font: inherit; font-size: 0.9rem; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 999px; padding: 4px 28px 4px 12px; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/></svg>"); background-repeat: no-repeat; background-position: right 10px center; }
+.lang-select:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.footer-langs { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; }
+.footer-langs a[aria-current="page"] { font-weight: 600; text-decoration: underline; }

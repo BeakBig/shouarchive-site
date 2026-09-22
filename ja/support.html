@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サポート — ShouArchive</title>
+  <meta name="description" content="ShouArchive のサポート: プロファイルフォルダの許可、App Store Connect API キー、ビルド成果物検査、OTA インストールのトラブルシューティング、お問い合わせ方法。">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="サポート — ShouArchive">
+  <meta property="og:description" content="ShouArchive のよくある質問とお問い合わせ先。">
+  <meta property="og:image" content="https://beakbig.com/ShouArchive/assets/icon.png">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../support.html">
+  <link rel="alternate" hreflang="en" href="../en/support.html">
+  <link rel="alternate" hreflang="ja" href="../ja/support.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/support.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/support.html">
+  <link rel="alternate" hreflang="es" href="../es/support.html">
+  <link rel="alternate" hreflang="x-default" href="../en/support.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="メイン">
+      <a href="index.html#features">機能</a>
+      <a href="support.html" aria-current="page">サポート</a>
+      <a href="privacy.html">プライバシー</a>
+      <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../support.html">한국어</option><option value="../en/support.html">English</option><option value="../ja/support.html" selected>日本語</option><option value="../zh-Hans/support.html">简体中文</option><option value="../zh-Hant/support.html">繁體中文</option><option value="../es/support.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>サポート</h1>
+      <p>ShouArchive の使い方で困ったときは、まず下記のよくある質問をご確認ください。解決しない場合はメールでお知らせください。</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="contact-card">
+        <span><strong>お問い合わせ</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span>通常、数日以内に返信します。問題を報告するときのポイントは<a href="#report">ページ下部</a>にあります。</span>
+      </div>
+
+      <div class="faq">
+        <h2 id="start">はじめに</h2>
+
+        <details open>
+          <summary>プロファイルタブでフォルダの許可を求められます。なぜですか？</summary>
+          <p>Mac App Store 版は macOS のサンドボックス内で動作します。サンドボックス化されたアプリは、ユーザーが明示的に選んだフォルダしか読み取れません。Xcode がプロビジョニングプロファイルを保存するフォルダはアプリの外にあるため、一度だけ許可していただく必要があります。</p>
+          <p>プロファイルタブのフォルダボタンをクリックすると、そのフォルダが選択された状態でオープンパネルが開きます。何も変更せず、そのまま<strong>「許可」</strong>を押してください。許可は次回以降の起動でも記憶されます（macOS のセキュリティスコープ付きブックマーク）。</p>
+          <p>アプリが読み取るフォルダ:</p>
+          <ul>
+            <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 以降</li>
+            <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — それ以前の Xcode</li>
+          </ul>
+          <p><code>~/Library</code> は Finder では標準で非表示です。オープンパネルで ⌘⇧G を押してパスを貼り付けると、直接移動できます。フォルダを許可したくない場合でも、<code>.mobileprovision</code> ファイルをウインドウにドラッグするか「ファイルから追加…」を使えば開けます。</p>
+        </details>
+
+        <details>
+          <summary>対応しているファイル形式は？</summary>
+          <ul>
+            <li><strong>ビルド成果物検査</strong>: <code>.ipa</code>（iOS タブ）、<code>.apk</code> と <code>.aab</code>（Android タブ）</li>
+            <li><strong>OTA 配布</strong>: <code>.ipa</code>（iOS）、<code>.apk</code>（Android）。AAB は端末に直接インストールできないため受け付けません。</li>
+            <li><strong>プロファイル</strong>: <code>.mobileprovision</code></li>
+            <li><strong>API キー</strong>: App Store Connect からダウンロードした <code>.p8</code> ファイル</li>
+          </ul>
+          <p>ファイルをウインドウにドロップするか、「ファイルを選択…」（⌘O）で開きます。</p>
+        </details>
+
+        <details>
+          <summary>この版に IPA/APK のビルドや書き出しがないのはなぜですか？</summary>
+          <p>Mac App Store のアプリはサンドボックスが必須で、サンドボックス内では <code>xcodebuild</code> や <code>gradle</code> のような外部プログラムを起動できません。そのためこの版は、<strong>検査・プロファイル・OTA</strong> の 3 つに絞っています。ビルド成果物検査も外部ツールに依存せず、アプリ内蔵のパーサーが IPA・APK・AAB を直接読み取ります。</p>
+        </details>
+
+        <h2 id="profiles">プロファイルと App Store Connect API</h2>
+
+        <details>
+          <summary>App Store Connect API キーはどう作りますか？</summary>
+          <ol>
+            <li><a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>ユーザーとアクセス</strong> › <strong>統合</strong> › <strong>App Store Connect API</strong> を開きます。</li>
+            <li><strong>チームキー</strong>を生成します。プロファイルと端末の取得・作成には、通常 <strong>Admin</strong> ロールが必要です。</li>
+            <li>アプリの「プロファイルダウンロード」›「API キー」に <strong>Issuer ID</strong>、<strong>Key ID</strong>、ダウンロードした <code>.p8</code> ファイルを入力します。<code>AuthKey_XXXXXXXX.p8</code> ファイルを選ぶと Key ID は自動的に入力されます。</li>
+          </ol>
+          <p><code>.p8</code> ファイルは Apple から一度しかダウンロードできないため、安全な場所に保管してください。アプリが Apple ID や 2 ファクタ認証コードを使うことはありません。</p>
+        </details>
+
+        <details>
+          <summary>API キーはどこに保存され、どこへ送られますか？</summary>
+          <p><code>.p8</code> ファイルは置いた場所にそのまま残り、アプリはその参照（セキュリティスコープ付きブックマーク）だけを記憶します。リクエストトークンは Mac 上で署名され、キー自体がどこかへ送られることはありません。アプリが通信するのは Apple の App Store Connect API（<code>api.appstoreconnect.apple.com</code>）だけです。アプリでキーを削除しても、<code>.p8</code> ファイルは削除されません。</p>
+        </details>
+
+        <details>
+          <summary>「まもなく期限切れ」と D-N バッジの意味は？</summary>
+          <p>有効期限まで <strong>30 日以内</strong>のプロファイルが「まもなく期限切れ」で、残り日数をオレンジ色の <strong>D-N</strong> バッジで表示します。期限を過ぎたものは「期限切れ」（赤）です。「新規」は最近作成されたもの、「重複」は同じチーム・App ID・種類のプロファイルが 2 つ以上あることを示します。</p>
+        </details>
+
+        <details>
+          <summary>「証明書」カードが空です。</summary>
+          <p>キーチェーンにあるコード署名証明書の一覧はサンドボックス内から読み取れないため、Mac App Store 版ではこのカードは空になります。<strong>各プロファイルに含まれる</strong>証明書は、詳細表示と比較表示でこれまでどおり確認でき、SHA-1 と SHA-256 のコピーボタンも使えます。</p>
+        </details>
+
+        <details>
+          <summary>端末は何台まで登録できますか？</summary>
+          <p>Apple Developer アカウントでは、メンバーシップ年ごとに<strong>種類別（iPhone、iPad、Mac など）で 100 台まで</strong>登録できます。無効にした端末も、メンバーシップが更新されるまでは枠を占有します。端末タブに種類ごとの現在の使用状況（例: iPhone 3 / 100）が表示されます。</p>
+        </details>
+
+        <h2 id="inspect">ビルド成果物検査</h2>
+
+        <details>
+          <summary>検査するとファイルが変更されたり、アップロードされたりしますか？</summary>
+          <p>いいえ。ファイルは<strong>読み取るだけ</strong>です。元のファイルは変更されず、隣に結果ファイルを書き込むこともなく、どのサーバーにも送信しません。結果はアプリのウインドウにのみ表示されます。</p>
+        </details>
+
+        <details>
+          <summary>項目の意味がわかりません。</summary>
+          <p>点線の下線が付いた項目名（権限、端末機能、マニフェスト設定、証明書フィンガープリント、Entitlements など）をクリックすると、<strong>概要 · 詳細 · 注意点</strong>を説明するポップオーバーが開きます。16 KB カードは、タイトル横の ⓘ をクリックしてください。</p>
+        </details>
+
+        <details>
+          <summary>16 KB ページサイズのチェックでは何を確認しますか？</summary>
+          <p>Android 15 以降、一部の端末は 16 KB のメモリページを使用しており、Google Play はこれに対応したネイティブライブラリを求めています。アプリは 64 ビット（<code>arm64-v8a</code>、<code>x86_64</code>）の <code>.so</code> ファイルの ELF LOAD アライメントと、APK 内に無圧縮で格納された <code>.so</code> ファイルについてはアーカイブ内での 16 KB 境界を確認し、対応していないライブラリを一覧表示します。</p>
+        </details>
+
+        <h2 id="ota">OTA 配布</h2>
+
+        <details>
+          <summary>OTA ファイルを作成しましたが、端末にインストールできません。</summary>
+          <p>次の項目を順番に確認してください。</p>
+          <ul>
+            <li>IPA、<code>manifest.plist</code>、<code>install.html</code> はすべて <strong>https</strong> で配信する必要があります。iOS は http 経由のインストールを拒否します。</li>
+            <li>インストールリンクや QR コードは端末の <strong>Safari</strong> で開いてください。メッセンジャーのプレビューやアプリ内ブラウザではインストールが始まらないことがよくあります。</li>
+            <li><strong>Ad Hoc</strong>: 端末の UDID がプロファイルに含まれている必要があります。含まれていない場合は、プロファイルに端末を追加して IPA をビルドし直してください。</li>
+            <li><strong>Enterprise</strong>: インストール後、設定 › 一般 › VPN とデバイス管理で開発元を<strong>信頼</strong>してください。</li>
+            <li>App Store 配布用プロファイルで署名した IPA は OTA でインストールできません。そのようなファイルを選ぶとアプリが警告します。</li>
+            <li>manifest 内の IPA URL が実際のファイルの場所と一致しているか、ファイル名にスペースや特殊文字が含まれていないか確認してください。</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>生成されたファイルはどこに保存されますか？</summary>
+          <p>「インストールファイルを作成」（⌘↩）を押すと、保存フォルダを選ぶダイアログが表示されます。選んだフォルダの中に <code>&lt;name&gt;_OTA</code> フォルダを作成し、IPA（または APK）のコピーと <code>&lt;name&gt;.manifest.plist</code>、<code>&lt;name&gt;.install.html</code>、<code>&lt;name&gt;.qr.png</code>（Android は <code>.install.html</code> と <code>.qr.png</code>）をまとめて保存します。同名のファイルがあれば上書きします。アプリは何もアップロードしないので、これらを IPA または APK と一緒にご自身でアップロードしてください。</p>
+        </details>
+
+        <details>
+          <summary>Android のインストールはどのように行いますか？</summary>
+          <p>APK、<code>install.html</code>、QR 画像を同じ https フォルダにアップロードし、端末のブラウザ（Chrome）でインストールページを開きます。Play ストア外から入手したアプリなので、端末側で提供元不明のアプリのインストールを許可する必要があります。ページには SHA-256 が表示されるので、テスターはダウンロードしたファイルを検証できます。</p>
+        </details>
+
+        <h2 id="general">一般</h2>
+
+        <details>
+          <summary>言語を変更するには？</summary>
+          <p>ツールバーの<strong>地球儀</strong>メニューを開いて言語を選び、「今すぐ再起動」を確定します。アプリはその言語で再起動し、作業中の内容はそのまま保持されます。対応言語: 日本語、English、한국어、简体中文、繁體中文、Español。</p>
+        </details>
+
+        <details>
+          <summary>テーマと文字サイズは？</summary>
+          <p>ツールバーで<strong>ライト・ダーク・システム設定</strong>から選びます。文字サイズは表示メニュー（文字を大きく ⌘+、文字を小さく ⌘-、デフォルトのサイズ ⌘0）または設定（⌘,）› 画面で 85 % から 150 % まで変更できます。</p>
+        </details>
+
+        <details>
+          <summary>動作環境</summary>
+          <p>macOS 15 Sequoia 以降、Apple Silicon または Intel の Mac。App Store Connect API キーが必要なのはプロファイルのダウンロード・作成と端末登録だけで、それ以外の機能はオフラインで動作します。</p>
+        </details>
+
+        <details id="report">
+          <summary>問題を報告するには？</summary>
+          <p><a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> 宛てに、次の情報を添えてお送りいただくと迅速に確認できます。</p>
+          <ul>
+            <li>macOS のバージョン（Apple メニュー › この Mac について）</li>
+            <li>アプリのバージョン（ShouArchive メニュー › ShouArchive について）</li>
+            <li>行った操作の手順と、何が起きたか</li>
+            <li>可能であればスクリーンショット、または表示されたエラーの文言</li>
+          </ul>
+          <p>IPA・APK・プロファイルのファイルを添付する必要はありません。必要な場合は別途お願いします。送信する前に、キーファイル（<code>.p8</code>）や機密情報が含まれていないことを確認してください。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="フッター">
+      <a href="index.html">ホーム</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

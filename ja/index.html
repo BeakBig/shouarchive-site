@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShouArchive — Mac 向けプロビジョニングプロファイル管理 · IPA/APK 検査 · OTA インストールファイル</title>
+  <meta name="description" content="プロビジョニングプロファイルの管理、IPA・APK・AAB ファイルの検査、OTA インストールページの生成を 1 つの Mac アプリで。ファイルは Mac 内でのみ読み取ります。macOS 15 以降、Mac App Store で配信中。">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ShouArchive — プロビジョニングプロファイル管理 · IPA/APK 検査 · OTA インストールファイル">
+  <meta property="og:description" content="プロビジョニングプロファイルの管理、IPA・APK・AAB ファイルの検査、OTA インストールページの生成を 1 つの Mac アプリで。macOS 15 以降。">
+  <meta property="og:image" content="https://beakbig.com/ShouArchive/assets/icon.png">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../index.html">
+  <link rel="alternate" hreflang="en" href="../en/index.html">
+  <link rel="alternate" hreflang="ja" href="../ja/index.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/index.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/index.html">
+  <link rel="alternate" hreflang="es" href="../es/index.html">
+  <link rel="alternate" hreflang="x-default" href="../en/index.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="メイン">
+      <a href="#features">機能</a>
+      <a href="#screens">画面</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシー</a>
+      <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../index.html">한국어</option><option value="../en/index.html">English</option><option value="../ja/index.html" selected>日本語</option><option value="../zh-Hans/index.html">简体中文</option><option value="../zh-Hant/index.html">繁體中文</option><option value="../es/index.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-icon" src="../assets/icon.png" alt="ShouArchive アプリアイコン" width="512" height="512">
+      <div>
+        <h1>ShouArchive</h1>
+        <p class="tagline">プロファイル管理 · ビルド成果物検査 · OTA 配布ファイル — リリース直前に確認すべきことを、1 つのアプリで。</p>
+        <p class="sub">IPA・APK・AAB を開いて、ストアに表示される情報、署名、要求する権限をその場で確認。プロビジョニングプロファイルは有効期限とあわせて整理。テストビルド用の OTA インストールページも生成できます。ファイルが Mac の外に出ることはありません。</p>
+        <div class="palette" aria-hidden="true">
+          <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="APPSTORE_URL_PLACEHOLDER">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Mac App Store でダウンロード
+          </a>
+          <a class="btn ghost" href="#features">機能を見る</a>
+        </div>
+        <p class="hero-note">macOS 15 Sequoia 以降 · Apple Silicon · Intel</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow cyan">プロファイル</p>
+        <h2>プロビジョニングプロファイルを、有効期限から端末登録まで</h2>
+        <p class="lead">Xcode がインストールしたプロファイルを一目で確認。App Store Connect API キーを追加すれば、プロファイルのダウンロード・作成・更新までアプリの中で完結します。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>インストール済みプロファイル</h3>
+          <ul>
+            <li>すべての行に <strong>D-N 有効期限バッジ</strong> — 30 日以内はオレンジ、期限切れは赤</li>
+            <li>フィルター: <strong>全体 · 新規 · 重複</strong> / <strong>有効 · まもなく期限切れ · 期限切れ</strong></li>
+            <li>詳細表示: 端末 UDID、含まれる証明書（SHA-1 · SHA-256）、Entitlements を項目ごとにコピー可能</li>
+            <li><strong>2 つのプロファイルを並べて比較</strong> — 端末・証明書・Entitlements の差分を表示</li>
+            <li><code>.mobileprovision</code> ファイルをドラッグして追加、複数選択して削除</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>App Store Connect API</h3>
+          <ul>
+            <li>チームのプロファイルを取得し、<strong>未インストールのものだけを選んでインストール</strong></li>
+            <li>登録済み端末の一覧と<strong>新しい端末の登録</strong> — 種類ごとの上限を表示（例: iPhone 3 / 100）</li>
+            <li><strong>プロファイルの作成</strong>: 種類・プラットフォーム・バンドル ID・証明書・端末</li>
+            <li>端末が変わったときや期限が近いときは<strong>作り直し・更新</strong></li>
+          </ul>
+          <p class="card-note">使用するのは Issuer ID、Key ID、<code>.p8</code> ファイルだけです。キーは Mac に置いたまま、リクエストトークンはローカルで署名します。</p>
+        </article>
+        <article class="card">
+          <h3>履歴</h3>
+          <ul>
+            <li>ダウンロード・作成・作り直し・端末登録・追加・削除を<strong>日付ごと</strong>に記録</li>
+            <li>名前・バンドル ID・UUID・UDID で検索</li>
+            <li>いつ何が変わったのかを追いたいときに便利です</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow magenta">ビルド成果物検査</p>
+        <h2>IPA・APK・AAB を、アップロードする前に開く</h2>
+        <p class="lead">ファイルをドロップするだけで、外部ツールなしにその場で解析します。ストア掲載情報から署名・権限・セキュリティ設定まで、すべての項目にわかりやすい説明が付いています。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>ストア掲載情報</h3>
+          <p>製品ページに表示される値のうち、成果物から直接読み取れるものです。</p>
+          <ul>
+            <li>アイコン・名前・提供者・サイズ・対応言語</li>
+            <li><strong>iOS</strong>: カテゴリ、互換性、トラッキング許可 (ATT) の要求、プライバシーマニフェストの要約</li>
+            <li><strong>Android</strong>: ダウンロードサイズ、必要な Android バージョン、権限数、アプリ内課金、広告 ID、対応デバイス</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>iOS の署名と権限</h3>
+          <ul>
+            <li>署名・プロビジョニングプロファイル・Entitlements</li>
+            <li>権限の利用目的説明（<code>…UsageDescription</code>）— 空のものがあれば警告</li>
+            <li>フレームワーク・アプリ拡張・Entitlements の一覧を省略せずすべて表示</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android の署名・セキュリティ・16 KB</h3>
+          <ul>
+            <li>証明書フィンガープリント <strong>SHA-256 · SHA-1 · MD5</strong>、Kakao・Facebook 用の<strong>キーハッシュ</strong></li>
+            <li>権限の分類と端末機能</li>
+            <li>マニフェストのセキュリティ設定: allowBackup、平文 HTTP、外部公開コンポーネント、ディープリンク</li>
+            <li>ネイティブライブラリの <strong>16 KB ページサイズ整列</strong>チェック</li>
+            <li>ビルド・構成・サイズの内訳（DEX、リソース、ABI ごとのネイティブライブラリ）</li>
+          </ul>
+        </article>
+      </div>
+      <p class="footnote">読み取り専用です。ファイルを変更せず、隣に何も書き込まず、どこにもアップロードしません。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow orange">OTA 配布</p>
+        <h2>テストビルドを、リンク 1 つでインストール</h2>
+        <p class="lead">手元の IPA や APK から、インストールページと QR コードを生成します。生成されたファイルをご自身の https サーバーにアップロードすれば完了です。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>iOS — Ad Hoc · Enterprise</h3>
+          <ul>
+            <li><code>manifest.plist</code>、<code>install.html</code>、そして <code>itms-services://</code> インストールリンクの <strong>QR コード</strong></li>
+            <li>バンドル ID・バージョン・ビルド番号・アプリ名は IPA から自動入力</li>
+            <li>入力したリリースノートはそのままインストールページに表示</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android — APK</h3>
+          <ul>
+            <li>アイコン・バージョン・SHA-256・インストール手順・変更内容を載せた <code>install.html</code></li>
+            <li>インストールページを指す <strong>QR コード</strong></li>
+            <li>パッケージ名・バージョン・アプリ名・アイコンは APK から自動入力</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>ホスティングはご自身で</h3>
+          <ul>
+            <li>保存フォルダを選ぶと、そこにファイルが書き出されます</li>
+            <li>アプリは何もアップロードしません — チームの https サーバーに置いてください</li>
+            <li>iOS では https が必須で、リンクは端末の Safari で開く必要があります</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow violet">画面</p>
+        <h2>画面を見てみる</h2>
+        <p class="lead">ライト・ダーク・システムのテーマ、85〜150 % の文字サイズ。タブはウインドウ下部のアイコンメニューから切り替えます。</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/screenshots/ja/01.png" alt="iOS と Android のカードが並ぶプラットフォーム選択画面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">01</span>プラットフォームを選ぶ: iOS または Android</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/02.png" alt="有効期限バッジとステータスフィルター付きのプロファイル一覧" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>プロファイル、有効期限、フィルター</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/03.png" alt="IPA 検査: 署名証明書、プロビジョニングプロファイル、Entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>IPA 検査: 署名、プロファイル、Entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/04.png" alt="IPA 検査: App Store 掲載情報" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>IPA 検査: App Store 掲載情報</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/05.png" alt="IPA 検査: 権限の利用目的説明とプライバシー" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA 検査: 権限とプライバシー</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/06.png" alt="iOS OTA インストールファイルの生成画面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>iOS OTA インストールファイル</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/07.png" alt="APK・AAB 検査: 署名スキーム、証明書フィンガープリント、キーハッシュ" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>APK · AAB 検査: 署名、フィンガープリント、キーハッシュ</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/ja/08.png" alt="Android OTA インストールページの生成画面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>Android OTA インストールページ</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="requirements">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow lime">動作環境</p>
+        <h2>動作環境</h2>
+      </div>
+      <dl class="reqs">
+        <div class="req"><dt>macOS</dt><dd>15 Sequoia 以降<small>Apple Silicon と Intel（ユニバーサル）</small></dd></div>
+        <div class="req"><dt>言語</dt><dd>6 言語<small>日本語 · English · 한국어 · 简体中文 · 繁體中文 · Español</small></dd></div>
+        <div class="req"><dt>外観</dt><dd>ライト · ダーク · システム<small>文字サイズ 85 – 150 %</small></dd></div>
+        <div class="req"><dt>任意</dt><dd>App Store Connect API キー<small>プロファイルのダウンロード・作成と端末登録にのみ必要</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>ShouArchive を入手</h2>
+      <p>プロファイル・ビルド成果物検査・OTA — リリース直前の確認を、この 1 本で。</p>
+      <a class="btn" href="APPSTORE_URL_PLACEHOLDER">Mac App Store でダウンロード</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="フッター">
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <span class="footer-langs"><a href="../index.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/index.html" lang="en" hreflang="en">English</a> <a href="../ja/index.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/index.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/index.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/index.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

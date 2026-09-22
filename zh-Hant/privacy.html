@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>隱私權政策 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 隱私權政策。本 App 不收集任何資料，只在本機讀取您的檔案，且僅在以您提供的金鑰與 Apple 的 App Store Connect API 通訊時才使用網路。">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="隱私權政策 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 不收集任何資料。">
+  <meta property="og:image" content="https://beakbig.com/ShouArchive/assets/icon.png">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../privacy.html">
+  <link rel="alternate" hreflang="en" href="../en/privacy.html">
+  <link rel="alternate" hreflang="ja" href="../ja/privacy.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/privacy.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/privacy.html">
+  <link rel="alternate" hreflang="es" href="../es/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="index.html#features">功能</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html" aria-current="page">隱私權</a>
+      <label class="lang-switch"><span class="visually-hidden">語言</span><select class="lang-select" aria-label="語言"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html" selected>繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>隱私權政策</h1>
+      <p>ShouArchive for macOS · 生效日期 2026年9月22日 · 開發者：BeakBig</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="note">
+        <p><strong>簡而言之：</strong>ShouArchive 不收集任何個人資料。沒有分析工具、沒有追蹤、沒有廣告、不需要帳號，您檢查的檔案也只在您的 Mac 上讀取。只有在您登錄自己的 App Store Connect API 金鑰、由 App 代您與 Apple 通訊時，才會使用網路。</p>
+      </div>
+
+      <h2>1. 我們收集的資料</h2>
+      <p>無。本 App 不會：</p>
+      <ul>
+        <li>收集使用統計或當機報告等<strong>分析資料</strong>；</li>
+        <li><strong>追蹤</strong>您或您的裝置，或顯示<strong>廣告</strong>；</li>
+        <li>要求<strong>帳號</strong>或登入；</li>
+        <li>包含任何會透過網路通訊的<strong>第三方 SDK</strong>。</li>
+      </ul>
+
+      <h2>2. 您開啟的檔案</h2>
+      <p>產物檢查、OTA 發布與描述檔管理所處理的檔案（IPA、APK、AAB、<code>.mobileprovision</code>）只在您的 Mac 上讀取。其內容及由此得出的任何資訊（Bundle ID、簽署憑證、權限清單等）只會顯示在 App 視窗中，絕不會傳送到任何地方。檢查絕不會修改原始檔案。</p>
+      <p>OTA 檔案（<code>manifest.plist</code>、<code>install.html</code>、QR 圖片）只會寫入您選擇的資料夾。App 不會將它們上傳到任何伺服器。</p>
+
+      <h2>3. 網路使用</h2>
+      <p>本 App 只在一種情況下使用網路：當您登錄自己的 <strong>App Store Connect API 金鑰</strong>（Issuer ID、Key ID 與 <code>.p8</code> 檔案）並使用需要它的功能時，App 會連線到 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）。</p>
+      <table>
+        <thead><tr><th>功能</th><th>傳送給 Apple 的內容</th></tr></thead>
+        <tbody>
+          <tr><td>列出並下載描述檔</td><td>由 App 簽署的驗證權杖</td></tr>
+          <tr><td>建立、重新建立或續期描述檔</td><td>權杖，以及您選擇的描述檔類型、Bundle ID、憑證與裝置</td></tr>
+          <tr><td>列出並註冊裝置</td><td>權杖，以及您輸入的裝置名稱與 UDID</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li><code>.p8</code> 私密金鑰留在您的 Mac 上。App 只儲存該檔案的參照（macOS 安全範圍書籤），並在<strong>本機</strong>簽署請求權杖。金鑰本身絕不會傳送到任何地方，包括 Apple。</li>
+        <li>Apple 對這些請求的處理方式，受 Apple Developer Program 相關協議與 Apple 隱私權政策規範。</li>
+        <li>如果您從未登錄 API 金鑰，App 完全不會進行任何網路連線。</li>
+      </ul>
+
+      <h2>4. 儲存在您 Mac 上的資料</h2>
+      <ul>
+        <li>App 設定（主題、語言、文字大小、OTA URL 設定、API 金鑰資訊等）儲存在 macOS 提供給 App 的<strong>沙箱容器</strong>中。</li>
+        <li>描述檔資料夾與 <code>.p8</code> 檔案的存取權，會以您在開啟面板中授予的<strong>安全範圍書籤</strong>記住。您隨時可以在 App 中移除。</li>
+        <li>描述檔的活動記錄（下載、建立、裝置註冊等）保存在本機，可用「清除記錄」清除。</li>
+        <li>刪除 App 會一併移除其容器與這些資料。您自行放置的檔案（例如 <code>.p8</code> 檔案）絕不會被 App 刪除。</li>
+      </ul>
+
+      <h2>5. 第三方函式庫</h2>
+      <p>本 App 內建開源函式庫 <strong>Lottie</strong>，用於播放載入動畫。它僅用於顯示，不會存取網路或收集資料。沒有其他第三方 SDK。</p>
+
+      <h2>6. 分享與販售</h2>
+      <p>既然沒有收集任何資料，也就不會與任何人分享或販售。第 3 節所述與 Apple 的通訊，是在您的要求下，使用您自己的帳號與金鑰進行的。</p>
+
+      <h2>7. 兒童</h2>
+      <p>ShouArchive 是為軟體開發者設計的工具，並非以兒童為對象。它不會向任何人收集個人資訊。</p>
+
+      <h2>8. 變更</h2>
+      <p>若本政策有所變更，新版本將連同更新後的生效日期一併公布在本頁面。若 App 處理資料的方式確實有所改變，App 的發行說明中也會一併說明。</p>
+
+      <h2>9. 聯絡方式</h2>
+      <p>關於本政策或 App 如何處理資料的問題，請聯絡：<a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>。</p>
+
+      <p class="meta">生效日期：2026年9月22日 · 開發者與發行者：BeakBig</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="頁尾">
+      <a href="index.html">首頁</a>
+      <a href="support.html">支援</a>
+      <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="page">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

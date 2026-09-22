@@ -18,7 +18,7 @@ npx wrangler deploy
 ## 확인
 
 ```bash
-curl -I https://beakbig.com/ShouArchive          # 301 → /ShouArchive/
+curl -I https://shouarchive.beakbig.com/ja/              # 200 (일본어 페이지)
 curl -I https://shouarchive.beakbig.com/         # 200, x-shouarchive-upstream 헤더
 curl -I https://shouarchive.beakbig.com/en/support.html
 ```

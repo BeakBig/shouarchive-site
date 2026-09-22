@@ -2,7 +2,7 @@
 
 ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지입니다. 순수 정적 HTML/CSS 이고 빌드 단계가 없습니다.
 
-- 공개 주소: https://beakbig.com/ShouArchive/ — beakbig.com 의 이 경로를 Cloudflare Worker(`worker/`)가 받아 GitHub Pages 원본을 돌려줍니다
+- 공개 주소: https://shouarchive.beakbig.com/ — beakbig.com 의 이 경로를 Cloudflare Worker(`worker/`)가 받아 GitHub Pages 원본을 돌려줍니다
 - 원본(GitHub Pages): https://beakbig.github.io/shouarchive-site/ (`main` 브랜치 루트, Worker 배포 전에도 이 주소는 열립니다)
 - 저장소: `BeakBig/shouarchive-site` (공개)
 
@@ -22,9 +22,9 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 
 App Store Connect 에 넣는 URL:
 
-- 지원: `https://beakbig.com/ShouArchive/support.html` (다른 언어는 `<언어>/support.html`)
-- 마케팅: `https://beakbig.com/ShouArchive/` (다른 언어는 `<언어>/`)
-- 개인정보 처리방침: `https://beakbig.com/ShouArchive/privacy.html` (다른 언어는 `<언어>/privacy.html`)
+- 지원: `https://shouarchive.beakbig.com/support.html` (다른 언어는 `<언어>/support.html`)
+- 마케팅: `https://shouarchive.beakbig.com/` (다른 언어는 `<언어>/`)
+- 개인정보 처리방침: `https://shouarchive.beakbig.com/privacy.html` (다른 언어는 `<언어>/privacy.html`)
 
 ## 올리기
 
@@ -42,5 +42,5 @@ git add -A && git commit -m "..." && git push
   sed -i '' 's#APPSTORE_URL_PLACEHOLDER#https://apps.apple.com/app/id<Apple ID>#g' index.html en/index.html
   ```
 
-- Cloudflare Worker 배포 (`worker/README.md`) — 이것이 끝나야 `https://beakbig.com/ShouArchive/` 가 열립니다.
+- Cloudflare Worker 배포 (`worker/README.md`) — 이것이 끝나야 `https://shouarchive.beakbig.com/` 가 열립니다.
 - 저장소 이름을 바꾸면 GitHub Pages 원본 주소가 바뀌므로 `worker/wrangler.toml` 의 `UPSTREAM` 도 함께 고쳐야 합니다.

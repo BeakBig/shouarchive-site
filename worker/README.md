@@ -1,6 +1,6 @@
-# beakbig.com/ShouArchive 연결 (Cloudflare Worker)
+# shouarchive.beakbig.com 연결 (Cloudflare Worker)
 
-`https://beakbig.com/ShouArchive/` 로 이 사이트를 내보내는 Worker 입니다. beakbig.com 본 사이트(Cloudflare Pages)는 건드리지 않고, `/ShouArchive*` 경로만 이 Worker 가 받아 GitHub Pages(`beakbig.github.io/shouarchive-site`)의 내용을 돌려줍니다.
+`https://shouarchive.beakbig.com/` 로 이 사이트를 내보내는 Worker 입니다(`worker-subdomain.js`). beakbig.com 본 사이트는 건드리지 않고, 서브도메인 전체를 GitHub Pages(`beakbig.github.io/shouarchive-site`)의 내용으로 돌려줍니다. `worker.js` 는 경로 방식(`beakbig.com/ShouArchive/*`)용으로 남겨 둔 것입니다.
 
 ## 배포
 
@@ -13,14 +13,14 @@ export CLOUDFLARE_API_TOKEN=...
 npx wrangler deploy
 ```
 
-대시보드에서 직접 하려면: Workers & Pages › Create › Worker › `worker.js` 내용 붙여 넣기 › Deploy › Settings › Domains & Routes › Route 추가 `beakbig.com/ShouArchive*` (zone `beakbig.com`) › Variables 에 `UPSTREAM` 추가(선택).
+대시보드에서 직접 하려면: Workers & Pages › Create › Worker › `worker-subdomain.js` 내용 붙여 넣기 › Deploy › Settings › Domains & Routes › Add › Custom Domain `shouarchive.beakbig.com`.
 
 ## 확인
 
 ```bash
 curl -I https://beakbig.com/ShouArchive          # 301 → /ShouArchive/
-curl -I https://beakbig.com/ShouArchive/         # 200, x-shouarchive-upstream 헤더
-curl -I https://beakbig.com/ShouArchive/en/support.html
+curl -I https://shouarchive.beakbig.com/         # 200, x-shouarchive-upstream 헤더
+curl -I https://shouarchive.beakbig.com/en/support.html
 ```
 
 ## 원본을 Cloudflare Pages 로 바꾸려면

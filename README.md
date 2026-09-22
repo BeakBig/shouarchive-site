@@ -2,7 +2,7 @@
 
 ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지입니다. 순수 정적 HTML/CSS 이고 빌드 단계가 없습니다.
 
-- 공개 주소: https://shouarchive.beakbig.com/ — Cloudflare Worker(`worker/`)가 이 서브도메인을 받아 GitHub Pages 원본을 돌려줍니다
+- 공개 주소: https://shouarchive.beakbig.com/ — Cloudflare 에서 이 저장소를 서브도메인에 연결해 서비스 중 (`.html` 주소는 확장자 없는 주소로 307 리다이렉트되므로 외부에 알릴 때는 `/support`, `/privacy` 처럼 확장자 없이)
 - 원본(GitHub Pages): https://beakbig.github.io/shouarchive-site/ (`main` 브랜치 루트, Worker 배포 전에도 이 주소는 열립니다)
 - 저장소: `BeakBig/shouarchive-site` (공개)
 
@@ -22,9 +22,9 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 
 App Store Connect 에 넣는 URL:
 
-- 지원: `https://shouarchive.beakbig.com/support.html` (다른 언어는 `<언어>/support.html`)
+- 지원: `https://shouarchive.beakbig.com/support` (다른 언어는 `<언어>/support`)
 - 마케팅: `https://shouarchive.beakbig.com/` (다른 언어는 `<언어>/`)
-- 개인정보 처리방침: `https://shouarchive.beakbig.com/privacy.html` (다른 언어는 `<언어>/privacy.html`)
+- 개인정보 처리방침: `https://shouarchive.beakbig.com/privacy` (다른 언어는 `<언어>/privacy`)
 
 ## 올리기
 

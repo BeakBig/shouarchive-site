@@ -2,7 +2,7 @@
 
 ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지입니다. 순수 정적 HTML/CSS 이고 빌드 단계가 없습니다.
 
-- 공개 주소: https://shouarchive.beakbig.com/ — beakbig.com 의 이 경로를 Cloudflare Worker(`worker/`)가 받아 GitHub Pages 원본을 돌려줍니다
+- 공개 주소: https://shouarchive.beakbig.com/ — Cloudflare Worker(`worker/`)가 이 서브도메인을 받아 GitHub Pages 원본을 돌려줍니다
 - 원본(GitHub Pages): https://beakbig.github.io/shouarchive-site/ (`main` 브랜치 루트, Worker 배포 전에도 이 주소는 열립니다)
 - 저장소: `BeakBig/shouarchive-site` (공개)
 
@@ -17,7 +17,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `assets/screenshots/<언어>/` | 갤러리 스크린샷 `01.png` ~ `08.png` (2880×1800), 6개 언어 |
 | `assets/samples/` | 심사 · 테스트용 합성 APK · AAB |
 | `.nojekyll` | GitHub Pages 가 Jekyll 처리 없이 그대로 서빙하게 함 |
-| `worker/` | `beakbig.com/ShouArchive/*` 를 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
+| `worker/` | `shouarchive.beakbig.com` 을 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 | `tools/localize-nav.py` | 모든 페이지에 6개 언어 전환 메뉴 · `hreflang` 을 넣는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
 
 App Store Connect 에 넣는 URL:
@@ -32,7 +32,7 @@ App Store Connect 에 넣는 URL:
 git add -A && git commit -m "..." && git push
 ```
 
-푸시하면 1분 안팎으로 GitHub Pages 에 반영되고, Worker 캐시(5분)가 지나면 beakbig.com/ShouArchive/ 에도 보입니다.
+푸시하면 1분 안팎으로 GitHub Pages 에 반영되고, Worker 캐시(5분)가 지나면 shouarchive.beakbig.com 에도 보입니다.
 
 ## 남은 일
 

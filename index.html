@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShouArchive — iOS 프로파일 관리 · IPA/APK 검사 · OTA 배포 (Mac)</title>
+  <meta name="description" content="프로비저닝 프로파일 관리, IPA·APK·AAB 산출물 검사, OTA 설치 파일 생성을 한 앱에서. 파일은 Mac 안에서만 읽습니다. macOS 14 이상, Mac App Store.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ShouArchive — iOS 프로파일 관리 · IPA/APK 검사 · OTA 배포">
+  <meta property="og:description" content="프로비저닝 프로파일 관리, IPA·APK·AAB 산출물 검사, OTA 설치 파일 생성을 한 앱에서. macOS 14 이상.">
+  <meta property="og:image" content="assets/icon.png">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="index.html">
+  <link rel="alternate" hreflang="en" href="en/index.html">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="#features">기능</a>
+      <a href="#screens">화면</a>
+      <a href="support.html">지원</a>
+      <a href="privacy.html">개인정보</a>
+      <a class="lang" href="en/index.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-icon" src="assets/icon.png" alt="ShouArchive 앱 아이콘" width="512" height="512">
+      <div>
+        <h1>ShouArchive</h1>
+        <p class="tagline">프로파일 관리 · 산출물 검사 · OTA 배포 파일 — 배포 직전에 확인할 것들을 한 앱에서.</p>
+        <p class="sub">IPA · APK · AAB 를 열어 스토어에 보일 정보와 서명 · 권한을 바로 확인하고, 프로비저닝 프로파일을 만료일과 함께 관리하고, 테스트 배포용 OTA 설치 파일까지 만듭니다. 파일은 Mac 안에서만 읽습니다.</p>
+        <div class="palette" aria-hidden="true">
+          <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="APPSTORE_URL_PLACEHOLDER">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Mac App Store에서 받기
+          </a>
+          <a class="btn ghost" href="#features">기능 살펴보기</a>
+        </div>
+        <p class="hero-note">macOS 14 Sonoma 이상 · Apple Silicon · Intel</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow cyan">프로파일</p>
+        <h2>프로비저닝 프로파일, 만료일부터 기기 등록까지</h2>
+        <p class="lead">Xcode 가 설치한 프로파일을 한눈에 보고, App Store Connect API 키가 있으면 내려받기 · 만들기 · 갱신까지 앱 안에서 끝냅니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>설치된 프로파일</h3>
+          <ul>
+            <li>목록마다 <strong>D-N 만료 배지</strong> — 30일 안에 만료되는 것은 주황, 만료된 것은 빨강</li>
+            <li>필터: <strong>전체 · 신규 · 중복</strong> / <strong>유효 · 곧 만료 · 만료</strong></li>
+            <li>상세: 기기 UDID · 들어 있는 인증서(SHA-1 · SHA-256) · Entitlements, 항목별 복사</li>
+            <li>두 프로파일을 <strong>나란히 비교</strong> — 기기 · 인증서 · Entitlements 차이</li>
+            <li><code>.mobileprovision</code> 을 끌어다 놓아 추가, 여러 개 골라 삭제</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>App Store Connect API</h3>
+          <ul>
+            <li>팀의 프로파일 목록을 받아 <strong>없는 것만 골라 설치</strong></li>
+            <li>등록된 기기 목록과 <strong>새 기기 등록</strong> — 종류별 한도 표시 (예: iPhone 3 / 100)</li>
+            <li><strong>새 프로파일 만들기</strong>: 종류 · 플랫폼 · 번들 ID · 인증서 · 기기</li>
+            <li>기기가 바뀌었거나 만료가 가까우면 <strong>다시 만들기 · 갱신</strong></li>
+          </ul>
+          <p class="card-note">Issuer ID · Key ID · <code>.p8</code> 만 씁니다. 키 파일은 Mac 에 그대로 두고, 요청 토큰은 로컬에서 서명합니다.</p>
+        </article>
+        <article class="card">
+          <h3>기록</h3>
+          <ul>
+            <li>다운로드 · 생성 · 다시 만들기 · 기기 등록 · 추가 · 삭제를 <strong>날짜별</strong>로</li>
+            <li>이름 · 번들 ID · UUID · UDID 로 검색</li>
+            <li>누가 언제 어떤 프로파일을 바꿨는지 되짚을 때</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow magenta">산출물 검사</p>
+        <h2>IPA · APK · AAB, 올리기 전에 열어 보기</h2>
+        <p class="lead">파일을 끌어다 놓으면 외부 도구 없이 바로 분석합니다. 스토어에 보일 정보부터 서명 · 권한 · 보안 설정까지, 항목마다 설명이 붙어 있어 처음 보는 값도 그 자리에서 이해할 수 있습니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>스토어 표시 정보</h3>
+          <p>제품 페이지에 보일 값 중 산출물에서 읽을 수 있는 것을 미리 보여 줍니다.</p>
+          <ul>
+            <li>아이콘 · 이름 · 제공자 · 크기 · 지원 언어</li>
+            <li><strong>iOS</strong>: 카테고리 · 호환성 · ATT(추적 허용 요청) 여부 · 개인정보 매니페스트 요약</li>
+            <li><strong>Android</strong>: 다운로드 크기 · 필요한 Android 버전 · 권한 수 · 인앱 결제 · 광고 ID · 지원 기기</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>iOS 서명 · 권한</h3>
+          <ul>
+            <li>서명 · 프로비저닝 프로파일 · Entitlements</li>
+            <li>권한 요청 문구(<code>…UsageDescription</code>) — 비어 있으면 경고</li>
+            <li>프레임워크 · 앱 확장 · Entitlements 목록은 줄이지 않고 전부</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android 서명 · 보안 · 16 KB</h3>
+          <ul>
+            <li>인증서 지문 <strong>SHA-256 · SHA-1 · MD5</strong>, 카카오 · 페이스북용 <strong>키 해시</strong></li>
+            <li>권한 분류 · 기기 기능</li>
+            <li>매니페스트 보안 설정: allowBackup · 평문 HTTP · 외부 공개 컴포넌트 · 딥링크</li>
+            <li>네이티브 라이브러리 <strong>16 KB 페이지 정렬</strong> 검사</li>
+            <li>빌드 · 구성 · 크기 구성 (DEX · 리소스 · ABI별 네이티브)</li>
+          </ul>
+        </article>
+      </div>
+      <p class="footnote">읽기 전용입니다. 파일을 바꾸지 않고, 옆에 아무것도 쓰지 않으며, 어디에도 올리지 않습니다.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow orange">OTA 배포</p>
+        <h2>테스트 빌드, 링크 하나로 설치</h2>
+        <p class="lead">이미 만든 IPA · APK 로 설치 페이지와 QR 을 만듭니다. 만든 파일을 https 서버에 올리기만 하면 됩니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>iOS — Ad Hoc · Enterprise</h3>
+          <ul>
+            <li><code>manifest.plist</code> · <code>install.html</code> · <strong>QR</strong> (<code>itms-services://</code> 설치 링크)</li>
+            <li>IPA 를 읽어 번들 ID · 버전 · 빌드 · 앱 이름을 자동으로 채움</li>
+            <li>변경 사항을 적으면 설치 페이지에 함께 들어감</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android — APK</h3>
+          <ul>
+            <li><code>install.html</code>: 아이콘 · 버전 · SHA-256 · 설치 안내 · 변경 사항</li>
+            <li>설치 페이지 주소를 담은 <strong>QR</strong></li>
+            <li>APK 를 읽어 패키지 · 버전 · 앱 이름 · 아이콘을 자동으로 채움</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>호스팅은 직접</h3>
+          <ul>
+            <li>저장할 폴더를 고르면 그곳에 파일을 만듭니다</li>
+            <li>앱은 어디에도 올리지 않습니다 — 팀의 https 서버에 직접 올리세요</li>
+            <li>iOS 는 https 만 허용하고 Safari 에서 열어야 설치됩니다</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow violet">화면</p>
+        <h2>화면 둘러보기</h2>
+        <p class="lead">라이트 · 다크 · 시스템 테마, 텍스트 크기 85 – 150 %. 화면 아래 아이콘 메뉴로 탭을 오갑니다.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="assets/screenshots/ko/01.png" alt="플랫폼 선택 화면: iOS 와 Android 카드" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">01</span>플랫폼 선택: iOS 와 Android</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/02.png" alt="프로파일 목록과 만료 배지, 상태 필터" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>프로파일 목록 · 만료 · 필터</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/03.png" alt="프로파일 상세: 인증서, 기기 UDID, Entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>프로파일 상세 (인증서 · 기기 · Entitlements)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/04.png" alt="IPA 검사: 스토어 표시 정보와 서명" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>IPA 검사: 스토어 표시 정보 · 서명</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/05.png" alt="IPA 검사: 권한 요청 문구와 개인정보 항목" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA 검사: 권한 요청 · 개인정보</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/06.png" alt="iOS OTA 설치 파일 생성 화면" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>iOS OTA 설치 파일 생성</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/07.png" alt="APK · AAB 검사: 서명 인증서, 16KB 정렬, 매니페스트 보안 설정" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>APK · AAB 검사: 서명 · 16KB · 보안 설정</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/08.png" alt="Android OTA 설치 페이지 생성 화면" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>Android OTA 설치 페이지</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="requirements">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow lime">요구 사항</p>
+        <h2>요구 사항</h2>
+      </div>
+      <dl class="reqs">
+        <div class="req"><dt>macOS</dt><dd>14 Sonoma 이상<small>Apple Silicon · Intel (유니버설)</small></dd></div>
+        <div class="req"><dt>언어</dt><dd>6개 언어<small>한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
+        <div class="req"><dt>화면</dt><dd>라이트 · 다크 · 시스템<small>텍스트 크기 85 – 150 %</small></dd></div>
+        <div class="req"><dt>선택 사항</dt><dd>App Store Connect API 키<small>프로파일 다운로드 · 생성 · 기기 등록에만 필요</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>지금 받기</h2>
+      <p>프로파일 · 산출물 검사 · OTA. 배포 직전 확인은 ShouArchive 에서.</p>
+      <a class="btn" href="APPSTORE_URL_PLACEHOLDER">Mac App Store에서 받기</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="바닥 메뉴">
+      <a href="support.html">지원</a>
+      <a href="privacy.html">개인정보 처리방침</a>
+      <a href="en/index.html" lang="en" hreflang="en">English</a>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — ShouArchive</title>
+  <meta name="description" content="ShouArchive privacy policy. The app collects no data, reads your files locally only, and uses the network solely to talk to Apple's App Store Connect API with a key you provide.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy — ShouArchive">
+  <meta property="og:description" content="ShouArchive collects no data.">
+  <meta property="og:image" content="../assets/icon.png">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="en" href="privacy.html">
+  <link rel="alternate" hreflang="ko" href="../privacy.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a class="lang" href="../privacy.html" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Privacy Policy</h1>
+      <p>ShouArchive for macOS · Effective September 22, 2026 · Developer: BeakBig</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="note">
+        <p><strong>In short:</strong> ShouArchive collects no personal data. There are no analytics, no tracking, no ads and no accounts, and the files you inspect are read on your Mac only. The network is used solely when you register your own App Store Connect API key and the app talks to Apple on your behalf.</p>
+      </div>
+
+      <h2>1. Data we collect</h2>
+      <p>None. The app does not:</p>
+      <ul>
+        <li>collect <strong>analytics</strong> such as usage statistics or crash reports;</li>
+        <li><strong>track</strong> you or your device, or show <strong>ads</strong>;</li>
+        <li>require an <strong>account</strong> or sign-in;</li>
+        <li>include any <strong>third-party SDK</strong> that communicates over the network.</li>
+      </ul>
+
+      <h2>2. Files you open</h2>
+      <p>Files handled by artifact inspection, OTA distribution and profile management (IPA, APK, AAB, <code>.mobileprovision</code>) are read on your Mac only. Their contents and anything derived from them (bundle IDs, signing certificates, permission lists and so on) are shown in the app window and are never transmitted anywhere. Inspection never modifies the original file.</p>
+      <p>OTA files (<code>manifest.plist</code>, <code>install.html</code>, the QR image) are written only to the folder you choose. The app does not upload them to any server.</p>
+
+      <h2>3. Network use</h2>
+      <p>The app uses the network in exactly one case: when you register your own <strong>App Store Connect API key</strong> (Issuer ID, Key ID and <code>.p8</code> file) and use a feature that needs it, the app connects to Apple's App Store Connect API at <code>api.appstoreconnect.apple.com</code>.</p>
+      <table>
+        <thead><tr><th>Feature</th><th>What is sent to Apple</th></tr></thead>
+        <tbody>
+          <tr><td>List and download profiles</td><td>An authentication token signed by the app</td></tr>
+          <tr><td>Create, regenerate or renew profiles</td><td>The token plus the profile type, bundle ID, certificates and devices you selected</td></tr>
+          <tr><td>List and register devices</td><td>The token plus the device names and UDIDs you entered</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>The <code>.p8</code> private key stays on your Mac. The app stores only a reference to the file (a macOS security-scoped bookmark) and signs request tokens <strong>locally</strong>. The key itself is never sent anywhere, including to Apple.</li>
+        <li>Apple's handling of these requests is governed by the Apple Developer Program agreements and Apple's privacy policy.</li>
+        <li>If you never register an API key, the app makes no network connections at all.</li>
+      </ul>
+
+      <h2>4. Data stored on your Mac</h2>
+      <ul>
+        <li>App settings (theme, language, text size, OTA URL settings, API key details and similar) are stored in the app's <strong>sandbox container</strong> provided by macOS.</li>
+        <li>Access to the profile folder and to <code>.p8</code> files is remembered with <strong>security-scoped bookmarks</strong> that you grant in the open panel. You can remove them in the app at any time.</li>
+        <li>The profile activity history (downloads, creations, device registrations and so on) is kept locally and can be cleared with "Clear History".</li>
+        <li>Deleting the app removes its container and this data with it. Files you placed yourself, such as the <code>.p8</code> file, are never deleted by the app.</li>
+      </ul>
+
+      <h2>5. Third-party libraries</h2>
+      <p>The app bundles the open-source library <strong>Lottie</strong> to play a loading animation. It is used for display only and does not access the network or collect data. There are no other third-party SDKs.</p>
+
+      <h2>6. Sharing and selling</h2>
+      <p>Since nothing is collected, nothing is shared with or sold to anyone. The communication with Apple described in section 3 happens at your request, using your own account and key.</p>
+
+      <h2>7. Children</h2>
+      <p>ShouArchive is a tool for software developers and is not directed at children. It collects no personal information from anyone.</p>
+
+      <h2>8. Changes</h2>
+      <p>If this policy changes, the new version will be posted on this page with an updated effective date. If the way the app handles data actually changes, the app's release notes will say so as well.</p>
+
+      <h2>9. Contact</h2>
+      <p>Questions about this policy or about how the app handles data: <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
+
+      <p class="meta">Effective date: September 22, 2026 · Developer and publisher: BeakBig</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="../privacy.html" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+</body>
+</html>

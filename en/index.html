@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShouArchive — Provisioning profiles, IPA/APK inspection and OTA install files for Mac</title>
+  <meta name="description" content="Manage provisioning profiles, inspect IPA, APK and AAB files, and generate OTA install pages — in one Mac app that reads your files locally. macOS 14 or later, on the Mac App Store.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ShouArchive — Provisioning profiles, IPA/APK inspection and OTA install files">
+  <meta property="og:description" content="Manage provisioning profiles, inspect IPA, APK and AAB files, and generate OTA install pages — in one Mac app. macOS 14 or later.">
+  <meta property="og:image" content="../assets/icon.png">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="ko" href="../index.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="lang" href="../index.html" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-icon" src="../assets/icon.png" alt="ShouArchive app icon" width="512" height="512">
+      <div>
+        <h1>ShouArchive</h1>
+        <p class="tagline">Profiles, artifact inspection and OTA install files — the last checks before you ship, in one app.</p>
+        <p class="sub">Open an IPA, APK or AAB and see what the store will show, how it is signed and what it asks for. Keep provisioning profiles in order with their expiry dates. Generate OTA install pages for test builds. Your files never leave your Mac.</p>
+        <div class="palette" aria-hidden="true">
+          <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="APPSTORE_URL_PLACEHOLDER">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Download on the Mac App Store
+          </a>
+          <a class="btn ghost" href="#features">See what it does</a>
+        </div>
+        <p class="hero-note">macOS 14 Sonoma or later · Apple Silicon and Intel</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow cyan">Profiles</p>
+        <h2>Provisioning profiles, from expiry dates to device registration</h2>
+        <p class="lead">See every profile Xcode has installed at a glance. Add an App Store Connect API key and you can download, create and renew profiles without leaving the app.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Installed profiles</h3>
+          <ul>
+            <li><strong>D-N expiry badges</strong> on every row — orange within 30 days, red once expired</li>
+            <li>Filters: <strong>All · New · Duplicates</strong> / <strong>Valid · Expiring soon · Expired</strong></li>
+            <li>Detail view: device UDIDs, embedded certificates (SHA-1 · SHA-256) and entitlements, each copyable</li>
+            <li><strong>Compare two profiles</strong> side by side — devices, certificates and entitlements that differ</li>
+            <li>Drag <code>.mobileprovision</code> files in to add them; multi-select to delete</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>App Store Connect API</h3>
+          <ul>
+            <li>Fetch your team's profiles and <strong>install only the missing ones</strong></li>
+            <li>List registered devices and <strong>register new ones</strong>, with per-type limits shown (e.g. iPhone 3 / 100)</li>
+            <li><strong>Create a profile</strong>: type, platform, bundle ID, certificates, devices</li>
+            <li><strong>Regenerate or renew</strong> when devices change or expiry is near</li>
+          </ul>
+          <p class="card-note">Only an Issuer ID, Key ID and <code>.p8</code> file are used. The key stays on your Mac; request tokens are signed locally.</p>
+        </article>
+        <article class="card">
+          <h3>History</h3>
+          <ul>
+            <li>Downloads, creations, regenerations, device registrations, additions and deletions, <strong>grouped by date</strong></li>
+            <li>Search by name, bundle ID, UUID or UDID</li>
+            <li>Handy when you need to trace what changed and when</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow magenta">Artifact inspection</p>
+        <h2>Open the IPA, APK or AAB before you upload it</h2>
+        <p class="lead">Drop a file and it is parsed on the spot — no external tools. From store listing details to signing, permissions and security settings, every item comes with a plain-language explanation.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Store listing</h3>
+          <p>The values from your product page that can be read straight out of the artifact.</p>
+          <ul>
+            <li>Icon, name, provider, size, supported languages</li>
+            <li><strong>iOS</strong>: category, compatibility, App Tracking Transparency prompt, privacy manifest summary</li>
+            <li><strong>Android</strong>: download size, required Android version, permission count, in-app billing, advertising ID, supported devices</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>iOS signing and permissions</h3>
+          <ul>
+            <li>Signing, provisioning profile and entitlements</li>
+            <li>Permission usage descriptions (<code>…UsageDescription</code>) — warns when one is empty</li>
+            <li>Frameworks, app extensions and entitlement lists shown in full, never truncated</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android signing, security and 16 KB</h3>
+          <ul>
+            <li>Certificate fingerprints <strong>SHA-256 · SHA-1 · MD5</strong> and <strong>key hashes</strong> for Kakao and Facebook</li>
+            <li>Permission classification and device features</li>
+            <li>Manifest security settings: allowBackup, cleartext HTTP, exported components, deep links</li>
+            <li><strong>16 KB page-size alignment</strong> check for native libraries</li>
+            <li>Build, configuration and size breakdown (DEX, resources, native libs per ABI)</li>
+          </ul>
+        </article>
+      </div>
+      <p class="footnote">Read-only. The file is never modified, nothing is written next to it, and nothing is uploaded anywhere.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow orange">OTA distribution</p>
+        <h2>Install test builds from a single link</h2>
+        <p class="lead">Turn an existing IPA or APK into an install page and a QR code. Upload the files to your own https server and you are done.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>iOS — Ad Hoc · Enterprise</h3>
+          <ul>
+            <li><code>manifest.plist</code>, <code>install.html</code> and a <strong>QR code</strong> for the <code>itms-services://</code> install link</li>
+            <li>Bundle ID, version, build and app name are filled in from the IPA</li>
+            <li>Release notes you type go straight into the install page</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Android — APK</h3>
+          <ul>
+            <li><code>install.html</code> with icon, version, SHA-256, install guide and changelog</li>
+            <li>A <strong>QR code</strong> pointing at the install page</li>
+            <li>Package, version, app name and icon are filled in from the APK</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>You host it</h3>
+          <ul>
+            <li>Pick an output folder and the files are written there</li>
+            <li>The app uploads nothing — put the files on your team's https server</li>
+            <li>iOS requires https and the link must be opened in Safari on the device</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow violet">Screens</p>
+        <h2>A look around</h2>
+        <p class="lead">Light, dark or system theme, text size from 85 to 150 %. Tabs live in the icon menu at the bottom of the window.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/screenshots/en/01.png" alt="Platform picker with iOS and Android cards" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">01</span>Pick a platform: iOS or Android</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/02.png" alt="Profile list with expiry badges and status filters" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>Profiles, expiry and filters</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/03.png" alt="Profile detail: certificates, device UDIDs and entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>Profile detail: certificates, devices, entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/04.png" alt="IPA inspection: store listing and signing" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>IPA inspection: store listing and signing</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/05.png" alt="IPA inspection: permission usage descriptions and privacy" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA inspection: permissions and privacy</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/06.png" alt="iOS OTA install file generator" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>iOS OTA install files</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/07.png" alt="APK and AAB inspection: signing certificate, 16 KB alignment and manifest security settings" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>APK · AAB inspection: signing, 16 KB, security</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/08.png" alt="Android OTA install page generator" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>Android OTA install page</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="requirements">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow lime">Requirements</p>
+        <h2>Requirements</h2>
+      </div>
+      <dl class="reqs">
+        <div class="req"><dt>macOS</dt><dd>14 Sonoma or later<small>Apple Silicon and Intel (universal)</small></dd></div>
+        <div class="req"><dt>Languages</dt><dd>6 languages<small>English · 한국어 · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
+        <div class="req"><dt>Appearance</dt><dd>Light · Dark · System<small>Text size 85 – 150 %</small></dd></div>
+        <div class="req"><dt>Optional</dt><dd>App Store Connect API key<small>Only for downloading and creating profiles and registering devices</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Get ShouArchive</h2>
+      <p>Profiles, artifact inspection and OTA — the last checks before you ship.</p>
+      <a class="btn" href="APPSTORE_URL_PLACEHOLDER">Download on the Mac App Store</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="../index.html" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+</body>
+</html>

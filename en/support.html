@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — ShouArchive</title>
+  <meta name="description" content="ShouArchive support: allowing the profile folder, App Store Connect API keys, artifact inspection, OTA install troubleshooting and how to get in touch.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Support — ShouArchive">
+  <meta property="og:description" content="Frequently asked questions and contact for ShouArchive.">
+  <meta property="og:image" content="../assets/icon.png">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="en" href="support.html">
+  <link rel="alternate" hreflang="ko" href="../support.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="support.html" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="lang" href="../support.html" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Support</h1>
+      <p>Stuck somewhere in ShouArchive? Check the questions below first, then write in if you need more.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="contact-card">
+        <span><strong>Contact</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span>Replies usually take a few days. Tips for reporting a problem are <a href="#report">at the bottom</a>.</span>
+      </div>
+
+      <div class="faq">
+        <h2 id="start">Getting started</h2>
+
+        <details open>
+          <summary>The Profiles tab asks me to allow a folder. Why?</summary>
+          <p>The Mac App Store edition runs inside the macOS sandbox. A sandboxed app can only read folders you have explicitly chosen, and the folder where Xcode keeps provisioning profiles is outside the app, so it has to be allowed once.</p>
+          <p>Click the folder button in the Profiles tab. An open panel appears with that folder already selected — don't change anything, just press <strong>Allow</strong>. The permission is remembered across launches (macOS security-scoped bookmarks).</p>
+          <p>Folders the app reads:</p>
+          <ul>
+            <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 and later</li>
+            <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — older Xcode versions</li>
+          </ul>
+          <p><code>~/Library</code> is hidden in the Finder by default. In the open panel, press ⌘⇧G and paste the path to jump straight there. If you'd rather not allow the folder, you can still drag <code>.mobileprovision</code> files into the window or use "Add from file…".</p>
+        </details>
+
+        <details>
+          <summary>Which file types are supported?</summary>
+          <ul>
+            <li><strong>Artifact inspection</strong>: <code>.ipa</code> (iOS tab), <code>.apk</code> and <code>.aab</code> (Android tab)</li>
+            <li><strong>OTA distribution</strong>: <code>.ipa</code> (iOS), <code>.apk</code> (Android). AABs can't be installed directly on a device, so they are not accepted.</li>
+            <li><strong>Profiles</strong>: <code>.mobileprovision</code></li>
+            <li><strong>API key</strong>: the <code>.p8</code> file downloaded from App Store Connect</li>
+          </ul>
+          <p>Drop a file onto the window or use "Choose file…" (⌘O).</p>
+        </details>
+
+        <details>
+          <summary>Why is there no IPA/APK build or export in this edition?</summary>
+          <p>Mac App Store apps must be sandboxed, and the sandbox cannot launch external programs such as <code>xcodebuild</code> or <code>gradle</code>. This edition therefore focuses on three things: <strong>inspection, profiles and OTA</strong>. Artifact inspection doesn't rely on external tools either — the app's own parser reads IPA, APK and AAB files directly.</p>
+        </details>
+
+        <h2 id="profiles">Profiles and the App Store Connect API</h2>
+
+        <details>
+          <summary>How do I create an App Store Connect API key?</summary>
+          <ol>
+            <li>Go to <a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>Users and Access</strong> › <strong>Integrations</strong> › <strong>App Store Connect API</strong>.</li>
+            <li>Generate a <strong>Team key</strong>. Reading and creating profiles and devices usually requires the <strong>Admin</strong> role.</li>
+            <li>Enter the <strong>Issuer ID</strong>, <strong>Key ID</strong> and the downloaded <code>.p8</code> file under "Download Profile" › "API Key" in the app. Picking an <code>AuthKey_XXXXXXXX.p8</code> file fills in the Key ID automatically.</li>
+          </ol>
+          <p>Apple lets you download the <code>.p8</code> file only once, so keep it somewhere safe. The app never uses your Apple ID or two-factor codes.</p>
+        </details>
+
+        <details>
+          <summary>Where is the API key stored, and where is it sent?</summary>
+          <p>The <code>.p8</code> file stays wherever you keep it; the app only remembers a reference to it (a security-scoped bookmark). Request tokens are signed on your Mac, and the key itself is never sent anywhere — the app talks only to Apple's App Store Connect API (<code>api.appstoreconnect.apple.com</code>). Removing a key in the app does not delete the <code>.p8</code> file.</p>
+        </details>
+
+        <details>
+          <summary>What do "Expiring soon" and the D-N badge mean?</summary>
+          <p>A profile that expires within <strong>30 days</strong> is "expiring soon" and shows the days left as an orange <strong>D-N</strong> badge. Anything past its date is "expired" (red). "New" means recently created; "Duplicates" flags two or more profiles with the same team, app ID and type.</p>
+        </details>
+
+        <details>
+          <summary>The "Certificates" card is empty.</summary>
+          <p>The list of code-signing certificates in your keychain can't be read from inside the sandbox, so this card is empty in the Mac App Store edition. The certificates <strong>embedded in each profile</strong> are still shown in the detail and compare views, with SHA-1 and SHA-256 copy buttons.</p>
+        </details>
+
+        <details>
+          <summary>How many devices can I register?</summary>
+          <p>An Apple Developer account can register up to <strong>100 devices per type</strong> (iPhone, iPad, Mac, …) per membership year. Devices you disable still take up a slot until the membership renews. The Devices tab shows current usage per type (for example, iPhone 3 / 100).</p>
+        </details>
+
+        <h2 id="inspect">Artifact inspection</h2>
+
+        <details>
+          <summary>Does inspecting a file change it or upload it?</summary>
+          <p>No. The file is <strong>read only</strong>: the original is never modified, no result file is written next to it, and nothing is sent to any server. Results are shown in the app window only.</p>
+        </details>
+
+        <details>
+          <summary>I don't know what an item means.</summary>
+          <p>Item names with a dotted underline (permissions, device features, manifest settings, certificate fingerprints, entitlements and so on) open a popover with <strong>What it is · Details · Watch out</strong>. For the 16 KB card, click the ⓘ next to the title.</p>
+        </details>
+
+        <details>
+          <summary>What does the 16 KB page-size check look at?</summary>
+          <p>Starting with Android 15 some devices use 16 KB memory pages, and Google Play requires native libraries that support them. The app checks the ELF LOAD alignment of 64-bit (<code>arm64-v8a</code>, <code>x86_64</code>) <code>.so</code> files and, for uncompressed <code>.so</code> files stored in an APK, their 16 KB boundary inside the archive, and lists the libraries that don't comply.</p>
+        </details>
+
+        <h2 id="ota">OTA distribution</h2>
+
+        <details>
+          <summary>I generated the OTA files but the app won't install on the device.</summary>
+          <p>Work through these in order:</p>
+          <ul>
+            <li>The IPA, <code>manifest.plist</code> and <code>install.html</code> must all be served over <strong>https</strong>. iOS refuses to install over http.</li>
+            <li>Open the install link or QR code in <strong>Safari</strong> on the device. Messenger previews and in-app browsers often don't trigger the install.</li>
+            <li><strong>Ad Hoc</strong>: the device's UDID must be in the profile. If it isn't, add the device to the profile and rebuild the IPA.</li>
+            <li><strong>Enterprise</strong>: after installing, go to Settings › General › VPN &amp; Device Management and <strong>trust</strong> the developer.</li>
+            <li>An IPA signed with an App Store distribution profile can't be installed over the air. The app warns you when you pick such a file.</li>
+            <li>Check that the IPA URL in the manifest matches the real file location, and that the file name has no spaces or special characters.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Where are the generated files saved?</summary>
+          <p>"Create Install File" (⌘↩) asks you for an output folder. It writes <code>&lt;name&gt;.manifest.plist</code>, <code>&lt;name&gt;.install.html</code> and <code>&lt;name&gt;.qr.png</code> (Android: <code>.install.html</code> and <code>.qr.png</code>) there, overwriting files of the same name. The app never uploads anything, so upload these together with the IPA or APK yourself.</p>
+        </details>
+
+        <details>
+          <summary>How does the Android install work?</summary>
+          <p>Upload the APK, <code>install.html</code> and QR image to the same https folder and open the install page in the device's browser (Chrome). Because the app comes from outside the Play Store, the device has to allow installs from unknown sources. The page shows the SHA-256 so testers can verify the download.</p>
+        </details>
+
+        <h2 id="general">General</h2>
+
+        <details>
+          <summary>How do I change the language?</summary>
+          <p>Open the <strong>globe</strong> menu in the toolbar, pick a language and confirm "Restart now". The app relaunches in that language; your work is kept. Supported: English, 한국어, 日本語, 简体中文, 繁體中文 and Español.</p>
+        </details>
+
+        <details>
+          <summary>Theme and text size?</summary>
+          <p>Choose <strong>Light, Dark or System</strong> in the toolbar. Text size goes from 85 % to 150 % via the View menu (Bigger ⌘+, Smaller ⌘-, Default ⌘0) or Settings (⌘,) › Display.</p>
+        </details>
+
+        <details>
+          <summary>System requirements</summary>
+          <p>macOS 14 Sonoma or later, on Apple Silicon or Intel Macs. An App Store Connect API key is needed only for downloading and creating profiles and registering devices; everything else works offline.</p>
+        </details>
+
+        <details id="report">
+          <summary>How do I report a problem?</summary>
+          <p>Email <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> with the following and it can be looked at quickly:</p>
+          <ul>
+            <li>macOS version (Apple menu › About This Mac)</li>
+            <li>App version (ShouArchive menu › About ShouArchive)</li>
+            <li>What you did, step by step, and what happened</li>
+            <li>A screenshot or the exact error text, if possible</li>
+          </ul>
+          <p>You don't need to attach IPA, APK or profile files. If one is needed it will be requested separately — and before sending anything, make sure it contains no key files (<code>.p8</code>) or sensitive data.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="../support.html" lang="ko" hreflang="ko">한국어</a>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+</body>
+</html>

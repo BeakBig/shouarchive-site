@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지원 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 지원 페이지. 프로파일 폴더 허용, App Store Connect API 키, 산출물 검사, OTA 설치 문제 등 자주 묻는 질문과 문의 방법.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="지원 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 자주 묻는 질문과 문의 방법.">
+  <meta property="og:image" content="assets/icon.png">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="support.html">
+  <link rel="alternate" hreflang="en" href="en/support.html">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="index.html#features">기능</a>
+      <a href="support.html" aria-current="page">지원</a>
+      <a href="privacy.html">개인정보</a>
+      <a class="lang" href="en/support.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>지원</h1>
+      <p>ShouArchive 를 쓰다 막히는 곳이 있으면 알려 주세요. 아래 자주 묻는 질문에 먼저 답이 있을 수 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="contact-card">
+        <span><strong>문의</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span>보통 며칠 안에 답장합니다. 문제 신고 요령은 <a href="#report">맨 아래</a>에 있습니다.</span>
+      </div>
+
+      <div class="faq">
+        <h2 id="start">시작하기</h2>
+
+        <details open>
+          <summary>프로파일 탭에서 폴더를 「허용」 하라고 합니다. 왜 필요한가요?</summary>
+          <p>Mac App Store 판은 macOS 샌드박스 안에서 동작합니다. 샌드박스 앱은 사용자가 직접 고른 폴더만 읽을 수 있는데, Xcode 가 프로비저닝 프로파일을 두는 폴더는 앱 바깥에 있어서 한 번 허용해 주어야 합니다.</p>
+          <p>프로파일 탭의 폴더 버튼을 누르면 그 폴더가 열린 상태로 열기 패널이 뜹니다. 아무것도 바꾸지 말고 <strong>「허용」</strong>만 누르면 됩니다. 한 번 허용하면 앱을 다시 열어도 기억합니다 (macOS 의 보안 스코프 북마크 방식).</p>
+          <p>읽는 폴더:</p>
+          <ul>
+            <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 이상</li>
+            <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — 그 이전 Xcode</li>
+          </ul>
+          <p>Finder 에서 <code>~/Library</code> 는 기본으로 숨겨져 있습니다. 열기 패널에서 ⌘⇧G 를 누르고 위 경로를 붙여 넣으면 바로 갈 수 있습니다. 허용하지 않아도 <code>.mobileprovision</code> 파일을 창에 끌어다 놓거나 「파일에서 추가…」로 열어 볼 수는 있습니다.</p>
+        </details>
+
+        <details>
+          <summary>어떤 파일을 지원하나요?</summary>
+          <ul>
+            <li><strong>산출물 검사</strong>: <code>.ipa</code> (iOS 탭), <code>.apk</code> · <code>.aab</code> (Android 탭)</li>
+            <li><strong>OTA 배포</strong>: <code>.ipa</code> (iOS), <code>.apk</code> (Android). AAB 는 기기에 바로 설치할 수 없어 받지 않습니다.</li>
+            <li><strong>프로파일</strong>: <code>.mobileprovision</code></li>
+            <li><strong>API 키</strong>: App Store Connect 에서 내려받은 <code>.p8</code></li>
+          </ul>
+          <p>파일은 끌어다 놓거나 「파일 선택…」(⌘O)으로 엽니다.</p>
+        </details>
+
+        <details>
+          <summary>이 판에는 왜 IPA · APK 빌드나 내보내기가 없나요?</summary>
+          <p>Mac App Store 앱은 샌드박스가 필수이고, 샌드박스 안에서는 <code>xcodebuild</code> · <code>gradle</code> 같은 외부 프로그램을 실행할 수 없습니다. 그래서 이 판은 빌드 대신 <strong>검사 · 프로파일 · OTA</strong> 세 가지에 집중합니다. 산출물 검사도 외부 도구에 기대지 않고 앱 안의 파서가 IPA · APK · AAB 를 직접 읽습니다.</p>
+        </details>
+
+        <h2 id="profiles">프로파일 · App Store Connect API</h2>
+
+        <details>
+          <summary>App Store Connect API 키는 어떻게 만드나요?</summary>
+          <ol>
+            <li><a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>사용자 및 액세스</strong> › <strong>통합</strong> › <strong>App Store Connect API</strong> 로 갑니다.</li>
+            <li><strong>팀 키(Team key)</strong>를 만듭니다. 프로파일과 기기를 조회 · 생성하려면 보통 <strong>Admin</strong> 역할이 필요합니다.</li>
+            <li><strong>Issuer ID</strong>, <strong>Key ID</strong>, 내려받은 <code>.p8</code> 파일을 앱의 「프로파일 다운로드」 › 「API 키」에 등록합니다. <code>AuthKey_XXXXXXXX.p8</code> 파일을 고르면 Key ID 는 자동으로 채워집니다.</li>
+          </ol>
+          <p><code>.p8</code> 파일은 Apple 에서 한 번만 내려받을 수 있으니 안전한 곳에 보관하세요. Apple ID 나 2단계 인증은 쓰지 않습니다.</p>
+        </details>
+
+        <details>
+          <summary>API 키는 어디에 저장되고, 어디로 전송되나요?</summary>
+          <p><code>.p8</code> 파일은 고른 자리에 그대로 있고, 앱은 그 파일의 위치(보안 스코프 북마크)만 기억합니다. Apple 에 보내는 요청 토큰은 Mac 에서 서명하며, 키 자체는 Apple 의 App Store Connect API(<code>api.appstoreconnect.apple.com</code>) 말고는 어디로도 가지 않습니다. 앱에서 키를 삭제해도 <code>.p8</code> 파일은 지우지 않습니다.</p>
+        </details>
+
+        <details>
+          <summary>「곧 만료」와 D-N 배지는 어떤 기준인가요?</summary>
+          <p>만료까지 <strong>30일 이내</strong>면 「곧 만료」로 분류하고 남은 날짜를 <strong>D-N</strong>(주황) 배지로 보여 줍니다. 이미 지난 것은 「만료」(빨강)입니다. 「신규」는 최근에 만든 프로파일, 「중복」은 같은 팀 · 같은 앱 ID · 같은 종류의 프로파일이 2개 이상일 때입니다.</p>
+        </details>
+
+        <details>
+          <summary>「인증서」 카드가 비어 있어요.</summary>
+          <p>키체인에 있는 코드 서명 인증서 목록은 샌드박스 안에서 읽을 수 없어, Mac App Store 판에서는 이 카드가 비어 있습니다. 대신 프로파일 <strong>안에 담긴</strong> 인증서는 상세 화면과 비교 화면에서 그대로 볼 수 있습니다 (SHA-1 · SHA-256 복사 가능).</p>
+        </details>
+
+        <details>
+          <summary>기기 등록 한도는 어떻게 되나요?</summary>
+          <p>Apple 개발자 계정은 멤버십 1년마다 기기 종류(iPhone · iPad · Mac …)별로 <strong>100대</strong>까지 등록할 수 있습니다. 비활성으로 바꾼 기기도 멤버십을 갱신하기 전까지는 자리를 차지합니다. 앱의 「기기」 탭 위쪽에 종류별 사용량(예: iPhone 3 / 100)이 보입니다.</p>
+        </details>
+
+        <h2 id="inspect">산출물 검사</h2>
+
+        <details>
+          <summary>검사하면 파일이 바뀌거나 어딘가로 올라가나요?</summary>
+          <p>아니요. 파일은 <strong>읽기만</strong> 합니다. 원본을 고치지 않고, 옆에 결과 파일을 쓰지 않으며, 어떤 서버에도 보내지 않습니다. 검사 결과는 앱 창에만 보입니다.</p>
+        </details>
+
+        <details>
+          <summary>항목 이름이 무슨 뜻인지 모르겠어요.</summary>
+          <p>점선 밑줄이 있는 항목 이름(권한 · 기기 기능 · 매니페스트 설정 · 인증서 지문 · Entitlements 등)을 누르면 <strong>무엇인지 · 자세히 · 주의</strong> 설명이 팝오버로 나옵니다. 16 KB 카드는 제목 옆 ⓘ 를 누르세요.</p>
+        </details>
+
+        <details>
+          <summary>16 KB 페이지 크기 검사는 무엇을 보나요?</summary>
+          <p>Android 15 부터 16 KB 메모리 페이지를 쓰는 기기가 있고, Google Play 는 이를 지원하는 네이티브 라이브러리를 요구합니다. 앱은 64비트(<code>arm64-v8a</code> · <code>x86_64</code>) <code>.so</code> 파일의 ELF LOAD 정렬과, APK 안에 압축 없이 저장된 <code>.so</code> 의 16 KB 경계를 확인해 미지원 라이브러리를 목록으로 보여 줍니다.</p>
+        </details>
+
+        <h2 id="ota">OTA 배포</h2>
+
+        <details>
+          <summary>OTA 파일을 만들었는데 기기에서 설치되지 않아요.</summary>
+          <p>순서대로 확인해 보세요.</p>
+          <ul>
+            <li>IPA · <code>manifest.plist</code> · <code>install.html</code> 이 모두 <strong>https</strong> 주소에 있어야 합니다. iOS 는 http 로 설치하지 않습니다.</li>
+            <li>설치 링크나 QR 은 기기의 <strong>Safari</strong> 에서 열어야 합니다. 메신저 미리보기나 다른 앱의 웹 화면에서는 시작되지 않을 수 있습니다.</li>
+            <li><strong>Ad Hoc</strong>: 기기의 UDID 가 프로파일에 등록되어 있어야 합니다. 없으면 프로파일에 기기를 넣고 다시 만든 IPA 가 필요합니다.</li>
+            <li><strong>Enterprise</strong>: 설치 후 설정 › 일반 › VPN 및 기기 관리에서 개발자 앱을 <strong>신뢰</strong>해야 열립니다.</li>
+            <li>App Store 배포용 프로파일로 서명한 IPA 는 OTA 로 설치되지 않습니다. 앱이 파일을 고를 때 알려 줍니다.</li>
+            <li>manifest 의 IPA 주소가 실제 파일 위치와 같은지, 파일 이름에 공백이나 특수 문자가 없는지 확인하세요.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>만든 파일은 어디에 저장되나요?</summary>
+          <p>「설치 파일 만들기」(⌘↩)를 누르면 저장할 폴더를 고르는 창이 뜹니다. 고른 폴더에 <code>&lt;이름&gt;.manifest.plist</code> · <code>&lt;이름&gt;.install.html</code> · <code>&lt;이름&gt;.qr.png</code> (Android 는 <code>.install.html</code> · <code>.qr.png</code>)가 만들어지고, 같은 이름이 있으면 덮어씁니다. 앱은 파일을 서버에 올리지 않으므로 IPA · APK 와 함께 직접 올려야 합니다.</p>
+        </details>
+
+        <details>
+          <summary>Android 는 어떻게 설치하나요?</summary>
+          <p>APK · <code>install.html</code> · QR 을 같은 https 폴더에 올리고, 기기의 브라우저(Chrome)에서 설치 페이지를 엽니다. Play 스토어 밖에서 받은 앱이므로 기기에서 「출처를 알 수 없는 앱 설치」를 허용해야 합니다. 설치 페이지에는 SHA-256 이 적혀 있어 받은 파일이 맞는지 확인할 수 있습니다.</p>
+        </details>
+
+        <h2 id="general">일반</h2>
+
+        <details>
+          <summary>표시 언어를 바꾸려면?</summary>
+          <p>툴바의 <strong>지구본</strong> 메뉴에서 언어를 고르고 「지금 다시 시작」을 누르면 그 언어로 다시 열립니다. 언어는 앱을 다시 시작해야 적용되며, 하던 작업은 그대로 남습니다. 한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español 을 지원합니다.</p>
+        </details>
+
+        <details>
+          <summary>테마와 글자 크기는?</summary>
+          <p>툴바에서 <strong>라이트 · 다크 · 시스템</strong> 테마를 고릅니다. 글자 크기는 보기 메뉴의 「텍스트 크게 ⌘+ · 작게 ⌘- · 기본 크기 ⌘0」 또는 설정(⌘,) › 화면에서 85 % ~ 150 % 사이로 바꿉니다.</p>
+        </details>
+
+        <details>
+          <summary>시스템 요구 사항</summary>
+          <p>macOS 14 Sonoma 이상. Apple Silicon 과 Intel Mac 모두 지원합니다. 프로파일 다운로드 · 생성 · 기기 등록에는 App Store Connect API 키가 필요하고, 그 밖의 기능은 인터넷 없이 동작합니다.</p>
+        </details>
+
+        <details id="report">
+          <summary>문제를 신고하려면?</summary>
+          <p><a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EB%AC%B8%EC%9D%98">beakbigkb@gmail.com</a> 으로 아래 내용을 함께 보내 주시면 빨리 살펴볼 수 있습니다.</p>
+          <ul>
+            <li>macOS 버전 (Apple 메뉴 › 이 Mac에 관하여)</li>
+            <li>앱 버전 (ShouArchive 메뉴 › ShouArchive 정보)</li>
+            <li>어떤 순서로 무엇을 했을 때 무슨 일이 생겼는지</li>
+            <li>가능하면 화면 캡처나 오류 문구</li>
+          </ul>
+          <p>IPA · APK · 프로파일 파일은 보내지 않아도 됩니다. 꼭 필요하면 따로 요청드리며, 보내실 때는 키 파일(<code>.p8</code>)이나 민감한 정보가 들어 있지 않은지 확인해 주세요.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="바닥 메뉴">
+      <a href="index.html">홈</a>
+      <a href="privacy.html">개인정보 처리방침</a>
+      <a href="en/support.html" lang="en" hreflang="en">English</a>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>개인정보 처리방침 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 개인정보 처리방침. 앱은 어떤 데이터도 수집하지 않으며, 파일은 Mac 안에서만 읽고, 네트워크는 사용자가 등록한 App Store Connect API 키로 Apple 과 통신할 때만 씁니다.">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="개인정보 처리방침 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 는 어떤 데이터도 수집하지 않습니다.">
+  <meta property="og:image" content="assets/icon.png">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="privacy.html">
+  <link rel="alternate" hreflang="en" href="en/privacy.html">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="index.html#features">기능</a>
+      <a href="support.html">지원</a>
+      <a href="privacy.html" aria-current="page">개인정보</a>
+      <a class="lang" href="en/privacy.html" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>개인정보 처리방침</h1>
+      <p>ShouArchive (macOS) · 시행일 2026년 9월 22일 · 개발자 BeakBig</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div class="note">
+        <p><strong>요약.</strong> ShouArchive 는 어떤 개인정보도 수집하지 않습니다. 분석 도구 · 추적 · 광고 · 계정이 없고, 검사하는 파일은 Mac 안에서만 읽습니다. 네트워크는 사용자가 직접 등록한 App Store Connect API 키로 Apple 과 통신할 때만 씁니다.</p>
+      </div>
+
+      <h2>1. 수집하는 정보</h2>
+      <p>없습니다. 앱은 다음 중 어느 것도 하지 않습니다.</p>
+      <ul>
+        <li>사용 통계 · 오류 보고 등 <strong>분석(analytics)</strong> 데이터를 모으지 않습니다.</li>
+        <li>사용자나 기기를 <strong>추적</strong>하지 않고, <strong>광고</strong>를 보여 주지 않습니다.</li>
+        <li><strong>계정</strong>이나 로그인이 없습니다.</li>
+        <li>네트워크와 통신하는 <strong>제3자 SDK</strong> 를 포함하지 않습니다.</li>
+      </ul>
+
+      <h2>2. 파일 처리</h2>
+      <p>산출물 검사와 OTA 배포, 프로파일 관리에서 다루는 파일(IPA · APK · AAB · <code>.mobileprovision</code>)은 사용자의 Mac 에서만 읽습니다. 파일의 내용이나 그로부터 얻은 정보(번들 ID · 서명 인증서 · 권한 목록 등)는 앱 창에 표시될 뿐, 어디로도 전송되지 않습니다. 산출물 검사는 원본 파일을 바꾸지 않습니다.</p>
+      <p>OTA 배포 파일(<code>manifest.plist</code> · <code>install.html</code> · QR 이미지)은 사용자가 고른 폴더에만 씁니다. 앱은 이 파일을 어떤 서버에도 올리지 않습니다.</p>
+
+      <h2>3. 네트워크 사용</h2>
+      <p>앱이 네트워크를 쓰는 경우는 하나뿐입니다. 사용자가 자신의 <strong>App Store Connect API 키</strong>(Issuer ID · Key ID · <code>.p8</code>)를 등록하고 관련 기능을 실행하면, 앱은 Apple 의 App Store Connect API(<code>api.appstoreconnect.apple.com</code>)에 접속합니다.</p>
+      <table>
+        <thead><tr><th>기능</th><th>Apple 에 보내는 것</th></tr></thead>
+        <tbody>
+          <tr><td>프로파일 목록 · 다운로드</td><td>앱이 서명한 인증 토큰</td></tr>
+          <tr><td>프로파일 생성 · 다시 만들기 · 갱신</td><td>인증 토큰과 사용자가 고른 프로파일 종류 · 번들 ID · 인증서 · 기기</td></tr>
+          <tr><td>기기 목록 · 기기 등록</td><td>인증 토큰과 사용자가 입력한 기기 이름 · UDID</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li><code>.p8</code> 개인 키 파일은 사용자의 Mac 에 그대로 있습니다. 앱은 파일 위치를 가리키는 참조(macOS 보안 스코프 북마크)만 저장하고, 요청에 필요한 토큰을 <strong>로컬에서</strong> 서명합니다. 키 자체를 Apple 을 포함한 어느 곳에도 보내지 않습니다.</li>
+        <li>Apple 이 이 요청을 어떻게 처리하는지는 Apple 개발자 프로그램 약관과 Apple 의 개인정보 처리방침을 따릅니다.</li>
+        <li>API 키를 등록하지 않으면 앱은 네트워크에 접속하지 않습니다.</li>
+      </ul>
+
+      <h2>4. Mac 에 저장되는 것</h2>
+      <ul>
+        <li>앱 설정(테마 · 언어 · 텍스트 크기 · OTA 주소 설정 · API 키 정보 등)은 macOS 가 앱마다 제공하는 <strong>샌드박스 컨테이너</strong> 안에 저장됩니다.</li>
+        <li>프로파일 폴더와 <code>.p8</code> 파일 접근은 사용자가 열기 패널에서 허용한 <strong>보안 스코프 북마크</strong>로 기억합니다. 이 북마크는 언제든 앱에서 지울 수 있습니다.</li>
+        <li>프로파일 활동 기록(다운로드 · 생성 · 기기 등록 등)은 로컬에만 남고, 「기록 지우기」로 삭제할 수 있습니다.</li>
+        <li>앱을 삭제하면 컨테이너와 함께 이 데이터도 사라집니다. <code>.p8</code> 파일 등 사용자가 직접 둔 파일은 앱이 지우지 않습니다.</li>
+      </ul>
+
+      <h2>5. 제3자 라이브러리</h2>
+      <p>앱은 로딩 애니메이션 표시를 위해 오픈 소스 라이브러리 <strong>Lottie</strong> 를 포함합니다. 화면 표시에만 쓰이며 네트워크에 접속하거나 데이터를 수집하지 않습니다. 그 밖의 제3자 SDK 는 없습니다.</p>
+
+      <h2>6. 공유와 판매</h2>
+      <p>수집하는 정보가 없으므로 누구와도 공유하거나 판매하지 않습니다. 3항에 적은 Apple 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다.</p>
+
+      <h2>7. 아동</h2>
+      <p>ShouArchive 는 소프트웨어 개발자를 위한 도구이며 아동을 대상으로 하지 않습니다. 누구에게서도 개인정보를 수집하지 않습니다.</p>
+
+      <h2>8. 변경</h2>
+      <p>이 방침이 바뀌면 이 페이지에 새 시행일과 함께 게시합니다. 앱의 데이터 처리 방식이 실제로 달라지는 경우에는 앱 업데이트 설명에도 적습니다.</p>
+
+      <h2>9. 문의</h2>
+      <p>이 방침이나 앱의 데이터 처리에 관해 궁금한 점은 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 으로 보내 주세요.</p>
+
+      <p class="meta">시행일: 2026년 9월 22일 · 개발자 · 배포자: BeakBig</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="바닥 메뉴">
+      <a href="index.html">홈</a>
+      <a href="support.html">지원</a>
+      <a href="en/privacy.html" lang="en" hreflang="en">English</a>
+    </nav>
+    <div>© 2026 BeakBig</div>
+  </div>
+</footer>
+
+</body>
+</html>

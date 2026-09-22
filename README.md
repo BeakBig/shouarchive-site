@@ -36,11 +36,6 @@ git add -A && git commit -m "..." && git push
 
 ## 남은 일
 
-- 앱이 App Store 에 올라가면 `index.html` · `en/index.html` 의 `APPSTORE_URL_PLACEHOLDER` 를 실제 링크로 바꿉니다.
-
-  ```bash
-  sed -i '' 's#APPSTORE_URL_PLACEHOLDER#https://apps.apple.com/app/id<Apple ID>#g' index.html en/index.html
-  ```
-
+- App Store 링크는 `https://apps.apple.com/app/id6814686766` 로 넣어 두었습니다 (여섯 언어 랜딩 페이지). 앱이 승인돼 게시되기 전에는 이 링크가 「앱을 사용할 수 없음」으로 보입니다.
 - Cloudflare Worker 배포 (`worker/README.md`) — 이것이 끝나야 `https://shouarchive.beakbig.com/` 가 열립니다.
 - 저장소 이름을 바꾸면 GitHub Pages 원본 주소가 바뀌므로 `worker/wrangler.toml` 의 `UPSTREAM` 도 함께 고쳐야 합니다.

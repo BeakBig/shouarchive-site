@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — ShouArchive</title>
-  <meta name="description" content="ShouArchive support: allowing the profile folder, App Store Connect API keys, artifact inspection, OTA install troubleshooting and how to get in touch.">
+  <meta name="description" content="ShouArchive support: allowing the profile folder, App Store Connect API keys, artifact inspection and how to get in touch.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Support — ShouArchive">
@@ -70,7 +70,6 @@
           <summary>Which file types are supported?</summary>
           <ul>
             <li><strong>Artifact inspection</strong>: <code>.ipa</code> (iOS tab), <code>.apk</code> and <code>.aab</code> (Android tab)</li>
-            <li><strong>OTA distribution</strong>: <code>.ipa</code> (iOS), <code>.apk</code> (Android). AABs can't be installed directly on a device, so they are not accepted.</li>
             <li><strong>Profiles</strong>: <code>.mobileprovision</code></li>
             <li><strong>API key</strong>: the <code>.p8</code> file downloaded from App Store Connect</li>
           </ul>
@@ -79,7 +78,7 @@
 
         <details>
           <summary>Why is there no IPA/APK build or export in this edition?</summary>
-          <p>Mac App Store apps must be sandboxed, and the sandbox cannot launch external programs such as <code>xcodebuild</code> or <code>gradle</code>. This edition therefore focuses on three things: <strong>inspection, profiles and OTA</strong>. Artifact inspection doesn't rely on external tools either — the app's own parser reads IPA, APK and AAB files directly.</p>
+          <p>Mac App Store apps must be sandboxed, and the sandbox cannot launch external programs such as <code>xcodebuild</code> or <code>gradle</code>. This edition therefore focuses on two things: <strong>inspection and profiles</strong>. Artifact inspection doesn't rely on external tools either — the app's own parser reads IPA, APK and AAB files directly.</p>
         </details>
 
         <h2 id="profiles">Profiles and the App Store Connect API</h2>
@@ -129,31 +128,6 @@
         <details>
           <summary>What does the 16 KB page-size check look at?</summary>
           <p>Starting with Android 15 some devices use 16 KB memory pages, and Google Play requires native libraries that support them. The app checks the ELF LOAD alignment of 64-bit (<code>arm64-v8a</code>, <code>x86_64</code>) <code>.so</code> files and, for uncompressed <code>.so</code> files stored in an APK, their 16 KB boundary inside the archive, and lists the libraries that don't comply.</p>
-        </details>
-
-        <h2 id="ota">OTA distribution</h2>
-
-        <details>
-          <summary>I generated the OTA files but the app won't install on the device.</summary>
-          <p>Work through these in order:</p>
-          <ul>
-            <li>The IPA, <code>manifest.plist</code> and <code>install.html</code> must all be served over <strong>https</strong>. iOS refuses to install over http.</li>
-            <li>Open the install link or QR code in <strong>Safari</strong> on the device. Messenger previews and in-app browsers often don't trigger the install.</li>
-            <li><strong>Ad Hoc</strong>: the device's UDID must be in the profile. If it isn't, add the device to the profile and rebuild the IPA.</li>
-            <li><strong>Enterprise</strong>: after installing, go to Settings › General › VPN &amp; Device Management and <strong>trust</strong> the developer.</li>
-            <li>An IPA signed with an App Store distribution profile can't be installed over the air. The app warns you when you pick such a file.</li>
-            <li>Check that the IPA URL in the manifest matches the real file location, and that the file name has no spaces or special characters.</li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Where are the generated files saved?</summary>
-          <p>"Create Install File" (⌘↩) asks you for an output folder. It creates a <code>&lt;name&gt;_OTA</code> folder there and puts a copy of the IPA (or APK) in it together with <code>&lt;name&gt;.manifest.plist</code>, <code>&lt;name&gt;.install.html</code> and <code>&lt;name&gt;.qr.png</code> (Android: <code>.install.html</code> and <code>.qr.png</code>), overwriting files of the same name. The app never uploads anything, so upload these together with the IPA or APK yourself.</p>
-        </details>
-
-        <details>
-          <summary>How does the Android install work?</summary>
-          <p>Upload the APK, <code>install.html</code> and QR image to the same https folder and open the install page in the device's browser (Chrome). Because the app comes from outside the Play Store, the device has to allow installs from unknown sources. The page shows the SHA-256 so testers can verify the download.</p>
         </details>
 
         <h2 id="general">General</h2>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>サポート — ShouArchive</title>
-  <meta name="description" content="ShouArchive のサポート: プロファイルフォルダの許可、App Store Connect API キー、ビルド成果物検査、OTA インストールのトラブルシューティング、お問い合わせ方法。">
+  <meta name="description" content="ShouArchive のサポート: プロファイルフォルダの許可、App Store Connect API キー、ビルド成果物検査、お問い合わせ方法。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="サポート — ShouArchive">
@@ -70,7 +70,6 @@
           <summary>対応しているファイル形式は？</summary>
           <ul>
             <li><strong>ビルド成果物検査</strong>: <code>.ipa</code>（iOS タブ）、<code>.apk</code> と <code>.aab</code>（Android タブ）</li>
-            <li><strong>OTA 配布</strong>: <code>.ipa</code>（iOS）、<code>.apk</code>（Android）。AAB は端末に直接インストールできないため受け付けません。</li>
             <li><strong>プロファイル</strong>: <code>.mobileprovision</code></li>
             <li><strong>API キー</strong>: App Store Connect からダウンロードした <code>.p8</code> ファイル</li>
           </ul>
@@ -79,7 +78,7 @@
 
         <details>
           <summary>この版に IPA/APK のビルドや書き出しがないのはなぜですか？</summary>
-          <p>Mac App Store のアプリはサンドボックスが必須で、サンドボックス内では <code>xcodebuild</code> や <code>gradle</code> のような外部プログラムを起動できません。そのためこの版は、<strong>検査・プロファイル・OTA</strong> の 3 つに絞っています。ビルド成果物検査も外部ツールに依存せず、アプリ内蔵のパーサーが IPA・APK・AAB を直接読み取ります。</p>
+          <p>Mac App Store のアプリはサンドボックスが必須で、サンドボックス内では <code>xcodebuild</code> や <code>gradle</code> のような外部プログラムを起動できません。そのためこの版は、<strong>検査・プロファイル</strong> の 2 つに絞っています。ビルド成果物検査も外部ツールに依存せず、アプリ内蔵のパーサーが IPA・APK・AAB を直接読み取ります。</p>
         </details>
 
         <h2 id="profiles">プロファイルと App Store Connect API</h2>
@@ -129,31 +128,6 @@
         <details>
           <summary>16 KB ページサイズのチェックでは何を確認しますか？</summary>
           <p>Android 15 以降、一部の端末は 16 KB のメモリページを使用しており、Google Play はこれに対応したネイティブライブラリを求めています。アプリは 64 ビット（<code>arm64-v8a</code>、<code>x86_64</code>）の <code>.so</code> ファイルの ELF LOAD アライメントと、APK 内に無圧縮で格納された <code>.so</code> ファイルについてはアーカイブ内での 16 KB 境界を確認し、対応していないライブラリを一覧表示します。</p>
-        </details>
-
-        <h2 id="ota">OTA 配布</h2>
-
-        <details>
-          <summary>OTA ファイルを作成しましたが、端末にインストールできません。</summary>
-          <p>次の項目を順番に確認してください。</p>
-          <ul>
-            <li>IPA、<code>manifest.plist</code>、<code>install.html</code> はすべて <strong>https</strong> で配信する必要があります。iOS は http 経由のインストールを拒否します。</li>
-            <li>インストールリンクや QR コードは端末の <strong>Safari</strong> で開いてください。メッセンジャーのプレビューやアプリ内ブラウザではインストールが始まらないことがよくあります。</li>
-            <li><strong>Ad Hoc</strong>: 端末の UDID がプロファイルに含まれている必要があります。含まれていない場合は、プロファイルに端末を追加して IPA をビルドし直してください。</li>
-            <li><strong>Enterprise</strong>: インストール後、設定 › 一般 › VPN とデバイス管理で開発元を<strong>信頼</strong>してください。</li>
-            <li>App Store 配布用プロファイルで署名した IPA は OTA でインストールできません。そのようなファイルを選ぶとアプリが警告します。</li>
-            <li>manifest 内の IPA URL が実際のファイルの場所と一致しているか、ファイル名にスペースや特殊文字が含まれていないか確認してください。</li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>生成されたファイルはどこに保存されますか？</summary>
-          <p>「インストールファイルを作成」（⌘↩）を押すと、保存フォルダを選ぶダイアログが表示されます。選んだフォルダの中に <code>&lt;name&gt;_OTA</code> フォルダを作成し、IPA（または APK）のコピーと <code>&lt;name&gt;.manifest.plist</code>、<code>&lt;name&gt;.install.html</code>、<code>&lt;name&gt;.qr.png</code>（Android は <code>.install.html</code> と <code>.qr.png</code>）をまとめて保存します。同名のファイルがあれば上書きします。アプリは何もアップロードしないので、これらを IPA または APK と一緒にご自身でアップロードしてください。</p>
-        </details>
-
-        <details>
-          <summary>Android のインストールはどのように行いますか？</summary>
-          <p>APK、<code>install.html</code>、QR 画像を同じ https フォルダにアップロードし、端末のブラウザ（Chrome）でインストールページを開きます。Play ストア外から入手したアプリなので、端末側で提供元不明のアプリのインストールを許可する必要があります。ページには SHA-256 が表示されるので、テスターはダウンロードしたファイルを検証できます。</p>
         </details>
 
         <h2 id="general">一般</h2>

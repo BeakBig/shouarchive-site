@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — Perfiles de aprovisionamiento, inspección de IPA/APK y archivos de instalación OTA para Mac</title>
-  <meta name="description" content="Gestiona perfiles de aprovisionamiento, inspecciona archivos IPA, APK y AAB y genera páginas de instalación OTA, todo en una app para Mac que lee tus archivos en local. macOS 15 o posterior, en el Mac App Store.">
+  <title>ShouArchive — Perfiles de aprovisionamiento e inspección de IPA/APK para Mac</title>
+  <meta name="description" content="Gestiona perfiles de aprovisionamiento e inspecciona archivos IPA, APK y AAB, todo en una app para Mac que lee tus archivos en local. macOS 15 o posterior, en el Mac App Store.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — Perfiles de aprovisionamiento, inspección de IPA/APK y archivos de instalación OTA">
-  <meta property="og:description" content="Gestiona perfiles de aprovisionamiento, inspecciona archivos IPA, APK y AAB y genera páginas de instalación OTA, todo en una app para Mac. macOS 15 o posterior.">
+  <meta property="og:title" content="ShouArchive — Perfiles de aprovisionamiento e inspección de IPA/APK">
+  <meta property="og:description" content="Gestiona perfiles de aprovisionamiento e inspecciona archivos IPA, APK y AAB, todo en una app para Mac. macOS 15 o posterior.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="es_ES">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -43,8 +43,8 @@
       <img class="hero-icon" src="../assets/icon.png" alt="Icono de la app ShouArchive" width="512" height="512">
       <div>
         <h1>ShouArchive</h1>
-        <p class="tagline">Perfiles, inspección de artefactos y archivos de instalación OTA: las últimas comprobaciones antes de publicar, en una sola app.</p>
-        <p class="sub">Abre un IPA, APK o AAB y mira qué mostrará la tienda, cómo está firmado y qué permisos pide. Mantén en orden tus perfiles de aprovisionamiento con sus fechas de caducidad. Genera páginas de instalación OTA para las compilaciones de prueba. Tus archivos nunca salen de tu Mac.</p>
+        <p class="tagline">Perfiles e inspección de artefactos: las últimas comprobaciones antes de publicar, en una sola app.</p>
+        <p class="sub">Abre un IPA, APK o AAB y mira qué mostrará la tienda, cómo está firmado y qué permisos pide. Mantén en orden tus perfiles de aprovisionamiento con sus fechas de caducidad. Tus archivos nunca salen de tu Mac.</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
@@ -140,42 +140,6 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow orange">Distribución OTA</p>
-        <h2>Instala compilaciones de prueba desde un solo enlace</h2>
-        <p class="lead">Convierte un IPA o APK existente en una página de instalación y un código QR. Sube los archivos a tu propio servidor https y listo.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>iOS — Ad Hoc · Enterprise</h3>
-          <ul>
-            <li><code>manifest.plist</code>, <code>install.html</code> y un <strong>código QR</strong> para el enlace de instalación <code>itms-services://</code></li>
-            <li>El ID de paquete, la versión, el build y el nombre de la app se rellenan a partir del IPA</li>
-            <li>Las notas de la versión que escribas van directas a la página de instalación</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Android — APK</h3>
-          <ul>
-            <li><code>install.html</code> con icono, versión, SHA-256, guía de instalación y registro de cambios</li>
-            <li>Un <strong>código QR</strong> que apunta a la página de instalación</li>
-            <li>El paquete, la versión, el nombre de la app y el icono se rellenan a partir del APK</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Tú lo alojas</h3>
-          <ul>
-            <li>Elige una carpeta de salida y los archivos se escriben ahí</li>
-            <li>La app no sube nada: coloca los archivos en el servidor https de tu equipo</li>
-            <li>iOS exige https y el enlace debe abrirse en Safari en el dispositivo</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section alt" id="screens">
     <div class="wrap">
       <div class="section-head">
@@ -205,16 +169,8 @@
           <figcaption><span class="num">05</span>Inspección de IPA: permisos y privacidad</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/es/06.png" alt="Generador de archivos de instalación OTA para iOS" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>Archivos de instalación OTA para iOS</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/es/07.png" alt="Inspección de APK y AAB: esquema de firma, huellas del certificado y hashes de clave" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">07</span>Inspección de APK · AAB: firma, huellas, hashes de clave</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/es/08.png" alt="Generador de páginas de instalación OTA para Android" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">08</span>Página de instalación OTA para Android</figcaption>
+          <img src="../assets/screenshots/es/06.png" alt="Inspección de APK y AAB: esquema de firma, huellas del certificado y hashes de clave" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>Inspección de APK · AAB: firma, huellas, hashes de clave</figcaption>
         </figure>
       </div>
     </div>
@@ -238,7 +194,7 @@
   <section class="cta">
     <div class="wrap">
       <h2>Consigue ShouArchive</h2>
-      <p>Perfiles, inspección de artefactos y OTA: las últimas comprobaciones antes de publicar.</p>
+      <p>Perfiles e inspección de artefactos: las últimas comprobaciones antes de publicar.</p>
       <a class="btn" href="https://apps.apple.com/app/id6814686766">Descargar en el Mac App Store</a>
     </div>
   </section>

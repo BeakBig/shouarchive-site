@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>支援 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 支援：允許描述檔資料夾、App Store Connect API 金鑰、產物檢查、OTA 安裝疑難排解，以及聯絡方式。">
+  <meta name="description" content="ShouArchive 支援：允許描述檔資料夾、App Store Connect API 金鑰、產物檢查，以及聯絡方式。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="支援 — ShouArchive">
@@ -70,7 +70,6 @@
           <summary>支援哪些檔案類型？</summary>
           <ul>
             <li><strong>產物檢查</strong>：<code>.ipa</code>（iOS 分頁）、<code>.apk</code> 與 <code>.aab</code>（Android 分頁）</li>
-            <li><strong>OTA 發布</strong>：<code>.ipa</code>（iOS）、<code>.apk</code>（Android）。AAB 無法直接安裝到裝置上，因此不接受。</li>
             <li><strong>描述檔</strong>：<code>.mobileprovision</code></li>
             <li><strong>API 金鑰</strong>：從 App Store Connect 下載的 <code>.p8</code> 檔案</li>
           </ul>
@@ -79,7 +78,7 @@
 
         <details>
           <summary>為什麼這個版本沒有 IPA/APK 的建置或匯出功能？</summary>
-          <p>Mac App Store 的 App 必須沙箱化，而沙箱無法啟動 <code>xcodebuild</code> 或 <code>gradle</code> 這類外部程式。因此這個版本專注於三件事：<strong>檢查、描述檔與 OTA</strong>。產物檢查同樣不依賴外部工具 — App 內建的解析器會直接讀取 IPA、APK 與 AAB 檔案。</p>
+          <p>Mac App Store 的 App 必須沙箱化，而沙箱無法啟動 <code>xcodebuild</code> 或 <code>gradle</code> 這類外部程式。因此這個版本專注於兩件事：<strong>檢查與描述檔</strong>。產物檢查同樣不依賴外部工具 — App 內建的解析器會直接讀取 IPA、APK 與 AAB 檔案。</p>
         </details>
 
         <h2 id="profiles">描述檔與 App Store Connect API</h2>
@@ -129,31 +128,6 @@
         <details>
           <summary>16 KB 頁面大小檢查會看什麼？</summary>
           <p>從 Android 15 開始，部分裝置採用 16 KB 記憶體分頁，Google Play 也要求原生函式庫必須支援。App 會檢查 64 位元（<code>arm64-v8a</code>、<code>x86_64</code>）<code>.so</code> 檔案的 ELF LOAD 對齊；對於 APK 中以未壓縮方式存放的 <code>.so</code> 檔案，還會檢查其在封存檔內的 16 KB 邊界，並列出不符合的函式庫。</p>
-        </details>
-
-        <h2 id="ota">OTA 發布</h2>
-
-        <details>
-          <summary>我產生了 OTA 檔案，但 App 無法安裝到裝置上。</summary>
-          <p>請依序檢查以下項目：</p>
-          <ul>
-            <li>IPA、<code>manifest.plist</code> 與 <code>install.html</code> 都必須透過 <strong>https</strong> 提供。iOS 會拒絕透過 http 安裝。</li>
-            <li>請在裝置上的 <strong>Safari</strong> 開啟安裝連結或 QR Code。通訊軟體的預覽與 App 內建瀏覽器往往無法觸發安裝。</li>
-            <li><strong>Ad Hoc</strong>：裝置的 UDID 必須包含在描述檔中。若沒有，請將裝置加入描述檔後重新建置 IPA。</li>
-            <li><strong>Enterprise</strong>：安裝後，前往「設定」›「一般」›「VPN 與裝置管理」並<strong>信任</strong>該開發者。</li>
-            <li>以 App Store 發佈描述檔簽署的 IPA 無法透過 OTA 安裝。選擇這類檔案時，App 會提出警告。</li>
-            <li>請確認 manifest 中的 IPA URL 與檔案的實際位置一致，且檔案名稱不含空格或特殊字元。</li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>產生的檔案存放在哪裡？</summary>
-          <p>「建立安裝檔案」（⌘↩）會請您選擇輸出資料夾。它會在該處建立 <code>&lt;name&gt;_OTA</code> 資料夾，放入 IPA（或 APK）的副本，以及 <code>&lt;name&gt;.manifest.plist</code>、<code>&lt;name&gt;.install.html</code> 與 <code>&lt;name&gt;.qr.png</code>（Android：<code>.install.html</code> 與 <code>.qr.png</code>），同名檔案會被覆寫。App 絕不會上傳任何東西，請自行將這些檔案連同 IPA 或 APK 一起上傳。</p>
-        </details>
-
-        <details>
-          <summary>Android 的安裝流程是怎樣的？</summary>
-          <p>將 APK、<code>install.html</code> 與 QR 圖片上傳到同一個 https 資料夾，然後在裝置的瀏覽器（Chrome）開啟安裝頁面。由於 App 並非來自 Play 商店，裝置必須允許安裝不明來源的應用程式。頁面上會顯示 SHA-256，方便測試人員驗證下載的檔案。</p>
         </details>
 
         <h2 id="general">一般</h2>

@@ -60,8 +60,7 @@
       </ul>
 
       <h2>2. 您開啟的檔案</h2>
-      <p>產物檢查、OTA 發布與描述檔管理所處理的檔案（IPA、APK、AAB、<code>.mobileprovision</code>）只在您的 Mac 上讀取。其內容及由此得出的任何資訊（Bundle ID、簽署憑證、權限清單等）只會顯示在 App 視窗中，絕不會傳送到任何地方。檢查絕不會修改原始檔案。</p>
-      <p>OTA 檔案（<code>manifest.plist</code>、<code>install.html</code>、QR 圖片）只會寫入您選擇的資料夾。App 不會將它們上傳到任何伺服器。</p>
+      <p>產物檢查與描述檔管理所處理的檔案（IPA、APK、AAB、<code>.mobileprovision</code>）只在您的 Mac 上讀取。其內容及由此得出的任何資訊（Bundle ID、簽署憑證、權限清單等）只會顯示在 App 視窗中，絕不會傳送到任何地方。檢查絕不會修改原始檔案。</p>
 
       <h2>3. 網路使用</h2>
       <p>本 App 只在一種情況下使用網路：當您登錄自己的 <strong>App Store Connect API 金鑰</strong>（Issuer ID、Key ID 與 <code>.p8</code> 檔案）並使用需要它的功能時，App 會連線到 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）。</p>
@@ -81,7 +80,7 @@
 
       <h2>4. 儲存在您 Mac 上的資料</h2>
       <ul>
-        <li>App 設定（主題、語言、文字大小、OTA URL 設定、API 金鑰資訊等）儲存在 macOS 提供給 App 的<strong>沙箱容器</strong>中。</li>
+        <li>App 設定（主題、語言、文字大小、API 金鑰資訊等）儲存在 macOS 提供給 App 的<strong>沙箱容器</strong>中。</li>
         <li>描述檔資料夾與 <code>.p8</code> 檔案的存取權，會以您在開啟面板中授予的<strong>安全範圍書籤</strong>記住。您隨時可以在 App 中移除。</li>
         <li>描述檔的活動記錄（下載、建立、裝置註冊等）保存在本機，可用「清除記錄」清除。</li>
         <li>刪除 App 會一併移除其容器與這些資料。您自行放置的檔案（例如 <code>.p8</code> 檔案）絕不會被 App 刪除。</li>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — Mac 上的描述文件管理、IPA/APK 检查与 OTA 安装文件</title>
-  <meta name="description" content="管理描述文件、检查 IPA、APK 和 AAB 文件、生成 OTA 安装页面——一款在本地读取文件的 Mac 应用全部搞定。macOS 15 或更高版本，Mac App Store 上架。">
+  <title>ShouArchive — Mac 上的描述文件管理与 IPA/APK 检查</title>
+  <meta name="description" content="管理描述文件、检查 IPA、APK 和 AAB 文件——一款在本地读取文件的 Mac 应用全部搞定。macOS 15 或更高版本，Mac App Store 上架。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — 描述文件管理、IPA/APK 检查与 OTA 安装文件">
-  <meta property="og:description" content="管理描述文件、检查 IPA、APK 和 AAB 文件、生成 OTA 安装页面——一款 Mac 应用全部搞定。macOS 15 或更高版本。">
+  <meta property="og:title" content="ShouArchive — 描述文件管理与 IPA/APK 检查">
+  <meta property="og:description" content="管理描述文件、检查 IPA、APK 和 AAB 文件——一款 Mac 应用全部搞定。macOS 15 或更高版本。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="zh_CN">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -43,8 +43,8 @@
       <img class="hero-icon" src="../assets/icon.png" alt="ShouArchive 应用图标" width="512" height="512">
       <div>
         <h1>ShouArchive</h1>
-        <p class="tagline">描述文件、产物检查与 OTA 安装文件——发布前的最后一道检查，一款应用全部搞定。</p>
-        <p class="sub">打开 IPA、APK 或 AAB，即可看到商店将展示的信息、签名方式以及申请的权限。按到期日期把描述文件管理得井井有条。为测试版本生成 OTA 安装页面。你的文件从不离开 Mac。</p>
+        <p class="tagline">描述文件与产物检查——发布前的最后一道检查，一款应用全部搞定。</p>
+        <p class="sub">打开 IPA、APK 或 AAB，即可看到商店将展示的信息、签名方式以及申请的权限。按到期日期把描述文件管理得井井有条。你的文件从不离开 Mac。</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
@@ -140,42 +140,6 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow orange">OTA 分发</p>
-        <h2>一个链接，装好测试版本</h2>
-        <p class="lead">把现有的 IPA 或 APK 变成安装页面和二维码。将文件上传到你自己的 https 服务器，就完成了。</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>iOS — Ad Hoc · Enterprise</h3>
-          <ul>
-            <li><code>manifest.plist</code>、<code>install.html</code>，以及 <code>itms-services://</code> 安装链接的<strong>二维码</strong></li>
-            <li>Bundle ID、版本、构建号和应用名称自动从 IPA 中填入</li>
-            <li>你输入的发行说明会直接写入安装页面</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Android — APK</h3>
-          <ul>
-            <li><code>install.html</code>：包含图标、版本、SHA-256、安装说明和更新内容</li>
-            <li>指向安装页面的<strong>二维码</strong></li>
-            <li>包名、版本、应用名称和图标自动从 APK 中填入</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>由你来托管</h3>
-          <ul>
-            <li>选择输出文件夹，文件就会写到那里</li>
-            <li>应用不会上传任何内容——请把文件放到团队自己的 https 服务器上</li>
-            <li>iOS 要求使用 https，且链接必须在设备上的 Safari 中打开</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section alt" id="screens">
     <div class="wrap">
       <div class="section-head">
@@ -205,16 +169,8 @@
           <figcaption><span class="num">05</span>IPA 检查：权限与隐私</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hans/06.png" alt="iOS OTA 安装文件生成界面" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>iOS OTA 安装文件</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/zh-Hans/07.png" alt="APK 与 AAB 检查：签名方案、证书指纹与密钥哈希" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">07</span>APK · AAB 检查：签名、指纹、密钥哈希</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/zh-Hans/08.png" alt="Android OTA 安装页面生成界面" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">08</span>Android OTA 安装页面</figcaption>
+          <img src="../assets/screenshots/zh-Hans/06.png" alt="APK 与 AAB 检查：签名方案、证书指纹与密钥哈希" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>APK · AAB 检查：签名、指纹、密钥哈希</figcaption>
         </figure>
       </div>
     </div>
@@ -238,7 +194,7 @@
   <section class="cta">
     <div class="wrap">
       <h2>获取 ShouArchive</h2>
-      <p>描述文件、产物检查与 OTA——发布前的最后一道检查。</p>
+      <p>描述文件与产物检查——发布前的最后一道检查。</p>
       <a class="btn" href="https://apps.apple.com/app/id6814686766">在 Mac App Store 下载</a>
     </div>
   </section>

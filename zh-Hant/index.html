@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — Mac 上的描述檔（Provisioning Profile）管理、IPA/APK 檢查與 OTA 安裝檔案</title>
-  <meta name="description" content="管理描述檔、檢查 IPA、APK 與 AAB 檔案，並產生 OTA 安裝頁面 — 全部在一款只於本機讀取檔案的 Mac App 中完成。需要 macOS 15 或以上版本，已在 Mac App Store 上架。">
+  <title>ShouArchive — Mac 上的描述檔（Provisioning Profile）管理與 IPA/APK 檢查</title>
+  <meta name="description" content="管理描述檔、檢查 IPA、APK 與 AAB 檔案 — 全部在一款只於本機讀取檔案的 Mac App 中完成。需要 macOS 15 或以上版本，已在 Mac App Store 上架。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — 描述檔管理、IPA/APK 檢查與 OTA 安裝檔案">
-  <meta property="og:description" content="管理描述檔、檢查 IPA、APK 與 AAB 檔案，並產生 OTA 安裝頁面 — 一款 Mac App 全部搞定。需要 macOS 15 或以上版本。">
+  <meta property="og:title" content="ShouArchive — 描述檔管理與 IPA/APK 檢查">
+  <meta property="og:description" content="管理描述檔、檢查 IPA、APK 與 AAB 檔案 — 一款 Mac App 全部搞定。需要 macOS 15 或以上版本。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="zh_TW">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -43,8 +43,8 @@
       <img class="hero-icon" src="../assets/icon.png" alt="ShouArchive App 圖示" width="512" height="512">
       <div>
         <h1>ShouArchive</h1>
-        <p class="tagline">描述檔、產物檢查與 OTA 安裝檔案 — 出貨前的最後幾道確認，集中在一款 App。</p>
-        <p class="sub">打開 IPA、APK 或 AAB，即可看到商店會顯示的資訊、簽署方式與所要求的權限。連同到期日一起，把描述檔（provisioning profile）整理得井然有序。為測試版本產生 OTA 安裝頁面。您的檔案永遠不會離開您的 Mac。</p>
+        <p class="tagline">描述檔與產物檢查 — 出貨前的最後幾道確認，集中在一款 App。</p>
+        <p class="sub">打開 IPA、APK 或 AAB，即可看到商店會顯示的資訊、簽署方式與所要求的權限。連同到期日一起，把描述檔（provisioning profile）整理得井然有序。您的檔案永遠不會離開您的 Mac。</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
@@ -140,42 +140,6 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow orange">OTA 發布</p>
-        <h2>一個連結就能安裝測試版本</h2>
-        <p class="lead">把現有的 IPA 或 APK 變成安裝頁面與 QR Code。將檔案上傳到您自己的 https 伺服器，就大功告成。</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>iOS — Ad Hoc · Enterprise</h3>
-          <ul>
-            <li><code>manifest.plist</code>、<code>install.html</code>，以及 <code>itms-services://</code> 安裝連結的 <strong>QR Code</strong></li>
-            <li>Bundle ID、版本、組建編號與應用程式名稱皆從 IPA 自動填入</li>
-            <li>您輸入的發行說明會直接放進安裝頁面</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Android — APK</h3>
-          <ul>
-            <li><code>install.html</code>，內含圖示、版本、SHA-256、安裝說明與更新內容</li>
-            <li>指向安裝頁面的 <strong>QR Code</strong></li>
-            <li>套件名稱、版本、應用程式名稱與圖示皆從 APK 自動填入</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>由您自行託管</h3>
-          <ul>
-            <li>選擇輸出資料夾，檔案就會寫入該處</li>
-            <li>App 不會上傳任何東西 — 請把檔案放到團隊的 https 伺服器</li>
-            <li>iOS 需要 https，且連結必須在裝置上的 Safari 開啟</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section alt" id="screens">
     <div class="wrap">
       <div class="section-head">
@@ -205,16 +169,8 @@
           <figcaption><span class="num">05</span>IPA 檢查：權限與隱私</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hant/06.png" alt="iOS OTA 安裝檔案產生器" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>iOS OTA 安裝檔案</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/zh-Hant/07.png" alt="APK 與 AAB 檢查：簽章方案、憑證指紋與金鑰雜湊" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">07</span>APK · AAB 檢查：簽署、指紋、金鑰雜湊</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/zh-Hant/08.png" alt="Android OTA 安裝頁面產生器" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">08</span>Android OTA 安裝頁面</figcaption>
+          <img src="../assets/screenshots/zh-Hant/06.png" alt="APK 與 AAB 檢查：簽章方案、憑證指紋與金鑰雜湊" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>APK · AAB 檢查：簽署、指紋、金鑰雜湊</figcaption>
         </figure>
       </div>
     </div>
@@ -238,7 +194,7 @@
   <section class="cta">
     <div class="wrap">
       <h2>取得 ShouArchive</h2>
-      <p>描述檔、產物檢查與 OTA — 出貨前的最後幾道確認。</p>
+      <p>描述檔與產物檢查 — 出貨前的最後幾道確認。</p>
       <a class="btn" href="https://apps.apple.com/app/id6814686766">在 Mac App Store 下載</a>
     </div>
   </section>

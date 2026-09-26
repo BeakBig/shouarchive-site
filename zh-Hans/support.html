@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>支持 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 支持：允许访问描述文件文件夹、App Store Connect API 密钥、产物检查、OTA 安装疑难解答以及联系方式。">
+  <meta name="description" content="ShouArchive 支持：允许访问描述文件文件夹、App Store Connect API 密钥、产物检查以及联系方式。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="支持 — ShouArchive">
@@ -70,7 +70,6 @@
           <summary>支持哪些文件类型？</summary>
           <ul>
             <li><strong>产物检查</strong>：<code>.ipa</code>（iOS 标签页）、<code>.apk</code> 和 <code>.aab</code>（Android 标签页）</li>
-            <li><strong>OTA 分发</strong>：<code>.ipa</code>（iOS）、<code>.apk</code>（Android）。AAB 无法直接安装到设备上，因此不接受。</li>
             <li><strong>描述文件</strong>：<code>.mobileprovision</code></li>
             <li><strong>API 密钥</strong>：从 App Store Connect 下载的 <code>.p8</code> 文件</li>
           </ul>
@@ -79,7 +78,7 @@
 
         <details>
           <summary>为什么这个版本没有 IPA/APK 构建或导出功能？</summary>
-          <p>Mac App Store 应用必须运行在沙盒中，而沙盒无法启动 <code>xcodebuild</code>、<code>gradle</code> 之类的外部程序。因此这个版本专注于三件事：<strong>检查、描述文件和 OTA</strong>。产物检查同样不依赖外部工具——应用自带的解析器直接读取 IPA、APK 和 AAB 文件。</p>
+          <p>Mac App Store 应用必须运行在沙盒中，而沙盒无法启动 <code>xcodebuild</code>、<code>gradle</code> 之类的外部程序。因此这个版本专注于两件事：<strong>检查和描述文件</strong>。产物检查同样不依赖外部工具——应用自带的解析器直接读取 IPA、APK 和 AAB 文件。</p>
         </details>
 
         <h2 id="profiles">描述文件与 App Store Connect API</h2>
@@ -129,31 +128,6 @@
         <details>
           <summary>16 KB 页面大小检查看的是什么？</summary>
           <p>从 Android 15 开始，部分设备使用 16 KB 内存页，Google Play 要求原生库支持它。应用会检查 64 位（<code>arm64-v8a</code>、<code>x86_64</code>）<code>.so</code> 文件的 ELF LOAD 对齐；对于以未压缩方式存储在 APK 中的 <code>.so</code> 文件，还会检查它们在归档内的 16 KB 边界，并列出不符合要求的库。</p>
-        </details>
-
-        <h2 id="ota">OTA 分发</h2>
-
-        <details>
-          <summary>OTA 文件已经生成，但应用无法安装到设备上。</summary>
-          <p>请按顺序逐项检查：</p>
-          <ul>
-            <li>IPA、<code>manifest.plist</code> 和 <code>install.html</code> 必须全部通过 <strong>https</strong> 提供。iOS 拒绝通过 http 安装。</li>
-            <li>请在设备上的 <strong>Safari</strong> 中打开安装链接或二维码。即时通讯软件的预览和应用内浏览器往往不会触发安装。</li>
-            <li><strong>Ad Hoc</strong>：设备的 UDID 必须包含在描述文件中。如果没有，请把设备加入描述文件并重新构建 IPA。</li>
-            <li><strong>Enterprise</strong>：安装后，前往「设置」›「通用」›「VPN 与设备管理」，<strong>信任</strong>该开发者。</li>
-            <li>使用 App Store 分发描述文件签名的 IPA 无法通过 OTA 安装。选择这类文件时，应用会给出警告。</li>
-            <li>检查清单中的 IPA URL 是否与文件的实际位置一致，且文件名不含空格或特殊字符。</li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>生成的文件保存在哪里？</summary>
-          <p>「创建安装文件」（⌘↩）会要求你选择一个输出文件夹。它会在其中创建 <code>&lt;name&gt;_OTA</code> 文件夹，放入 IPA（或 APK）的副本，以及 <code>&lt;name&gt;.manifest.plist</code>、<code>&lt;name&gt;.install.html</code> 和 <code>&lt;name&gt;.qr.png</code>（Android：<code>.install.html</code> 和 <code>.qr.png</code>），同名文件会被覆盖。应用从不上传任何内容，请自行将这些文件连同 IPA 或 APK 一起上传。</p>
-        </details>
-
-        <details>
-          <summary>Android 的安装是怎样进行的？</summary>
-          <p>将 APK、<code>install.html</code> 和二维码图片上传到同一个 https 文件夹，然后在设备的浏览器（Chrome）中打开安装页面。由于应用来自 Play 商店之外，设备需要允许安装未知来源的应用。页面上显示 SHA-256，测试人员可以据此核对下载的文件。</p>
         </details>
 
         <h2 id="general">常规</h2>

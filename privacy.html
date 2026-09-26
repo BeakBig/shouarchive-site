@@ -60,8 +60,7 @@
       </ul>
 
       <h2>2. 파일 처리</h2>
-      <p>산출물 검사와 OTA 배포, 프로파일 관리에서 다루는 파일(IPA · APK · AAB · <code>.mobileprovision</code>)은 사용자의 Mac 에서만 읽습니다. 파일의 내용이나 그로부터 얻은 정보(번들 ID · 서명 인증서 · 권한 목록 등)는 앱 창에 표시될 뿐, 어디로도 전송되지 않습니다. 산출물 검사는 원본 파일을 바꾸지 않습니다.</p>
-      <p>OTA 배포 파일(<code>manifest.plist</code> · <code>install.html</code> · QR 이미지)은 사용자가 고른 폴더에만 씁니다. 앱은 이 파일을 어떤 서버에도 올리지 않습니다.</p>
+      <p>산출물 검사와 프로파일 관리에서 다루는 파일(IPA · APK · AAB · <code>.mobileprovision</code>)은 사용자의 Mac 에서만 읽습니다. 파일의 내용이나 그로부터 얻은 정보(번들 ID · 서명 인증서 · 권한 목록 등)는 앱 창에 표시될 뿐, 어디로도 전송되지 않습니다. 산출물 검사는 원본 파일을 바꾸지 않습니다.</p>
 
       <h2>3. 네트워크 사용</h2>
       <p>앱이 네트워크를 쓰는 경우는 하나뿐입니다. 사용자가 자신의 <strong>App Store Connect API 키</strong>(Issuer ID · Key ID · <code>.p8</code>)를 등록하고 관련 기능을 실행하면, 앱은 Apple 의 App Store Connect API(<code>api.appstoreconnect.apple.com</code>)에 접속합니다.</p>
@@ -81,7 +80,7 @@
 
       <h2>4. Mac 에 저장되는 것</h2>
       <ul>
-        <li>앱 설정(테마 · 언어 · 텍스트 크기 · OTA 주소 설정 · API 키 정보 등)은 macOS 가 앱마다 제공하는 <strong>샌드박스 컨테이너</strong> 안에 저장됩니다.</li>
+        <li>앱 설정(테마 · 언어 · 텍스트 크기 · API 키 정보 등)은 macOS 가 앱마다 제공하는 <strong>샌드박스 컨테이너</strong> 안에 저장됩니다.</li>
         <li>프로파일 폴더와 <code>.p8</code> 파일 접근은 사용자가 열기 패널에서 허용한 <strong>보안 스코프 북마크</strong>로 기억합니다. 이 북마크는 언제든 앱에서 지울 수 있습니다.</li>
         <li>프로파일 활동 기록(다운로드 · 생성 · 기기 등록 등)은 로컬에만 남고, 「기록 지우기」로 삭제할 수 있습니다.</li>
         <li>앱을 삭제하면 컨테이너와 함께 이 데이터도 사라집니다. <code>.p8</code> 파일 등 사용자가 직접 둔 파일은 앱이 지우지 않습니다.</li>

@@ -60,8 +60,7 @@
       </ul>
 
       <h2>2. Archivos que abres</h2>
-      <p>Los archivos que manejan la inspección de artefactos, la distribución OTA y la gestión de perfiles (IPA, APK, AAB, <code>.mobileprovision</code>) se leen únicamente en tu Mac. Su contenido y todo lo derivado de él (ID de paquete, certificados de firma, listas de permisos, etc.) se muestra en la ventana de la app y nunca se transmite a ningún sitio. La inspección nunca modifica el archivo original.</p>
-      <p>Los archivos OTA (<code>manifest.plist</code>, <code>install.html</code>, la imagen QR) se escriben solo en la carpeta que elijas. La app no los sube a ningún servidor.</p>
+      <p>Los archivos que manejan la inspección de artefactos y la gestión de perfiles (IPA, APK, AAB, <code>.mobileprovision</code>) se leen únicamente en tu Mac. Su contenido y todo lo derivado de él (ID de paquete, certificados de firma, listas de permisos, etc.) se muestra en la ventana de la app y nunca se transmite a ningún sitio. La inspección nunca modifica el archivo original.</p>
 
       <h2>3. Uso de la red</h2>
       <p>La app usa la red en un único caso: cuando registras tu propia <strong>clave de API de App Store Connect</strong> (Issuer ID, Key ID y archivo <code>.p8</code>) y utilizas una función que la necesita, la app se conecta a la API de App Store Connect de Apple en <code>api.appstoreconnect.apple.com</code>.</p>
@@ -81,7 +80,7 @@
 
       <h2>4. Datos guardados en tu Mac</h2>
       <ul>
-        <li>Los ajustes de la app (tema, idioma, tamaño del texto, configuración de URL para OTA, datos de la clave de API y similares) se guardan en el <strong>contenedor de sandbox</strong> de la app que proporciona macOS.</li>
+        <li>Los ajustes de la app (tema, idioma, tamaño del texto, datos de la clave de API y similares) se guardan en el <strong>contenedor de sandbox</strong> de la app que proporciona macOS.</li>
         <li>El acceso a la carpeta de perfiles y a los archivos <code>.p8</code> se recuerda mediante <strong>marcadores con ámbito de seguridad</strong> que concedes en el panel de apertura. Puedes eliminarlos en la app en cualquier momento.</li>
         <li>El historial de actividad de los perfiles (descargas, creaciones, registros de dispositivos, etc.) se conserva en local y puede vaciarse con «Borrar historial».</li>
         <li>Al eliminar la app se elimina su contenedor y, con él, estos datos. Los archivos que colocaste tú mismo, como el archivo <code>.p8</code>, nunca los elimina la app.</li>

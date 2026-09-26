@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>지원 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 지원 페이지. 프로파일 폴더 허용, App Store Connect API 키, 산출물 검사, OTA 설치 문제 등 자주 묻는 질문과 문의 방법.">
+  <meta name="description" content="ShouArchive 지원 페이지. 프로파일 폴더 허용, App Store Connect API 키, 산출물 검사 등 자주 묻는 질문과 문의 방법.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="지원 — ShouArchive">
@@ -70,7 +70,6 @@
           <summary>어떤 파일을 지원하나요?</summary>
           <ul>
             <li><strong>산출물 검사</strong>: <code>.ipa</code> (iOS 탭), <code>.apk</code> · <code>.aab</code> (Android 탭)</li>
-            <li><strong>OTA 배포</strong>: <code>.ipa</code> (iOS), <code>.apk</code> (Android). AAB 는 기기에 바로 설치할 수 없어 받지 않습니다.</li>
             <li><strong>프로파일</strong>: <code>.mobileprovision</code></li>
             <li><strong>API 키</strong>: App Store Connect 에서 내려받은 <code>.p8</code></li>
           </ul>
@@ -79,7 +78,7 @@
 
         <details>
           <summary>이 판에는 왜 IPA · APK 빌드나 내보내기가 없나요?</summary>
-          <p>Mac App Store 앱은 샌드박스가 필수이고, 샌드박스 안에서는 <code>xcodebuild</code> · <code>gradle</code> 같은 외부 프로그램을 실행할 수 없습니다. 그래서 이 판은 빌드 대신 <strong>검사 · 프로파일 · OTA</strong> 세 가지에 집중합니다. 산출물 검사도 외부 도구에 기대지 않고 앱 안의 파서가 IPA · APK · AAB 를 직접 읽습니다.</p>
+          <p>Mac App Store 앱은 샌드박스가 필수이고, 샌드박스 안에서는 <code>xcodebuild</code> · <code>gradle</code> 같은 외부 프로그램을 실행할 수 없습니다. 그래서 이 판은 빌드 대신 <strong>검사 · 프로파일</strong> 두 가지에 집중합니다. 산출물 검사도 외부 도구에 기대지 않고 앱 안의 파서가 IPA · APK · AAB 를 직접 읽습니다.</p>
         </details>
 
         <h2 id="profiles">프로파일 · App Store Connect API</h2>
@@ -129,31 +128,6 @@
         <details>
           <summary>16 KB 페이지 크기 검사는 무엇을 보나요?</summary>
           <p>Android 15 부터 16 KB 메모리 페이지를 쓰는 기기가 있고, Google Play 는 이를 지원하는 네이티브 라이브러리를 요구합니다. 앱은 64비트(<code>arm64-v8a</code> · <code>x86_64</code>) <code>.so</code> 파일의 ELF LOAD 정렬과, APK 안에 압축 없이 저장된 <code>.so</code> 의 16 KB 경계를 확인해 미지원 라이브러리를 목록으로 보여 줍니다.</p>
-        </details>
-
-        <h2 id="ota">OTA 배포</h2>
-
-        <details>
-          <summary>OTA 파일을 만들었는데 기기에서 설치되지 않아요.</summary>
-          <p>순서대로 확인해 보세요.</p>
-          <ul>
-            <li>IPA · <code>manifest.plist</code> · <code>install.html</code> 이 모두 <strong>https</strong> 주소에 있어야 합니다. iOS 는 http 로 설치하지 않습니다.</li>
-            <li>설치 링크나 QR 은 기기의 <strong>Safari</strong> 에서 열어야 합니다. 메신저 미리보기나 다른 앱의 웹 화면에서는 시작되지 않을 수 있습니다.</li>
-            <li><strong>Ad Hoc</strong>: 기기의 UDID 가 프로파일에 등록되어 있어야 합니다. 없으면 프로파일에 기기를 넣고 다시 만든 IPA 가 필요합니다.</li>
-            <li><strong>Enterprise</strong>: 설치 후 설정 › 일반 › VPN 및 기기 관리에서 개발자 앱을 <strong>신뢰</strong>해야 열립니다.</li>
-            <li>App Store 배포용 프로파일로 서명한 IPA 는 OTA 로 설치되지 않습니다. 앱이 파일을 고를 때 알려 줍니다.</li>
-            <li>manifest 의 IPA 주소가 실제 파일 위치와 같은지, 파일 이름에 공백이나 특수 문자가 없는지 확인하세요.</li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>만든 파일은 어디에 저장되나요?</summary>
-          <p>「설치 파일 만들기」(⌘↩)를 누르면 저장할 폴더를 고르는 창이 뜹니다. 고른 폴더 안에 <code>&lt;이름&gt;_OTA</code> 폴더를 만들고, 그 안에 IPA(또는 APK) 복사본과 <code>&lt;이름&gt;.manifest.plist</code> · <code>&lt;이름&gt;.install.html</code> · <code>&lt;이름&gt;.qr.png</code> (Android 는 <code>.install.html</code> · <code>.qr.png</code>)를 함께 둡니다. 같은 이름이 있으면 덮어씁니다. 앱은 파일을 서버에 올리지 않으므로 IPA · APK 와 함께 직접 올려야 합니다.</p>
-        </details>
-
-        <details>
-          <summary>Android 는 어떻게 설치하나요?</summary>
-          <p>APK · <code>install.html</code> · QR 을 같은 https 폴더에 올리고, 기기의 브라우저(Chrome)에서 설치 페이지를 엽니다. Play 스토어 밖에서 받은 앱이므로 기기에서 「출처를 알 수 없는 앱 설치」를 허용해야 합니다. 설치 페이지에는 SHA-256 이 적혀 있어 받은 파일이 맞는지 확인할 수 있습니다.</p>
         </details>
 
         <h2 id="general">일반</h2>

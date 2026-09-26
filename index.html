@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — iOS 프로파일 관리 · IPA/APK 검사 · OTA 배포 (Mac)</title>
-  <meta name="description" content="프로비저닝 프로파일 관리, IPA·APK·AAB 산출물 검사, OTA 설치 파일 생성을 한 앱에서. 파일은 Mac 안에서만 읽습니다. macOS 15 이상, Mac App Store.">
+  <title>ShouArchive — iOS 프로파일 관리 · IPA/APK 검사 (Mac)</title>
+  <meta name="description" content="프로비저닝 프로파일 관리, IPA·APK·AAB 산출물 검사를 한 앱에서. 파일은 Mac 안에서만 읽습니다. macOS 15 이상, Mac App Store.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — iOS 프로파일 관리 · IPA/APK 검사 · OTA 배포">
-  <meta property="og:description" content="프로비저닝 프로파일 관리, IPA·APK·AAB 산출물 검사, OTA 설치 파일 생성을 한 앱에서. macOS 15 이상.">
+  <meta property="og:title" content="ShouArchive — iOS 프로파일 관리 · IPA/APK 검사">
+  <meta property="og:description" content="프로비저닝 프로파일 관리, IPA·APK·AAB 산출물 검사를 한 앱에서. macOS 15 이상.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ko_KR">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
@@ -43,8 +43,8 @@
       <img class="hero-icon" src="assets/icon.png" alt="ShouArchive 앱 아이콘" width="512" height="512">
       <div>
         <h1>ShouArchive</h1>
-        <p class="tagline">프로파일 관리 · 산출물 검사 · OTA 배포 파일 — 배포 직전에 확인할 것들을 한 앱에서.</p>
-        <p class="sub">IPA · APK · AAB 를 열어 스토어에 보일 정보와 서명 · 권한을 바로 확인하고, 프로비저닝 프로파일을 만료일과 함께 관리하고, 테스트 배포용 OTA 설치 파일까지 만듭니다. 파일은 Mac 안에서만 읽습니다.</p>
+        <p class="tagline">프로파일 관리 · 산출물 검사 — 배포 직전에 확인할 것들을 한 앱에서.</p>
+        <p class="sub">IPA · APK · AAB 를 열어 스토어에 보일 정보와 서명 · 권한을 바로 확인하고, 프로비저닝 프로파일을 만료일과 함께 관리합니다. 파일은 Mac 안에서만 읽습니다.</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
@@ -140,42 +140,6 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow orange">OTA 배포</p>
-        <h2>테스트 빌드, 링크 하나로 설치</h2>
-        <p class="lead">이미 만든 IPA · APK 로 설치 페이지와 QR 을 만듭니다. 만든 파일을 https 서버에 올리기만 하면 됩니다.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>iOS — Ad Hoc · Enterprise</h3>
-          <ul>
-            <li><code>manifest.plist</code> · <code>install.html</code> · <strong>QR</strong> (<code>itms-services://</code> 설치 링크)</li>
-            <li>IPA 를 읽어 번들 ID · 버전 · 빌드 · 앱 이름을 자동으로 채움</li>
-            <li>변경 사항을 적으면 설치 페이지에 함께 들어감</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Android — APK</h3>
-          <ul>
-            <li><code>install.html</code>: 아이콘 · 버전 · SHA-256 · 설치 안내 · 변경 사항</li>
-            <li>설치 페이지 주소를 담은 <strong>QR</strong></li>
-            <li>APK 를 읽어 패키지 · 버전 · 앱 이름 · 아이콘을 자동으로 채움</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>호스팅은 직접</h3>
-          <ul>
-            <li>저장할 폴더를 고르면 그곳에 파일을 만듭니다</li>
-            <li>앱은 어디에도 올리지 않습니다 — 팀의 https 서버에 직접 올리세요</li>
-            <li>iOS 는 https 만 허용하고 Safari 에서 열어야 설치됩니다</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section alt" id="screens">
     <div class="wrap">
       <div class="section-head">
@@ -205,16 +169,8 @@
           <figcaption><span class="num">05</span>IPA 검사: 권한 요청 · 개인정보</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/ko/06.png" alt="iOS OTA 설치 파일 생성 화면" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>iOS OTA 설치 파일 생성</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screenshots/ko/07.png" alt="APK · AAB 검사: 서명 스킴, 인증서 지문, 키 해시" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">07</span>APK · AAB 검사: 서명 · 인증서 지문 · 키 해시</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screenshots/ko/08.png" alt="Android OTA 설치 페이지 생성 화면" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">08</span>Android OTA 설치 페이지</figcaption>
+          <img src="assets/screenshots/ko/06.png" alt="APK · AAB 검사: 서명 스킴, 인증서 지문, 키 해시" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>APK · AAB 검사: 서명 · 인증서 지문 · 키 해시</figcaption>
         </figure>
       </div>
     </div>
@@ -238,7 +194,7 @@
   <section class="cta">
     <div class="wrap">
       <h2>지금 받기</h2>
-      <p>프로파일 · 산출물 검사 · OTA. 배포 직전 확인은 ShouArchive 에서.</p>
+      <p>프로파일 · 산출물 검사. 배포 직전 확인은 ShouArchive 에서.</p>
       <a class="btn" href="https://apps.apple.com/app/id6814686766">Mac App Store에서 받기</a>
     </div>
   </section>

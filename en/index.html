@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — Provisioning profiles, IPA/APK inspection and OTA install files for Mac</title>
-  <meta name="description" content="Manage provisioning profiles, inspect IPA, APK and AAB files, and generate OTA install pages — in one Mac app that reads your files locally. macOS 15 or later, on the Mac App Store.">
+  <title>ShouArchive — Provisioning profiles and IPA/APK inspection for Mac</title>
+  <meta name="description" content="Manage provisioning profiles and inspect IPA, APK and AAB files — in one Mac app that reads your files locally. macOS 15 or later, on the Mac App Store.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — Provisioning profiles, IPA/APK inspection and OTA install files">
-  <meta property="og:description" content="Manage provisioning profiles, inspect IPA, APK and AAB files, and generate OTA install pages — in one Mac app. macOS 15 or later.">
+  <meta property="og:title" content="ShouArchive — Provisioning profiles and IPA/APK inspection">
+  <meta property="og:description" content="Manage provisioning profiles and inspect IPA, APK and AAB files — in one Mac app. macOS 15 or later.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="en_US">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -43,8 +43,8 @@
       <img class="hero-icon" src="../assets/icon.png" alt="ShouArchive app icon" width="512" height="512">
       <div>
         <h1>ShouArchive</h1>
-        <p class="tagline">Profiles, artifact inspection and OTA install files — the last checks before you ship, in one app.</p>
-        <p class="sub">Open an IPA, APK or AAB and see what the store will show, how it is signed and what it asks for. Keep provisioning profiles in order with their expiry dates. Generate OTA install pages for test builds. Your files never leave your Mac.</p>
+        <p class="tagline">Profiles and artifact inspection — the last checks before you ship, in one app.</p>
+        <p class="sub">Open an IPA, APK or AAB and see what the store will show, how it is signed and what it asks for. Keep provisioning profiles in order with their expiry dates. Your files never leave your Mac.</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
@@ -140,42 +140,6 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow orange">OTA distribution</p>
-        <h2>Install test builds from a single link</h2>
-        <p class="lead">Turn an existing IPA or APK into an install page and a QR code. Upload the files to your own https server and you are done.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>iOS — Ad Hoc · Enterprise</h3>
-          <ul>
-            <li><code>manifest.plist</code>, <code>install.html</code> and a <strong>QR code</strong> for the <code>itms-services://</code> install link</li>
-            <li>Bundle ID, version, build and app name are filled in from the IPA</li>
-            <li>Release notes you type go straight into the install page</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Android — APK</h3>
-          <ul>
-            <li><code>install.html</code> with icon, version, SHA-256, install guide and changelog</li>
-            <li>A <strong>QR code</strong> pointing at the install page</li>
-            <li>Package, version, app name and icon are filled in from the APK</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>You host it</h3>
-          <ul>
-            <li>Pick an output folder and the files are written there</li>
-            <li>The app uploads nothing — put the files on your team's https server</li>
-            <li>iOS requires https and the link must be opened in Safari on the device</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section alt" id="screens">
     <div class="wrap">
       <div class="section-head">
@@ -205,16 +169,8 @@
           <figcaption><span class="num">05</span>IPA inspection: permissions and privacy</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/en/06.png" alt="iOS OTA install file generator" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>iOS OTA install files</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/en/07.png" alt="APK and AAB inspection: signature scheme, certificate fingerprints and key hashes" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">07</span>APK · AAB inspection: signing, fingerprints, key hashes</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/screenshots/en/08.png" alt="Android OTA install page generator" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">08</span>Android OTA install page</figcaption>
+          <img src="../assets/screenshots/en/06.png" alt="APK and AAB inspection: signature scheme, certificate fingerprints and key hashes" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>APK · AAB inspection: signing, fingerprints, key hashes</figcaption>
         </figure>
       </div>
     </div>
@@ -238,7 +194,7 @@
   <section class="cta">
     <div class="wrap">
       <h2>Get ShouArchive</h2>
-      <p>Profiles, artifact inspection and OTA — the last checks before you ship.</p>
+      <p>Profiles and artifact inspection — the last checks before you ship.</p>
       <a class="btn" href="https://apps.apple.com/app/id6814686766">Download on the Mac App Store</a>
     </div>
   </section>

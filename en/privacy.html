@@ -60,8 +60,7 @@
       </ul>
 
       <h2>2. Files you open</h2>
-      <p>Files handled by artifact inspection, OTA distribution and profile management (IPA, APK, AAB, <code>.mobileprovision</code>) are read on your Mac only. Their contents and anything derived from them (bundle IDs, signing certificates, permission lists and so on) are shown in the app window and are never transmitted anywhere. Inspection never modifies the original file.</p>
-      <p>OTA files (<code>manifest.plist</code>, <code>install.html</code>, the QR image) are written only to the folder you choose. The app does not upload them to any server.</p>
+      <p>Files handled by artifact inspection and profile management (IPA, APK, AAB, <code>.mobileprovision</code>) are read on your Mac only. Their contents and anything derived from them (bundle IDs, signing certificates, permission lists and so on) are shown in the app window and are never transmitted anywhere. Inspection never modifies the original file.</p>
 
       <h2>3. Network use</h2>
       <p>The app uses the network in exactly one case: when you register your own <strong>App Store Connect API key</strong> (Issuer ID, Key ID and <code>.p8</code> file) and use a feature that needs it, the app connects to Apple's App Store Connect API at <code>api.appstoreconnect.apple.com</code>.</p>
@@ -81,7 +80,7 @@
 
       <h2>4. Data stored on your Mac</h2>
       <ul>
-        <li>App settings (theme, language, text size, OTA URL settings, API key details and similar) are stored in the app's <strong>sandbox container</strong> provided by macOS.</li>
+        <li>App settings (theme, language, text size, API key details and similar) are stored in the app's <strong>sandbox container</strong> provided by macOS.</li>
         <li>Access to the profile folder and to <code>.p8</code> files is remembered with <strong>security-scoped bookmarks</strong> that you grant in the open panel. You can remove them in the app at any time.</li>
         <li>The profile activity history (downloads, creations, device registrations and so on) is kept locally and can be cleared with "Clear History".</li>
         <li>Deleting the app removes its container and this data with it. Files you placed yourself, such as the <code>.p8</code> file, are never deleted by the app.</li>

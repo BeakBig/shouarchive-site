@@ -60,8 +60,7 @@
       </ul>
 
       <h2>2. 你打开的文件</h2>
-      <p>产物检查、OTA 分发和描述文件管理所处理的文件（IPA、APK、AAB、<code>.mobileprovision</code>）只在你的 Mac 上读取。它们的内容以及由此得出的信息（Bundle ID、签名证书、权限列表等）只显示在应用窗口中，绝不会传输到任何地方。检查从不修改原文件。</p>
-      <p>OTA 文件（<code>manifest.plist</code>、<code>install.html</code>、二维码图片）只写入你选择的文件夹。应用不会把它们上传到任何服务器。</p>
+      <p>产物检查和描述文件管理所处理的文件（IPA、APK、AAB、<code>.mobileprovision</code>）只在你的 Mac 上读取。它们的内容以及由此得出的信息（Bundle ID、签名证书、权限列表等）只显示在应用窗口中，绝不会传输到任何地方。检查从不修改原文件。</p>
 
       <h2>3. 网络使用</h2>
       <p>应用只在一种情况下使用网络：当你注册自己的 <strong>App Store Connect API 密钥</strong>（Issuer ID、Key ID 和 <code>.p8</code> 文件）并使用需要它的功能时，应用会连接到 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）。</p>
@@ -81,7 +80,7 @@
 
       <h2>4. 保存在你 Mac 上的数据</h2>
       <ul>
-        <li>应用设置（主题、语言、文本大小、OTA URL 设置、API 密钥信息等）保存在 macOS 为应用提供的<strong>沙盒容器</strong>中。</li>
+        <li>应用设置（主题、语言、文本大小、API 密钥信息等）保存在 macOS 为应用提供的<strong>沙盒容器</strong>中。</li>
         <li>对描述文件文件夹和 <code>.p8</code> 文件的访问权限，通过你在打开面板中授予的<strong>安全作用域书签</strong>记住。你可以随时在应用中移除它们。</li>
         <li>描述文件的活动记录（下载、创建、设备注册等）只保存在本地，可通过「清除记录」删除。</li>
         <li>删除应用会一并移除其容器和这些数据。你自己放置的文件（例如 <code>.p8</code> 文件）绝不会被应用删除。</li>

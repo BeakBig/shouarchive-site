@@ -72,15 +72,17 @@
           <h3>已安装的描述文件</h3>
           <ul>
             <li>每一行都有 <strong>D-N 到期徽章</strong>——30 天内显示橙色，过期后显示红色</li>
-            <li>筛选：<strong>全部 · 新增 · 重复</strong> / <strong>有效 · 即将过期 · 到期</strong></li>
+            <li>筛选：<strong>全部 · 新增 · 重复</strong> / <strong>有效 · 即将过期 · 到期</strong>，还可按团队和证书类型（Developer · Distribution · Ad Hoc · Enterprise）筛选</li>
             <li>详情视图：设备 UDID、内嵌证书（SHA-1 · SHA-256）和 Entitlements，均可复制</li>
-            <li><strong>并排比较两个描述文件</strong>——列出有差异的设备、证书和 Entitlements</li>
+            <li>进入列表后会<strong>在后台自动读取详情</strong>，除名称、Bundle ID、UUID 外，也能直接用<strong>设备 UDID</strong> 搜索</li>
+            <li>选中两个描述文件，在顶部的<strong>比较栏</strong>中并排比较——列出有差异的设备、证书和 Entitlements</li>
             <li>拖入 <code>.mobileprovision</code> 文件即可添加；多选可批量删除</li>
           </ul>
         </article>
         <article class="card">
           <h3>App Store Connect API</h3>
           <ul>
+            <li>在<strong>「API 密钥」标签页</strong>中按团队保存、管理多个密钥——保存时自动读取团队</li>
             <li>获取团队的描述文件，<strong>只安装缺少的那些</strong></li>
             <li>列出已注册设备并<strong>注册新设备</strong>，按类型显示配额（例如 iPhone 3 / 100）</li>
             <li><strong>创建描述文件</strong>：类型、平台、Bundle ID、证书、设备</li>
@@ -145,32 +147,48 @@
       <div class="section-head">
         <p class="eyebrow violet">界面</p>
         <h2>界面一览</h2>
-        <p class="lead">浅色、深色或系统设置主题，文本大小 85 – 150 %。通过窗口底部的图标菜单切换标签页。</p>
+        <p class="lead">浅色、深色或系统设置，以及两种颜色主题（Black &amp; White · ShouArchive），文本大小 85 – 150 %。通过窗口底部的菜单切换标签页；在描述文件标签页中，用上方的子菜单在管理和下载之间切换。</p>
       </div>
       <div class="gallery">
         <figure>
-          <img src="../assets/screenshots/zh-Hans/01.png" alt="平台选择界面：iOS 与 Android 卡片" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">01</span>选择平台：iOS 或 Android</figcaption>
+          <img src="../assets/screenshots/zh-Hans/01.png" alt="平台选择界面：iOS 和 Android 卡片" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">01</span>平台选择：iOS 和 Android</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hans/02.png" alt="描述文件列表，带到期徽章和状态筛选" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">02</span>描述文件、到期与筛选</figcaption>
+          <img src="../assets/screenshots/zh-Hans/02.png" alt="描述文件列表、到期徽章、筛选和详情" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>描述文件列表 · 到期 · 筛选 · 详情</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hans/03.png" alt="IPA 检查：签名证书、描述文件与 Entitlements" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">03</span>IPA 检查：签名、描述文件、Entitlements</figcaption>
+          <img src="../assets/screenshots/zh-Hans/03.png" alt="从 App Store Connect 获取的描述文件列表和详情" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>下载描述文件：App Store Connect 中的描述文件</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hans/04.png" alt="IPA 检查：App Store 显示信息" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">04</span>IPA 检查：App Store 显示信息</figcaption>
+          <img src="../assets/screenshots/zh-Hans/04.png" alt="API 密钥界面：已保存的密钥、所选密钥的信息、创建密钥的方法" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>API 密钥：已保存的密钥 · 密钥信息 · 创建方法</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hans/05.png" alt="IPA 检查：权限用途说明与隐私" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">05</span>IPA 检查：权限与隐私</figcaption>
+          <img src="../assets/screenshots/zh-Hans/05.png" alt="IPA 检查：App Store 显示信息" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA 检查：App Store 显示信息</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hans/06.png" alt="APK 与 AAB 检查：签名方案、证书指纹与密钥哈希" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>APK · AAB 检查：签名、指纹、密钥哈希</figcaption>
+          <img src="../assets/screenshots/zh-Hans/06.png" alt="IPA 检查：签名证书、描述文件、Entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>IPA 检查：签名 · 描述文件 · Entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/07.png" alt="IPA 检查：权限请求文案与隐私项目" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>IPA 检查：权限请求 · 隐私</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/08.png" alt="APK · AAB 检查：签名方案、证书指纹、密钥散列" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>APK · AAB 检查：签名 · 证书指纹 · 密钥散列</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/09.png" alt="APK 检查：权限分类与清单安全设置" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">09</span>APK · AAB 检查：权限 · 清单安全</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hans/10.png" alt="深色主题下的 APK 检查界面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">10</span>深色主题</figcaption>
         </figure>
       </div>
     </div>
@@ -185,7 +203,7 @@
       <dl class="reqs">
         <div class="req"><dt>macOS</dt><dd>15 Sequoia 或更高版本<small>Apple Silicon 与 Intel（通用二进制）</small></dd></div>
         <div class="req"><dt>语言</dt><dd>6 种语言<small>简体中文 · 繁體中文 · English · 한국어 · 日本語 · Español</small></dd></div>
-        <div class="req"><dt>外观</dt><dd>浅色 · 深色 · 系统设置<small>文本大小 85 – 150 %</small></dd></div>
+        <div class="req"><dt>外观</dt><dd>浅色 · 深色 · 系统设置<small>2 种颜色主题 · 文本大小 85 – 150 %</small></dd></div>
         <div class="req"><dt>可选</dt><dd>App Store Connect API 密钥<small>仅在下载、创建描述文件和注册设备时需要</small></dd></div>
       </dl>
     </div>

@@ -72,15 +72,17 @@
           <h3>已安裝的描述檔</h3>
           <ul>
             <li>每一列都有 <strong>D-N 到期標記</strong> — 30 天內轉為橘色，過期後轉為紅色</li>
-            <li>篩選：<strong>全部 · 新增 · 重複</strong> / <strong>有效 · 即將過期 · 到期</strong></li>
+            <li>篩選：<strong>全部 · 新增 · 重複</strong> / <strong>有效 · 即將過期 · 到期</strong>，也可依團隊與憑證類型（Developer · Distribution · Ad Hoc · Enterprise）篩選</li>
             <li>詳細資料：裝置 UDID、內嵌憑證（SHA-1 · SHA-256）與 Entitlements，皆可一鍵複製</li>
-            <li><strong>比較兩個描述檔</strong>，並排列出不同的裝置、憑證與 Entitlements</li>
+            <li>進入列表後會<strong>在背景自動讀取詳細資料</strong>，除名稱、Bundle ID、UUID 之外，也能直接用<strong>裝置 UDID</strong> 搜尋</li>
+            <li>選取兩個描述檔，在上方的<strong>比較列</strong>並排比較，列出不同的裝置、憑證與 Entitlements</li>
             <li>拖入 <code>.mobileprovision</code> 檔案即可新增；多選後可一併刪除</li>
           </ul>
         </article>
         <article class="card">
           <h3>App Store Connect API</h3>
           <ul>
+            <li>在<strong>「API 金鑰」分頁</strong>依團隊儲存、管理多把金鑰 — 儲存時自動讀取團隊</li>
             <li>取得團隊的描述檔，<strong>只安裝缺少的項目</strong></li>
             <li>列出已註冊的裝置並<strong>註冊新裝置</strong>，同時顯示各類型的額度（例如 iPhone 3 / 100）</li>
             <li><strong>建立描述檔</strong>：類型、平台、Bundle ID、憑證、裝置</li>
@@ -145,32 +147,48 @@
       <div class="section-head">
         <p class="eyebrow violet">畫面</p>
         <h2>四處看看</h2>
-        <p class="lead">淺色、深色或系統主題，文字大小 85 到 150 %。分頁位於視窗底部的圖示選單。</p>
+        <p class="lead">淺色、深色或系統設定，以及兩種色彩主題（Black &amp; White · ShouArchive），文字大小 85 到 150 %。分頁位於視窗底部的選單；在描述檔分頁中，可用上方的子選單切換管理與下載。</p>
       </div>
       <div class="gallery">
         <figure>
-          <img src="../assets/screenshots/zh-Hant/01.png" alt="平台選擇畫面，顯示 iOS 與 Android 卡片" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">01</span>選擇平台：iOS 或 Android</figcaption>
+          <img src="../assets/screenshots/zh-Hant/01.png" alt="平台選擇畫面：iOS 與 Android 卡片" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">01</span>平台選擇：iOS 與 Android</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hant/02.png" alt="描述檔清單，含到期標記與狀態篩選" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">02</span>描述檔、到期與篩選</figcaption>
+          <img src="../assets/screenshots/zh-Hant/02.png" alt="描述檔列表、到期標記、篩選與詳細資料" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>描述檔列表 · 到期 · 篩選 · 詳細資料</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hant/03.png" alt="IPA 檢查：簽署憑證、描述檔與 Entitlements" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">03</span>IPA 檢查：簽署、描述檔、Entitlements</figcaption>
+          <img src="../assets/screenshots/zh-Hant/03.png" alt="從 App Store Connect 取得的描述檔列表與詳細資料" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>下載描述檔：App Store Connect 的描述檔</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hant/04.png" alt="IPA 檢查：App Store 商店資訊" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">04</span>IPA 檢查：App Store 商店資訊</figcaption>
+          <img src="../assets/screenshots/zh-Hant/04.png" alt="API 金鑰畫面：已儲存的金鑰、所選金鑰的資訊、建立金鑰的方法" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>API 金鑰：已儲存的金鑰 · 金鑰資訊 · 建立方法</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hant/05.png" alt="IPA 檢查：權限用途說明與隱私" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">05</span>IPA 檢查：權限與隱私</figcaption>
+          <img src="../assets/screenshots/zh-Hant/05.png" alt="IPA 檢查：App Store 顯示資訊" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA 檢查：App Store 顯示資訊</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/zh-Hant/06.png" alt="APK 與 AAB 檢查：簽章方案、憑證指紋與金鑰雜湊" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>APK · AAB 檢查：簽署、指紋、金鑰雜湊</figcaption>
+          <img src="../assets/screenshots/zh-Hant/06.png" alt="IPA 檢查：簽署憑證、描述檔、Entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>IPA 檢查：簽署 · 描述檔 · Entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hant/07.png" alt="IPA 檢查：權限請求文字與隱私項目" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>IPA 檢查：權限請求 · 隱私</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hant/08.png" alt="APK · AAB 檢查：簽署方案、憑證指紋、金鑰雜湊" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>APK · AAB 檢查：簽署 · 憑證指紋 · 金鑰雜湊</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hant/09.png" alt="APK 檢查：權限分類與資訊清單安全設定" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">09</span>APK · AAB 檢查：權限 · 資訊清單安全</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/zh-Hant/10.png" alt="深色主題下的 APK 檢查畫面" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">10</span>深色主題</figcaption>
         </figure>
       </div>
     </div>
@@ -185,7 +203,7 @@
       <dl class="reqs">
         <div class="req"><dt>macOS</dt><dd>15 Sequoia 或以上版本<small>Apple Silicon 與 Intel（通用版）</small></dd></div>
         <div class="req"><dt>語言</dt><dd>6 種語言<small>English · 한국어 · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
-        <div class="req"><dt>外觀</dt><dd>淺色 · 深色 · 系統<small>文字大小 85 – 150 %</small></dd></div>
+        <div class="req"><dt>外觀</dt><dd>淺色 · 深色 · 系統<small>2 種色彩主題 · 文字大小 85 – 150 %</small></dd></div>
         <div class="req"><dt>選用</dt><dd>App Store Connect API 金鑰<small>僅用於下載與建立描述檔，以及註冊裝置</small></dd></div>
       </dl>
     </div>

@@ -72,15 +72,17 @@
           <h3>설치된 프로파일</h3>
           <ul>
             <li>목록마다 <strong>D-N 만료 배지</strong> — 30일 안에 만료되는 것은 주황, 만료된 것은 빨강</li>
-            <li>필터: <strong>전체 · 신규 · 중복</strong> / <strong>유효 · 곧 만료 · 만료</strong></li>
+            <li>필터: <strong>전체 · 신규 · 중복</strong> / <strong>유효 · 곧 만료 · 만료</strong>, 팀 · 인증서 종류(Developer · Distribution · Ad Hoc · Enterprise)별</li>
             <li>상세: 기기 UDID · 들어 있는 인증서(SHA-1 · SHA-256) · Entitlements, 항목별 복사</li>
-            <li>두 프로파일을 <strong>나란히 비교</strong> — 기기 · 인증서 · Entitlements 차이</li>
+            <li>상세는 목록에 들어오면 <strong>백그라운드에서 자동으로 읽어</strong> 이름 · 번들 ID · UUID 는 물론 <strong>기기 UDID</strong> 로도 바로 검색</li>
+            <li>두 프로파일을 골라 위쪽 <strong>비교 바</strong>에서 나란히 비교 — 기기 · 인증서 · Entitlements 차이</li>
             <li><code>.mobileprovision</code> 을 끌어다 놓아 추가, 여러 개 골라 삭제</li>
           </ul>
         </article>
         <article class="card">
           <h3>App Store Connect API</h3>
           <ul>
+            <li><strong>「API 키」 탭</strong>에서 키를 팀별로 여러 개 저장 · 관리 — 저장할 때 팀을 자동으로 읽습니다</li>
             <li>팀의 프로파일 목록을 받아 <strong>없는 것만 골라 설치</strong></li>
             <li>등록된 기기 목록과 <strong>새 기기 등록</strong> — 종류별 한도 표시 (예: iPhone 3 / 100)</li>
             <li><strong>새 프로파일 만들기</strong>: 종류 · 플랫폼 · 번들 ID · 인증서 · 기기</li>
@@ -145,7 +147,7 @@
       <div class="section-head">
         <p class="eyebrow violet">화면</p>
         <h2>화면 둘러보기</h2>
-        <p class="lead">라이트 · 다크 · 시스템 테마, 텍스트 크기 85 – 150 %. 화면 아래 아이콘 메뉴로 탭을 오갑니다.</p>
+        <p class="lead">라이트 · 다크 · 시스템 설정과 두 가지 색 테마(Black &amp; White · ShouArchive), 텍스트 크기 85 – 150 %. 화면 아래 메뉴로 탭을, 프로파일 탭에서는 그 위 하위 메뉴로 관리 · 다운로드를 오갑니다.</p>
       </div>
       <div class="gallery">
         <figure>
@@ -153,24 +155,40 @@
           <figcaption><span class="num">01</span>플랫폼 선택: iOS 와 Android</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/ko/02.png" alt="프로파일 목록과 만료 배지, 상태 필터" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">02</span>프로파일 목록 · 만료 · 필터</figcaption>
+          <img src="assets/screenshots/ko/02.png" alt="프로파일 목록과 만료 배지, 필터, 상세" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>프로파일 목록 · 만료 · 필터 · 상세</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/ko/03.png" alt="IPA 검사: 서명 인증서, 프로비저닝 프로파일, Entitlements" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">03</span>IPA 검사: 서명 · 프로파일 · Entitlements</figcaption>
+          <img src="assets/screenshots/ko/03.png" alt="App Store Connect 에서 불러온 프로파일 목록과 상세" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>프로파일 다운로드: App Store Connect 의 프로파일</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/ko/04.png" alt="IPA 검사: App Store 표시 정보" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">04</span>IPA 검사: App Store 표시 정보</figcaption>
+          <img src="assets/screenshots/ko/04.png" alt="API 키 화면: 저장된 키 목록, 고른 키의 정보, 키 만드는 방법" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>API 키: 저장된 키 · 키 정보 · 만드는 방법</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/ko/05.png" alt="IPA 검사: 권한 요청 문구와 개인정보 항목" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">05</span>IPA 검사: 권한 요청 · 개인정보</figcaption>
+          <img src="assets/screenshots/ko/05.png" alt="IPA 검사: App Store 표시 정보" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA 검사: App Store 표시 정보</figcaption>
         </figure>
         <figure>
-          <img src="assets/screenshots/ko/06.png" alt="APK · AAB 검사: 서명 스킴, 인증서 지문, 키 해시" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>APK · AAB 검사: 서명 · 인증서 지문 · 키 해시</figcaption>
+          <img src="assets/screenshots/ko/06.png" alt="IPA 검사: 서명 인증서, 프로비저닝 프로파일, Entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>IPA 검사: 서명 · 프로파일 · Entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/07.png" alt="IPA 검사: 권한 요청 문구와 개인정보 항목" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>IPA 검사: 권한 요청 · 개인정보</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/08.png" alt="APK · AAB 검사: 서명 스킴, 인증서 지문, 키 해시" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>APK · AAB 검사: 서명 · 인증서 지문 · 키 해시</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/09.png" alt="APK 검사: 권한 분류와 매니페스트 보안 설정" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">09</span>APK · AAB 검사: 권한 · 매니페스트 보안</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/ko/10.png" alt="다크 테마로 본 APK 검사 화면" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">10</span>다크 테마</figcaption>
         </figure>
       </div>
     </div>
@@ -185,7 +203,7 @@
       <dl class="reqs">
         <div class="req"><dt>macOS</dt><dd>15 Sequoia 이상<small>Apple Silicon · Intel (유니버설)</small></dd></div>
         <div class="req"><dt>언어</dt><dd>6개 언어<small>한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
-        <div class="req"><dt>화면</dt><dd>라이트 · 다크 · 시스템<small>텍스트 크기 85 – 150 %</small></dd></div>
+        <div class="req"><dt>화면</dt><dd>라이트 · 다크 · 시스템<small>색 테마 2가지 · 텍스트 크기 85 – 150 %</small></dd></div>
         <div class="req"><dt>선택 사항</dt><dd>App Store Connect API 키<small>프로파일 다운로드 · 생성 · 기기 등록에만 필요</small></dd></div>
       </dl>
     </div>

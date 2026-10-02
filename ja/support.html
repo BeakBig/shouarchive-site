@@ -88,7 +88,7 @@
           <ol>
             <li><a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>ユーザーとアクセス</strong> › <strong>統合</strong> › <strong>App Store Connect API</strong> を開きます。</li>
             <li><strong>チームキー</strong>を生成します。プロファイルと端末の取得・作成には、通常 <strong>Admin</strong> ロールが必要です。</li>
-            <li>アプリの「プロファイルダウンロード」›「API キー」に <strong>Issuer ID</strong>、<strong>Key ID</strong>、ダウンロードした <code>.p8</code> ファイルを入力します。<code>AuthKey_XXXXXXXX.p8</code> ファイルを選ぶと Key ID は自動的に入力されます。</li>
+            <li>アプリ下部のメニューの<strong>「API キー」</strong>タブ（または設定（⌘,）›「API キー」）で「新規キー」を押し、<strong>Issuer ID</strong>、<strong>Key ID</strong>、ダウンロードした <code>.p8</code> ファイルを登録します。<code>AuthKey_XXXXXXXX.p8</code> ファイルを選ぶと Key ID は自動的に入力され、チームは保存時に Apple から読み取ります（読み取れない場合は選ぶよう案内します）。貼り付けで紛れ込んだ空白・改行は自動的に取り除かれます。</li>
           </ol>
           <p><code>.p8</code> ファイルは Apple から一度しかダウンロードできないため、安全な場所に保管してください。アプリが Apple ID や 2 ファクタ認証コードを使うことはありません。</p>
         </details>
@@ -110,7 +110,7 @@
 
         <details>
           <summary>端末は何台まで登録できますか？</summary>
-          <p>Apple Developer アカウントでは、メンバーシップ年ごとに<strong>種類別（iPhone、iPad、Mac など）で 100 台まで</strong>登録できます。無効にした端末も、メンバーシップが更新されるまでは枠を占有します。端末タブに種類ごとの現在の使用状況（例: iPhone 3 / 100）が表示されます。</p>
+          <p>Apple Developer アカウントでは、メンバーシップ年ごとに<strong>種類別（iPhone、iPad、Mac など）で 100 台まで</strong>登録できます。無効にした端末も、メンバーシップが更新されるまでは枠を占有します。「プロファイル」›「プロファイルダウンロード」の「端末」タブに種類ごとの現在の使用状況（例: iPhone 3 / 100）が表示されます。</p>
         </details>
 
         <h2 id="inspect">ビルド成果物検査</h2>
@@ -139,7 +139,7 @@
 
         <details>
           <summary>テーマと文字サイズは？</summary>
-          <p>ツールバーで<strong>ライト・ダーク・システム設定</strong>から選びます。文字サイズは表示メニュー（文字を大きく ⌘+、文字を小さく ⌘-、デフォルトのサイズ ⌘0）または設定（⌘,）› 画面で 85 % から 150 % まで変更できます。</p>
+          <p>ツールバーのテーマメニューで、カラーテーマ（<strong>Black &amp; White · ShouArchive</strong>）と<strong>ライト・ダーク・システム設定</strong>を選びます。文字サイズは表示メニュー（文字を大きく ⌘+、文字を小さく ⌘-、デフォルトのサイズ ⌘0）または設定（⌘,）› 画面で 85 % から 150 % まで変更できます。</p>
         </details>
 
         <details>
@@ -150,6 +150,7 @@
         <details id="report">
           <summary>問題を報告するには？</summary>
           <p><a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> 宛てに、次の情報を添えてお送りいただくと迅速に確認できます。</p>
+          <p>アプリ内では、ヘルプメニュー ›「問い合わせ · 提案を送る…」（または設定（⌘,）›「メールを作成…」）からそのまま書けます。アプリのバージョンと macOS の情報は本文の下に自動的に付きます。</p>
           <ul>
             <li>macOS のバージョン（Apple メニュー › この Mac について）</li>
             <li>アプリのバージョン（ShouArchive メニュー › ShouArchive について）</li>

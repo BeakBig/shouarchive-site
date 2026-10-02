@@ -88,7 +88,7 @@
           <ol>
             <li>前往 <a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>使用者和存取權限</strong> › <strong>整合</strong> › <strong>App Store Connect API</strong>。</li>
             <li>產生一組<strong>團隊金鑰</strong>。讀取與建立描述檔和裝置通常需要 <strong>Admin</strong> 角色。</li>
-            <li>在 App 的「下載描述檔」›「API 金鑰」中輸入 <strong>Issuer ID</strong>、<strong>Key ID</strong> 與下載的 <code>.p8</code> 檔案。選擇 <code>AuthKey_XXXXXXXX.p8</code> 檔案時會自動填入 Key ID。</li>
+            <li>在 App 底部選單的<strong>「API 金鑰」</strong>分頁（或「設定」（⌘,）›「API 金鑰」）按「新金鑰」，輸入 <strong>Issuer ID</strong>、<strong>Key ID</strong> 與下載的 <code>.p8</code> 檔案。選擇 <code>AuthKey_XXXXXXXX.p8</code> 檔案時會自動填入 Key ID，儲存時會從 Apple 讀取團隊（讀取不到時會提示你選擇）。貼上時夾帶的空格與換行會自動移除。</li>
           </ol>
           <p>Apple 只允許下載 <code>.p8</code> 檔案一次，請妥善保管。App 絕不會使用您的 Apple ID 或雙重認證驗證碼。</p>
         </details>
@@ -110,7 +110,7 @@
 
         <details>
           <summary>我可以註冊多少台裝置？</summary>
-          <p>Apple Developer 帳號在每個會員年度內，每種類型（iPhone、iPad、Mac……）最多可註冊 <strong>100 台裝置</strong>。停用的裝置在會員資格續約前仍會占用名額。裝置分頁會顯示各類型目前的使用量（例如 iPhone 3 / 100）。</p>
+          <p>Apple Developer 帳號在每個會員年度內，每種類型（iPhone、iPad、Mac……）最多可註冊 <strong>100 台裝置</strong>。停用的裝置在會員資格續約前仍會占用名額。「描述檔」›「下載描述檔」中的「裝置」分頁會顯示各類型目前的使用量（例如 iPhone 3 / 100）。</p>
         </details>
 
         <h2 id="inspect">產物檢查</h2>
@@ -139,7 +139,7 @@
 
         <details>
           <summary>主題與文字大小？</summary>
-          <p>在工具列選擇<strong>淺色、深色或系統</strong>。文字大小可透過「顯示方式」選單（放大文字 ⌘+、縮小文字 ⌘-、預設 ⌘0）或「設定」（⌘,）›「畫面」，在 85 % 到 150 % 之間調整。</p>
+          <p>在工具列的主題選單中選擇色彩主題（<strong>Black &amp; White · ShouArchive</strong>）以及<strong>淺色、深色或系統設定</strong>。文字大小可透過「顯示方式」選單（放大文字 ⌘+、縮小文字 ⌘-、預設 ⌘0）或「設定」（⌘,）›「畫面」，在 85 % 到 150 % 之間調整。</p>
         </details>
 
         <details>
@@ -150,6 +150,7 @@
         <details id="report">
           <summary>如何回報問題？</summary>
           <p>請寄信至 <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a>，並附上以下資訊，以便盡快處理：</p>
+          <p>也可以在 App 內透過「輔助說明」選單 ›「傳送詢問 · 建議…」（或「設定」（⌘,）›「撰寫郵件…」）直接撰寫。App 版本與 macOS 資訊會自動附在內文下方。</p>
           <ul>
             <li>macOS 版本（Apple 選單 › 關於這台 Mac）</li>
             <li>App 版本（ShouArchive 選單 › 關於 ShouArchive）</li>

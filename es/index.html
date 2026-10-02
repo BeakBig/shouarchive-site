@@ -72,15 +72,17 @@
           <h3>Perfiles instalados</h3>
           <ul>
             <li><strong>Insignias de caducidad D-N</strong> en cada fila: naranja a menos de 30 días, rojo una vez caducado</li>
-            <li>Filtros: <strong>Todo · Nuevo · Duplicado</strong> / <strong>Válido · Vence pronto · Caducidad</strong></li>
+            <li>Filtros: <strong>Todo · Nuevo · Duplicado</strong> / <strong>Válido · Vence pronto · Caducidad</strong>, además de por equipo y tipo de certificado (Developer · Distribution · Ad Hoc · Enterprise)</li>
             <li>Vista de detalle: UDID de los dispositivos, certificados incrustados (SHA-1 · SHA-256) y entitlements, todos copiables</li>
-            <li><strong>Compara dos perfiles</strong> lado a lado: dispositivos, certificados y entitlements que difieren</li>
+            <li>Al abrir la lista, los detalles <strong>se leen automáticamente en segundo plano</strong>, así que puedes buscar por nombre, ID de paquete, UUID e incluso <strong>UDID del dispositivo</strong> al instante</li>
+            <li>Elige dos perfiles y <strong>compáralos lado a lado</strong> desde la barra de comparación superior: dispositivos, certificados y entitlements que difieren</li>
             <li>Arrastra archivos <code>.mobileprovision</code> para añadirlos; selección múltiple para eliminar</li>
           </ul>
         </article>
         <article class="card">
           <h3>App Store Connect API</h3>
           <ul>
+            <li>Guarda y gestiona varias claves por equipo en la <strong>pestaña Clave de API</strong>: el equipo se lee automáticamente al guardar</li>
             <li>Obtén los perfiles de tu equipo e <strong>instala solo los que faltan</strong></li>
             <li>Lista los dispositivos registrados y <strong>registra otros nuevos</strong>, con el límite por tipo a la vista (p. ej. iPhone 3 / 100)</li>
             <li><strong>Crea un perfil</strong>: tipo, plataforma, ID de paquete, certificados, dispositivos</li>
@@ -145,32 +147,48 @@
       <div class="section-head">
         <p class="eyebrow violet">Pantallas</p>
         <h2>Un vistazo a la app</h2>
-        <p class="lead">Tema Claro, Oscuro o Configuración del sistema; tamaño de texto del 85 al 150 %. Las pestañas están en el menú de iconos de la parte inferior de la ventana.</p>
+        <p class="lead">Claro, Oscuro o Configuración del sistema, con dos temas de color (Black &amp; White · ShouArchive); tamaño de texto del 85 al 150 %. Las pestañas están en el menú de la parte inferior de la ventana; en la pestaña Perfil, el submenú de encima alterna entre Gestionar y Descargar.</p>
       </div>
       <div class="gallery">
         <figure>
           <img src="../assets/screenshots/es/01.png" alt="Selector de plataforma con tarjetas de iOS y Android" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">01</span>Elige una plataforma: iOS o Android</figcaption>
+          <figcaption><span class="num">01</span>Selector de plataforma: iOS y Android</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/es/02.png" alt="Lista de perfiles con insignias de caducidad y filtros de estado" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">02</span>Perfiles, caducidad y filtros</figcaption>
+          <img src="../assets/screenshots/es/02.png" alt="Lista de perfiles con insignias de caducidad, filtros y detalle" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>Lista de perfiles · caducidad · filtros · detalle</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/es/03.png" alt="Inspección de IPA: certificado de firma, perfil de aprovisionamiento y entitlements" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">03</span>Inspección de IPA: firma, perfil, entitlements</figcaption>
+          <img src="../assets/screenshots/es/03.png" alt="Perfiles obtenidos de App Store Connect con su detalle" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>Descargar perfil: perfiles de App Store Connect</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/es/04.png" alt="Inspección de IPA: información de la ficha de App Store" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">04</span>Inspección de IPA: ficha de App Store</figcaption>
+          <img src="../assets/screenshots/es/04.png" alt="Pantalla Clave de API: claves guardadas, datos de la clave elegida y cómo crear una" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>Clave de API: claves guardadas · datos · cómo crearla</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/es/05.png" alt="Inspección de IPA: descripciones de uso de permisos y privacidad" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">05</span>Inspección de IPA: permisos y privacidad</figcaption>
+          <img src="../assets/screenshots/es/05.png" alt="Inspección de IPA: información de la ficha de App Store" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>Inspección de IPA: información de App Store</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/es/06.png" alt="Inspección de APK y AAB: esquema de firma, huellas del certificado y hashes de clave" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>Inspección de APK · AAB: firma, huellas, hashes de clave</figcaption>
+          <img src="../assets/screenshots/es/06.png" alt="Inspección de IPA: certificado de firma, perfil de aprovisionamiento, entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>Inspección de IPA: firma · perfil · entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/es/07.png" alt="Inspección de IPA: textos de solicitud de permisos y privacidad" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>Inspección de IPA: permisos · privacidad</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/es/08.png" alt="Inspección de APK · AAB: esquemas de firma, huellas del certificado, hash de clave" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>Inspección de APK · AAB: firma · huellas · hash de clave</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/es/09.png" alt="Inspección de APK: grupos de permisos y ajustes de seguridad del manifiesto" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">09</span>Inspección de APK · AAB: permisos · seguridad del manifiesto</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/es/10.png" alt="Inspección de APK con el tema oscuro" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">10</span>Tema oscuro</figcaption>
         </figure>
       </div>
     </div>
@@ -185,7 +203,7 @@
       <dl class="reqs">
         <div class="req"><dt>macOS</dt><dd>15 Sequoia o posterior<small>Apple Silicon e Intel (universal)</small></dd></div>
         <div class="req"><dt>Idiomas</dt><dd>6 idiomas<small>Español · English · 한국어 · 日本語 · 简体中文 · 繁體中文</small></dd></div>
-        <div class="req"><dt>Apariencia</dt><dd>Claro · Oscuro · Configuración del sistema<small>Tamaño del texto 85 – 150 %</small></dd></div>
+        <div class="req"><dt>Apariencia</dt><dd>Claro · Oscuro · Configuración del sistema<small>2 temas de color · Tamaño del texto 85 – 150 %</small></dd></div>
         <div class="req"><dt>Opcional</dt><dd>Clave de API de App Store Connect<small>Solo para descargar y crear perfiles y registrar dispositivos</small></dd></div>
       </dl>
     </div>

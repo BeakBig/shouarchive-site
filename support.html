@@ -88,7 +88,7 @@
           <ol>
             <li><a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>사용자 및 액세스</strong> › <strong>통합</strong> › <strong>App Store Connect API</strong> 로 갑니다.</li>
             <li><strong>팀 키(Team key)</strong>를 만듭니다. 프로파일과 기기를 조회 · 생성하려면 보통 <strong>Admin</strong> 역할이 필요합니다.</li>
-            <li><strong>Issuer ID</strong>, <strong>Key ID</strong>, 내려받은 <code>.p8</code> 파일을 앱의 「프로파일 다운로드」 › 「API 키」에 등록합니다. <code>AuthKey_XXXXXXXX.p8</code> 파일을 고르면 Key ID 는 자동으로 채워집니다.</li>
+            <li>앱 화면 아래 메뉴의 <strong>「API 키」</strong> 탭(또는 설정(⌘,) › 「API 키」)에서 「새 키」를 눌러 <strong>Issuer ID</strong>, <strong>Key ID</strong>, 내려받은 <code>.p8</code> 파일을 등록합니다. <code>AuthKey_XXXXXXXX.p8</code> 파일을 고르면 Key ID 는 자동으로 채워지고, 팀은 저장할 때 Apple 에서 읽어 옵니다 (못 읽으면 직접 고르도록 알려 줍니다). 붙여 넣을 때 섞인 공백 · 줄바꿈은 저절로 지워집니다.</li>
           </ol>
           <p><code>.p8</code> 파일은 Apple 에서 한 번만 내려받을 수 있으니 안전한 곳에 보관하세요. Apple ID 나 2단계 인증은 쓰지 않습니다.</p>
         </details>
@@ -110,7 +110,7 @@
 
         <details>
           <summary>기기 등록 한도는 어떻게 되나요?</summary>
-          <p>Apple 개발자 계정은 멤버십 1년마다 기기 종류(iPhone · iPad · Mac …)별로 <strong>100대</strong>까지 등록할 수 있습니다. 비활성으로 바꾼 기기도 멤버십을 갱신하기 전까지는 자리를 차지합니다. 앱의 「기기」 탭 위쪽에 종류별 사용량(예: iPhone 3 / 100)이 보입니다.</p>
+          <p>Apple 개발자 계정은 멤버십 1년마다 기기 종류(iPhone · iPad · Mac …)별로 <strong>100대</strong>까지 등록할 수 있습니다. 비활성으로 바꾼 기기도 멤버십을 갱신하기 전까지는 자리를 차지합니다. 「프로파일」 › 「프로파일 다운로드」의 「기기」 탭 위쪽에 종류별 사용량(예: iPhone 3 / 100)이 보입니다.</p>
         </details>
 
         <h2 id="inspect">산출물 검사</h2>
@@ -139,7 +139,7 @@
 
         <details>
           <summary>테마와 글자 크기는?</summary>
-          <p>툴바에서 <strong>라이트 · 다크 · 시스템</strong> 테마를 고릅니다. 글자 크기는 보기 메뉴의 「텍스트 크게 ⌘+ · 작게 ⌘- · 기본 크기 ⌘0」 또는 설정(⌘,) › 화면에서 85 % ~ 150 % 사이로 바꿉니다.</p>
+          <p>툴바의 테마 메뉴에서 색 테마(<strong>Black &amp; White · ShouArchive</strong>)와 <strong>라이트 · 다크 · 시스템 설정</strong>을 고릅니다. 글자 크기는 보기 메뉴의 「텍스트 크게 ⌘+ · 작게 ⌘- · 기본 크기 ⌘0」 또는 설정(⌘,) › 화면에서 85 % ~ 150 % 사이로 바꿉니다.</p>
         </details>
 
         <details>
@@ -150,6 +150,7 @@
         <details id="report">
           <summary>문제를 신고하려면?</summary>
           <p><a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EB%AC%B8%EC%9D%98">beakbigkb@gmail.com</a> 으로 아래 내용을 함께 보내 주시면 빨리 살펴볼 수 있습니다.</p>
+          <p>앱 안에서는 도움말 메뉴 › 「문의 · 제안 보내기…」(또는 설정(⌘,) › 「메일 작성…」)로 바로 쓸 수 있습니다. 앱 버전 · macOS 정보는 본문 아래에 자동으로 붙습니다.</p>
           <ul>
             <li>macOS 버전 (Apple 메뉴 › 이 Mac에 관하여)</li>
             <li>앱 버전 (ShouArchive 메뉴 › ShouArchive 정보)</li>

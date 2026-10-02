@@ -72,15 +72,17 @@
           <h3>Installed profiles</h3>
           <ul>
             <li><strong>D-N expiry badges</strong> on every row — orange within 30 days, red once expired</li>
-            <li>Filters: <strong>All · New · Duplicates</strong> / <strong>Valid · Expiring soon · Expired</strong></li>
+            <li>Filters: <strong>All · New · Duplicates</strong> / <strong>Valid · Expiring soon · Expired</strong>, plus by team and certificate type (Developer · Distribution · Ad Hoc · Enterprise)</li>
             <li>Detail view: device UDIDs, embedded certificates (SHA-1 · SHA-256) and entitlements, each copyable</li>
-            <li><strong>Compare two profiles</strong> side by side — devices, certificates and entitlements that differ</li>
+            <li>Details are <strong>read automatically in the background</strong> when you open the list, so you can search by name, bundle ID, UUID and even <strong>device UDID</strong> right away</li>
+            <li>Pick two profiles and <strong>compare them side by side</strong> from the compare bar at the top — devices, certificates and entitlements that differ</li>
             <li>Drag <code>.mobileprovision</code> files in to add them; multi-select to delete</li>
           </ul>
         </article>
         <article class="card">
           <h3>App Store Connect API</h3>
           <ul>
+            <li>Save and manage several keys per team in the <strong>API Key tab</strong> — the team is read automatically when you save</li>
             <li>Fetch your team's profiles and <strong>install only the missing ones</strong></li>
             <li>List registered devices and <strong>register new ones</strong>, with per-type limits shown (e.g. iPhone 3 / 100)</li>
             <li><strong>Create a profile</strong>: type, platform, bundle ID, certificates, devices</li>
@@ -145,32 +147,48 @@
       <div class="section-head">
         <p class="eyebrow violet">Screens</p>
         <h2>A look around</h2>
-        <p class="lead">Light, dark or system theme, text size from 85 to 150 %. Tabs live in the icon menu at the bottom of the window.</p>
+        <p class="lead">Light, dark or system appearance with two color themes (Black &amp; White · ShouArchive), text size from 85 to 150 %. Tabs live in the menu at the bottom of the window; on the Profile tab, the sub-menu above it switches between Manage and Download.</p>
       </div>
       <div class="gallery">
         <figure>
           <img src="../assets/screenshots/en/01.png" alt="Platform picker with iOS and Android cards" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">01</span>Pick a platform: iOS or Android</figcaption>
+          <figcaption><span class="num">01</span>Platform picker: iOS and Android</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/en/02.png" alt="Profile list with expiry badges and status filters" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">02</span>Profiles, expiry and filters</figcaption>
+          <img src="../assets/screenshots/en/02.png" alt="Profile list with expiry badges, filters and details" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">02</span>Profile list · expiry · filters · details</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/en/03.png" alt="IPA inspection: signing certificate, provisioning profile and entitlements" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">03</span>IPA inspection: signing, profile, entitlements</figcaption>
+          <img src="../assets/screenshots/en/03.png" alt="Profiles fetched from App Store Connect with details" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">03</span>Download Profile: profiles from App Store Connect</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/en/04.png" alt="IPA inspection: App Store listing information" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">04</span>IPA inspection: App Store listing</figcaption>
+          <img src="../assets/screenshots/en/04.png" alt="API Key screen: saved keys, details of the selected key, how to create a key" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">04</span>API Key: saved keys · key details · how to create one</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/en/05.png" alt="IPA inspection: permission usage descriptions and privacy" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">05</span>IPA inspection: permissions and privacy</figcaption>
+          <img src="../assets/screenshots/en/05.png" alt="IPA inspection: App Store listing info" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">05</span>IPA inspection: App Store listing info</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/en/06.png" alt="APK and AAB inspection: signature scheme, certificate fingerprints and key hashes" width="2880" height="1800" loading="lazy">
-          <figcaption><span class="num">06</span>APK · AAB inspection: signing, fingerprints, key hashes</figcaption>
+          <img src="../assets/screenshots/en/06.png" alt="IPA inspection: signing certificate, provisioning profile, entitlements" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">06</span>IPA inspection: signing · profile · entitlements</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/07.png" alt="IPA inspection: permission prompts and privacy" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">07</span>IPA inspection: permission prompts · privacy</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/08.png" alt="APK · AAB inspection: signing schemes, certificate fingerprints, key hash" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">08</span>APK · AAB inspection: signing · fingerprints · key hash</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/09.png" alt="APK inspection: permission groups and manifest security settings" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">09</span>APK · AAB inspection: permissions · manifest security</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/en/10.png" alt="APK inspection in the dark theme" width="2880" height="1800" loading="lazy">
+          <figcaption><span class="num">10</span>Dark theme</figcaption>
         </figure>
       </div>
     </div>
@@ -185,7 +203,7 @@
       <dl class="reqs">
         <div class="req"><dt>macOS</dt><dd>15 Sequoia or later<small>Apple Silicon and Intel (universal)</small></dd></div>
         <div class="req"><dt>Languages</dt><dd>6 languages<small>English · 한국어 · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
-        <div class="req"><dt>Appearance</dt><dd>Light · Dark · System<small>Text size 85 – 150 %</small></dd></div>
+        <div class="req"><dt>Appearance</dt><dd>Light · Dark · System<small>2 color themes · Text size 85 – 150 %</small></dd></div>
         <div class="req"><dt>Optional</dt><dd>App Store Connect API key<small>Only for downloading and creating profiles and registering devices</small></dd></div>
       </dl>
     </div>

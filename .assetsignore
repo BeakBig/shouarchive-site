@@ -1,0 +1,12 @@
+# Cloudflare Workers 정적 파일에서 뺄 것 (shouarchive Worker 빌드가 저장소 루트를 그대로 올린다).
+# .git 의 압축 파일이 25 MiB 한도를 넘어 2026-10-03 빌드가 실패했다.
+.git
+.gitignore
+.assetsignore
+.nojekyll
+.wrangler
+node_modules
+wrangler.jsonc
+README.md
+tools
+worker

@@ -1,0 +1,13 @@
+{
+  // shouarchive.beakbig.com 을 서비스하는 Worker (정적 파일만). Cloudflare 빌드가 푸시마다 `npx wrangler deploy` 로 올린다.
+  // 이 파일이 없으면 빌드가 매번 같은 설정을 자동으로 만든다 — 고정해 두려고 둔다. 뺄 파일은 .assetsignore
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shouarchive",
+  "compatibility_date": "2026-10-01",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "."
+  }
+}

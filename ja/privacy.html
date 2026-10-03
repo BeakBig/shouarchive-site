@@ -132,7 +132,7 @@
         <li>ライセンスサーバーは <strong>BeakBig</strong>（個人事業者、まだ事業者登録前）· 連絡先 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> が運営します。サーバーは <strong>Cloudflare, Inc.</strong>（米国）の Workers を使い、データベースはアジア太平洋地域（その地域内の正確な場所は Cloudflare が決めます）にあります。</li>
         <li>送信する値とライセンスの状態（発行 · 失効 · 解約）は<strong>購読が継続する間</strong>保管し、購読が終了または解約されてから 2 年が経過したら削除または匿名化します（現在は運営者が手作業で処理します）。保持期間が短い記録は<strong>毎日自動で</strong>削除します — アクセス記録 30 日、決済通知（Webhook）の処理記録 90 日、キー送付記録 365 日（受け取ったアドレスはハッシュのみで保管）、未処理の発行待ち 7 日。解約の請求を受けた場合は確認後ただちにライセンスを停止し、残っている記録を削除します。</li>
         <li>このサーバーに保存される値は、第 9 項に書いたものと同じです。決済方法の情報、カード番号、銀行口座は保存されません。</li>
-        <li>サーバーは<strong>Cloudflare, Inc.</strong>（米国）にあり、データベースはアジア太平洋地域（その地域内の正確な場所は Cloudflare が決めます）にあります。決済は<strong>Paddle.com Market Limited</strong>（英国）が販売代行（merchant of record）として処理します。</li>
+        <li>サーバーは<strong>Cloudflare, Inc.</strong>（米国に本社を置く会社）の Workers で、ユーザーに近い Cloudflare データセンターで実行され、データベースはアジア太平洋地域（その地域内の正確な場所は Cloudflare が決めます）にあります。決済は<strong>Paddle.com Market Limited</strong>（英国）が販売代行（merchant of record）として処理します。</li>
         <li>キーの送付に使うメール送信サービス: <span class="placeholder">[メール送信サービス — 未決定]</span></li>
         <li>ライセンスサーバーに保存された履歴を直接ダウンロードしたり、削除を請求したりする場合は、第 12 項の方法でご連絡ください。</li>
       </ul>
@@ -160,7 +160,7 @@
       <h2>13. 海外移転</h2>
       <ul>
         <li><strong>受取先と国</strong> — 商用版のライセンス記録は<strong>Cloudflare, Inc.</strong>（米国）へ、決済情報は<strong>Paddle.com Market Limited</strong>（英国）へ送られ、処理されます。</li>
-        <li><strong>保存先</strong> — ライセンス記録はサーバーがある<strong>米国</strong>に、データベースにはアジア太平洋地域（その地域内の正確な場所は Cloudflare が決めます）に保存されます。</li>
+        <li><strong>保存先</strong> — ライセンス記録はアジア太平洋地域のデータベース（<strong>Cloudflare D1</strong>）に保存され、リクエストはユーザーに近い Cloudflare データセンターで処理されます。</li>
         <li><strong>いつ · どのように</strong> — 有効化 · ライセンス確認 · 決済の開始時に、ネットワーク経由で送信します。</li>
         <li><strong>項目 · 目的 · 保管期間</strong> — 第 9 項と第 10 項に書いたものと同じです。</li>
         <li><strong>保護措置</strong> — Cloudflare はデータ処理契約（EU 標準契約条項を含む）に従い、Paddle は販売代行として自身のプライバシーポリシーに従って決済情報を処理します。</li>

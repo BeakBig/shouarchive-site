@@ -132,7 +132,7 @@
         <li>라이선스 서버는 <strong>BeakBig</strong>(개인, 사업자등록 전) · 연락처 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>가 운영합니다. 서버는 <strong>Cloudflare, Inc.</strong>(미국)의 Workers 를 쓰고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다.</li>
         <li>보내는 값과 라이선스 상태(발급 · 만료 · 해지)는 <strong>구독이 유지되는 동안</strong> 보관하고, 구독이 끝나거나 취소된 뒤 2년이 지나면 지우거나 익명화합니다(지금은 운영자가 직접 처리합니다). 기간이 짧은 기록은 <strong>매일 자동으로</strong> 지웁니다 — 접근 기록 30일, 결제 알림(웹훅) 처리 기록 90일, 키 발송 기록 365일(받는 주소는 해시만 보관), 처리되지 않은 발급 대기 7일. 해지 요청을 받으면 확인 즉시 라이선스를 정지하고 남은 기록을 삭제합니다.</li>
         <li>이 서버에 저장되는 값은 9항에 적은 것과 같습니다. 결제 수단 정보, 카드 번호, 은행 계좌는 저장되지 않습니다.</li>
-        <li>서버는 <strong>Cloudflare, Inc.</strong>(미국)에 있고 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다. 결제는 <strong>Paddle.com Market Limited</strong>(영국)가 판매대행(merchant of record)으로서 처리합니다.</li>
+        <li>서버는 <strong>Cloudflare, Inc.</strong>(미국 회사)의 Workers 로 이용자와 가까운 Cloudflare 데이터센터에서 실행되고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다. 결제는 <strong>Paddle.com Market Limited</strong>(영국)가 판매대행(merchant of record)으로서 처리합니다.</li>
         <li>키 발송에 쓰는 이메일 발송 서비스: <span class="placeholder">[이메일 발송 서비스 — 아직 정하지 않음]</span></li>
         <li>라이선스 서버에 저장된 내역을 직접 내려받거나 삭제를 요청하려면 12항의 방법으로 알려 주세요.</li>
       </ul>
@@ -160,7 +160,7 @@
       <h2>13. 국외 이전</h2>
       <ul>
         <li><strong>받는 곳과 나라</strong> — 상용 판의 라이선스 기록은 <strong>Cloudflare, Inc.</strong>(미국)로, 결제 정보는 <strong>Paddle.com Market Limited</strong>(영국)로 처리됩니다.</li>
-        <li><strong>저장 위치</strong> — 라이선스 기록은 서버가 있는 <strong>미국</strong>에, 데이터베이스에는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 저장됩니다.</li>
+        <li><strong>저장 위치</strong> — 라이선스 기록은 아시아 · 태평양 지역의 데이터베이스(<strong>Cloudflare D1</strong>)에 저장되고, 요청은 이용자와 가까운 Cloudflare 데이터센터에서 처리됩니다.</li>
         <li><strong>언제 · 어떻게</strong> — 활성화 · 라이선스 확인 · 결제를 시작할 때 네트워크로 보냅니다.</li>
         <li><strong>항목 · 목적 · 보관 기간</strong> — 9항과 10항에 적은 것과 같습니다.</li>
         <li><strong>보호 조치</strong> — Cloudflare 는 데이터 처리 약관(EU 표준계약조항 포함)을 따르고, Paddle 은 판매대행자로서 자기 개인정보 처리방침에 따라 결제 정보를 처리합니다.</li>

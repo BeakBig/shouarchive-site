@@ -132,7 +132,7 @@
         <li>许可证服务器由 <strong>BeakBig</strong>（个人，尚未办理企业登记）· 联系方式 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 运营。服务器使用 <strong>Cloudflare, Inc.</strong>（美国）的 Workers，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。</li>
         <li>发送的值和许可证状态（签发 · 过期 · 取消）在<strong>订阅持续期间</strong>保存，订阅结束或取消后经过 2 年即删除或匿名化（目前由运营者手动处理）。保存期限较短的记录<strong>每天自动</strong>删除 — 访问记录 30 天、支付通知（webhook）处理记录 90 天、密钥发送记录 365 天（接收到的地址只保存哈希值）、未处理的签发等待 7 天。收到取消请求时，确认后立即停用许可证并删除剩余记录。</li>
         <li>此服务器上保存的值与第 9 节所列相同。付款方式信息、卡号、银行账户不会存储。</li>
-        <li>服务器位于 <strong>Cloudflare, Inc.</strong>（美国），数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。支付由 <strong>Paddle.com Market Limited</strong>（英国）作为销售代理（merchant of record）处理。</li>
+        <li>服务器使用 <strong>Cloudflare, Inc.</strong>（美国公司）的 Workers，在离用户较近的 Cloudflare 数据中心运行，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。支付由 <strong>Paddle.com Market Limited</strong>（英国）作为销售代理（merchant of record）处理。</li>
         <li>用于发送密钥的邮件发送服务：<span class="placeholder">[邮件发送服务 — 尚未确定]</span></li>
         <li>如需直接下载或请求删除存储在许可证服务器中的记录，请按第 12 节的方法联系我们。</li>
       </ul>
@@ -160,7 +160,7 @@
       <h2>13. 跨境传输</h2>
       <ul>
         <li><strong>接收方与国家</strong> — 商业版的许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle.com Market Limited</strong>（英国）处理。</li>
-        <li><strong>保存位置</strong> — 许可证记录保存在服务器所在的<strong>美国</strong>，数据库保存在亚太地区（该地区内的实际位置由 Cloudflare 决定）。</li>
+        <li><strong>保存位置</strong> — 许可证记录保存在亚太地区的数据库（<strong>Cloudflare D1</strong>）中，请求在离用户较近的 Cloudflare 数据中心处理。</li>
         <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 开始支付时通过网络发送。</li>
         <li><strong>项目 · 目的 · 保存期限</strong> — 与第 9 节和第 10 节所列相同。</li>
         <li><strong>保护措施</strong> — Cloudflare 遵守数据处理条款（含 EU 标准合同条款），Paddle 作为销售代理按其自身的隐私政策处理支付信息。</li>

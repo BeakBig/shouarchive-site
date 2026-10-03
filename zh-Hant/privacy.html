@@ -132,7 +132,7 @@
         <li>授權伺服器由 <strong>BeakBig</strong>（個人，尚未完成商業登記）· 聯絡方式 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 營運。伺服器使用 <strong>Cloudflare, Inc.</strong>（美國）的 Workers，資料庫位於亞太地區（該地區內的實際位置由 Cloudflare 決定）。</li>
         <li>傳送的數值與授權狀態（核發 · 到期 · 取消）會在<strong>訂閱有效期間</strong>保存，訂閱結束或取消後滿 2 年即刪除或匿名化（目前由營運者手動處理）。保存期間較短的記錄會<strong>每天自動</strong>刪除 — 存取記錄 30 天、付款通知（webhook）處理記錄 90 天、金鑰寄送記錄 365 天（收到的地址只保存雜湊）、未處理的核發待辦 7 天。收到取消要求時，會在確認後立即停止授權並刪除殘留記錄。</li>
         <li>儲存在這個伺服器上的數值與第 9 項所列相同。付款方式資訊、信用卡號、銀行帳戶不會被保存。</li>
-        <li>伺服器位於 <strong>Cloudflare, Inc.</strong>（美國），資料庫位於亞太地區（該地區內的實際位置由 Cloudflare 決定）。付款則由 <strong>Paddle.com Market Limited</strong>（英國）以銷售代理（Merchant of Record）身分處理。</li>
+        <li>伺服器以 <strong>Cloudflare, Inc.</strong>（美國公司）的 Workers 在離使用者較近的 Cloudflare 資料中心執行，資料庫則位於亞太地區（該地區內的實際位置由 Cloudflare 決定）。付款則由 <strong>Paddle.com Market Limited</strong>（英國）以銷售代理（Merchant of Record）身分處理。</li>
         <li>用於寄送金鑰的電子郵件寄送服務：<span class="placeholder">[郵件寄送服務 — 尚未確定]</span></li>
         <li>若要直接下載或要求刪除儲存在授權伺服器上的紀錄，請依第 12 項的方式告知我們。</li>
       </ul>
@@ -160,7 +160,7 @@
       <h2>13. 境外移轉</h2>
       <ul>
         <li><strong>接收方與國家</strong> — 商用版的授權記錄由 <strong>Cloudflare, Inc.</strong>（美國）處理，付款資訊則由 <strong>Paddle.com Market Limited</strong>（英國）處理。</li>
-        <li><strong>保存位置</strong> — 授權記錄保存在伺服器所在的<strong>美國</strong>，資料庫則保存在亞太地區（該地區內的實際位置由 Cloudflare 決定）。</li>
+        <li><strong>保存位置</strong> — 授權記錄保存在亞太地區的資料庫（<strong>Cloudflare D1</strong>），請求則在離使用者較近的 Cloudflare 資料中心處理。</li>
         <li><strong>什麼時候 · 如何傳送</strong> — 啟用 · 授權驗證 · 開始付款時透過網路傳送。</li>
         <li><strong>項目 · 目的 · 保存期間</strong> — 與第 9 項和第 10 項所列相同。</li>
         <li><strong>保護措施</strong> — Cloudflare 遵循資料處理條款（含 EU 標準契約條款），Paddle 則以銷售代理的身分依其自身的隱私權政策處理付款資訊。</li>

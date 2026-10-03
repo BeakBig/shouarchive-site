@@ -32,7 +32,7 @@
       <a href="../pricing.html">Pricing</a>
       <a href="../download.html">Download</a>
       <a href="../support.html">Support</a>
-      <a href="../privacy.html" aria-current="page">Privacy</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
       <label class="lang-switch"><span class="visually-hidden">Language</span><select class="lang-select" aria-label="Language"><option value="../privacy.html">한국어</option><option value="../en/privacy.html" selected>English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
     </nav>
   </div>
@@ -42,18 +42,18 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Privacy Policy</h1>
-      <p>ShouArchive for macOS · Effective September 22, 2026 · Developer: BeakBig</p>
+      <p>ShouArchive for macOS · Effective October 3, 2026 · Developer: BeakBig · Mac App Store edition and the commercial edition</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>In short:</strong> ShouArchive collects no personal data. There are no analytics, no tracking, no ads and no accounts, and the files you inspect are read on your Mac only. The network is used solely when you register your own App Store Connect API key and the app talks to Apple on your behalf.</p>
+        <p><strong>This document covers both editions.</strong> The <strong>Mac App Store edition</strong> (sections 1 – 7) collects no personal data, just as it does today: no analytics, no tracking, no ads and no accounts, the files you inspect are read on your Mac only, and the network is used only when you register your own App Store Connect API key and the app talks to Apple on your behalf. The <strong>commercial edition</strong> (sections 9 – 13) is the edition you subscribe to directly on the web; it sends a <strong>license key, device identifier and app version</strong> to the license server only when it checks your license, and payment is handled by <strong>Paddle</strong> as Merchant of Record. Section 8 on changes and section 14 on contact apply to both editions. The two editions are not linked to each other.</p>
       </div>
 
-      <h2>1. Data we collect</h2>
-      <p>None. The app does not:</p>
+      <h2>1. Data we collect — Mac App Store edition</h2>
+      <p>In this edition, there is <strong>none</strong>. The app does not:</p>
       <ul>
         <li>collect <strong>analytics</strong> such as usage statistics or crash reports;</li>
         <li><strong>track</strong> you or your device, or show <strong>ads</strong>;</li>
@@ -92,18 +92,71 @@
       <p>The app bundles the open-source library <strong>Lottie</strong> to play a loading animation. It is used for display only and does not access the network or collect data. There are no other third-party SDKs.</p>
 
       <h2>6. Sharing and selling</h2>
-      <p>Since nothing is collected, nothing is shared with or sold to anyone. The communication with Apple described in section 3 happens at your request, using your own account and key.</p>
+      <p>The <strong>Mac App Store edition</strong> collects nothing, so nothing is shared with or sold to anyone. The communication with Apple described in section 3 happens at your request, using your own account and key. In the <strong>commercial edition</strong>, the only recipients are the license server in section 11 and Paddle in section 12; nothing is sold or passed on to any other third party<span class="placeholder">[Confirm against the implementation]</span>.</p>
 
       <h2>7. Children</h2>
-      <p>ShouArchive is a tool for software developers and is not directed at children. It collects no personal information from anyone.</p>
+      <p>ShouArchive is a tool for software developers and is not directed at children. In the Mac App Store edition it collects no personal information from anyone.</p>
 
       <h2>8. Changes</h2>
       <p>If this policy changes, the new version will be posted on this page with an updated effective date. If the way the app handles data actually changes, the app's release notes will say so as well.</p>
 
-      <h2>9. Contact</h2>
+      <h2>9. Commercial edition — data we collect</h2>
+      <p>The <strong>commercial edition</strong> (the one you subscribe to directly on this site) sends the values below to the <strong>license server</strong> only to verify your license while your subscription is active. They are not used for anything else<span class="placeholder">[Finalize this table against the implementation. If anything else is sent, it has to be added here]</span>.</p>
+      <table>
+        <thead><tr><th>Value sent</th><th>What it is</th><th>Why it is needed</th></tr></thead>
+        <tbody>
+          <tr><td><strong>License key</strong></td><td>The key that identifies your subscription</td><td>To check whether the subscription is valid</td></tr>
+          <tr><td><strong>Device identifier</strong></td><td>A value that tells devices apart<span class="placeholder">[the exact value and how it is sent]</span></td><td>To check whether you have gone over the number of devices your plan allows</td></tr>
+          <tr><td><strong>App version</strong></td><td>App version · build number</td><td>To confirm the right features and to solve problems</td></tr>
+          <tr><td>Request information</td><td>Request time, IP address<span class="placeholder">[the log entries actually kept]</span></td><td>To stop malicious duplicate use and to respond to outages</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>These values are sent only by the <strong>commercial edition</strong>. The Mac App Store edition makes no network connections (section 3), so it sends nothing.</li>
+        <li>Values that can identify you (your name, a name you gave a device yourself, and so on) are not used for license verification<span class="placeholder">[Confirm against the implementation]</span>.</li>
+        <li>The contents of files (IPA, APK, AAB, <code>.mobileprovision</code>) and artifact inspection results are not sent to the license server. License verification goes no further than checking the license key when the app starts.</li>
+        <li>Advertising, tracking and behavioral analytics SDKs are not included in the commercial edition either<span class="placeholder">[Confirm against the implementation]</span>.</li>
+      </ul>
+
+      <h2>10. Commercial edition — license server and retention</h2>
+      <ul>
+        <li>The license server is operated by <span class="placeholder">[operator · server location]</span><span class="placeholder">[company name if an external host is used]</span>.</li>
+        <li>The values sent and the license status (issued, expired, canceled) are kept for <span class="placeholder">[retention period]</span> and then deleted. If a cancellation request is received, the license is suspended as soon as it is confirmed and the remaining records are deleted.</li>
+        <li>The records kept contain only the values listed in the table in section 9 and the license status. Payment method details, card numbers and bank accounts are not stored on this server.</li>
+        <li>To download the history held on the license server or ask for its deletion, contact us using the method in section 12.</li>
+      </ul>
+
+      <h2>11. Commercial edition — payment and Paddle</h2>
+      <p>Payment for the commercial edition is handled by <strong>Paddle</strong> (<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>) as the <strong>Merchant of Record</strong>. Paddle becomes the seller to the customer and takes care of payment method verification, calculating and applying tax, issuing receipts and processing refunds. Paddle keeps the payment method details, and they never pass through this site's servers.</p>
+      <ul>
+        <li><strong>What Paddle collects and processes</strong> — name, address, email address, payment method details and payment history, billing address, tax number, IP address, location, device and browser information, consent records and so on. This is handled under the <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle Privacy Policy</a>, and Paddle keeps transaction data for 5 years to meet its legal obligations.</li>
+        <li><strong>What comes to the seller (us)</strong> — the buyer's name, address and email address, the purchase history, and the transaction analytics visible in the dashboard. Full card numbers and security codes do not come through. No special categories of sensitive information are shared.</li>
+        <li>The seller and Paddle are each an <strong>independent data controller</strong> for this data. The seller uses what it receives only to issue licenses, confirm payment and answer customer questions.</li>
+        <li>Questions about payment are handled by Paddle's customer support. The refund criteria are written up in the <a href="refund.html">Refund Policy</a>.</li>
+        <li>Paddle's reseller terms apply as well: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle Terms of Service</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle Buyer Terms</a>.</li>
+      </ul>
+
+      <h2>12. Your rights as a data subject</h2>
+      <p>You have the right to access, correct, delete, restrict and refuse the processing of your personal data (suspension of processing in certain cases).</p>
+      <ul>
+        <li><strong>Records held on the license server</strong> — request them at <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>. Once your identity is confirmed, we handle the request within <span class="placeholder">[response deadline]</span> and tell you the outcome.</li>
+        <li><strong>Payment information held by Paddle</strong> — handled under Paddle's own policy and procedures. If you need that information, request it from Paddle directly.</li>
+        <li><strong>What you can refuse</strong> — license verification is the processing required to use the commercial edition. If you refuse it, you cannot use the commercial edition.</li>
+        <li>If a parent or legal representative makes the request on your behalf, we confirm the relationship first and then handle it.</li>
+      </ul>
+      <p>This policy is written with reference to the data protection laws of <span class="placeholder">[jurisdiction]</span><span class="placeholder">[Review the wording each jurisdiction requires]</span>.</p>
+
+      <h2>13. Transfers outside your country</h2>
+      <ul>
+        <li>License records for the commercial edition may be transferred to the server location in section 10 and processed there, and payment information may be transferred to the locations Paddle has set<span class="placeholder">[Actual destination countries and safeguards]</span>.</li>
+        <li>App Store Connect API requests sent to Apple go to Apple's servers (section 3).</li>
+        <li>Where consent is required for a transfer outside your country, we ask for it and explain the destination country and the other safeguards.</li>
+      </ul>
+
+      <h2>14. Contact</h2>
       <p>Questions about this policy or about how the app handles data: <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
 
-      <p class="meta">Effective date: September 22, 2026 · Developer and publisher: BeakBig</p>
+      <p class="meta">Effective date: October 3, 2026 (data handling in the Mac App Store edition is unchanged since the effective date of September 22, 2026) · Developer and publisher: BeakBig</p>
     </div>
   </section>
 </main>
@@ -115,7 +168,7 @@
       <a href="../pricing.html">Pricing</a>
       <a href="../download.html">Download</a>
       <a href="../support.html">Support</a>
-      <a href="../privacy.html" aria-current="page">Privacy Policy</a>
+      <a href="privacy.html" aria-current="page">Privacy Policy</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../refund.html">Refund Policy</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>

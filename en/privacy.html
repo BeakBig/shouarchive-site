@@ -101,28 +101,39 @@
       <p>If this policy changes, the new version will be posted on this page with an updated effective date. If the way the app handles data actually changes, the app's release notes will say so as well.</p>
 
       <h2>9. Commercial edition — data we collect</h2>
-      <p>The <strong>commercial edition</strong> (the one you subscribe to directly on this site) sends the values below to the <strong>license server</strong> only to verify your license while your subscription is active. They are not used for anything else<span class="placeholder">[Finalize this table against the implementation. If anything else is sent, it has to be added here]</span>.</p>
+      <p>The <strong>commercial edition</strong> (the one you subscribe to directly on this site) sends the values below to the <strong>license server</strong> only to verify your license while your subscription is active. They are not used for anything else, and every transmission is over HTTPS.</p>
       <table>
         <thead><tr><th>Value sent</th><th>What it is</th><th>Why it is needed</th></tr></thead>
         <tbody>
           <tr><td><strong>License key</strong></td><td>The key that identifies your subscription</td><td>To check whether the subscription is valid</td></tr>
-          <tr><td><strong>Device identifier</strong></td><td>A value that tells devices apart<span class="placeholder">[the exact value and how it is sent]</span></td><td>To check whether you have gone over the number of devices your plan allows</td></tr>
+          <tr><td><strong>Device identifier</strong></td><td>A value that includes this Mac's hostname</td><td>To check whether you have gone over the number of devices your plan allows</td></tr>
           <tr><td><strong>App version</strong></td><td>App version · build number</td><td>To confirm the right features and to solve problems</td></tr>
-          <tr><td>Request information</td><td>Request time, IP address<span class="placeholder">[the log entries actually kept]</span></td><td>To stop malicious duplicate use and to respond to outages</td></tr>
+          <tr><td>Access log</td><td>A hash of the device identifier, the app version, the time and a short error reason</td><td>To respond to outages and to solve problems</td></tr>
         </tbody>
       </table>
+      <p><strong>What is sent and when.</strong></p>
+      <ul>
+        <li><strong>Activation</strong> — license key, purchase email, device identifier, installation identifier, app version, macOS version</li>
+        <li><strong>License verification</strong> — roughly every 12 hours: license key, device identifier, installation identifier, app version</li>
+        <li><strong>Deactivation</strong> — license key, device identifier</li>
+        <li><strong>Starting a payment</strong> — plan (monthly · annual), device identifier, installation identifier, app version. The payment itself takes place on Paddle's checkout page</li>
+      </ul>
+      <p><strong>What is stored on the server.</strong> The license key and the device and installation identifiers are <strong>not stored as they are — only a hash (SHA-256 · HMAC-SHA256) is stored</strong>. The app version and the purchase email are stored as they are, and the purchase email is used to look up licenses and to send keys. From Paddle we receive the subscription, customer and transaction IDs, the subscription status, the price ID, the next billing date and any scheduled change. We do not receive names, addresses or card information.</p>
+      <p><strong>What is not stored.</strong> IP addresses, request headers and request bodies, the macOS version (received but not stored), names and addresses, card numbers, marketing consent and usage statistics.</p>
       <ul>
         <li>These values are sent only by the <strong>commercial edition</strong>. The Mac App Store edition makes no network connections (section 3), so it sends nothing.</li>
         <li>Values that can identify you (your name, a name you gave a device yourself, and so on) are not used for license verification<span class="placeholder">[Confirm against the implementation]</span>.</li>
-        <li>The contents of files (IPA, APK, AAB, <code>.mobileprovision</code>) and artifact inspection results are not sent to the license server. License verification goes no further than checking the license key when the app starts.</li>
+        <li>The contents of files (IPA, APK, AAB, <code>.mobileprovision</code>) and artifact inspection results are not sent to the license server.</li>
         <li>Advertising, tracking and behavioral analytics SDKs are not included in the commercial edition either<span class="placeholder">[Confirm against the implementation]</span>.</li>
       </ul>
 
       <h2>10. Commercial edition — license server and retention</h2>
       <ul>
-        <li>The license server is operated by <span class="placeholder">[operator · server location]</span><span class="placeholder">[company name if an external host is used]</span>.</li>
-        <li>The values sent and the license status (issued, expired, canceled) are kept for <span class="placeholder">[retention period]</span> and then deleted. If a cancellation request is received, the license is suspended as soon as it is confirmed and the remaining records are deleted.</li>
-        <li>The records kept contain only the values listed in the table in section 9 and the license status. Payment method details, card numbers and bank accounts are not stored on this server.</li>
+        <li>The license server is operated by <strong>BeakBig</strong> (an individual, not yet registered as a business) · contact <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>. The server uses the Workers and D1 services of <strong>Cloudflare, Inc.</strong> (United States)<span class="placeholder">[database location — decided when the server is built]</span>.</li>
+        <li>The values sent and the license status (issued, expired, canceled) are kept <strong>for as long as the subscription is active</strong>, and are deleted or anonymized two years after the subscription ends or is canceled (this is currently done by the operator by hand). Shorter-lived records are deleted <strong>automatically every day</strong> — access logs after 30 days, processed payment notification (webhook) records after 90 days, key delivery records after 365 days (only a hash of the address received is kept), and unprocessed pending issuances after 7 days. If we receive a cancellation request, we suspend the license as soon as it is confirmed and delete the remaining records.</li>
+        <li>The values stored on this server are the ones listed in section 9. Payment method details, card numbers and bank accounts are not stored.</li>
+        <li>The server and the database are located at <strong>Cloudflare, Inc.</strong> (United States), and payments are handled by <strong>Paddle.com Market Limited</strong> (United Kingdom) as merchant of record.</li>
+        <li>The email delivery service used to send keys: <span class="placeholder">[email sending service — not chosen yet]</span></li>
         <li>To download the history held on the license server or ask for its deletion, contact us using the method in section 12.</li>
       </ul>
 
@@ -148,9 +159,12 @@
 
       <h2>13. Transfers outside your country</h2>
       <ul>
-        <li>License records for the commercial edition may be transferred to the server location in section 10 and processed there, and payment information may be transferred to the locations Paddle has set<span class="placeholder">[Actual destination countries and safeguards]</span>.</li>
+        <li><strong>Recipients and countries</strong> — license records for the commercial edition are handled by <strong>Cloudflare, Inc.</strong> (United States), and payment information by <strong>Paddle.com Market Limited</strong> (United Kingdom).</li>
+        <li><strong>When and how</strong> — sent over the network when you activate, verify your license and start a payment.</li>
+        <li><strong>Items, purposes and retention periods</strong> — the same as those set out in sections 9 and 10.</li>
+        <li><strong>Safeguards</strong> — Cloudflare follows its data processing agreement (including the EU standard contractual clauses), and Paddle handles payment information under its own privacy policy as merchant of record.</li>
+        <li><strong>How to refuse, and what happens then</strong> — if you do not use a commercial edition license, no transfer takes place. In that case the build feature of the direct distribution edition is locked once the trial period ends, and the App Store edition does not use this server.</li>
         <li>App Store Connect API requests sent to Apple go to Apple's servers (section 3).</li>
-        <li>Where consent is required for a transfer outside your country, we ask for it and explain the destination country and the other safeguards.</li>
       </ul>
 
       <h2>14. Contact</h2>

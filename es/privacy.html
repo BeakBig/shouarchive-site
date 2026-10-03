@@ -101,28 +101,39 @@
       <p>Si esta política cambia, la nueva versión se publicará en esta página con la fecha de entrada en vigor actualizada. Si cambia de verdad la forma en que la app trata los datos, también se indicará en las notas de la versión de la app.</p>
 
       <h2>9. Edición comercial — datos que recopilamos</h2>
-      <p>La <strong>edición comercial</strong> (la que se suscribe directamente desde este sitio) envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para comprobar la licencia durante la suscripción, y no los usa para ningún otro fin<span class="placeholder">[confirma la tabla siguiente a partir de la implementación. Si se envía algún valor más, hay que añadirlo a la tabla]</span>.</p>
+      <p>La <strong>edición comercial</strong> (la que se suscribe directamente desde este sitio) envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para comprobar la licencia durante la suscripción, y no los usa para ningún otro fin: todas las transmisiones se realizan por HTTPS.</p>
       <table>
         <thead><tr><th>Valor enviado</th><th>Contenido</th><th>Por qué hace falta</th></tr></thead>
         <tbody>
           <tr><td><strong>Clave de licencia</strong></td><td>La clave que identifica la suscripción</td><td>Sirve para comprobar que la suscripción es válida</td></tr>
-          <tr><td><strong>Identificador del dispositivo</strong></td><td>Un valor que permite distinguir el dispositivo<span class="placeholder">[el valor y el método exactos que se transmiten]</span></td><td>Sirve para comprobar si se supera el número de dispositivos que permite el plan</td></tr>
+          <tr><td><strong>Identificador del dispositivo</strong></td><td>Un valor que incluye el nombre de host de tu Mac</td><td>Sirve para comprobar si se supera el número de dispositivos que permite el plan</td></tr>
           <tr><td><strong>Versión de la app</strong></td><td>Versión y número de compilación de la app</td><td>Sirve para comprobar que las funciones son correctas y resolver problemas</td></tr>
-          <tr><td>Datos de la solicitud</td><td>Hora de la solicitud, dirección IP<span class="placeholder">[los campos que se guardan realmente en el registro]</span></td><td>Sirve para impedir el uso duplicado malicioso y responder a las averías</td></tr>
+          <tr><td>Registro de accesos</td><td>El hash del identificador del dispositivo, la versión de la app, la hora y un breve motivo del error</td><td>Sirve para responder a las averías y resolver problemas</td></tr>
         </tbody>
       </table>
+      <p><strong>Cuándo se envía cada cosa.</strong></p>
+      <ul>
+        <li><strong>Activación</strong> — clave de licencia, correo electrónico de compra, identificador del dispositivo, identificador de instalación, versión de la app, versión de macOS</li>
+        <li><strong>Comprobación de la licencia</strong> — cada 12 horas aproximadamente: clave de licencia, identificador del dispositivo, identificador de instalación, versión de la app</li>
+        <li><strong>Desvinculación</strong> — clave de licencia, identificador del dispositivo</li>
+        <li><strong>Inicio del pago</strong> — plan (mensual · anual), identificador del dispositivo, identificador de instalación, versión de la app. El pago en sí se hace en la página de pago de Paddle</li>
+      </ul>
+      <p><strong>Lo que se guarda en el servidor.</strong> La clave de licencia y los identificadores de dispositivo e instalación se guardan <strong>únicamente en forma de hash (SHA-256 · HMAC-SHA256), nunca en texto claro</strong>. La versión de la app y el correo electrónico de compra se guardan tal cual, y el correo electrónico de compra se usa para consultar la licencia y para enviar la clave. De Paddle recibimos el identificador de suscripción, el de cliente y el de transacción, el estado de la suscripción, el identificador de precio, la próxima fecha de pago y los cambios programados. No recibimos el nombre, el domicilio ni los datos de la tarjeta.</p>
+      <p><strong>Lo que no se guarda.</strong> La dirección IP, las cabeceras y el cuerpo de las solicitudes, la versión de macOS (se recibe, pero no se guarda), el nombre y el domicilio, el número de tarjeta, el consentimiento de marketing y las estadísticas de uso.</p>
       <ul>
         <li>Estos valores solo se envían desde la <strong>edición comercial</strong>, que es donde funciona la app. La edición del Mac App Store no accede a la red, así que no envía nada (sección 3).</li>
         <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (su nombre, el nombre que hayas puesto al dispositivo, etc.)<span class="placeholder">[confírmalo consultando la implementación]</span>.</li>
-        <li>No se envía al servidor de licencias ni el contenido de los archivos (IPA, APK, AAB, <code>.mobileprovision</code>) ni los resultados de la inspección de artefactos. La comprobación de la licencia se limita a verificar la clave de licencia al arrancar la app.</li>
+        <li>No se envía al servidor de licencias ni el contenido de los archivos (IPA, APK, AAB, <code>.mobileprovision</code>) ni los resultados de la inspección de artefactos.</li>
         <li>Tampoco se incluyen SDK de publicidad, de rastreo ni de análisis del comportamiento en la edición comercial<span class="placeholder">[confírmalo consultando la implementación]</span>.</li>
       </ul>
 
       <h2>10. Edición comercial — servidor de licencias y conservación</h2>
       <ul>
-        <li>El servidor de licencias lo explota <span class="placeholder">[entidad responsable · ubicación del servidor]</span><span class="placeholder">[si usas un hosting externo, el nombre de la empresa]</span>.</li>
-        <li>Los valores enviados y el estado de la licencia (emitida · caducada · cancelada) se conservan durante <span class="placeholder">[periodo de conservación]</span> y después se eliminan. Cuando recibimos una solicitud de cancelación, suspendemos la licencia en cuanto la verificamos y borramos los registros restantes.</li>
-        <li>Los registros que conservamos solo contienen los valores de la tabla de la sección 9 y el estado de la licencia. En este servidor no se guardan datos del método de pago, números de tarjeta ni cuentas bancarias.</li>
+        <li>El servidor de licencias lo explota <strong>BeakBig</strong> (persona física, todavía sin alta como empresa) · contacto: <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>. El servidor usa Workers y D1 de <strong>Cloudflare, Inc.</strong> (Estados Unidos)<span class="placeholder">[ubicación de la base de datos — se decide al crear el servidor]</span>.</li>
+        <li>Los valores enviados y el estado de la licencia (emitida · caducada · cancelada) se conservan <strong>mientras la suscripción esté activa</strong> y, una vez que la suscripción ha terminado o se ha cancelado y han pasado 2 años, se eliminan o se anonimizan (ahora lo hace el operador a mano). Los registros con plazos cortos se borran <strong>cada día de forma automática</strong>: los registros de accesos, a los 30 días; los registros de tratamiento de avisos de pago (webhooks), a los 90 días; los registros de envío de claves, a los 365 días (de la dirección que las recibe solo se guarda el hash); y los pendientes de emisión sin tratar, a los 7 días. Cuando recibimos una solicitud de cancelación, suspendemos la licencia en cuanto la verificamos y borramos los registros restantes.</li>
+        <li>Los valores que se guardan en este servidor son los que se indican en la sección 9. No se guardan datos del método de pago, números de tarjeta ni cuentas bancarias.</li>
+        <li>El servidor y la base de datos están en <strong>Cloudflare, Inc.</strong> (Estados Unidos), y los pagos los gestiona <strong>Paddle.com Market Limited</strong> (Reino Unido) como Merchant of Record.</li>
+        <li>Servicio de envío de correo para mandar la clave de licencia: <span class="placeholder">[servicio de envío de correo — sin decidir]</span></li>
         <li>Si quieres descargar directamente o solicitar la eliminación del historial guardado en el servidor de licencias, avísanos conforme al método de la sección 12.</li>
       </ul>
 
@@ -148,9 +159,12 @@
 
       <h2>13. Transferencias internacionales</h2>
       <ul>
-        <li>Los registros de licencia de la edición comercial pueden transferirse y tratarse en la ubicación del servidor indicada en la sección 10, y la información de pago en la ubicación que determine Paddle<span class="placeholder">[país real de transferencia y salvaguardas]</span>.</li>
+        <li><strong>Destino y país</strong> — los registros de licencia de la edición comercial se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), y la información de pago en <strong>Paddle.com Market Limited</strong> (Reino Unido).</li>
+        <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla y al iniciar el pago.</li>
+        <li><strong>Categorías, fines y plazos de conservación</strong> — los mismos que se indican en las secciones 9 y 10.</li>
+        <li><strong>Medidas de protección</strong> — Cloudflare sigue su acuerdo de tratamiento de datos (con las cláusulas contractuales tipo de la UE incluidas) y Paddle trata la información de pago conforme a su propia política de privacidad en su condición de Merchant of Record.</li>
+        <li><strong>Cómo rechazarlas y qué ocurre</strong> — si no usas la licencia de la edición comercial no se produce ninguna transferencia. En ese caso, las funciones de compilación de la distribución directa se bloquean cuando termina el periodo de prueba, y la edición del App Store no usa este servidor.</li>
         <li>Las solicitudes a la API de App Store Connect que se envían a Apple van a los servidores de Apple (sección 3).</li>
-        <li>Cuando sea necesario, pedimos tu consentimiento para la transferencia internacional y explicamos el país de destino y las demás medidas de protección.</li>
       </ul>
 
       <h2>14. Contacto</h2>

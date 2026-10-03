@@ -101,28 +101,39 @@
       <p>如果本政策有变更，新版本会连同更新后的生效日期一起发布在本页面。如果应用处理数据的方式确实发生了变化，应用的发行说明中也会予以说明。</p>
 
       <h2>9. 商业版 — 收集的信息</h2>
-      <p><strong>商业版</strong>（在本网站直接订阅的版本）仅在订阅期间为验证许可证，将下列值发送到<strong>许可证服务器</strong>，不作其他用途<span class="placeholder">[请以实现为准确定下表。如果还有发送的值，必须补入表中]</span>。</p>
+      <p><strong>商业版</strong>（在本网站直接订阅的版本）仅在订阅期间为验证许可证，将下列值发送到<strong>许可证服务器</strong>，不作其他用途，所有传输均通过 HTTPS 进行。</p>
       <table>
         <thead><tr><th>发送的值</th><th>内容</th><th>为什么需要</th></tr></thead>
         <tbody>
           <tr><td><strong>许可证密钥</strong></td><td>用于区分订阅的密钥</td><td>确认订阅是否有效</td></tr>
-          <tr><td><strong>设备标识值</strong></td><td>用于区分设备的值<span class="placeholder">[实际发送的具体值与方式]</span></td><td>确认是否超出套餐允许的设备数量</td></tr>
+          <tr><td><strong>设备标识值</strong></td><td>含这台 Mac 主机名称的值</td><td>确认是否超出套餐允许的设备数量</td></tr>
           <tr><td><strong>应用版本</strong></td><td>应用版本 · 构建号</td><td>确认功能是否匹配并解决问题</td></tr>
-          <tr><td>请求信息</td><td>请求时间、IP 地址<span class="placeholder">[实际保留的日志项目]</span></td><td>防止恶意重复使用并应对故障</td></tr>
+          <tr><td>访问记录</td><td>设备标识值的哈希、应用版本、时间、简短的错误原因</td><td>应对故障并解决问题</td></tr>
         </tbody>
       </table>
+      <p><strong>何时发送什么。</strong></p>
+      <ul>
+        <li><strong>激活</strong> — 许可证密钥、购买邮箱地址、设备标识值、安装标识值、应用版本、macOS 版本</li>
+        <li><strong>许可证验证</strong> — 大约每 12 小时发送许可证密钥、设备标识值、安装标识值、应用版本</li>
+        <li><strong>解除</strong> — 许可证密钥、设备标识值</li>
+        <li><strong>开始支付</strong> — 套餐（月度 · 年度）、设备标识值、安装标识值、应用版本。支付本身在 Paddle 的支付页面完成</li>
+      </ul>
+      <p><strong>服务器上保存的内容。</strong> 许可证密钥和设备 · 安装标识值<strong>不保存原文，只保存哈希值（SHA-256 · HMAC-SHA256）</strong>。应用版本和购买邮箱地址按原样保存，购买邮箱地址用于查询许可证和发送密钥。从 Paddle 接收订阅 · 客户 · 交易 id、订阅状态、价格 id、下次付款日期和已计划的变更。不接收姓名 · 地址 · 卡片信息。</p>
+      <p><strong>不保存的内容。</strong> IP 地址、请求头和请求正文、macOS 版本（只接收，不保存）、姓名 · 地址、卡号、营销同意、使用统计。</p>
       <ul>
         <li>这些值只在应用运行的<strong>商业版</strong>中发送。Mac App Store 版不接入网络，因此（第 3 节）不会发送任何内容。</li>
         <li>可用于识别用户身份的数值（用户名 · 直接标注在设备上的名称等）不用于许可证验证<span class="placeholder">[请对照实现确认]</span>。</li>
-        <li>文件（IPA · APK · AAB · <code>.mobileprovision</code>）的内容和产物检查结果不会发送到许可证服务器。许可证验证仅限于应用启动时确认许可证密钥。</li>
+        <li>文件（IPA · APK · AAB · <code>.mobileprovision</code>）的内容和产物检查结果不会发送到许可证服务器。</li>
         <li>商业版同样不会加入广告 · 跟踪 · 行为分析 SDK<span class="placeholder">[请对照实现确认]</span>。</li>
       </ul>
 
       <h2>10. 商业版 — 许可证服务器与保存</h2>
       <ul>
-        <li>许可证服务器由 <span class="placeholder">[运营主体 · 服务器所在地]</span> 运营<span class="placeholder">[如果使用外部托管，请填写公司名称]</span>。</li>
-        <li>发送的值和许可证状态（签发 · 过期 · 取消）在 <span class="placeholder">[保存期限]</span> 内保存，之后删除。收到取消请求时会立即停用许可证并删除剩余记录。</li>
-        <li>保存的记录中只有第 9 节表中所列的值和许可证状态。付款方式信息、卡号、银行账户不会存储在此服务器中。</li>
+        <li>许可证服务器由 <strong>BeakBig</strong>（个人，尚未办理企业登记）· 联系方式 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 运营。服务器使用 <strong>Cloudflare, Inc.</strong>（美国）的 Workers 和 D1<span class="placeholder">[数据库位置 — 创建服务器时确定]</span>。</li>
+        <li>发送的值和许可证状态（签发 · 过期 · 取消）在<strong>订阅持续期间</strong>保存，订阅结束或取消后经过 2 年即删除或匿名化（目前由运营者手动处理）。保存期限较短的记录<strong>每天自动</strong>删除 — 访问记录 30 天、支付通知（webhook）处理记录 90 天、密钥发送记录 365 天（接收到的地址只保存哈希值）、未处理的签发等待 7 天。收到取消请求时，确认后立即停用许可证并删除剩余记录。</li>
+        <li>此服务器上保存的值与第 9 节所列相同。付款方式信息、卡号、银行账户不会存储。</li>
+        <li>服务器和数据库位于 <strong>Cloudflare, Inc.</strong>（美国），支付由 <strong>Paddle.com Market Limited</strong>（英国）作为销售代理（merchant of record）处理。</li>
+        <li>用于发送密钥的邮件发送服务：<span class="placeholder">[邮件发送服务 — 尚未确定]</span></li>
         <li>如需直接下载或请求删除存储在许可证服务器中的记录，请按第 12 节的方法联系我们。</li>
       </ul>
 
@@ -148,9 +159,12 @@
 
       <h2>13. 跨境传输</h2>
       <ul>
-        <li>商业版的许可证记录可能被传输至第 10 节所述的服务器所在地处理，支付信息可能被传输至 Paddle 指定的地点处理<span class="placeholder">[实际传输的国家和 Safeguard 保障措施]</span>。</li>
+        <li><strong>接收方与国家</strong> — 商业版的许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle.com Market Limited</strong>（英国）处理。</li>
+        <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 开始支付时通过网络发送。</li>
+        <li><strong>项目 · 目的 · 保存期限</strong> — 与第 9 节和第 10 节所列相同。</li>
+        <li><strong>保护措施</strong> — Cloudflare 遵守数据处理条款（含 EU 标准合同条款），Paddle 作为销售代理按其自身的隐私政策处理支付信息。</li>
+        <li><strong>拒绝方式与结果</strong> — 不使用商业版许可证时不会发生跨境传输。此时直接分发版的构建功能在试用期结束后会被锁定，App Store 版不使用此服务器。</li>
         <li>发送到 Apple 的 App Store Connect API 请求会进入 Apple 的服务器（第 3 节）。</li>
-        <li>必要时将就跨境传输取得同意，并说明接收国家及其他保护措施。</li>
       </ul>
 
       <h2>14. 联系方式</h2>

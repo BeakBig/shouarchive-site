@@ -36,8 +36,11 @@ def lang_switch(lang, page):
     opts = ''.join(f'<option value="{rel(lang, l, page)}"{" selected" if l == lang else ""}>{name}</option>' for l, name in LANGS)
     return f'<label class="lang-switch"><span class="visually-hidden">{t["lang"]}</span><select class="lang-select" aria-label="{t["lang"]}">{opts}</select></label>'
 
+def cur(l, lang):  # f-string 안의 식에 따옴표를 넣지 않도록 따로 뺀다 (파이썬 버전마다 허용 여부가 다르다)
+    return ' aria-current="page"' if l == lang else ''
+
 def footer_langs(lang, page):
-    links = ' '.join(f'<a href="{rel(lang, l, page)}" lang="{l}" hreflang="{l}"{" aria-current=\"page\"" if l == lang else ""}>{name}</a>' for l, name in LANGS)
+    links = ' '.join(f'<a href="{rel(lang, l, page)}" lang="{l}" hreflang="{l}"{cur(l, lang)}>{name}</a>' for l, name in LANGS)
     return f'<span class="footer-langs">{links}</span>'
 
 def menu_links(lang, page, links):

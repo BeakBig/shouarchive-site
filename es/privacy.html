@@ -106,7 +106,7 @@
         <thead><tr><th>Valor enviado</th><th>Contenido</th><th>Por qué hace falta</th></tr></thead>
         <tbody>
           <tr><td><strong>Clave de licencia</strong></td><td>La clave que identifica la suscripción</td><td>Sirve para comprobar que la suscripción es válida</td></tr>
-          <tr><td><strong>Identificador del dispositivo</strong></td><td>Un valor que incluye el nombre de host de tu Mac</td><td>Sirve para comprobar si se supera el número de dispositivos que permite el plan</td></tr>
+          <tr><td><strong>Identificador del dispositivo</strong></td><td>Los 32 primeros caracteres del hash SHA-256 del UUID de hardware de este Mac al que se le añade un prefijo propio de la app. No se envían el UUID de hardware en texto claro, ni el nombre de host, ni el nombre de la persona usuaria. Si no se puede leer el UUID de hardware, la app usa un identificador de instalación aleatorio creado en su primera ejecución y lo trata de la misma manera. El valor no cambia aunque cambien el nombre del Mac o la red</td><td>Sirve para comprobar si se supera el número de dispositivos que permite el plan</td></tr>
           <tr><td><strong>Versión de la app</strong></td><td>Versión y número de compilación de la app</td><td>Sirve para comprobar que las funciones son correctas y resolver problemas</td></tr>
           <tr><td>Registro de accesos</td><td>El hash del identificador del dispositivo, la versión de la app, la hora y un breve motivo del error</td><td>Sirve para responder a las averías y resolver problemas</td></tr>
         </tbody>
@@ -122,7 +122,7 @@
       <p><strong>Lo que no se guarda.</strong> La dirección IP, las cabeceras y el cuerpo de las solicitudes, la versión de macOS (se recibe, pero no se guarda), el nombre y el domicilio, el número de tarjeta, el consentimiento de marketing y las estadísticas de uso.</p>
       <ul>
         <li>Estos valores solo se envían desde la <strong>edición comercial</strong>, que es donde funciona la app. La edición del Mac App Store no accede a la red, así que no envía nada (sección 3).</li>
-        <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (su nombre, el nombre que hayas puesto al dispositivo, etc.)<span class="placeholder">[confírmalo consultando la implementación]</span>.</li>
+        <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (su nombre, el nombre que hayas puesto al dispositivo, etc.)</li>
         <li>No se envía al servidor de licencias ni el contenido de los archivos (IPA, APK, AAB, <code>.mobileprovision</code>) ni los resultados de la inspección de artefactos.</li>
         <li>Tampoco se incluyen SDK de publicidad, de rastreo ni de análisis del comportamiento en la edición comercial<span class="placeholder">[confírmalo consultando la implementación]</span>.</li>
       </ul>

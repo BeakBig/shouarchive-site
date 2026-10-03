@@ -106,7 +106,7 @@
         <thead><tr><th>Value sent</th><th>What it is</th><th>Why it is needed</th></tr></thead>
         <tbody>
           <tr><td><strong>License key</strong></td><td>The key that identifies your subscription</td><td>To check whether the subscription is valid</td></tr>
-          <tr><td><strong>Device identifier</strong></td><td>A value that includes this Mac's hostname</td><td>To check whether you have gone over the number of devices your plan allows</td></tr>
+          <tr><td><strong>Device identifier</strong></td><td>The first 32 characters of the SHA-256 hash of this Mac's hardware UUID with an app-specific prefix added. The raw hardware UUID, the hostname and the user name are not sent. If the hardware UUID cannot be read, the app hashes a random install ID created on the first launch in the same way. The value stays the same even if the Mac name or the network changes</td><td>To check whether you have gone over the number of devices your plan allows</td></tr>
           <tr><td><strong>App version</strong></td><td>App version · build number</td><td>To confirm the right features and to solve problems</td></tr>
           <tr><td>Access log</td><td>A hash of the device identifier, the app version, the time and a short error reason</td><td>To respond to outages and to solve problems</td></tr>
         </tbody>
@@ -122,7 +122,7 @@
       <p><strong>What is not stored.</strong> IP addresses, request headers and request bodies, the macOS version (received but not stored), names and addresses, card numbers, marketing consent and usage statistics.</p>
       <ul>
         <li>These values are sent only by the <strong>commercial edition</strong>. The Mac App Store edition makes no network connections (section 3), so it sends nothing.</li>
-        <li>Values that can identify you (your name, a name you gave a device yourself, and so on) are not used for license verification<span class="placeholder">[Confirm against the implementation]</span>.</li>
+        <li>Values that can identify you (your name, a name you gave a device yourself, and so on) are not used for license verification.</li>
         <li>The contents of files (IPA, APK, AAB, <code>.mobileprovision</code>) and artifact inspection results are not sent to the license server.</li>
         <li>Advertising, tracking and behavioral analytics SDKs are not included in the commercial edition either<span class="placeholder">[Confirm against the implementation]</span>.</li>
       </ul>

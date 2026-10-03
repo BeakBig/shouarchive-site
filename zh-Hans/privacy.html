@@ -106,7 +106,7 @@
         <thead><tr><th>发送的值</th><th>内容</th><th>为什么需要</th></tr></thead>
         <tbody>
           <tr><td><strong>许可证密钥</strong></td><td>用于区分订阅的密钥</td><td>确认订阅是否有效</td></tr>
-          <tr><td><strong>设备标识值</strong></td><td>含这台 Mac 主机名称的值</td><td>确认是否超出套餐允许的设备数量</td></tr>
+          <tr><td><strong>设备标识值</strong></td><td>这台 Mac 的硬件 UUID 加上应用专用前缀后用 SHA-256 计算哈希所得值的前 32 个字符。硬件 UUID 原文 · 主机名称 · 用户名称不发送。读不到硬件 UUID 时，使用应用首次启动时生成的随机安装 ID 以同样的方式计算。即使 Mac 名称或网络发生变化，该值也保持不变</td><td>确认是否超出套餐允许的设备数量</td></tr>
           <tr><td><strong>应用版本</strong></td><td>应用版本 · 构建号</td><td>确认功能是否匹配并解决问题</td></tr>
           <tr><td>访问记录</td><td>设备标识值的哈希、应用版本、时间、简短的错误原因</td><td>应对故障并解决问题</td></tr>
         </tbody>
@@ -122,7 +122,7 @@
       <p><strong>不保存的内容。</strong> IP 地址、请求头和请求正文、macOS 版本（只接收，不保存）、姓名 · 地址、卡号、营销同意、使用统计。</p>
       <ul>
         <li>这些值只在应用运行的<strong>商业版</strong>中发送。Mac App Store 版不接入网络，因此（第 3 节）不会发送任何内容。</li>
-        <li>可用于识别用户身份的数值（用户名 · 直接标注在设备上的名称等）不用于许可证验证<span class="placeholder">[请对照实现确认]</span>。</li>
+        <li>可用于识别用户身份的数值（用户名 · 直接标注在设备上的名称等）不用于许可证验证。</li>
         <li>文件（IPA · APK · AAB · <code>.mobileprovision</code>）的内容和产物检查结果不会发送到许可证服务器。</li>
         <li>商业版同样不会加入广告 · 跟踪 · 行为分析 SDK<span class="placeholder">[请对照实现确认]</span>。</li>
       </ul>

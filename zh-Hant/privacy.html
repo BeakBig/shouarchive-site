@@ -106,7 +106,7 @@
         <thead><tr><th>傳送的數值</th><th>內容</th><th>為什麼需要</th></tr></thead>
         <tbody>
           <tr><td><strong>授權金鑰</strong></td><td>用來辨識訂閱的金鑰</td><td>確認訂閱是否有效</td></tr>
-          <tr><td><strong>裝置識別值</strong></td><td>包含這台 Mac 之主機名稱的數值</td><td>確認是否超過方案允許的裝置數</td></tr>
+          <tr><td><strong>裝置識別值</strong></td><td>將這台 Mac 的硬體 UUID 加上 App 專用前綴後以 SHA-256 取雜湊，取其前 32 個字元。硬體 UUID 原文 · 主機名稱 · 使用者名稱不會傳送。若無法讀取硬體 UUID，則以相同方式使用 App 第一次啟動時隨機產生的安裝 ID。Mac 名稱或網路變更時，這個值仍然不變</td><td>確認是否超過方案允許的裝置數</td></tr>
           <tr><td><strong>App 版本</strong></td><td>App 版本 · 建置編號</td><td>確認功能是否相符並解決問題</td></tr>
           <tr><td>存取記錄</td><td>裝置識別值的雜湊、App 版本、時間、簡短的錯誤原因</td><td>因應故障並解決問題</td></tr>
         </tbody>
@@ -122,7 +122,7 @@
       <p><strong>不會保存的內容。</strong> IP 位址、請求標頭與請求內容、macOS 版本（只接收而不保存）、姓名 · 地址、信用卡號、行銷同意、使用統計。</p>
       <ul>
         <li>這些數值只在 App 運作的<strong>商用版</strong>中傳送。Mac App Store 版不會連線到網路（第 3 項），因此不會傳送任何資料。</li>
-        <li>可識別使用者身分的數值（使用者名稱 · 直接標在裝置上的名稱等）不會用於授權驗證<span class="placeholder">[請確認實作內容後再定稿]</span>。</li>
+        <li>可識別使用者身分的數值（使用者名稱 · 直接標在裝置上的名稱等）不會用於授權驗證。</li>
         <li>檔案（IPA · APK · AAB · <code>.mobileprovision</code>）的內容與產物檢查結果不會傳送至授權伺服器。</li>
         <li>廣告 · 追蹤 · 行為分析 SDK 也不會加入商用版<span class="placeholder">[請確認實作內容後再定稿]</span>。</li>
       </ul>

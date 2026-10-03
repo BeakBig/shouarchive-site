@@ -32,7 +32,7 @@
       <a href="../pricing.html">価格</a>
       <a href="../download.html">ダウンロード</a>
       <a href="../support.html">サポート</a>
-      <a href="../privacy.html" aria-current="page">プライバシー</a>
+      <a href="privacy.html" aria-current="page">プライバシー</a>
       <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html" selected>日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
     </nav>
   </div>
@@ -42,18 +42,18 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>プライバシーポリシー</h1>
-      <p>ShouArchive for macOS · 施行日 2026年9月22日 · 開発者: BeakBig</p>
+      <p>ShouArchive for macOS · 施行日 2026年10月3日 · 開発者: BeakBig · Mac App Store 版と商用版</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>要約:</strong> ShouArchive は個人情報を一切収集しません。アナリティクス、トラッキング、広告、アカウントはなく、検査するファイルは Mac 上でのみ読み取ります。ネットワークを使用するのは、ユーザーがご自身の App Store Connect API キーを登録し、アプリがユーザーに代わって Apple と通信するときだけです。</p>
+        <p><strong>この文書は 2 つの版をまとめて説明します。</strong> <strong>Mac App Store 版</strong>（1 – 7 項）はこれまでどおり、いかなる個人情報も収集しません。分析ツール · トラッキング · 広告 · アカウントはなく、検査するファイルは Mac 内でのみ読み取り、ネットワークはユーザーがご自身で登録した App Store Connect API キーで Apple と通信するときにだけ使用します。<strong>商用版</strong>（9 – 13 項）はウェブで直接購読する版で、ライセンスを確認するときだけ<strong>ライセンスキー · 端末識別値 · アプリバージョン</strong>をライセンスサーバーへ送信し、決済は <strong>Paddle</strong> が販売代行として処理します。8 項の変更と 14 項のお問い合わせは 2 つの版に共通です。2 つの版は互いに連動しません。</p>
       </div>
 
-      <h2>1. 収集するデータ</h2>
-      <p>ありません。アプリは次のいずれも行いません。</p>
+      <h2>1. 収集するデータ — Mac App Store 版</h2>
+      <p>この版では<strong>ありません</strong>。アプリは次のいずれも行いません。</p>
       <ul>
         <li>利用統計やクラッシュレポートなどの<strong>アナリティクス</strong>を収集すること</li>
         <li>ユーザーや端末を<strong>トラッキング</strong>すること、<strong>広告</strong>を表示すること</li>
@@ -92,18 +92,71 @@
       <p>アプリは、読み込みアニメーションの再生のためにオープンソースライブラリ <strong>Lottie</strong> を同梱しています。表示にのみ使用され、ネットワークにアクセスしたりデータを収集したりすることはありません。その他のサードパーティ SDK はありません。</p>
 
       <h2>6. 共有と販売</h2>
-      <p>何も収集しないため、誰かと共有したり販売したりすることもありません。第 3 項で説明した Apple との通信は、ユーザーの求めに応じて、ユーザー自身のアカウントとキーを使って行われます。</p>
+      <p><strong>Mac App Store 版</strong>は収集する情報がないため、誰とも共有したり販売したりもしません。第 3 項に書いた Apple との通信はユーザーの求めにより、ユーザーのアカウントとキーを使って行われます。<strong>商用版</strong>で共有する相手は第 11 項のライセンスサーバーと第 12 項の Paddle だけであり、それ以外の第三者には販売したり提供したりしません<span class="placeholder">[実装を確認して確定してください]</span>。</p>
 
       <h2>7. 子どもについて</h2>
-      <p>ShouArchive はソフトウェア開発者向けのツールであり、子どもを対象としていません。誰からも個人情報を収集しません。</p>
+      <p>ShouArchive はソフトウェア開発者向けのツールであり、子どもを対象としていません。Mac App Store 版では、誰からも個人情報を収集しません。</p>
 
       <h2>8. 変更</h2>
       <p>このポリシーを変更する場合は、新しい施行日とともに本ページに掲載します。アプリのデータの取り扱いが実際に変わる場合は、アプリのリリースノートにも記載します。</p>
 
-      <h2>9. お問い合わせ</h2>
-      <p>このポリシーやアプリのデータの取り扱いに関するご質問は <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> までお寄せください。</p>
+      <h2>9. 商用版 — 収集する情報</h2>
+      <p><strong>商用版</strong>（このサイトで直接購読する版）は、購読中にライセンスを確認するためだけ次の値を<strong>ライセンスサーバー</strong>へ送ります。それ以外の目的には使いません<span class="placeholder">[以下の表は実装を基準に確定してください。ほかに送る値があれば表に追加する必要があります]</span>。</p>
+      <table>
+        <thead><tr><th>送る値</th><th>内容</th><th>なぜ必要か</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ライセンスキー</strong></td><td>購読を識別するキー</td><td>購読が有効かどうかを確認します</td></tr>
+          <tr><td><strong>端末識別値</strong></td><td>端末を区別するための値<span class="placeholder">[送信される正確な値と方式]</span></td><td>料金プランが許可した端末数を超えたかどうかを確認します</td></tr>
+          <tr><td><strong>アプリのバージョン</strong></td><td>アプリのバージョン · ビルド番号</td><td>機能が合っていることを確認し、問題を解決します</td></tr>
+          <tr><td>リクエスト情報</td><td>リクエスト時刻、IP アドレス<span class="placeholder">[実際に記録するログ項目]</span></td><td>悪意ある重複使用を防ぎ、障害に対応します</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>これらの値は、アプリが動作する<strong>商用版</strong>でのみ送信されます。Mac App Store 版はネットワークに接続しないため（第 3 項）、何も送信しません。</li>
+        <li>利用者を特定できる値（ユーザー名 · 端末に自分で付けた名前など）は、ライセンス確認には使いません<span class="placeholder">[実装を確認して確定してください]</span>。</li>
+        <li>ファイル（IPA · APK · AAB · <code>.mobileprovision</code>）の内容とビルド成果物の検査結果は、ライセンスサーバーへ送信しません。ライセンス確認は、アプリ起動時にライセンスキーを確認するにとどまります。</li>
+        <li>広告 · トラッキング · 行動分析の SDK は、商用版にも含めません<span class="placeholder">[実装を確認して確定してください]</span>。</li>
+      </ul>
 
-      <p class="meta">施行日: 2026年9月22日 · 開発者・発行者: BeakBig</p>
+      <h2>10. 商用版 — ライセンスサーバーと保管</h2>
+      <ul>
+        <li>ライセンスサーバーは <span class="placeholder">[運営主体 · サーバーの所在地]</span> が運営します<span class="placeholder">[外部ホスティングを利用する場合は会社名]</span>。</li>
+        <li>送信する値とライセンスの状態（発行 · 失効 · 解約）は<span class="placeholder">[保管期間]</span>保管し、その後削除します。解約の請求を受けた場合は確認後ただちにライセンスを停止し、残っている記録を削除します。</li>
+        <li>保管する記録には、第 9 項の表に挙げた値とライセンスの状態だけが含まれます。決済方法の、カード番号、銀行口座はこのサーバーに保存されません。</li>
+        <li>ライセンスサーバーに保存された履歴を直接ダウンロードしたり、削除を請求したりする場合は、第 12 項の方法でご連絡ください。</li>
+      </ul>
+
+      <h2>11. 商用版 — 決済と Paddle</h2>
+      <p>商用版の決済は <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>）が <strong>販売代行（Merchant of Record）</strong>として処理します。Paddle が顧客に対する販売者となって、決済方法の確認、税額の計算と徴収、領収の発行、返金処理を任されます。決済方法の情報は Paddle が保管し、このサイトのサーバーは経由しません。</p>
+      <ul>
+        <li><strong>Paddle が収集 · 処理するもの</strong> — 氏名、住所、メールアドレス、決済方法の情報と取引履歴、請求先住所、税務番号、IP アドレス、位置情報、端末 · ブラウザ情報、同意の記録など。これは <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle プライバシーポリシー</a>に従って処理され、Paddle は法的義務のために取引データを 5 年保管します。</li>
+        <li><strong>販売者（当社）に渡されるもの</strong> — 購入者の氏名 · 住所 · メールアドレス、購入履歴、ダッシュボードで確認できる取引分析。カードの全番号とセキュリティコードは渡されません。特別な機微情報のカテゴリーは共有されません。</li>
+        <li>販売者と Paddle は、このデータについてそれぞれ<strong>独立したデータ管理者</strong>です。販売者は受け取った情報をライセンスの発行、決済の確認、顧客対応にのみ用い、別の目的には使いません。</li>
+        <li>決済に関するお問い合わせは Paddle のカスタマーサポート窓口で受け付けています。返金基準は <a href="refund.html">返金ポリシー</a>に記載しています。</li>
+        <li>Paddle が代行する販売者規約も併せて適用されます: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 利用規約</a>、<a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 購入者規約</a>。</li>
+      </ul>
+
+      <h2>12. データ主体の権利</h2>
+      <p>利用者は、個人情報について開示 · 訂正 · 削除 · 利用の制限 · 収集の拒否（判断に伴う停止）の権利を有します。</p>
+      <ul>
+        <li><strong>ライセンスサーバーにある記録</strong> — <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>まで請求してください。本人確認の後、<span class="placeholder">[処理期限]</span>のうちに処理し、その結果をお知らせします。</li>
+        <li><strong>Paddle が保管する決済情報</strong> — Paddle のポリシーと手順に従って処理されます。必要な情報は Paddle に直接請求してください。</li>
+        <li><strong>拒否できる部分</strong> — ライセンス確認は商用版を使うための必須の処理です。これを拒否すると商用版を利用できません。</li>
+        <li>法定代理人や代理人が請求する場合は、委任関係を確認したうえで処理します。</li>
+      </ul>
+      <p>このポリシーは<span class="placeholder">[適用管轄]</span>の個人情報保護法令を基準に作成されています<span class="placeholder">[管轄に応じて必要な文言を確認してください]</span>。</p>
+
+      <h2>13. 海外移転</h2>
+      <ul>
+        <li>商用版のライセンス記録は第 10 項のサーバーの所在地へ、決済情報は Paddle が定めた所在地へ移転され、処理されることがあります<span class="placeholder">[実際の移転先国と Safeguard]</span>。</li>
+        <li>Apple へ送る App Store Connect API のリクエストは Apple のサーバーへ送られます（第 3 項）。</li>
+        <li>必要に応じて海外移転について同意を得て、移転先国とその他の保護措置について説明します。</li>
+      </ul>
+
+      <h2>14. お問い合わせ</h2>
+      <p>このポリシーやアプリのデータの取り扱いについてご不明な点は <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> までお送りください。</p>
+
+      <p class="meta">施行日: 2026年10月3日（Mac App Store 版のデータについての取り扱いは、2026年9月22日の施行以降そのままです） · 開発者 · 配信者: BeakBig</p>
     </div>
   </section>
 </main>
@@ -115,7 +168,7 @@
       <a href="../pricing.html">価格</a>
       <a href="../download.html">ダウンロード</a>
       <a href="../support.html">サポート</a>
-      <a href="../privacy.html" aria-current="page">プライバシーポリシー</a>
+      <a href="privacy.html" aria-current="page">プライバシーポリシー</a>
       <a href="../terms.html">利用規約</a>
       <a href="../refund.html">返金ポリシー</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>

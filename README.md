@@ -32,15 +32,14 @@ App Store Connect 에 넣는 URL:
 git add -A && git commit -m "..." && git push
 ```
 
-푸시하면 1분 안팎으로 GitHub Pages 에 반영되고, Worker 캐시(5분)가 지나면 shouarchive.beakbig.com 에도 보입니다.
+푸시하면 Cloudflare 빌드가 `npx wrangler deploy` 로 1분 안팎에 shouarchive.beakbig.com 에 올립니다 (GitHub Pages 원본에도 1분 안팎).
 
-### 주의 — 공개 주소가 바로 바뀌지 않을 수 있습니다
+### 주의 — 배포 구조와 빌드가 실패했던 일
 
-- `shouarchive.beakbig.com` 을 실제로 서비스하는 것은 Cloudflare 계정의 **`shouarchive` Worker** 입니다. 이 저장소의 `worker/`(`shouarchive-path`) 는 계정에 배포돼 있지 않고, 응답에 `x-shouarchive-upstream` 헤더도 붙지 않습니다.
-- 이 Worker 는 이 저장소에 푸시하면 자동으로 다시 배포되는 것으로 보입니다 (2026-09-27 푸시 1분 뒤 새 배포). 그런데 **2026-10-03 푸시(`070617c`)는 15분이 지나도 새 배포가 생기지 않았습니다** — GitHub Pages 원본에는 반영됐고, 공개 주소는 예전 내용 · 새 파일 404.
-- 푸시한 뒤에는 공개 주소에서 새로 넣은 파일이 열리는지 꼭 확인하세요. 예: `curl -sI https://shouarchive.beakbig.com/assets/screenshots/ko/10.png` 가 200 인지.
-- 반영되지 않으면 Cloudflare 대시보드 › Workers & Pages › `shouarchive` › Deployments(또는 Builds)에서 빌드가 실패했는지 보고 다시 돌립니다. 빌드 기록은 대시보드에서만 볼 수 있습니다 (`wrangler deployments list --name shouarchive` 로는 배포 시각만 보입니다).
-- 그 Worker 의 설정(정적 파일 폴더 · 경로 처리)이 정리돼 있지 않으니, 명령줄에서 `wrangler deploy` 로 덮어쓰지 마세요. 설정을 확인하면 이 README 에 적어 두세요.
+- `shouarchive.beakbig.com` 을 서비스하는 것은 Cloudflare 계정의 **`shouarchive` Worker**(정적 파일만)입니다. 이 저장소에 푸시하면 Cloudflare 빌드가 저장소 루트를 그대로 정적 파일로 올립니다 — 설정은 `wrangler.jsonc`, 올리지 않을 파일은 `.assetsignore`. 이 저장소의 `worker/`(`shouarchive-path`) 는 예전 프록시 안이고 계정에 배포돼 있지 않습니다.
+- **2026-10-03 빌드 실패**: `.assetsignore` 가 없어 `.git` 까지 올리다가 `.git` 압축 파일(29.1 MiB)이 Workers 파일 한도 **25 MiB** 를 넘어 실패했고, 공개 주소는 예전 내용 · 새 파일 404 로 남았습니다. `.assetsignore` 에 `.git` 등을 넣어 해결.
+- `.assetsignore` · `wrangler.jsonc` 를 지우지 마세요. 정적 파일 하나도 25 MiB 를 넘으면 안 됩니다 (스크린샷은 장당 1 MB 안팎).
+- 푸시한 뒤에는 공개 주소에서 새로 넣은 파일이 열리는지 확인하세요. 예: `curl -sI https://shouarchive.beakbig.com/assets/screenshots/ko/10.png` 가 200 인지. 반영되지 않으면 Cloudflare 대시보드 › Workers & Pages › `shouarchive` › Deployments · Builds 의 빌드 로그를 봅니다 (빌드 로그는 대시보드에서만 보입니다).
 
 ## 남은 일
 

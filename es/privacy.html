@@ -32,7 +32,7 @@
       <a href="../pricing.html">Precios</a>
       <a href="../download.html">Descargas</a>
       <a href="../support.html">Soporte</a>
-      <a href="../privacy.html" aria-current="page">Privacidad</a>
+      <a href="privacy.html" aria-current="page">Privacidad</a>
       <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html" selected>Español</option></select></label>
     </nav>
   </div>
@@ -42,18 +42,18 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Política de privacidad</h1>
-      <p>ShouArchive para macOS · En vigor desde el 22 de septiembre de 2026 · Desarrollador: BeakBig</p>
+      <p>ShouArchive para macOS · En vigor desde el 3 de octubre de 2026 · Desarrollador: BeakBig · Edición del Mac App Store y edición comercial</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>En resumen:</strong> ShouArchive no recopila datos personales. No hay analíticas, ni rastreo, ni anuncios, ni cuentas, y los archivos que inspeccionas se leen únicamente en tu Mac. La red se usa solo cuando registras tu propia clave de API de App Store Connect y la app se comunica con Apple en tu nombre.</p>
+        <p><strong>Este documento describe las dos ediciones a la vez.</strong> La <strong>edición del Mac App Store</strong> (secciones 1 a 7) no recopila ningún dato personal, tal como hasta ahora: no hay analíticas, ni rastreo, ni anuncios, ni cuentas, y los archivos que inspeccionas se leen únicamente en tu Mac. La red se usa solo cuando registras tu propia clave de API de App Store Connect y la app se comunica con Apple en tu nombre. La <strong>edición comercial</strong> (secciones 9 a 13) es la que se suscribe directamente desde la web: al comprobar la licencia envía únicamente la <strong>clave de licencia, el identificador del dispositivo y la versión de la app</strong> al servidor de licencias, y el pago lo gestiona <strong>Paddle</strong> como Merchant of Record. La sección 8 sobre cambios y la sección 14 de contacto se aplican a las dos ediciones. Las dos ediciones no están vinculadas entre sí.</p>
       </div>
 
-      <h2>1. Datos que recopilamos</h2>
-      <p>Ninguno. La app no:</p>
+      <h2>1. Datos que recopilamos — edición del Mac App Store</h2>
+      <p>Esta edición no recopila <strong>ninguno</strong>. La app no hace nada de lo siguiente:</p>
       <ul>
         <li>recopila <strong>analíticas</strong>, como estadísticas de uso o informes de fallos;</li>
         <li>te <strong>rastrea</strong> a ti ni a tu dispositivo, ni muestra <strong>anuncios</strong>;</li>
@@ -92,18 +92,71 @@
       <p>La app incluye la biblioteca de código abierto <strong>Lottie</strong> para reproducir una animación de carga. Se usa solo para la visualización y no accede a la red ni recopila datos. No hay otros SDK de terceros.</p>
 
       <h2>6. Compartición y venta</h2>
-      <p>Como no se recopila nada, no se comparte ni se vende nada a nadie. La comunicación con Apple descrita en la sección 3 se produce a petición tuya, con tu propia cuenta y tu propia clave.</p>
+      <p>La <strong>edición del Mac App Store</strong> no recopila ninguna información, así que no comparte ni vende nada a nadie. La comunicación con Apple descrita en la sección 3 se produce a petición tuya, con tu propia cuenta y tu propia clave. En la <strong>edición comercial</strong>, los únicos destinatarios son el servidor de licencias de la sección 11 y Paddle de la sección 12; no se vende ni se cede nada a ningún otro tercero<span class="placeholder">[confírmalo consultando la implementación]</span>.</p>
 
       <h2>7. Menores</h2>
-      <p>ShouArchive es una herramienta para desarrolladores de software y no está dirigida a menores. No recopila información personal de nadie.</p>
+      <p>ShouArchive es una herramienta para desarrolladores de software y no está dirigida a menores. En la edición del Mac App Store no recopila información personal de nadie.</p>
 
       <h2>8. Cambios</h2>
       <p>Si esta política cambia, la nueva versión se publicará en esta página con la fecha de entrada en vigor actualizada. Si cambia de verdad la forma en que la app trata los datos, también se indicará en las notas de la versión de la app.</p>
 
-      <h2>9. Contacto</h2>
-      <p>Para preguntas sobre esta política o sobre cómo trata los datos la app: <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
+      <h2>9. Edición comercial — datos que recopilamos</h2>
+      <p>La <strong>edición comercial</strong> (la que se suscribe directamente desde este sitio) envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para comprobar la licencia durante la suscripción, y no los usa para ningún otro fin<span class="placeholder">[confirma la tabla siguiente a partir de la implementación. Si se envía algún valor más, hay que añadirlo a la tabla]</span>.</p>
+      <table>
+        <thead><tr><th>Valor enviado</th><th>Contenido</th><th>Por qué hace falta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Clave de licencia</strong></td><td>La clave que identifica la suscripción</td><td>Sirve para comprobar que la suscripción es válida</td></tr>
+          <tr><td><strong>Identificador del dispositivo</strong></td><td>Un valor que permite distinguir el dispositivo<span class="placeholder">[el valor y el método exactos que se transmiten]</span></td><td>Sirve para comprobar si se supera el número de dispositivos que permite el plan</td></tr>
+          <tr><td><strong>Versión de la app</strong></td><td>Versión y número de compilación de la app</td><td>Sirve para comprobar que las funciones son correctas y resolver problemas</td></tr>
+          <tr><td>Datos de la solicitud</td><td>Hora de la solicitud, dirección IP<span class="placeholder">[los campos que se guardan realmente en el registro]</span></td><td>Sirve para impedir el uso duplicado malicioso y responder a las averías</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>Estos valores solo se envían desde la <strong>edición comercial</strong>, que es donde funciona la app. La edición del Mac App Store no accede a la red, así que no envía nada (sección 3).</li>
+        <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (su nombre, el nombre que hayas puesto al dispositivo, etc.)<span class="placeholder">[confírmalo consultando la implementación]</span>.</li>
+        <li>No se envía al servidor de licencias ni el contenido de los archivos (IPA, APK, AAB, <code>.mobileprovision</code>) ni los resultados de la inspección de artefactos. La comprobación de la licencia se limita a verificar la clave de licencia al arrancar la app.</li>
+        <li>Tampoco se incluyen SDK de publicidad, de rastreo ni de análisis del comportamiento en la edición comercial<span class="placeholder">[confírmalo consultando la implementación]</span>.</li>
+      </ul>
 
-      <p class="meta">Fecha de entrada en vigor: 22 de septiembre de 2026 · Desarrollador y editor: BeakBig</p>
+      <h2>10. Edición comercial — servidor de licencias y conservación</h2>
+      <ul>
+        <li>El servidor de licencias lo explota <span class="placeholder">[entidad responsable · ubicación del servidor]</span><span class="placeholder">[si usas un hosting externo, el nombre de la empresa]</span>.</li>
+        <li>Los valores enviados y el estado de la licencia (emitida · caducada · cancelada) se conservan durante <span class="placeholder">[periodo de conservación]</span> y después se eliminan. Cuando recibimos una solicitud de cancelación, suspendemos la licencia en cuanto la verificamos y borramos los registros restantes.</li>
+        <li>Los registros que conservamos solo contienen los valores de la tabla de la sección 9 y el estado de la licencia. En este servidor no se guardan datos del método de pago, números de tarjeta ni cuentas bancarias.</li>
+        <li>Si quieres descargar directamente o solicitar la eliminación del historial guardado en el servidor de licencias, avísanos conforme al método de la sección 12.</li>
+      </ul>
+
+      <h2>11. Edición comercial — pago y Paddle</h2>
+      <p>Los pagos de la edición comercial los gestiona <strong>Paddle</strong> (<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>) como <strong>Merchant of Record</strong>. Paddle es el vendedor frente al cliente y se encarga de comprobar el método de pago, calcular y aplicar los impuestos, emitir las facturas y tramitar los reembolsos. Los datos del método de pago los conserva Paddle y no pasan por los servidores de este sitio.</p>
+      <ul>
+        <li><strong>Lo que Paddle recopila y trata</strong> — nombre, domicilio, dirección de correo electrónico, datos del método de pago y del historial de pagos, dirección de facturación, número de identificación fiscal, dirección IP, información de ubicación, información del dispositivo y del navegador, registros de consentimiento, etc. Todo ello se trata conforme a la <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">política de privacidad de Paddle</a>, y Paddle conserva los datos de las transacciones durante 5 años por obligación legal.</li>
+        <li><strong>Lo que llega al vendedor (nosotros)</strong> — nombre, domicilio y dirección de correo electrónico del comprador, el historial de compra y el análisis de transacciones que se ve en el panel. No llega el número completo de la tarjeta ni su código de seguridad. No se comparte ninguna categoría especial de información sensible.</li>
+        <li>El vendedor y Paddle son <strong>responsables independientes del tratamiento</strong> de estos datos. El vendedor solo usa la información recibida para emitir licencias, comprobar pagos y atender las consultas de los clientes, y no para ningún otro fin.</li>
+        <li>Las consultas sobre el pago se atendén en el servicio de atención al cliente de Paddle. Los criterios de reembolso están descritos en la <a href="refund.html">política de reembolso</a>.</li>
+        <li>También se aplican los términos de venta que Paddle aplica como Merchant of Record: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">términos de Paddle</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">términos de comprador de Paddle</a>.</li>
+      </ul>
+
+      <h2>12. Derechos del interesado</h2>
+      <p>Puedes ejercer los derechos de acceso, rectificación, supresión, limitación del tratamiento y oposición a la recogida (la suspensión derivada de esa decisión) sobre tus datos personales.</p>
+      <ul>
+        <li><strong>Registros que hay en el servidor de licencias</strong> — solicítalo en <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>. Verificamos tu identidad y tramitamos la solicitud en un plazo de <span class="placeholder">[plazo de respuesta]</span>; te comunicaremos el resultado.</li>
+        <li><strong>Información de pago que conserva Paddle</strong> — se trata conforme a las políticas y los procedimientos de Paddle. Si necesitas esa información, solicítala directamente a Paddle.</li>
+        <li><strong>Lo que no puedes rechazar</strong> — la comprobación de la licencia es un tratamiento necesario para usar la edición comercial. Si te niegas a ella, no puedes utilizar la edición comercial.</li>
+        <li>Cuando la solicitud la presente un representante legal o un apoderado, verificamos antes la representación.</li>
+      </ul>
+      <p>Esta política se ha redactado tomando como referencia la normativa de protección de datos de <span class="placeholder">[jurisdicción aplicable]</span><span class="placeholder">[revisa las menciones que exija cada jurisdicción]</span>.</p>
+
+      <h2>13. Transferencias internacionales</h2>
+      <ul>
+        <li>Los registros de licencia de la edición comercial pueden transferirse y tratarse en la ubicación del servidor indicada en la sección 10, y la información de pago en la ubicación que determine Paddle<span class="placeholder">[país real de transferencia y salvaguardas]</span>.</li>
+        <li>Las solicitudes a la API de App Store Connect que se envían a Apple van a los servidores de Apple (sección 3).</li>
+        <li>Cuando sea necesario, pedimos tu consentimiento para la transferencia internacional y explicamos el país de destino y las demás medidas de protección.</li>
+      </ul>
+
+      <h2>14. Contacto</h2>
+      <p>Si tienes alguna duda sobre esta política o sobre cómo trata los datos la app, envíala a <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
+
+      <p class="meta">Fecha de entrada en vigor: 3 de octubre de 2026 (el tratamiento de datos de la edición del Mac App Store se mantiene sin cambios desde la entrada en vigor del 22 de septiembre de 2026) · Desarrollador y editor: BeakBig</p>
     </div>
   </section>
 </main>
@@ -115,7 +168,7 @@
       <a href="../pricing.html">Precios</a>
       <a href="../download.html">Descargas</a>
       <a href="../support.html">Soporte</a>
-      <a href="../privacy.html" aria-current="page">Política de privacidad</a>
+      <a href="privacy.html" aria-current="page">Política de privacidad</a>
       <a href="../terms.html">Términos del servicio</a>
       <a href="../refund.html">Política de reembolso</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es" aria-current="page">Español</a></span>

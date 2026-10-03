@@ -9,13 +9,18 @@ python3 tools/check-site.py
   1. 6개 언어 × 7개 페이지가 모두 있는가
   2. 한국어 원본과 구조가 같은가 — 태그 순서, 속성 이름, 값이 그대로여야 하는 속성
      (href · src · id · class · data-* · hidden 등)
-  3. 한국어 번역이 남아 있지 않은가 (언어 선택 목록의 「한국어」 는 제외)
-  4. 내부 링크가 실제 파일을 가리키는가
-  5. 25 MiB 를 넘는 파일이 없는가 (Workers 정적 파일 한도 · README 「주의」 절)
+  3. 번역이 밀리지 않았는가 — 남은 한글, 그리고 언어마다 함께 있으면 안 되는 문자 체계
+     (언어 전환 메뉴 · 언어 이름은 제외)
+  4. pricing.json 에 값이 없는 data-price 자리에 숫자가 그대로 남아 있지 않은가
+     (예상해 둔 금액이 페이지에 노출되지 않게 하는 검사)
+  5. 내부 링크가 실제 파일을 가리키는가, 현재 페이지 링크가 자기 자신을 가리키는가
+  6. CSS 에 [hidden] 을 강제하는 규칙이 있는가 — .btn 처럼 display 를 정하는 요소에 달린
+     hidden 이 동작하려면 !important 가 필요합니다
+  7. 25 MiB 를 넘는 파일이 없는가 (Workers 정적 파일 한도 · README 「주의」 절)
 
 문제는 모두 모아서 마지막에 한 번에 보고합니다. 코드 1 이 나오면 문제가 있다는 뜻입니다.
 """
-import os, re, sys, unicodedata
+import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant', 'es']
@@ -25,6 +30,17 @@ KEEP_VALUE = {'href', 'src', 'id', 'class', 'data-price', 'data-src', 'data-live
 TAG_RE = re.compile(r'<([a-z0-9]+)((?:\s+[a-z0-9-]+(?:="[^"]*")?)*)\s*/?>')
 ATTR_RE = re.compile(r'([a-z0-9-]+)(?:="([^"]*)")?')
 HANGUL_RE = re.compile(r'[가-힣ㄱ-ㆎ]')
+KANA_RE = re.compile(r'[぀-ヿ]')
+HAN_RE = re.compile(r'[一-鿿㐀-䶿]')
+MIXED_OK = {  # 언어마다 허용하지 않는 문자 체계 — 한자를 쓰는 언어가 두 개라 언어별로 지정
+  'ko': (KANA_RE, HAN_RE),
+  'en': (HANGUL_RE, KANA_RE, HAN_RE),
+  'es': (HANGUL_RE, KANA_RE, HAN_RE),
+  'ja': (HANGUL_RE,),
+  'zh-Hans': (HANGUL_RE, KANA_RE),
+  'zh-Hant': (HANGUL_RE, KANA_RE),
+}
+LANG_NAMES = ['한국어', 'English', '日本語', '简体中文', '繁體中文', 'Español', 'Korean', 'Chinese', 'Japonese', 'Spanish', '한국어']
 
 problems = []
 
@@ -99,6 +115,37 @@ def check_current_page(lang, page):
         if target != os.path.normpath(p):
             report('현재 페이지', p, f'aria-current 링크가 다른 파일을 가리킵니다: {href}')
 
+def check_mixed_script(lang, page):
+    """번역이 밀려 다른 언어 문자가 남았는지 — 언어 전환 메뉴와 지원 언어 목록은 제외."""
+    p = path_for(lang, page)
+    text = visible_text(open(p, encoding='utf-8').read())
+    for name in LANG_NAMES:
+        text = text.replace(name, ' ')
+    for rx in MIXED_OK[lang]:
+        found = sorted(set(rx.findall(text)))
+        if found:
+            report('문자 섞임', p, f'함께 있으면 안 되는 문자가 있습니다: {"".join(found)[:30]}')
+
+def check_undecided_price(lang, page):
+    """pricing.json 값이 null 인 data-price 자리에 숫자(금액)가 그대로 남아 있지 않은지."""
+    cfg = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8'))
+    want = (cfg.get('undecided') or {}).get(lang)
+    p = path_for(lang, page)
+    for key, text in re.findall(r'<span data-price="([^"]+)"[^>]*>(.*?)</span>', open(p, encoding='utf-8').read(), flags=re.S):
+        cur = cfg
+        for part in key.split('.'):
+            cur = cur.get(part) if isinstance(cur, dict) else None
+        if cur is None and re.search(r'\d|US\$|€|£|¥|￥|\$', text):
+            report('가격', p, f'{key} 는 pricing.json 에 값이 없는데 페이지에 숫자가 있습니다: {text.strip()[:30]}')
+        if cur is None and want and text.strip() != want:
+            report('가격', p, f'{key} 자리 문장이 「{want}」 이어야 합니다: {text.strip()[:30]}')
+
+def check_hidden_rule():
+    """.btn 처럼 display 를 정하는 요소에 달린 hidden 이 동작하려면 CSS 강제 규칙이 있어야 합니다."""
+    css = open(os.path.join(ROOT, 'assets', 'style.css'), encoding='utf-8').read()
+    if not re.search(r'\[hidden\][^}]*display:\s*none\s*!important', css):
+        report('CSS', 'assets/style.css', '[hidden] 을 display:none !important 로 강제하는 규칙이 없습니다 (.btn 의 display 가 기본 숨김이를 덮어씁니다)')
+
 def check_sizes():
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = [d for d in dirnames if d not in ('.git', 'node_modules')]
@@ -119,8 +166,11 @@ for page in PAGES:
         if lang != 'ko':
             check_structure(lang, page)
             check_hangul(lang, page)
+            check_mixed_script(lang, page)
+        check_undecided_price(lang, page)
         check_links(lang, page)
         check_current_page(lang, page)
+check_hidden_rule()
 check_sizes()
 
 if problems:

@@ -43,11 +43,13 @@ python3 tools/check-site.py      # 6개 언어 × 7개 페이지 구조 · 링�
 
 | 표시 | 쓰임 |
 | --- | --- |
-| `<span data-price="appstore.price_now">US$2</span>` | 글자 사이에 넣기 (JSON 값이 `null` 이면 페이지에 적힌 문장을 그대로 둡니다 — 각 언어 표현) |
+| `<span data-price="appstore.price_now">US$2</span>` | 글자 사이에 넣기 (JSON 값이 `null` 이면 `undecided` 에 있는 그 언어 문장을 넣습니다 — 예: 「가격 미정」. 정하지 않은 금액이 숫자로 남지 않게 하기 위함) |
 | `<a data-src="commercial.checkout" href="#">` | 링크. JSON 이 비어 있으면 `hidden` 으로 숨겨 두었다가, 값을 채우면 `href` 가 바뀌면서 스스로 나타납니다 |
 | `data-live-hide` / `data-live-show` | 상용 판 공개 전에만 보이는 문장 / 공개된 뒤에 보이는 문장. 공개 여부는 `commercial.checkout` 이 채워져 있는지로 판단합니다 |
 
 값이 `null` 이거나 빈 문자열인 항목은 **상용 판이 아직 없다는 뜻**입니다 — 가격이 정해지면 `commercial.price_monthly` 같은 값을 채우고 `commercial.checkout`(Paddle 결제 링크)을 넣습니다. 그러면 「출시 예정」 안내가 자동으로 사라지고 구매 · 다운로드 버튼이 나타납니다.
+
+> 숨길 때 쓰는 `hidden` 속성이 CSS 의 `display` 규칙에 밀리지 않게 `assets/style.css` 에 `[hidden] { display: none !important; }` 규칙이 있습니다. 이 규칙을 지우면 출시 전 구매 · 다운로드 버튼이 그대로 보입니다(`check-site.py` 가 확인합니다).
 
 새 페이지를 만들면 `tools/localize-nav.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 두 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 7개 페이지 = 42개 파일이 모두 같은 구조여야 통과합니다.
 

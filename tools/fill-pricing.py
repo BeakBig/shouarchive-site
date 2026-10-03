@@ -8,6 +8,8 @@
   상용 판 공개  <p data-live-hide>출시 예정입니다</p> / <p data-live-show>구독 중입니다</p>
 
 - data-price: JSON 값이 null 이면 페이지에 이미 적힌 문장(각 언어 표현)을 그대로 둔다.
+             단 pricing.json 의 undecided 에 그 언어 문장이 있으면 그것을 쓴다 — 정하지 않은
+             가격이 숫자로 남는 것을 막기 위해서다.
 - data-src:   JSON 값이 비어 있으면 href 자리 표시와 hidden 을 그대로 둔다.
               값이 채워지면 href 를 바꾸고 hidden 을 지운다(버튼이 저절로 보인다).
 - data-live-hide: commercial.checkout 가 채워지면(상용 판 공개) hidden 을 건다.
@@ -40,17 +42,30 @@ def set_hidden(tag, hidden):
     return re.sub(r'\shidden(?=[\s/>])', '', tag)
 
 
-def apply_prices(html, cfg):
-    """<span data-price="키">기존 글자</span> → JSON 값으로 교체. null 이면 유지.
+def lang_of(path):
+    """저장소 루트면 ko, 아니면 첫 번째 폴더 이름(en · ja · zh-Hans · zh-Hant · es)."""
+    rel_path = os.path.relpath(path, ROOT)
+    return rel_path.split(os.sep)[0] if os.sep in rel_path else 'ko'
+
+def undecided(cfg, lang):
+    """값이 없을 때 보여줄 각 언어 문장. 없으면 None(=페이지에 적힌 문장을 그대로 둠)."""
+    return (cfg.get('undecided') or {}).get(lang)
+
+def apply_prices(html, cfg, lang):
+    """<span data-price="키">기존 글자</span> → JSON 값으로 교체. null 이면 언어별 「미정」 문구.
     속성 안(meta description 등)에서는 {{키}} 꼴로 쓴다 — 태그를 넣을 수 없으므로."""
+    todo = undecided(cfg, lang)
+
     def sub(m):
         open_tag, path, old = m.group(1), m.group(2), m.group(3)
         val = resolve(cfg, path)
         if val is None:
-            return m.group(0)
+            val = todo
+            if val is None:
+                return m.group(0)
         return open_tag + str(val) + m.group(4)
     html = re.sub(r'(<[a-z0-9]+[^>]*\bdata-price="([^"]+)"[^>]*>)(.*?)(</[a-z0-9]+>)', sub, html, flags=re.S)
-    return re.sub(r'\{\{([^}]+)\}\}', lambda m: m.group(0) if resolve(cfg, m.group(1)) is None else str(resolve(cfg, m.group(1))), html)
+    return re.sub(r'\{\{([^}]+)\}\}', lambda m: m.group(0) if (resolve(cfg, m.group(1)) or todo) is None else str(resolve(cfg, m.group(1)) or todo), html)
 
 
 def apply_sources(html, cfg):
@@ -87,7 +102,7 @@ def main():
     changed = []
     for path in html_files():
         src = open(path, encoding='utf-8').read()
-        out = apply_launch(apply_sources(apply_prices(src, cfg), cfg), cfg, live)
+        out = apply_launch(apply_sources(apply_prices(src, cfg, lang_of(path)), cfg), cfg, live)
         if out != src:
             open(path, 'w', encoding='utf-8').write(out)
             changed.append(os.path.relpath(path, ROOT))

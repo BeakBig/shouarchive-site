@@ -4,6 +4,16 @@
   "currency": "USD",
   "trial_days": 14,
 
+  "_undecided": "값이 null 인 data-price 자리에 각 언어 문장으로 대신 넣습니다 (예상해 둔 금액이 페이지에 남지 않게).",
+  "undecided": {
+    "ko": "가격 미정",
+    "en": "To be announced",
+    "ja": "価格は未定",
+    "zh-Hans": "价格待定",
+    "zh-Hant": "價格待定",
+    "es": "Por anunciar"
+  },
+
   "appstore": {
     "price_now": "US$2",
     "price_next": "US$5",

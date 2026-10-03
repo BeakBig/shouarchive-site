@@ -45,6 +45,12 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* hidden 속성은 어떤 display 규칙에도 이겨야 합니다. .btn·.plan-feats 처럼 display 를
+   직접 정하는 요소에 hidden 을 걸면 브라우저 기본 숨김이 무시되어 버튼이 그대로 보입니다
+   (출시 전이라 숨겨 둔 구매 · 다운로드 버튼이 보이는 일이 생기지 않도록). */
+[hidden] { display: none !important; }
+
+
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;

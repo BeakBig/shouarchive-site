@@ -21,6 +21,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `worker/` | `shouarchive.beakbig.com` 을 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 | `tools/localize-nav.py` | 모든 페이지의 6개 언어 전환 메뉴 · 헤더 · 푸터 링크 · `hreflang` 을 다시 맞추는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
 | `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
+| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 7개 페이지 구조 · 링크 · 번역 누락 · 25 MiB 한도 |
 
 App Store Connect 에 넣는 URL:
 
@@ -35,6 +36,7 @@ App Store Connect 에 넣는 URL:
 ```bash
 python3 tools/fill-pricing.py   # pricing.json → 모든 언어 페이지
 python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · hreflang 다시 맞추기
+python3 tools/check-site.py      # 6개 언어 × 7개 페이지 구조 · 링크 · 번역 · 용량 점검
 ```
 
 페이지에 쓰는 표시 세 가지:
@@ -47,7 +49,7 @@ python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · hreflang
 
 값이 `null` 이거나 빈 문자열인 항목은 **상용 판이 아직 없다는 뜻**입니다 — 가격이 정해지면 `commercial.price_monthly` 같은 값을 채우고 `commercial.checkout`(Paddle 결제 링크)을 넣습니다. 그러면 「출시 예정」 안내가 자동으로 사라지고 구매 · 다운로드 버튼이 나타납니다.
 
-새 페이지를 만들면 `tools/localize-nav.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 두 스크립트를 한 번씩 실행하세요.
+새 페이지를 만들면 `tools/localize-nav.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 두 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 7개 페이지 = 42개 파일이 모두 같은 구조여야 통과합니다.
 
 ## ⚠️ 법률 문서는 초안입니다 — 검토 후, 발행 전에 고치세요
 

@@ -129,10 +129,10 @@
 
       <h2>10. Commercial edition — license server and retention</h2>
       <ul>
-        <li>The license server is operated by <strong>BeakBig</strong> (an individual, not yet registered as a business) · contact <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>. The server uses the Workers and D1 services of <strong>Cloudflare, Inc.</strong> (United States)<span class="placeholder">[database location — decided when the server is built]</span>.</li>
+        <li>The license server is operated by <strong>BeakBig</strong> (an individual, not yet registered as a business) · contact <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>. The server uses the Workers services of <strong>Cloudflare, Inc.</strong> (United States), and the database is in the Asia Pacific region (the exact location within that region is decided by Cloudflare).</li>
         <li>The values sent and the license status (issued, expired, canceled) are kept <strong>for as long as the subscription is active</strong>, and are deleted or anonymized two years after the subscription ends or is canceled (this is currently done by the operator by hand). Shorter-lived records are deleted <strong>automatically every day</strong> — access logs after 30 days, processed payment notification (webhook) records after 90 days, key delivery records after 365 days (only a hash of the address received is kept), and unprocessed pending issuances after 7 days. If we receive a cancellation request, we suspend the license as soon as it is confirmed and delete the remaining records.</li>
         <li>The values stored on this server are the ones listed in section 9. Payment method details, card numbers and bank accounts are not stored.</li>
-        <li>The server and the database are located at <strong>Cloudflare, Inc.</strong> (United States), and payments are handled by <strong>Paddle.com Market Limited</strong> (United Kingdom) as merchant of record.</li>
+        <li>The server is located at <strong>Cloudflare, Inc.</strong> (United States) and the database is in the Asia Pacific region (the exact location within that region is decided by Cloudflare). Payments are handled by <strong>Paddle.com Market Limited</strong> (United Kingdom) as merchant of record.</li>
         <li>The email delivery service used to send keys: <span class="placeholder">[email sending service — not chosen yet]</span></li>
         <li>To download the history held on the license server or ask for its deletion, contact us using the method in section 12.</li>
       </ul>
@@ -160,6 +160,7 @@
       <h2>13. Transfers outside your country</h2>
       <ul>
         <li><strong>Recipients and countries</strong> — license records for the commercial edition are handled by <strong>Cloudflare, Inc.</strong> (United States), and payment information by <strong>Paddle.com Market Limited</strong> (United Kingdom).</li>
+        <li><strong>Storage location</strong> — license records are stored in the <strong>United States</strong>, where the server is, and in the database in the Asia Pacific region (the exact location within that region is decided by Cloudflare).</li>
         <li><strong>When and how</strong> — sent over the network when you activate, verify your license and start a payment.</li>
         <li><strong>Items, purposes and retention periods</strong> — the same as those set out in sections 9 and 10.</li>
         <li><strong>Safeguards</strong> — Cloudflare follows its data processing agreement (including the EU standard contractual clauses), and Paddle handles payment information under its own privacy policy as merchant of record.</li>

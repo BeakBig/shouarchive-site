@@ -1,0 +1,27 @@
+{
+  "_comment": "ShouArchive 가격 · 링크의 유일한 출처. 값은 표시용 문자열이다. 고치고 나면 `python3 tools/fill-pricing.py` 를 실행해 모든 언어 페이지에 반영한다 (Site pricing and links — single source of truth).",
+
+  "currency": "USD",
+  "trial_days": 14,
+
+  "appstore": {
+    "price_now": "US$2",
+    "price_next": "US$5",
+    "next_version": "2.0.0",
+    "link": "https://apps.apple.com/app/id6814686766"
+  },
+
+  "commercial": {
+    "price_monthly": null,
+    "price_annual": null,
+    "price_annual_per_month": null,
+    "price_next": null,
+    "release_date": null,
+    "checkout": "",
+    "download": ""
+  },
+
+  "contact": {
+    "email": "beakbigkb@gmail.com"
+  }
+}

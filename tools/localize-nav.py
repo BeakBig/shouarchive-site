@@ -1,10 +1,25 @@
 #!/usr/bin/env python3
-"""모든 언어 페이지에 6개 언어 전환 메뉴(헤더 select · 푸터 링크)와 hreflang 링크를 넣는다. 여러 번 실행해도 결과가 같다."""
+"""모든 언어 페이지에 6개 언어 전환 메뉴(헤더 select · 푸터 링크)와 hreflang 링크를 넣고,
+헤더 · 푸터 메뉴 링크를 표(TXT)에서 고쳐 쓴다. 여러 번 실행해도 결과가 같다.
+
+페이지를 고치거나 언어를 더하면 다시 실행한다. 새 페이지를 만들면 아래 PAGES 에 추가한다.
+"""
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = [('ko', '한국어'), ('en', 'English'), ('ja', '日本語'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'), ('es', 'Español')]
-PAGES = ['index.html', 'support.html', 'privacy.html']
-LABEL = {'ko': '언어', 'en': 'Language', 'ja': '言語', 'zh-Hans': '语言', 'zh-Hant': '語言', 'es': 'Idioma'}
+PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html']
+HEADER_LINKS = [('features', 'index.html', '#features'), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy', 'privacy.html', '')]
+FOOTER_LINKS = [('home', 'index.html', ''), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy_doc', 'privacy.html', ''), ('terms', 'terms.html', ''), ('refund', 'refund.html', '')]
+
+# 페이지마다 쓰는 문구. lang: 셀렉트 옆 보조 문구, main/footer: 내비게이션 aria-label, 나머지: 링크 글자
+TXT = {
+  'ko': {'lang': '언어', 'main': '주 메뉴', 'footer': '바닥 메뉴', 'features': '기능', 'pricing': '가격', 'download': '다운로드', 'support': '지원', 'privacy': '개인정보', 'home': '홈', 'privacy_doc': '개인정보 처리방침', 'terms': '이용약관', 'refund': '환불 정책'},
+  'en': {'lang': 'Language', 'main': 'Main', 'footer': 'Footer', 'features': 'Features', 'pricing': 'Pricing', 'download': 'Download', 'support': 'Support', 'privacy': 'Privacy', 'home': 'Home', 'privacy_doc': 'Privacy Policy', 'terms': 'Terms of Service', 'refund': 'Refund Policy'},
+  'ja': {'lang': '言語', 'main': 'メイン', 'footer': 'フッター', 'features': '機能', 'pricing': '価格', 'download': 'ダウンロード', 'support': 'サポート', 'privacy': 'プライバシー', 'home': 'ホーム', 'privacy_doc': 'プライバシーポリシー', 'terms': '利用規約', 'refund': '返金ポリシー'},
+  'zh-Hans': {'lang': '语言', 'main': '主导航', 'footer': '页脚', 'features': '功能', 'pricing': '价格', 'download': '下载', 'support': '支持', 'privacy': '隐私', 'home': '首页', 'privacy_doc': '隐私政策', 'terms': '服务条款', 'refund': '退款政策'},
+  'zh-Hant': {'lang': '語言', 'main': '主要導覽', 'footer': '頁尾', 'features': '功能', 'pricing': '價格', 'download': '下載', 'support': '支援', 'privacy': '隱私權', 'home': '首頁', 'privacy_doc': '隱私權政策', 'terms': '服務條款', 'refund': '退款政策'},
+  'es': {'lang': 'Idioma', 'main': 'Principal', 'footer': 'Pie de página', 'features': 'Funciones', 'pricing': 'Precios', 'download': 'Descargas', 'support': 'Soporte', 'privacy': 'Privacidad', 'home': 'Inicio', 'privacy_doc': 'Política de privacidad', 'terms': 'Términos del servicio', 'refund': 'Política de reembolso'},
+}
 
 def page_path(lang, page):  # 저장소 루트 기준 경로
     return page if lang == 'ko' else f'{lang}/{page}'
@@ -13,35 +28,57 @@ def rel(from_lang, to_lang, page):  # from 페이지에서 to 페이지로 가�
     up = '' if from_lang == 'ko' else '../'
     return up + page_path(to_lang, page)
 
+def target_lang(target):  # 'index.html' → ko, 'en/support.html' → en
+    return target.split('/')[0] if '/' in target else 'ko'
+
+def lang_switch(lang, page):
+    t = TXT[lang]
+    opts = ''.join(f'<option value="{rel(lang, l, page)}"{" selected" if l == lang else ""}>{name}</option>' for l, name in LANGS)
+    return f'<label class="lang-switch"><span class="visually-hidden">{t["lang"]}</span><select class="lang-select" aria-label="{t["lang"]}">{opts}</select></label>'
+
+def footer_langs(lang, page):
+    links = ' '.join(f'<a href="{rel(lang, l, page)}" lang="{l}" hreflang="{l}"{" aria-current=\"page\"" if l == lang else ""}>{name}</a>' for l, name in LANGS)
+    return f'<span class="footer-langs">{links}</span>'
+
+def menu_links(lang, page, links):
+    out = []
+    for key, target, frag in links:
+        href = rel(lang, target_lang(target), target) + frag
+        if target == page and frag:  # 자기 페이지의 앵커는 파일 이름 없이
+            href = frag
+        cur = ' aria-current="page"' if target == page else ''
+        out.append(f'<a href="{href}"{cur}>{TXT[lang][key]}</a>')
+    return out
+
 def process(lang, page):
     p = os.path.join(ROOT, page_path(lang, page))
     if not os.path.exists(p): return False
-    s = open(p).read()
+    s = open(p, encoding='utf-8').read()
     # 1) hreflang 링크 묶음 교체
     s = re.sub(r'(?:[ \t]*<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n)+', '', s)
     links = ''.join(f'  <link rel="alternate" hreflang="{l}" href="{rel(lang, l, page)}">\n' for l, _ in LANGS)
     links += f'  <link rel="alternate" hreflang="x-default" href="{rel(lang, "en", page)}">\n'
+    if '<link rel="stylesheet"' not in s: sys.exit(f'{page_path(lang, page)} 에 stylesheet 링크가 없습니다')
     s = re.sub(r'([ \t]*<link rel="stylesheet")', links + r'\1', s, count=1)
-    # 2) 헤더: 기존 <a class="lang"> 또는 이미 넣은 select 를 select 로
-    opts = ''.join(f'<option value="{rel(lang, l, page)}"{" selected" if l == lang else ""}>{name}</option>' for l, name in LANGS)
-    select = f'<label class="lang-switch"><span class="visually-hidden">{LABEL[lang]}</span><select class="lang-select" aria-label="{LABEL[lang]}">{opts}</select></label>'
-    s = re.sub(r'<label class="lang-switch">.*?</label>', select, s, count=1, flags=re.S)
-    s = re.sub(r'<a class="lang" href="[^"]+"[^>]*>[^<]*</a>', select, s, count=1)
-    # 3) 푸터: 언어 링크들 교체 (푸터 nav 안의 lang= 링크 또는 이미 넣은 .footer-langs)
-    foot = '<span class="footer-langs">' + ' '.join(f'<a href="{rel(lang, l, page)}" lang="{l}" hreflang="{l}"{" aria-current=\"page\"" if l == lang else ""}>{name}</a>' for l, name in LANGS) + '</span>'
-    if '<span class="footer-langs">' in s:
-        s = re.sub(r'<span class="footer-langs">.*?</span>', foot, s, count=1, flags=re.S)
-    else:
-        m = re.search(r'(<footer.*?<nav[^>]*>)(.*?)(</nav>)', s, flags=re.S)
-        if m:
-            inner = re.sub(r'\s*<a href="[^"]+" lang="[^"]+" hreflang="[^"]+">[^<]*</a>', '', m.group(2))
-            s = s[:m.start(2)] + inner.rstrip() + '\n      ' + foot + '\n    ' + s[m.end(2):]
+    # 2) 헤더 메뉴: 링크들 + 언어 선택
+    head = menu_links(lang, page, HEADER_LINKS) + [lang_switch(lang, page)]
+    s = re.sub(r'(<nav class="nav" aria-label=")[^"]*(">)(.*?)(</nav>)',
+               lambda m: m.group(1) + TXT[lang]['main'] + m.group(2) + '\n      ' + '\n      '.join(head) + '\n    ' + m.group(4),
+               s, count=1, flags=re.S)
+    # 3) 푸터 메뉴: 링크들 + 언어 목록
+    foot = menu_links(lang, page, FOOTER_LINKS) + [footer_langs(lang, page)]
+    s = re.sub(r'(<footer class="site-footer">.*?<nav aria-label=")[^"]*(">)(.*?)(</nav>)',
+               lambda m: m.group(1) + TXT[lang]['footer'] + m.group(2) + '\n      ' + '\n      '.join(foot) + '\n    ' + m.group(4),
+               s, count=1, flags=re.S)
     # 4) select 동작 스크립트
     script = '<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>'
     if 'lang-select").forEach' not in s:
         s = s.replace('</body>', script + '\n</body>', 1)
-    open(p, 'w').write(s)
+    open(p, 'w', encoding='utf-8').write(s)
     return True
 
 done = [page_path(l, p) for l, _ in LANGS for p in PAGES if process(l, p)]
+missing = [(l, p) for l, _ in LANGS for p in PAGES if not os.path.exists(os.path.join(ROOT, page_path(l, p)))]
 print('updated', len(done), 'pages:', ' '.join(done))
+if missing:
+    print('없어서 건너뛴 페이지:', ' '.join(f'{l}/{p}' for l, p in missing))

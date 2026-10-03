@@ -43,9 +43,10 @@ def footer_langs(lang, page):
 def menu_links(lang, page, links):
     out = []
     for key, target, frag in links:
-        href = rel(lang, target_lang(target), target) + frag
-        if target == page and frag:  # 자기 페이지의 앵커는 파일 이름 없이
-            href = frag
+        if target == page:  # 자기 페이지 앵커는 파일 이름 없이, 자기 파일은 같은 폴더로
+            href = frag or target
+        else:
+            href = rel(lang, target_lang(target), target) + frag
         cur = ' aria-current="page"' if target == page else ''
         out.append(f'<a href="{href}"{cur}>{TXT[lang][key]}</a>')
     return out

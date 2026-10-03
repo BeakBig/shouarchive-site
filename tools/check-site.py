@@ -48,6 +48,8 @@ def skeleton(html):
             elif name in KEEP_VALUE:
                 value = re.sub(r'^\.\./', '', value or '')
                 value = re.sub(r'^(assets/screenshots)/[^/]+/', r'\1LANG/', value)  # 스크린샷 폴더는 언어마다 다름
+                if value.startswith('mailto:'):  # 제목(subject)은 언어마다 다를 수 있음
+                    value = value.split('?')[0]
                 pairs.append((name, value))
         out.append((tag, tuple(pairs)))
     return out
@@ -87,6 +89,16 @@ def check_links(lang, page):
     for href in missing:
         report('링크', p, f'대상이 없습니다: {href}')
 
+def check_current_page(lang, page):
+    """aria-current="page" 링크는 자기 자신을 가리켜야 한다 (../ 로 잘못 가면 한국어판으로 튄다)."""
+    p = path_for(lang, page)
+    for href in re.findall(r'<a href="([^"]+)" aria-current="page"', open(p, encoding='utf-8').read()):
+        if href.startswith(('http', 'mailto:', '#')):
+            continue
+        target = os.path.normpath(os.path.join(os.path.dirname(p), href.split('#')[0]))
+        if target != os.path.normpath(p):
+            report('현재 페이지', p, f'aria-current 링크가 다른 파일을 가리킵니다: {href}')
+
 def check_sizes():
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = [d for d in dirnames if d not in ('.git', 'node_modules')]
@@ -108,6 +120,7 @@ for page in PAGES:
             check_structure(lang, page)
             check_hangul(lang, page)
         check_links(lang, page)
+        check_current_page(lang, page)
 check_sizes()
 
 if problems:

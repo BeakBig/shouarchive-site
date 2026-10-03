@@ -42,18 +42,18 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>개인정보 처리방침</h1>
-      <p>ShouArchive (macOS) · 시행일 2026년 9월 22일 · 개발자 BeakBig</p>
+      <p>ShouArchive (macOS) · 시행일 2026년 10월 3일 · 개발자 BeakBig · Mac App Store 판과 상용 판</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>요약.</strong> ShouArchive 는 어떤 개인정보도 수집하지 않습니다. 분석 도구 · 추적 · 광고 · 계정이 없고, 검사하는 파일은 Mac 안에서만 읽습니다. 네트워크는 사용자가 직접 등록한 App Store Connect API 키로 Apple 과 통신할 때만 씁니다.</p>
+        <p><strong>이 문서는 두 가지 판을 함께 설명합니다.</strong> <strong>Mac App Store 판</strong>(1 – 9항)은 지금처럼 어떤 개인정보도 수집하지 않습니다. 분석 도구 · 추적 · 광고 · 계정이 없고, 검사하는 파일은 Mac 안에서만 읽으며, 네트워크는 사용자가 직접 등록한 App Store Connect API 키로 Apple 과 통신할 때만 씁니다. <strong>상용 판</strong>(10 – 14항)은 웹에서 직접 구독하는 판으로, 라이선스를 확인할 때만 <strong>라이선스 키 · 기기 식별값 · 앱 버전</strong>을 라이선스 서버로 보내고, 결제는 <strong>Paddle</strong>이 판매대행으로 처리합니다. 두 판은 서로 연동되지 않습니다.</p>
       </div>
 
-      <h2>1. 수집하는 정보</h2>
-      <p>없습니다. 앱은 다음 중 어느 것도 하지 않습니다.</p>
+      <h2>1. 수집하는 정보 — Mac App Store 판</h2>
+      <p>이 판에서는 <strong>없습니다</strong>. 앱은 다음 중 어느 것도 하지 않습니다.</p>
       <ul>
         <li>사용 통계 · 오류 보고 등 <strong>분석(analytics)</strong> 데이터를 모으지 않습니다.</li>
         <li>사용자나 기기를 <strong>추적</strong>하지 않고, <strong>광고</strong>를 보여 주지 않습니다.</li>
@@ -92,18 +92,71 @@
       <p>앱은 로딩 애니메이션 표시를 위해 오픈 소스 라이브러리 <strong>Lottie</strong> 를 포함합니다. 화면 표시에만 쓰이며 네트워크에 접속하거나 데이터를 수집하지 않습니다. 그 밖의 제3자 SDK 는 없습니다.</p>
 
       <h2>6. 공유와 판매</h2>
-      <p>수집하는 정보가 없으므로 누구와도 공유하거나 판매하지 않습니다. 3항에 적은 Apple 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다.</p>
+      <p><strong>Mac App Store 판</strong>은 수집하는 정보가 없으므로 누구와도 공유하거나 판매하지 않습니다. 3항에 적은 Apple 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다. <strong>상용 판</strong>에서 나누는 대상은 11항의 라이선스 서버와 12항의 Paddle뿐이며, 그 밖의 제3자에게 팔거나 넘기지 않습니다<span class="placeholder">[구현을 확인하고 확정하세요]</span>.</p>
 
       <h2>7. 아동</h2>
-      <p>ShouArchive 는 소프트웨어 개발자를 위한 도구이며 아동을 대상으로 하지 않습니다. 누구에게서도 개인정보를 수집하지 않습니다.</p>
+      <p>ShouArchive 는 소프트웨어 개발자를 위한 도구이며 아동을 대상으로 하지 않습니다. Mac App Store 판에서는 누구에게서도 개인정보를 수집하지 않습니다.</p>
 
       <h2>8. 변경</h2>
       <p>이 방침이 바뀌면 이 페이지에 새 시행일과 함께 게시합니다. 앱의 데이터 처리 방식이 실제로 달라지는 경우에는 앱 업데이트 설명에도 적습니다.</p>
 
-      <h2>9. 문의</h2>
+      <h2>9. 상용 판 — 수집하는 정보</h2>
+      <p><strong>상용 판</strong>(이 사이트에서 직접 구독하는 판)은 구독 중 라이선스를 확인하기 위해서만 다음 값을 <strong>라이선스 서버</strong>로 보냅니다. 그 밖의 목적으로 쓰지 않습니다<span class="placeholder">[아래 표는 구현을 기준으로 확정하세요. 더 보내는 값이 있으면 표에 추가해야 합니다]</span>.</p>
+      <table>
+        <thead><tr><th>보내는 값</th><th>내용</th><th>왜 필요한가</th></tr></thead>
+        <tbody>
+          <tr><td><strong>라이선스 키</strong></td><td>구독을 판별하는 키</td><td>구독이 유효한지 확인합니다</td></tr>
+          <tr><td><strong>기기 식별값</strong></td><td>기기를 구분하기 위한 값<span class="placeholder">[전송되는 정확한 값과 방식]</span></td><td>요금제가 허용한 기기 수를 넘었는지 확인합니다</td></tr>
+          <tr><td><strong>앱 버전</strong></td><td>앱 버전 · 빌드 번호</td><td>기능이 맞는지 확인하고 문제를 해결합니다</td></tr>
+          <tr><td>요청 정보</td><td>요청 시각, IP 주소<span class="placeholder">[실제로 남기는 로그 항목]</span></td><td>악의적인 중복 사용을 막고 장애에 대응합니다</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>이 값은 앱이 동작하는 <strong>상용 판</strong>에서만 보내집니다. Mac App Store 판은 네트워크에 접속하지 않으므로(3항) 아무것도 보내지 않습니다.</li>
+        <li>사용자를 알아낼 수 있는 값(사용자 이름 · 기기에 직접 붙인 이름 등)은 라이선스 확인에 쓰지 않습니다<span class="placeholder">[구현을 확인하고 확정하세요]</span>.</li>
+        <li>파일(IPA · APK · AAB · <code>.mobileprovision</code>)의 내용과 산출물 검사 결과는 라이선스 서버로 보내지 않습니다. 라이선스 확인은 앱이 기동할 때 라이선스 키를 확인하는 데 그칩니다.</li>
+        <li>광고 · 추적 · 행동 분석 SDK 는 상용 판에도 넣지 않습니다<span class="placeholder">[구현을 확인하고 확정하세요]</span>.</li>
+      </ul>
+
+      <h2>10. 상용 판 — 라이선스 서버와 보관</h2>
+      <ul>
+        <li>라이선스 서버는 <span class="placeholder">[운영 주체 · 서버 위치]</span>가 운영합니다<span class="placeholder">[외부 hosting 을 쓴다면 회사 이름]</span>.</li>
+        <li>보내는 값과 라이선스 상태(발급 · 만료 · 해지)는 <span class="placeholder">[보관 기간]</span> 동안 보관하고, 그 뒤 지웁니다. 해지 요청을 받으면 확인 즉시 라이선스를 정지하고 남은 기록을 삭제합니다.</li>
+        <li>보관하는 기록에는 9항의 표에 적은 값과 라이선스 상태만 들어 있습니다. 결제 수단 정보, 카드 번호, 은행 계좌는 이 서버에 저장되지 않습니다.</li>
+        <li>라이선스 서버에 저장된 내역을 직접 내려받거나 삭제를 요청하려면 12항의 방법으로 알려 주세요.</li>
+      </ul>
+
+      <h2>11. 상용 판 — 결제와 Paddle</h2>
+      <p>상용 판의 결제는 <strong>Paddle</strong>(<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>)이 <strong>판매대행(Merchant of Record)</strong>으로 처리합니다. Paddle이 고객에 대한 판매자가 되어 결제 수단 확인, 세금 계산과 부과, 영수증 발행, 환불 처리를 맡습니다. 결제 수단 정보는 Paddle이 보관하며 이 사이트의 서버를 지나지 않습니다.</p>
+      <ul>
+        <li><strong>Paddle이 수집 · 처리하는 것</strong> — 이름, 주소, 이메일 주소, 결제 수단 정보와 결제 내역, 청구 주소, 세금 번호, IP 주소, 위치 정보, 기기 · 브라우저 정보, 동의 기록 등. 이는 <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle 개인정보 처리방침</a>에 따라 처리되며, Paddle 은 법적 의무를 위해 거래 데이터를 5년 보관합니다.</li>
+        <li><strong>판매자(저)에게 넘어오는 것</strong> — 구매자의 이름 · 주소 · 이메일 주소, 구매 내역, 대시보드에서 볼 수 있는 거래 분석. 카드 전체 번호와 보안 코드는 넘어오지 않습니다. 특별한 민감 정보 범주는 공유되지 않습니다.</li>
+        <li>판매자와 Paddle은 이 데이터에 대해 각각 <strong>독립적인 데이터 관리 주체</strong>입니다. 판매자는 받은 정보로 라이선스 발급, 결제 확인과 고객 문의에 대응할 뿐 다른 목적으로 쓰지 않습니다.</li>
+        <li>결제에 관한 문의는 Paddle의 고객 지원 창구에서 받습니다. 환불 기준은 <a href="refund.html">환불 정책</a>에 적어 두었습니다.</li>
+        <li>Paddle이 대행하는 판매자 약관도 함께 적용됩니다: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 이용약관</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 구매자 약관</a>.</li>
+      </ul>
+
+      <h2>12. 개인정보 주체의 권리</h2>
+      <p>이용자는 개인정보에 대해 열람 · 정정 · 삭제 · 처리 제한 · 수집 거부(결정에 따른 중지)의 권리를 가집니다.</p>
+      <ul>
+        <li><strong>라이선스 서버에 있는 기록</strong> — <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>으로 요청해 주세요. 본인 확인 후 <span class="placeholder">[처리 기한]</span> 안에 처리하고, 그 결과를 알려 드립니다.</li>
+        <li><strong>Paddle이 보관한 결제 정보</strong> — Paddle의 정책과 절차에 따라 처리됩니다. 필요한 정보는 Paddle에 직접 요청해 주시면 됩니다.</li>
+        <li><strong>거부할 수 있는 부분</strong> — 라이선스 확인은 상용 판을 쓰기 위한 필수 처리입니다. 이를 거부하면 상용 판을 이용할 수 없습니다.</li>
+        <li>법정대리인이나 대리인이 요청하는 경우에는 위임 관계를 확인한 뒤 처리합니다.</li>
+      </ul>
+      <p>이 방침은 <span class="placeholder">[적용 관할]</span>의 개인정보 보호법령을 기준으로 작성되었습니다<span class="placeholder">[관할에 따라 필요한 문구를 검토하세요]</span>.</p>
+
+      <h2>13. 국외 이전</h2>
+      <ul>
+        <li>상용 판의 라이선스 기록은 10항의 서버 위치로, 결제 정보는 Paddle이 정한 위치로 이전되어 처리될 수 있습니다<span class="placeholder">[실제 이전 국가와 Safeguard]</span>.</li>
+        <li>Apple로 보내는 App Store Connect API 요청은 Apple의 서버로 갑니다(3항).</li>
+        <li>필요한 경우 국외 이전에 대한 동의를 받고, 이전 국가와 그 밖의 보호 조치를 설명합니다.</li>
+      </ul>
+
+      <h2>14. 문의</h2>
       <p>이 방침이나 앱의 데이터 처리에 관해 궁금한 점은 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 으로 보내 주세요.</p>
 
-      <p class="meta">시행일: 2026년 9월 22일 · 개발자 · 배포자: BeakBig</p>
+      <p class="meta">시행일: 2026년 10월 3일 (Mac App Store 판의 데이터 처리는 2026년 9월 22일 시행 이후 그대로입니다) · 개발자 · 배포자: BeakBig</p>
     </div>
   </section>
 </main>

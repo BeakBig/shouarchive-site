@@ -43,6 +43,7 @@ git add -A && git commit -m "..." && git push
 
 ## 남은 일
 
-- App Store 링크는 `https://apps.apple.com/app/id6814686766` 로 넣어 두었습니다 (여섯 언어 랜딩 페이지). 앱이 승인돼 게시되기 전에는 이 링크가 「앱을 사용할 수 없음」으로 보입니다.
+- Mac App Store 판매는 중단하고 Paddle 직접 판매만 합니다. 랜딩 페이지 버튼은 체험판 다운로드(`[DOWNLOAD_URL TODO]`)와 `pricing.html` 로 연결됩니다.
+- 가격 · 이용약관 · 환불 · 판매자 정보(`pricing` · `terms` · `refund` · `seller`)는 현재 한국어 · 영어만 있습니다. ja · zh-Hans · zh-Hant · es 는 영어 페이지로 연결되며 번역이 필요합니다.
 - Cloudflare Worker 배포 (`worker/README.md`) — 이것이 끝나야 `https://shouarchive.beakbig.com/` 가 열립니다.
 - 저장소 이름을 바꾸면 GitHub Pages 원본 주소가 바뀌므로 `worker/wrangler.toml` 의 `UPSTREAM` 도 함께 고쳐야 합니다.

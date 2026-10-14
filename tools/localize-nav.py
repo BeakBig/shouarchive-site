@@ -3,7 +3,7 @@
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = [('ko', '한국어'), ('en', 'English'), ('ja', '日本語'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'), ('es', 'Español')]
-PAGES = ['index.html', 'support.html', 'privacy.html']
+PAGES = ['index.html', 'support.html', 'privacy.html', 'pricing.html', 'terms.html', 'refund.html', 'seller.html']
 LABEL = {'ko': '언어', 'en': 'Language', 'ja': '言語', 'zh-Hans': '语言', 'zh-Hant': '語言', 'es': 'Idioma'}
 
 def page_path(lang, page):  # 저장소 루트 기준 경로

@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ダウンロード — ShouArchive</title>
-  <meta name="description" content="ShouArchive のダウンロード。Mac App Store 版はいますぐ入手でき、商用版は発売予定です。">
+  <meta name="description" content="ShouArchive のダウンロード。macOS 15 以降 · .dmg で直接配布 · 支払い方法の登録なしで 14 日間の体験版。現在は近日公開予定です。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="ダウンロード — ShouArchive">
-  <meta property="og:description" content="Mac App Store 版はいますぐ、商用版は発売予定。">
+  <meta property="og:description" content=".dmg で直接配布 · 14 日間の体験版 · 近日公開。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ja_JP">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -28,11 +28,11 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="メイン">
-      <a href="../index.html#features">機能</a>
-      <a href="../pricing.html">価格</a>
+      <a href="index.html#features">機能</a>
+      <a href="pricing.html">価格</a>
       <a href="download.html" aria-current="page">ダウンロード</a>
-      <a href="../support.html">サポート</a>
-      <a href="../privacy.html">プライバシー</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシー</a>
       <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../download.html">한국어</option><option value="../en/download.html">English</option><option value="../ja/download.html" selected>日本語</option><option value="../zh-Hans/download.html">简体中文</option><option value="../zh-Hant/download.html">繁體中文</option><option value="../es/download.html">Español</option></select></label>
     </nav>
   </div>
@@ -42,75 +42,65 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>ダウンロード</h1>
-      <p>Mac App Store 版はいますぐ入手できます。商用版（直接購入）はまだリリースされていません。</p>
+      <p>ShouArchive はこのページから <code>.dmg</code> ファイルでダウンロードします。価格は決まりましたが、まだ発売されていません。</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="plans">
-        <article class="plan">
-          <p class="plan-badge live">いますぐ入手できます</p>
-          <h2>Mac App Store 版</h2>
-          <p class="plan-for">App Store でインストール · 自動アップデート · <span data-price="appstore.price_now">US$2</span></p>
+        <article class="plan coming">
+          <p class="plan-badge soon" data-live-hide>近日公開</p>
+          <h2>ShouArchive for Mac</h2>
+          <p class="plan-for">ダウンロードして <span data-price="trial_days">14</span> 日間体験 · 気に入ったら <span data-price="commercial.price">US$29</span> で購入</p>
           <ul class="plan-feats">
-            <li><strong>インストール</strong> — 下のボタンを押すと App Store が開きます。「インストール」を押すだけです。</li>
-            <li><strong>アップデート</strong> — 新しいバージョンが公開されると App Store が知らせ、インストール済みのアプリは自動的に更新されます。</li>
-            <li><strong>決済</strong> — Apple が処理します。返金も Apple の方針に従います（<a href="refund.html">返金ポリシー</a> を参照）。</li>
-            <li><strong>動作環境</strong> — macOS 15 Sequoia 以降、Apple Silicon · Intel の両方。</li>
+            <li><strong>インストールファイル</strong> — このページから <code>.dmg</code> でダウンロードします。発売と同時に公開します。</li>
+            <li><strong>体験版</strong> — ダウンロードして起動すると、<span data-price="trial_days">14</span> 日間の体験期間がすぐに始まります。支払い方法は不要です。</li>
+            <li><strong>ライセンス</strong> — 決済後にメールで届いたライセンスキーを「設定 › ライセンス」に入力します。1 つのキーで Mac <span data-price="commercial.devices">2</span> 台。</li>
+            <li><strong>アップデート</strong> — アップデート期間中はアプリ内で確認してインストールします。期間が終わっても、それまでに公開されたバージョンは引き続き使えます。</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              Mac App Store で入手
-            </a>
+            <a class="btn" data-src="commercial.download" href="#" hidden>ダウンロード（.dmg）</a>
+            <a class="btn outline" href="pricing.html">価格 · 購入の案内</a>
+          </div>
+          <p class="plan-foot" data-live-hide>まだダウンロードできるファイルはありません。発売日が決まり次第、ここにファイルを公開します。ご不明な点は <a href="mailto:support@beakbig.com">support@beakbig.com</a> までお送りください。</p>
+          <p class="plan-foot" data-live-show hidden>ファイルは公開前に署名と <code>Gatekeeper</code> の確認を済ませています。ファイルを開けない場合は<a href="support.html">サポート</a>までお知らせください。</p>
+        </article>
+
+        <article class="plan">
+          <h2>動作環境</h2>
+          <p class="plan-for">インストール前にご確認ください</p>
+          <ul class="plan-feats">
+            <li><strong>macOS 15 Sequoia 以降</strong> — Apple Silicon と Intel Mac の両方に対応しています。</li>
+            <li><strong>インターネット接続</strong> — ライセンスの確認とアップデートの確認に使います。ビルド成果物検査・プロファイルの閲覧はインターネットなしで動作します。</li>
+            <li><strong>App Store Connect API キー</strong>（任意）— プロファイルのダウンロード・作成・端末登録とストア配信に必要です。</li>
+            <li><strong>Apple Developer アカウント</strong> — ビルド・アップロード・端末へのインストール機能に必要です。</li>
+          </ul>
+          <div class="plan-actions">
             <a class="btn outline" href="support.html">インストール後の問題</a>
           </div>
-          <p class="plan-foot">初回起動時にプロファイルフォルダを一度「許可」すれば完了です。詳しくは<a href="support.html">サポート</a> をご覧ください。</p>
         </article>
-
-        <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>発売予定</p>
-          <h2>商用版</h2>
-          <p class="plan-for">ウェブで直接購入 · 月額サブスクリプション</p>
-          <ul class="plan-feats">
-            <li><strong>インストールファイル</strong> — このページから <code>.dmg</code> としてダウンロードします。リリースとともに公開します。</li>
-            <li><strong>アップデート</strong> — アプリ内で確認し、自分で更新します。</li>
-            <li><strong>ライセンス</strong> — 決済後にもらったライセンスキーをアプリに入力します。</li>
-            <li><strong>動作環境</strong> — macOS 15 以降、インターネット接続が必要（ライセンス確認のため）。ビルド · アップロード機能には Apple 開発者アカウントが必要です。</li>
-          </ul>
-          <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>ダウンロード (.dmg)</a>
-            <a class="btn outline" href="pricing.html">価格 · サブスクリプションについて</a>
-          </div>
-          <p class="plan-foot" data-live-hide>いまダウンロードできるファイルはありません。リンクが掲載され次第、この欄を更新します。知らせてほしい場合は <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> まで「発売通知」をご請求ください。</p>
-          <p class="plan-foot" data-live-show hidden>ファイルをダウンロードする前に署名と <code>Gatekeeper</code> の確認を経て公開しています。ファイルが開けない場合は<a href="support.html">サポート</a> までお知らせください。</p>
-        </article>
-      </div>
-
-      <div class="note">
-        <p><strong>2 つの版は互いに連動しません。</strong> あとに商用版を購読しても App Store 版はそのまま別に使えますし、逆も同様です。同じ Mac に 2 つの版を同時にインストールしても、情報が混ざることはありません。</p>
       </div>
     </div>
   </section>
 
   <section class="section alt doc">
     <div class="wrap">
-      <h2>ダウンロードについてよくある質問</h2>
+      <h2>ダウンロードに関するよくある質問</h2>
       <div class="faq">
         <details open>
-          <summary>ファイルを別途ダウンロードしてインストールできますか？</summary>
-          <p>Mac App Store 版はサンドボックスアプリなので、<strong>Mac App Store を通じてのみ</strong>インストールできます。別途ダウンロードするファイルはありません。<code>.dmg</code> ファイルを直接ダウンロードできるのは商用版だけです。</p>
+          <summary>体験期間が終わってから購入した場合、再インストールが必要ですか？</summary>
+          <p>いいえ。体験中のアプリの「設定 › ライセンス」に、決済後に届いたキーを入力すれば、すぐにすべての機能が再び使えるようになります。設定と履歴もそのまま残ります。</p>
         </details>
 
         <details>
-          <summary>ダウンロードしたファイルが開けないときは？</summary>
-          <p>商用版の <code>.dmg</code> は署名と公証（notarization）を経て配布します。それでも macOS がブロックする場合は<a href="support.html">サポート</a> までお知らせください — Mac のバージョンとエラーの画面を一緒に送っていただければ早く確認できます。</p>
+          <summary>ダウンロードしたファイルが開けない場合は？</summary>
+          <p><code>.dmg</code> は署名・公証（notarization）を済ませて配布しています。それでも macOS にブロックされる場合は<a href="support.html">サポート</a>までお知らせください — macOS のバージョンとエラー画面を一緒にお送りいただければ、早く確認できます。</p>
         </details>
 
         <details>
-          <summary>このファイルが安全かどうかはどうやって確認しますか？</summary>
-          <p>リリースに合わせて、このページに <code>.dmg</code> ファイルのチェックサム（SHA-256）を掲載します。ダウンロード後、<code>shasum -a 256 ShouArchive.dmg</code> で比較すればよいです。</p>
+          <summary>このファイルが安全かどうか、どう確認すればいいですか？</summary>
+          <p>発売と同時に、このページに <code>.dmg</code> ファイルのチェックサム（SHA-256）を記載します。ダウンロード後に <code>shasum -a 256 ShouArchive.dmg</code> で比較してください。</p>
         </details>
       </div>
     </div>
@@ -118,9 +108,11 @@
 
   <section class="cta">
     <div class="wrap">
-      <h2>いますぐ入手</h2>
-      <p>Mac App Store 版は <span data-price="appstore.price_now">US$2</span> の買い切りです。</p>
-      <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">Mac App Store で入手</a>
+      <h2>今すぐ入手</h2>
+      <p data-live-hide>発売日が決まり次第、このページにファイルを公開します。価格と体験版の条件は価格ページに記載しています。</p>
+      <p data-live-show hidden>ダウンロードして <span data-price="trial_days">14</span> 日間、支払い方法の登録なしでお試しください。</p>
+      <a class="btn" data-src="commercial.download" href="#" hidden>ダウンロード（.dmg）</a>
+      <a class="btn" href="pricing.html" data-live-hide>価格を見る</a>
     </div>
   </section>
 </main>
@@ -128,16 +120,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="フッター">
-      <a href="../index.html">ホーム</a>
-      <a href="../pricing.html">価格</a>
+      <a href="index.html">ホーム</a>
+      <a href="pricing.html">価格</a>
       <a href="download.html" aria-current="page">ダウンロード</a>
-      <a href="../support.html">サポート</a>
-      <a href="../privacy.html">プライバシーポリシー</a>
-      <a href="../terms.html">利用規約</a>
-      <a href="../refund.html">返金ポリシー</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="refund.html">返金ポリシー</a>
       <span class="footer-langs"><a href="../download.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/download.html" lang="en" hreflang="en">English</a> <a href="../ja/download.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/download.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/download.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/download.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商号 Beakbig · 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>（簡易課税者） · 通信販売業の届出: <span data-price="seller.mail_order">免除</span> · 所在地 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · メール <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 決済代行 Paddle</p>
   </div>
 </footer>
 

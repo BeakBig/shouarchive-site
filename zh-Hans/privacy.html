@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>隐私政策 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 隐私政策。应用不收集任何数据，只在本地读取你的文件，且仅在使用你提供的密钥与 Apple 的 App Store Connect API 通信时才使用网络。">
+  <meta name="description" content="ShouArchive 隐私政策。没有分析 · 跟踪 · 广告，检查的文件只在 Mac 上读取。许可证验证只使用许可证密钥 · 设备标识值 · 应用版本，支付由 Paddle 作为记录商户处理。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="隐私政策 — ShouArchive">
-  <meta property="og:description" content="ShouArchive 不收集任何数据。">
+  <meta property="og:description" content="没有分析 · 跟踪 · 广告 · 文件只在 Mac 上读取 · 只使用许可证验证所需的值。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="zh_CN">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -28,10 +28,10 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="主导航">
-      <a href="../index.html#features">功能</a>
-      <a href="../pricing.html">价格</a>
-      <a href="../download.html">下载</a>
-      <a href="../support.html">支持</a>
+      <a href="index.html#features">功能</a>
+      <a href="pricing.html">价格</a>
+      <a href="download.html">下载</a>
+      <a href="support.html">支持</a>
       <a href="privacy.html" aria-current="page">隐私</a>
       <label class="lang-switch"><span class="visually-hidden">语言</span><select class="lang-select" aria-label="语言"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html" selected>简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
     </nav>
@@ -42,72 +42,62 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>隐私政策</h1>
-      <p>ShouArchive (macOS) · 生效日期 2026年10月3日 · 开发者：BeakBig · Mac App Store 版和商业版</p>
+      <p>ShouArchive (macOS) · 生效日期 2026年10月15日 · 开发者 · 销售者 Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>本文档同时说明两个版本。</strong><strong>Mac App Store 版</strong>（第 1 – 7 项）与现在一样，不收集任何个人信息。没有分析工具 · 跟踪 · 广告 · 账户，检查的文件只在 Mac 内读取，网络仅在使用你亲自登记的 App Store Connect API 密钥与 Apple 通信时使用。<strong>商业版</strong>（第 9 – 13 项）是在网页上直接订阅的版本，仅在验证许可证时把<strong>许可证密钥 · 设备标识值 · 应用版本</strong>发送到许可证服务器，支付由 <strong>Paddle</strong> 作为销售代理处理。第 8 项（变更）与第 14 项（联系）同时适用于两个版本。两个版本互不关联。</p>
+        <p><strong>摘要。</strong>没有分析工具 · 跟踪 · 广告 · 账户。检查的文件只在 Mac 上读取。App Store Connect · Google Play 功能使用你亲自登记的密钥直接连接 Apple · Google。发送给销售者的只有验证许可证时的<strong>许可证密钥 · 设备标识值 · 应用版本</strong>（第 5 项），以及作为记录商户处理支付的 <strong>Paddle</strong> 转交的购买信息（第 7 项）。</p>
       </div>
 
-      <h2>1. 收集的信息 — Mac App Store 版</h2>
-      <p>此版本<strong>不收集任何信息</strong>。应用不会：</p>
+      <h2>1. 不收集的信息</h2>
+      <p>应用不会做以下任何事情。</p>
       <ul>
-        <li>收集使用统计、崩溃报告等<strong>分析数据</strong>；</li>
-        <li><strong>跟踪</strong>你或你的设备，或展示<strong>广告</strong>；</li>
-        <li>要求<strong>账户</strong>或登录；</li>
-        <li>包含任何通过网络通信的<strong>第三方 SDK</strong>。</li>
+        <li>不收集使用统计 · 错误报告等<strong>分析（analytics）</strong>数据。</li>
+        <li>不<strong>跟踪</strong>用户或设备，也不展示<strong>广告</strong>。</li>
+        <li>没有<strong>账户</strong>或登录。许可证凭一个密钥验证。</li>
+        <li>不会把检查的文件内容、项目源代码、构建产物发送给销售者。</li>
       </ul>
 
-      <h2>2. 你打开的文件</h2>
-      <p>产物检查和描述文件管理所处理的文件（IPA、APK、AAB、<code>.mobileprovision</code>）只在你的 Mac 上读取。它们的内容以及由此得出的信息（Bundle ID、签名证书、权限列表等）只显示在应用窗口中，绝不会传输到任何地方。检查从不修改原文件。</p>
+      <h2>2. 文件处理</h2>
+      <p>产物检查和描述文件管理所处理的文件（IPA · APK · AAB · <code>.mobileprovision</code>）只在你的 Mac 上读取。文件内容以及由此得出的信息（Bundle ID · 签名证书 · 权限列表等）只显示在应用窗口中，不会传输到任何地方。产物检查不会修改原文件。通过构建 · 导出生成的文件只保存在你选择的文件夹中。</p>
 
       <h2>3. 网络使用</h2>
-      <p>应用只在一种情况下使用网络：当你注册自己的 <strong>App Store Connect API 密钥</strong>（Issuer ID、Key ID 和 <code>.p8</code> 文件）并使用需要它的功能时，应用会连接到 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）。</p>
+      <p>应用只在以下情况下连接网络。发往 Apple · Google 的请求不经过销售者的服务器，直接从你的 Mac 发出。</p>
       <table>
-        <thead><tr><th>功能</th><th>发送给 Apple 的内容</th></tr></thead>
+        <thead><tr><th>功能</th><th>连接的地方</th><th>发送的内容</th></tr></thead>
         <tbody>
-          <tr><td>列出和下载描述文件</td><td>由应用签名的身份验证令牌</td></tr>
-          <tr><td>创建、重新生成或续期描述文件</td><td>令牌，以及你选择的描述文件类型、Bundle ID、证书和设备</td></tr>
-          <tr><td>列出和注册设备</td><td>令牌，以及你输入的设备名称和 UDID</td></tr>
+          <tr><td>描述文件列表 · 下载 · 创建 · 续期，设备列表 · 注册，App Store 商店分发</td><td>Apple App Store Connect API（<code>api.appstoreconnect.apple.com</code>）</td><td>由应用签名的身份验证令牌，以及你选择或输入的值（描述文件类型 · Bundle ID · 证书 · 设备名称 · UDID · 商店信息 · 截图等）</td></tr>
+          <tr><td>Google Play 上传 · 商店分发</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>用服务账号密钥签名的身份验证请求，以及你选择的 AAB · APK · 商店信息 · 截图</td></tr>
+          <tr><td>构建 · 上传应用 · 设备安装</td><td>Apple · Google 的开发工具（<code>xcodebuild</code> · <code>gradle</code> 等）所连接的地方</td><td>这些工具按各自的方式通信。下载依赖项的仓库（Maven 等）也包括在内</td></tr>
+          <tr><td>许可证激活 · 验证 · 解除，开始支付</td><td>销售者的许可证服务器</td><td>第 5 项</td></tr>
+          <tr><td>检查更新</td><td>销售者发布的更新列表</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收更新列表，不发送其他值</td></tr>
         </tbody>
       </table>
       <ul>
-        <li><code>.p8</code> 私钥保存在你的 Mac 上。应用只保存对该文件的引用（macOS 安全作用域书签），并在<strong>本地</strong>签名请求令牌。密钥本身从不发送到任何地方，包括 Apple。</li>
-        <li>Apple 对这些请求的处理受 Apple Developer Program 协议和 Apple 隐私政策的约束。</li>
-        <li>如果你从未注册 API 密钥，应用完全不会进行任何网络连接。</li>
+        <li>App Store Connect 的 <code>.p8</code> 私钥和 Google 服务账号密钥保存在你的 Mac 上。应用在<strong>本地</strong>签名请求所需的令牌，密钥本身不会发送到包括 Apple · Google 在内的任何地方。</li>
+        <li>Apple · Google 如何处理这些请求，遵循各公司的开发者协议和隐私政策。</li>
       </ul>
 
-      <h2>4. 保存在你 Mac 上的数据</h2>
+      <h2>4. 保存在 Mac 上的数据</h2>
       <ul>
-        <li>应用设置（主题、语言、文本大小、API 密钥信息等）保存在 macOS 为应用提供的<strong>沙盒容器</strong>中。</li>
-        <li>对描述文件文件夹和 <code>.p8</code> 文件的访问权限，通过你在打开面板中授予的<strong>安全作用域书签</strong>记住。你可以随时在应用中移除它们。</li>
-        <li>描述文件的活动记录（下载、创建、设备注册等）只保存在本地，可通过「清除记录」删除。</li>
-        <li>删除应用会一并移除其容器和这些数据。你自己放置的文件（例如 <code>.p8</code> 文件）绝不会被应用删除。</li>
+        <li>应用设置（主题 · 语言 · 文本大小 · 项目列表等）保存在 macOS 的用户偏好设置 · 应用支持文件夹中。</li>
+        <li>API 密钥正文保存在这台 Mac 的<strong>钥匙串</strong>中，不会通过 iCloud 钥匙串同步。以文件形式选择的密钥只记住该文件的位置。</li>
+        <li>描述文件活动记录 · 构建记录只保存在本地，可以在应用中删除。</li>
+        <li>许可证密钥和验证结果只保存在这台 Mac 上。</li>
+        <li><code>.p8</code> 文件和构建产物等你自己放置的文件，应用不会删除。</li>
       </ul>
 
-      <h2>5. 第三方库</h2>
-      <p>应用内置开源库 <strong>Lottie</strong>，用于播放加载动画。它仅用于显示，不访问网络，也不收集数据。没有其他第三方 SDK。</p>
-
-      <h2>6. 共享与出售</h2>
-      <p><strong>Mac App Store 版</strong>不收集任何信息，因此不会与任何人共享或出售。第 3 节所述与 Apple 的通信是应你的请求、使用你自己的账户和密钥进行的。<strong>商业版</strong>共享的对象只有第 11 节所述的许可证服务器和第 12 节所述的 Paddle，不会出售或交给其他第三方<span class="placeholder">[请对照实现确认]</span>。</p>
-
-      <h2>7. 儿童</h2>
-      <p>ShouArchive 是面向软件开发者的工具，不面向儿童。Mac App Store 版不收集任何人的个人信息。</p>
-
-      <h2>8. 变更</h2>
-      <p>如果本政策有变更，新版本会连同更新后的生效日期一起发布在本页面。如果应用处理数据的方式确实发生了变化，应用的发行说明中也会予以说明。</p>
-
-      <h2>9. 商业版 — 收集的信息</h2>
-      <p><strong>商业版</strong>（在本网站直接订阅的版本）仅在订阅期间为验证许可证，将下列值发送到<strong>许可证服务器</strong>，不作其他用途，所有传输均通过 HTTPS 进行。</p>
+      <h2>5. 许可证验证 — 发送的信息</h2>
+      <p>应用仅为验证许可证和更新期，将下列值发送到<strong>许可证服务器</strong>，不作其他用途，所有传输均通过 HTTPS 进行。</p>
       <table>
         <thead><tr><th>发送的值</th><th>内容</th><th>为什么需要</th></tr></thead>
         <tbody>
-          <tr><td><strong>许可证密钥</strong></td><td>用于区分订阅的密钥</td><td>确认订阅是否有效</td></tr>
-          <tr><td><strong>设备标识值</strong></td><td>这台 Mac 的硬件 UUID 加上应用专用前缀后用 SHA-256 计算哈希所得值的前 32 个字符。硬件 UUID 原文 · 主机名称 · 用户名称不发送。读不到硬件 UUID 时，使用应用首次启动时生成的随机安装 ID 以同样的方式计算。即使 Mac 名称或网络发生变化，该值也保持不变</td><td>确认是否超出套餐允许的设备数量</td></tr>
-          <tr><td><strong>应用版本</strong></td><td>应用版本 · 构建号</td><td>确认功能是否匹配并解决问题</td></tr>
+          <tr><td><strong>许可证密钥</strong></td><td>用于识别所购许可证的密钥</td><td>确认许可证是否有效，以及更新期截至何时</td></tr>
+          <tr><td><strong>设备标识值</strong></td><td>这台 Mac 的硬件 UUID 加上应用专用前缀后用 SHA-256 计算哈希所得值的前 32 个字符。硬件 UUID 原文 · 主机名称 · 用户名称不发送。读不到硬件 UUID 时，使用应用首次启动时生成的随机安装 ID 以同样的方式计算。即使 Mac 名称或网络发生变化，该值也保持不变</td><td>确认是否超出许可证允许的设备数量（<span data-price="commercial.devices">2</span> 台 Mac）</td></tr>
+          <tr><td><strong>应用版本</strong></td><td>应用版本 · 构建号</td><td>确认该版本是否在更新期内发布，并解决问题</td></tr>
           <tr><td>访问记录</td><td>设备标识值的哈希、应用版本、时间、简短的错误原因</td><td>应对故障并解决问题</td></tr>
         </tbody>
       </table>
@@ -116,29 +106,28 @@
         <li><strong>激活</strong> — 许可证密钥、购买邮箱地址、设备标识值、安装标识值、应用版本、macOS 版本</li>
         <li><strong>许可证验证</strong> — 大约每 12 小时发送许可证密钥、设备标识值、安装标识值、应用版本</li>
         <li><strong>解除</strong> — 许可证密钥、设备标识值</li>
-        <li><strong>开始支付</strong> — 套餐（月度 · 年度）、设备标识值、安装标识值、应用版本。支付本身在 Paddle 的支付页面完成</li>
+        <li><strong>开始支付（购买 · 续订）</strong> — 许可证密钥（续订时）、设备标识值、安装标识值、应用版本。支付本身在 Paddle 的付款页面完成</li>
       </ul>
-      <p><strong>服务器上保存的内容。</strong> 许可证密钥和设备 · 安装标识值<strong>不保存原文，只保存哈希值（SHA-256 · HMAC-SHA256）</strong>。应用版本和购买邮箱地址按原样保存，购买邮箱地址用于查询许可证和发送密钥。从 Paddle 接收订阅 · 客户 · 交易 id、订阅状态、价格 id、下次付款日期和已计划的变更。不接收姓名 · 地址 · 卡片信息。</p>
-      <p><strong>不保存的内容。</strong> IP 地址、请求头和请求正文、macOS 版本（只接收，不保存）、姓名 · 地址、卡号、营销同意、使用统计。</p>
+      <p><strong>服务器上保存的内容。</strong>许可证密钥和设备 · 安装标识值<strong>不保存原文，只保存哈希值（SHA-256 · HMAC-SHA256）</strong>。应用版本和购买邮箱地址按原样保存，购买邮箱地址用于查询许可证和发送密钥。从 Paddle 接收客户 · 交易 · 自动续订 id、自动续订状态（开启 · 关闭）、价格 id 以及更新期的结束日期。不接收姓名 · 地址 · 卡片信息。</p>
+      <p><strong>不保存的内容。</strong>IP 地址、请求头和请求正文、macOS 版本（只接收，不保存）、姓名 · 地址、卡号、营销同意、使用统计。</p>
       <ul>
-        <li>这些值只在应用运行的<strong>商业版</strong>中发送。Mac App Store 版不接入网络，因此（第 3 节）不会发送任何内容。</li>
-        <li>可用于识别用户身份的数值（用户名 · 直接标注在设备上的名称等）不用于许可证验证。</li>
+        <li>可用于识别用户身份的值（用户名 · 直接为设备设定的名称等）不用于许可证验证。</li>
         <li>文件（IPA · APK · AAB · <code>.mobileprovision</code>）的内容和产物检查结果不会发送到许可证服务器。</li>
-        <li>商业版同样不会加入广告 · 跟踪 · 行为分析 SDK<span class="placeholder">[请对照实现确认]</span>。</li>
+        <li>应用中不加入广告 · 跟踪 · 行为分析 SDK。</li>
       </ul>
 
-      <h2>10. 商业版 — 许可证服务器与保存</h2>
+      <h2>6. 许可证服务器与保存</h2>
       <ul>
-        <li>许可证服务器由 <strong>BeakBig</strong>（个人，尚未办理企业登记）· 联系方式 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 运营。服务器使用 <strong>Cloudflare, Inc.</strong>（美国）的 Workers，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。</li>
-        <li>发送的值和许可证状态（签发 · 过期 · 取消）在<strong>订阅持续期间</strong>保存，订阅结束或取消后经过 2 年即删除或匿名化（目前由运营者手动处理）。保存期限较短的记录<strong>每天自动</strong>删除 — 访问记录 30 天、支付通知（webhook）处理记录 90 天、密钥发送记录 365 天（接收到的地址只保存哈希值）、未处理的签发等待 7 天。收到取消请求时，确认后立即停用许可证并删除剩余记录。</li>
-        <li>此服务器上保存的值与第 9 节所列相同。付款方式信息、卡号、银行账户不会存储。</li>
-        <li>服务器使用 <strong>Cloudflare, Inc.</strong>（美国公司）的 Workers，在离用户较近的 Cloudflare 数据中心运行，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。支付由 <strong>Paddle.com Market Limited</strong>（英国）作为销售代理（merchant of record）处理。</li>
-        <li>用于发送密钥的邮件发送服务：<span class="placeholder">[邮件发送服务 — 尚未确定]</span></li>
-        <li>如需直接下载或请求删除存储在许可证服务器中的记录，请按第 12 节的方法联系我们。</li>
+        <li>许可证服务器由销售者 <strong>Beakbig</strong>（营业登记号 <span data-price="seller.reg_no">613-40-01820</span>）· 联系方式 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 运营。服务器使用 <strong>Cloudflare, Inc.</strong>（美国）的 Workers，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。</li>
+        <li>发送的值和许可证状态（签发 · 更新期 · 终止）在<strong>许可证存续期间</strong>保存。更新期结束后许可证依然存在，因此不会删除。因退款 · 拒付（chargeback）导致许可证被终止的，自终止起 2 年后删除或匿名化（目前由运营者手动处理）；如您请求删除，则在请求时删除。保存期限较短的记录<strong>每天自动</strong>删除 — 访问记录 30 天、支付通知（webhook）处理记录 90 天、密钥发送记录 365 天（收件地址只保存哈希值）、未处理的签发等待 7 天。收到删除请求时，确认本人身份后终止许可证并删除剩余记录——删除后将无法再以该许可证使用应用。</li>
+        <li>此服务器上保存的值与第 5 项所列相同。付款方式信息、卡号、银行账户不会被保存。</li>
+        <li>服务器使用 <strong>Cloudflare, Inc.</strong>（美国公司）的 Workers，在离用户较近的 Cloudflare 数据中心运行，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。支付由 <strong>Paddle.com Market Limited</strong>（英国）作为记录商户（merchant of record）处理。</li>
+        <li>许可证密钥通过邮件发送服务 <strong>Resend, Inc.</strong>（美国）发送。我们只向 Resend 提供发送密钥所需的收件邮箱地址和含有许可证密钥的邮件正文。</li>
+        <li>如需直接下载或请求删除保存在许可证服务器中的记录，请按第 11 项的方法联系我们。</li>
       </ul>
 
-      <h2>11. 商业版 — 支付与 Paddle</h2>
-      <p>商业版的支付由 <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>）作为<strong>销售代理（Merchant of Record）</strong>处理。Paddle 作为面向客户的销售者，负责付款方式验证、税款计算与征收、收据开具和退款处理。付款方式信息由 Paddle 保存，不会经过本网站的服务器。</p>
+      <h2>7. 支付与 Paddle</h2>
+      <p>支付由 <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>）作为<strong>记录商户（Merchant of Record）</strong>处理。Paddle 作为面向客户的销售者，负责付款方式验证、税款计算与征收、收据开具和退款处理。付款方式信息由 Paddle 保存，不会经过本网站的服务器。</p>
       <ul>
         <li><strong>Paddle 收集 · 处理的内容</strong> — 姓名、地址、电子邮箱地址、付款方式信息与支付记录、账单地址、税号、IP 地址、位置信息、设备 · 浏览器信息、同意记录等。这些按<a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle 隐私政策</a>处理，Paddle 出于法律义务将交易数据保存 5 年。</li>
         <li><strong>传给销售者（也就是我们）的内容</strong> — 购买者的姓名 · 地址 · 电子邮箱地址、购买记录、可在控制面板中查看的交易分析。完整的卡号和安全码不会传过来，也不会共享任何特殊类别的敏感信息。</li>
@@ -147,31 +136,47 @@
         <li>Paddle 代理的销售者条款也一并适用：<a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 服务条款</a>、<a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 购买者条款</a>。</li>
       </ul>
 
-      <h2>12. 数据主体的权利</h2>
+      <h2>8. 第三方库</h2>
+      <ul>
+        <li><strong>Lottie</strong> — 用于显示加载动画的开源库。仅用于界面显示，不访问网络，也不收集数据。</li>
+        <li><strong>Sparkle</strong> — 用于检查并安装应用更新的开源库。仅用于第 3 项所述的检查更新，未开启发送系统信息的功能。</li>
+      </ul>
+      <p>除此之外，没有其他通过网络通信的第三方 SDK。</p>
+
+      <h2>9. 共享与出售</h2>
+      <p>销售者共享个人信息的对象只有第 6 项所述的许可证服务器（Cloudflare）· 密钥发送服务（Resend）和第 7 项所述的 Paddle，不会出售或交给其他第三方。第 3 项所述与 Apple · Google 的通信是应你的请求、使用你自己的账户和密钥进行的。</p>
+
+      <h2>10. 儿童</h2>
+      <p>ShouArchive 是面向软件开发者的工具，不面向儿童。我们不会在知情的情况下收集未满 14 周岁者的个人信息。</p>
+
+      <h2>11. 数据主体的权利</h2>
       <p>使用者对个人信息享有查阅 · 更正 · 删除 · 限制处理 · 拒绝提供（据此停止处理）的权利。</p>
       <ul>
-        <li><strong>许可证服务器中的记录</strong> — 请向 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 提出请求。确认身份后，我们会在<strong>收到请求之日起 10 日内</strong>处理完毕并将结果告知您。</li>
+        <li><strong>许可证服务器中的记录</strong> — 请向 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 提出请求。确认身份后，我们会在<strong>收到请求之日起 10 日内</strong>处理完毕并将结果告知您。</li>
         <li><strong>Paddle 保存的支付信息</strong> — 按 Paddle 的政策和流程处理。需要的信息请直接向 Paddle 提出请求。</li>
-        <li><strong>可以拒绝的部分</strong> — 许可证验证是使用商业版所必需的处理。拒绝后就无法使用商业版。</li>
+        <li><strong>可以拒绝的部分</strong> — 许可证验证是使用所购许可证所必需的处理。拒绝后将无法使用由许可证开启的功能。</li>
         <li>法定代理人或代理人提出请求时，会先确认授权关系后再处理。</li>
       </ul>
       <p>本政策以<strong>大韩民国个人信息保护法</strong>为依据编写。<strong>对于 EU · EEA 和英国的用户，我们同样保障 GDPR 与 UK GDPR 所规定的权利。</strong></p>
 
-      <h2>13. 跨境传输</h2>
+      <h2>12. 跨境传输</h2>
       <ul>
-        <li><strong>接收方与国家</strong> — 商业版的许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle.com Market Limited</strong>（英国）处理。</li>
+        <li><strong>接收方与国家</strong> — 许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle.com Market Limited</strong>（英国）处理，密钥发送邮件由 <strong>Resend, Inc.</strong>（美国）处理。</li>
         <li><strong>保存位置</strong> — 许可证记录保存在亚太地区的数据库（<strong>Cloudflare D1</strong>）中，请求在离用户较近的 Cloudflare 数据中心处理。</li>
-        <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 开始支付时通过网络发送。</li>
-        <li><strong>项目 · 目的 · 保存期限</strong> — 与第 9 节和第 10 节所列相同。</li>
-        <li><strong>保护措施</strong> — Cloudflare 遵守数据处理条款（含 EU 标准合同条款），Paddle 作为销售代理按其自身的隐私政策处理支付信息。</li>
-        <li><strong>拒绝方式与结果</strong> — 不使用商业版许可证时不会发生跨境传输。此时直接分发版的构建功能在试用期结束后会被锁定，App Store 版不使用此服务器。</li>
-        <li>发送到 Apple 的 App Store Connect API 请求会进入 Apple 的服务器（第 3 节）。</li>
+        <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 开始支付（购买 · 续订）时，以及通过电子邮件发送许可证密钥时，通过网络发送。</li>
+        <li><strong>项目 · 目的 · 保存期限</strong> — 与第 5 项和第 6 项所列相同。</li>
+        <li><strong>保护措施</strong> — Cloudflare 遵守数据处理条款（含 EU 标准合同条款），Paddle 作为记录商户按其自身的隐私政策处理支付信息。</li>
+        <li><strong>拒绝方式与结果</strong> — 不使用许可证时不会发生跨境传输。此时试用期结束后只能使用描述文件管理和产物检查。</li>
+        <li>发往 Apple · Google 的请求会直接进入各公司的服务器（第 3 项）。</li>
       </ul>
 
-      <h2>14. 联系方式</h2>
-      <p>有关本政策或应用数据处理的疑问请发送至 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>。</p>
+      <h2>13. 变更</h2>
+      <p>如果本政策有变更，新版本会连同新的生效日期一起发布在本页面。如果应用处理数据的方式确实发生了变化，应用的更新说明中也会予以说明。</p>
 
-      <p class="meta">生效日期：2026年10月3日（Mac App Store 版的数据处理自 2026年9月22日生效以来保持不变）· 开发者 · 发行者：BeakBig</p>
+      <h2>14. 联系方式</h2>
+      <p>有关本政策或应用数据处理的疑问，请发送至 <a href="mailto:support@beakbig.com">support@beakbig.com</a>。</p>
+
+      <p class="meta">生效日期：2026年10月15日 · 开发者 · 销售者：Beakbig</p>
     </div>
   </section>
 </main>
@@ -179,16 +184,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="页脚">
-      <a href="../index.html">首页</a>
-      <a href="../pricing.html">价格</a>
-      <a href="../download.html">下载</a>
-      <a href="../support.html">支持</a>
+      <a href="index.html">首页</a>
+      <a href="pricing.html">价格</a>
+      <a href="download.html">下载</a>
+      <a href="support.html">支持</a>
       <a href="privacy.html" aria-current="page">隐私政策</a>
-      <a href="../terms.html">服务条款</a>
-      <a href="../refund.html">退款政策</a>
+      <a href="terms.html">服务条款</a>
+      <a href="refund.html">退款政策</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans" aria-current="page">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商号 Beakbig · 代表 <span data-price="seller.owner">Hyunjin Kang</span> · 营业登记号 <span data-price="seller.reg_no">613-40-01820</span>（简易纳税人）· 通信销售业申报：<span data-price="seller.mail_order">免申报</span> · 地址 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 电话 <span data-price="seller.phone">+82-502-6682-9359</span> · 邮箱 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 支付代理 Paddle</p>
   </div>
 </footer>
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>支援 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 支援：允許描述檔資料夾、App Store Connect API 金鑰、產物檢查，以及聯絡方式。">
+  <meta name="description" content="ShouArchive 支援頁面。描述檔、App Store Connect API 金鑰、產物檢查等常見問題與聯絡方式。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="支援 — ShouArchive">
@@ -28,11 +28,11 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../index.html#features">功能</a>
-      <a href="../pricing.html">價格</a>
-      <a href="../download.html">下載</a>
+      <a href="index.html#features">功能</a>
+      <a href="pricing.html">價格</a>
+      <a href="download.html">下載</a>
       <a href="support.html" aria-current="page">支援</a>
-      <a href="../privacy.html">隱私權</a>
+      <a href="privacy.html">隱私權</a>
       <label class="lang-switch"><span class="visually-hidden">語言</span><select class="lang-select" aria-label="語言"><option value="../support.html">한국어</option><option value="../en/support.html">English</option><option value="../ja/support.html">日本語</option><option value="../zh-Hans/support.html">简体中文</option><option value="../zh-Hant/support.html" selected>繁體中文</option><option value="../es/support.html">Español</option></select></label>
     </nav>
   </div>
@@ -42,14 +42,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>支援</h1>
-      <p>在 ShouArchive 裡卡住了嗎？請先看看下面的問題，若仍需協助，歡迎來信。</p>
+      <p>使用 ShouArchive 時遇到卡關的地方，請告訴我們。下方的常見問題中可能已經有答案。</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="contact-card">
-        <span><strong>聯絡方式</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span><strong>聯絡方式</strong> <a href="mailto:support@beakbig.com">support@beakbig.com</a></span>
         <span>通常會在幾天內回覆。回報問題的訣竅請見<a href="#report">頁面底部</a>。</span>
       </div>
 
@@ -57,30 +57,23 @@
         <h2 id="start">開始使用</h2>
 
         <details open>
-          <summary>描述檔分頁要我允許一個資料夾，為什麼？</summary>
-          <p>Mac App Store 版本在 macOS 沙箱中執行。沙箱化的 App 只能讀取您明確選擇的資料夾，而 Xcode 存放描述檔的資料夾位於 App 之外，所以需要允許一次。</p>
-          <p>請按一下描述檔分頁中的資料夾按鈕。隨即會出現已選好該資料夾的開啟面板 — 什麼都不用改，直接按<strong>允許</strong>即可。此權限會在之後每次啟動時保留（macOS 安全範圍書籤）。</p>
-          <p>App 會讀取的資料夾：</p>
+          <summary>描述檔是從哪裡讀取的？</summary>
+          <p>App 會直接讀取 Xcode 存放描述檔（provisioning profile）的資料夾。不需要另外允許或設定任何東西。</p>
           <ul>
             <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 或以上版本</li>
             <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — 較舊的 Xcode 版本</li>
           </ul>
-          <p><code>~/Library</code> 在 Finder 中預設是隱藏的。在開啟面板中按 ⌘⇧G 並貼上路徑，即可直接跳到該處。如果您不想允許該資料夾，仍可將 <code>.mobileprovision</code> 檔案拖入視窗，或使用「從檔案新增…」。</p>
+          <p>存放在其他位置的 <code>.mobileprovision</code> 檔案，可以拖入視窗或用「從檔案新增…」開啟。</p>
         </details>
 
         <details>
           <summary>支援哪些檔案類型？</summary>
           <ul>
-            <li><strong>產物檢查</strong>：<code>.ipa</code>（iOS 分頁）、<code>.apk</code> 與 <code>.aab</code>（Android 分頁）</li>
+            <li><strong>產物檢查</strong>：<code>.ipa</code>（iOS 分頁）、<code>.apk</code> · <code>.aab</code>（Android 分頁）</li>
             <li><strong>描述檔</strong>：<code>.mobileprovision</code></li>
-            <li><strong>API 金鑰</strong>：從 App Store Connect 下載的 <code>.p8</code> 檔案</li>
+            <li><strong>API 金鑰</strong>：從 App Store Connect 下載的 <code>.p8</code></li>
           </ul>
-          <p>將檔案拖到視窗上，或使用「選擇檔案…」（⌘O）。</p>
-        </details>
-
-        <details>
-          <summary>為什麼這個版本沒有 IPA/APK 的建置或匯出功能？</summary>
-          <p>Mac App Store 的 App 必須沙箱化，而沙箱無法啟動 <code>xcodebuild</code> 或 <code>gradle</code> 這類外部程式。因此這個版本專注於兩件事：<strong>檢查與描述檔</strong>。產物檢查同樣不依賴外部工具 — App 內建的解析器會直接讀取 IPA、APK 與 AAB 檔案。</p>
+          <p>將檔案拖到視窗上，或使用「選擇檔案…」（⌘O）開啟。</p>
         </details>
 
         <h2 id="profiles">描述檔與 App Store Connect API</h2>
@@ -89,37 +82,37 @@
           <summary>如何建立 App Store Connect API 金鑰？</summary>
           <ol>
             <li>前往 <a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>使用者和存取權限</strong> › <strong>整合</strong> › <strong>App Store Connect API</strong>。</li>
-            <li>產生一組<strong>團隊金鑰</strong>。讀取與建立描述檔和裝置通常需要 <strong>Admin</strong> 角色。</li>
-            <li>在 App 底部選單的<strong>「API 金鑰」</strong>分頁（或「設定」（⌘,）›「API 金鑰」）按「新金鑰」，輸入 <strong>Issuer ID</strong>、<strong>Key ID</strong> 與下載的 <code>.p8</code> 檔案。選擇 <code>AuthKey_XXXXXXXX.p8</code> 檔案時會自動填入 Key ID，儲存時會從 Apple 讀取團隊（讀取不到時會提示你選擇）。貼上時夾帶的空格與換行會自動移除。</li>
+            <li>產生一組<strong>團隊金鑰（Team key）</strong>。讀取與建立描述檔和裝置通常需要 <strong>Admin</strong> 角色。</li>
+            <li>在 App 底部選單的<strong>「API 金鑰」</strong>分頁（或「設定」（⌘,）›「API 金鑰」）按「新金鑰」，輸入 <strong>Issuer ID</strong>、<strong>Key ID</strong> 與下載的 <code>.p8</code> 檔案。選擇 <code>AuthKey_XXXXXXXX.p8</code> 檔案時會自動填入 Key ID，儲存時會從 Apple 讀取團隊（讀取不到時會提示您自行選擇）。貼上時夾帶的空格與換行會自動移除。</li>
           </ol>
-          <p>Apple 只允許下載 <code>.p8</code> 檔案一次，請妥善保管。App 絕不會使用您的 Apple ID 或雙重認證驗證碼。</p>
+          <p>Apple 只允許下載 <code>.p8</code> 檔案一次，請妥善保管。App 不會使用您的 Apple ID 或雙重認證。</p>
         </details>
 
         <details>
           <summary>API 金鑰存放在哪裡？會傳送到哪裡？</summary>
-          <p><code>.p8</code> 檔案留在您原本存放的位置；App 只記住它的參照（安全範圍書籤）。請求權杖在您的 Mac 上簽署，金鑰本身絕不會傳送到任何地方 — App 只會與 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）通訊。在 App 中移除金鑰並不會刪除 <code>.p8</code> 檔案。</p>
+          <p><code>.p8</code> 檔案留在您選擇的位置，App 只記住該檔案的位置（安全範圍書籤）。傳給 Apple 的請求權杖在您的 Mac 上簽署，金鑰本身除了 Apple 的 App Store Connect API（<code>api.appstoreconnect.apple.com</code>）之外，不會傳送到任何地方。在 App 中刪除金鑰並不會刪除 <code>.p8</code> 檔案。</p>
         </details>
 
         <details>
           <summary>「即將過期」和 D-N 標記是什麼意思？</summary>
-          <p><strong>30 天</strong>內到期的描述檔屬於「即將過期」，會以橘色的 <strong>D-N</strong> 標記顯示剩餘天數。已超過到期日的則為「到期」（紅色）。「新增」表示最近才建立；「重複」則標示出團隊、App ID 與類型都相同的兩個以上描述檔。</p>
+          <p><strong>30 天</strong>內到期的描述檔屬於「即將過期」，會以橘色的 <strong>D-N</strong> 標記顯示剩餘天數。已超過到期日的則為「到期」（紅色）。「新增」表示最近才建立的描述檔；「重複」則表示團隊、App ID 與類型都相同的描述檔有兩個以上。</p>
         </details>
 
         <details>
-          <summary>「憑證」卡片是空的。</summary>
-          <p>沙箱內無法讀取鑰匙圈中的程式碼簽署憑證清單，因此在 Mac App Store 版本中這張卡片會是空的。<strong>每個描述檔內嵌的憑證</strong>仍會顯示在詳細資料與比較畫面中，並附有 SHA-1 與 SHA-256 的複製按鈕。</p>
+          <summary>「憑證」卡片會顯示什麼？</summary>
+          <p>會顯示這台 Mac 鑰匙圈中的程式碼簽署憑證，連已過期的也一併列出。描述檔<strong>內嵌</strong>的憑證可在詳細資料與比較畫面中查看（可複製 SHA-1 · SHA-256）。</p>
         </details>
 
         <details>
           <summary>我可以註冊多少台裝置？</summary>
-          <p>Apple Developer 帳號在每個會員年度內，每種類型（iPhone、iPad、Mac……）最多可註冊 <strong>100 台裝置</strong>。停用的裝置在會員資格續約前仍會占用名額。「描述檔」›「下載描述檔」中的「裝置」分頁會顯示各類型目前的使用量（例如 iPhone 3 / 100）。</p>
+          <p>Apple 開發者帳號在每個會員年度內，每種裝置類型（iPhone · iPad · Mac……）最多可註冊 <strong>100 台</strong>。停用的裝置在會員資格續約前仍會占用名額。「描述檔」›「下載描述檔」中的「裝置」分頁上方會顯示各類型的使用量（例如 iPhone 3 / 100）。</p>
         </details>
 
         <h2 id="inspect">產物檢查</h2>
 
         <details>
           <summary>檢查檔案會修改或上傳它嗎？</summary>
-          <p>不會。檔案<strong>只會被讀取</strong>：絕不修改原始檔案、不會在旁邊寫入結果檔案，也不會傳送任何資料到任何伺服器。結果只顯示在 App 視窗中。</p>
+          <p>不會。檔案<strong>只會被讀取</strong>：絕不修改原始檔案、不會在旁邊寫入結果檔案，也不會傳送到任何伺服器。檢查結果只顯示在 App 視窗中。</p>
         </details>
 
         <details>
@@ -129,54 +122,64 @@
 
         <details>
           <summary>16 KB 頁面大小檢查會看什麼？</summary>
-          <p>從 Android 15 開始，部分裝置採用 16 KB 記憶體分頁，Google Play 也要求原生函式庫必須支援。App 會檢查 64 位元（<code>arm64-v8a</code>、<code>x86_64</code>）<code>.so</code> 檔案的 ELF LOAD 對齊；對於 APK 中以未壓縮方式存放的 <code>.so</code> 檔案，還會檢查其在封存檔內的 16 KB 邊界，並列出不符合的函式庫。</p>
+          <p>從 Android 15 開始，部分裝置採用 16 KB 記憶體分頁，Google Play 也要求原生函式庫必須支援。App 會檢查 64 位元（<code>arm64-v8a</code> · <code>x86_64</code>）<code>.so</code> 檔案的 ELF LOAD 對齊，以及 APK 中以未壓縮方式存放的 <code>.so</code> 的 16 KB 邊界，並列出不支援的函式庫。</p>
         </details>
 
-        <h2 id="editions">兩個版本 · 價格</h2>
+        <h2 id="license">價格 · 授權</h2>
 
         <details>
-          <summary>兩個版本有什麼差別？</summary>
-          <p><strong>Mac App Store 版</strong>是在 App Store 一次性購買的版本，<strong>商用版</strong>是在本網頁上直接訂閱的版本。描述檔管理 · API 金鑰 · 產物檢查兩個版本都有；建置 · 應用程式上傳 · 裝置安裝 · 相依性檢查 · OTA 安裝套件只有商用版才有。逐項比較見<a href="pricing.html">價格頁面</a>。</p>
-        </details>
-
-        <details>
-          <summary>兩個版本都要買嗎？</summary>
-          <p>不用。兩個版本互不相關，買其中一個不會得到另一個版本的功能或授權。兩個版本共有的功能在哪個版本都能用，所以現在只買 Mac App Store 版就可以。</p>
+          <summary>多少錢？包含哪些內容？</summary>
+          <p>首次購買為 <span data-price="commercial.price">US$29</span>（未稅），包含授權與 1 年更新。一組授權金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac。描述檔管理 · API 金鑰 · 產物檢查 · 建置 · App 上傳 · 裝置安裝 · 相依性檢查 · OTA 安裝檔 · 商店發佈全部包含在內。試用期間、試用結束後與購買後可使用的功能，已整理在<a href="pricing.html">價格頁面</a>的表格中。</p>
         </details>
 
         <details>
-          <summary>商用版什麼時候推出？</summary>
-          <p>價格與推出日期還沒確定。確定之後我們會寫在<a href="pricing.html">價格頁面</a>和<a href="download.html">下載頁面</a>上。想第一時間知道，請到 <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%AC%EB%B0%9C">beakbigkb@gmail.com</a> 申請「推出通知」。</p>
+          <summary>什麼時候推出？</summary>
+          <p>價格已經確定 — 首次購買 <span data-price="commercial.price">US$29</span>（含 1 年更新），之後的更新為每年 <span data-price="commercial.price_renewal">US$15</span>（未稅）。推出日期還沒確定。確定之後我們會寫在<a href="pricing.html">價格頁面</a>和<a href="download.html">下載頁面</a>上。有任何疑問，請寄信至 <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E6%8E%A8%E5%87%BA%E8%A9%A2%E5%95%8F">support@beakbig.com</a>。</p>
+        </details>
+
+        <details>
+          <summary>想換到另一台 Mac 怎麼辦？</summary>
+          <p>在目前使用的 Mac 上，於「設定」›「授權」按「解除」釋出名額，再到新的 Mac 輸入同一組金鑰即可。一組金鑰最多可同時用於 <span data-price="commercial.devices">2</span> 台 Mac。</p>
+        </details>
+
+        <details>
+          <summary>更新期間結束後就不能使用 App 了嗎？</summary>
+          <p>不會。買一次就能一直使用。更新期間內推出的版本，在期間結束後也能照常使用。只有期間結束後推出的版本，需要續訂更新（每年 <span data-price="commercial.price_renewal">US$15</span>）才能安裝。續訂會自動進行，也可以隨時關閉；若在期間結束後才重新續訂，會從該次付款日起重新開始 1 年。</p>
+        </details>
+
+        <details>
+          <summary>試用結束後會怎樣？</summary>
+          <p><span data-price="trial_days">14</span> 天試用不需付款方式即可開始，因此結束後也不會自動扣款。若試用結束時沒有授權金鑰，只能繼續使用描述檔管理與產物檢查；建置 · 上傳 · 裝置安裝 · 相依性檢查 · OTA · 商店發佈，在購買並將金鑰輸入到「設定」›「授權」後會重新開放。</p>
         </details>
 
         <h2 id="general">一般</h2>
 
         <details>
-          <summary>如何變更語言？</summary>
-          <p>開啟工具列的<strong>地球儀</strong>選單，選擇語言後按下「立即重新啟動」確認。App 會以該語言重新啟動，您的工作會保留。支援：English、한국어、日本語、简体中文、繁體中文 與 Español。</p>
+          <summary>如何變更顯示語言？</summary>
+          <p>在工具列的<strong>地球儀</strong>選單中選擇語言，再按「立即重新啟動」，App 就會以該語言重新開啟。語言需要重新啟動 App 才會套用，您正在進行的工作會保留。支援 한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español。</p>
         </details>
 
         <details>
           <summary>主題與文字大小？</summary>
-          <p>在工具列的主題選單中選擇色彩主題（<strong>Black &amp; White · ShouArchive</strong>）以及<strong>淺色、深色或系統設定</strong>。文字大小可透過「顯示方式」選單（放大文字 ⌘+、縮小文字 ⌘-、預設 ⌘0）或「設定」（⌘,）›「畫面」，在 85 % 到 150 % 之間調整。</p>
+          <p>在工具列的主題選單中選擇色彩主題（<strong>Black &amp; White · ShouArchive</strong>）以及<strong>淺色 · 深色 · 系統設定</strong>。文字大小可透過「顯示方式」選單（放大文字 ⌘+ · 縮小文字 ⌘- · 預設大小 ⌘0）或「設定」（⌘,）›「畫面」，在 85 % 到 150 % 之間調整。</p>
         </details>
 
         <details>
           <summary>系統需求</summary>
-          <p>macOS 15 Sequoia 或以上版本，Apple Silicon 或 Intel Mac 皆可。只有下載與建立描述檔以及註冊裝置時需要 App Store Connect API 金鑰；其他功能都可離線使用。</p>
+          <p>macOS 15 Sequoia 或以上版本。支援 Apple Silicon 與 Intel Mac。下載與建立描述檔、註冊裝置需要 App Store Connect API 金鑰；授權驗證、檢查更新、App 上傳與商店發佈需要網路連線。產物檢查與檢視已安裝的描述檔不需要網路也能運作。</p>
         </details>
 
         <details id="report">
           <summary>如何回報問題？</summary>
-          <p>請寄信至 <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a>，並附上以下資訊，以便盡快處理：</p>
+          <p>請寄信至 <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E8%A9%A2%E5%95%8F">support@beakbig.com</a>，並附上以下資訊，以便我們盡快處理。</p>
           <p>也可以在 App 內透過「輔助說明」選單 ›「傳送詢問 · 建議…」（或「設定」（⌘,）›「撰寫郵件…」）直接撰寫。App 版本與 macOS 資訊會自動附在內文下方。</p>
           <ul>
             <li>macOS 版本（Apple 選單 › 關於這台 Mac）</li>
             <li>App 版本（ShouArchive 選單 › 關於 ShouArchive）</li>
             <li>您依序做了哪些操作，以及發生了什麼事</li>
-            <li>如果可以，請附上螢幕截圖或完整的錯誤訊息</li>
+            <li>如果可以，請附上螢幕截圖或錯誤訊息</li>
           </ul>
-          <p>不需要附上 IPA、APK 或描述檔。若有需要會另外向您索取 — 傳送任何檔案前，請確認其中不含金鑰檔案（<code>.p8</code>）或敏感資料。</p>
+          <p>不需要附上 IPA、APK 或描述檔。若有需要會另外向您索取 — 傳送檔案時，請確認其中不含金鑰檔案（<code>.p8</code>）或敏感資料。</p>
         </details>
       </div>
     </div>
@@ -186,16 +189,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="頁尾">
-      <a href="../index.html">首頁</a>
-      <a href="../pricing.html">價格</a>
-      <a href="../download.html">下載</a>
+      <a href="index.html">首頁</a>
+      <a href="pricing.html">價格</a>
+      <a href="download.html">下載</a>
       <a href="support.html" aria-current="page">支援</a>
-      <a href="../privacy.html">隱私權政策</a>
-      <a href="../terms.html">服務條款</a>
-      <a href="../refund.html">退款政策</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="terms.html">服務條款</a>
+      <a href="refund.html">退款政策</a>
       <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="page">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商號 Beakbig · 代表人 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登記號碼 <span data-price="seller.reg_no">613-40-01820</span>（簡易課稅者）· 通訊交易業申報：<span data-price="seller.mail_order">免申報</span> · 地址 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · 電子郵件 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 付款代理 Paddle</p>
   </div>
 </footer>
 

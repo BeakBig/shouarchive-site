@@ -220,6 +220,7 @@ p { margin: 0 0 1em; }
   border: 1px solid transparent;
   transition: transform .12s ease, filter .12s ease, background .12s ease;
 }
+button.btn { font-family: inherit; cursor: pointer; }
 .btn:hover { text-decoration: none; filter: brightness(1.06); transform: translateY(-1px); }
 .btn svg { width: 18px; height: 18px; flex: none; }
 .btn.ghost {
@@ -428,6 +429,12 @@ h2 {
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .site-footer nav a { color: var(--muted); }
 .site-footer nav a:hover { color: var(--text); }
+/* 사업자 정보 (상호 · 사업자등록번호 · 통신판매업 신고 · 주소 · 연락처) */
+.site-footer .biz { flex-basis: 100%; margin: 0; font-size: 12.5px; line-height: 1.7; color: var(--muted); }
+.site-footer .biz a { color: var(--muted); text-decoration: underline; }
+
+/* 아직 정하지 않은 값 — 문서 · 바닥 사업자 정보 어디서든 주황색 */
+.placeholder { color: var(--orange); font-style: normal; }
 
 /* ---------- document pages (support · privacy) ---------- */
 .page-hero {
@@ -457,7 +464,6 @@ h2 {
 .doc ul, .doc ol { padding-left: 22px; margin: 0 0 1em; }
 .doc li { margin: 4px 0; }
 .doc .meta { color: var(--muted); font-size: 14px; }
-.doc .placeholder { color: var(--orange); font-style: normal; }
 .doc ul.toc { list-style: none; padding-left: 0; columns: 2; column-gap: 24px; }
 @media (max-width: 559px) { .doc ul.toc { columns: 1; } }
 .doc ul.toc li { break-inside: avoid; }
@@ -529,6 +535,10 @@ code {
   box-shadow: var(--shadow);
 }
 .contact-card strong { color: var(--text); }
+
+/* ---------- checkout (Paddle 결제) ---------- */
+.checkout-box { max-width: 560px; }
+.checkout-box .plan-actions { margin: 4px 0 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

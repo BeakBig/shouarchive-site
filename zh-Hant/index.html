@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — Mac 上的描述檔（Provisioning Profile）管理與 IPA/APK 檢查</title>
-  <meta name="description" content="管理描述檔、檢查 IPA、APK 與 AAB 檔案 — 全部在一款只於本機讀取檔案的 Mac App 中完成。需要 macOS 15 或以上版本，已在 Mac App Store 上架。">
+  <title>ShouArchive — iOS 描述檔管理 · IPA/APK 檢查（Mac）</title>
+  <meta name="description" content="描述檔（provisioning profile）管理與 IPA、APK、AAB 產物檢查，集中在一款 App。檔案只在您的 Mac 上讀取。macOS 15 或以上版本 · 一次購買 · 14 天試用。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — 描述檔管理與 IPA/APK 檢查">
-  <meta property="og:description" content="管理描述檔、檢查 IPA、APK 與 AAB 檔案 — 一款 Mac App 全部搞定。需要 macOS 15 或以上版本。">
+  <meta property="og:title" content="ShouArchive — iOS 描述檔管理 · IPA/APK 檢查">
+  <meta property="og:description" content="描述檔（provisioning profile）管理與 IPA、APK、AAB 產物檢查，集中在一款 App。macOS 15 或以上版本。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="zh_TW">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -29,10 +29,10 @@
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="主要導覽">
       <a href="#features" aria-current="page">功能</a>
-      <a href="../pricing.html">價格</a>
-      <a href="../download.html">下載</a>
-      <a href="../support.html">支援</a>
-      <a href="../privacy.html">隱私權</a>
+      <a href="pricing.html">價格</a>
+      <a href="download.html">下載</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html">隱私權</a>
       <label class="lang-switch"><span class="visually-hidden">語言</span><select class="lang-select" aria-label="語言"><option value="../index.html">한국어</option><option value="../en/index.html">English</option><option value="../ja/index.html">日本語</option><option value="../zh-Hans/index.html">简体中文</option><option value="../zh-Hant/index.html" selected>繁體中文</option><option value="../es/index.html">Español</option></select></label>
     </nav>
   </div>
@@ -45,18 +45,18 @@
       <div>
         <h1>ShouArchive</h1>
         <p class="tagline">描述檔與產物檢查 — 出貨前的最後幾道確認，集中在一款 App。</p>
-        <p class="sub">打開 IPA、APK 或 AAB，即可看到商店會顯示的資訊、簽署方式與所要求的權限。連同到期日一起，把描述檔（provisioning profile）整理得井然有序。您的檔案永遠不會離開您的 Mac。</p>
+        <p class="sub">打開 IPA、APK 或 AAB，即可看到商店會顯示的資訊、簽署方式與所要求的權限。連同到期日一起，把描述檔（provisioning profile）整理得井然有序。檔案只在您的 Mac 上讀取。建置、上傳 App、安裝到裝置，以及商店發佈，也都能在同一款 App 中接續完成。</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
         <div class="hero-actions">
-          <a class="btn" href="https://apps.apple.com/app/id6814686766">
+          <a class="btn" href="download.html">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            在 Mac App Store 下載
+            下載 · <span data-price="trial_days">14</span> 天試用
           </a>
           <a class="btn ghost" href="#features">看看它能做什麼</a>
         </div>
-        <p class="hero-note">macOS 15 Sequoia 或以上版本 · Apple Silicon 與 Intel</p>
+        <p class="hero-note">macOS 15 Sequoia 或以上版本 · Apple Silicon · Intel · <a href="pricing.html">一次購買 <span data-price="commercial.price">US$29</span></a> · 無需付款方式即可試用 <span data-price="trial_days">14</span> 天</p>
       </div>
     </div>
   </section>
@@ -203,18 +203,18 @@
       </div>
       <dl class="reqs">
         <div class="req"><dt>macOS</dt><dd>15 Sequoia 或以上版本<small>Apple Silicon 與 Intel（通用版）</small></dd></div>
-        <div class="req"><dt>語言</dt><dd>6 種語言<small>English · 한국어 · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
+        <div class="req"><dt>語言</dt><dd>6 種語言<small>한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
         <div class="req"><dt>外觀</dt><dd>淺色 · 深色 · 系統<small>2 種色彩主題 · 文字大小 85 – 150 %</small></dd></div>
-        <div class="req"><dt>選用</dt><dd>App Store Connect API 金鑰<small>僅用於下載與建立描述檔，以及註冊裝置</small></dd></div>
+        <div class="req"><dt>選用</dt><dd>App Store Connect API 金鑰<small>下載與建立描述檔、註冊裝置及商店發佈時需要</small></dd></div>
       </dl>
     </div>
   </section>
 
   <section class="cta">
     <div class="wrap">
-      <h2>取得 ShouArchive</h2>
-      <p>描述檔與產物檢查 — 出貨前的最後幾道確認。</p>
-      <a class="btn" href="https://apps.apple.com/app/id6814686766">在 Mac App Store 下載</a>
+      <h2>立即取得</h2>
+      <p>描述檔與產物檢查。出貨前的確認，就交給 ShouArchive。</p>
+      <a class="btn" href="download.html">下載 · <span data-price="trial_days">14</span> 天試用</a>
     </div>
   </section>
 </main>
@@ -223,15 +223,16 @@
   <div class="wrap">
     <nav aria-label="頁尾">
       <a href="index.html" aria-current="page">首頁</a>
-      <a href="../pricing.html">價格</a>
-      <a href="../download.html">下載</a>
-      <a href="../support.html">支援</a>
-      <a href="../privacy.html">隱私權政策</a>
-      <a href="../terms.html">服務條款</a>
-      <a href="../refund.html">退款政策</a>
+      <a href="pricing.html">價格</a>
+      <a href="download.html">下載</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="terms.html">服務條款</a>
+      <a href="refund.html">退款政策</a>
       <span class="footer-langs"><a href="../index.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/index.html" lang="en" hreflang="en">English</a> <a href="../ja/index.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/index.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/index.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="page">繁體中文</a> <a href="../es/index.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商號 Beakbig · 代表人 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登記號碼 <span data-price="seller.reg_no">613-40-01820</span>（簡易課稅者）· 通訊交易業申報：<span data-price="seller.mail_order">免申報</span> · 地址 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · 電子郵件 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 付款代理 Paddle</p>
   </div>
 </footer>
 

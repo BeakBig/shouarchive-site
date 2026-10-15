@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — ShouArchive</title>
-  <meta name="description" content="ShouArchive support: allowing the profile folder, App Store Connect API keys, artifact inspection and how to get in touch.">
+  <meta name="description" content="ShouArchive support: profiles, App Store Connect API keys, artifact inspection and how to get in touch.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Support — ShouArchive">
@@ -28,11 +28,11 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="Main">
-      <a href="../index.html#features">Features</a>
-      <a href="../pricing.html">Pricing</a>
-      <a href="../download.html">Download</a>
+      <a href="index.html#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
       <a href="support.html" aria-current="page">Support</a>
-      <a href="../privacy.html">Privacy</a>
+      <a href="privacy.html">Privacy</a>
       <label class="lang-switch"><span class="visually-hidden">Language</span><select class="lang-select" aria-label="Language"><option value="../support.html">한국어</option><option value="../en/support.html" selected>English</option><option value="../ja/support.html">日本語</option><option value="../zh-Hans/support.html">简体中文</option><option value="../zh-Hant/support.html">繁體中文</option><option value="../es/support.html">Español</option></select></label>
     </nav>
   </div>
@@ -49,7 +49,7 @@
   <section class="doc">
     <div class="wrap">
       <div class="contact-card">
-        <span><strong>Contact</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span><strong>Contact</strong> <a href="mailto:support@beakbig.com">support@beakbig.com</a></span>
         <span>Replies usually take a few days. Tips for reporting a problem are <a href="#report">at the bottom</a>.</span>
       </div>
 
@@ -57,15 +57,13 @@
         <h2 id="start">Getting started</h2>
 
         <details open>
-          <summary>The Profiles tab asks me to allow a folder. Why?</summary>
-          <p>The Mac App Store edition runs inside the macOS sandbox. A sandboxed app can only read folders you have explicitly chosen, and the folder where Xcode keeps provisioning profiles is outside the app, so it has to be allowed once.</p>
-          <p>Click the folder button in the Profiles tab. An open panel appears with that folder already selected — don't change anything, just press <strong>Allow</strong>. The permission is remembered across launches (macOS security-scoped bookmarks).</p>
-          <p>Folders the app reads:</p>
+          <summary>Where are profiles read from?</summary>
+          <p>The app reads the folder where Xcode keeps provisioning profiles directly. There is nothing to allow or set up.</p>
           <ul>
             <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 and later</li>
             <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — older Xcode versions</li>
           </ul>
-          <p><code>~/Library</code> is hidden in the Finder by default. In the open panel, press ⌘⇧G and paste the path to jump straight there. If you'd rather not allow the folder, you can still drag <code>.mobileprovision</code> files into the window or use "Add from file…".</p>
+          <p>A <code>.mobileprovision</code> file kept anywhere else can be dragged into the window or opened with "Add from file…".</p>
         </details>
 
         <details>
@@ -76,11 +74,6 @@
             <li><strong>API key</strong>: the <code>.p8</code> file downloaded from App Store Connect</li>
           </ul>
           <p>Drop a file onto the window or use "Choose file…" (⌘O).</p>
-        </details>
-
-        <details>
-          <summary>Why is there no IPA/APK build or export in this edition?</summary>
-          <p>Mac App Store apps must be sandboxed, and the sandbox cannot launch external programs such as <code>xcodebuild</code> or <code>gradle</code>. This edition therefore focuses on two things: <strong>inspection and profiles</strong>. Artifact inspection doesn't rely on external tools either — the app's own parser reads IPA, APK and AAB files directly.</p>
         </details>
 
         <h2 id="profiles">Profiles and the App Store Connect API</h2>
@@ -106,8 +99,8 @@
         </details>
 
         <details>
-          <summary>The "Certificates" card is empty.</summary>
-          <p>The list of code-signing certificates in your keychain can't be read from inside the sandbox, so this card is empty in the Mac App Store edition. The certificates <strong>embedded in each profile</strong> are still shown in the detail and compare views, with SHA-1 and SHA-256 copy buttons.</p>
+          <summary>What does the "Certificates" card show?</summary>
+          <p>It shows the code-signing certificates in this Mac's keychain, including expired ones. The certificates <strong>embedded in each profile</strong> are shown in the detail and compare views, with SHA-1 and SHA-256 copy buttons.</p>
         </details>
 
         <details>
@@ -132,21 +125,31 @@
           <p>Starting with Android 15 some devices use 16 KB memory pages, and Google Play requires native libraries that support them. The app checks the ELF LOAD alignment of 64-bit (<code>arm64-v8a</code>, <code>x86_64</code>) <code>.so</code> files and, for uncompressed <code>.so</code> files stored in an APK, their 16 KB boundary inside the archive, and lists the libraries that don't comply.</p>
         </details>
 
-        <h2 id="editions">Two editions · Pricing</h2>
+        <h2 id="license">Pricing · License</h2>
 
         <details>
-          <summary>What is the difference between the two editions?</summary>
-          <p>The <strong>Mac App Store edition</strong> is the one-off purchase from the App Store, and the <strong>commercial edition</strong> is the one you subscribe to directly on this site. Profile management, API keys and artifact inspection are in both editions; building, app upload, device installation, dependency checks and OTA install packages are only in the commercial edition. The item-by-item comparison is on the <a href="pricing.html">pricing page</a>.</p>
+          <summary>How much is it, and what's included?</summary>
+          <p>The first purchase is <span data-price="commercial.price">US$29</span> (plus tax) and includes the license and 1 year of updates. One license key works on <span data-price="commercial.devices">2</span> Macs. Profile management, API keys, artifact inspection, building, app upload, device installation, dependency checks, OTA install files and store publishing are all included. What you can use during the trial, after the trial and after purchase is summarized in the table on the <a href="pricing.html">pricing page</a>.</p>
         </details>
 
         <details>
-          <summary>Do I have to buy both editions?</summary>
-          <p>No. The two editions are not linked to each other: buying one does not give you the features or the license of the other. The features they share work in either edition, so buying only the Mac App Store edition to start is fine.</p>
+          <summary>When is it coming out?</summary>
+          <p>The price is set — <span data-price="commercial.price">US$29</span> for the first purchase (1 year of updates included), then <span data-price="commercial.price_renewal">US$15</span> a year for updates (plus tax). The release date is not set yet. As soon as it is, we will put it on the <a href="pricing.html">pricing page</a> and the <a href="download.html">download page</a>. If you have questions, write to <a href="mailto:support@beakbig.com?subject=ShouArchive%20release">support@beakbig.com</a>.</p>
         </details>
 
         <details>
-          <summary>When is the commercial edition coming out?</summary>
-          <p>We have not set its price or release date yet. As soon as they are decided we will put them on the <a href="pricing.html">pricing page</a> and the <a href="download.html">download page</a>. To be notified, ask for a release notice at <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%AC%EB%B0%9C">beakbigkb@gmail.com</a>.</p>
+          <summary>How do I move to another Mac?</summary>
+          <p>On the Mac you use now, press "Deactivate" in Settings › License to free up the slot, then enter the same key on the new Mac. One key can be used on up to <span data-price="commercial.devices">2</span> Macs at the same time.</p>
+        </details>
+
+        <details>
+          <summary>Does the app stop working when my update period ends?</summary>
+          <p>No. Once you buy it, it is yours to keep. Versions released during your update period keep working after the period ends. Only versions released after it ends require renewing updates (<span data-price="commercial.price_renewal">US$15</span> a year) before you can install them. Renewal is automatic and you can turn it off at any time; if you renew again after the period has ended, a new year starts from that payment date.</p>
+        </details>
+
+        <details>
+          <summary>What happens when the trial ends?</summary>
+          <p>The <span data-price="trial_days">14</span>-day trial starts without a payment method, so nothing is charged automatically when it ends. If the trial ends without a license key, you can keep using profile management and artifact inspection; building, upload, device install, dependency checks, OTA and store publishing reopen once you buy and enter the key in Settings › License.</p>
         </details>
 
         <h2 id="general">General</h2>
@@ -163,12 +166,12 @@
 
         <details>
           <summary>System requirements</summary>
-          <p>macOS 15 Sequoia or later, on Apple Silicon or Intel Macs. An App Store Connect API key is needed only for downloading and creating profiles and registering devices; everything else works offline.</p>
+          <p>macOS 15 Sequoia or later, on Apple Silicon or Intel Macs. An App Store Connect API key is needed for downloading and creating profiles and registering devices, and an internet connection is needed for license checks, update checks, app upload and store publishing. Artifact inspection and viewing installed profiles work offline.</p>
         </details>
 
         <details id="report">
           <summary>How do I report a problem?</summary>
-          <p>Email <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> with the following and it can be looked at quickly:</p>
+          <p>Email <a href="mailto:support@beakbig.com?subject=ShouArchive%20support">support@beakbig.com</a> with the following and it can be looked at quickly:</p>
           <p>Inside the app you can also write one directly from Help › "Send Feedback · Suggestions…" (or Settings (⌘,) › "Compose Email…"). The app version and macOS details are added below your message automatically.</p>
           <ul>
             <li>macOS version (Apple menu › About This Mac)</li>
@@ -186,16 +189,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Footer">
-      <a href="../index.html">Home</a>
-      <a href="../pricing.html">Pricing</a>
-      <a href="../download.html">Download</a>
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
       <a href="support.html" aria-current="page">Support</a>
-      <a href="../privacy.html">Privacy Policy</a>
-      <a href="../terms.html">Terms of Service</a>
-      <a href="../refund.html">Refund Policy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
       <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">Beakbig · Representative <span data-price="seller.owner">Hyunjin Kang</span> · Business registration no. <span data-price="seller.reg_no">613-40-01820</span> (simplified taxpayer) · Mail-order business registration: <span data-price="seller.mail_order">Exempt</span> · Address <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · Phone <span data-price="seller.phone">+82-502-6682-9359</span> · Email <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Payments handled by Paddle</p>
   </div>
 </footer>
 

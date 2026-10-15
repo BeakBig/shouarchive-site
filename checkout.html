@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>구매 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 라이선스 구매. 결제는 Paddle 이 판매대행으로 처리하고, 라이선스 키는 결제한 이메일로 보냅니다.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="구매 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 라이선스 구매 · 결제는 Paddle.">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="checkout.html">
+  <link rel="alternate" hreflang="en" href="en/checkout.html">
+  <link rel="alternate" hreflang="ja" href="ja/checkout.html">
+  <link rel="alternate" hreflang="zh-Hans" href="zh-Hans/checkout.html">
+  <link rel="alternate" hreflang="zh-Hant" href="zh-Hant/checkout.html">
+  <link rel="alternate" hreflang="es" href="es/checkout.html">
+  <link rel="alternate" hreflang="x-default" href="en/checkout.html">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="index.html#features">기능</a>
+      <a href="pricing.html">가격</a>
+      <a href="download.html">다운로드</a>
+      <a href="support.html">지원</a>
+      <a href="privacy.html">개인정보</a>
+      <label class="lang-switch"><span class="visually-hidden">언어</span><select class="lang-select" aria-label="언어"><option value="checkout.html" selected>한국어</option><option value="en/checkout.html">English</option><option value="ja/checkout.html">日本語</option><option value="zh-Hans/checkout.html">简体中文</option><option value="zh-Hant/checkout.html">繁體中文</option><option value="es/checkout.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>ShouArchive 구매</h1>
+      <p>한 번 구매 <span data-price="commercial.price">US$29</span> · Mac <span data-price="commercial.devices">2</span>대 · 업데이트 1년 포함 (세금 별도)</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden></div>
+
+      <div class="note" id="checkout-closed">
+        <p><strong>결제를 아직 열지 않았습니다.</strong> ShouArchive 는 출시 전이라 지금은 살 수 없습니다. 가격과 출시 소식은 <a href="pricing.html">가격 페이지</a>에서 확인해 주세요.</p>
+      </div>
+
+      <div class="note" id="checkout-done" hidden>
+        <p><strong>결제가 끝났습니다. 고맙습니다.</strong> 라이선스 키를 결제한 이메일 주소로 보냈습니다. 몇 분 안에 오지 않으면 스팸함을 확인하고, 그래도 없으면 <a href="mailto:support@beakbig.com?subject=ShouArchive%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4%20%ED%82%A4%20%EB%AF%B8%EC%88%98%EC%8B%A0">support@beakbig.com</a> 으로 결제 이메일을 알려 주세요.</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-buy" hidden>
+        <h2>ShouArchive 라이선스</h2>
+        <p class="plan-for">라이선스 + 업데이트 1년 · 그 뒤 업데이트는 1년에 <span data-price="commercial.price_renewal">US$15</span> (자동 갱신 · 언제든 끄기)</p>
+        <p class="price"><span data-price="commercial.price">US$29</span></p>
+        <p class="price-note">세금은 결제 화면에서 지역에 맞춰 더해집니다. 결제 화면은 지역 통화로 보여 줍니다.</p>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-open">구매하기</button>
+        </div>
+      </div>
+
+      <h2 id="key">라이선스 키 넣기</h2>
+      <ol>
+        <li>결제가 끝나면 결제한 이메일 주소로 라이선스 키가 옵니다.</li>
+        <li>ShouArchive 에서 <strong>설정 › 라이선스</strong> 를 엽니다.</li>
+        <li>키를 붙여 넣고 「활성화」를 누르면 끝입니다. 키 하나로 Mac <span data-price="commercial.devices">2</span>대에서 쓸 수 있습니다.</li>
+      </ol>
+
+      <h2 id="about">결제에 관해</h2>
+      <ul>
+        <li><strong>판매대행 — Paddle.</strong> 결제는 <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> 이 판매대행(Merchant of Record)으로 처리합니다. 영수증과 결제 관련 메일은 Paddle 이 보냅니다.</li>
+        <li><strong>세금</strong>은 가격에 들어 있지 않고, 결제 화면에서 지역에 맞춰 더해집니다.</li>
+        <li><strong>업데이트 갱신</strong>은 1년마다 자동으로 이루어지고, Paddle 결제 안내 메일의 관리 링크에서 언제든 끌 수 있습니다. 꺼도 앱은 계속 씁니다.</li>
+        <li><strong>환불</strong> — 결제 후 <span data-price="commercial.refund_days">14</span>일 안이면 전액 환불합니다. <a href="refund.html">환불 정책</a></li>
+        <li>구매 전에 <a href="terms.html">이용약관</a> 과 <a href="privacy.html">개인정보 처리방침</a> 을 확인해 주세요.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="바닥 메뉴">
+      <a href="index.html">홈</a>
+      <a href="pricing.html">가격</a>
+      <a href="download.html">다운로드</a>
+      <a href="support.html">지원</a>
+      <a href="privacy.html">개인정보 처리방침</a>
+      <a href="terms.html">이용약관</a>
+      <a href="refund.html">환불 정책</a>
+      <span class="footer-langs"><a href="checkout.html" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/checkout.html" lang="en" hreflang="en">English</a> <a href="ja/checkout.html" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/checkout.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/checkout.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/checkout.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">상호 비그빅(Beakbig) · 대표 <span data-price="seller.owner">강현진</span> · 사업자등록번호 <span data-price="seller.reg_no">613-40-01820</span> (간이과세자) · 통신판매업 신고 <span data-price="seller.mail_order">면제</span> · 주소 <span data-price="seller.address">경기도 화성시 동탄순환대로20길 31</span> · 전화 <span data-price="seller.phone">0502-6682-9359</span> · 이메일 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 결제 대행 Paddle</p>
+  </div>
+</footer>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+(function () {
+  // 설정은 tools/pricing.json → tools/fill-pricing.py 가 #paddle-config 에 넣는다 (모두 공개 값).
+  var cfg = document.getElementById('paddle-config').dataset;
+  var params = new URLSearchParams(location.search);
+  var show = function (id, on) { document.getElementById(id).hidden = !on; };
+  if (params.get('done') === '1') {           // 결제를 마치고 돌아온 경우
+    show('checkout-closed', false);
+    show('checkout-done', true);
+    return;
+  }
+  if (!cfg.token || !window.Paddle) return;    // 아직 결제를 열지 않음 → 안내만
+  var LOCALES = { 'ko': 'ko', 'en': 'en', 'ja': 'ja', 'zh-Hans': 'zh-Hans', 'es': 'es' };  // zh-Hant 은 Paddle 이 지원하지 않아 생략
+  var settings = { displayMode: 'overlay', successUrl: location.origin + location.pathname + '?done=1' };
+  var locale = LOCALES[document.documentElement.lang];
+  if (locale) settings.locale = locale;
+  if (cfg.env === 'sandbox') Paddle.Environment.set('sandbox');
+  Paddle.Initialize({ token: cfg.token, checkout: { settings: settings } });
+  show('checkout-closed', false);
+  // ?_ptxn= (라이선스 서버가 만든 갱신 · 앱 안 구매 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
+  if (params.has('_ptxn')) return;
+  if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
+  show('checkout-buy', true);
+  document.getElementById('checkout-open').addEventListener('click', function () {
+    Paddle.Checkout.open({ items: [
+      { priceId: cfg.priceLicense, quantity: 1 },
+      { priceId: cfg.priceUpdates, quantity: 1 }
+    ] });
+  });
+})();
+</script>
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

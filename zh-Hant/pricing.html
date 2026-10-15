@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>價格 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 價格。Mac App Store 版為一次購買（US$2），商用版為每月訂閱 · 14 天試用。兩個版本互不相連。">
+  <meta name="description" content="ShouArchive 價格。買一次就能一直使用的授權 US$29（2 台 Mac · 含 1 年更新，未稅），之後的更新每年 US$15 · 不需付款方式即可試用 14 天。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="價格 — ShouArchive">
-  <meta property="og:description" content="Mac App Store 版一次購買，商用版每月訂閱 · 14 天試用。">
+  <meta property="og:description" content="買一次就能一直使用的授權 · 含 1 年更新 · 14 天試用。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="zh_TW">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -28,11 +28,11 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../index.html#features">功能</a>
+      <a href="index.html#features">功能</a>
       <a href="pricing.html" aria-current="page">價格</a>
-      <a href="../download.html">下載</a>
-      <a href="../support.html">支援</a>
-      <a href="../privacy.html">隱私權</a>
+      <a href="download.html">下載</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html">隱私權</a>
       <label class="lang-switch"><span class="visually-hidden">語言</span><select class="lang-select" aria-label="語言"><option value="../pricing.html">한국어</option><option value="../en/pricing.html">English</option><option value="../ja/pricing.html">日本語</option><option value="../zh-Hans/pricing.html">简体中文</option><option value="../zh-Hant/pricing.html" selected>繁體中文</option><option value="../es/pricing.html">Español</option></select></label>
     </nav>
   </div>
@@ -42,62 +42,54 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>價格</h1>
-      <p>ShouArchive 以兩種版本販售。Mac App Store 版是一次購買，商用版則是在網頁上訂閱。兩個版本互不相連 — 買了其中一個版本，並不會得到另一個版本的授權。</p>
+      <p>ShouArchive 是在本網站買一次就能一直使用的 App。請先在 <span data-price="trial_days">14</span> 天內不需付款方式試用所有功能，滿意後再購買授權。</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="plans">
-        <article class="plan">
-          <p class="plan-badge live">販售中</p>
-          <h2>Mac App Store 版</h2>
-          <p class="plan-for">透過 Mac App Store 發佈的開發者</p>
-          <p class="price"><span data-price="appstore.price_now">US$2</span></p>
-          <p class="price-note">一次購買 · 可在購買的帳號中一直使用。<br><span data-price="appstore.next_version">2.0.0</span> 起，價格將調漲為 <span data-price="appstore.price_next">US$5</span>。</p>
+        <article class="plan coming">
+          <p class="plan-badge soon" data-live-hide>即將推出</p>
+          <h2><span data-price="trial_days">14</span> 天試用</h2>
+          <p class="plan-for">想在購買前先用過所有功能的人</p>
+          <p class="price">免費</p>
+          <p class="price-note">不需付款方式，直接在 App 內開始。<br>結束後也不會自動扣款。</p>
           <ul class="plan-feats">
-            <li><strong>描述檔管理</strong> — 已安裝的描述檔 · 到期標記 · 篩選 · 兩個並排比較</li>
-            <li><strong>描述檔下載 · 建立 · 續期 · 裝置註冊</strong>（App Store Connect API 金鑰）</li>
-            <li><strong>金鑰儲存 · 管理</strong> — Issuer ID · Key ID · <code>.p8</code></li>
-            <li><strong>產物檢查</strong> — IPA · APK · AAB，簽署 · 權限 · 安全設定</li>
-            <li><strong>商店發佈</strong>（iOS · Android）— 預計 <span data-price="appstore.next_version">2.0.0</span></li>
+            <li><strong>所有功能</strong> — 建置 · 上傳 · 裝置安裝到商店發佈，試用期間全部可用</li>
+            <li><strong>試用結束後</strong> — 即使沒有金鑰，描述檔管理與產物檢查仍可繼續使用</li>
+            <li><strong>之後再買也沒關係</strong> — 輸入授權金鑰後，其餘功能會重新開放</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              在 Mac App Store 下載
-            </a>
-            <a class="btn outline" href="../download.html">下載說明</a>
+            <a class="btn" data-src="commercial.download" href="#" hidden>下載（.dmg）· <span data-price="trial_days">14</span> 天試用</a>
+            <a class="btn outline" href="download.html">下載說明</a>
           </div>
-          <p class="plan-foot">付款 · 安裝 · 更新由 Apple 處理。安裝與個人資料的處理遵循 Apple 的規定。</p>
+          <p class="plan-foot">macOS 15 Sequoia 或以上版本 · 支援 Apple Silicon 與 Intel Mac。</p>
         </article>
 
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide>即將推出</p>
-          <h2>商用版</h2>
+          <h2>ShouArchive 授權</h2>
           <p class="plan-for">在網頁上直接購買使用的個人 · 團隊</p>
-          <p class="price"><span data-price="commercial.price_monthly">價格待定</span></p>
-          <p class="price-note">每月訂閱 · 年度訂閱（年度折扣）· <span data-price="trial_days">14</span> 天試用<br>Mac App Store 版的全部功能 + 以下功能</p>
+          <p class="price"><span data-price="commercial.price">US$29</span></p>
+          <p class="price-note">一次購買 · <span data-price="commercial.devices">2</span> 台 Mac · 含 1 年更新（未稅）<br>之後的更新每年 <span data-price="commercial.price_renewal">US$15</span> — 不續訂也能繼續使用 App。</p>
           <ul class="plan-feats">
-            <li><strong>App Store 版的功能</strong> — 描述檔 · 金鑰 · 產物檢查</li>
+            <li><strong>描述檔管理</strong> — 已安裝的描述檔 · 到期標記 · 篩選 · 兩個並排比較</li>
+            <li><strong>描述檔下載 · 建立 · 續期 · 裝置註冊</strong>（App Store Connect API 金鑰）</li>
+            <li><strong>產物檢查</strong> — IPA · APK · AAB，簽署 · 權限 · 安全設定</li>
             <li><strong>建置</strong> — 直接建置 IPA · APK</li>
             <li><strong>App 上傳</strong> — 上傳到 TestFlight · Play Console</li>
             <li><strong>裝置安裝</strong> — 裝置清單 · 安裝 · 重新安裝</li>
             <li><strong>相依性檢查</strong> — 建置前先確認條件</li>
             <li><strong>OTA 安裝檔</strong> — 製作發佈用的安裝檔</li>
-            <li><strong>授權金鑰</strong> — 可用在已註冊的裝置數</li>
+            <li><strong>商店發佈</strong>（iOS · Android）— 商店資訊 · 螢幕截圖 · 送審</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.checkout" href="#" hidden>開始 <span data-price="trial_days">14</span> 天試用</a>
-            <a class="btn outline" data-src="commercial.download" href="#" hidden>下載（.dmg）</a>
+            <a class="btn" data-src="commercial.checkout" href="#" hidden>立即購買</a>
           </div>
-          <p class="plan-foot" data-live-hide>價格與推出日期尚未確定。一旦確定，我們會更新本頁面與 <a href="../download.html">下載頁面</a>。有任何疑問，請寫信到 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 告訴我們。</p>
-          <p class="plan-foot" data-live-show hidden>付款由 <strong>Paddle</strong> 以銷售代理的身分處理。取消訂閱的方法與退款，已寫在 <a href="../refund.html">退款政策</a> 中。</p>
+          <p class="plan-foot" data-live-hide>價格已經確定，推出日期尚未確定。一旦確定，我們會更新本頁面與 <a href="download.html">下載頁面</a>。有任何疑問，請寫信到 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 告訴我們。</p>
+          <p class="plan-foot" data-live-show hidden>付款由 <strong>Paddle</strong> 以銷售代理（Merchant of Record）身分處理。關閉更新續訂的方法與退款，已寫在 <a href="refund.html">退款政策</a> 中。</p>
         </article>
-      </div>
-
-      <div class="note">
-        <p><strong>兩個版本是各自獨立的。</strong> 購買 Mac App Store 版，就無法使用商用版的建置 · 上傳 · 裝置安裝功能；反過來說，訂閱商用版也不會包含 Mac App Store 版的 App。功能重疊的部分（描述檔 · API 金鑰 · 產物檢查）則兩個版本都有。</p>
       </div>
     </div>
   </section>
@@ -105,37 +97,34 @@
   <section class="section alt">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow violet">比較</p>
-        <h2>兩個版本的功能差異</h2>
-        <p class="lead">相同的功能在哪個版本都能使用。您只要看表格中不同的行即可。</p>
+        <p class="eyebrow violet">功能</p>
+        <h2>什麼時候能用哪些功能</h2>
+        <p class="lead">試用期間可使用所有功能。即使試用結束時沒有金鑰，描述檔管理與產物檢查仍會保留。</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
           <thead>
             <tr>
               <th scope="col">功能</th>
-              <th scope="col">Mac App Store 版</th>
-              <th scope="col">商用版</th>
+              <th scope="col">試用期間</th>
+              <th scope="col">試用結束後（無金鑰）</th>
+              <th scope="col">購買後</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">安裝方式</th><td>Mac App Store</td><td>從網頁下載 <code>.dmg</code></td></tr>
-            <tr><th scope="row">收費</th><td>一次購買 · <span data-price="appstore.price_now">US$2</span><small><span data-price="appstore.next_version">2.0.0</span> 起為 <span data-price="appstore.price_next">US$5</span></small></td><td>每月 · 年度訂閱<small><span data-price="commercial.price_annual">價格待定</span></small></td></tr>
-            <tr><th scope="row">試用</th><td class="no">—</td><td class="yes">✓<small><span data-price="trial_days">14</span> 天</small></td></tr>
-            <tr><th scope="row">付款處理</th><td>Apple App Store</td><td>Paddle<small>稅金另外計算</small></td></tr>
-            <tr><th scope="row">描述檔管理 · 比較</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">描述檔下載 · 建立 · 裝置註冊</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">API 金鑰儲存 · 管理</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">產物檢查（IPA · APK · AAB）</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">商店發佈（iOS · Android）</th><td>預計 2.0</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">建置</th><td class="no">—<small>受沙箱限制，無法使用</small></td><td class="yes">✓</td></tr>
-            <tr><th scope="row">App 上傳</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">裝置安裝</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">相依性檢查</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">OTA 安裝檔</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">更新</th><td>由 App Store 更新</td><td>在 App 內更新</td></tr>
-            <tr><th scope="row">授權</th><td>以 Apple 帳戶驗證</td><td>授權金鑰<small>以已註冊的裝置數為限</small></td></tr>
-            <tr><th scope="row">資料處理</th><td>不收集任何資料<small><a href="../privacy.html">隱私權政策</a></small></td><td>僅限授權驗證所需的資料<small><a href="../privacy.html">隱私權政策</a></small></td></tr>
+            <tr><th scope="row">期間 · 費用</th><td><span data-price="trial_days">14</span> 天 · 免費<small>不需付款方式 · 不會自動扣款</small></td><td>免費 · 無期限</td><td>一次購買 · <span data-price="commercial.price">US$29</span><small>含 1 年更新 · 之後每年 <span data-price="commercial.price_renewal">US$15</span>（可選）</small></td></tr>
+            <tr><th scope="row">描述檔管理 · 比較</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">描述檔下載 · 建立 · 裝置註冊</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">API 金鑰儲存 · 管理</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">產物檢查（IPA · APK · AAB）</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">建置</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">App 上傳</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">裝置安裝</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">相依性檢查</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">OTA 安裝檔</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">商店發佈（iOS · Android）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">更新</th><td>試用期間推出的版本</td><td class="no">—</td><td>更新期間內在 App 內更新<small>期間結束後，在那之前推出的版本仍可繼續使用</small></td></tr>
+            <tr><th scope="row">授權金鑰</th><td class="no">不需要</td><td class="no">不需要</td><td>一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac<small>寄送到付款時的電子郵件</small></td></tr>
           </tbody>
         </table>
       </div>
@@ -144,28 +133,30 @@
 
   <section class="section alt doc">
     <div class="wrap">
-      <h2>付款 · 訂閱說明</h2>
+      <h2>付款 · 更新說明</h2>
       <div class="note">
-        <p><strong>商用版尚未推出。</strong> 價格與推出日期目前都還沒有確定。本節內容是商用版公開時的付款方式 — 如果在公開前有所變更，我們會先更新本頁面。</p>
+        <p><strong>尚未開始販售。</strong> 價格已如上確定，推出日期尚未確定。本節內容是推出時的付款方式 — 如果在推出前有所變更，我們會先更新本頁面。</p>
       </div>
       <ul>
-        <li><strong>付款代收 — Paddle。</strong> 商用版的付款由 Paddle 以銷售代理（Merchant of Record）身分處理。Paddle 會代為處理付款與稅額計算，並開立收據。</li>
-        <li><strong>稅金另外計算。</strong> 上述價格不含稅金。付款時，Paddle 會依客戶所在地自動計算稅金並加收。</li>
-        <li><strong>每月訂閱會自動續訂。</strong> 訂閱期間結束後，會以相同價格自動開始下一個期間，並在該時付款。</li>
-        <li><strong><span data-price="trial_days">14</span> 天試用。</strong> 試用在登記付款方式之後開始；試用結束時若未取消，就會自動開始每月訂閱。</li>
-        <li><strong>隨時都可以取消。</strong> 取消後，已付款的期間仍可繼續使用，並且從下次續訂起不再扣款。</li>
-        <li><strong>退款。</strong> 何時以及如何申請退款，都寫在 <a href="../refund.html">退款政策</a> 中。</li>
-        <li><strong>使用條件。</strong> 使用商用版之前，請先閱讀 <a href="../terms.html">服務條款</a>。</li>
+        <li><strong>付款代理 — Paddle。</strong> 付款由 Paddle 以銷售代理（Merchant of Record）身分處理。Paddle 會代為處理付款與稅額計算，並開立收據。價格以美元標示，付款畫面會以當地貨幣顯示。</li>
+        <li><strong>稅金另計。</strong> 上述價格不含稅金。付款時，Paddle 會依客戶所在地自動計算稅金並加收。</li>
+        <li><strong>買一次就能一直使用。</strong> <span data-price="commercial.price">US$29</span> 包含授權與 1 年更新。更新期間結束後 App 也不會停止運作，期間內推出的所有版本都可以繼續使用。</li>
+        <li><strong>更新續訂 — 每年 <span data-price="commercial.price_renewal">US$15</span>。</strong> 更新期間每年自動續訂。自動續訂可以隨時關閉。若在期間結束後才重新續訂，會從該次付款日起重新開始 1 年。</li>
+        <li><strong>期間結束後推出的版本。</strong> 更新期間結束後推出的版本，需要續訂後才能安裝 · 啟用。App 內的更新檢查只會顯示期間內推出的版本。</li>
+        <li><strong><span data-price="trial_days">14</span> 天試用。</strong> 不需付款方式即可在 App 內開始，結束後也不會自動扣款。若試用結束時沒有金鑰，只能繼續使用描述檔管理與產物檢查；建置 · 上傳 · 裝置安裝 · 相依性檢查 · OTA · 商店發佈會在購買後重新開放。</li>
+        <li><strong>退款。</strong> 首次購買與更新續訂，皆可在付款後 <span data-price="commercial.refund_days">14</span> 天內申請全額退款。詳細標準已寫在 <a href="refund.html">退款政策</a> 中。</li>
+        <li><strong>使用條件。</strong> 購買前，請先閱讀 <a href="terms.html">服務條款</a> 與 <a href="privacy.html">隱私權政策</a>。</li>
       </ul>
-      <p class="footnote">Mac App Store 版與上述內容無關。付款與訂閱由 Apple 處理，個人資料的處理則遵循 <a href="../privacy.html">Apple 與 ShouArchive 的隱私權政策</a>。</p>
     </div>
   </section>
 
   <section class="cta">
     <div class="wrap">
       <h2>現在就開始</h2>
-      <p>今天就可以先從 Mac App Store 版開始。等商用版推出後，再訂閱也不遲。</p>
-      <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">在 Mac App Store 下載</a>
+      <p data-live-hide>推出後，可以在本頁面下載，先用 <span data-price="trial_days">14</span> 天試用體驗，再決定是否購買。想知道推出消息，請寫信到 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 告訴我們。</p>
+      <p data-live-show hidden>下載後，可在 <span data-price="trial_days">14</span> 天內不需付款方式試用。滿意的話，購買 <a href="pricing.html">授權</a> 並輸入金鑰即可。</p>
+      <a class="btn" data-src="commercial.download" href="#" hidden>下載（.dmg）</a>
+      <a class="btn" href="download.html" data-live-hide>下載說明</a>
     </div>
   </section>
 </main>
@@ -173,16 +164,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="頁尾">
-      <a href="../index.html">首頁</a>
+      <a href="index.html">首頁</a>
       <a href="pricing.html" aria-current="page">價格</a>
-      <a href="../download.html">下載</a>
-      <a href="../support.html">支援</a>
-      <a href="../privacy.html">隱私權政策</a>
-      <a href="../terms.html">服務條款</a>
-      <a href="../refund.html">退款政策</a>
+      <a href="download.html">下載</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="terms.html">服務條款</a>
+      <a href="refund.html">退款政策</a>
       <span class="footer-langs"><a href="../pricing.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/pricing.html" lang="en" hreflang="en">English</a> <a href="../ja/pricing.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/pricing.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/pricing.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="page">繁體中文</a> <a href="../es/pricing.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商號 Beakbig · 代表人 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登記號碼 <span data-price="seller.reg_no">613-40-01820</span>（簡易課稅者）· 通訊交易業申報：<span data-price="seller.mail_order">免申報</span> · 地址 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · 電子郵件 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 付款代理 Paddle</p>
   </div>
 </footer>
 

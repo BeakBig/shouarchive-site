@@ -10,9 +10,10 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 
 | 경로 | 내용 |
 | --- | --- |
-| `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(두 판 비교) · 다운로드 |
+| `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(체험 · 구매 후 기능표) · 다운로드 |
 | `support.html` · `privacy.html` · `terms.html` · `refund.html` | 한국어 지원(FAQ) · 개인정보 처리방침 · 이용약관 · 환불 정책 |
-| `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 일곱 페이지) |
+| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. Paddle.js 오버레이 결제를 열고, `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. `?done=1` 이면 결제 완료 안내. 메뉴에는 넣지 않습니다 |
+| `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 여덟 페이지) |
 | `assets/style.css` | 공용 스타일 (라이트 · 다크) |
 | `assets/icon.png` · `icon-64.png` | 앱 아이콘 |
 | `assets/screenshots/<언어>/` | 갤러리 스크린샷 `01.png` ~ `06.png` (2880×1800), 6개 언어 |
@@ -20,79 +21,96 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `.nojekyll` | GitHub Pages 가 Jekyll 처리 없이 그대로 서빙하게 함 |
 | `worker/` | `shouarchive.beakbig.com` 을 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 | `tools/localize-nav.py` | 모든 페이지의 6개 언어 전환 메뉴 · 헤더 · 푸터 링크 · `hreflang` 을 다시 맞추는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
-| `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
-| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 7개 페이지 구조 · 링크 · 번역 누락 · 25 MiB 한도 |
+| `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크 · Paddle 공개 설정 · 판매자 정보의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
+| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 8개 페이지 구조 · 링크 · 번역 누락 · 가격 키 · Paddle 설정 · 25 MiB 한도 |
 
-App Store Connect 에 넣는 URL:
+ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Mac App Store 판은 출시하지 않고 제출을 거둬들임). 그래서 `pricing.json` 에는 `appstore.*` 키가 없습니다. 다른 5개 언어 페이지는 새 한국어판으로 다시 번역하기 전까지 `appstore.*` 를 가리키므로 `fill-pricing.py` 가 그 자리를 「pricing.json 에 없는 키」로 알리고 코드 1 로 끝납니다 — 번역을 마치면 사라집니다.
+
+외부에 알리는 주소:
 
 - 지원: `https://shouarchive.beakbig.com/support` (다른 언어는 `<언어>/support`)
-- 마케팅: `https://shouarchive.beakbig.com/` (다른 언어는 `<언어>/`)
+- 홈: `https://shouarchive.beakbig.com/` (다른 언어는 `<언어>/`)
 - 개인정보 처리방침: `https://shouarchive.beakbig.com/privacy` (다른 언어는 `<언어>/privacy`)
 
 ## 가격 · 링크는 한 곳에서 바꾸기
 
-가격 숫자 · 체험 기간 · 결제 링크 · 다운로드 링크는 **`tools/pricing.json` 한 곳에만** 적습니다. 페이지에는 자리 표시만 두고, `tools/fill-pricing.py` 가 그 값을 넣어 줍니다.
+가격 숫자 · 체험 기간 · 결제 링크 · 다운로드 링크 · Paddle 공개 설정 · 판매자(사업자) 정보는 **`tools/pricing.json` 한 곳에만** 적습니다. 페이지에는 자리 표시만 두고, `tools/fill-pricing.py` 가 그 값을 넣어 줍니다.
 
 ```bash
 python3 tools/fill-pricing.py   # pricing.json → 모든 언어 페이지
 python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · hreflang 다시 맞추기
-python3 tools/check-site.py      # 6개 언어 × 7개 페이지 구조 · 링크 · 번역 · 용량 점검
+python3 tools/check-site.py      # 6개 언어 × 8개 페이지 구조 · 링크 · 번역 · 용량 점검
 ```
 
-페이지에 쓰는 표시 세 가지:
+페이지에 쓰는 표시 네 가지:
 
 | 표시 | 쓰임 |
 | --- | --- |
-| `<span data-price="appstore.price_now">US$2</span>` | 글자 사이에 넣기 (JSON 값이 `null` 이면 `undecided` 에 있는 그 언어 문장을 넣습니다 — 예: 「가격 미정」. 정하지 않은 금액이 숫자로 남지 않게 하기 위함) |
+| `<span data-price="commercial.price">US$29</span>` | 글자 사이에 넣기. 값이 `null` 일 때 — `commercial.*` 키는 `undecided` 에 있는 그 언어 문장(「가격 미정」)을 넣고(정하지 않은 금액이 숫자로 남지 않게), `seller.*` 같은 다른 키는 페이지의 주황색 자리 표시(`<span class="placeholder" data-price="seller.owner">[대표자]</span>`)를 그대로 둡니다. 값이 채워지면 `placeholder` class 도 떼어 냅니다. pricing.json 에 없는 키는 건드리지 않고 마지막에 목록으로 알립니다(종료 코드 1) |
 | `<a data-src="commercial.checkout" href="#">` | 링크. JSON 이 비어 있으면 `hidden` 으로 숨겨 두었다가, 값을 채우면 `href` 가 바뀌면서 스스로 나타납니다 |
-| `data-live-hide` / `data-live-show` | 상용 판 공개 전에만 보이는 문장 / 공개된 뒤에 보이는 문장. 공개 여부는 `commercial.checkout` 이 채워져 있는지로 판단합니다 |
+| `data-live-hide` / `data-live-show` | 출시 전에만 보이는 문장 / 공개된 뒤에 보이는 문장. 공개 여부는 `commercial.checkout` 이 채워져 있는지로 판단합니다 |
+| `<div id="paddle-config" data-env data-token data-price-license data-price-updates hidden>` | `checkout.html` 의 Paddle.js 설정. 실행할 때마다 `paddle.*` 값으로 속성을 다시 씁니다(값을 바꿔 다시 실행하면 그대로 반영) |
 
-값이 `null` 이거나 빈 문자열인 항목은 **상용 판이 아직 없다는 뜻**입니다 — 가격이 정해지면 `commercial.price_monthly` 같은 값을 채우고 `commercial.checkout`(Paddle 결제 링크)을 넣습니다. 그러면 「출시 예정」 안내가 자동으로 사라지고 구매 · 다운로드 버튼이 나타납니다.
+`pricing.json` 의 키:
+
+| 키 | 뜻 |
+| --- | --- |
+| `commercial.price` · `price_renewal` | 처음 구매(라이선스 + 업데이트 1년, US$29) · 업데이트 1년 갱신(US$15, 자동 갱신). 세금 별도 |
+| `commercial.devices` · `refund_days` | 라이선스 하나로 쓰는 Mac 수(2) · 결제 후 전액 환불 기간(14일) |
+| `commercial.release_date` | 출시일 — 아직 `null` |
+| `commercial.checkout` · `download` | 구매 페이지 주소(보통 `checkout.html`) · `.dmg` 주소. `checkout` 이 채워지면 출시(판매 시작)로 봅니다 — 「출시 예정」 안내가 사라지고 구매 · 다운로드 버튼이 나타납니다 |
+| `paddle.environment` | `sandbox` 또는 `production` |
+| `paddle.client_token` | Paddle 의 **client-side token**(`test_…` / `live_…`). 비어 있으면 `checkout.html` 은 「결제를 아직 열지 않았습니다」만 보여 줍니다 |
+| `paddle.price_license` · `price_updates` | 가격 id(`pri_…`) — 라이선스(US$14, 1회) · 업데이트 1년(US$15, 매년 자동 갱신). 처음 구매 화면에 두 항목을 함께 넣어 합계 US$29 |
+| `seller.reg_no` · `owner` · `address` · `phone` · `mail_order` | 페이지 바닥 사업자 정보와 이용약관 2항. 사업자등록번호(613-40-01820)만 정해졌고 나머지는 `null`(주황색 자리 표시) |
+| `contact.email` | 문의 주소 `support@beakbig.com` |
+
+> **Paddle 값 중 사이트에 넣어도 되는 것은 client-side token 과 가격 id 뿐입니다** — 둘 다 브라우저에 그대로 보이는 공개 값입니다. **API 키(`pdl_…`)와 웹훅 비밀값(notification secret)은 절대 `pricing.json` 이나 페이지에 넣지 마세요.** 라이선스 서버의 비밀값(Cloudflare Workers secret)으로만 둡니다.
 
 > 숨길 때 쓰는 `hidden` 속성이 CSS 의 `display` 규칙에 밀리지 않게 `assets/style.css` 에 `[hidden] { display: none !important; }` 규칙이 있습니다. 이 규칙을 지우면 출시 전 구매 · 다운로드 버튼이 그대로 보입니다(`check-site.py` 가 확인합니다).
 
-새 페이지를 만들면 `tools/localize-nav.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 두 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 7개 페이지 = 42개 파일이 모두 같은 구조여야 통과합니다.
+새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 8개 페이지 = 48개 파일이 모두 같은 구조여야 통과합니다.
+
+모든 페이지 바닥(`<footer>` 안 `<p class="biz">`)에 사업자 정보(상호 · 대표 · 사업자등록번호 · 통신판매업 신고 · 주소 · 전화 · 이메일 · 결제 대행 Paddle)가 있습니다. `localize-nav.py` 는 바닥의 `<nav>` 만 다시 쓰므로 이 줄은 건드리지 않습니다.
 
 ## ⚠️ 법률 문서는 초안입니다 — 검토 후, 발행 전에 고치세요
 
-`terms.html`(이용약관) · `refund.html`(환불 정책) · `privacy.html`(개인정보 처리방침 — 상용 판 내용 추가)는 **법률 검토를 거치지 않은 초안**입니다. **이 문서를 검토하기 전에는 Paddle 판매를 시작하지 마세요.** 주황색(`<span class="placeholder">`)으로 표시한 자리는 아직 판매자가 정하지 못한 값입니다.
+`terms.html`(이용약관) · `refund.html`(환불 정책) · `privacy.html`(개인정보 처리방침 — 앱 하나 기준으로 합침)는 **법률 검토를 거치지 않은 초안**입니다. **이 문서를 검토하기 전에는 Paddle 판매를 시작하지 마세요.** 주황색(`<span class="placeholder">`)으로 표시한 자리는 아직 판매자가 정하지 못한 값입니다.
 
 이미 정해 둔 것 (초안에 반영되어 자리 표시가 지워짐):
 
 | 정한 내용 | 들어간 곳 |
 | --- | --- |
-| 계약 당사자 — BeakBig(개인, 사업자등록 전) · beakbigkb@gmail.com | 이용약관 2항 |
-| 만 14세 이상(14세 미만은 법정대리인 동의), 지역 제한 없음(Paddle 판매 불가 지역 제외) | 이용약관 4.1항 |
-| 라이선스당 Mac 2대 | 이용약관 4.2항 |
-| 가격은 세금 별도 표시, 결제 시 Paddle 이 지역에 맞춰 자동 계산 | 이용약관 5.1항 · 가격 페이지 |
-| 월 구독 — 부분 환불 없음, 해지하면 결제 기간 끝까지 쓰고 끝. 법이 정한 경우(EU · EEA · 스위스 · 영국 첫 결제 14일 철회권 등)는 예외, 나라별 소비자 보호법이 더 넓으면 그쪽 우선 | 환불 정책 4항 |
-| 연간 구독 — 환불액 = 낸 금액 − (쓴 달 수 × 월 요금), 시작한 달도 한 달, 0 이하면 환불 없음 | 환불 정책 4항 |
-| 책임 상한 — 최근 12개월 동안 고객이 낸 금액까지. 고의 · 중대한 과실은 제한하지 않음 | 이용약관 11.2항 |
-| 해지 — 언제든 Paddle 고객 페이지에서, 결제 기간 끝에 종료. 위반은 이메일로 알린 뒤 정지 | 이용약관 12항 |
-| 준거법 — 대한민국 법, 1심 관할은 판매자 주소지 관할 법원, 중재 조항 없음, 소비자가 사는 나라의 강행 소비자 보호 규정 그대로 적용 | 이용약관 13항 |
-| 개인정보 권리 처리 기한 — 요청을 받은 날부터 10일 이내 · 적용 관할은 대한민국 개인정보 보호법, EU · EEA · 영국 이용자에게는 GDPR · UK GDPR 의 권리도 보장 | 개인정보 처리방침 12항 |
-| 개인정보 9항 「사용자 이름 · 기기에 직접 붙인 이름은 쓰지 않습니다」 — 확정했습니다. 기기 식별값이 이미 해시된 값이라 사실과 맞습니다 | 개인정보 처리방침 9항 |
-| 라이선스 서버 — 운영 주체 BeakBig(개인, 사업자등록 전) · beakbigkb@gmail.com, 서버는 Cloudflare, Inc.(미국)의 Workers, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함), 결제는 Paddle.com Market Limited(영국)가 판매대행 | 이용약관 8항 · 개인정보 처리방침 10항 |
-| 기기 식별값 — 하드웨어 UUID 에 앱 전용 접두어를 붙여 SHA-256 으로 바꾼 값의 앞 32자. 하드웨어 UUID 원문 · 호스트 이름 · 사용자 이름은 서버로 보내지 않으며, 하드웨어 UUID 를 못 읽으면 첫 실행 때 만든 무작위 설치 id 를 같은 방식으로 씁니다. Mac 이름이나 네트워크가 바뀌어도 값은 그대로 | 개인정보 처리방침 9항 |
-| 저장 방식 — 라이선스 키는 SHA-256, 기기 · 설치 식별값은 HMAC-SHA256 해시만, 앱 버전과 구매 이메일은 원문 그대로. 저장하지 않는 것(IP · 요청 헤더와 본문 · macOS 버전 · 이름/주소 · 카드 번호 · 마케팅 동의 · 사용 통계)도 9항에 있음 | 개인정보 처리방침 9항 |
-| 보관 기간 — 접근 기록 30일 · 결제 알림 처리 기록 90일 · 키 발송 기록 365일 · 발급 대기 7일은 매일 자동 삭제, 라이선스 · 기기 · 이메일은 구독 유지 동안 보관하고 종료 후 2년이 지나면 삭제 또는 익명화 | 개인정보 처리방침 10항 |
-| 국외 이전 — Cloudflare(미국) · Paddle(영국), 활성화 · 확인 · 결제 때 네트워크로. 저장 위치는 서버가 있는 미국과 데이터베이스의 아시아 · 태평양 지역. 보호 조치와 거부 방법(라이선스를 쓰지 않으면 이전 없음, 빌드 기능은 체험 기간 뒤 잠김) | 개인정보 처리방침 13항 |
-| 좌석 해제 — 다른 Mac 으로 옮길 때 설정 › 라이선스 의 「해제」로 자리를 돌려준 뒤 새 Mac 에서 키 입력. Mac 이름이나 네트워크가 바뀌어도 같은 Mac 으로 계산 | 이용약관 4.2항 |
-| 정지 통지 — 구매에 쓴 이메일 주소로 알림, 문의는 beakbigkb@gmail.com | 이용약관 12항 |
+| 판매자 — 상호 비그빅(Beakbig) · 사업자등록번호 613-40-01820(간이과세자) · support@beakbig.com | 이용약관 2항 · 모든 페이지 바닥 |
+| 요금 — 처음 구매 US$29(라이선스 + 업데이트 1년, Mac 2대), 업데이트 갱신 1년 US$15(자동 갱신 · 언제든 끄기), 기간 안에 나온 버전은 영구 사용, 기간 뒤 버전은 갱신해야 설치, 끊긴 뒤 갱신하면 결제일부터 1년 | 가격 페이지 · 이용약관 1 · 3.2 · 4항 |
+| 체험 — 14일, 결제 수단 없이 앱 안에서 시작, 자동 결제 없음. 키 없이 끝나면 프로파일 관리 · 산출물 검사만 | 가격 페이지 · 이용약관 4.3항 · 환불 정책 3항 |
+| 만 14세 이상(14세 미만은 법정대리인 동의), 지역 제한 없음(Paddle 판매 불가 지역 제외) | 이용약관 3.1항 |
+| 라이선스당 Mac 2대 | 이용약관 3.2항 |
+| 가격은 세금 별도 표시, 결제 시 Paddle 이 지역에 맞춰 자동 계산 | 이용약관 4.1항 · 가격 페이지 |
+| 환불 — 처음 구매 · 갱신 모두 결제 후 14일 안 전액(한국 청약철회 기간과 같음). 처음 구매 환불은 라이선스 해지, 갱신 환불은 업데이트 기간만 1년 되돌림. chargeback 은 라이선스 해지. 14일 뒤는 법이 정한 경우 외 환불 없음 | 환불 정책 4 – 9항 |
+| 책임 상한 — 최근 12개월 동안 고객이 낸 금액까지. 고의 · 중대한 과실은 제한하지 않음 | 이용약관 10.2항 |
+| 자동 갱신 끄기 — 언제든 Paddle 결제 안내 메일의 관리 링크에서, 꺼도 앱은 계속 씀. 위반은 이메일로 알린 뒤 정지 | 이용약관 4.4 · 11항 |
+| 준거법 — 대한민국 법, 1심 관할은 판매자 주소지 관할 법원, 중재 조항 없음, 소비자가 사는 나라의 강행 소비자 보호 규정 그대로 적용 | 이용약관 12항 |
+| 개인정보 권리 처리 기한 — 요청을 받은 날부터 10일 이내 · 적용 관할은 대한민국 개인정보 보호법, EU · EEA · 영국 이용자에게는 GDPR · UK GDPR 의 권리도 보장 | 개인정보 처리방침 11항 |
+| 개인정보 5항 「사용자 이름 · 기기에 직접 붙인 이름은 쓰지 않습니다」 — 확정했습니다. 기기 식별값이 이미 해시된 값이라 사실과 맞습니다 | 개인정보 처리방침 5항 |
+| 라이선스 서버 — 운영 주체 비그빅(Beakbig) · 613-40-01820 · support@beakbig.com, 서버는 Cloudflare, Inc.(미국)의 Workers, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함), 결제는 Paddle.com Market Limited(영국)가 판매대행 | 이용약관 7항 · 개인정보 처리방침 6항 |
+| 기기 식별값 — 하드웨어 UUID 에 앱 전용 접두어를 붙여 SHA-256 으로 바꾼 값의 앞 32자. 하드웨어 UUID 원문 · 호스트 이름 · 사용자 이름은 서버로 보내지 않으며, 하드웨어 UUID 를 못 읽으면 첫 실행 때 만든 무작위 설치 id 를 같은 방식으로 씁니다. Mac 이름이나 네트워크가 바뀌어도 값은 그대로 | 개인정보 처리방침 5항 |
+| 저장 방식 — 라이선스 키는 SHA-256, 기기 · 설치 식별값은 HMAC-SHA256 해시만, 앱 버전과 구매 이메일은 원문 그대로. 저장하지 않는 것(IP · 요청 헤더와 본문 · macOS 버전 · 이름/주소 · 카드 번호 · 마케팅 동의 · 사용 통계)도 5항에 있음 | 개인정보 처리방침 5항 |
+| 보관 기간 — 접근 기록 30일 · 결제 알림 처리 기록 90일 · 키 발송 기록 365일 · 발급 대기 7일은 매일 자동 삭제, 라이선스 · 기기 · 이메일은 라이선스가 있는 동안 보관하고 환불 · chargeback 으로 해지된 뒤 2년(또는 삭제 요청 시) 삭제 또는 익명화 | 개인정보 처리방침 6항 |
+| 키 발송 이메일 서비스 — Resend, Inc.(미국) | 개인정보 처리방침 6 · 12항 · 이용약관 7항 |
+| 국외 이전 — Cloudflare(미국) · Paddle(영국), 활성화 · 확인 · 결제 때 네트워크로. 저장 위치는 서버가 있는 미국과 데이터베이스의 아시아 · 태평양 지역. 보호 조치와 거부 방법(라이선스를 쓰지 않으면 이전 없음, 빌드 기능은 체험 기간 뒤 잠김) | 개인정보 처리방침 12항 |
+| 좌석 해제 — 다른 Mac 으로 옮길 때 설정 › 라이선스 의 「해제」로 자리를 돌려준 뒤 새 Mac 에서 키 입력. Mac 이름이나 네트워크가 바뀌어도 같은 Mac 으로 계산 | 이용약관 3.2항 |
+| 정지 통지 — 구매에 쓴 이메일 주소로 알림, 문의는 support@beakbig.com | 이용약관 11항 |
 
-아직 정하지 않아 자리 표시로 남은 것 (13곳 · 6개 언어가 같은 수만큼 가지고 있습니다):
+아직 정하지 않아 자리 표시로 남은 것 (한국어판 기준 — 다른 5개 언어는 새 한국어판으로 다시 번역할 예정):
 
-- [ ] **사업자등록번호와 사업장 주소** — 등록 후 이용약관 2항과 페이지 바닥에 고지 (지금의 문구는 「개인, 사업자등록 전」 임시 값)
-- [ ] **이메일 발송 서비스** — 라이선스 키를 보내는 데 쓸 서비스 (개인정보 10항)
-- [ ] 「광고 · 추적 · 행동 분석 SDK 없음」 — 근거 자료가 없어 남겼습니다 (개인정보 9항)
-- [ ] 공유 범위 — 「라이선스 서버와 Paddle 외에는 넘기지 않는다」는 문장을 근거 자료로 확정할 수 없어 남겼습니다 (개인정보 6항)
-- [ ] 상용 판 공개 시 실제 지원 범위 — 빌드 · 업로드 · 기기 설치가 어디까지 지원하는지 (이용약관 4.3항)
-- [ ] 상용 판 요금 · 기간 조항 문구 — 상용 판 공개 때 실제 금액으로 고칠 부분 (이용약관 첫머리 안내)
-- [ ] 체험 과금 기준 — Paddle 규칙을 확인해야 하는 문장 (이용약관 5.3항 · 환불 정책 3항)
-- [ ] Paddle 지원 URL — 이용약관 14항(1곳)과 환불 정책 6항, 그리고 각 문서의 「초안입니다」 안내 예시로 쓰인 자리 표시(3곳)
-- [ ] 결제 후 안내되는 영수증·계정 페이지의 실제 지원 링크 (환불 정책 6항)
-- [ ] 세금 환급 처리 방법 (환불 정책 각주)
-- [ ] 국외 이전의 보호 조치 문구를 실제 계약(표준계약조약 등)에 맞춰 확정 — 13항은 서술만 넣었고 조항 번호가 없습니다. 데이터베이스가 아시아 · 태평양 지역에 있으므로 그 지역 법령에 맞는 조항도 함께 살펴야 합니다
+- [ ] **대표자 · 사업장 주소 · 전화번호 · 통신판매업 신고번호** — `pricing.json` 의 `seller.owner` · `address` · `phone` · `mail_order` 를 채우고 `fill-pricing.py` 실행 (모든 페이지 바닥 · 이용약관 2항)
+- [ ] **출시일** — `commercial.release_date`
+- [ ] **Paddle client-side token · 가격 id 두 개** — `paddle.*` (채우기 전에는 구매 페이지가 「결제를 아직 열지 않았습니다」)
+- [ ] 「광고 · 추적 · 행동 분석 SDK 없음」 — 근거 자료가 없어 남겼습니다 (개인정보 5항)
+- [ ] 공유 범위 — 「라이선스 서버와 Paddle 외에는 넘기지 않는다」는 문장을 근거 자료로 확정할 수 없어 남겼습니다 (개인정보 9항 — 라이선스 서버 · Resend · Paddle 로 고쳐 두었고, 문장 확정만 남음)
+- [ ] 출시 시 실제 지원 범위 — 빌드 · 업로드 · 기기 설치가 어디까지 지원하는지 (이용약관 3.3항)
+- [ ] 국외 이전의 보호 조치 문구를 실제 계약(표준계약조항 등)에 맞춰 확정 — 개인정보 12항은 서술만 넣었고 조항 번호가 없습니다
 
 ## Paddle 가 판매자 웹사이트에 요구하는 것 — 확인 목록
 
@@ -103,38 +121,38 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
 | Paddle 가 요구하는 것 | 이 사이트 | 상태 |
 | --- | --- | --- |
 | 상품 · 서비스 설명 | `index.html` · `pricing.html` | ✅ |
-| 가격 정보 또는 가격 페이지 | `pricing.html` (두 판 비교표 · 월/연간 · 체험) | ✅ 상용 판 가격은 미정 — 공개 전에 채움 |
+| 가격 정보 또는 가격 페이지 | `pricing.html` (체험 · 라이선스 카드, 체험 중 / 체험이 끝난 뒤 / 구매 후 기능표, 처음 구매 · 업데이트 갱신) | ✅ |
 | 구매에 포함된 주요 기능 | `pricing.html` 비교표 · `index.html` | ✅ |
 | 이용약관 (Terms) | `terms.html` (+ 영문 등 6개 언어) | ⚠️ 초안 |
 | 환불 정책 (Refund Policy) | `refund.html` (+ 6개 언어) | ⚠️ 초안 · Paddle 표준 정책(`https://www.paddle.com/legal/refund-policy`)보다 불리해선 안 됨 |
-| 개인정보 처리방침 (Privacy Policy) | `privacy.html` (+ 6개 언어) | ✅ App Store 판 · 상용 판 모두 |
+| 개인정보 처리방침 (Privacy Policy) | `privacy.html` (+ 6개 언어) | ✅ 앱 하나 기준 (2026-10-15 시행) |
 | 이 문서들이 웹사이트 탐색(메뉴)에서 명확히 드러남 | 모든 페이지 푸터: 홈 · 가격 · 다운로드 · 지원 · 개인정보 처리방침 · 이용약관 · 환불 정책 | ✅ |
-| 이용약관에 회사명(개인사업자는 실명 권장) | `terms.html` 2항 「BeakBig」 | ⚠️ 실제 등록 상호로 확정 |
+| 이용약관에 회사명(개인사업자는 실명 권장) | `terms.html` 2항 「비그빅(Beakbig)」 · 사업자등록번호 | ⚠️ 대표자 실명 · 주소 채우기 |
 | 사이트가 HTTPS로 공개되어 있음 | `https://shouarchive.beakbig.com/` | ✅ |
 
 > 출처: Domain Review — https://www.paddle.com/help/start/account-verification/what-is-domain-verification
 
-### 상용 판을 파기 전에 사용자가 해야 하는 일 (이 저장소 밖)
+### 판매를 시작하기 전에 사용자가 해야 하는 일 (이 저장소 밖)
 
 - [ ] **Paddle 계정 만들기 · 도메인 심사 신청** — `shouarchive.beakbig.com`(그리고 결제 링크를 열 도메인)을 제출해야 그 도메인에서만 결제를 시작할 수 있습니다. 심사 결과에 따라 Paddle 이 페이지의 문구 수정을 요구할 수 있습니다.
   - https://www.paddle.com/help/start/account-verification · https://developer.paddle.com/build/go-live-checklist
-- [ ] **제품 · 가격 등록** — 상품 설명 · 세금 분류(`tax_category`, 기본값 `standard`) · 월 가격 · 연간 가격 · 14일 체험. 체험은 가격이 반복 결제로 설정된 **가격**에 붙는 항목입니다(별도 상품이 아님).
+- [ ] **제품 · 가격 등록** — 상품 설명 · 세금 분류(`tax_category`, 기본값 `standard`) · 라이선스 가격(US$14, 1회) · 업데이트 가격(US$15, 1년마다 반복). 체험은 Paddle 이 아니라 앱이 처리하므로 Paddle 가격에 `trial_period` 를 넣지 않습니다. 가격 id 두 개를 `paddle.price_license` · `price_updates` 에 넣습니다.
   - https://developer.paddle.com/build/products/create-products-prices · https://developer.paddle.com/build/trials/create-trial
-- [ ] **결제 링크 넣기** — Paddle 기본 결제 링크(`?_ptxn=…`)를 만들어 `tools/pricing.json` 의 `commercial.checkout` 에 넣습니다. 이 사이트는 Paddle.js 를 넣지 않고 **Paddle 이 호스팅하는 결제 페이지**로 연결합니다(인라인 체크아웃을 쓰려면 아래 「인라인 체크아웃을 쓸 경우」의 5가지를 직접 구현해야 합니다).
+- [ ] **기본 결제 링크 · 공개 설정 넣기** — Paddle › Checkout settings 의 기본 결제 링크(default payment link)를 `https://shouarchive.beakbig.com/checkout` 으로 정합니다. 라이선스 서버가 만든 거래(`?_ptxn=…`)는 이 페이지에서 Paddle.js 가 열고, 그냥 들어온 방문자에게는 「구매하기」 버튼(라이선스 + 업데이트 두 항목, 오버레이 결제)을 보여 줍니다. client-side token 을 `paddle.client_token` 에, 실서비스로 바꿀 때는 `paddle.environment` 를 `production` 으로 바꾸고, 판매를 열 때 `commercial.checkout` 에 구매 페이지 주소를 넣습니다.
   - https://developer.paddle.com/build/transactions/default-payment-link
 - [ ] **다운로드 링크(.dmg) 넣기** — 승인된 도메인에 파일을 올리고 `commercial.download` 에 경로를 넣습니다.
 - [ ] **세금 표시 방식 정하기** — 가격에 세금을 포함(유럽형) / 별도(미국형) / 지역에 따라 자동 중 고릅니다. **Paddle 의무가 아니라 판매자 선택**입니다.
   - https://www.paddle.com/help/sell/tax/do-you-support-tax-inclusiveexclusive-pricing · https://developer.paddle.com/changelog/2025/automatic-tax-inclusive-exclusive-prices
 - [ ] **정산 통화 정하기** — 고객이 지불할 통화와 정산 통화는 달라도 됩니다(고객은 지원 통화 어느 것으로든 결제 가능). 단 결제 통화별 최소 금액이 있습니다(USD 0.70 등).
   - https://www.paddle.com/help/start/set-up-paddle/how-do-i-change-my-default-(balance)-currency · https://developer.paddle.com/concepts/sell/supported-currencies
-- [ ] **취소 경로 확인** — Paddle 이 보내는 구독 안내 메일과 고객 포털에 취소 링크가 이미 들어 있으며, 일부 지역은 원클릭 취소가 적용됩니다. 별도 취소 UI를 만들 필요는 없습니다.
+- [ ] **자동 갱신 끄기 경로 확인** — 업데이트 갱신은 Paddle 에서 반복 결제(subscription)로 처리되므로, Paddle 이 보내는 안내 메일과 고객 포털에 취소 링크가 이미 들어 있습니다. 별도 취소 UI를 만들 필요는 없습니다.
   - https://developer.paddle.com/build/subscriptions/cancel-subscriptions
 
 ### Paddle 가 정해 둔 사실 — 문서와 어긋나면 안 되는 것
 
 - **Paddle 이 판매대행(Merchant of Record)입니다.** 고객은 Paddle 로부터 구매하고, 결제 수단 확인 · 세금 계산· 부과 · 영수증 발행 · 환불 처리를 Paddle 이 합니다. 판매자는 **고객에게 따로 청구서를 발행하거나 대금을 요구할 수 없습니다**(MSA 10.1). 여기 문서들은 그에 맞췄습니다.
   - https://www.paddle.com/legal/terms · https://www.paddle.com/help/sell/tax/how-paddle-handles-vat-on-your-behalf
-- **구독은 자동 갱신됩니다.** 고객이 해지하기 전까지 처음 기간과 같은 기간으로 계속 결제됩니다. 가격 인상 시에는 고지하고, 법이 요구하면 동의를 받습니다.
+- **반복 결제(업데이트 갱신)는 자동 갱신됩니다.** 고객이 끄기 전까지 같은 기간으로 계속 결제됩니다. 가격 인상 시에는 고지하고, 법이 요구하면 동의를 받습니다.
   - https://www.paddle.com/legal/buyer-terms
 - **환불은 Paddle 이 최종 결정합니다.** 기본 정책은 「거래일로부터 14일 이내 요청 시 Paddle 이 재량으로 환불할 수 있으나 요청만으로 보장되지는 않으며, 법이 요구하는 경우 외에는 환불 불가」입니다. 지역별 법정 최소 기간(한국·브라질·중국 7일, EU/영국/스위스·터키·이스라엘 14일, 캐나다 7일, 싱가포르 5일)이 이보다 우선합니다. 환불되면 그 기간의 제품 접근은 종료됩니다. **저희 환불 정책은 Paddle 의 정책보다 불리해지면 안 됩니다.**
   - https://www.paddle.com/legal/refund-policy
@@ -142,16 +160,16 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
   - https://www.paddle.com/help/manage/your-customers/how-do-i-issue-refunds
 - **한국 고객은 갱신 동의 단계가 표시됩니다.** 무료 체험·할인 기간이 끝나면 계속 과금하려면 한국 공정위 규정에 따라 명시적 동의가 필요하며, 2025년 7월부터 Paddle 이 이 단계를 제공합니다.
   - https://developer.paddle.com/changelog/2026/subscription-consent-requirements
-- **체험은 가격에 붙는 항목이고 반복 결제가 필수입니다.** `trial_period` 을 가격에 설정하며, 체험이 끝나면 등록된 결제 수단으로 자동 과금되고 그 전에 끝내면 과금이 없습니다.
+- **Paddle 의 체험은 가격에 붙는 항목이고 반복 결제가 필수입니다.** 이 판매 방식은 Paddle 체험을 쓰지 않습니다 — 14일 체험은 앱과 라이선스 서버가 결제 수단 없이 처리합니다.
   - https://developer.paddle.com/concepts/subscriptions/trials
-- **같은 결제 화면의 항목은 결제 주기가 같아야 합니다.** 월·연간을 함께 넣을 때에는 각각 별도 가격으로 등록합니다.
+- **한 결제 화면에 1회 가격과 반복 가격을 함께 넣을 수 있습니다.** 처음 구매는 라이선스(1회) + 업데이트(1년 반복) 두 항목입니다. 반복 항목끼리는 결제 주기가 같아야 합니다.
   - https://developer.paddle.com/build/products/create-products-prices
-- **Paddle 은 라이선스 키를 발급해 주지 않습니다.** 다운로드 링크와 라이선스 발급은 판매자 쪽에서 직접 처리해야 합니다(웹훅으로 구독 상태를 받아 라이선스를 발급). 여기 문서들은 그 전제로 「라이선스 서버」를 두었습니다.
+- **Paddle 은 라이선스 키를 발급해 주지 않습니다.** 다운로드 링크와 라이선스 발급은 판매자 쪽에서 직접 처리해야 합니다(웹훅으로 거래 · 반복 결제 상태를 받아 라이선스를 발급하고 업데이트 기간을 늘림). 여기 문서들은 그 전제로 「라이선스 서버」를 두었습니다.
   - https://developer.paddle.com/build/subscriptions/provision-access-webhooks
 
-### 인라인 체크아웃을 쓸 경우 (이 사이트는 쓰지 않음)
+### 인라인 체크아웃을 쓸 경우 (이 사이트는 오버레이 결제를 씀 — 해당 없음)
 
-자체 결제 화면(Paddle.js 인라인)을 만들면 Paddle 이 아래 다섯 가지를 직접 구현하라고 요구합니다: 반복 결제 주기와 갱신 시 결제 금액(체험이면 체험 기간), 구매하는 상품 설명, 소계·세금·합계와 통화가 표시된 금액, Paddle 약관·개인정보 처리방침이 포함된 결제 화면 푸터(Merchant of Record 표시), 그리고 **Paddle 표준 환불 정책과 다를 경우 우리 환불 정책 링크**. 이 사이트는 이 구현 대신 Paddle 호스팅 결제 페이지로 연결하므로 해당 없음.
+자체 결제 화면(Paddle.js 인라인)을 만들면 Paddle 이 아래 다섯 가지를 직접 구현하라고 요구합니다: 반복 결제 주기와 갱신 시 결제 금액(체험이면 체험 기간), 구매하는 상품 설명, 소계·세금·합계와 통화가 표시된 금액, Paddle 약관·개인정보 처리방침이 포함된 결제 화면 푸터(Merchant of Record 표시), 그리고 **Paddle 표준 환불 정책과 다를 경우 우리 환불 정책 링크**. `checkout.html` 은 Paddle.js 의 **오버레이** 결제(Paddle 이 금액 · 세금 · 약관 표시까지 그리는 화면)를 쓰므로 해당 없음. 인라인으로 바꾸면 이 다섯 가지를 직접 구현해야 합니다.
 
 - https://developer.paddle.com/build/checkout/brand-customize-inline-checkout · https://developer.paddle.com/changelog/2024/inline-checkout-compliance-changes
 
@@ -160,7 +178,7 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
 - Paddle 은 구매자에 대해 이름·주소·이메일·결제 수단 정보·결제 내역·IP 주소·기기 정보를 수집·처리합니다(자세는 Paddle 개인정보 처리방침).
 - 데이터 공유 부속서에 따라 **판매자에게 넘어오는 것**은 구매자의 이름·주소·이메일, 구매 내역, 대시보드의 거래 분석입니다. **민감 정보 범주(특수 카테고리)는 공유되지 않습니다.** 양쪽은 각자 **독립적인 데이터 통제자**입니다.
 - Paddle 은 법적 의무를 위해 거래 데이터를 5년 보관합니다.
-- 따라서 개인정보 처리방침에는 Paddle 이 무엇을 수집하는지, 무엇이 우리에게 오는지, Paddle 이 판매대행이라는 점을 밝혀 두어야 합니다 → `privacy.html` 11항에 그 내용을 넣었습니다.
+- 따라서 개인정보 처리방침에는 Paddle 이 무엇을 수집하는지, 무엇이 우리에게 오는지, Paddle 이 판매대행이라는 점을 밝혀 두어야 합니다 → `privacy.html` 7항에 그 내용을 넣었습니다.
 
 출처: https://www.paddle.com/legal/data-sharing-addendum · https://www.paddle.com/legal/privacy · https://www.paddle.com/help/manage/your-customers/requesting-buyer-data-deletion
 
@@ -193,6 +211,5 @@ git add -A && git commit -m "..." && git push
 
 ## 남은 일
 
-- App Store 링크는 `https://apps.apple.com/app/id6814686766` 로 넣어 두었습니다 (여섯 언어 랜딩 페이지). 앱이 승인돼 게시되기 전에는 이 링크가 「앱을 사용할 수 없음」으로 보입니다.
 - Cloudflare Worker 배포 (`worker/README.md`) — 이것이 끝나야 `https://shouarchive.beakbig.com/` 가 열립니다.
 - 저장소 이름을 바꾸면 GitHub Pages 원본 주소가 바뀌므로 `worker/wrangler.toml` 의 `UPSTREAM` 도 함께 고쳐야 합니다.

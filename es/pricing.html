@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Precios — ShouArchive</title>
-  <meta name="description" content="Precios de ShouArchive. La edición del Mac App Store es una compra única (US$2) y la edición comercial es una suscripción mensual con 14 días de prueba. Las dos ediciones no están vinculadas entre sí.">
+  <meta name="description" content="Precios de ShouArchive. Licencia que se compra una vez y se sigue usando: US$29 (2 Mac · 1 año de actualizaciones incluido, impuestos aparte); después, las actualizaciones cuestan US$15 al año · prueba de 14 días sin método de pago.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Precios — ShouArchive">
-  <meta property="og:description" content="Edición del Mac App Store: compra única. Edición comercial: suscripción mensual y 14 días de prueba.">
+  <meta property="og:description" content="Licencia que se compra una vez y se sigue usando · 1 año de actualizaciones incluido · prueba de 14 días.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="es_ES">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -28,11 +28,11 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="Principal">
-      <a href="../index.html#features">Funciones</a>
+      <a href="index.html#features">Funciones</a>
       <a href="pricing.html" aria-current="page">Precios</a>
-      <a href="../download.html">Descargas</a>
-      <a href="../support.html">Soporte</a>
-      <a href="../privacy.html">Privacidad</a>
+      <a href="download.html">Descargas</a>
+      <a href="support.html">Soporte</a>
+      <a href="privacy.html">Privacidad</a>
       <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../pricing.html">한국어</option><option value="../en/pricing.html">English</option><option value="../ja/pricing.html">日本語</option><option value="../zh-Hans/pricing.html">简体中文</option><option value="../zh-Hant/pricing.html">繁體中文</option><option value="../es/pricing.html" selected>Español</option></select></label>
     </nav>
   </div>
@@ -42,62 +42,54 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Precios</h1>
-      <p>ShouArchive se distribuye en dos ediciones. La edición del Mac App Store se compra una vez y la edición comercial se suscribe desde la web. Las dos ediciones no están vinculadas entre sí: comprar una no genera una licencia de la otra.</p>
+      <p>ShouArchive es una app que se compra una vez en este sitio y se sigue usando. Primero prueba todas las funciones durante <span data-price="trial_days">14</span> días sin ningún método de pago y, si te convence, compra una licencia.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="plans">
-        <article class="plan">
-          <p class="plan-badge live">A la venta ahora</p>
-          <h2>Edición del Mac App Store</h2>
-          <p class="plan-for">Desarrolladores que distribuyen a través del Mac App Store</p>
-          <p class="price"><span data-price="appstore.price_now">US$2</span></p>
-          <p class="price-note">Compra única · la sigues usando en la cuenta con la que la compraste.<br>A partir de <span data-price="appstore.next_version">2.0.0</span> subiu a <span data-price="appstore.price_next">US$5</span>.</p>
+        <article class="plan coming">
+          <p class="plan-badge soon" data-live-hide>Próximamente</p>
+          <h2>Prueba de <span data-price="trial_days">14</span> días</h2>
+          <p class="plan-for">Para quien quiere probar todas las funciones antes de comprar</p>
+          <p class="price">Gratis</p>
+          <p class="price-note">Empieza dentro de la app sin ningún método de pago.<br>Al terminar, no se cobra nada automáticamente.</p>
           <ul class="plan-feats">
-            <li><strong>Gestión de perfiles</strong> — perfiles instalados · insignias de caducidad · filtros · comparación de dos</li>
-            <li><strong>Descargar, crear y renovar perfiles · registrar dispositivos</strong> (clave de API de App Store Connect)</li>
-            <li><strong>Guardar y gestionar claves de API</strong> — Issuer ID · Key ID · <code>.p8</code></li>
-            <li><strong>Inspección de artefactos</strong> — IPA · APK · AAB, firma · permisos · configuración de seguridad</li>
-            <li><strong>Publicación en tiendas</strong> (iOS · Android) — prevista a partir de <span data-price="appstore.next_version">2.0.0</span></li>
+            <li><strong>Todas las funciones</strong> — compilar, subir, instalar en dispositivos y publicar en tiendas, todo durante la prueba</li>
+            <li><strong>Al terminar la prueba</strong> — aunque no tengas clave, puedes seguir usando la gestión de perfiles y la inspección de artefactos</li>
+            <li><strong>Compra cuando quieras</strong> — al introducir la clave de licencia, el resto de funciones se vuelve a activar</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              Descargar en el Mac App Store
-            </a>
+            <a class="btn" data-src="commercial.download" href="#" hidden>Descarga (.dmg) · prueba de <span data-price="trial_days">14</span> días</a>
             <a class="btn outline" href="download.html">Guía de descarga</a>
           </div>
-          <p class="plan-foot">El pago, la instalación y las actualizaciones los gestiona Apple. La instalación y el tratamiento de datos personales siguen las reglas de Apple.</p>
+          <p class="plan-foot">macOS 15 Sequoia o posterior · compatible con Mac con Apple Silicon e Intel.</p>
         </article>
 
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide>Próximamente</p>
-          <h2>Edición comercial</h2>
-          <p class="plan-for">Personas y equipos que la compran y la usan directamente desde la web</p>
-          <p class="price"><span data-price="commercial.price_monthly">Por anunciar</span></p>
-          <p class="price-note">Suscripción mensual · suscripción anual (con descuento anual) · <span data-price="trial_days">14</span> días de prueba<br>Todo lo de la edición del Mac App Store y además lo siguiente</p>
+          <h2>Licencia de ShouArchive</h2>
+          <p class="plan-for">Personas y equipos que la compran directamente en la web</p>
+          <p class="price"><span data-price="commercial.price">US$29</span></p>
+          <p class="price-note">Compra única · <span data-price="commercial.devices">2</span> Mac · 1 año de actualizaciones incluido (impuestos aparte)<br>Después, las actualizaciones cuestan <span data-price="commercial.price_renewal">US$15</span> al año; aunque no renueves, la app se sigue usando.</p>
           <ul class="plan-feats">
-            <li><strong>Todas las funciones de la edición del Mac App Store</strong> — perfiles · claves de API · inspección de artefactos</li>
+            <li><strong>Gestión de perfiles</strong> — perfiles instalados · insignias de caducidad · filtros · comparación de dos</li>
+            <li><strong>Descargar, crear y renovar perfiles · registrar dispositivos</strong> (clave de API de App Store Connect)</li>
+            <li><strong>Inspección de artefactos</strong> — IPA · APK · AAB, firma · permisos · configuración de seguridad</li>
             <li><strong>Compilar</strong> — compila IPA y APK directamente</li>
             <li><strong>Subir apps</strong> — publícalas en TestFlight o Play Console</li>
             <li><strong>Instalar en dispositivos</strong> — lista de dispositivos · instalación · reinstalación</li>
             <li><strong>Comprobación de dependencias</strong> — verifica las condiciones antes de compilar</li>
             <li><strong>Archivos de instalación OTA</strong> — crea el archivo de instalación para la distribución</li>
-            <li><strong>Clave de licencia</strong> — se usa en tantos dispositivos como hayas registrado</li>
+            <li><strong>Publicación en tiendas</strong> (iOS · Android) — ficha de la tienda · capturas de pantalla · envío a revisión</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.checkout" href="#" hidden><span data-price="trial_days">14</span> días de prueba</a>
-            <a class="btn outline" data-src="commercial.download" href="#" hidden>Descarga (.dmg)</a>
+            <a class="btn" data-src="commercial.checkout" href="#" hidden>Comprar</a>
           </div>
-          <p class="plan-foot" data-live-hide>El precio y la fecha de lanzamiento aún no se han fijado. En cuanto se decidan, lo publicaremos en esta página y en la <a href="download.html">página de descargas</a>. Si tienes alguna duda, escríbenos a <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
-          <p class="plan-foot" data-live-show hidden>El pago lo gestiona <strong>Paddle</strong> como Merchant of Record. El método para cancelar la suscripción y las devoluciones están descritos en la <a href="refund.html">política de reembolso</a>.</p>
+          <p class="plan-foot" data-live-hide>El precio ya está fijado; la fecha de lanzamiento, todavía no. En cuanto se decida, la publicaremos en esta página y en la <a href="download.html">página de descargas</a>. Si tienes alguna duda, escríbenos a <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
+          <p class="plan-foot" data-live-show hidden>El pago lo gestiona <strong>Paddle</strong> como revendedor autorizado (Merchant of Record). Cómo desactivar la renovación de las actualizaciones y cómo pedir un reembolso se explica en la <a href="refund.html">política de reembolso</a>.</p>
         </article>
-      </div>
-
-      <div class="note">
-        <p><strong>Las dos ediciones son independientes.</strong> Si compras la edición del Mac App Store no puedes usar las funciones de compilar, subir apps e instalar en dispositivos de la edición comercial, y la suscripción a la edición comercial tampoco incluye la app del Mac App Store. Las funciones que coinciden (perfiles · claves de API · inspección de artefactos) están incluidas en las dos ediciones.</p>
       </div>
     </div>
   </section>
@@ -105,37 +97,34 @@
   <section class="section alt">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow violet">Comparativa</p>
-        <h2>Diferencias de funciones entre las dos ediciones</h2>
-        <p class="lead">Las mismas funciones están disponibles en las dos ediciones. Solo tienes que fijarte en las filas de la tabla en las que se diferencian.</p>
+        <p class="eyebrow violet">Funciones</p>
+        <h2>Qué puedes usar y cuándo</h2>
+        <p class="lead">Durante la prueba puedes usar todas las funciones. Si la prueba termina sin clave, la gestión de perfiles y la inspección de artefactos siguen disponibles.</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
           <thead>
             <tr>
               <th scope="col">Función</th>
-              <th scope="col">Edición del Mac App Store</th>
-              <th scope="col">Edición comercial</th>
+              <th scope="col">Durante la prueba</th>
+              <th scope="col">Al terminar la prueba (sin clave)</th>
+              <th scope="col">Tras la compra</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Cómo se instala</th><td>Mac App Store</td><td>El archivo <code>.dmg</code> descargado de la web</td></tr>
-            <tr><th scope="row">Precio</th><td>Compra única · <span data-price="appstore.price_now">US$2</span><small>Previsto a partir de <span data-price="appstore.next_version">2.0.0</span>: <span data-price="appstore.price_next">US$5</span></small></td><td>Suscripción mensual o anual<small><span data-price="commercial.price_annual">Por anunciar</span></small></td></tr>
-            <tr><th scope="row">Prueba</th><td class="no">—</td><td class="yes">✓<small><span data-price="trial_days">14</span> días</small></td></tr>
-            <tr><th scope="row">Quién procesa el pago</th><td>Apple App Store</td><td>Paddle<small>Los impuestos se calculan aparte</small></td></tr>
-            <tr><th scope="row">Gestión y comparación de perfiles</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Descargar y crear perfiles · registrar dispositivos</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Guardar y gestionar claves de API</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Inspección de artefactos (IPA · APK · AAB)</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Publicación en tiendas (iOS · Android)</th><td>Previsto en 2.0</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Compilar</th><td class="no">—<small>No es posible por el sandbox</small></td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Subir apps</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Instalar en dispositivos</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Comprobación de dependencias</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Archivos de instalación OTA</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Actualizaciones</th><td>Las gestiona el App Store</td><td>Dentro de la app</td></tr>
-            <tr><th scope="row">Licencia</th><td>Se autentica con la cuenta de Apple</td><td>Clave de licencia<small>Hasta el número de dispositivos registrados</small></td></tr>
-            <tr><th scope="row">Tratamiento de datos</th><td>Ninguna recopilación<small><a href="privacy.html">Política de privacidad</a></small></td><td>Solo los valores necesarios para comprobar la licencia<small><a href="privacy.html">Política de privacidad</a></small></td></tr>
+            <tr><th scope="row">Duración · precio</th><td><span data-price="trial_days">14</span> días · gratis<small>Sin método de pago · sin cobro automático</small></td><td>Gratis · sin límite de tiempo</td><td>Compra única · <span data-price="commercial.price">US$29</span><small>1 año de actualizaciones incluido · después, <span data-price="commercial.price_renewal">US$15</span> al año (opcional)</small></td></tr>
+            <tr><th scope="row">Gestión y comparación de perfiles</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Descargar y crear perfiles · registrar dispositivos</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Guardar y gestionar claves de API</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Inspección de artefactos (IPA · APK · AAB)</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Compilar</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Subir apps</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Instalar en dispositivos</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Comprobación de dependencias</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Archivos de instalación OTA</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Publicación en tiendas (iOS · Android)</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Actualizaciones</th><td>Versiones publicadas durante la prueba</td><td class="no">—</td><td>Dentro de la app, durante el periodo de actualizaciones<small>Al terminar el periodo, las versiones publicadas hasta entonces se siguen usando</small></td></tr>
+            <tr><th scope="row">Clave de licencia</th><td class="no">No hace falta</td><td class="no">No hace falta</td><td>Una clave para <span data-price="commercial.devices">2</span> Mac<small>Se envía al correo con el que pagaste</small></td></tr>
           </tbody>
         </table>
       </div>
@@ -144,28 +133,30 @@
 
   <section class="section alt doc">
     <div class="wrap">
-      <h2>Pagos y suscripciones</h2>
+      <h2>Pago y actualizaciones</h2>
       <div class="note">
-        <p><strong>La edición comercial todavía no ha empezado.</strong> El precio y la fecha de lanzamiento no están confirmados por ahora. Lo que explica esta sección es el sistema de pago previsto para cuando se publique la edición comercial: si cambia antes de esa fecha, actualizaremos primero esta página.</p>
+        <p><strong>Todavía no está a la venta.</strong> El precio es el indicado arriba y la fecha de lanzamiento aún no está decidida. Esta sección describe el sistema de pago que se aplicará en el lanzamiento: si cambia antes, actualizaremos primero esta página.</p>
       </div>
       <ul>
-        <li><strong>Gestor de pagos — Paddle.</strong> Los pagos de la edición comercial los gestiona Paddle como Merchant of Record. Paddle se encarga del cobro y del cálculo de impuestos y emite las facturas.</li>
+        <li><strong>Gestor de pagos — Paddle.</strong> Los pagos los gestiona Paddle como revendedor autorizado (Merchant of Record). Paddle se encarga del cobro y del cálculo de impuestos y emite los recibos. Los precios se indican en USD y la pantalla de pago los muestra en la moneda local.</li>
         <li><strong>Los impuestos van aparte.</strong> Los precios de arriba no incluyen impuestos. Al pagar, Paddle calcula automáticamente los impuestos según la región del cliente y los añade al importe.</li>
-        <li><strong>La suscripción mensual se renueva automáticamente.</strong> Cuando termina el periodo, el siguiente empieza automáticamente al mismo precio y es entonces cuando se cobra.</li>
-        <li><strong><span data-price="trial_days">14</span> días de prueba.</strong> La prueba empieza después de registrar un método de pago y, si al terminar no la cancelas, la suscripción mensual empieza automáticamente.</li>
-        <li><strong>Puedes cancelar cuando quieras.</strong> Al cancelar, conservas el periodo que ya has pagado y no se cobra nada desde la siguiente renovación.</li>
-        <li><strong>Reembolsos.</strong> Cuándo y cómo se devuelve el dinero está descrito en la <a href="refund.html">política de reembolso</a>.</li>
-        <li><strong>Condiciones de uso.</strong> Antes de usar la edición comercial, revisa los <a href="terms.html">términos del servicio</a>.</li>
+        <li><strong>Se compra una vez y se sigue usando.</strong> Los <span data-price="commercial.price">US$29</span> incluyen la licencia y 1 año de actualizaciones. Cuando termina el periodo de actualizaciones, la app no deja de funcionar y puedes seguir usando todas las versiones publicadas durante ese periodo.</li>
+        <li><strong>Renovación de actualizaciones — <span data-price="commercial.price_renewal">US$15</span> al año.</strong> El periodo de actualizaciones se renueva automáticamente cada año. Puedes desactivar la renovación automática cuando quieras. Si renuevas después de que haya terminado el periodo, empieza un nuevo año a partir de la fecha de ese pago.</li>
+        <li><strong>Versiones publicadas después del periodo.</strong> Las versiones publicadas después de que termine el periodo de actualizaciones solo se pueden instalar y activar si renuevas. La comprobación de actualizaciones de la app solo muestra las versiones publicadas dentro del periodo.</li>
+        <li><strong>Prueba de <span data-price="trial_days">14</span> días.</strong> Empieza dentro de la app sin ningún método de pago y, al terminar, no se cobra nada automáticamente. Si la prueba termina sin clave, solo puedes seguir usando la gestión de perfiles y la inspección de artefactos; la compilación, la subida, la instalación en dispositivos, la comprobación de dependencias, la OTA y la publicación en tiendas se vuelven a activar al comprar.</li>
+        <li><strong>Reembolsos.</strong> Tanto en la compra inicial como en la renovación de actualizaciones puedes pedir el reembolso íntegro en los <span data-price="commercial.refund_days">14</span> días siguientes al pago. Los criterios detallados están en la <a href="refund.html">política de reembolso</a>.</li>
+        <li><strong>Condiciones de uso.</strong> Antes de comprar, revisa los <a href="terms.html">términos del servicio</a> y la <a href="privacy.html">política de privacidad</a>.</li>
       </ul>
-      <p class="footnote">La edición del Mac App Store no guarda relación con lo anterior. El pago y la suscripción los gestiona Apple, y el tratamiento de datos personales se rige por las <a href="privacy.html">políticas de privacidad de Apple y de ShouArchive</a>.</p>
     </div>
   </section>
 
   <section class="cta">
     <div class="wrap">
       <h2>Empieza ahora</h2>
-      <p>Puedes empezar hoy con la edición del Mac App Store. Cuando salga la edición comercial, ya podrás suscribirte.</p>
-      <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">Descargar en el Mac App Store</a>
+      <p data-live-hide>Cuando se publique, descárgala desde esta página, pruébala primero <span data-price="trial_days">14</span> días y cómprala después. Si quieres saber cuándo sale, escríbenos a <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
+      <p data-live-show hidden>Descárgala y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago. Si te convence, compra una <a href="pricing.html">licencia</a> e introduce la clave.</p>
+      <a class="btn" data-src="commercial.download" href="#" hidden>Descarga (.dmg)</a>
+      <a class="btn" href="download.html" data-live-hide>Guía de descarga</a>
     </div>
   </section>
 </main>
@@ -173,16 +164,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Pie de página">
-      <a href="../index.html">Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="pricing.html" aria-current="page">Precios</a>
-      <a href="../download.html">Descargas</a>
-      <a href="../support.html">Soporte</a>
-      <a href="../privacy.html">Política de privacidad</a>
-      <a href="../terms.html">Términos del servicio</a>
-      <a href="../refund.html">Política de reembolso</a>
+      <a href="download.html">Descargas</a>
+      <a href="support.html">Soporte</a>
+      <a href="privacy.html">Política de privacidad</a>
+      <a href="terms.html">Términos del servicio</a>
+      <a href="refund.html">Política de reembolso</a>
       <span class="footer-langs"><a href="../pricing.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/pricing.html" lang="en" hreflang="en">English</a> <a href="../ja/pricing.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/pricing.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/pricing.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/pricing.html" lang="es" hreflang="es" aria-current="page">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">Razón social: Beakbig · Titular: <span data-price="seller.owner">Hyunjin Kang</span> · Registro empresarial (Corea del Sur): <span data-price="seller.reg_no">613-40-01820</span> (régimen simplificado del IVA) · Registro de venta a distancia: <span data-price="seller.mail_order">Exento</span> · Dirección: <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, República de Corea</span> · Teléfono: <span data-price="seller.phone">+82-502-6682-9359</span> · Correo: <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Gestor de pagos: Paddle</p>
   </div>
 </footer>
 

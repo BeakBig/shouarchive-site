@@ -7,7 +7,7 @@
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = [('ko', '한국어'), ('en', 'English'), ('ja', '日本語'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'), ('es', 'Español')]
-PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html']
+PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html']
 HEADER_LINKS = [('features', 'index.html', '#features'), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy', 'privacy.html', '')]
 FOOTER_LINKS = [('home', 'index.html', ''), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy_doc', 'privacy.html', ''), ('terms', 'terms.html', ''), ('refund', 'refund.html', '')]
 
@@ -28,9 +28,6 @@ def rel(from_lang, to_lang, page):  # from 페이지에서 to 페이지로 가�
     up = '' if from_lang == 'ko' else '../'
     return up + page_path(to_lang, page)
 
-def target_lang(target):  # 'index.html' → ko, 'en/support.html' → en
-    return target.split('/')[0] if '/' in target else 'ko'
-
 def lang_switch(lang, page):
     t = TXT[lang]
     opts = ''.join(f'<option value="{rel(lang, l, page)}"{" selected" if l == lang else ""}>{name}</option>' for l, name in LANGS)
@@ -48,8 +45,8 @@ def menu_links(lang, page, links):
     for key, target, frag in links:
         if target == page:  # 자기 페이지 앵커는 파일 이름 없이, 자기 파일은 같은 폴더로
             href = frag or target
-        else:
-            href = rel(lang, target_lang(target), target) + frag
+        else:  # 메뉴는 늘 같은 언어 폴더 안의 페이지로 간다 (언어를 바꾸는 건 언어 선택만)
+            href = target + frag
         cur = ' aria-current="page"' if target == page else ''
         out.append(f'<a href="{href}"{cur}>{TXT[lang][key]}</a>')
     return out

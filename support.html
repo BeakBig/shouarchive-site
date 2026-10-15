@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>지원 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 지원 페이지. 프로파일 폴더 허용, App Store Connect API 키, 산출물 검사 등 자주 묻는 질문과 문의 방법.">
+  <meta name="description" content="ShouArchive 지원 페이지. 프로파일, App Store Connect API 키, 산출물 검사 등 자주 묻는 질문과 문의 방법.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="지원 — ShouArchive">
@@ -49,7 +49,7 @@
   <section class="doc">
     <div class="wrap">
       <div class="contact-card">
-        <span><strong>문의</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span><strong>문의</strong> <a href="mailto:support@beakbig.com">support@beakbig.com</a></span>
         <span>보통 며칠 안에 답장합니다. 문제 신고 요령은 <a href="#report">맨 아래</a>에 있습니다.</span>
       </div>
 
@@ -57,15 +57,13 @@
         <h2 id="start">시작하기</h2>
 
         <details open>
-          <summary>프로파일 탭에서 폴더를 「허용」 하라고 합니다. 왜 필요한가요?</summary>
-          <p>Mac App Store 판은 macOS 샌드박스 안에서 동작합니다. 샌드박스 앱은 사용자가 직접 고른 폴더만 읽을 수 있는데, Xcode 가 프로비저닝 프로파일을 두는 폴더는 앱 바깥에 있어서 한 번 허용해 주어야 합니다.</p>
-          <p>프로파일 탭의 폴더 버튼을 누르면 그 폴더가 열린 상태로 열기 패널이 뜹니다. 아무것도 바꾸지 말고 <strong>「허용」</strong>만 누르면 됩니다. 한 번 허용하면 앱을 다시 열어도 기억합니다 (macOS 의 보안 스코프 북마크 방식).</p>
-          <p>읽는 폴더:</p>
+          <summary>프로파일은 어디서 읽나요?</summary>
+          <p>Xcode 가 프로비저닝 프로파일을 두는 폴더를 앱이 바로 읽습니다. 따로 허용하거나 설정할 것은 없습니다.</p>
           <ul>
             <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 이상</li>
             <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — 그 이전 Xcode</li>
           </ul>
-          <p>Finder 에서 <code>~/Library</code> 는 기본으로 숨겨져 있습니다. 열기 패널에서 ⌘⇧G 를 누르고 위 경로를 붙여 넣으면 바로 갈 수 있습니다. 허용하지 않아도 <code>.mobileprovision</code> 파일을 창에 끌어다 놓거나 「파일에서 추가…」로 열어 볼 수는 있습니다.</p>
+          <p>다른 곳에 있는 <code>.mobileprovision</code> 파일은 창에 끌어다 놓거나 「파일에서 추가…」로 열어 볼 수 있습니다.</p>
         </details>
 
         <details>
@@ -76,11 +74,6 @@
             <li><strong>API 키</strong>: App Store Connect 에서 내려받은 <code>.p8</code></li>
           </ul>
           <p>파일은 끌어다 놓거나 「파일 선택…」(⌘O)으로 엽니다.</p>
-        </details>
-
-        <details>
-          <summary>이 판에는 왜 IPA · APK 빌드나 내보내기가 없나요?</summary>
-          <p>Mac App Store 앱은 샌드박스가 필수이고, 샌드박스 안에서는 <code>xcodebuild</code> · <code>gradle</code> 같은 외부 프로그램을 실행할 수 없습니다. 그래서 이 판은 빌드 대신 <strong>검사 · 프로파일</strong> 두 가지에 집중합니다. 산출물 검사도 외부 도구에 기대지 않고 앱 안의 파서가 IPA · APK · AAB 를 직접 읽습니다.</p>
         </details>
 
         <h2 id="profiles">프로파일 · App Store Connect API</h2>
@@ -106,8 +99,8 @@
         </details>
 
         <details>
-          <summary>「인증서」 카드가 비어 있어요.</summary>
-          <p>키체인에 있는 코드 서명 인증서 목록은 샌드박스 안에서 읽을 수 없어, Mac App Store 판에서는 이 카드가 비어 있습니다. 대신 프로파일 <strong>안에 담긴</strong> 인증서는 상세 화면과 비교 화면에서 그대로 볼 수 있습니다 (SHA-1 · SHA-256 복사 가능).</p>
+          <summary>「인증서」 카드에는 무엇이 보이나요?</summary>
+          <p>이 Mac 의 키체인에 있는 코드 서명 인증서를 만료된 것까지 함께 보여 줍니다. 프로파일 <strong>안에 담긴</strong> 인증서는 상세 화면과 비교 화면에서 볼 수 있습니다 (SHA-1 · SHA-256 복사 가능).</p>
         </details>
 
         <details>
@@ -132,21 +125,31 @@
           <p>Android 15 부터 16 KB 메모리 페이지를 쓰는 기기가 있고, Google Play 는 이를 지원하는 네이티브 라이브러리를 요구합니다. 앱은 64비트(<code>arm64-v8a</code> · <code>x86_64</code>) <code>.so</code> 파일의 ELF LOAD 정렬과, APK 안에 압축 없이 저장된 <code>.so</code> 의 16 KB 경계를 확인해 미지원 라이브러리를 목록으로 보여 줍니다.</p>
         </details>
 
-        <h2 id="editions">두 판 · 가격</h2>
+        <h2 id="license">가격 · 라이선스</h2>
 
         <details>
-          <summary>두 판의 차이가 뭔가요?</summary>
-          <p><strong>Mac App Store 판</strong>은 App Store 에서 1회 구매하는 앱이고, <strong>상용 판</strong>은 이 사이트에서 직접 구독하는 앱입니다. 프로파일 관리 · API 키 · 산출물 검사는 두 판 모두에 들어 있고, 빌드 · 앱 업로드 · 기기 설치 · 의존성 검사 · OTA 설치 파일은 상용 판에만 있습니다. 항목별 비교는 <a href="pricing.html">가격 페이지</a>에 있습니다.</p>
+          <summary>얼마이고, 무엇이 들어 있나요?</summary>
+          <p>처음 구매는 <span data-price="commercial.price">US$29</span>(세금 별도)이고, 라이선스와 업데이트 1년이 들어 있습니다. 라이선스 키 하나로 Mac <span data-price="commercial.devices">2</span>대에서 씁니다. 프로파일 관리 · API 키 · 산출물 검사 · 빌드 · 앱 업로드 · 기기 설치 · 의존성 검사 · OTA 설치 파일 · 스토어 배포가 모두 들어 있습니다. 체험 중 · 체험이 끝난 뒤 · 구매 후에 쓸 수 있는 기능은 <a href="pricing.html">가격 페이지</a>의 표에 정리해 두었습니다.</p>
         </details>
 
         <details>
-          <summary>두 판을 같이 사야 하나요?</summary>
-          <p>아니요. 두 판은 서로 연동되지 않습니다. 한 판을 사도 다른 판의 기능이나 라이선스는 생기지 않습니다. 겹치는 기능은 두 판 어디서든 쓸 수 있으니, 지금은 Mac App Store 판만 사셔도 됩니다.</p>
+          <summary>언제 나오나요?</summary>
+          <p>가격은 정해졌습니다 — 처음 구매 <span data-price="commercial.price">US$29</span>(업데이트 1년 포함), 그 뒤 업데이트는 1년에 <span data-price="commercial.price_renewal">US$15</span> 입니다(세금 별도). 출시일은 아직 정하지 않았습니다. 정해지는 대로 <a href="pricing.html">가격 페이지</a>와 <a href="download.html">다운로드 페이지</a>에 올립니다. 궁금한 점은 <a href="mailto:support@beakbig.com?subject=ShouArchive%20%EC%B6%9C%EC%8B%9C%20%EB%AC%B8%EC%9D%98">support@beakbig.com</a> 으로 보내 주세요.</p>
         </details>
 
         <details>
-          <summary>상용 판은 언제 나오나요?</summary>
-          <p>아직 가격과 출시일을 정하지 않았습니다. 정해지는 대로 <a href="pricing.html">가격 페이지</a>와 <a href="download.html">다운로드 페이지</a>에 올립니다. 알려 주고 싶으면 <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%AC%EB%B0%9C">beakbigkb@gmail.com</a> 으로 「출시 알림」을 요청해 주세요.</p>
+          <summary>다른 Mac 으로 옮기려면?</summary>
+          <p>지금 쓰는 Mac 에서 설정 › 라이선스 의 「해제」를 누르면 자리가 비고, 새 Mac 에서 같은 키를 넣으면 됩니다. 키 하나로 동시에 Mac <span data-price="commercial.devices">2</span>대까지 쓸 수 있습니다.</p>
+        </details>
+
+        <details>
+          <summary>업데이트 기간이 끝나면 앱을 못 쓰나요?</summary>
+          <p>아니요. 한 번 사면 계속 씁니다. 업데이트 기간 안에 나온 버전은 기간이 끝난 뒤에도 그대로 쓸 수 있습니다. 기간이 끝난 뒤에 나온 버전만 업데이트를 갱신(1년에 <span data-price="commercial.price_renewal">US$15</span>)해야 설치됩니다. 갱신은 자동으로 이루어지고 언제든 끌 수 있으며, 기간이 끝난 뒤에 다시 갱신하면 그 결제일부터 새로 1년이 시작됩니다.</p>
+        </details>
+
+        <details>
+          <summary>체험이 끝나면?</summary>
+          <p><span data-price="trial_days">14</span>일 체험은 결제 수단 없이 시작하므로 끝나도 자동으로 결제되지 않습니다. 라이선스 키 없이 체험이 끝나면 프로파일 관리와 산출물 검사만 계속 쓸 수 있고, 빌드 · 업로드 · 기기 설치 · 의존성 검사 · OTA · 스토어 배포는 구매한 뒤 설정 › 라이선스 에 키를 넣으면 다시 열립니다.</p>
         </details>
 
         <h2 id="general">일반</h2>
@@ -163,12 +166,12 @@
 
         <details>
           <summary>시스템 요구 사항</summary>
-          <p>macOS 15 Sequoia 이상. Apple Silicon 과 Intel Mac 모두 지원합니다. 프로파일 다운로드 · 생성 · 기기 등록에는 App Store Connect API 키가 필요하고, 그 밖의 기능은 인터넷 없이 동작합니다.</p>
+          <p>macOS 15 Sequoia 이상. Apple Silicon 과 Intel Mac 모두 지원합니다. 프로파일 다운로드 · 생성 · 기기 등록에는 App Store Connect API 키가 필요하고, 라이선스 확인 · 업데이트 확인 · 앱 업로드 · 스토어 배포에는 인터넷 연결이 필요합니다. 산출물 검사와 설치된 프로파일 보기는 인터넷 없이 동작합니다.</p>
         </details>
 
         <details id="report">
           <summary>문제를 신고하려면?</summary>
-          <p><a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EB%AC%B8%EC%9D%98">beakbigkb@gmail.com</a> 으로 아래 내용을 함께 보내 주시면 빨리 살펴볼 수 있습니다.</p>
+          <p><a href="mailto:support@beakbig.com?subject=ShouArchive%20%EB%AC%B8%EC%9D%98">support@beakbig.com</a> 으로 아래 내용을 함께 보내 주시면 빨리 살펴볼 수 있습니다.</p>
           <p>앱 안에서는 도움말 메뉴 › 「문의 · 제안 보내기…」(또는 설정(⌘,) › 「메일 작성…」)로 바로 쓸 수 있습니다. 앱 버전 · macOS 정보는 본문 아래에 자동으로 붙습니다.</p>
           <ul>
             <li>macOS 버전 (Apple 메뉴 › 이 Mac에 관하여)</li>
@@ -196,6 +199,7 @@
       <span class="footer-langs"><a href="support.html" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/support.html" lang="en" hreflang="en">English</a> <a href="ja/support.html" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/support.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">상호 비그빅(Beakbig) · 대표 <span data-price="seller.owner">강현진</span> · 사업자등록번호 <span data-price="seller.reg_no">613-40-01820</span> (간이과세자) · 통신판매업 신고 <span data-price="seller.mail_order">면제</span> · 주소 <span data-price="seller.address">경기도 화성시 동탄순환대로20길 31</span> · 전화 <span data-price="seller.phone">0502-6682-9359</span> · 이메일 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 결제 대행 Paddle</p>
   </div>
 </footer>
 

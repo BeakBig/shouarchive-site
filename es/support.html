@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Soporte — ShouArchive</title>
-  <meta name="description" content="Soporte de ShouArchive: permitir la carpeta de perfiles, claves de API de App Store Connect, inspección de artefactos y cómo ponerte en contacto.">
+  <meta name="description" content="Soporte de ShouArchive: preguntas frecuentes sobre perfiles, claves de API de App Store Connect e inspección de artefactos, y cómo ponerte en contacto.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Soporte — ShouArchive">
@@ -28,11 +28,11 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="Principal">
-      <a href="../index.html#features">Funciones</a>
-      <a href="../pricing.html">Precios</a>
-      <a href="../download.html">Descargas</a>
+      <a href="index.html#features">Funciones</a>
+      <a href="pricing.html">Precios</a>
+      <a href="download.html">Descargas</a>
       <a href="support.html" aria-current="page">Soporte</a>
-      <a href="../privacy.html">Privacidad</a>
+      <a href="privacy.html">Privacidad</a>
       <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../support.html">한국어</option><option value="../en/support.html">English</option><option value="../ja/support.html">日本語</option><option value="../zh-Hans/support.html">简体中文</option><option value="../zh-Hant/support.html">繁體中文</option><option value="../es/support.html" selected>Español</option></select></label>
     </nav>
   </div>
@@ -42,14 +42,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Soporte</h1>
-      <p>¿Te has atascado en algún punto de ShouArchive? Revisa primero las preguntas de abajo y, si necesitas más ayuda, escríbenos.</p>
+      <p>¿Te has atascado en algún punto de ShouArchive? Escríbenos. Puede que la respuesta ya esté en las preguntas frecuentes de abajo.</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="contact-card">
-        <span><strong>Contacto</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
+        <span><strong>Contacto</strong> <a href="mailto:support@beakbig.com">support@beakbig.com</a></span>
         <span>Solemos responder en unos días. Los consejos para informar de un problema están <a href="#report">al final</a>.</span>
       </div>
 
@@ -57,30 +57,23 @@
         <h2 id="start">Primeros pasos</h2>
 
         <details open>
-          <summary>La pestaña Perfiles me pide permitir una carpeta. ¿Por qué?</summary>
-          <p>La edición del Mac App Store se ejecuta dentro del sandbox de macOS. Una app en sandbox solo puede leer las carpetas que hayas elegido explícitamente, y la carpeta donde Xcode guarda los perfiles de aprovisionamiento está fuera de la app, así que hay que permitirla una vez.</p>
-          <p>Haz clic en el botón de carpeta de la pestaña Perfiles. Se abre un panel con esa carpeta ya seleccionada: no cambies nada, solo pulsa <strong>Permitir</strong>. El permiso se recuerda entre ejecuciones (marcadores con ámbito de seguridad de macOS).</p>
-          <p>Carpetas que lee la app:</p>
+          <summary>¿De dónde lee los perfiles?</summary>
+          <p>La app lee directamente la carpeta donde Xcode guarda los perfiles de aprovisionamiento. No hace falta dar ningún permiso ni configurar nada.</p>
           <ul>
             <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 y posteriores</li>
             <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — versiones anteriores de Xcode</li>
           </ul>
-          <p><code>~/Library</code> está oculta en el Finder de forma predeterminada. En el panel de apertura, pulsa ⌘⇧G y pega la ruta para ir directamente. Si prefieres no permitir la carpeta, puedes seguir arrastrando archivos <code>.mobileprovision</code> a la ventana o usar «Añadir desde archivo…».</p>
+          <p>Los archivos <code>.mobileprovision</code> que estén en otro lugar puedes arrastrarlos a la ventana o abrirlos con «Añadir desde archivo…».</p>
         </details>
 
         <details>
           <summary>¿Qué tipos de archivo se admiten?</summary>
           <ul>
-            <li><strong>Inspección de artefactos</strong>: <code>.ipa</code> (pestaña iOS), <code>.apk</code> y <code>.aab</code> (pestaña Android)</li>
+            <li><strong>Inspección de artefactos</strong>: <code>.ipa</code> (pestaña iOS), <code>.apk</code> · <code>.aab</code> (pestaña Android)</li>
             <li><strong>Perfiles</strong>: <code>.mobileprovision</code></li>
             <li><strong>Clave de API</strong>: el archivo <code>.p8</code> descargado de App Store Connect</li>
           </ul>
           <p>Suelta un archivo en la ventana o usa «Elegir archivo…» (⌘O).</p>
-        </details>
-
-        <details>
-          <summary>¿Por qué esta edición no compila ni exporta IPA/APK?</summary>
-          <p>Las apps del Mac App Store deben ejecutarse en sandbox, y el sandbox no puede lanzar programas externos como <code>xcodebuild</code> o <code>gradle</code>. Por eso esta edición se centra en dos cosas: <strong>inspección y perfiles</strong>. La inspección de artefactos tampoco depende de herramientas externas: el analizador propio de la app lee los archivos IPA, APK y AAB directamente.</p>
         </details>
 
         <h2 id="profiles">Perfiles y la API de App Store Connect</h2>
@@ -89,113 +82,125 @@
           <summary>¿Cómo creo una clave de API de App Store Connect?</summary>
           <ol>
             <li>Ve a <a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>Usuarios y acceso</strong> › <strong>Integraciones</strong> › <strong>API de App Store Connect</strong>.</li>
-            <li>Genera una <strong>clave de equipo</strong>. Leer y crear perfiles y dispositivos suele requerir el rol de <strong>Administrador</strong>.</li>
-            <li>Abre la pestaña <strong>Clave de API</strong> en el menú inferior de la app (o Ajustes (⌘,) › Clave de API), pulsa «Nueva clave» e introduce el <strong>Issuer ID</strong>, el <strong>Key ID</strong> y el archivo <code>.p8</code> descargado. Al elegir un archivo <code>AuthKey_XXXXXXXX.p8</code>, el Key ID se rellena solo, y el equipo se lee desde Apple al guardar (si no se puede leer, la app te pide que elijas uno). Los espacios y saltos de línea que se cuelen al pegar se eliminan automáticamente.</li>
+            <li>Genera una <strong>clave de equipo (Team key)</strong>. Para consultar y crear perfiles y dispositivos suele hacer falta el rol de <strong>Admin</strong>.</li>
+            <li>Abre la pestaña <strong>«Clave de API»</strong> en el menú de la parte inferior de la app (o Ajustes (⌘,) › «Clave de API»), pulsa «Nueva clave» y registra el <strong>Issuer ID</strong>, el <strong>Key ID</strong> y el archivo <code>.p8</code> descargado. Al elegir un archivo <code>AuthKey_XXXXXXXX.p8</code>, el Key ID se rellena solo, y el equipo se lee desde Apple al guardar (si no se puede leer, la app te pide que lo elijas). Los espacios y saltos de línea que se cuelen al pegar se eliminan automáticamente.</li>
           </ol>
-          <p>Apple solo permite descargar el archivo <code>.p8</code> una vez, así que guárdalo en un lugar seguro. La app nunca usa tu Apple ID ni códigos de verificación en dos pasos.</p>
+          <p>Apple solo permite descargar el archivo <code>.p8</code> una vez, así que guárdalo en un lugar seguro. La app no usa tu Apple ID ni la verificación en dos pasos.</p>
         </details>
 
         <details>
           <summary>¿Dónde se guarda la clave de API y adónde se envía?</summary>
-          <p>El archivo <code>.p8</code> se queda donde tú lo guardes; la app solo recuerda una referencia a él (un marcador con ámbito de seguridad). Los tokens de las solicitudes se firman en tu Mac y la clave en sí nunca se envía a ningún sitio: la app solo se comunica con la API de App Store Connect de Apple (<code>api.appstoreconnect.apple.com</code>). Quitar una clave en la app no elimina el archivo <code>.p8</code>.</p>
+          <p>El archivo <code>.p8</code> se queda donde lo elegiste; la app solo recuerda su ubicación (un marcador con ámbito de seguridad). Los tokens de las solicitudes a Apple se firman en tu Mac, y la clave en sí no va a ningún sitio salvo a la API de App Store Connect de Apple (<code>api.appstoreconnect.apple.com</code>). Eliminar una clave en la app no borra el archivo <code>.p8</code>.</p>
         </details>
 
         <details>
-          <summary>¿Qué significan «Vence pronto» y la insignia D-N?</summary>
-          <p>Un perfil que caduca en menos de <strong>30 días</strong> aparece como «Vence pronto» y muestra los días restantes en una insignia naranja <strong>D-N</strong>. Todo lo que ya pasó su fecha entra en «Caducidad» (rojo). «Nuevo» indica que se creó hace poco; «Duplicado» marca dos o más perfiles con el mismo equipo, ID de app y tipo.</p>
+          <summary>¿Qué criterio siguen «Vence pronto» y la insignia D-N?</summary>
+          <p>Si faltan <strong>30 días o menos</strong> para que caduque, el perfil se clasifica como «Vence pronto» y los días restantes se muestran en una insignia <strong>D-N</strong> (naranja). Los que ya han pasado su fecha están en «Caducado» (rojo). «Nuevo» indica un perfil creado hace poco y «Duplicado», que hay 2 o más perfiles del mismo equipo, el mismo ID de app y el mismo tipo.</p>
         </details>
 
         <details>
-          <summary>La tarjeta «Certificado» está vacía.</summary>
-          <p>La lista de certificados de firma de código de tu llavero no puede leerse desde dentro del sandbox, así que esta tarjeta está vacía en la edición del Mac App Store. Los certificados <strong>incrustados en cada perfil</strong> sí se muestran en las vistas de detalle y de comparación, con botones para copiar el SHA-1 y el SHA-256.</p>
+          <summary>¿Qué se ve en la tarjeta «Certificado»?</summary>
+          <p>Muestra los certificados de firma de código del llavero de este Mac, incluidos los caducados. Los certificados <strong>incluidos en</strong> cada perfil se ven en las vistas de detalle y de comparación (con SHA-1 y SHA-256 copiables).</p>
         </details>
 
         <details>
           <summary>¿Cuántos dispositivos puedo registrar?</summary>
-          <p>Una cuenta de Apple Developer puede registrar hasta <strong>100 dispositivos por tipo</strong> (iPhone, iPad, Mac, …) por año de membresía. Los dispositivos que desactives siguen ocupando plaza hasta que se renueve la membresía. La pestaña Dispositivo de Perfil › Descargar perfil muestra el uso actual por tipo (por ejemplo, iPhone 3 / 100).</p>
+          <p>Una cuenta de desarrollador de Apple puede registrar hasta <strong>100 dispositivos</strong> por tipo (iPhone · iPad · Mac …) por cada año de membresía. Los dispositivos que desactives siguen ocupando plaza hasta que renueves la membresía. En la parte superior de la pestaña «Dispositivo» de «Perfil» › «Descargar perfil» se ve el uso por tipo (p. ej. iPhone 3 / 100).</p>
         </details>
 
         <h2 id="inspect">Inspección de artefactos</h2>
 
         <details>
           <summary>¿Inspeccionar un archivo lo modifica o lo sube a algún sitio?</summary>
-          <p>No. El archivo es de <strong>solo lectura</strong>: el original nunca se modifica, no se escribe ningún archivo de resultados junto a él y no se envía nada a ningún servidor. Los resultados se muestran únicamente en la ventana de la app.</p>
+          <p>No. El archivo solo se <strong>lee</strong>: el original no se modifica, no se escribe ningún archivo de resultados junto a él y no se envía a ningún servidor. Los resultados solo se muestran en la ventana de la app.</p>
         </details>
 
         <details>
-          <summary>No sé qué significa un elemento.</summary>
-          <p>Los nombres de elemento con subrayado punteado (permisos, funciones del dispositivo, ajustes del manifiesto, huellas de certificado, entitlements, etc.) abren un panel emergente con <strong>qué es · detalles · a qué prestar atención</strong>. Para la tarjeta de 16 KB, haz clic en la ⓘ junto al título.</p>
+          <summary>No sé qué significa el nombre de un elemento.</summary>
+          <p>Al hacer clic en los nombres de elemento con subrayado punteado (permisos, funciones del dispositivo, ajustes del manifiesto, huellas del certificado, entitlements, etc.) se abre un panel emergente con <strong>qué es · más detalles · precauciones</strong>. En la tarjeta de 16 KB, haz clic en la ⓘ junto al título.</p>
         </details>
 
         <details>
           <summary>¿Qué comprueba la verificación del tamaño de página de 16 KB?</summary>
-          <p>A partir de Android 15, algunos dispositivos usan páginas de memoria de 16 KB y Google Play exige bibliotecas nativas compatibles con ellas. La app comprueba la alineación de los segmentos LOAD del ELF en los archivos <code>.so</code> de 64 bits (<code>arm64-v8a</code>, <code>x86_64</code>) y, en los <code>.so</code> almacenados sin comprimir dentro de un APK, su límite de 16 KB dentro del archivo, y enumera las bibliotecas que no cumplen.</p>
+          <p>A partir de Android 15, algunos dispositivos usan páginas de memoria de 16 KB y Google Play exige bibliotecas nativas compatibles con ellas. La app comprueba la alineación de los segmentos LOAD del ELF en los archivos <code>.so</code> de 64 bits (<code>arm64-v8a</code> · <code>x86_64</code>) y el límite de 16 KB de los <code>.so</code> guardados sin comprimir dentro del APK, y enumera las bibliotecas no compatibles.</p>
         </details>
 
-        <h2 id="editions">Dos ediciones · Precios</h2>
+        <h2 id="license">Precios · licencia</h2>
 
         <details>
-          <summary>¿Qué diferencia hay entre las dos ediciones?</summary>
-          <p>La <strong>edición del Mac App Store</strong> es la compra única de la App Store y la <strong>edición comercial</strong> es la que se suscribe directamente en este sitio. La gestión de perfiles, las claves de API y la inspección de artefactos están en ambas ediciones; la compilación, la subida de la app, la instalación en dispositivos, las comprobaciones de dependencias y los paquetes de instalación OTA están solo en la edición comercial. La comparación completa está en la <a href="pricing.html">página de precios</a>.</p>
-        </details>
-
-        <details>
-          <summary>¿Tengo que comprar las dos ediciones?</summary>
-          <p>No. Las dos ediciones no están vinculadas: comprar una no te da las funciones ni la licencia de la otra. Las funciones que comparten funcionan en cualquiera de las dos, así que por ahora basta con comprar la edición del Mac App Store.</p>
+          <summary>¿Cuánto cuesta y qué incluye?</summary>
+          <p>La compra inicial cuesta <span data-price="commercial.price">US$29</span> (impuestos aparte) e incluye la licencia y 1 año de actualizaciones. Una clave de licencia sirve para <span data-price="commercial.devices">2</span> Mac. Incluye la gestión de perfiles, las claves de API, la inspección de artefactos, la compilación, la subida de apps, la instalación en dispositivos, la comprobación de dependencias, los archivos de instalación OTA y la publicación en tiendas. Las funciones disponibles durante la prueba, al terminarla y tras la compra se resumen en la tabla de la <a href="pricing.html">página de precios</a>.</p>
         </details>
 
         <details>
-          <summary>¿Cuándo saldrá la edición comercial?</summary>
-          <p>Todavía no hemos fijado su precio ni su fecha de lanzamiento. En cuanto esténdecidedos los publicaremos en la <a href="pricing.html">página de precios</a> y en la <a href="download.html">página de descargas</a>. Si quieres que te avisemos, pide un aviso de lanzamiento en <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20%EC%B6%9C%EC%8B%9C%20%EC%95%8C%EB%A6%AC%EB%B0%9C">beakbigkb@gmail.com</a>.</p>
+          <summary>¿Cuándo sale?</summary>
+          <p>El precio ya está fijado: la compra inicial cuesta <span data-price="commercial.price">US$29</span> (con 1 año de actualizaciones incluido) y, después, las actualizaciones cuestan <span data-price="commercial.price_renewal">US$15</span> al año (impuestos aparte). La fecha de lanzamiento todavía no está decidida. En cuanto lo esté, la publicaremos en la <a href="pricing.html">página de precios</a> y en la <a href="download.html">página de descargas</a>. Si tienes alguna duda, escríbenos a <a href="mailto:support@beakbig.com?subject=ShouArchive%20-%20consulta%20sobre%20el%20lanzamiento">support@beakbig.com</a>.</p>
+        </details>
+
+        <details>
+          <summary>¿Cómo la paso a otro Mac?</summary>
+          <p>En el Mac que usas ahora, pulsa «Desactivar» en Ajustes › Licencia para liberar la plaza, e introduce la misma clave en el Mac nuevo. Con una clave puedes usarla en hasta <span data-price="commercial.devices">2</span> Mac a la vez.</p>
+        </details>
+
+        <details>
+          <summary>¿Puedo seguir usando la app cuando termine el periodo de actualizaciones?</summary>
+          <p>Sí. Se compra una vez y se sigue usando. Las versiones publicadas dentro del periodo de actualizaciones se pueden seguir usando tal cual después de que termine. Solo las versiones publicadas después del fin del periodo requieren renovar las actualizaciones (<span data-price="commercial.price_renewal">US$15</span> al año) para poder instalarse. La renovación es automática y puedes desactivarla cuando quieras; si renuevas después de que haya terminado el periodo, empieza un nuevo año a partir de la fecha de ese pago.</p>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa cuando termina la prueba?</summary>
+          <p>La prueba de <span data-price="trial_days">14</span> días empieza sin ningún método de pago, así que al terminar no se cobra nada automáticamente. Si la prueba termina sin clave de licencia, solo puedes seguir usando la gestión de perfiles y la inspección de artefactos; la compilación, la subida, la instalación en dispositivos, la comprobación de dependencias, la OTA y la publicación en tiendas se vuelven a activar cuando compras e introduces la clave en Ajustes › Licencia.</p>
         </details>
 
         <h2 id="general">General</h2>
 
         <details>
           <summary>¿Cómo cambio el idioma?</summary>
-          <p>Abre el menú del <strong>globo terráqueo</strong> en la barra de herramientas, elige un idioma y confirma «Reiniciar ahora». La app se vuelve a abrir en ese idioma y tu trabajo se conserva. Idiomas disponibles: Español, English, 한국어, 日本語, 简体中文 y 繁體中文.</p>
+          <p>Elige un idioma en el menú del <strong>globo terráqueo</strong> de la barra de herramientas y pulsa «Reiniciar ahora»: la app se vuelve a abrir en ese idioma. El idioma se aplica al reiniciar la app y tu trabajo se conserva. Idiomas disponibles: 한국어, English, 日本語, 简体中文, 繁體中文 y Español.</p>
         </details>
 
         <details>
           <summary>¿Tema y tamaño del texto?</summary>
-          <p>En el menú de tema de la barra de herramientas, elige un tema de color (<strong>Black &amp; White · ShouArchive</strong>) y <strong>Claro, Oscuro o Configuración del sistema</strong>. El tamaño del texto va del 85 % al 150 % desde el menú Visualización (Texto más grande ⌘+, Texto más pequeño ⌘-, Predeterminado ⌘0) o en Ajustes (⌘,) › Pantalla.</p>
+          <p>En el menú de tema de la barra de herramientas, elige un tema de color (<strong>Black &amp; White · ShouArchive</strong>) y <strong>Claro, Oscuro o Configuración del sistema</strong>. El tamaño del texto se cambia entre el 85 % y el 150 % desde el menú Visualización (Texto más grande ⌘+ · Texto más pequeño ⌘- · Tamaño predeterminado ⌘0) o en Ajustes (⌘,) › Pantalla.</p>
         </details>
 
         <details>
           <summary>Requisitos del sistema</summary>
-          <p>macOS 15 Sequoia o posterior, en Mac con Apple Silicon o Intel. La clave de API de App Store Connect solo hace falta para descargar y crear perfiles y registrar dispositivos; todo lo demás funciona sin conexión.</p>
+          <p>macOS 15 Sequoia o posterior, compatible con Mac con Apple Silicon e Intel. Para descargar y crear perfiles y registrar dispositivos se necesita una clave de API de App Store Connect, y para comprobar la licencia, buscar actualizaciones, subir apps y publicar en tiendas se necesita conexión a internet. La inspección de artefactos y la consulta de los perfiles instalados funcionan sin internet.</p>
         </details>
 
         <details id="report">
           <summary>¿Cómo informo de un problema?</summary>
-          <p>Escribe a <a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> con lo siguiente y podremos revisarlo rápido:</p>
-          <p>También puedes escribirlo dentro de la app desde Ayuda › «Enviar consulta · sugerencia…» (o Ajustes (⌘,) › «Redactar correo…»). La versión de la app y los datos de macOS se añaden automáticamente debajo del mensaje.</p>
+          <p>Escribe a <a href="mailto:support@beakbig.com?subject=ShouArchive%20-%20consulta">support@beakbig.com</a> con lo siguiente y podremos revisarlo rápido.</p>
+          <p>También puedes escribirlo dentro de la app desde el menú Ayuda › «Enviar consulta · sugerencia…» (o Ajustes (⌘,) › «Redactar correo…»). La versión de la app y los datos de macOS se añaden automáticamente debajo del mensaje.</p>
           <ul>
             <li>Versión de macOS (menú Apple › Acerca de este Mac)</li>
             <li>Versión de la app (menú ShouArchive › Acerca de ShouArchive)</li>
-            <li>Qué hiciste, paso a paso, y qué ocurrió</li>
-            <li>Una captura de pantalla o el texto exacto del error, si es posible</li>
+            <li>Qué hiciste, en qué orden, y qué ocurrió</li>
+            <li>Una captura de pantalla o el texto del error, si es posible</li>
           </ul>
-          <p>No hace falta adjuntar archivos IPA, APK ni perfiles. Si se necesita alguno, se te pedirá aparte; y antes de enviar nada, asegúrate de que no contiene archivos de clave (<code>.p8</code>) ni datos sensibles.</p>
+          <p>No hace falta enviar archivos IPA, APK ni perfiles. Si alguno es imprescindible, te lo pediremos aparte; y al enviarlo, comprueba que no contenga archivos de clave (<code>.p8</code>) ni datos sensibles.</p>
         </details>
       </div>
     </div>
   </section>
 </main>
+</main>
 
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Pie de página">
-      <a href="../index.html">Inicio</a>
-      <a href="../pricing.html">Precios</a>
-      <a href="../download.html">Descargas</a>
+      <a href="index.html">Inicio</a>
+      <a href="pricing.html">Precios</a>
+      <a href="download.html">Descargas</a>
       <a href="support.html" aria-current="page">Soporte</a>
-      <a href="../privacy.html">Política de privacidad</a>
-      <a href="../terms.html">Términos del servicio</a>
-      <a href="../refund.html">Política de reembolso</a>
+      <a href="privacy.html">Política de privacidad</a>
+      <a href="terms.html">Términos del servicio</a>
+      <a href="refund.html">Política de reembolso</a>
       <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es" aria-current="page">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">Razón social: Beakbig · Titular: <span data-price="seller.owner">Hyunjin Kang</span> · Registro empresarial (Corea del Sur): <span data-price="seller.reg_no">613-40-01820</span> (régimen simplificado del IVA) · Registro de venta a distancia: <span data-price="seller.mail_order">Exento</span> · Dirección: <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, República de Corea</span> · Teléfono: <span data-price="seller.phone">+82-502-6682-9359</span> · Correo: <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Gestor de pagos: Paddle</p>
   </div>
 </footer>
 

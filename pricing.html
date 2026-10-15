@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>가격 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 가격. Mac App Store 판은 1회 구매(US$2), 상용 판은 월 구독 · 14일 체험판. 두 판은 서로 연동되지 않습니다.">
+  <meta name="description" content="ShouArchive 가격. 한 번 사서 계속 쓰는 라이선스 US$29(Mac 2대 · 업데이트 1년 포함, 세금 별도), 이후 업데이트는 1년에 US$15 · 결제 수단 없이 14일 체험.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="가격 — ShouArchive">
-  <meta property="og:description" content="Mac App Store 판 1회 구매, 상용 판 월 구독 · 14일 체험판.">
+  <meta property="og:description" content="한 번 사서 계속 쓰는 라이선스 · 업데이트 1년 포함 · 14일 체험.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ko_KR">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
@@ -42,62 +42,54 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>가격</h1>
-      <p>ShouArchive 는 두 가지 판으로 판매합니다. Mac App Store 판은 한 번 사는 방식, 상용 판은 웹에서 구독하는 방식입니다. 두 판은 서로 연동되지 않습니다 — 한 판을 사도 다른 판의 라이선스는 생기지 않습니다.</p>
+      <p>ShouArchive 는 이 사이트에서 한 번 사서 계속 쓰는 앱입니다. 먼저 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 모든 기능을 써 보고, 마음에 들면 라이선스를 사세요.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="plans">
-        <article class="plan">
-          <p class="plan-badge live">지금 판매 중</p>
-          <h2>Mac App Store 판</h2>
-          <p class="plan-for">Mac App Store 를 통해 배포하는 개발자</p>
-          <p class="price"><span data-price="appstore.price_now">US$2</span></p>
-          <p class="price-note">1회 구매 · 구매한 계정에서는 계속 씁니다.<br><span data-price="appstore.next_version">2.0.0</span> 부터 <span data-price="appstore.price_next">US$5</span> 로 인상될 예정입니다.</p>
+        <article class="plan coming">
+          <p class="plan-badge soon" data-live-hide>출시 예정</p>
+          <h2><span data-price="trial_days">14</span>일 체험</h2>
+          <p class="plan-for">사기 전에 모든 기능을 먼저 써 보고 싶은 분</p>
+          <p class="price">무료</p>
+          <p class="price-note">결제 수단 없이 앱 안에서 시작합니다.<br>끝나도 자동으로 결제되지 않습니다.</p>
           <ul class="plan-feats">
-            <li><strong>프로파일 관리</strong> — 설치된 프로파일 · 만료 배지 · 필터 · 두 개 비교</li>
-            <li><strong>프로파일 다운로드 · 생성 · 갱신 · 기기 등록</strong> (App Store Connect API 키)</li>
-            <li><strong>API 키 저장 · 관리</strong> — Issuer ID · Key ID · <code>.p8</code></li>
-            <li><strong>산출물 검사</strong> — IPA · APK · AAB, 서명 · 권한 · 보안 설정</li>
-            <li><strong>스토어 배포</strong> (iOS · Android) — <span data-price="appstore.next_version">2.0.0</span> 예정</li>
+            <li><strong>모든 기능</strong> — 빌드 · 업로드 · 기기 설치 · 스토어 배포까지 체험 기간 동안 전부</li>
+            <li><strong>체험이 끝난 뒤</strong> — 키가 없어도 프로파일 관리와 산출물 검사는 계속 씁니다</li>
+            <li><strong>나중에 사도 그대로</strong> — 라이선스 키를 넣으면 나머지 기능이 다시 열립니다</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              Mac App Store에서 받기
-            </a>
+            <a class="btn" data-src="commercial.download" href="#" hidden>다운로드 (.dmg) · <span data-price="trial_days">14</span>일 체험</a>
             <a class="btn outline" href="download.html">다운로드 안내</a>
           </div>
-          <p class="plan-foot">결제 · 설치 · 업데이트는 Apple 이 처리합니다. 설치와 개인정보 처리는 Apple 의 규정을 따릅니다.</p>
+          <p class="plan-foot">macOS 15 Sequoia 이상 · Apple Silicon 과 Intel Mac 모두 지원합니다.</p>
         </article>
 
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide>출시 예정</p>
-          <h2>상용 판</h2>
+          <h2>ShouArchive 라이선스</h2>
           <p class="plan-for">웹에서 직접 사서 쓰는 개인 · 팀</p>
-          <p class="price"><span data-price="commercial.price_monthly">가격 미정</span></p>
-          <p class="price-note">월 구독 · 연간 구독(연간 할인) · <span data-price="trial_days">14</span>일 체험판<br>Mac App Store 판의 모든 기능 + 아래 기능</p>
+          <p class="price"><span data-price="commercial.price">US$29</span></p>
+          <p class="price-note">한 번 구매 · Mac <span data-price="commercial.devices">2</span>대 · 업데이트 1년 포함 (세금 별도)<br>그 뒤 업데이트는 1년에 <span data-price="commercial.price_renewal">US$15</span> — 갱신하지 않아도 앱은 계속 씁니다.</p>
           <ul class="plan-feats">
-            <li><strong>App Store 판 기능 전부</strong> — 프로파일 · API 키 · 산출물 검사</li>
+            <li><strong>프로파일 관리</strong> — 설치된 프로파일 · 만료 배지 · 필터 · 두 개 비교</li>
+            <li><strong>프로파일 다운로드 · 생성 · 갱신 · 기기 등록</strong> (App Store Connect API 키)</li>
+            <li><strong>산출물 검사</strong> — IPA · APK · AAB, 서명 · 권한 · 보안 설정</li>
             <li><strong>빌드</strong> — IPA · APK 를 직접 빌드</li>
             <li><strong>앱 업로드</strong> — TestFlight · Play Console 로 올리기</li>
             <li><strong>기기 설치</strong> — 기기 목록 · 설치 · 재설치</li>
             <li><strong>의존성 검사</strong> — 빌드 전 조건 확인</li>
             <li><strong>OTA 설치 파일</strong> — 배포용 설치 파일 만들기</li>
-            <li><strong>라이선스 키</strong> — 등록한 기기 수만큼 쓰기</li>
+            <li><strong>스토어 배포</strong> (iOS · Android) — 스토어 정보 · 스크린샷 · 심사 제출</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.checkout" href="#" hidden><span data-price="trial_days">14</span>일 체험판 시작</a>
-            <a class="btn outline" data-src="commercial.download" href="#" hidden>다운로드 (.dmg)</a>
+            <a class="btn" data-src="commercial.checkout" href="#" hidden>구매하기</a>
           </div>
-          <p class="plan-foot" data-live-hide>가격과 출시일은 아직 정해지지 않았습니다. 정해지는 대로 이 페이지와 <a href="download.html">다운로드 페이지</a> 에 올립니다. 궁금한 점은 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> 으로 알려 주세요.</p>
-          <p class="plan-foot" data-live-show hidden>결제는 <strong>Paddle</strong> 이 판매대행으로 처리합니다. 구독 해지 방법과 환불은 <a href="refund.html">환불 정책</a> 에 적어 두었습니다.</p>
+          <p class="plan-foot" data-live-hide>가격은 정해졌고, 출시일은 아직 정하지 않았습니다. 정해지는 대로 이 페이지와 <a href="download.html">다운로드 페이지</a> 에 올립니다. 궁금한 점은 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 으로 알려 주세요.</p>
+          <p class="plan-foot" data-live-show hidden>결제는 <strong>Paddle</strong> 이 판매대행으로 처리합니다. 업데이트 갱신을 끄는 방법과 환불은 <a href="refund.html">환불 정책</a> 에 적어 두었습니다.</p>
         </article>
-      </div>
-
-      <div class="note">
-        <p><strong>두 판은 별개입니다.</strong> Mac App Store 판을 사면 상용 판의 빌드 · 업로드 · 기기 설치 기능을 쓸 수 없고, 상용 판 구독에도 Mac App Store 판 앱은 포함되지 않습니다. 기능이 겹치는 부분(프로파일 · API 키 · 산출물 검사)은 두 판 모두에 들어 있습니다.</p>
       </div>
     </div>
   </section>
@@ -105,37 +97,34 @@
   <section class="section alt">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow violet">비교</p>
-        <h2>두 판의 기능 차이</h2>
-        <p class="lead">같은 기능은 두 판 어디서든 쓸 수 있습니다. 표에서 차이가 나는 줄만 보시면 됩니다.</p>
+        <p class="eyebrow violet">기능</p>
+        <h2>언제 무엇을 쓸 수 있나요</h2>
+        <p class="lead">체험 중에는 모든 기능을 씁니다. 키 없이 체험이 끝나도 프로파일 관리와 산출물 검사는 그대로 남습니다.</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
           <thead>
             <tr>
               <th scope="col">기능</th>
-              <th scope="col">Mac App Store 판</th>
-              <th scope="col">상용 판</th>
+              <th scope="col">체험 중</th>
+              <th scope="col">체험이 끝난 뒤 (키 없음)</th>
+              <th scope="col">구매 후</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">설치 방법</th><td>Mac App Store</td><td>웹에서 내려받은 <code>.dmg</code></td></tr>
-            <tr><th scope="row">요금</th><td>1회 구매 · <span data-price="appstore.price_now">US$2</span><small><span data-price="appstore.next_version">2.0.0</span> 부터 <span data-price="appstore.price_next">US$5</span> 예정</small></td><td>월 · 연간 구독<small><span data-price="commercial.price_annual">가격 미정</span></small></td></tr>
-            <tr><th scope="row">체험</th><td class="no">—</td><td class="yes">✓<small><span data-price="trial_days">14</span>일</small></td></tr>
-            <tr><th scope="row">결제 처리</th><td>Apple App Store</td><td>Paddle<small>세금은 별도로 계산</small></td></tr>
-            <tr><th scope="row">프로파일 관리 · 비교</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">프로파일 다운로드 · 생성 · 기기 등록</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">API 키 저장 · 관리</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">산출물 검사 (IPA · APK · AAB)</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">스토어 배포 (iOS · Android)</th><td>2.0 예정</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">빌드</th><td class="no">—<small>샌드박스 때문에 불가</small></td><td class="yes">✓</td></tr>
-            <tr><th scope="row">앱 업로드</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">기기 설치</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">의존성 검사</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">OTA 설치 파일</th><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">업데이트</th><td>App Store 가 갱신</td><td>앱 안에서 갱신</td></tr>
-            <tr><th scope="row">라이선스</th><td>Apple 계정으로 인증</td><td>라이선스 키<small>등록한 기기 수까지</small></td></tr>
-            <tr><th scope="row">데이터 처리</th><td>수집 없음<small><a href="privacy.html">개인정보 처리방침</a></small></td><td>라이선스 확인에 필요한 값만<small><a href="privacy.html">개인정보 처리방침</a></small></td></tr>
+            <tr><th scope="row">기간 · 요금</th><td><span data-price="trial_days">14</span>일 · 무료<small>결제 수단 없이 시작 · 자동 결제 없음</small></td><td>무료 · 기간 제한 없음</td><td>1회 구매 · <span data-price="commercial.price">US$29</span><small>업데이트 1년 포함 · 그 뒤 1년에 <span data-price="commercial.price_renewal">US$15</span> (선택)</small></td></tr>
+            <tr><th scope="row">프로파일 관리 · 비교</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">프로파일 다운로드 · 생성 · 기기 등록</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">API 키 저장 · 관리</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">산출물 검사 (IPA · APK · AAB)</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">빌드</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">앱 업로드</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">기기 설치</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">의존성 검사</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">OTA 설치 파일</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">스토어 배포 (iOS · Android)</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">업데이트</th><td>체험 중 나온 버전</td><td class="no">—</td><td>업데이트 기간 동안 앱 안에서<small>기간이 끝나도 그때까지 나온 버전은 계속 씀</small></td></tr>
+            <tr><th scope="row">라이선스 키</th><td class="no">필요 없음</td><td class="no">필요 없음</td><td>키 하나로 Mac <span data-price="commercial.devices">2</span>대<small>결제한 이메일로 받습니다</small></td></tr>
           </tbody>
         </table>
       </div>
@@ -144,28 +133,30 @@
 
   <section class="section alt doc">
     <div class="wrap">
-      <h2>결제 · 구독 안내</h2>
+      <h2>결제 · 업데이트 안내</h2>
       <div class="note">
-        <p><strong>상용 판은 아직 시작되지 않았습니다.</strong> 가격과 출시일은 지금 확정하지 않았습니다. 이 절의 내용은 상용 판이 공개될 때의 결제 방식입니다 — 공개 전에 바뀌면 이 페이지를 먼저 고칩니다.</p>
+        <p><strong>아직 판매를 시작하지 않았습니다.</strong> 가격은 위와 같이 정했고, 출시일은 아직 정하지 않았습니다. 이 절의 내용은 출시할 때의 결제 방식입니다 — 출시 전에 바뀌면 이 페이지를 먼저 고칩니다.</p>
       </div>
       <ul>
-        <li><strong>결제 대행 — Paddle.</strong> 상용 판의 결제는 Paddle 이 판매대행(Merchant of Record)으로 처리합니다. Paddle 이 결제 · 세금 계산을 대신하고 영수증을 발행합니다.</li>
+        <li><strong>결제 대행 — Paddle.</strong> 결제는 Paddle 이 판매대행(Merchant of Record)으로 처리합니다. Paddle 이 결제 · 세금 계산을 대신하고 영수증을 발행합니다. 가격은 USD 로 적었고, 결제 화면은 지역 통화로 보여 줍니다.</li>
         <li><strong>세금은 별도입니다.</strong> 위 가격에는 세금이 들어 있지 않습니다. 결제할 때 Paddle 이 고객의 지역에 맞춰 세금을 자동으로 계산해 더합니다.</li>
-        <li><strong>월 구독은 자동 갱신됩니다.</strong> 구독 기간이 끝나면 같은 가격으로 다음 기간이 자동으로 시작되고 그때 결제됩니다.</li>
-        <li><strong><span data-price="trial_days">14</span>일 체험.</strong> 체험은 결제 수단을 등록한 뒤 시작되고, 체험이 끝나면 취소하지 않으면 자동으로 월 구독이 시작됩니다.</li>
-        <li><strong>해지는 언제든 가능합니다.</strong> 해지하면 이미 결제하신 기간은 그대로 쓰고, 다음 갱신부터 결제가 되지 않습니다.</li>
-        <li><strong>환불.</strong> 언제 · 어떻게 되돌릴 수 있는지는 <a href="refund.html">환불 정책</a> 에 적어 두었습니다.</li>
-        <li><strong>이용 조건.</strong> 상용 판을 쓰기 전에 <a href="terms.html">이용약관</a> 을 확인해 주세요.</li>
+        <li><strong>한 번 사면 계속 씁니다.</strong> <span data-price="commercial.price">US$29</span> 에는 라이선스와 업데이트 1년이 들어 있습니다. 업데이트 기간이 끝나도 앱은 멈추지 않고, 그 기간 안에 나온 버전은 모두 계속 쓸 수 있습니다.</li>
+        <li><strong>업데이트 갱신 — 1년에 <span data-price="commercial.price_renewal">US$15</span>.</strong> 업데이트 기간은 매년 자동으로 갱신됩니다. 자동 갱신은 언제든 끌 수 있습니다. 기간이 끝난 뒤에 다시 갱신하면 그 결제일부터 새로 1년이 시작됩니다.</li>
+        <li><strong>기간이 끝난 뒤에 나온 버전.</strong> 업데이트 기간이 끝난 뒤에 나온 버전은 갱신해야 설치 · 활성화됩니다. 앱 안의 업데이트 확인은 기간 안에 나온 버전만 보여 줍니다.</li>
+        <li><strong><span data-price="trial_days">14</span>일 체험.</strong> 앱 안에서 결제 수단 없이 시작하고, 끝나도 자동으로 결제되지 않습니다. 키 없이 체험이 끝나면 프로파일 관리와 산출물 검사만 계속 쓸 수 있고, 빌드 · 업로드 · 기기 설치 · 의존성 검사 · OTA · 스토어 배포는 구매하면 다시 열립니다.</li>
+        <li><strong>환불.</strong> 처음 구매와 업데이트 갱신 모두 결제 후 <span data-price="commercial.refund_days">14</span>일 안에 전액 환불을 요청할 수 있습니다. 자세한 기준은 <a href="refund.html">환불 정책</a> 에 적어 두었습니다.</li>
+        <li><strong>이용 조건.</strong> 사기 전에 <a href="terms.html">이용약관</a> 과 <a href="privacy.html">개인정보 처리방침</a> 을 확인해 주세요.</li>
       </ul>
-      <p class="footnote">Mac App Store 판은 위와 무관합니다. 결제와 구독은 Apple 이, 개인정보 처리는 <a href="privacy.html">Apple 과 ShouArchive 의 개인정보 처리방침</a> 이 따릅니다.</p>
     </div>
   </section>
 
   <section class="cta">
     <div class="wrap">
       <h2>지금 시작하기</h2>
-      <p>오늘은 Mac App Store 판으로 시작해도 됩니다. 상용 판이 나오면 그때 구독하시면 됩니다.</p>
-      <a class="btn" data-src="appstore.link" href="https://apps.apple.com/app/id6814686766">Mac App Store에서 받기</a>
+      <p data-live-hide>출시되면 이 페이지에서 내려받아 <span data-price="trial_days">14</span>일 체험으로 먼저 써 보고 사시면 됩니다. 출시 소식이 궁금하면 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 으로 알려 주세요.</p>
+      <p data-live-show hidden>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요. 마음에 들면 <a href="pricing.html">라이선스</a> 를 사서 키를 넣으면 됩니다.</p>
+      <a class="btn" data-src="commercial.download" href="#" hidden>다운로드 (.dmg)</a>
+      <a class="btn" href="download.html" data-live-hide>다운로드 안내</a>
     </div>
   </section>
 </main>
@@ -183,6 +174,7 @@
       <span class="footer-langs"><a href="pricing.html" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/pricing.html" lang="en" hreflang="en">English</a> <a href="ja/pricing.html" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/pricing.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/pricing.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/pricing.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">상호 비그빅(Beakbig) · 대표 <span data-price="seller.owner">강현진</span> · 사업자등록번호 <span data-price="seller.reg_no">613-40-01820</span> (간이과세자) · 통신판매업 신고 <span data-price="seller.mail_order">면제</span> · 주소 <span data-price="seller.address">경기도 화성시 동탄순환대로20길 31</span> · 전화 <span data-price="seller.phone">0502-6682-9359</span> · 이메일 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 결제 대행 Paddle</p>
   </div>
 </footer>
 

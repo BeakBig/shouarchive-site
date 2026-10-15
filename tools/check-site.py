@@ -6,13 +6,15 @@ python3 tools/check-site.py
 ```
 
 확인하는 것
-  1. 6개 언어 × 7개 페이지가 모두 있는가
+  1. 6개 언어 × 8개 페이지가 모두 있는가
   2. 한국어 원본과 구조가 같은가 — 태그 순서, 속성 이름, 값이 그대로여야 하는 속성
      (href · src · id · class · data-* · hidden 등)
   3. 번역이 밀리지 않았는가 — 남은 한글, 그리고 언어마다 함께 있으면 안 되는 문자 체계
      (언어 전환 메뉴 · 언어 이름은 제외)
-  4. pricing.json 에 값이 없는 data-price 자리에 숫자가 그대로 남아 있지 않은가
-     (예상해 둔 금액이 페이지에 노출되지 않게 하는 검사)
+  4. data-price 키가 pricing.json 에 있는가, 값이 없는(null) 자리에 숫자가 그대로 남아 있지 않은가
+     (예상해 둔 금액이 페이지에 노출되지 않게 하는 검사 — commercial.* 는 「미정」 문장이어야 하고,
+     seller.* 같은 다른 키는 [대표자] 처럼 숫자 없는 자리 표시면 됩니다)
+     그리고 checkout.html 의 Paddle 설정(#paddle-config)이 pricing.json 과 같은가
   5. 내부 링크가 실제 파일을 가리키는가, 현재 페이지 링크가 자기 자신을 가리키는가
   6. CSS 에 [hidden] 을 강제하는 규칙이 있는가 — .btn 처럼 display 를 정하는 요소에 달린
      hidden 이 동작하려면 !important 가 필요합니다
@@ -24,7 +26,7 @@ import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant', 'es']
-PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html']
+PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html']
 MAX_BYTES = 25 * 1024 * 1024  # Workers 정적 파일 한도
 KEEP_VALUE = {'href', 'src', 'id', 'class', 'data-price', 'data-src', 'data-live-hide', 'data-live-show'}
 TAG_RE = re.compile(r'<([a-z0-9]+)((?:\s+[a-z0-9-]+(?:="[^"]*")?)*)\s*/?>')
@@ -127,18 +129,40 @@ def check_mixed_script(lang, page):
             report('문자 섞임', p, f'함께 있으면 안 되는 문자가 있습니다: {"".join(found)[:30]}')
 
 def check_undecided_price(lang, page):
-    """pricing.json 값이 null 인 data-price 자리에 숫자(금액)가 그대로 남아 있지 않은지."""
+    """data-price 키가 pricing.json 에 있는지, 값이 null 인 자리에 숫자(금액)가 그대로 남아 있지 않은지."""
     cfg = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8'))
     want = (cfg.get('undecided') or {}).get(lang)
     p = path_for(lang, page)
-    for key, text in re.findall(r'<span data-price="([^"]+)"[^>]*>(.*?)</span>', open(p, encoding='utf-8').read(), flags=re.S):
-        cur = cfg
+    for key, text in re.findall(r'<span\b[^>]*\bdata-price="([^"]+)"[^>]*>(.*?)</span>', open(p, encoding='utf-8').read(), flags=re.S):
+        cur, found = cfg, True
         for part in key.split('.'):
-            cur = cur.get(part) if isinstance(cur, dict) else None
+            if isinstance(cur, dict) and part in cur:
+                cur = cur[part]
+            else:
+                found = False
+                break
+        if not found:
+            report('가격', p, f'{key} 는 pricing.json 에 없는 키입니다')
+            continue
         if cur is None and re.search(r'\d|US\$|€|£|¥|￥|\$', text):
             report('가격', p, f'{key} 는 pricing.json 에 값이 없는데 페이지에 숫자가 있습니다: {text.strip()[:30]}')
-        if cur is None and want and text.strip() != want:
+        if cur is None and want and key.startswith('commercial.') and text.strip() != want:
             report('가격', p, f'{key} 자리 문장이 「{want}」 이어야 합니다: {text.strip()[:30]}')
+
+def check_paddle_config(lang, page):
+    """#paddle-config 의 속성이 pricing.json 의 paddle 값과 같은지 (fill-pricing.py 를 잊지 않았는지)."""
+    p = path_for(lang, page)
+    m = re.search(r'<[a-z0-9]+\b[^>]*\bid="paddle-config"[^>]*>', open(p, encoding='utf-8').read())
+    if not m:
+        if page == 'checkout.html':
+            report('결제', p, 'id="paddle-config" 요소가 없습니다')
+        return
+    paddle = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('paddle') or {}
+    for attr, key in (('data-env', 'environment'), ('data-token', 'client_token'),
+                      ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates')):
+        got = re.search(r'\s' + attr + r'="([^"]*)"', m.group(0))
+        if not got or got.group(1) != str(paddle.get(key) or ''):
+            report('결제', p, f'{attr} 가 pricing.json 의 paddle.{key} 와 다릅니다 — python3 tools/fill-pricing.py 를 실행하세요')
 
 def check_hidden_rule():
     """.btn 처럼 display 를 정하는 요소에 달린 hidden 이 동작하려면 CSS 강제 규칙이 있어야 합니다."""
@@ -168,6 +192,7 @@ for page in PAGES:
             check_hangul(lang, page)
             check_mixed_script(lang, page)
         check_undecided_price(lang, page)
+        check_paddle_config(lang, page)
         check_links(lang, page)
         check_current_page(lang, page)
 check_hidden_rule()

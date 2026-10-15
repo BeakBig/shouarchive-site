@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>プライバシーポリシー — ShouArchive</title>
-  <meta name="description" content="ShouArchive のプライバシーポリシー。アプリはデータを収集せず、ファイルはローカルでのみ読み取り、ネットワークはユーザーが用意したキーで Apple の App Store Connect API と通信する場合にのみ使用します。">
+  <meta name="description" content="ShouArchive のプライバシーポリシー。分析・トラッキング・広告はなく、検査するファイルは Mac 内でのみ読み取ります。ライセンスの確認にはライセンスキー・端末識別値・アプリのバージョンだけを使い、決済は Paddle が販売代理店として処理します。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="プライバシーポリシー — ShouArchive">
-  <meta property="og:description" content="ShouArchive はデータを収集しません。">
+  <meta property="og:description" content="分析・トラッキング・広告なし · ファイルは Mac 内でのみ · ライセンスの確認に必要な値だけ。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ja_JP">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -28,10 +28,10 @@
   <div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="メイン">
-      <a href="../index.html#features">機能</a>
-      <a href="../pricing.html">価格</a>
-      <a href="../download.html">ダウンロード</a>
-      <a href="../support.html">サポート</a>
+      <a href="index.html#features">機能</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html">サポート</a>
       <a href="privacy.html" aria-current="page">プライバシー</a>
       <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html" selected>日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
     </nav>
@@ -42,136 +42,141 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>プライバシーポリシー</h1>
-      <p>ShouArchive for macOS · 施行日 2026年10月3日 · 開発者: BeakBig · Mac App Store 版と商用版</p>
+      <p>ShouArchive（macOS） · 施行日 2026 年 10 月 15 日 · 開発者・販売者 Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>この文書は 2 つの版をまとめて説明します。</strong> <strong>Mac App Store 版</strong>（1 – 7 項）はこれまでどおり、いかなる個人情報も収集しません。分析ツール · トラッキング · 広告 · アカウントはなく、検査するファイルは Mac 内でのみ読み取り、ネットワークはユーザーがご自身で登録した App Store Connect API キーで Apple と通信するときにだけ使用します。<strong>商用版</strong>（9 – 13 項）はウェブで直接購読する版で、ライセンスを確認するときだけ<strong>ライセンスキー · 端末識別値 · アプリバージョン</strong>をライセンスサーバーへ送信し、決済は <strong>Paddle</strong> が販売代行として処理します。8 項の変更と 14 項のお問い合わせは 2 つの版に共通です。2 つの版は互いに連動しません。</p>
+        <p><strong>概要。</strong>分析ツール・トラッキング・広告・アカウントはありません。検査するファイルは Mac 内でのみ読み取ります。App Store Connect・Google Play の機能は、ユーザーが自分で登録したキーを使って Apple・Google に直接接続します。販売者に届くのは、ライセンスの確認時の<strong>ライセンスキー・端末識別値・アプリのバージョン</strong>（第 5 項）と、決済を代行する販売代理店 <strong>Paddle</strong> から受け取る購入情報（第 7 項）だけです。</p>
       </div>
 
-      <h2>1. 収集するデータ — Mac App Store 版</h2>
-      <p>この版では<strong>ありません</strong>。アプリは次のいずれも行いません。</p>
+      <h2>1. 収集しないもの</h2>
+      <p>アプリは次のいずれも行いません。</p>
       <ul>
-        <li>利用統計やクラッシュレポートなどの<strong>アナリティクス</strong>を収集すること</li>
-        <li>ユーザーや端末を<strong>トラッキング</strong>すること、<strong>広告</strong>を表示すること</li>
-        <li><strong>アカウント</strong>やサインインを要求すること</li>
-        <li>ネットワーク通信を行う<strong>サードパーティ SDK</strong> を含めること</li>
+        <li>利用統計・エラーレポートなどの<strong>分析（analytics）</strong>データを収集しません。</li>
+        <li>ユーザーや端末を<strong>トラッキング</strong>せず、<strong>広告</strong>を表示しません。</li>
+        <li><strong>アカウント</strong>やログインはありません。ライセンスはキー 1 つで確認します。</li>
+        <li>検査するファイルの内容、プロジェクトのソース、ビルド成果物を販売者に送信しません。</li>
       </ul>
 
-      <h2>2. 開くファイル</h2>
-      <p>ビルド成果物検査、プロファイル管理で扱うファイル（IPA、APK、AAB、<code>.mobileprovision</code>）は、Mac 上でのみ読み取ります。その内容や、そこから得られる情報（バンドル ID、署名証明書、権限の一覧など）はアプリのウインドウに表示されるだけで、どこにも送信されません。検査が元のファイルを変更することはありません。</p>
+      <h2>2. ファイルの取り扱い</h2>
+      <p>ビルド成果物検査とプロファイル管理で扱うファイル（IPA · APK · AAB · <code>.mobileprovision</code>）は、ユーザーの Mac 上でのみ読み取ります。ファイルの内容や、そこから得た情報（バンドル ID・署名証明書・権限の一覧など）はアプリのウインドウに表示されるだけで、どこにも送信されません。ビルド成果物検査は元のファイルを変更しません。ビルド・書き出しで作成したファイルは、ユーザーが選んだフォルダにのみ保存されます。</p>
 
       <h2>3. ネットワークの使用</h2>
-      <p>アプリがネットワークを使用するのは 1 つの場合だけです。ユーザーがご自身の <strong>App Store Connect API キー</strong>（Issuer ID、Key ID、<code>.p8</code> ファイル）を登録し、それを必要とする機能を使うと、アプリは Apple の App Store Connect API（<code>api.appstoreconnect.apple.com</code>）に接続します。</p>
+      <p>アプリは次の場合にのみネットワークに接続します。Apple・Google へのリクエストは販売者のサーバーを経由せず、ユーザーの Mac から直接送られます。</p>
       <table>
-        <thead><tr><th>機能</th><th>Apple に送信されるもの</th></tr></thead>
+        <thead><tr><th>機能</th><th>接続先</th><th>送信するもの</th></tr></thead>
         <tbody>
-          <tr><td>プロファイルの一覧取得とダウンロード</td><td>アプリが署名した認証トークン</td></tr>
-          <tr><td>プロファイルの作成・作り直し・更新</td><td>トークンと、ユーザーが選択したプロファイルの種類・バンドル ID・証明書・端末</td></tr>
-          <tr><td>端末の一覧取得と登録</td><td>トークンと、ユーザーが入力した端末名・UDID</td></tr>
+          <tr><td>プロファイルの一覧・ダウンロード・作成・更新、端末の一覧・登録、App Store へのストア配信</td><td>Apple App Store Connect API（<code>api.appstoreconnect.apple.com</code>）</td><td>アプリが署名した認証トークンと、ユーザーが選択・入力した値（プロファイルの種類・バンドル ID・証明書・端末名・UDID・ストア情報・スクリーンショットなど）</td></tr>
+          <tr><td>Google Play へのアップロード・ストア配信</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>サービスアカウントキーで署名した認証リクエストと、ユーザーが選んだ AAB · APK・ストア情報・スクリーンショット</td></tr>
+          <tr><td>ビルド・アプリのアップロード・端末へのインストール</td><td>Apple・Google の開発ツール（<code>xcodebuild</code> · <code>gradle</code> など）が接続する先</td><td>これらのツールがそれぞれの方法で通信します。依存関係をダウンロードするリポジトリ（Maven など）もここに含まれます</td></tr>
+          <tr><td>ライセンスの有効化・確認・解除、決済の開始</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
+          <tr><td>アップデートの確認</td><td>販売者が公開しているアップデート一覧</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません</td></tr>
         </tbody>
       </table>
       <ul>
-        <li><code>.p8</code> 秘密鍵は Mac に置いたままです。アプリはファイルへの参照（macOS のセキュリティスコープ付きブックマーク）のみを保存し、リクエストトークンを<strong>ローカルで</strong>署名します。キー自体は、Apple を含めどこにも送信されません。</li>
-        <li>これらのリクエストに対する Apple の取り扱いは、Apple Developer Program の各契約および Apple のプライバシーポリシーに従います。</li>
-        <li>API キーを登録しない限り、アプリはネットワークに一切接続しません。</li>
+        <li>App Store Connect の <code>.p8</code> 秘密鍵と Google のサービスアカウントキーは、ユーザーの Mac にそのまま置かれます。アプリはリクエストに必要なトークンを<strong>ローカルで</strong>署名し、キー自体を Apple・Google を含むどこにも送信しません。</li>
+        <li>Apple・Google がこれらのリクエストをどう処理するかは、各社の開発者向け規約とプライバシーポリシーに従います。</li>
       </ul>
 
-      <h2>4. Mac に保存されるデータ</h2>
+      <h2>4. Mac に保存されるもの</h2>
       <ul>
-        <li>アプリの設定（テーマ、言語、文字サイズ、API キーの情報など）は、macOS が提供するアプリの<strong>サンドボックスコンテナ</strong>に保存されます。</li>
-        <li>プロファイルフォルダと <code>.p8</code> ファイルへのアクセスは、オープンパネルで許可した<strong>セキュリティスコープ付きブックマーク</strong>として記憶されます。アプリ内でいつでも削除できます。</li>
-        <li>プロファイルの操作履歴（ダウンロード、作成、端末登録など）はローカルにのみ保存され、「履歴を消去」で消去できます。</li>
-        <li>アプリを削除すると、コンテナとともにこれらのデータも削除されます。<code>.p8</code> ファイルなど、ユーザーが自分で置いたファイルをアプリが削除することはありません。</li>
+        <li>アプリの設定（テーマ・言語・文字サイズ・プロジェクト一覧など）は、macOS のユーザー設定・Application Support フォルダに保存されます。</li>
+        <li>API キーの本体はこの Mac の<strong>キーチェーン</strong>に保存され、iCloud キーチェーンには同期されません。ファイルとして選んだキーは、そのファイルの場所だけを記憶します。</li>
+        <li>プロファイルの操作履歴・ビルド履歴はローカルにのみ残り、アプリから削除できます。</li>
+        <li>ライセンスキーと確認結果はこの Mac にのみ保存されます。</li>
+        <li><code>.p8</code> ファイルやビルド成果物など、ユーザーが自分で置いたファイルをアプリが削除することはありません。</li>
       </ul>
 
-      <h2>5. サードパーティライブラリ</h2>
-      <p>アプリは、読み込みアニメーションの再生のためにオープンソースライブラリ <strong>Lottie</strong> を同梱しています。表示にのみ使用され、ネットワークにアクセスしたりデータを収集したりすることはありません。その他のサードパーティ SDK はありません。</p>
-
-      <h2>6. 共有と販売</h2>
-      <p><strong>Mac App Store 版</strong>は収集する情報がないため、誰とも共有したり販売したりもしません。第 3 項に書いた Apple との通信はユーザーの求めにより、ユーザーのアカウントとキーを使って行われます。<strong>商用版</strong>で共有する相手は第 11 項のライセンスサーバーと第 12 項の Paddle だけであり、それ以外の第三者には販売したり提供したりしません<span class="placeholder">[実装を確認して確定してください]</span>。</p>
-
-      <h2>7. 子どもについて</h2>
-      <p>ShouArchive はソフトウェア開発者向けのツールであり、子どもを対象としていません。Mac App Store 版では、誰からも個人情報を収集しません。</p>
-
-      <h2>8. 変更</h2>
-      <p>このポリシーを変更する場合は、新しい施行日とともに本ページに掲載します。アプリのデータの取り扱いが実際に変わる場合は、アプリのリリースノートにも記載します。</p>
-
-      <h2>9. 商用版 — 収集する情報</h2>
-      <p><strong>商用版</strong>（このサイトで直接購読する版）は、購読中にライセンスを確認するためだけ次の値を<strong>ライセンスサーバー</strong>へ送ります。それ以外の目的には使いません。また、送信はすべて HTTPS で行われます。</p>
+      <h2>5. ライセンスの確認 — 送信する情報</h2>
+      <p>アプリは、ライセンスとアップデート期間を確認する目的でのみ、次の値を<strong>ライセンスサーバー</strong>に送信します。それ以外の目的には使わず、送信はすべて HTTPS で行われます。</p>
       <table>
-        <thead><tr><th>送る値</th><th>内容</th><th>なぜ必要か</th></tr></thead>
+        <thead><tr><th>送信する値</th><th>内容</th><th>必要な理由</th></tr></thead>
         <tbody>
-          <tr><td><strong>ライセンスキー</strong></td><td>購読を識別するキー</td><td>購読が有効かどうかを確認します</td></tr>
-          <tr><td><strong>端末識別値</strong></td><td>この Mac のハードウェア UUID にアプリ専用の接頭辞を付け、SHA-256 でハッシュ化した値の先頭 32 文字。ハードウェア UUID の原文 · ホスト名 · ユーザー名は送信しません。ハードウェア UUID を読み取れない場合は、アプリの初回起動時に生成したランダムなインストール ID を同じ方法でハッシュ化します。Mac の名前やネットワークが変わっても値は変わりません</td><td>料金プランが許可した端末数を超えたかどうかを確認します</td></tr>
-          <tr><td><strong>アプリのバージョン</strong></td><td>アプリのバージョン · ビルド番号</td><td>機能が合っていることを確認し、問題を解決します</td></tr>
-          <tr><td>アクセス記録</td><td>端末識別値のハッシュ、アプリのバージョン、日時、短いエラー理由</td><td>障害に対応し、問題を解決します</td></tr>
+          <tr><td><strong>ライセンスキー</strong></td><td>購入したライセンスを識別するキー</td><td>ライセンスが有効かどうか、アップデート期間がいつまでかを確認します</td></tr>
+          <tr><td><strong>端末識別値</strong></td><td>この Mac のハードウェア UUID にアプリ専用の接頭辞を付けて SHA-256 で変換した値の先頭 32 文字。ハードウェア UUID の原文・ホスト名・ユーザー名は送信しません。ハードウェア UUID を読み取れない場合は、アプリの初回起動時に作成したランダムなインストール ID を同じ方法で使います。Mac の名前やネットワークが変わっても値は変わりません</td><td>ライセンスで許可された台数（Mac <span data-price="commercial.devices">2</span> 台）を超えていないか確認します</td></tr>
+          <tr><td><strong>アプリのバージョン</strong></td><td>アプリのバージョン・ビルド番号</td><td>そのバージョンがアップデート期間内に公開されたものかを確認し、問題を解決します</td></tr>
+          <tr><td>アクセス記録</td><td>端末識別値のハッシュ、アプリのバージョン、時刻、短いエラー理由</td><td>障害に対応し、問題を解決します</td></tr>
         </tbody>
       </table>
-      <p><strong>いつ何を送るか.</strong></p>
+      <p><strong>いつ、何を送信するか。</strong></p>
       <ul>
-        <li><strong>有効化</strong> — ライセンスキー、購入メールアドレス、端末識別値、インストール識別値、アプリのバージョン、macOS のバージョン</li>
-        <li><strong>ライセンス確認</strong> — およそ 12 時間ごとにライセンスキー、端末識別値、インストール識別値、アプリのバージョン</li>
+        <li><strong>有効化</strong> — ライセンスキー、購入時のメールアドレス、端末識別値、インストール識別値、アプリのバージョン、macOS のバージョン</li>
+        <li><strong>ライセンスの確認</strong> — 約 12 時間ごとに、ライセンスキー、端末識別値、インストール識別値、アプリのバージョン</li>
         <li><strong>解除</strong> — ライセンスキー、端末識別値</li>
-        <li><strong>決済の開始</strong> — プラン（月額 · 年額）、端末識別値、インストール識別値、アプリのバージョン。決済そのものは Paddle の決済ページで行います</li>
+        <li><strong>決済の開始（購入・更新）</strong> — ライセンスキー（更新の場合）、端末識別値、インストール識別値、アプリのバージョン。決済そのものは Paddle の決済画面で行います</li>
       </ul>
-      <p><strong>サーバーに保存されるもの.</strong> ライセンスキーと端末識別値 · インストール識別値は、<strong>元の値は保存せず、ハッシュ（SHA-256 · HMAC-SHA256）のみ</strong>を保存します。アプリのバージョンと購入メールアドレスはそのまま保存し、購入メールアドレスはライセンスの照合とキーの送付に使います。Paddle では購読 · 顧客 · 取引 ID、購読状態、価格 ID、次回請求日、予約済みの変更を受け取ります。氏名 · 住所 · カード情報は受け取りません。</p>
-      <p><strong>保存しないもの.</strong> IP アドレス、リクエストヘッダとリクエスト本文、macOS のバージョン（受け取るだけで保存しません）、氏名 · 住所、カード番号、マーケティングへの同意、利用統計。</p>
+      <p><strong>サーバーに保存されるもの。</strong>ライセンスキーと端末・インストール識別値は、<strong>原文を保存せず、ハッシュ（SHA-256 · HMAC-SHA256）だけ</strong>を保存します。アプリのバージョンと購入時のメールアドレスはそのまま保存し、メールアドレスはライセンスの照会とキーの送付に使います。Paddle からは、顧客・取引・自動更新の ID、自動更新の状態（オン・オフ）、価格 ID、アップデートの終了日を受け取ります。氏名・住所・カード情報は受け取りません。</p>
+      <p><strong>保存しないもの。</strong>IP アドレス、リクエストヘッダーとリクエスト本文、macOS のバージョン（受け取るだけで保存しません）、氏名・住所、カード番号、マーケティングへの同意、利用統計。</p>
       <ul>
-        <li>これらの値は、アプリが動作する<strong>商用版</strong>でのみ送信されます。Mac App Store 版はネットワークに接続しないため（第 3 項）、何も送信しません。</li>
-        <li>利用者を特定できる値（ユーザー名 · 端末に自分で付けた名前など）は、ライセンス確認には使いません。</li>
-        <li>ファイル（IPA · APK · AAB · <code>.mobileprovision</code>）の内容とビルド成果物の検査結果は、ライセンスサーバーへ送信しません。</li>
-        <li>広告 · トラッキング · 行動分析の SDK は、商用版にも含めません<span class="placeholder">[実装を確認して確定してください]</span>。</li>
+        <li>ユーザーを特定できる値（ユーザー名・端末に直接付けた名前など）は、ライセンスの確認に使いません。</li>
+        <li>ファイル（IPA · APK · AAB · <code>.mobileprovision</code>）の内容とビルド成果物検査の結果は、ライセンスサーバーに送信しません。</li>
+        <li>広告・トラッキング・行動分析の SDK はアプリに組み込みません。</li>
       </ul>
 
-      <h2>10. 商用版 — ライセンスサーバーと保管</h2>
+      <h2>6. ライセンスサーバーと保管</h2>
       <ul>
-        <li>ライセンスサーバーは <strong>BeakBig</strong>（個人事業者、まだ事業者登録前）· 連絡先 <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> が運営します。サーバーは <strong>Cloudflare, Inc.</strong>（米国）の Workers を使い、データベースはアジア太平洋地域（その地域内の正確な場所は Cloudflare が決めます）にあります。</li>
-        <li>送信する値とライセンスの状態（発行 · 失効 · 解約）は<strong>購読が継続する間</strong>保管し、購読が終了または解約されてから 2 年が経過したら削除または匿名化します（現在は運営者が手作業で処理します）。保持期間が短い記録は<strong>毎日自動で</strong>削除します — アクセス記録 30 日、決済通知（Webhook）の処理記録 90 日、キー送付記録 365 日（受け取ったアドレスはハッシュのみで保管）、未処理の発行待ち 7 日。解約の請求を受けた場合は確認後ただちにライセンスを停止し、残っている記録を削除します。</li>
-        <li>このサーバーに保存される値は、第 9 項に書いたものと同じです。決済方法の情報、カード番号、銀行口座は保存されません。</li>
-        <li>サーバーは<strong>Cloudflare, Inc.</strong>（米国に本社を置く会社）の Workers で、ユーザーに近い Cloudflare データセンターで実行され、データベースはアジア太平洋地域（その地域内の正確な場所は Cloudflare が決めます）にあります。決済は<strong>Paddle.com Market Limited</strong>（英国）が販売代行（merchant of record）として処理します。</li>
-        <li>キーの送付に使うメール送信サービス: <span class="placeholder">[メール送信サービス — 未決定]</span></li>
-        <li>ライセンスサーバーに保存された履歴を直接ダウンロードしたり、削除を請求したりする場合は、第 12 項の方法でご連絡ください。</li>
+        <li>ライセンスサーバーは、販売者 <strong>Beakbig</strong>（事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>） · 連絡先 <a href="mailto:support@beakbig.com">support@beakbig.com</a> が運営しています。サーバーには <strong>Cloudflare, Inc.</strong>（米国）の Workers を使い、データベースはアジア太平洋地域（地域内の実際の場所は Cloudflare が決定）にあります。</li>
+        <li>送信された値とライセンスの状態（発行・アップデート期間・取り消し）は、<strong>ライセンスが存在する間</strong>保管します。アップデート期間が終わってもライセンスは残るため、削除しません。返金・チャージバック（chargeback）でライセンスが取り消された場合は、その 2 年後に削除または匿名化し（現在は運営者が手作業で処理しています）、削除のご依頼があればその時点で削除します。保管期間の短い記録は<strong>毎日自動で</strong>削除します — アクセス記録 30 日、決済通知（Webhook）の処理記録 90 日、キー送付の記録 365 日（宛先アドレスはハッシュのみ保管）、未処理の発行待ち 7 日。削除のご依頼を受けた場合は、本人確認のうえライセンスを取り消し、残りの記録を削除します — 削除すると、そのライセンスではアプリを使えなくなります。</li>
+        <li>このサーバーに保存される値は、第 5 項に記載したものと同じです。支払い方法の情報、カード番号、銀行口座は保存されません。</li>
+        <li>サーバーは <strong>Cloudflare, Inc.</strong>（米国企業）の Workers により、ユーザーに近い Cloudflare データセンターで実行され、データベースはアジア太平洋地域（地域内の実際の場所は Cloudflare が決定）にあります。決済は <strong>Paddle.com Market Limited</strong>（英国）が販売代理店（merchant of record）として処理します。</li>
+        <li>ライセンスキーは、メール送信サービス <strong>Resend, Inc.</strong>（米国）を通じて送付します。Resend には、キーの送付に必要な宛先メールアドレスと、ライセンスキーを記載したメール本文だけを渡します。</li>
+        <li>ライセンスサーバーに保存された内容をご自身でダウンロードしたり、削除を依頼したりする場合は、第 11 項の方法でお知らせください。</li>
       </ul>
 
-      <h2>11. 商用版 — 決済と Paddle</h2>
-      <p>商用版の決済は <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>）が <strong>販売代行（Merchant of Record）</strong>として処理します。Paddle が顧客に対する販売者となって、決済方法の確認、税額の計算と徴収、領収の発行、返金処理を任されます。決済方法の情報は Paddle が保管し、このサイトのサーバーは経由しません。</p>
+      <h2>7. 決済と Paddle</h2>
+      <p>決済は <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>）が<strong>販売代理店（Merchant of Record）</strong>として処理します。Paddle がお客様に対する販売者となり、支払い方法の確認、税金の計算と課税、領収書の発行、返金処理を担当します。支払い方法の情報は Paddle が保管し、このサイトのサーバーを通りません。</p>
       <ul>
-        <li><strong>Paddle が収集 · 処理するもの</strong> — 氏名、住所、メールアドレス、決済方法の情報と取引履歴、請求先住所、税務番号、IP アドレス、位置情報、端末 · ブラウザ情報、同意の記録など。これは <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle プライバシーポリシー</a>に従って処理され、Paddle は法的義務のために取引データを 5 年保管します。</li>
-        <li><strong>販売者（当社）に渡されるもの</strong> — 購入者の氏名 · 住所 · メールアドレス、購入履歴、ダッシュボードで確認できる取引分析。カードの全番号とセキュリティコードは渡されません。特別な機微情報のカテゴリーは共有されません。</li>
-        <li>販売者と Paddle は、このデータについてそれぞれ<strong>独立したデータ管理者</strong>です。販売者は受け取った情報をライセンスの発行、決済の確認、顧客対応にのみ用い、別の目的には使いません。</li>
-        <li>決済に関するお問い合わせは Paddle のカスタマーサポート窓口で受け付けています。返金基準は <a href="refund.html">返金ポリシー</a>に記載しています。</li>
-        <li>Paddle が代行する販売者規約も併せて適用されます: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 利用規約</a>、<a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 購入者規約</a>。</li>
+        <li><strong>Paddle が収集・処理するもの</strong> — 氏名、住所、メールアドレス、支払い方法の情報と決済履歴、請求先住所、税番号、IP アドレス、位置情報、端末・ブラウザの情報、同意の記録など。これらは <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle のプライバシーポリシー</a>に従って処理され、Paddle は法的義務のために取引データを 5 年間保管します。</li>
+        <li><strong>販売者（私）に渡されるもの</strong> — 購入者の氏名・住所・メールアドレス、購入履歴、ダッシュボードで確認できる取引分析。カード番号の全桁とセキュリティコードは渡されません。特別な配慮を要する個人情報のカテゴリーは共有されません。</li>
+        <li>販売者と Paddle は、このデータについてそれぞれ<strong>独立したデータ管理者</strong>です。販売者は受け取った情報を、ライセンスの発行、決済の確認、お客様からのお問い合わせへの対応にのみ使い、それ以外の目的には使いません。</li>
+        <li>決済に関するお問い合わせは Paddle のカスタマーサポート窓口で受け付けます。返金の基準は<a href="refund.html">返金ポリシー</a>に記載しています。</li>
+        <li>Paddle が代行する販売者の規約もあわせて適用されます: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 利用規約</a>、<a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 購入者規約</a>。</li>
       </ul>
 
-      <h2>12. データ主体の権利</h2>
-      <p>利用者は、個人情報について開示 · 訂正 · 削除 · 利用の制限 · 収集の拒否（判断に伴う停止）の権利を有します。</p>
+      <h2>8. サードパーティのライブラリ</h2>
       <ul>
-        <li><strong>ライセンスサーバーにある記録</strong> — <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>まで請求してください。本人確認の後、<strong>ご請求をいただいた日から 10 日以内</strong>に処理し、その結果をお知らせします。</li>
-        <li><strong>Paddle が保管する決済情報</strong> — Paddle のポリシーと手順に従って処理されます。必要な情報は Paddle に直接請求してください。</li>
-        <li><strong>拒否できる部分</strong> — ライセンス確認は商用版を使うための必須の処理です。これを拒否すると商用版を利用できません。</li>
-        <li>法定代理人や代理人が請求する場合は、委任関係を確認したうえで処理します。</li>
+        <li><strong>Lottie</strong> — 読み込みアニメーションを表示するためのオープンソースライブラリ。画面表示にのみ使われ、ネットワークに接続したりデータを収集したりしません。</li>
+        <li><strong>Sparkle</strong> — アプリのアップデートを確認してインストールするオープンソースライブラリ。第 3 項のアップデートの確認にのみ使われ、システム情報の送信はオンにしていません。</li>
       </ul>
-      <p>本方針は<strong>大韓民国の個人情報保護法</strong>を基準に作成しています。<strong>EU · EEA · 英国の利用者に対しては、GDPR と UK GDPR が定める権利も同様に保証します。</strong></p>
+      <p>そのほかに、ネットワークと通信するサードパーティの SDK はありません。</p>
 
-      <h2>13. 海外移転</h2>
+      <h2>9. 共有と販売</h2>
+      <p>販売者が個人情報を共有する相手は、第 6 項のライセンスサーバー（Cloudflare）・キー送付サービス（Resend）と、第 7 項の Paddle だけであり、それ以外の第三者に販売したり提供したりすることはありません。第 3 項に記載した Apple・Google との通信は、ユーザーのリクエストにより、ユーザーのアカウントとキーを使って行われます。</p>
+
+      <h2>10. 子ども</h2>
+      <p>ShouArchive はソフトウェア開発者向けのツールであり、子どもを対象としていません。14 歳未満の個人情報を、それと知りながら収集することはありません。</p>
+
+      <h2>11. ご本人の権利</h2>
+      <p>ユーザーは、個人情報について、閲覧・訂正・削除・処理の制限・収集の拒否（決定に基づく停止）の権利を有します。</p>
       <ul>
-        <li><strong>受取先と国</strong> — 商用版のライセンス記録は<strong>Cloudflare, Inc.</strong>（米国）へ、決済情報は<strong>Paddle.com Market Limited</strong>（英国）へ送られ、処理されます。</li>
-        <li><strong>保存先</strong> — ライセンス記録はアジア太平洋地域のデータベース（<strong>Cloudflare D1</strong>）に保存され、リクエストはユーザーに近い Cloudflare データセンターで処理されます。</li>
-        <li><strong>いつ · どのように</strong> — 有効化 · ライセンス確認 · 決済の開始時に、ネットワーク経由で送信します。</li>
-        <li><strong>項目 · 目的 · 保管期間</strong> — 第 9 項と第 10 項に書いたものと同じです。</li>
-        <li><strong>保護措置</strong> — Cloudflare はデータ処理契約（EU 標準契約条項を含む）に従い、Paddle は販売代行として自身のプライバシーポリシーに従って決済情報を処理します。</li>
-        <li><strong>拒否方法と結果</strong> — 商用版のライセンスを使わない場合、移転は行われません。その場合、自己配布版のビルド機能はトライアル期間が終わるとロックされ、App Store 版はこのサーバーを使用しません。</li>
-        <li>Appleへ送る App Store Connect API のリクエストは Apple のサーバーへ送られます（第 3 項）。</li>
+        <li><strong>ライセンスサーバーにある記録</strong> — <a href="mailto:support@beakbig.com">support@beakbig.com</a> までご依頼ください。本人確認のうえ、<strong>ご依頼を受けた日から 10 日以内</strong>に処理し、その結果をお知らせします。</li>
+        <li><strong>Paddle が保管する決済情報</strong> — Paddle のポリシーと手続きに従って処理されます。必要な情報は Paddle に直接ご依頼ください。</li>
+        <li><strong>拒否できる範囲</strong> — ライセンスの確認は、購入したライセンスを使うために必須の処理です。これを拒否すると、ライセンスで利用できるようになる機能は使えません。</li>
+        <li>法定代理人や代理人からのご依頼の場合は、委任関係を確認したうえで処理します。</li>
       </ul>
+      <p>このポリシーは<strong>大韓民国の個人情報保護法</strong>を基準に作成されています。<strong>EU・EEA・英国のユーザーには、GDPR と UK GDPR が定める権利も同様に保障します。</strong></p>
+
+      <h2>12. 国外移転</h2>
+      <ul>
+        <li><strong>移転先と国</strong> — ライセンスの記録は <strong>Cloudflare, Inc.</strong>（米国）で、決済情報は <strong>Paddle.com Market Limited</strong>（英国）で、キー送付のメールは <strong>Resend, Inc.</strong>（米国）で処理されます。</li>
+        <li><strong>保存場所</strong> — ライセンスの記録はアジア太平洋地域のデータベース（<strong>Cloudflare D1</strong>）に保存され、リクエストはユーザーに近い Cloudflare データセンターで処理されます。</li>
+        <li><strong>時期・方法</strong> — 有効化・ライセンスの確認・決済（購入・更新）の開始時、およびライセンスキーをメールで送付するときに、ネットワーク経由で送信します。</li>
+        <li><strong>項目・目的・保管期間</strong> — 第 5 項と第 6 項に記載したものと同じです。</li>
+        <li><strong>保護措置</strong> — Cloudflare はデータ処理契約（EU 標準契約条項を含む）に従い、Paddle は販売代理店として自社のプライバシーポリシーに従って決済情報を処理します。</li>
+        <li><strong>拒否の方法とその結果</strong> — ライセンスを使わなければ移転は発生しません。その場合、体験期間が過ぎるとプロファイル管理とビルド成果物検査だけが使えます。</li>
+        <li>Apple・Google へのリクエストは、各社のサーバーに直接送られます（第 3 項）。</li>
+      </ul>
+
+      <h2>13. 変更</h2>
+      <p>このポリシーを変更した場合は、新しい施行日とともにこのページに掲載します。アプリのデータの取り扱いが実際に変わる場合は、アプリのアップデート説明にも記載します。</p>
 
       <h2>14. お問い合わせ</h2>
-      <p>このポリシーやアプリのデータの取り扱いについてご不明な点は <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a> までお送りください。</p>
+      <p>このポリシーやアプリのデータの取り扱いについてご不明な点は、<a href="mailto:support@beakbig.com">support@beakbig.com</a> までお送りください。</p>
 
-      <p class="meta">施行日: 2026年10月3日（Mac App Store 版のデータについての取り扱いは、2026年9月22日の施行以降そのままです） · 開発者 · 配信者: BeakBig</p>
+      <p class="meta">施行日: 2026 年 10 月 15 日 · 開発者・販売者: Beakbig</p>
     </div>
   </section>
 </main>
@@ -179,16 +184,17 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="フッター">
-      <a href="../index.html">ホーム</a>
-      <a href="../pricing.html">価格</a>
-      <a href="../download.html">ダウンロード</a>
-      <a href="../support.html">サポート</a>
+      <a href="index.html">ホーム</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html">サポート</a>
       <a href="privacy.html" aria-current="page">プライバシーポリシー</a>
-      <a href="../terms.html">利用規約</a>
-      <a href="../refund.html">返金ポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="refund.html">返金ポリシー</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商号 Beakbig · 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>（簡易課税者） · 通信販売業の届出: <span data-price="seller.mail_order">免除</span> · 所在地 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · メール <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 決済代行 Paddle</p>
   </div>
 </footer>
 

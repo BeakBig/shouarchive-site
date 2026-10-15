@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShouArchive — Mac 向けプロビジョニングプロファイル管理 · IPA/APK 検査</title>
-  <meta name="description" content="プロビジョニングプロファイルの管理、IPA・APK・AAB ファイルの検査を 1 つの Mac アプリで。ファイルは Mac 内でのみ読み取ります。macOS 15 以降、Mac App Store で配信中。">
+  <title>ShouArchive — iOS プロファイル管理 · IPA/APK 検査（Mac）</title>
+  <meta name="description" content="プロビジョニングプロファイルの管理と IPA・APK・AAB の検査を 1 つのアプリで。ファイルは Mac 内でのみ読み取ります。macOS 15 以降 · 買い切り · 14 日間の体験版。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ShouArchive — プロビジョニングプロファイル管理 · IPA/APK 検査">
-  <meta property="og:description" content="プロビジョニングプロファイルの管理、IPA・APK・AAB ファイルの検査を 1 つの Mac アプリで。macOS 15 以降。">
+  <meta property="og:title" content="ShouArchive — iOS プロファイル管理 · IPA/APK 検査">
+  <meta property="og:description" content="プロビジョニングプロファイルの管理と IPA・APK・AAB の検査を 1 つのアプリで。macOS 15 以降。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ja_JP">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -29,10 +29,10 @@
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="メイン">
       <a href="#features" aria-current="page">機能</a>
-      <a href="../pricing.html">価格</a>
-      <a href="../download.html">ダウンロード</a>
-      <a href="../support.html">サポート</a>
-      <a href="../privacy.html">プライバシー</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシー</a>
       <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../index.html">한국어</option><option value="../en/index.html">English</option><option value="../ja/index.html" selected>日本語</option><option value="../zh-Hans/index.html">简体中文</option><option value="../zh-Hant/index.html">繁體中文</option><option value="../es/index.html">Español</option></select></label>
     </nav>
   </div>
@@ -45,18 +45,18 @@
       <div>
         <h1>ShouArchive</h1>
         <p class="tagline">プロファイル管理 · ビルド成果物検査 — リリース直前に確認すべきことを、1 つのアプリで。</p>
-        <p class="sub">IPA・APK・AAB を開いて、ストアに表示される情報、署名、要求する権限をその場で確認。プロビジョニングプロファイルは有効期限とあわせて整理。ファイルが Mac の外に出ることはありません。</p>
+        <p class="sub">IPA・APK・AAB を開いて、ストアに表示される情報や署名・権限をその場で確認し、プロビジョニングプロファイルを有効期限とあわせて管理します。ファイルは Mac 内でのみ読み取ります。ビルド・アプリのアップロード・端末へのインストール・ストア配信まで、同じアプリで続けて行えます。</p>
         <div class="palette" aria-hidden="true">
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
         <div class="hero-actions">
-          <a class="btn" href="https://apps.apple.com/app/id6814686766">
+          <a class="btn" href="download.html">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            Mac App Store でダウンロード
+            ダウンロード · <span data-price="trial_days">14</span> 日間の体験版
           </a>
           <a class="btn ghost" href="#features">機能を見る</a>
         </div>
-        <p class="hero-note">macOS 15 Sequoia 以降 · Apple Silicon · Intel</p>
+        <p class="hero-note">macOS 15 Sequoia 以降 · Apple Silicon · Intel · <a href="pricing.html">買い切り <span data-price="commercial.price">US$29</span></a> · 支払い方法の登録なしで <span data-price="trial_days">14</span> 日間体験</p>
       </div>
     </div>
   </section>
@@ -66,37 +66,37 @@
       <div class="section-head">
         <p class="eyebrow cyan">プロファイル</p>
         <h2>プロビジョニングプロファイルを、有効期限から端末登録まで</h2>
-        <p class="lead">Xcode がインストールしたプロファイルを一目で確認。App Store Connect API キーを追加すれば、プロファイルのダウンロード・作成・更新までアプリの中で完結します。</p>
+        <p class="lead">Xcode がインストールしたプロファイルを一目で確認。App Store Connect API キーがあれば、ダウンロード・作成・更新までアプリの中で完結します。</p>
       </div>
       <div class="cards">
         <article class="card">
           <h3>インストール済みプロファイル</h3>
           <ul>
-            <li>すべての行に <strong>D-N 有効期限バッジ</strong> — 30 日以内はオレンジ、期限切れは赤</li>
+            <li>すべての行に <strong>D-N 有効期限バッジ</strong> — 30 日以内に期限が切れるものはオレンジ、期限切れは赤</li>
             <li>フィルター: <strong>全体 · 新規 · 重複</strong> / <strong>有効 · まもなく期限切れ · 期限切れ</strong>、チーム・証明書の種類（Developer · Distribution · Ad Hoc · Enterprise）別</li>
-            <li>詳細表示: 端末 UDID、含まれる証明書（SHA-1 · SHA-256）、Entitlements を項目ごとにコピー可能</li>
-            <li>一覧を開くと詳細を<strong>バックグラウンドで自動的に読み込み</strong>、名前・バンドル ID・UUID に加えて<strong>端末 UDID</strong> でもすぐ検索</li>
-            <li>2 つのプロファイルを選び、上部の<strong>比較バー</strong>から並べて比較 — 端末・証明書・Entitlements の差分を表示</li>
-            <li><code>.mobileprovision</code> ファイルをドラッグして追加、複数選択して削除</li>
+            <li>詳細: 端末 UDID・含まれる証明書（SHA-1 · SHA-256）・Entitlements を項目ごとにコピー</li>
+            <li>詳細は一覧に入ると<strong>バックグラウンドで自動的に読み込み</strong>、名前・バンドル ID・UUID はもちろん<strong>端末 UDID</strong> でもすぐに検索</li>
+            <li>2 つのプロファイルを選び、上部の<strong>比較バー</strong>で並べて比較 — 端末・証明書・Entitlements の差分</li>
+            <li><code>.mobileprovision</code> をドラッグ＆ドロップで追加、複数選択して削除</li>
           </ul>
         </article>
         <article class="card">
           <h3>App Store Connect API</h3>
           <ul>
             <li><strong>「API キー」タブ</strong>でキーをチームごとに複数保存・管理 — 保存時にチームを自動で読み取ります</li>
-            <li>チームのプロファイルを取得し、<strong>未インストールのものだけを選んでインストール</strong></li>
+            <li>チームのプロファイル一覧を取得し、<strong>未インストールのものだけを選んでインストール</strong></li>
             <li>登録済み端末の一覧と<strong>新しい端末の登録</strong> — 種類ごとの上限を表示（例: iPhone 3 / 100）</li>
-            <li><strong>プロファイルの作成</strong>: 種類・プラットフォーム・バンドル ID・証明書・端末</li>
+            <li><strong>新しいプロファイルの作成</strong>: 種類・プラットフォーム・バンドル ID・証明書・端末</li>
             <li>端末が変わったときや期限が近いときは<strong>作り直し・更新</strong></li>
           </ul>
-          <p class="card-note">使用するのは Issuer ID、Key ID、<code>.p8</code> ファイルだけです。キーは Mac に置いたまま、リクエストトークンはローカルで署名します。</p>
+          <p class="card-note">使うのは Issuer ID・Key ID・<code>.p8</code> だけです。キーファイルは Mac に置いたまま、リクエストトークンはローカルで署名します。</p>
         </article>
         <article class="card">
           <h3>履歴</h3>
           <ul>
             <li>ダウンロード・作成・作り直し・端末登録・追加・削除を<strong>日付ごと</strong>に記録</li>
             <li>名前・バンドル ID・UUID・UDID で検索</li>
-            <li>いつ何が変わったのかを追いたいときに便利です</li>
+            <li>誰がいつどのプロファイルを変更したのかを振り返りたいときに</li>
           </ul>
         </article>
       </div>
@@ -108,16 +108,16 @@
       <div class="section-head">
         <p class="eyebrow magenta">ビルド成果物検査</p>
         <h2>IPA・APK・AAB を、アップロードする前に開く</h2>
-        <p class="lead">ファイルをドロップするだけで、外部ツールなしにその場で解析します。ストア掲載情報から署名・権限・セキュリティ設定まで、すべての項目にわかりやすい説明が付いています。</p>
+        <p class="lead">ファイルをドロップするだけで、外部ツールなしにその場で解析します。ストアに表示される情報から署名・権限・セキュリティ設定まで、すべての項目に説明が付いているので、初めて見る値もその場で理解できます。</p>
       </div>
       <div class="cards">
         <article class="card">
           <h3>ストア掲載情報</h3>
-          <p>製品ページに表示される値のうち、成果物から直接読み取れるものです。</p>
+          <p>製品ページに表示される値のうち、成果物から読み取れるものを先に確認できます。</p>
           <ul>
             <li>アイコン・名前・提供者・サイズ・対応言語</li>
-            <li><strong>iOS</strong>: カテゴリ、互換性、トラッキング許可 (ATT) の要求、プライバシーマニフェストの要約</li>
-            <li><strong>Android</strong>: ダウンロードサイズ、必要な Android バージョン、権限数、アプリ内課金、広告 ID、対応デバイス</li>
+            <li><strong>iOS</strong>: カテゴリ・互換性・ATT（トラッキング許可リクエスト）の有無・プライバシーマニフェストの要約</li>
+            <li><strong>Android</strong>: ダウンロードサイズ・必要な Android バージョン・権限数・アプリ内課金・広告 ID・対応デバイス</li>
           </ul>
         </article>
         <article class="card">
@@ -132,10 +132,10 @@
           <h3>Android の署名・セキュリティ・16 KB</h3>
           <ul>
             <li>証明書フィンガープリント <strong>SHA-256 · SHA-1 · MD5</strong>、Kakao・Facebook 用の<strong>キーハッシュ</strong></li>
-            <li>権限の分類と端末機能</li>
-            <li>マニフェストのセキュリティ設定: allowBackup、平文 HTTP、外部公開コンポーネント、ディープリンク</li>
-            <li>ネイティブライブラリの <strong>16 KB ページサイズ整列</strong>チェック</li>
-            <li>ビルド・構成・サイズの内訳（DEX、リソース、ABI ごとのネイティブライブラリ）</li>
+            <li>権限の分類・端末機能</li>
+            <li>マニフェストのセキュリティ設定: allowBackup・平文 HTTP・外部公開コンポーネント・ディープリンク</li>
+            <li>ネイティブライブラリの <strong>16 KB ページ整列</strong>チェック</li>
+            <li>ビルド・構成・サイズの内訳（DEX・リソース・ABI ごとのネイティブ）</li>
           </ul>
         </article>
       </div>
@@ -148,7 +148,7 @@
       <div class="section-head">
         <p class="eyebrow violet">画面</p>
         <h2>画面を見てみる</h2>
-        <p class="lead">ライト・ダーク・システム設定と 2 つのカラーテーマ（Black &amp; White · ShouArchive）、85〜150 % の文字サイズ。タブはウインドウ下部のメニューから、プロファイルタブではその上のサブメニューで管理・ダウンロードを切り替えます。</p>
+        <p class="lead">ライト・ダーク・システム設定と 2 つのカラーテーマ（Black &amp; White · ShouArchive）、85〜150 % の文字サイズ。タブは画面下部のメニューで、プロファイルタブではその上のサブメニューで管理・ダウンロードを切り替えます。</p>
       </div>
       <div class="gallery">
         <figure>
@@ -164,7 +164,7 @@
           <figcaption><span class="num">03</span>プロファイルダウンロード: App Store Connect のプロファイル</figcaption>
         </figure>
         <figure>
-          <img src="../assets/screenshots/ja/04.png" alt="API キー画面: 保存したキー、選んだキーの情報、キーの作り方" width="2880" height="1800" loading="lazy">
+          <img src="../assets/screenshots/ja/04.png" alt="API キー画面: 保存したキーの一覧、選んだキーの情報、キーの作り方" width="2880" height="1800" loading="lazy">
           <figcaption><span class="num">04</span>API キー: 保存したキー · キー情報 · 作り方</figcaption>
         </figure>
         <figure>
@@ -202,19 +202,19 @@
         <h2>動作環境</h2>
       </div>
       <dl class="reqs">
-        <div class="req"><dt>macOS</dt><dd>15 Sequoia 以降<small>Apple Silicon と Intel（ユニバーサル）</small></dd></div>
-        <div class="req"><dt>言語</dt><dd>6 言語<small>日本語 · English · 한국어 · 简体中文 · 繁體中文 · Español</small></dd></div>
+        <div class="req"><dt>macOS</dt><dd>15 Sequoia 以降<small>Apple Silicon · Intel（ユニバーサル）</small></dd></div>
+        <div class="req"><dt>言語</dt><dd>6 言語<small>한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español</small></dd></div>
         <div class="req"><dt>外観</dt><dd>ライト · ダーク · システム<small>カラーテーマ 2 種 · 文字サイズ 85 – 150 %</small></dd></div>
-        <div class="req"><dt>任意</dt><dd>App Store Connect API キー<small>プロファイルのダウンロード・作成と端末登録にのみ必要</small></dd></div>
+        <div class="req"><dt>任意</dt><dd>App Store Connect API キー<small>プロファイルのダウンロード・作成・端末登録・ストア配信に必要</small></dd></div>
       </dl>
     </div>
   </section>
 
   <section class="cta">
     <div class="wrap">
-      <h2>ShouArchive を入手</h2>
-      <p>プロファイル・ビルド成果物検査 — リリース直前の確認を、この 1 本で。</p>
-      <a class="btn" href="https://apps.apple.com/app/id6814686766">Mac App Store でダウンロード</a>
+      <h2>今すぐ入手</h2>
+      <p>プロファイル・ビルド成果物検査。リリース直前の確認は ShouArchive で。</p>
+      <a class="btn" href="download.html">ダウンロード · <span data-price="trial_days">14</span> 日間の体験版</a>
     </div>
   </section>
 </main>
@@ -223,15 +223,16 @@
   <div class="wrap">
     <nav aria-label="フッター">
       <a href="index.html" aria-current="page">ホーム</a>
-      <a href="../pricing.html">価格</a>
-      <a href="../download.html">ダウンロード</a>
-      <a href="../support.html">サポート</a>
-      <a href="../privacy.html">プライバシーポリシー</a>
-      <a href="../terms.html">利用規約</a>
-      <a href="../refund.html">返金ポリシー</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="refund.html">返金ポリシー</a>
       <span class="footer-langs"><a href="../index.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/index.html" lang="en" hreflang="en">English</a> <a href="../ja/index.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/index.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/index.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/index.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商号 Beakbig · 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>（簡易課税者） · 通信販売業の届出: <span data-price="seller.mail_order">免除</span> · 所在地 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · メール <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 決済代行 Paddle</p>
   </div>
 </footer>
 

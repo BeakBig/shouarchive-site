@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Política de privacidad — ShouArchive</title>
-  <meta name="description" content="Política de privacidad de ShouArchive. La app no recopila datos, lee tus archivos solo en local y usa la red únicamente para comunicarse con la API de App Store Connect de Apple con una clave que tú proporcionas.">
+  <meta name="description" content="Política de privacidad de ShouArchive. Sin analíticas, rastreo ni anuncios; los archivos que inspeccionas se leen solo en tu Mac. Para comprobar la licencia solo se usan la clave de licencia, el identificador del dispositivo y la versión de la app, y el pago lo gestiona Paddle como revendedor autorizado.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Política de privacidad — ShouArchive">
-  <meta property="og:description" content="ShouArchive no recopila ningún dato.">
+  <meta property="og:description" content="Sin analíticas, rastreo ni anuncios · los archivos se quedan en tu Mac · solo los valores necesarios para comprobar la licencia.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="es_ES">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -29,6 +29,8 @@
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="Principal">
       <a href="index.html#features">Funciones</a>
+      <a href="pricing.html">Precios</a>
+      <a href="download.html">Descargas</a>
       <a href="support.html">Soporte</a>
       <a href="privacy.html" aria-current="page">Privacidad</a>
       <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html" selected>Español</option></select></label>
@@ -40,80 +42,160 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Política de privacidad</h1>
-      <p>ShouArchive para macOS · En vigor desde el 22 de septiembre de 2026 · Desarrollador: BeakBig</p>
+      <p>ShouArchive (macOS) · En vigor desde el 15 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>En resumen:</strong> ShouArchive no recopila datos personales. No hay analíticas, ni rastreo, ni anuncios, ni cuentas, y los archivos que inspeccionas se leen únicamente en tu Mac. La red se usa solo cuando registras tu propia clave de API de App Store Connect y la app se comunica con Apple en tu nombre.</p>
+        <p><strong>Resumen.</strong> No hay herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo y la versión de la app</strong> al comprobar la licencia (sección 5), y los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7).</p>
       </div>
 
-      <h2>1. Datos que recopilamos</h2>
-      <p>Ninguno. La app no:</p>
+      <h2>1. Lo que no recopilamos</h2>
+      <p>La app no hace nada de lo siguiente:</p>
       <ul>
-        <li>recopila <strong>analíticas</strong>, como estadísticas de uso o informes de fallos;</li>
-        <li>te <strong>rastrea</strong> a ti ni a tu dispositivo, ni muestra <strong>anuncios</strong>;</li>
-        <li>exige una <strong>cuenta</strong> ni inicio de sesión;</li>
-        <li>incluye ningún <strong>SDK de terceros</strong> que se comunique por la red.</li>
+        <li>No recopila datos de <strong>analíticas</strong>, como estadísticas de uso o informes de errores.</li>
+        <li>No te <strong>rastrea</strong> a ti ni a tu dispositivo, ni muestra <strong>anuncios</strong>.</li>
+        <li>No hay <strong>cuentas</strong> ni inicio de sesión. La licencia se comprueba con una sola clave.</li>
+        <li>No envía al vendedor el contenido de los archivos que inspeccionas, el código fuente de tus proyectos ni los resultados de compilación.</li>
       </ul>
 
-      <h2>2. Archivos que abres</h2>
-      <p>Los archivos que manejan la inspección de artefactos y la gestión de perfiles (IPA, APK, AAB, <code>.mobileprovision</code>) se leen únicamente en tu Mac. Su contenido y todo lo derivado de él (ID de paquete, certificados de firma, listas de permisos, etc.) se muestra en la ventana de la app y nunca se transmite a ningún sitio. La inspección nunca modifica el archivo original.</p>
+      <h2>2. Tratamiento de archivos</h2>
+      <p>Los archivos que manejan la inspección de artefactos y la gestión de perfiles (IPA · APK · AAB · <code>.mobileprovision</code>) se leen únicamente en tu Mac. Su contenido y la información obtenida de él (ID de paquete, certificados de firma, listas de permisos, etc.) solo se muestran en la ventana de la app y no se transmiten a ningún sitio. La inspección de artefactos no modifica el archivo original. Los archivos creados al compilar o exportar se guardan únicamente en la carpeta que elijas.</p>
 
       <h2>3. Uso de la red</h2>
-      <p>La app usa la red en un único caso: cuando registras tu propia <strong>clave de API de App Store Connect</strong> (Issuer ID, Key ID y archivo <code>.p8</code>) y utilizas una función que la necesita, la app se conecta a la API de App Store Connect de Apple en <code>api.appstoreconnect.apple.com</code>.</p>
+      <p>La app solo se conecta a la red en los casos siguientes. Las solicitudes a Apple y Google salen directamente de tu Mac, sin pasar por los servidores del vendedor.</p>
       <table>
-        <thead><tr><th>Función</th><th>Qué se envía a Apple</th></tr></thead>
+        <thead><tr><th>Función</th><th>Adónde se conecta</th><th>Qué se envía</th></tr></thead>
         <tbody>
-          <tr><td>Listar y descargar perfiles</td><td>Un token de autenticación firmado por la app</td></tr>
-          <tr><td>Crear, recrear o renovar perfiles</td><td>El token más el tipo de perfil, el ID de paquete, los certificados y los dispositivos que seleccionaste</td></tr>
-          <tr><td>Listar y registrar dispositivos</td><td>El token más los nombres y UDID de los dispositivos que introdujiste</td></tr>
+          <tr><td>Listar, descargar, crear y renovar perfiles; listar y registrar dispositivos; publicar en el App Store</td><td>API de App Store Connect de Apple (<code>api.appstoreconnect.apple.com</code>)</td><td>El token de autenticación firmado por la app y los valores que eliges o introduces (tipo de perfil · ID de paquete · certificados · nombres de dispositivo · UDID · ficha de la tienda · capturas de pantalla, etc.)</td></tr>
+          <tr><td>Subida y publicación en Google Play</td><td>API de Google Play Developer (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Solicitudes de autenticación firmadas con la clave de la cuenta de servicio y los AAB, APK, fichas de la tienda y capturas de pantalla que eliges</td></tr>
+          <tr><td>Compilación · subida de apps · instalación en dispositivos</td><td>Los destinos a los que se conectan las herramientas de desarrollo de Apple y Google (<code>xcodebuild</code> · <code>gradle</code>, etc.)</td><td>Cada herramienta se comunica a su manera. Aquí se incluyen también los repositorios de los que se descargan dependencias (Maven, etc.)</td></tr>
+          <tr><td>Activación, comprobación y desactivación de la licencia; inicio del pago</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
+          <tr><td>Búsqueda de actualizaciones</td><td>La lista de actualizaciones que publica el vendedor</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor</td></tr>
         </tbody>
       </table>
       <ul>
-        <li>La clave privada <code>.p8</code> se queda en tu Mac. La app guarda solo una referencia al archivo (un marcador con ámbito de seguridad de macOS) y firma los tokens de las solicitudes <strong>en local</strong>. La clave en sí nunca se envía a ningún sitio, tampoco a Apple.</li>
-        <li>El tratamiento de estas solicitudes por parte de Apple se rige por los acuerdos del Apple Developer Program y por la política de privacidad de Apple.</li>
-        <li>Si nunca registras una clave de API, la app no realiza ninguna conexión de red.</li>
+        <li>La clave privada <code>.p8</code> de App Store Connect y la clave de la cuenta de servicio de Google se quedan en tu Mac. La app firma <strong>en local</strong> los tokens que necesitan las solicitudes, y la clave en sí no se envía a ningún sitio, tampoco a Apple ni a Google.</li>
+        <li>El tratamiento que Apple y Google dan a estas solicitudes se rige por sus respectivos acuerdos para desarrolladores y políticas de privacidad.</li>
       </ul>
 
-      <h2>4. Datos guardados en tu Mac</h2>
+      <h2>4. Lo que se guarda en tu Mac</h2>
       <ul>
-        <li>Los ajustes de la app (tema, idioma, tamaño del texto, datos de la clave de API y similares) se guardan en el <strong>contenedor de sandbox</strong> de la app que proporciona macOS.</li>
-        <li>El acceso a la carpeta de perfiles y a los archivos <code>.p8</code> se recuerda mediante <strong>marcadores con ámbito de seguridad</strong> que concedes en el panel de apertura. Puedes eliminarlos en la app en cualquier momento.</li>
-        <li>El historial de actividad de los perfiles (descargas, creaciones, registros de dispositivos, etc.) se conserva en local y puede vaciarse con «Borrar historial».</li>
-        <li>Al eliminar la app se elimina su contenedor y, con él, estos datos. Los archivos que colocaste tú mismo, como el archivo <code>.p8</code>, nunca los elimina la app.</li>
+        <li>Los ajustes de la app (tema · idioma · tamaño del texto · lista de proyectos, etc.) se guardan en las preferencias de usuario y en la carpeta de soporte de la app de macOS.</li>
+        <li>El contenido de las claves de API se guarda en el <strong>llavero</strong> de este Mac y no se sincroniza con el Llavero de iCloud. De las claves elegidas como archivo solo se recuerda la ubicación del archivo.</li>
+        <li>El historial de actividad de los perfiles y el historial de compilaciones se guardan solo en local y pueden borrarse desde la app.</li>
+        <li>La clave de licencia y el resultado de su comprobación se guardan únicamente en este Mac.</li>
+        <li>La app no elimina los archivos que colocaste tú mismo, como el archivo <code>.p8</code> o los resultados de compilación.</li>
       </ul>
 
-      <h2>5. Bibliotecas de terceros</h2>
-      <p>La app incluye la biblioteca de código abierto <strong>Lottie</strong> para reproducir una animación de carga. Se usa solo para la visualización y no accede a la red ni recopila datos. No hay otros SDK de terceros.</p>
+      <h2>5. Comprobación de la licencia: datos que se envían</h2>
+      <p>La app envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para comprobar la licencia y el periodo de actualizaciones. No se usan para ningún otro fin, y todas las transmisiones se realizan por HTTPS.</p>
+      <table>
+        <thead><tr><th>Valor enviado</th><th>Contenido</th><th>Por qué hace falta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Clave de licencia</strong></td><td>La clave que identifica la licencia comprada</td><td>Sirve para comprobar que la licencia es válida y hasta cuándo dura el periodo de actualizaciones</td></tr>
+          <tr><td><strong>Identificador del dispositivo</strong></td><td>Los 32 primeros caracteres del hash SHA-256 del UUID de hardware de este Mac con un prefijo propio de la app. No se envían el UUID de hardware en texto claro, ni el nombre de host, ni el nombre de usuario. Si no se puede leer el UUID de hardware, se usa del mismo modo un identificador de instalación aleatorio creado en la primera ejecución de la app. El valor no cambia aunque cambien el nombre del Mac o la red</td><td>Sirve para comprobar si se supera el número de dispositivos que permite la licencia (<span data-price="commercial.devices">2</span> Mac)</td></tr>
+          <tr><td><strong>Versión de la app</strong></td><td>Versión y número de compilación de la app</td><td>Sirve para comprobar si esa versión se publicó dentro del periodo de actualizaciones y para resolver problemas</td></tr>
+          <tr><td>Registro de accesos</td><td>El hash del identificador del dispositivo, la versión de la app, la hora y un breve motivo del error</td><td>Sirve para responder a las averías y resolver problemas</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Cuándo se envía cada cosa.</strong></p>
+      <ul>
+        <li><strong>Activación</strong> — clave de licencia, correo electrónico de compra, identificador del dispositivo, identificador de instalación, versión de la app, versión de macOS</li>
+        <li><strong>Comprobación de la licencia</strong> — cada 12 horas aproximadamente: clave de licencia, identificador del dispositivo, identificador de instalación, versión de la app</li>
+        <li><strong>Desactivación</strong> — clave de licencia, identificador del dispositivo</li>
+        <li><strong>Inicio del pago (compra · renovación)</strong> — clave de licencia (en las renovaciones), identificador del dispositivo, identificador de instalación, versión de la app. El pago en sí se hace en la pantalla de pago de Paddle</li>
+      </ul>
+      <p><strong>Lo que se guarda en el servidor.</strong> La clave de licencia y los identificadores de dispositivo e instalación <strong>no se guardan en texto claro, sino solo como hash (SHA-256 · HMAC-SHA256)</strong>. La versión de la app y el correo electrónico de compra se guardan tal cual, y el correo de compra se usa para consultar la licencia y enviar la clave. De Paddle recibimos los identificadores de cliente, de transacción y de renovación automática, el estado de la renovación automática (activada · desactivada), el identificador de precio y la fecha en que terminan las actualizaciones. No recibimos el nombre, el domicilio ni los datos de la tarjeta.</p>
+      <p><strong>Lo que no se guarda.</strong> La dirección IP, las cabeceras y el cuerpo de las solicitudes, la versión de macOS (se recibe, pero no se guarda), el nombre y el domicilio, el número de tarjeta, el consentimiento de marketing y las estadísticas de uso.</p>
+      <ul>
+        <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (nombre de usuario, el nombre que hayas puesto al dispositivo, etc.).</li>
+        <li>No se envían al servidor de licencias el contenido de los archivos (IPA · APK · AAB · <code>.mobileprovision</code>) ni los resultados de la inspección de artefactos.</li>
+        <li>La app no incluye SDK de publicidad, de rastreo ni de análisis del comportamiento.</li>
+      </ul>
 
-      <h2>6. Compartición y venta</h2>
-      <p>Como no se recopila nada, no se comparte ni se vende nada a nadie. La comunicación con Apple descrita en la sección 3 se produce a petición tuya, con tu propia cuenta y tu propia clave.</p>
+      <h2>6. Servidor de licencias y conservación</h2>
+      <ul>
+        <li>El servidor de licencias lo explota el vendedor, <strong>Beakbig</strong> (n.º de registro empresarial <span data-price="seller.reg_no">613-40-01820</span>) · contacto: <a href="mailto:support@beakbig.com">support@beakbig.com</a>. El servidor usa Workers de <strong>Cloudflare, Inc.</strong> (Estados Unidos) y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare).</li>
+        <li>Los valores enviados y el estado de la licencia (emitida · periodo de actualizaciones · revocada) se conservan <strong>mientras exista la licencia</strong>. Como la licencia sigue existiendo cuando termina el periodo de actualizaciones, no se borran en ese momento. Si la licencia se revoca por un reembolso o un contracargo (chargeback), se eliminan o se anonimizan 2 años después (por ahora lo hace el operador a mano), y si solicitas su eliminación, se borran en ese momento. Los registros con plazos cortos se borran <strong>cada día de forma automática</strong>: los registros de accesos, a los 30 días; los registros de tratamiento de avisos de pago (webhooks), a los 90 días; los registros de envío de claves, a los 365 días (de la dirección del destinatario solo se guarda el hash); y las emisiones pendientes sin tratar, a los 7 días. Cuando recibimos una solicitud de eliminación, revocamos la licencia tras verificar tu identidad y borramos los registros restantes; una vez eliminada, esa licencia ya no permite usar la app.</li>
+        <li>Los valores que se guardan en este servidor son los que se indican en la sección 5. No se guardan datos del método de pago, números de tarjeta ni cuentas bancarias.</li>
+        <li>El servidor se ejecuta con Workers de <strong>Cloudflare, Inc.</strong> (una empresa de Estados Unidos) en el centro de datos de Cloudflare más cercano a la persona usuaria, y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare). Los pagos los gestiona <strong>Paddle.com Market Limited</strong> (Reino Unido) como revendedor autorizado (merchant of record).</li>
+        <li>La clave de licencia se envía a través del servicio de envío de correo <strong>Resend, Inc.</strong> (Estados Unidos). A Resend solo se le facilitan la dirección de correo del destinatario y el cuerpo del mensaje con la clave de licencia, que son lo necesario para enviarla.</li>
+        <li>Si quieres descargar directamente o solicitar la eliminación del historial guardado en el servidor de licencias, avísanos por el medio indicado en la sección 11.</li>
+      </ul>
 
-      <h2>7. Menores</h2>
-      <p>ShouArchive es una herramienta para desarrolladores de software y no está dirigida a menores. No recopila información personal de nadie.</p>
+      <h2>7. Pago y Paddle</h2>
+      <p>Los pagos los gestiona <strong>Paddle</strong> (<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>) como <strong>revendedor autorizado (Merchant of Record)</strong>. Paddle es el vendedor frente al cliente y se encarga de comprobar el método de pago, calcular y aplicar los impuestos, emitir los recibos y tramitar los reembolsos. Los datos del método de pago los conserva Paddle y no pasan por los servidores de este sitio.</p>
+      <ul>
+        <li><strong>Lo que Paddle recopila y trata</strong> — nombre, domicilio, dirección de correo electrónico, datos del método de pago e historial de pagos, dirección de facturación, número de identificación fiscal, dirección IP, información de ubicación, información del dispositivo y del navegador, registros de consentimiento, etc. Todo ello se trata conforme a la <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">política de privacidad de Paddle</a>, y Paddle conserva los datos de las transacciones durante 5 años por obligación legal.</li>
+        <li><strong>Lo que llega al vendedor (nosotros)</strong> — nombre, domicilio y dirección de correo electrónico del comprador, el historial de compra y el análisis de transacciones que se ve en el panel. No llegan el número completo de la tarjeta ni su código de seguridad. No se comparte ninguna categoría especial de información sensible.</li>
+        <li>El vendedor y Paddle son <strong>responsables independientes del tratamiento</strong> de estos datos. El vendedor solo usa la información recibida para emitir licencias, comprobar pagos y atender las consultas de los clientes, y no para ningún otro fin.</li>
+        <li>Las consultas sobre el pago se atienden en el servicio de atención al cliente de Paddle. Los criterios de reembolso están descritos en la <a href="refund.html">política de reembolso</a>.</li>
+        <li>También se aplican los términos de venta que Paddle aplica como revendedor autorizado: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">términos de Paddle</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">términos de comprador de Paddle</a>.</li>
+      </ul>
 
-      <h2>8. Cambios</h2>
-      <p>Si esta política cambia, la nueva versión se publicará en esta página con la fecha de entrada en vigor actualizada. Si cambia de verdad la forma en que la app trata los datos, también se indicará en las notas de la versión de la app.</p>
+      <h2>8. Bibliotecas de terceros</h2>
+      <ul>
+        <li><strong>Lottie</strong> — biblioteca de código abierto para mostrar una animación de carga. Se usa solo para la visualización y no accede a la red ni recopila datos.</li>
+        <li><strong>Sparkle</strong> — biblioteca de código abierto que busca e instala las actualizaciones de la app. Solo se usa para la búsqueda de actualizaciones de la sección 3, y el envío de información del sistema está desactivado.</li>
+      </ul>
+      <p>No hay ningún otro SDK de terceros que se comunique por la red.</p>
 
-      <h2>9. Contacto</h2>
-      <p>Para preguntas sobre esta política o sobre cómo trata los datos la app: <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
+      <h2>9. Compartición y venta</h2>
+      <p>Los únicos con quienes el vendedor comparte datos personales son el servidor de licencias (Cloudflare) y el servicio de envío de claves (Resend) de la sección 6 y Paddle de la sección 7; no se venden ni se ceden a ningún otro tercero. La comunicación con Apple y Google descrita en la sección 3 se produce a petición tuya, con tu propia cuenta y tus propias claves.</p>
 
-      <p class="meta">Fecha de entrada en vigor: 22 de septiembre de 2026 · Desarrollador y editor: BeakBig</p>
+      <h2>10. Menores</h2>
+      <p>ShouArchive es una herramienta para desarrolladores de software y no está dirigida a menores. No recopilamos a sabiendas datos personales de menores de 14 años.</p>
+
+      <h2>11. Derechos del interesado</h2>
+      <p>Puedes ejercer los derechos de acceso, rectificación, supresión, limitación del tratamiento y oposición a la recogida (la suspensión derivada de esa decisión) sobre tus datos personales.</p>
+      <ul>
+        <li><strong>Registros en el servidor de licencias</strong> — envía la solicitud a <a href="mailto:support@beakbig.com">support@beakbig.com</a>. Una vez comprobada tu identidad, la procesaremos <strong>en un plazo de 10 días desde la recepción de la solicitud</strong> y te comunicaremos el resultado.</li>
+        <li><strong>Información de pago que conserva Paddle</strong> — se trata conforme a las políticas y los procedimientos de Paddle. Si necesitas esa información, solicítala directamente a Paddle.</li>
+        <li><strong>Lo que puedes rechazar</strong> — la comprobación de la licencia es un tratamiento necesario para usar la licencia comprada. Si te niegas a ella, no puedes usar las funciones que se activan con la licencia.</li>
+        <li>Cuando la solicitud la presente un representante legal o un apoderado, verificamos antes la representación.</li>
+      </ul>
+      <p>Esta política se ha redactado tomando como referencia la <strong>Ley de Protección de Datos Personales de la República de Corea</strong>. <strong>A los usuarios de la UE, el EEE y el Reino Unido también les garantizamos por igual los derechos que establecen el RGPD y el RGPD del Reino Unido.</strong></p>
+
+      <h2>12. Transferencias internacionales</h2>
+      <ul>
+        <li><strong>Destino y país</strong> — los registros de licencia se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), la información de pago en <strong>Paddle.com Market Limited</strong> (Reino Unido) y los correos de envío de claves en <strong>Resend, Inc.</strong> (Estados Unidos).</li>
+        <li><strong>Ubicación del almacenamiento</strong> — los registros de licencia se guardan en la base de datos de la región Asia-Pacífico (<strong>Cloudflare D1</strong>), y las solicitudes se procesan en el centro de datos de Cloudflare más cercano a la persona usuaria.</li>
+        <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla y al iniciar un pago (compra · renovación), así como al enviar la clave de licencia por correo electrónico.</li>
+        <li><strong>Categorías, fines y plazos de conservación</strong> — los mismos que se indican en las secciones 5 y 6.</li>
+        <li><strong>Medidas de protección</strong> — Cloudflare sigue su acuerdo de tratamiento de datos (con las cláusulas contractuales tipo de la UE incluidas) y Paddle trata la información de pago conforme a su propia política de privacidad en su condición de revendedor autorizado.</li>
+        <li><strong>Cómo rechazarlas y qué ocurre</strong> — si no usas una licencia, no se produce ninguna transferencia. En ese caso, cuando termina el periodo de prueba, solo puedes usar la gestión de perfiles y la inspección de artefactos.</li>
+        <li>Las solicitudes a Apple y Google van directamente a los servidores de cada empresa (sección 3).</li>
+      </ul>
+
+      <h2>13. Cambios</h2>
+      <p>Si esta política cambia, la nueva versión se publicará en esta página con la nueva fecha de entrada en vigor. Si cambia de verdad la forma en que la app trata los datos, también se indicará en las notas de la actualización de la app.</p>
+
+      <h2>14. Contacto</h2>
+      <p>Si tienes alguna duda sobre esta política o sobre cómo trata los datos la app, escríbenos a <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
+
+      <p class="meta">Fecha de entrada en vigor: 15 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
+</main>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Pie de página">
       <a href="index.html">Inicio</a>
+      <a href="pricing.html">Precios</a>
+      <a href="download.html">Descargas</a>
       <a href="support.html">Soporte</a>
+      <a href="privacy.html" aria-current="page">Política de privacidad</a>
+      <a href="terms.html">Términos del servicio</a>
+      <a href="refund.html">Política de reembolso</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es" aria-current="page">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">Razón social: Beakbig · Titular: <span data-price="seller.owner">Hyunjin Kang</span> · Registro empresarial (Corea del Sur): <span data-price="seller.reg_no">613-40-01820</span> (régimen simplificado del IVA) · Registro de venta a distancia: <span data-price="seller.mail_order">Exento</span> · Dirección: <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, República de Corea</span> · Teléfono: <span data-price="seller.phone">+82-502-6682-9359</span> · Correo: <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Gestor de pagos: Paddle</p>
   </div>
 </footer>
 

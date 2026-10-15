@@ -45,6 +45,12 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* hidden 속성은 어떤 display 규칙에도 이겨야 합니다. .btn·.plan-feats 처럼 display 를
+   직접 정하는 요소에 hidden 을 걸면 브라우저 기본 숨김이 무시되어 버튼이 그대로 보입니다
+   (출시 전이라 숨겨 둔 구매 · 다운로드 버튼이 보이는 일이 생기지 않도록). */
+[hidden] { display: none !important; }
+
+
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
@@ -214,6 +220,7 @@ p { margin: 0 0 1em; }
   border: 1px solid transparent;
   transition: transform .12s ease, filter .12s ease, background .12s ease;
 }
+button.btn { font-family: inherit; cursor: pointer; }
 .btn:hover { text-decoration: none; filter: brightness(1.06); transform: translateY(-1px); }
 .btn svg { width: 18px; height: 18px; flex: none; }
 .btn.ghost {
@@ -352,6 +359,59 @@ h2 {
 .cta h2 { margin-bottom: 8px; }
 .cta p { color: var(--hero-muted); margin: 0 0 20px; }
 
+/* ---------- pricing (두 판 · 가격) ---------- */
+.plans { display: grid; gap: 16px; }
+@media (min-width: 860px) { .plans { grid-template-columns: 1fr 1fr; } }
+.plan {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow);
+}
+.plan.coming { border-style: dashed; }
+.plan-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin: 0 0 12px;
+}
+.plan-badge.live { background: var(--accent-soft); color: var(--accent); }
+.plan-badge.soon { background: rgba(255, 107, 26, .16); color: var(--orange); }
+.plan h2 { font-size: 24px; margin: 0 0 4px; }
+.plan-for { color: var(--muted); font-size: 14.5px; margin: 0 0 18px; }
+.plan .price {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 6px;
+}
+.plan .price-note { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+.plan-feats { flex: 1; margin: 0 0 20px; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
+.plan-feats li { margin: 5px 0; }
+.plan-feats strong { color: var(--text); font-weight: 600; }
+.plan-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.plan-actions .btn { flex: 0 1 auto; }
+.plan-foot { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.compare { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14.5px; }
+.compare th, .compare td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.compare thead th { font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.compare tbody th { font-weight: 600; color: var(--text); }
+.compare td.yes { color: var(--accent); font-weight: 700; font-size: 16px; line-height: 1.2; }
+.compare td.no { color: var(--muted); }
+.compare td small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
 /* ---------- footer ---------- */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -369,6 +429,12 @@ h2 {
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .site-footer nav a { color: var(--muted); }
 .site-footer nav a:hover { color: var(--text); }
+/* 사업자 정보 (상호 · 사업자등록번호 · 통신판매업 신고 · 주소 · 연락처) */
+.site-footer .biz { flex-basis: 100%; margin: 0; font-size: 12.5px; line-height: 1.7; color: var(--muted); }
+.site-footer .biz a { color: var(--muted); text-decoration: underline; }
+
+/* 아직 정하지 않은 값 — 문서 · 바닥 사업자 정보 어디서든 주황색 */
+.placeholder { color: var(--orange); font-style: normal; }
 
 /* ---------- document pages (support · privacy) ---------- */
 .page-hero {
@@ -398,6 +464,9 @@ h2 {
 .doc ul, .doc ol { padding-left: 22px; margin: 0 0 1em; }
 .doc li { margin: 4px 0; }
 .doc .meta { color: var(--muted); font-size: 14px; }
+.doc ul.toc { list-style: none; padding-left: 0; columns: 2; column-gap: 24px; }
+@media (max-width: 559px) { .doc ul.toc { columns: 1; } }
+.doc ul.toc li { break-inside: avoid; }
 .doc table { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 0 0 1em; }
 .doc th, .doc td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .doc th { color: var(--muted); font-weight: 600; font-size: 13px; }
@@ -466,6 +535,10 @@ code {
   box-shadow: var(--shadow);
 }
 .contact-card strong { color: var(--text); }
+
+/* ---------- checkout (Paddle 결제) ---------- */
+.checkout-box { max-width: 560px; }
+.checkout-box .plan-actions { margin: 4px 0 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

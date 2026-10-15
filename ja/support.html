@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>サポート — ShouArchive</title>
-  <meta name="description" content="ShouArchive のサポート: プロファイルフォルダの許可、App Store Connect API キー、ビルド成果物検査、お問い合わせ方法。">
+  <meta name="description" content="ShouArchive のサポートページ。プロファイル、App Store Connect API キー、ビルド成果物検査などのよくある質問とお問い合わせ方法。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="サポート — ShouArchive">
-  <meta property="og:description" content="ShouArchive のよくある質問とお問い合わせ先。">
+  <meta property="og:description" content="ShouArchive のよくある質問とお問い合わせ方法。">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ja_JP">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -29,6 +29,8 @@
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="メイン">
       <a href="index.html#features">機能</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
       <a href="support.html" aria-current="page">サポート</a>
       <a href="privacy.html">プライバシー</a>
       <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../support.html">한국어</option><option value="../en/support.html">English</option><option value="../ja/support.html" selected>日本語</option><option value="../zh-Hans/support.html">简体中文</option><option value="../zh-Hant/support.html">繁體中文</option><option value="../es/support.html">Español</option></select></label>
@@ -40,124 +42,144 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>サポート</h1>
-      <p>ShouArchive の使い方で困ったときは、まず下記のよくある質問をご確認ください。解決しない場合はメールでお知らせください。</p>
+      <p>ShouArchive の使用中に困ったことがあればお知らせください。下のよくある質問に答えがあるかもしれません。</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="contact-card">
-        <span><strong>お問い合わせ</strong> <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a></span>
-        <span>通常、数日以内に返信します。問題を報告するときのポイントは<a href="#report">ページ下部</a>にあります。</span>
+        <span><strong>お問い合わせ</strong> <a href="mailto:support@beakbig.com">support@beakbig.com</a></span>
+        <span>通常は数日以内に返信します。不具合報告のコツは<a href="#report">いちばん下</a>にあります。</span>
       </div>
 
       <div class="faq">
         <h2 id="start">はじめに</h2>
 
         <details open>
-          <summary>プロファイルタブでフォルダの許可を求められます。なぜですか？</summary>
-          <p>Mac App Store 版は macOS のサンドボックス内で動作します。サンドボックス化されたアプリは、ユーザーが明示的に選んだフォルダしか読み取れません。Xcode がプロビジョニングプロファイルを保存するフォルダはアプリの外にあるため、一度だけ許可していただく必要があります。</p>
-          <p>プロファイルタブのフォルダボタンをクリックすると、そのフォルダが選択された状態でオープンパネルが開きます。何も変更せず、そのまま<strong>「許可」</strong>を押してください。許可は次回以降の起動でも記憶されます（macOS のセキュリティスコープ付きブックマーク）。</p>
-          <p>アプリが読み取るフォルダ:</p>
+          <summary>プロファイルはどこから読み込みますか？</summary>
+          <p>Xcode がプロビジョニングプロファイルを保存するフォルダをアプリが直接読み込みます。別途許可や設定は必要ありません。</p>
           <ul>
             <li><code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> — Xcode 16 以降</li>
             <li><code>~/Library/MobileDevice/Provisioning Profiles</code> — それ以前の Xcode</li>
           </ul>
-          <p><code>~/Library</code> は Finder では標準で非表示です。オープンパネルで ⌘⇧G を押してパスを貼り付けると、直接移動できます。フォルダを許可したくない場合でも、<code>.mobileprovision</code> ファイルをウインドウにドラッグするか「ファイルから追加…」を使えば開けます。</p>
+          <p>ほかの場所にある <code>.mobileprovision</code> ファイルは、ウインドウにドラッグ＆ドロップするか「ファイルから追加…」で開けます。</p>
         </details>
 
         <details>
-          <summary>対応しているファイル形式は？</summary>
+          <summary>どのファイルに対応していますか？</summary>
           <ul>
-            <li><strong>ビルド成果物検査</strong>: <code>.ipa</code>（iOS タブ）、<code>.apk</code> と <code>.aab</code>（Android タブ）</li>
+            <li><strong>ビルド成果物検査</strong>: <code>.ipa</code>（iOS タブ）、<code>.apk</code> · <code>.aab</code>（Android タブ）</li>
             <li><strong>プロファイル</strong>: <code>.mobileprovision</code></li>
-            <li><strong>API キー</strong>: App Store Connect からダウンロードした <code>.p8</code> ファイル</li>
+            <li><strong>API キー</strong>: App Store Connect からダウンロードした <code>.p8</code></li>
           </ul>
-          <p>ファイルをウインドウにドロップするか、「ファイルを選択…」（⌘O）で開きます。</p>
+          <p>ファイルはドラッグ＆ドロップするか「ファイルを選択…」（⌘O）で開きます。</p>
         </details>
 
-        <details>
-          <summary>この版に IPA/APK のビルドや書き出しがないのはなぜですか？</summary>
-          <p>Mac App Store のアプリはサンドボックスが必須で、サンドボックス内では <code>xcodebuild</code> や <code>gradle</code> のような外部プログラムを起動できません。そのためこの版は、<strong>検査・プロファイル</strong> の 2 つに絞っています。ビルド成果物検査も外部ツールに依存せず、アプリ内蔵のパーサーが IPA・APK・AAB を直接読み取ります。</p>
-        </details>
-
-        <h2 id="profiles">プロファイルと App Store Connect API</h2>
+        <h2 id="profiles">プロファイル · App Store Connect API</h2>
 
         <details>
-          <summary>App Store Connect API キーはどう作りますか？</summary>
+          <summary>App Store Connect API キーはどう作成しますか？</summary>
           <ol>
-            <li><a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>ユーザーとアクセス</strong> › <strong>統合</strong> › <strong>App Store Connect API</strong> を開きます。</li>
-            <li><strong>チームキー</strong>を生成します。プロファイルと端末の取得・作成には、通常 <strong>Admin</strong> ロールが必要です。</li>
-            <li>アプリ下部のメニューの<strong>「API キー」</strong>タブ（または設定（⌘,）›「API キー」）で「新規キー」を押し、<strong>Issuer ID</strong>、<strong>Key ID</strong>、ダウンロードした <code>.p8</code> ファイルを登録します。<code>AuthKey_XXXXXXXX.p8</code> ファイルを選ぶと Key ID は自動的に入力され、チームは保存時に Apple から読み取ります（読み取れない場合は選ぶよう案内します）。貼り付けで紛れ込んだ空白・改行は自動的に取り除かれます。</li>
+            <li><a href="https://appstoreconnect.apple.com" rel="noopener" target="_blank">App Store Connect</a> › <strong>ユーザとアクセス</strong> › <strong>統合</strong> › <strong>App Store Connect API</strong> を開きます。</li>
+            <li><strong>チームキー（Team key）</strong>を作成します。プロファイルと端末を参照・作成するには、通常 <strong>Admin</strong> の役割が必要です。</li>
+            <li>アプリ画面下部のメニューの <strong>「API キー」</strong>タブ（または「設定」（⌘,）›「API キー」）で「新しいキー」をクリックし、<strong>Issuer ID</strong>、<strong>Key ID</strong>、ダウンロードした <code>.p8</code> ファイルを登録します。<code>AuthKey_XXXXXXXX.p8</code> ファイルを選ぶと Key ID は自動で入力され、チームは保存時に Apple から読み込みます（読み込めない場合は手動で選ぶよう案内します）。貼り付けたときに混ざった空白・改行は自動で取り除かれます。</li>
           </ol>
-          <p><code>.p8</code> ファイルは Apple から一度しかダウンロードできないため、安全な場所に保管してください。アプリが Apple ID や 2 ファクタ認証コードを使うことはありません。</p>
+          <p><code>.p8</code> ファイルは Apple から一度しかダウンロードできないので、安全な場所に保管してください。Apple ID や 2 ファクタ認証は使いません。</p>
         </details>
 
         <details>
-          <summary>API キーはどこに保存され、どこへ送られますか？</summary>
-          <p><code>.p8</code> ファイルは置いた場所にそのまま残り、アプリはその参照（セキュリティスコープ付きブックマーク）だけを記憶します。リクエストトークンは Mac 上で署名され、キー自体がどこかへ送られることはありません。アプリが通信するのは Apple の App Store Connect API（<code>api.appstoreconnect.apple.com</code>）だけです。アプリでキーを削除しても、<code>.p8</code> ファイルは削除されません。</p>
+          <summary>API キーはどこに保存され、どこへ送信されますか？</summary>
+          <p><code>.p8</code> ファイルは選んだ場所にそのまま置かれ、アプリはそのファイルの場所（セキュリティスコープ付きブックマーク）だけを記憶します。Apple に送るリクエストトークンは Mac 上で署名し、キー自体は Apple の App Store Connect API（<code>api.appstoreconnect.apple.com</code>）以外のどこにも送られません。アプリでキーを削除しても、<code>.p8</code> ファイルは削除しません。</p>
         </details>
 
         <details>
-          <summary>「まもなく期限切れ」と D-N バッジの意味は？</summary>
-          <p>有効期限まで <strong>30 日以内</strong>のプロファイルが「まもなく期限切れ」で、残り日数をオレンジ色の <strong>D-N</strong> バッジで表示します。期限を過ぎたものは「期限切れ」（赤）です。「新規」は最近作成されたもの、「重複」は同じチーム・App ID・種類のプロファイルが 2 つ以上あることを示します。</p>
+          <summary>「まもなく期限切れ」と D-N バッジの基準は？</summary>
+          <p>有効期限まで <strong>30 日以内</strong>であれば「まもなく期限切れ」に分類し、残り日数を <strong>D-N</strong>（オレンジ）バッジで表示します。すでに過ぎたものは「期限切れ」（赤）です。「新規」は最近作成したプロファイル、「重複」は同じチーム・同じ App ID・同じ種類のプロファイルが 2 つ以上あるときです。</p>
         </details>
 
         <details>
-          <summary>「証明書」カードが空です。</summary>
-          <p>キーチェーンにあるコード署名証明書の一覧はサンドボックス内から読み取れないため、Mac App Store 版ではこのカードは空になります。<strong>各プロファイルに含まれる</strong>証明書は、詳細表示と比較表示でこれまでどおり確認でき、SHA-1 と SHA-256 のコピーボタンも使えます。</p>
+          <summary>「証明書」カードには何が表示されますか？</summary>
+          <p>この Mac のキーチェーンにあるコード署名証明書を、期限切れのものも含めて表示します。プロファイルの<strong>中に含まれる</strong>証明書は、詳細画面と比較画面で確認できます（SHA-1 · SHA-256 をコピー可能）。</p>
         </details>
 
         <details>
-          <summary>端末は何台まで登録できますか？</summary>
-          <p>Apple Developer アカウントでは、メンバーシップ年ごとに<strong>種類別（iPhone、iPad、Mac など）で 100 台まで</strong>登録できます。無効にした端末も、メンバーシップが更新されるまでは枠を占有します。「プロファイル」›「プロファイルダウンロード」の「端末」タブに種類ごとの現在の使用状況（例: iPhone 3 / 100）が表示されます。</p>
+          <summary>端末登録の上限は？</summary>
+          <p>Apple Developer アカウントでは、メンバーシップの 1 年ごとに、端末の種類（iPhone · iPad · Mac …）ごとに <strong>100 台</strong>まで登録できます。無効にした端末も、メンバーシップを更新するまでは枠を使います。「プロファイル」›「プロファイルダウンロード」の「端末」タブの上部に、種類ごとの使用数（例: iPhone 3 / 100）が表示されます。</p>
         </details>
 
         <h2 id="inspect">ビルド成果物検査</h2>
 
         <details>
-          <summary>検査するとファイルが変更されたり、アップロードされたりしますか？</summary>
-          <p>いいえ。ファイルは<strong>読み取るだけ</strong>です。元のファイルは変更されず、隣に結果ファイルを書き込むこともなく、どのサーバーにも送信しません。結果はアプリのウインドウにのみ表示されます。</p>
+          <summary>検査するとファイルが変更されたり、どこかにアップロードされたりしますか？</summary>
+          <p>いいえ。ファイルは<strong>読み取るだけ</strong>です。元のファイルを変更せず、隣に結果ファイルを書き込まず、どのサーバーにも送信しません。検査結果はアプリのウインドウにだけ表示されます。</p>
         </details>
 
         <details>
-          <summary>項目の意味がわかりません。</summary>
-          <p>点線の下線が付いた項目名（権限、端末機能、マニフェスト設定、証明書フィンガープリント、Entitlements など）をクリックすると、<strong>概要 · 詳細 · 注意点</strong>を説明するポップオーバーが開きます。16 KB カードは、タイトル横の ⓘ をクリックしてください。</p>
+          <summary>項目名の意味がわかりません。</summary>
+          <p>点線の下線がある項目名（権限・端末機能・マニフェスト設定・証明書フィンガープリント・Entitlements など）をクリックすると、<strong>概要 · 詳細 · 注意点</strong>の説明がポップオーバーで表示されます。16 KB カードはタイトル横の ⓘ をクリックしてください。</p>
         </details>
 
         <details>
           <summary>16 KB ページサイズのチェックでは何を確認しますか？</summary>
-          <p>Android 15 以降、一部の端末は 16 KB のメモリページを使用しており、Google Play はこれに対応したネイティブライブラリを求めています。アプリは 64 ビット（<code>arm64-v8a</code>、<code>x86_64</code>）の <code>.so</code> ファイルの ELF LOAD アライメントと、APK 内に無圧縮で格納された <code>.so</code> ファイルについてはアーカイブ内での 16 KB 境界を確認し、対応していないライブラリを一覧表示します。</p>
+          <p>Android 15 から 16 KB のメモリページを使う端末があり、Google Play はそれに対応したネイティブライブラリを求めています。アプリは 64 ビット（<code>arm64-v8a</code> · <code>x86_64</code>）の <code>.so</code> ファイルの ELF LOAD 整列と、APK 内に無圧縮で保存された <code>.so</code> の 16 KB 境界を確認し、非対応のライブラリを一覧で表示します。</p>
+        </details>
+
+        <h2 id="license">価格 · ライセンス</h2>
+
+        <details>
+          <summary>価格はいくらで、何が含まれますか？</summary>
+          <p>初回購入は <span data-price="commercial.price">US$29</span>（税別）で、ライセンスと 1 年間のアップデートが含まれます。1 つのライセンスキーで Mac <span data-price="commercial.devices">2</span> 台で使えます。プロファイル管理・API キー・ビルド成果物検査・ビルド・アプリのアップロード・端末へのインストール・依存関係チェック・OTA インストールファイル・ストア配信がすべて含まれます。体験期間中・体験期間の終了後・購入後に使える機能は、<a href="pricing.html">価格ページ</a>の表にまとめています。</p>
+        </details>
+
+        <details>
+          <summary>いつ発売されますか？</summary>
+          <p>価格は決まりました — 初回購入 <span data-price="commercial.price">US$29</span>（1 年間のアップデート付き）、その後のアップデートは年 <span data-price="commercial.price_renewal">US$15</span> です（税別）。発売日はまだ決まっていません。決まり次第、<a href="pricing.html">価格ページ</a>と<a href="download.html">ダウンロードページ</a>でお知らせします。ご不明な点は <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E7%99%BA%E5%A3%B2%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">support@beakbig.com</a> までお送りください。</p>
+        </details>
+
+        <details>
+          <summary>別の Mac に移すには？</summary>
+          <p>今使っている Mac で「設定 › ライセンス」の「解除」をクリックすると枠が空くので、新しい Mac で同じキーを入力してください。1 つのキーで同時に Mac <span data-price="commercial.devices">2</span> 台まで使えます。</p>
+        </details>
+
+        <details>
+          <summary>アップデート期間が終わるとアプリは使えなくなりますか？</summary>
+          <p>いいえ。一度購入すればずっと使えます。アップデート期間内に公開されたバージョンは、期間の終了後もそのまま使えます。期間の終了後に公開されたバージョンだけは、アップデートを更新（年 <span data-price="commercial.price_renewal">US$15</span>）しないとインストールできません。更新は自動で行われ、いつでも止められます。期間が終わったあとに改めて更新すると、その決済日から新たに 1 年が始まります。</p>
+        </details>
+
+        <details>
+          <summary>体験期間が終わったら？</summary>
+          <p><span data-price="trial_days">14</span> 日間の体験版は支払い方法の登録なしで始めるため、終了しても自動で課金されることはありません。ライセンスキーなしで体験期間が終わると、プロファイル管理とビルド成果物検査だけが引き続き使え、ビルド・アップロード・端末へのインストール・依存関係チェック・OTA・ストア配信は、購入後に「設定 › ライセンス」にキーを入力すると再び使えるようになります。</p>
         </details>
 
         <h2 id="general">一般</h2>
 
         <details>
-          <summary>言語を変更するには？</summary>
-          <p>ツールバーの<strong>地球儀</strong>メニューを開いて言語を選び、「今すぐ再起動」を確定します。アプリはその言語で再起動し、作業中の内容はそのまま保持されます。対応言語: 日本語、English、한국어、简体中文、繁體中文、Español。</p>
+          <summary>表示言語を変えるには？</summary>
+          <p>ツールバーの<strong>地球儀</strong>メニューで言語を選び、「今すぐ再起動」をクリックすると、その言語で開き直します。言語はアプリを再起動すると適用され、作業中の内容はそのまま残ります。한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español に対応しています。</p>
         </details>
 
         <details>
           <summary>テーマと文字サイズは？</summary>
-          <p>ツールバーのテーマメニューで、カラーテーマ（<strong>Black &amp; White · ShouArchive</strong>）と<strong>ライト・ダーク・システム設定</strong>を選びます。文字サイズは表示メニュー（文字を大きく ⌘+、文字を小さく ⌘-、デフォルトのサイズ ⌘0）または設定（⌘,）› 画面で 85 % から 150 % まで変更できます。</p>
+          <p>ツールバーのテーマメニューで、カラーテーマ（<strong>Black &amp; White · ShouArchive</strong>）と<strong>ライト · ダーク · システム設定</strong>を選びます。文字サイズは「表示」メニューの「テキストを大きく ⌘+ · 小さく ⌘- · デフォルトのサイズ ⌘0」、または「設定」（⌘,）›「外観」で 85 %〜150 % の範囲で変更できます。</p>
         </details>
 
         <details>
           <summary>動作環境</summary>
-          <p>macOS 15 Sequoia 以降、Apple Silicon または Intel の Mac。App Store Connect API キーが必要なのはプロファイルのダウンロード・作成と端末登録だけで、それ以外の機能はオフラインで動作します。</p>
+          <p>macOS 15 Sequoia 以降。Apple Silicon と Intel Mac の両方に対応しています。プロファイルのダウンロード・作成・端末登録には App Store Connect API キーが必要で、ライセンスの確認・アップデートの確認・アプリのアップロード・ストア配信にはインターネット接続が必要です。ビルド成果物検査とインストール済みプロファイルの閲覧はインターネットなしで動作します。</p>
         </details>
 
         <details id="report">
-          <summary>問題を報告するには？</summary>
-          <p><a href="mailto:beakbigkb@gmail.com?subject=ShouArchive%20support">beakbigkb@gmail.com</a> 宛てに、次の情報を添えてお送りいただくと迅速に確認できます。</p>
-          <p>アプリ内では、ヘルプメニュー ›「問い合わせ · 提案を送る…」（または設定（⌘,）›「メールを作成…」）からそのまま書けます。アプリのバージョンと macOS の情報は本文の下に自動的に付きます。</p>
+          <summary>不具合を報告するには？</summary>
+          <p><a href="mailto:support@beakbig.com?subject=ShouArchive%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">support@beakbig.com</a> まで、以下の内容を添えてお送りいただければ、早く確認できます。</p>
+          <p>アプリ内では「ヘルプ」メニュー ›「お問い合わせ · ご提案を送信…」（または「設定」（⌘,）›「メールを作成…」）からすぐに書けます。アプリのバージョンと macOS の情報は本文の下に自動で添付されます。</p>
           <ul>
             <li>macOS のバージョン（Apple メニュー › この Mac について）</li>
             <li>アプリのバージョン（ShouArchive メニュー › ShouArchive について）</li>
-            <li>行った操作の手順と、何が起きたか</li>
-            <li>可能であればスクリーンショット、または表示されたエラーの文言</li>
+            <li>どの順番で何をしたときに、何が起きたか</li>
+            <li>可能であれば、スクリーンショットやエラーメッセージ</li>
           </ul>
-          <p>IPA・APK・プロファイルのファイルを添付する必要はありません。必要な場合は別途お願いします。送信する前に、キーファイル（<code>.p8</code>）や機密情報が含まれていないことを確認してください。</p>
+          <p>IPA · APK · プロファイルのファイルを送る必要はありません。どうしても必要な場合は別途お願いします。お送りいただく際は、キーファイル（<code>.p8</code>）や機密情報が含まれていないかご確認ください。</p>
         </details>
       </div>
     </div>
@@ -168,10 +190,16 @@
   <div class="wrap">
     <nav aria-label="フッター">
       <a href="index.html">ホーム</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html" aria-current="page">サポート</a>
       <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="refund.html">返金ポリシー</a>
       <span class="footer-langs"><a href="../support.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/support.html" lang="en" hreflang="en">English</a> <a href="../ja/support.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/support.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/support.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/support.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">商号 Beakbig · 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>（簡易課税者） · 通信販売業の届出: <span data-price="seller.mail_order">免除</span> · 所在地 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · メール <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 決済代行 Paddle</p>
   </div>
 </footer>
 

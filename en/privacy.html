@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — ShouArchive</title>
-  <meta name="description" content="ShouArchive privacy policy. The app collects no data, reads your files locally only, and uses the network solely to talk to Apple's App Store Connect API with a key you provide.">
+  <meta name="description" content="ShouArchive Privacy Policy. No analytics, tracking or ads, and the files you inspect are read only on your Mac. License checks use only the license key, a device identifier and the app version, and payment is handled by Paddle as Merchant of Record.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Privacy Policy — ShouArchive">
-  <meta property="og:description" content="ShouArchive collects no data.">
+  <meta property="og:description" content="No analytics, tracking or ads · files stay on your Mac · only what license checks need.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="en_US">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -29,6 +29,8 @@
     <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="Main">
       <a href="index.html#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
       <a href="support.html">Support</a>
       <a href="privacy.html" aria-current="page">Privacy</a>
       <label class="lang-switch"><span class="visually-hidden">Language</span><select class="lang-select" aria-label="Language"><option value="../privacy.html">한국어</option><option value="../en/privacy.html" selected>English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
@@ -40,68 +42,141 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Privacy Policy</h1>
-      <p>ShouArchive for macOS · Effective September 22, 2026 · Developer: BeakBig</p>
+      <p>ShouArchive (macOS) · Effective October 15, 2026 · Developer and seller: Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>In short:</strong> ShouArchive collects no personal data. There are no analytics, no tracking, no ads and no accounts, and the files you inspect are read on your Mac only. The network is used solely when you register your own App Store Connect API key and the app talks to Apple on your behalf.</p>
+        <p><strong>Summary.</strong> No analytics, no tracking, no ads, no accounts. The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. The only things that reach the seller are the <strong>license key, device identifier and app version</strong> sent when your license is checked (Section 5), and the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7).</p>
       </div>
 
-      <h2>1. Data we collect</h2>
-      <p>None. The app does not:</p>
+      <h2>1. What we don't collect</h2>
+      <p>The app does none of the following.</p>
       <ul>
-        <li>collect <strong>analytics</strong> such as usage statistics or crash reports;</li>
-        <li><strong>track</strong> you or your device, or show <strong>ads</strong>;</li>
-        <li>require an <strong>account</strong> or sign-in;</li>
-        <li>include any <strong>third-party SDK</strong> that communicates over the network.</li>
+        <li>It does not collect <strong>analytics</strong> data such as usage statistics or crash reports.</li>
+        <li>It does not <strong>track</strong> you or your device, and it shows no <strong>ads</strong>.</li>
+        <li>There is no <strong>account</strong> or sign-in. Your license is checked with a single key.</li>
+        <li>It does not send the contents of the files you inspect, your project source or your build output to the seller.</li>
       </ul>
 
-      <h2>2. Files you open</h2>
-      <p>Files handled by artifact inspection and profile management (IPA, APK, AAB, <code>.mobileprovision</code>) are read on your Mac only. Their contents and anything derived from them (bundle IDs, signing certificates, permission lists and so on) are shown in the app window and are never transmitted anywhere. Inspection never modifies the original file.</p>
+      <h2>2. Handling of files</h2>
+      <p>The files handled by artifact inspection and profile management (IPA, APK, AAB, <code>.mobileprovision</code>) are read only on your Mac. Their contents and anything derived from them (bundle ID, signing certificates, permission lists and so on) are only shown in the app window and are never sent anywhere. Artifact inspection does not modify the original file. Files created by building or exporting are saved only to the folder you choose.</p>
 
       <h2>3. Network use</h2>
-      <p>The app uses the network in exactly one case: when you register your own <strong>App Store Connect API key</strong> (Issuer ID, Key ID and <code>.p8</code> file) and use a feature that needs it, the app connects to Apple's App Store Connect API at <code>api.appstoreconnect.apple.com</code>.</p>
+      <p>The app connects to the network only in the cases below. Requests to Apple and Google go straight from your Mac, without passing through the seller's servers.</p>
       <table>
-        <thead><tr><th>Feature</th><th>What is sent to Apple</th></tr></thead>
+        <thead><tr><th>Feature</th><th>Where it connects</th><th>What is sent</th></tr></thead>
         <tbody>
-          <tr><td>List and download profiles</td><td>An authentication token signed by the app</td></tr>
-          <tr><td>Create, regenerate or renew profiles</td><td>The token plus the profile type, bundle ID, certificates and devices you selected</td></tr>
-          <tr><td>List and register devices</td><td>The token plus the device names and UDIDs you entered</td></tr>
+          <tr><td>Listing, downloading, creating and renewing profiles; listing and registering devices; App Store releases</td><td>Apple App Store Connect API (<code>api.appstoreconnect.apple.com</code>)</td><td>An authentication token signed by the app, plus the values you choose or enter (profile type, bundle ID, certificate, device name, UDID, store listing, screenshots and so on)</td></tr>
+          <tr><td>Google Play uploads and store releases</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Authentication requests signed with your service account key, plus the AAB, APK, store listing and screenshots you choose</td></tr>
+          <tr><td>Building, app upload, device install</td><td>Wherever Apple's and Google's developer tools (<code>xcodebuild</code>, <code>gradle</code> and so on) connect</td><td>These tools communicate in their own way. Repositories that dependencies are downloaded from (Maven and so on) are included here</td></tr>
+          <tr><td>License activation, checks and deactivation; starting a payment</td><td>The seller's license server</td><td>Section 5</td></tr>
+          <tr><td>Checking for updates</td><td>The update list the seller publishes</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else</td></tr>
         </tbody>
       </table>
       <ul>
-        <li>The <code>.p8</code> private key stays on your Mac. The app stores only a reference to the file (a macOS security-scoped bookmark) and signs request tokens <strong>locally</strong>. The key itself is never sent anywhere, including to Apple.</li>
-        <li>Apple's handling of these requests is governed by the Apple Developer Program agreements and Apple's privacy policy.</li>
-        <li>If you never register an API key, the app makes no network connections at all.</li>
+        <li>Your App Store Connect <code>.p8</code> private key and Google service account key stay on your Mac. The app signs the tokens needed for requests <strong>locally</strong> and never sends the keys themselves anywhere, including to Apple and Google.</li>
+        <li>How Apple and Google handle these requests is governed by each company's developer terms and privacy policy.</li>
       </ul>
 
-      <h2>4. Data stored on your Mac</h2>
+      <h2>4. What is stored on your Mac</h2>
       <ul>
-        <li>App settings (theme, language, text size, API key details and similar) are stored in the app's <strong>sandbox container</strong> provided by macOS.</li>
-        <li>Access to the profile folder and to <code>.p8</code> files is remembered with <strong>security-scoped bookmarks</strong> that you grant in the open panel. You can remove them in the app at any time.</li>
-        <li>The profile activity history (downloads, creations, device registrations and so on) is kept locally and can be cleared with "Clear History".</li>
-        <li>Deleting the app removes its container and this data with it. Files you placed yourself, such as the <code>.p8</code> file, are never deleted by the app.</li>
+        <li>App settings (theme, language, text size, project list and so on) are stored in macOS user defaults and the Application Support folder.</li>
+        <li>The contents of API keys are stored in this Mac's <strong>keychain</strong> and are not synced through iCloud Keychain. For keys chosen as files, only the file's location is remembered.</li>
+        <li>Profile activity history and build history stay local, and you can clear them in the app.</li>
+        <li>Your license key and check results are stored only on this Mac.</li>
+        <li>The app does not delete files you placed yourself, such as <code>.p8</code> files and build output.</li>
       </ul>
 
-      <h2>5. Third-party libraries</h2>
-      <p>The app bundles the open-source library <strong>Lottie</strong> to play a loading animation. It is used for display only and does not access the network or collect data. There are no other third-party SDKs.</p>
+      <h2>5. License checks — what is sent</h2>
+      <p>The app sends the following values to the <strong>license server</strong> only to check your license and update period. They are not used for any other purpose, and everything is sent over HTTPS.</p>
+      <table>
+        <thead><tr><th>Value sent</th><th>What it is</th><th>Why it is needed</th></tr></thead>
+        <tbody>
+          <tr><td><strong>License key</strong></td><td>The key that identifies the license you bought</td><td>To check that the license is valid and when the update period ends</td></tr>
+          <tr><td><strong>Device identifier</strong></td><td>The first 32 characters of a SHA-256 hash of this Mac's hardware UUID with an app-specific prefix. The raw hardware UUID, host name and user name are not sent. If the hardware UUID can't be read, a random installation id created at first launch is used in the same way. The value stays the same even if your Mac's name or network changes</td><td>To check whether the number of devices the license allows (<span data-price="commercial.devices">2</span> Macs) has been exceeded</td></tr>
+          <tr><td><strong>App version</strong></td><td>App version and build number</td><td>To check whether that version was released within your update period, and to troubleshoot problems</td></tr>
+          <tr><td>Access logs</td><td>A hash of the device identifier, app version, time and a short error reason</td><td>To respond to outages and troubleshoot problems</td></tr>
+        </tbody>
+      </table>
+      <p><strong>What is sent, and when.</strong></p>
+      <ul>
+        <li><strong>Activation</strong> — license key, purchase email, device identifier, installation identifier, app version, macOS version</li>
+        <li><strong>License check</strong> — about every 12 hours: license key, device identifier, installation identifier, app version</li>
+        <li><strong>Deactivation</strong> — license key, device identifier</li>
+        <li><strong>Starting a payment (purchase or renewal)</strong> — license key (for renewals), device identifier, installation identifier, app version. The payment itself takes place on Paddle's checkout screen</li>
+      </ul>
+      <p><strong>What is stored on the server.</strong> License keys and device and installation identifiers are <strong>not stored in their original form — only as hashes (SHA-256 · HMAC-SHA256)</strong>. The app version and purchase email are stored as they are; the purchase email is used to look up licenses and send keys. From Paddle we receive the customer, transaction and auto-renewal ids, the auto-renewal status (on or off), the price id and the date updates end. We do not receive names, addresses or card details.</p>
+      <p><strong>What is not stored.</strong> IP addresses, request headers and request bodies, macOS version (received but not stored), names and addresses, card numbers, marketing consent, usage statistics.</p>
+      <ul>
+        <li>Values that could identify you (user name, a name you gave the device and so on) are not used for license checks.</li>
+        <li>The contents of files (IPA, APK, AAB, <code>.mobileprovision</code>) and artifact inspection results are not sent to the license server.</li>
+        <li>No advertising, tracking or behavioral analytics SDKs are included in the app.</li>
+      </ul>
 
-      <h2>6. Sharing and selling</h2>
-      <p>Since nothing is collected, nothing is shared with or sold to anyone. The communication with Apple described in section 3 happens at your request, using your own account and key.</p>
+      <h2>6. The license server and retention</h2>
+      <ul>
+        <li>The license server is run by the seller, <strong>Beakbig</strong> (business registration no. <span data-price="seller.reg_no">613-40-01820</span>) · contact <a href="mailto:support@beakbig.com">support@beakbig.com</a>. The server uses Workers from <strong>Cloudflare, Inc.</strong> (USA), and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare).</li>
+        <li>The values sent and the license status (issued, update period, revoked) are kept <strong>for as long as the license exists</strong>. The license remains after the update period ends, so it is not deleted then. If a license is revoked because of a refund or chargeback, its records are deleted or anonymized 2 years later (for now the operator does this manually), or when you ask for deletion. Short-lived records are deleted <strong>automatically every day</strong> — access logs after 30 days, payment notification (webhook) processing records after 90 days, key delivery records after 365 days (only a hash of the recipient address is kept), and unprocessed pending issuances after 7 days. When we receive a deletion request, we verify your identity, revoke the license and delete the remaining records — once deleted, the app can no longer be used with that license.</li>
+        <li>The values stored on this server are the same as those listed in Section 5. Payment method details, card numbers and bank accounts are not stored.</li>
+        <li>The server runs on Workers from <strong>Cloudflare, Inc.</strong> (a US company) in the Cloudflare data center closest to you, and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare). Payment is handled by <strong>Paddle.com Market Limited</strong> (UK) as merchant of record.</li>
+        <li>License keys are sent through the email delivery service <strong>Resend, Inc.</strong> (USA). Resend receives only the recipient email address needed to deliver the key and the body of the email containing the license key.</li>
+        <li>To download the records stored on the license server or ask for them to be deleted, contact us as described in Section 11.</li>
+      </ul>
 
-      <h2>7. Children</h2>
-      <p>ShouArchive is a tool for software developers and is not directed at children. It collects no personal information from anyone.</p>
+      <h2>7. Payment and Paddle</h2>
+      <p>Payment is handled by <strong>Paddle</strong> (<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>) as the <strong>Merchant of Record</strong>. Paddle becomes the seller to the customer and takes care of verifying payment methods, calculating and charging tax, issuing receipts and processing refunds. Payment method details are kept by Paddle and never pass through this site's servers.</p>
+      <ul>
+        <li><strong>What Paddle collects and processes</strong> — name, address, email address, payment method details and payment history, billing address, tax number, IP address, location, device and browser information, consent records and so on. These are processed under the <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle Privacy Policy</a>, and Paddle keeps transaction data for 5 years to meet legal obligations.</li>
+        <li><strong>What is passed to the seller (me)</strong> — the buyer's name, address and email address, purchase history, and the transaction analytics visible in the dashboard. Full card numbers and security codes are not passed on. No special categories of sensitive data are shared.</li>
+        <li>The seller and Paddle are each <strong>independent data controllers</strong> for this data. The seller uses the information received only to issue licenses, confirm payments and respond to customer inquiries, and for no other purpose.</li>
+        <li>Questions about payments are handled by Paddle's customer support. Refund terms are described in the <a href="refund.html">Refund Policy</a>.</li>
+        <li>The seller terms under which Paddle acts also apply: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle Terms of Service</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle Buyer Terms</a>.</li>
+      </ul>
 
-      <h2>8. Changes</h2>
-      <p>If this policy changes, the new version will be posted on this page with an updated effective date. If the way the app handles data actually changes, the app's release notes will say so as well.</p>
+      <h2>8. Third-party libraries</h2>
+      <ul>
+        <li><strong>Lottie</strong> — an open-source library for showing loading animations. It is used only for display and neither connects to the network nor collects data.</li>
+        <li><strong>Sparkle</strong> — an open-source library that checks for and installs app updates. It is used only for the update check in Section 3, and sending system information is not turned on.</li>
+      </ul>
+      <p>There are no other third-party SDKs that communicate over the network.</p>
 
-      <h2>9. Contact</h2>
-      <p>Questions about this policy or about how the app handles data: <a href="mailto:beakbigkb@gmail.com">beakbigkb@gmail.com</a>.</p>
+      <h2>9. Sharing and sale</h2>
+      <p>The only parties the seller shares personal information with are the license server (Cloudflare) and key delivery service (Resend) in Section 6 and Paddle in Section 7; it is not sold or handed to any other third party. Communication with Apple and Google described in Section 3 happens at your request, using your own accounts and keys.</p>
 
-      <p class="meta">Effective date: September 22, 2026 · Developer and publisher: BeakBig</p>
+      <h2>10. Children</h2>
+      <p>ShouArchive is a tool for software developers and is not directed at children. We do not knowingly collect personal information from anyone under 14.</p>
+
+      <h2>11. Your rights</h2>
+      <p>You have the right to access, correct and delete your personal information, to restrict its processing, and to object to its collection (stopping processing based on decisions).</p>
+      <ul>
+        <li><strong>Records on the license server</strong> — send your request to <a href="mailto:support@beakbig.com">support@beakbig.com</a>. After verifying your identity, we handle it <strong>within 10 days of receiving the request</strong> and let you know the result.</li>
+        <li><strong>Payment information kept by Paddle</strong> — handled under Paddle's policies and procedures. Please make requests for that information directly to Paddle.</li>
+        <li><strong>What you can refuse</strong> — license checks are a required process for using a license you bought. If you refuse them, you cannot use the features a license unlocks.</li>
+        <li>Requests made by a legal guardian or agent are handled after the authorization is confirmed.</li>
+      </ul>
+      <p>This policy is written based on the <strong>Personal Information Protection Act of the Republic of Korea</strong>. <strong>Users in the EU, EEA and UK are equally guaranteed the rights provided by the GDPR and UK GDPR.</strong></p>
+
+      <h2>12. International transfers</h2>
+      <ul>
+        <li><strong>Recipients and countries</strong> — license records are processed by <strong>Cloudflare, Inc.</strong> (USA), payment information by <strong>Paddle.com Market Limited</strong> (UK), and key delivery emails by <strong>Resend, Inc.</strong> (USA).</li>
+        <li><strong>Storage location</strong> — license records are stored in a database in the Asia-Pacific region (<strong>Cloudflare D1</strong>), and requests are processed in the Cloudflare data center closest to you.</li>
+        <li><strong>When and how</strong> — sent over the network when you activate, when your license is checked, when you start a payment (purchase or renewal), and when a license key is emailed to you.</li>
+        <li><strong>Items, purposes and retention</strong> — as described in Sections 5 and 6.</li>
+        <li><strong>Safeguards</strong> — Cloudflare follows its data processing terms (including the EU Standard Contractual Clauses), and Paddle, as Merchant of Record, processes payment information under its own privacy policy.</li>
+        <li><strong>How to refuse, and the consequences</strong> — if you do not use a license, no transfer takes place. In that case, after the trial period only profile management and artifact inspection can be used.</li>
+        <li>Requests to Apple and Google go directly to each company's servers (Section 3).</li>
+      </ul>
+
+      <h2>13. Changes</h2>
+      <p>If this policy changes, the new version is posted on this page with a new effective date. When the way the app handles data actually changes, it is also noted in the app's update notes.</p>
+
+      <h2>14. Contact</h2>
+      <p>Send any questions about this policy or the app's handling of data to <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
+
+      <p class="meta">Effective: October 15, 2026 · Developer and seller: Beakbig</p>
     </div>
   </section>
 </main>
@@ -110,10 +185,16 @@
   <div class="wrap">
     <nav aria-label="Footer">
       <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
       <a href="support.html">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
       <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
+    <p class="biz">Beakbig · Representative <span data-price="seller.owner">Hyunjin Kang</span> · Business registration no. <span data-price="seller.reg_no">613-40-01820</span> (simplified taxpayer) · Mail-order business registration: <span data-price="seller.mail_order">Exempt</span> · Address <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · Phone <span data-price="seller.phone">+82-502-6682-9359</span> · Email <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Payments handled by Paddle</p>
   </div>
 </footer>
 

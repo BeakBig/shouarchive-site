@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ライセンスキーの変更 — ShouArchive</title>
+  <meta name="description" content="キーが他の人に知られたと思ったら、ShouArchive のライセンスキーを新しいキーに変更します。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ライセンスキーの変更 — ShouArchive">
+  <meta property="og:description" content="キーが他の人に知られたと思ったら、ShouArchive のライセンスキーを新しいキーに変更します。">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../rotate.html">
+  <link rel="alternate" hreflang="en" href="../en/rotate.html">
+  <link rel="alternate" hreflang="ja" href="../ja/rotate.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/rotate.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/rotate.html">
+  <link rel="alternate" hreflang="es" href="../es/rotate.html">
+  <link rel="alternate" hreflang="x-default" href="../en/rotate.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="メイン">
+      <a href="index.html#features">機能</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシー</a>
+      <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../rotate.html">한국어</option><option value="../en/rotate.html">English</option><option value="../ja/rotate.html" selected>日本語</option><option value="../zh-Hans/rotate.html">简体中文</option><option value="../zh-Hant/rotate.html">繁體中文</option><option value="../es/rotate.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>ライセンスキーの変更</h1>
+      <p>キーが他の人に知られたと思ったら、新しいキーに変更します。</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="rotate-confirm" hidden>
+        <p class="lead">下のボタンを押すとライセンスキーが変更されます。以前のキーは使えなくなり、登録済みの Mac はすべて解除され、新しいキーは購入時のメールアドレスに届きます。</p>
+        <div class="license-actions">
+          <button class="btn" type="button" id="rotate-confirm-button">キーを変更</button>
+        </div>
+        <div class="note" id="rotate-confirm-error" hidden>
+          <p>いまはキーを変更できませんでした。しばらくしてからもう一度押してください。</p>
+        </div>
+      </div>
+
+      <div class="note" id="rotate-done" hidden>
+        <p><strong>キーを変更しました。</strong> 新しいキーを購入時のメールアドレス<span id="rotate-hint-wrap" hidden>（<span id="rotate-email-hint"></span>）</span>に送りました。使い続ける Mac でメールのリンクを押すと、登録し直せます。</p>
+      </div>
+      <div class="note" id="rotate-done-unsent" hidden>
+        <p><strong>キーは変更しましたが、新しいキーのメールを送れませんでした。</strong> <a href="license.html">キーの再送</a>で購入時のメールアドレスを入力すると、新しいキーを受け取れます。</p>
+      </div>
+      <div class="note" id="rotate-used" hidden>
+        <p>このリンクは使用済みか、正しくありません。すでにキーを変更した場合は、新しいキーのメールを確認してください。もう一度変更するには、下から確認メールを新しく受け取ってください。</p>
+      </div>
+      <div class="note" id="rotate-expired" hidden>
+        <p>このリンクは有効期限が切れています。下から確認メールを新しく受け取ってください。</p>
+      </div>
+      <div class="note" id="rotate-revoked" hidden>
+        <p>返金またはチャージバックで取り消されたライセンスのため、キーを変更できません。</p>
+      </div>
+
+      <div id="rotate-request" hidden>
+        <p>お支払いに使ったメールアドレスを入力すると、そのアドレスに確認リンクを送ります。リンクを開いて「キーを変更」を押すまでは変わりません。</p>
+        <form class="license-form" id="rotate-form" novalidate>
+          <label class="visually-hidden" for="rotate-email">購入時のメールアドレス</label>
+          <input type="email" id="rotate-email" name="email" autocomplete="email" placeholder="お支払いに使ったメールアドレス" required>
+          <button class="btn" type="submit" id="rotate-submit">確認メールを送信</button>
+        </form>
+        <div class="note" id="rotate-sent" hidden>
+          <p><strong>依頼を受け付けました。</strong> このアドレスで購入した履歴があれば、数分以内に確認メールが届きます。24 時間以内にメールのリンクを開いてください。届かない場合は迷惑メールフォルダを確認してください。</p>
+        </div>
+        <div class="note" id="rotate-invalid" hidden>
+          <p>メールアドレスを確認してください。</p>
+        </div>
+        <div class="note" id="rotate-error" hidden>
+          <p>いまは依頼を送信できませんでした。しばらくしてから再度お試しいただくか、<a href="mailto:support@beakbig.com">support@beakbig.com</a> までお問い合わせください。</p>
+        </div>
+      </div>
+
+      <h2>変更するとどうなるか</h2>
+      <ul>
+        <li>以前のキーは使えなくなります。以前のキーで登録しようとした Mac には、キーが変更されたことを表示します。</li>
+        <li>登録済みの Mac はすべて解除されます。使い続ける Mac は、新しいキーのメールのリンクから登録し直してください。</li>
+        <li>新しいキーは、お支払いに使ったメールアドレスにのみ送ります。このページにはキーを表示しません。</li>
+        <li>アップデートの期間と、使える Mac の台数（<span data-price="commercial.devices">2</span> 台）は変わりません。</li>
+      </ul>
+
+      <h2>ご注意</h2>
+      <ul>
+        <li>登録済みの Mac がなくても変更できます。Mac を買い替えたり、なくしたりした場合も同様です。</li>
+        <li>キーをなくしただけなら変更は不要です。<a href="license.html">キーの再送</a>から同じキーを受け取ってください。</li>
+        <li>2 台目以降の Mac が登録されると、購入時のメールアドレスにお知らせが届きます。心当たりがなければ、そのメールのリンクからすぐにキーを変更できます。</li>
+        <li>お支払いに使ったメールアドレスをもう使えない場合は、お支払い日とカード明細の表示内容を <a href="mailto:support@beakbig.com">support@beakbig.com</a> までお知らせください。確認のうえ、購入時のメールアドレスを変更します。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="フッター">
+      <a href="index.html">ホーム</a>
+      <a href="pricing.html">価格</a>
+      <a href="download.html">ダウンロード</a>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="refund.html">返金ポリシー</a>
+      <span class="footer-langs"><a href="../rotate.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/rotate.html" lang="en" hreflang="en">English</a> <a href="../ja/rotate.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/rotate.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/rotate.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/rotate.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">商号 Beakbig · 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>（簡易課税者） · 通信販売業の届出: <span data-price="seller.mail_order">免除</span> · 所在地 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · メール <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 決済代行 Paddle</p>
+  </div>
+</footer>
+
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.rotate();</script>
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

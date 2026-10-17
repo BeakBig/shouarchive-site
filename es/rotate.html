@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cambiar la clave de licencia — ShouArchive</title>
+  <meta name="description" content="Cambia tu clave de licencia de ShouArchive por una nueva si crees que otra persona la conoce.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cambiar la clave de licencia — ShouArchive">
+  <meta property="og:description" content="Cambia tu clave de licencia de ShouArchive por una nueva si crees que otra persona la conoce.">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../rotate.html">
+  <link rel="alternate" hreflang="en" href="../en/rotate.html">
+  <link rel="alternate" hreflang="ja" href="../ja/rotate.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/rotate.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/rotate.html">
+  <link rel="alternate" hreflang="es" href="../es/rotate.html">
+  <link rel="alternate" hreflang="x-default" href="../en/rotate.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="index.html#features">Funciones</a>
+      <a href="pricing.html">Precios</a>
+      <a href="download.html">Descargas</a>
+      <a href="support.html">Soporte</a>
+      <a href="privacy.html">Privacidad</a>
+      <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../rotate.html">한국어</option><option value="../en/rotate.html">English</option><option value="../ja/rotate.html">日本語</option><option value="../zh-Hans/rotate.html">简体中文</option><option value="../zh-Hant/rotate.html">繁體中文</option><option value="../es/rotate.html" selected>Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Cambiar la clave de licencia</h1>
+      <p>Cambia la clave por una nueva si crees que otra persona la conoce.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="rotate-confirm" hidden>
+        <p class="lead">Pulsa el botón de abajo para cambiar la clave de licencia. La clave anterior dejará de funcionar, se liberarán todos los Mac registrados y la clave nueva llegará a tu correo de la compra.</p>
+        <div class="license-actions">
+          <button class="btn" type="button" id="rotate-confirm-button">Cambiar clave</button>
+        </div>
+        <div class="note" id="rotate-confirm-error" hidden>
+          <p>No hemos podido cambiar la clave en este momento. Vuelve a pulsar dentro de un rato.</p>
+        </div>
+      </div>
+
+      <div class="note" id="rotate-done" hidden>
+        <p><strong>Hemos cambiado la clave.</strong> Te hemos enviado la clave nueva al correo de la compra<span id="rotate-hint-wrap" hidden> (<span id="rotate-email-hint"></span>)</span>. En cada Mac que sigas usando, pulsa el enlace de ese correo para registrarlo de nuevo.</p>
+      </div>
+      <div class="note" id="rotate-done-unsent" hidden>
+        <p><strong>Hemos cambiado la clave, pero no hemos podido enviar el correo con la clave nueva.</strong> Introduce tu correo de la compra en <a href="license.html">Volver a recibir la clave de licencia</a> para recibir la clave nueva.</p>
+      </div>
+      <div class="note" id="rotate-used" hidden>
+        <p>Este enlace ya se ha usado o no es válido. Si ya cambiaste la clave, busca el correo con la clave nueva. Para cambiarla otra vez, pide abajo un nuevo correo de confirmación.</p>
+      </div>
+      <div class="note" id="rotate-expired" hidden>
+        <p>Este enlace ha caducado. Pide abajo un nuevo correo de confirmación.</p>
+      </div>
+      <div class="note" id="rotate-revoked" hidden>
+        <p>Esta licencia se revocó por un reembolso o un contracargo, así que no se puede cambiar su clave.</p>
+      </div>
+
+      <div id="rotate-request" hidden>
+        <p>Introduce el correo con el que pagaste y te enviaremos un enlace de confirmación a esa dirección. La clave solo cambia cuando abres el enlace y pulsas «Cambiar clave».</p>
+        <form class="license-form" id="rotate-form" novalidate>
+          <label class="visually-hidden" for="rotate-email">Correo de la compra</label>
+          <input type="email" id="rotate-email" name="email" autocomplete="email" placeholder="Correo con el que pagaste" required>
+          <button class="btn" type="submit" id="rotate-submit">Enviar correo de confirmación</button>
+        </form>
+        <div class="note" id="rotate-sent" hidden>
+          <p><strong>Solicitud recibida.</strong> Si hay una compra con esta dirección, el correo de confirmación llegará en unos minutos. Abre el enlace en las próximas 24 horas. Si no llega, revisa la carpeta de spam.</p>
+        </div>
+        <div class="note" id="rotate-invalid" hidden>
+          <p>Revisa la dirección de correo.</p>
+        </div>
+        <div class="note" id="rotate-error" hidden>
+          <p>No hemos podido enviar la solicitud en este momento. Inténtalo de nuevo más tarde o escribe a <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
+        </div>
+      </div>
+
+      <h2>Qué pasa al cambiarla</h2>
+      <ul>
+        <li>La clave anterior deja de funcionar. A los Mac que intenten registrarse con ella se les avisa de que la clave ha cambiado.</li>
+        <li>Se liberan todos los Mac registrados. Vuelve a registrar los Mac que sigas usando con el enlace del correo de la clave nueva.</li>
+        <li>La clave nueva solo se envía al correo con el que pagaste. Esta página nunca muestra la clave.</li>
+        <li>El periodo de actualizaciones y el número de Mac que puedes usar (<span data-price="commercial.devices">2</span>) no cambian.</li>
+      </ul>
+
+      <h2>Para tener en cuenta</h2>
+      <ul>
+        <li>Puedes cambiar la clave aunque no tengas ningún Mac registrado; por ejemplo, si cambiaste de Mac o lo perdiste.</li>
+        <li>Si solo perdiste la clave, no hace falta cambiarla: recibe la misma clave en <a href="license.html">Volver a recibir la clave de licencia</a>.</li>
+        <li>A partir del segundo Mac, te avisamos por correo cada vez que se registra un Mac nuevo. Si no fuiste tú, puedes cambiar la clave al momento con el enlace de ese correo.</li>
+        <li>Si ya no puedes usar el correo con el que pagaste, envía la fecha del pago y lo que aparece en el extracto de tu tarjeta a <a href="mailto:support@beakbig.com">support@beakbig.com</a>. Tras comprobarlo, cambiaremos tu correo de la compra.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="pricing.html">Precios</a>
+      <a href="download.html">Descargas</a>
+      <a href="support.html">Soporte</a>
+      <a href="privacy.html">Política de privacidad</a>
+      <a href="terms.html">Términos del servicio</a>
+      <a href="refund.html">Política de reembolso</a>
+      <span class="footer-langs"><a href="../rotate.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/rotate.html" lang="en" hreflang="en">English</a> <a href="../ja/rotate.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/rotate.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/rotate.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/rotate.html" lang="es" hreflang="es" aria-current="page">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">Razón social: Beakbig · Titular: <span data-price="seller.owner">Hyunjin Kang</span> · Registro empresarial (Corea del Sur): <span data-price="seller.reg_no">613-40-01820</span> (régimen simplificado del IVA) · Registro de venta a distancia: <span data-price="seller.mail_order">Exento</span> · Dirección: <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, República de Corea</span> · Teléfono: <span data-price="seller.phone">+82-502-6682-9359</span> · Correo: <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Gestor de pagos: Paddle</p>
+  </div>
+</footer>
+
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.rotate();</script>
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>更換授權金鑰 — ShouArchive</title>
+  <meta name="description" content="如果您認為 ShouArchive 授權金鑰已被他人知道，可以將其更換為新金鑰。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="更換授權金鑰 — ShouArchive">
+  <meta property="og:description" content="如果您認為 ShouArchive 授權金鑰已被他人知道，可以將其更換為新金鑰。">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../rotate.html">
+  <link rel="alternate" hreflang="en" href="../en/rotate.html">
+  <link rel="alternate" hreflang="ja" href="../ja/rotate.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/rotate.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/rotate.html">
+  <link rel="alternate" hreflang="es" href="../es/rotate.html">
+  <link rel="alternate" hreflang="x-default" href="../en/rotate.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="index.html#features">功能</a>
+      <a href="pricing.html">價格</a>
+      <a href="download.html">下載</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html">隱私權</a>
+      <label class="lang-switch"><span class="visually-hidden">語言</span><select class="lang-select" aria-label="語言"><option value="../rotate.html">한국어</option><option value="../en/rotate.html">English</option><option value="../ja/rotate.html">日本語</option><option value="../zh-Hans/rotate.html">简体中文</option><option value="../zh-Hant/rotate.html" selected>繁體中文</option><option value="../es/rotate.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>更換授權金鑰</h1>
+      <p>如果您認為金鑰已被他人知道，可以更換為新金鑰。</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="rotate-confirm" hidden>
+        <p class="lead">按下面的按鈕即可更換授權金鑰。舊金鑰將無法使用，所有已註冊的 Mac 都會被停用，新金鑰會寄到購買電子郵件。</p>
+        <div class="license-actions">
+          <button class="btn" type="button" id="rotate-confirm-button">更換金鑰</button>
+        </div>
+        <div class="note" id="rotate-confirm-error" hidden>
+          <p>目前無法更換金鑰。請稍後再按一次。</p>
+        </div>
+      </div>
+
+      <div class="note" id="rotate-done" hidden>
+        <p><strong>已更換金鑰。</strong> 新金鑰已寄到購買電子郵件<span id="rotate-hint-wrap" hidden>（<span id="rotate-email-hint"></span>）</span>。在要繼續使用的 Mac 上按郵件中的連結即可重新註冊。</p>
+      </div>
+      <div class="note" id="rotate-done-unsent" hidden>
+        <p><strong>金鑰已更換，但無法寄出含有新金鑰的郵件。</strong> 在<a href="license.html">重新取得金鑰</a>頁面輸入購買電子郵件，即可收到新金鑰。</p>
+      </div>
+      <div class="note" id="rotate-used" hidden>
+        <p>此連結已使用過或無效。如果已經更換金鑰，請查看含有新金鑰的郵件。如需再次更換，請在下方重新取得確認郵件。</p>
+      </div>
+      <div class="note" id="rotate-expired" hidden>
+        <p>此連結已過期。請在下方重新取得確認郵件。</p>
+      </div>
+      <div class="note" id="rotate-revoked" hidden>
+        <p>此授權因退款或拒付已被撤銷，無法更換金鑰。</p>
+      </div>
+
+      <div id="rotate-request" hidden>
+        <p>輸入付款時使用的電子郵件，我們會寄送確認連結到該地址。只有開啟連結並按「更換金鑰」後才會更換。</p>
+        <form class="license-form" id="rotate-form" novalidate>
+          <label class="visually-hidden" for="rotate-email">購買電子郵件</label>
+          <input type="email" id="rotate-email" name="email" autocomplete="email" placeholder="付款時使用的電子郵件地址" required>
+          <button class="btn" type="submit" id="rotate-submit">寄送確認郵件</button>
+        </form>
+        <div class="note" id="rotate-sent" hidden>
+          <p><strong>已收到要求。</strong> 如果該地址有購買紀錄，確認郵件會在幾分鐘內送達。請在 24 小時內開啟郵件中的連結。若未收到，請檢查垃圾郵件資料夾。</p>
+        </div>
+        <div class="note" id="rotate-invalid" hidden>
+          <p>請檢查電子郵件地址。</p>
+        </div>
+        <div class="note" id="rotate-error" hidden>
+          <p>目前無法送出要求。請稍後再試，或聯絡 <a href="mailto:support@beakbig.com">support@beakbig.com</a>。</p>
+        </div>
+      </div>
+
+      <h2>更換後會怎樣</h2>
+      <ul>
+        <li>舊金鑰將無法使用。嘗試以舊金鑰註冊的 Mac 會收到金鑰已更換的提示。</li>
+        <li>所有已註冊的 Mac 都會被停用。請透過新金鑰郵件中的連結，重新註冊要繼續使用的 Mac。</li>
+        <li>新金鑰只會寄到付款時使用的電子郵件地址。此頁面不會顯示金鑰。</li>
+        <li>更新期間與可使用的 Mac 數量（<span data-price="commercial.devices">2</span> 台）維持不變。</li>
+      </ul>
+
+      <h2>注意事項</h2>
+      <ul>
+        <li>即使沒有已註冊的 Mac 也能更換——例如換了或遺失了 Mac 時。</li>
+        <li>如果只是遺失金鑰，不需要更換，請在<a href="license.html">重新取得金鑰</a>頁面取得同一組金鑰。</li>
+        <li>從第二台 Mac 起，每當有新的 Mac 註冊，我們都會寄通知到購買電子郵件。如果不是您本人，可以直接透過該郵件中的連結更換金鑰。</li>
+        <li>如果付款時使用的電子郵件已無法使用，請將付款日期和信用卡帳單上顯示的內容寄至 <a href="mailto:support@beakbig.com">support@beakbig.com</a>。確認後，我們會為您變更購買電子郵件。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="頁尾">
+      <a href="index.html">首頁</a>
+      <a href="pricing.html">價格</a>
+      <a href="download.html">下載</a>
+      <a href="support.html">支援</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="terms.html">服務條款</a>
+      <a href="refund.html">退款政策</a>
+      <span class="footer-langs"><a href="../rotate.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/rotate.html" lang="en" hreflang="en">English</a> <a href="../ja/rotate.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/rotate.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/rotate.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="page">繁體中文</a> <a href="../es/rotate.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">商號 Beakbig · 代表人 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登記號碼 <span data-price="seller.reg_no">613-40-01820</span>（簡易課稅者）· 通訊交易業申報：<span data-price="seller.mail_order">免申報</span> · 地址 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · 電子郵件 <a href="mailto:support@beakbig.com">support@beakbig.com</a> · 付款代理 Paddle</p>
+  </div>
+</footer>
+
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.rotate();</script>
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

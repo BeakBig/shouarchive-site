@@ -59,8 +59,18 @@
         <p><strong>El pago se ha completado. ¡Gracias!</strong> Hemos enviado la clave de licencia a la dirección de correo electrónico que usaste para pagar. En el Mac donde tengas ShouArchive, pulsa el enlace «Regístrala en la app» del correo para registrarla. Si no llega en unos minutos, revisa la carpeta de spam o <a href="license.html">vuelve a recibirla</a>; si tampoco está ahí, escríbenos a <a href="mailto:support@beakbig.com?subject=ShouArchive%20-%20clave%20de%20licencia%20no%20recibida">support@beakbig.com</a> indicando el correo electrónico del pago.</p>
       </div>
 
-      <div class="note" id="checkout-processing" hidden>
-        <p><strong>Confirmando el pago…</strong> Estamos preparando tu clave de licencia; tardará un momento. Aunque cierres esta página, la clave llegará al correo con el que pagaste.</p>
+      <div class="plan checkout-box checkout-waiting" id="checkout-processing" role="status" aria-live="polite" hidden>
+        <div class="waiting-head">
+          <span class="spinner" aria-hidden="true"></span>
+          <h2>Confirmando el pago</h2>
+        </div>
+        <p>Estamos preparando tu clave de licencia. Suele tardar unos segundos.</p>
+        <p class="price-note">Aunque cierres esta página, la clave llegará al correo con el que pagaste.</p>
+      </div>
+
+      <div class="note note-warn" id="checkout-slow" role="status" aria-live="polite" hidden>
+        <p><strong>El pago se ha completado.</strong> Sin embargo, confirmar tu clave de licencia está tardando más de lo normal. Te la enviaremos al correo con el que pagaste, así que revisa la bandeja de entrada y la carpeta de spam. Si no llega en unos minutos, escríbenos a <a href="mailto:support@beakbig.com?subject=ShouArchive%20-%20clave%20de%20licencia%20no%20recibida">support@beakbig.com</a> indicando el correo electrónico del pago.</p>
+        <p>Si dejas esta página abierta, la clave también aparecerá aquí en cuanto esté lista.</p>
       </div>
 
       <div class="plan checkout-box" id="checkout-ready" hidden>

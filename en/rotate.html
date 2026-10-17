@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Change Your License Key — ShouArchive</title>
+  <meta name="description" content="Change your ShouArchive license key to a new one if you think someone else knows it.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Change Your License Key — ShouArchive">
+  <meta property="og:description" content="Change your ShouArchive license key to a new one if you think someone else knows it.">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="alternate" hreflang="ko" href="../rotate.html">
+  <link rel="alternate" hreflang="en" href="../en/rotate.html">
+  <link rel="alternate" hreflang="ja" href="../ja/rotate.html">
+  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/rotate.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/rotate.html">
+  <link rel="alternate" hreflang="es" href="../es/rotate.html">
+  <link rel="alternate" hreflang="x-default" href="../en/rotate.html">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <label class="lang-switch"><span class="visually-hidden">Language</span><select class="lang-select" aria-label="Language"><option value="../rotate.html">한국어</option><option value="../en/rotate.html" selected>English</option><option value="../ja/rotate.html">日本語</option><option value="../zh-Hans/rotate.html">简体中文</option><option value="../zh-Hant/rotate.html">繁體中文</option><option value="../es/rotate.html">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Change your license key</h1>
+      <p>Change your key to a new one if you think someone else knows it.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="rotate-confirm" hidden>
+        <p class="lead">Click the button below to change your license key. The old key stops working, all registered Macs are released, and the new key is sent to your purchase email.</p>
+        <div class="license-actions">
+          <button class="btn" type="button" id="rotate-confirm-button">Change key</button>
+        </div>
+        <div class="note" id="rotate-confirm-error" hidden>
+          <p>We couldn’t change the key right now. Please try again in a moment.</p>
+        </div>
+      </div>
+
+      <div class="note" id="rotate-done" hidden>
+        <p><strong>Your key has been changed.</strong> We sent the new key to your purchase email<span id="rotate-hint-wrap" hidden> (<span id="rotate-email-hint"></span>)</span>. On each Mac you keep using, click the link in that email to register it again.</p>
+      </div>
+      <div class="note" id="rotate-done-unsent" hidden>
+        <p><strong>Your key was changed, but we couldn’t send the email with the new key.</strong> Enter your purchase email on <a href="license.html">Get your license key again</a> to receive the new key.</p>
+      </div>
+      <div class="note" id="rotate-used" hidden>
+        <p>This link has already been used or isn’t valid. If you already changed your key, check your email for the new key. To change it again, request a new confirmation email below.</p>
+      </div>
+      <div class="note" id="rotate-expired" hidden>
+        <p>This link has expired. Request a new confirmation email below.</p>
+      </div>
+      <div class="note" id="rotate-revoked" hidden>
+        <p>This license was revoked because of a refund or chargeback, so its key can’t be changed.</p>
+      </div>
+
+      <div id="rotate-request" hidden>
+        <p>Enter the email you used to pay and we’ll send a confirmation link to that address. The key changes only after you open the link and click “Change key”.</p>
+        <form class="license-form" id="rotate-form" novalidate>
+          <label class="visually-hidden" for="rotate-email">Purchase email</label>
+          <input type="email" id="rotate-email" name="email" autocomplete="email" placeholder="Email address you paid with" required>
+          <button class="btn" type="submit" id="rotate-submit">Send confirmation email</button>
+        </form>
+        <div class="note" id="rotate-sent" hidden>
+          <p><strong>Request received.</strong> If there’s a purchase for this address, a confirmation email will arrive within a few minutes. Open the link in it within 24 hours. If it doesn’t arrive, check your spam folder.</p>
+        </div>
+        <div class="note" id="rotate-invalid" hidden>
+          <p>Please check the email address.</p>
+        </div>
+        <div class="note" id="rotate-error" hidden>
+          <p>We couldn’t send the request right now. Please try again later or contact <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
+        </div>
+      </div>
+
+      <h2>What happens when you change it</h2>
+      <ul>
+        <li>The old key stops working. Macs that try to register with it are told that the key has changed.</li>
+        <li>All registered Macs are released. Register the Macs you keep using again with the link in the new key email.</li>
+        <li>The new key is sent only to the email address you used to pay. This page never shows the key.</li>
+        <li>Your update period and the number of Macs you can use (<span data-price="commercial.devices">2</span>) stay the same.</li>
+      </ul>
+
+      <h2>Good to know</h2>
+      <ul>
+        <li>You can change the key even with no Macs registered — for example, if you replaced or lost your Mac.</li>
+        <li>If you only lost your key, there’s no need to change it: get the same key from <a href="license.html">Get your license key again</a>.</li>
+        <li>From the second Mac on, we email you whenever a new Mac is registered. If it wasn’t you, you can change the key right away with the link in that email.</li>
+        <li>If you can no longer use the email you paid with, send the payment date and what appears on your card statement to <a href="mailto:support@beakbig.com">support@beakbig.com</a>. Once we confirm it, we’ll change your purchase email.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="download.html">Download</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
+      <span class="footer-langs"><a href="../rotate.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/rotate.html" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/rotate.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/rotate.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/rotate.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/rotate.html" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">Beakbig · Representative <span data-price="seller.owner">Hyunjin Kang</span> · Business registration no. <span data-price="seller.reg_no">613-40-01820</span> (simplified taxpayer) · Mail-order business registration: <span data-price="seller.mail_order">Exempt</span> · Address <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · Phone <span data-price="seller.phone">+82-502-6682-9359</span> · Email <a href="mailto:support@beakbig.com">support@beakbig.com</a> · Payments handled by Paddle</p>
+  </div>
+</footer>
+
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.rotate();</script>
+<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+</body>
+</html>

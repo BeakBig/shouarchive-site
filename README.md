@@ -12,12 +12,13 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | --- | --- |
 | `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(체험 · 구매 후 기능표) · 다운로드 |
 | `support.html` · `privacy.html` · `terms.html` · `refund.html` | 한국어 지원(FAQ) · 개인정보 처리방침 · 이용약관 · 환불 정책 |
-| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 키를 못 받으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
+| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) 「결제를 확인하고 있습니다」 카드(도는 원)를 띄우고 `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 1분(2초 간격)이 지나도 키가 없으면 「결제는 완료되었습니다 — 메일함 · 스팸함을 확인하고, 안 오면 support@beakbig.com 으로」 안내(`checkout-slow`)로 바꾸고, 페이지를 열어 둔 동안 5초 간격으로 5분 더 확인해 준비되면 키를 보여 줍니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 서버가 키를 보관하지 않거나 확인 값이 맞지 않으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
 | `activate.html` | 메일의 「앱에서 바로 등록하기」 링크가 여는 중계 페이지 — `#key=` 의 키를 보여 주고 `shouarchive://activate?key=…` 로 앱을 엽니다(Mac 데스크톱에서만 저절로, 휴대폰에서는 버튼만). 키는 `#` 뒤라 서버로 가지 않고, 읽은 뒤 주소에서 지웁니다. 메뉴에 넣지 않고 검색에서 뺍니다(`noindex`) |
 | `license.html` | 키 다시 받기 — 구매 이메일을 받아 라이선스 서버(`/v1/licenses/resend`)에 보냅니다. 서버는 늘 같은 답을 주고 구매 이메일로만 같은 키를 보냅니다. 메뉴에 넣지 않습니다(`noindex`, 메일 · 지원 FAQ · 앱에서 링크) |
-| `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 열 페이지) |
+| `rotate.html` | 키 바꾸기(2026-10-17) — 키가 남에게 알려진 것 같을 때. 그냥 열면 구매 이메일을 받아 확인 메일을 요청하고(`/v1/licenses/rotate`), 메일의 링크(`#token=`)로 열면 「키 바꾸기」 단추를 보여 줍니다 — **단추를 눌러야** 바뀝니다(`/v1/licenses/rotate/confirm`, 메일 보안 검사기가 링크를 미리 열어도 그대로). 새 키는 페이지에 보여 주지 않고 구매 이메일로만 갑니다. 확인 값은 읽은 뒤 주소에서 지웁니다. 쓴 · 만료된 링크면 안내와 함께 요청 양식을 보여 줍니다. 새 Mac 등록 알림 메일의 「내가 아니라면」 링크도 여기로 옵니다. `noindex` |
+| `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 열한 페이지) |
 | `assets/style.css` | 공용 스타일 (라이트 · 다크) |
-| `assets/license.js` | 결제 완료 화면 · `activate.html` · `license.html` 이 함께 쓰는 스크립트 (언어 중립 — 문구는 각 페이지 HTML 에 있고 보이기 · 숨기기 · 값 채우기만 합니다). 라이선스 서버 주소는 `#paddle-config` 의 `data-license-api`, 없으면 기본값 `https://license.beakbig.com`. 서버 계약은 라이선스 서버 저장소 `docs/app-contract.md` §2.10 – §2.12 |
+| `assets/license.js` | 결제 완료 화면 · `activate.html` · `license.html` · `rotate.html` 이 함께 쓰는 스크립트 (언어 중립 — 문구는 각 페이지 HTML 에 있고 보이기 · 숨기기 · 값 채우기만 합니다). 라이선스 서버 주소는 `#paddle-config` 의 `data-license-api`, 없으면 기본값 `https://license.beakbig.com`. 서버 계약은 라이선스 서버 저장소 `docs/app-contract.md` §2.10 – §2.13 |
 | `assets/icon.png` · `icon-64.png` | 앱 아이콘 |
 | `assets/screenshots/<언어>/` | 갤러리 스크린샷 `01.png` ~ `06.png` (2880×1800), 6개 언어 |
 | `assets/samples/` | 심사 · 테스트용 합성 APK · AAB |
@@ -25,7 +26,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `worker/` | `shouarchive.beakbig.com` 을 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 | `tools/localize-nav.py` | 모든 페이지의 6개 언어 전환 메뉴 · 헤더 · 푸터 링크 · `hreflang` 을 다시 맞추는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
 | `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크 · Paddle 공개 설정 · 판매자 정보의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
-| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 10개 페이지 구조 · 링크 · 번역 누락 · 가격 키 · Paddle 설정 · 25 MiB 한도 |
+| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 11개 페이지 구조 · 링크 · 번역 누락 · 가격 키 · Paddle 설정 · 25 MiB 한도 |
 
 ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Mac App Store 판은 출시하지 않고 제출을 거둬들임). 그래서 `pricing.json` 에는 `appstore.*` 키가 없습니다. 다른 5개 언어 페이지는 새 한국어판으로 다시 번역하기 전까지 `appstore.*` 를 가리키므로 `fill-pricing.py` 가 그 자리를 「pricing.json 에 없는 키」로 알리고 코드 1 로 끝납니다 — 번역을 마치면 사라집니다.
 
@@ -42,7 +43,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 ```bash
 python3 tools/fill-pricing.py   # pricing.json → 모든 언어 페이지
 python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · hreflang 다시 맞추기
-python3 tools/check-site.py      # 6개 언어 × 10개 페이지 구조 · 링크 · 번역 · 용량 점검
+python3 tools/check-site.py      # 6개 언어 × 11개 페이지 구조 · 링크 · 번역 · 용량 점검
 ```
 
 페이지에 쓰는 표시 네 가지:
@@ -65,7 +66,7 @@ python3 tools/check-site.py      # 6개 언어 × 10개 페이지 구조 · 링�
 | `paddle.environment` | `sandbox` 또는 `production` |
 | `paddle.client_token` | Paddle 의 **client-side token**(`test_…` / `live_…`). 비어 있으면 `checkout.html` 은 「결제를 아직 열지 않았습니다」만 보여 줍니다 |
 | `paddle.price_license` · `price_updates` | 가격 id(`pri_…`) — 라이선스(US$14, 1회) · 업데이트 1년(US$15, 매년 자동 갱신). 처음 구매 화면에 두 항목을 함께 넣어 합계 US$29 (라이선스 서버에 닿지 못할 때만 이 값으로 직접 엽니다) |
-| `paddle.license_api` | 라이선스 서버 주소(`https://license.beakbig.com`) — 결제 완료 화면이 키를 받아 오고 사이트 결제를 만듭니다. 라이선스 서버의 `SITE_ORIGINS` 에 이 사이트 주소가 있어야 브라우저가 부를 수 있습니다(CORS). `activate.html` · `license.html` 은 `assets/license.js` 의 기본값을 쓰므로 주소를 바꾸면 거기도 고칩니다 |
+| `paddle.license_api` | 라이선스 서버 주소(`https://license.beakbig.com`) — 결제 완료 화면이 키를 받아 오고 사이트 결제를 만듭니다. 라이선스 서버의 `SITE_ORIGINS` 에 이 사이트 주소가 있어야 브라우저가 부를 수 있습니다(CORS). `activate.html` · `license.html` · `rotate.html` 은 `assets/license.js` 의 기본값을 쓰므로 주소를 바꾸면 거기도 고칩니다 |
 | `seller.reg_no` · `owner` · `address` · `phone` · `mail_order` | 페이지 바닥 사업자 정보와 이용약관 2항. 사업자등록번호(613-40-01820)만 정해졌고 나머지는 `null`(주황색 자리 표시) |
 | `contact.email` | 문의 주소 `support@beakbig.com` |
 
@@ -73,7 +74,7 @@ python3 tools/check-site.py      # 6개 언어 × 10개 페이지 구조 · 링�
 
 > 숨길 때 쓰는 `hidden` 속성이 CSS 의 `display` 규칙에 밀리지 않게 `assets/style.css` 에 `[hidden] { display: none !important; }` 규칙이 있습니다. 이 규칙을 지우면 출시 전 구매 · 다운로드 버튼이 그대로 보입니다(`check-site.py` 가 확인합니다).
 
-새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 10개 페이지 = 60개 파일이 모두 같은 구조여야 통과합니다.
+새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 11개 페이지 = 66개 파일이 모두 같은 구조여야 통과합니다.
 
 모든 페이지 바닥(`<footer>` 안 `<p class="biz">`)에 사업자 정보(상호 · 대표 · 사업자등록번호 · 통신판매업 신고 · 주소 · 전화 · 이메일 · 결제 대행 Paddle)가 있습니다. `localize-nav.py` 는 바닥의 `<nav>` 만 다시 쓰므로 이 줄은 건드리지 않습니다.
 

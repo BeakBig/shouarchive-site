@@ -540,6 +540,22 @@ code {
 .checkout-box { max-width: 560px; }
 .checkout-box .plan-actions { margin: 4px 0 0; }
 
+/* 결제 확인 중 — 도는 원 + 제목 (결제 완료 화면 · assets/license.js) */
+.checkout-waiting .waiting-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.checkout-waiting .waiting-head h2 { margin: 0; }
+.spinner {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--line);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* 오래 걸릴 때 안내 — 문제는 아니지만 눈여겨볼 내용 */
+.note.note-warn { border-left-color: var(--orange); background: rgba(255, 107, 26, 0.10); }
+
 /* ---------- 라이선스 키 (결제 완료 화면 · 앱 여는 페이지 · 키 다시 받기 — assets/license.js) ---------- */
 .license-key {
   display: inline-block;
@@ -573,6 +589,7 @@ button.btn:disabled { opacity: .5; cursor: default; transform: none; filter: non
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
+  .spinner { animation-duration: 3s; }
 }
 
 /* 언어 전환 (헤더 select · 푸터 링크) */

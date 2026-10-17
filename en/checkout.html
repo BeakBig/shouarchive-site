@@ -59,8 +59,18 @@
         <p><strong>Your payment is complete. Thank you.</strong> Your license key has been sent to the email address you paid with. On the Mac where ShouArchive is installed, click the “Register in the app” link in the email to register it. If it does not arrive within a few minutes, check your spam folder or <a href="license.html">get it again</a>; if it is still not there, send the email address you paid with to <a href="mailto:support@beakbig.com?subject=ShouArchive%20license%20key%20not%20received">support@beakbig.com</a>.</p>
       </div>
 
-      <div class="note" id="checkout-processing" hidden>
-        <p><strong>Confirming your payment…</strong> Your license key is being prepared — this takes a moment. If you close this page, the key still goes to the email address you paid with.</p>
+      <div class="plan checkout-box checkout-waiting" id="checkout-processing" role="status" aria-live="polite" hidden>
+        <div class="waiting-head">
+          <span class="spinner" aria-hidden="true"></span>
+          <h2>Confirming your payment</h2>
+        </div>
+        <p>Your license key is being prepared. This usually takes a few seconds.</p>
+        <p class="price-note">If you close this page, the key still goes to the email address you paid with.</p>
+      </div>
+
+      <div class="note note-warn" id="checkout-slow" role="status" aria-live="polite" hidden>
+        <p><strong>Your payment is complete.</strong> It’s taking longer than usual to confirm your license key. The key will be sent to the email address you paid with, so please check your inbox and spam folder. If it hasn’t arrived after a few minutes, send the email address you paid with to <a href="mailto:support@beakbig.com?subject=ShouArchive%20license%20key%20not%20received">support@beakbig.com</a>.</p>
+        <p>Keep this page open and your key will also appear here as soon as it’s ready.</p>
       </div>
 
       <div class="plan checkout-box" id="checkout-ready" hidden>

@@ -6,7 +6,7 @@ python3 tools/check-site.py
 ```
 
 확인하는 것
-  1. 6개 언어 × 10개 페이지가 모두 있는가
+  1. 6개 언어 × 11개 페이지가 모두 있는가
   2. 한국어 원본과 구조가 같은가 — 태그 순서, 속성 이름, 값이 그대로여야 하는 속성
      (href · src · id · class · data-* · hidden 등)
   3. 번역이 밀리지 않았는가 — 남은 한글, 그리고 언어마다 함께 있으면 안 되는 문자 체계
@@ -27,7 +27,7 @@ import json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant', 'es']
 PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
-         'activate.html', 'license.html']
+         'activate.html', 'license.html', 'rotate.html']
 MAX_BYTES = 25 * 1024 * 1024  # Workers 정적 파일 한도
 KEEP_VALUE = {'href', 'src', 'id', 'class', 'data-price', 'data-src', 'data-live-hide', 'data-live-show'}
 TAG_RE = re.compile(r'<([a-z0-9]+)((?:\s+[a-z0-9-]+(?:="[^"]*")?)*)\s*/?>')

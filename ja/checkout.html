@@ -59,8 +59,18 @@
         <p><strong>決済が完了しました。ありがとうございます。</strong>ライセンスキーを決済に使ったメールアドレスへ送付しました。ShouArchive をインストールした Mac でメールの「アプリでそのまま登録」リンクを押すと登録されます。数分経っても届かない場合は迷惑メールフォルダをご確認いただくか、<a href="license.html">キーの再送</a>から受け取ってください。それでも見つからない場合は <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%81%8C%E5%B1%8A%E3%81%8B%E3%81%AA%E3%81%84">support@beakbig.com</a> まで決済に使ったメールアドレスをお知らせください。</p>
       </div>
 
-      <div class="note" id="checkout-processing" hidden>
-        <p><strong>決済を確認しています…</strong>ライセンスキーを準備しています。しばらくお待ちください。このページを閉じても、キーは決済に使ったメールアドレスに届きます。</p>
+      <div class="plan checkout-box checkout-waiting" id="checkout-processing" role="status" aria-live="polite" hidden>
+        <div class="waiting-head">
+          <span class="spinner" aria-hidden="true"></span>
+          <h2>決済を確認しています</h2>
+        </div>
+        <p>ライセンスキーを準備しています。通常は数秒で終わります。</p>
+        <p class="price-note">このページを閉じても、キーは決済に使ったメールアドレスに届きます。</p>
+      </div>
+
+      <div class="note note-warn" id="checkout-slow" role="status" aria-live="polite" hidden>
+        <p><strong>決済は完了しました。</strong> ただし、ライセンスキーの確認に時間がかかっています。キーは決済に使ったメールアドレスにお送りしますので、受信トレイと迷惑メールフォルダをご確認ください。数分経っても届かない場合は、決済に使ったメールアドレスを <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%81%8C%E5%B1%8A%E3%81%8B%E3%81%AA%E3%81%84">support@beakbig.com</a> までお知らせください。</p>
+        <p>このページを開いたままにしておくと、キーの準備ができしだいここにも表示します。</p>
       </div>
 
       <div class="plan checkout-box" id="checkout-ready" hidden>

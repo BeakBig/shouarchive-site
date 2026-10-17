@@ -12,9 +12,12 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | --- | --- |
 | `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(체험 · 구매 후 기능표) · 다운로드 |
 | `support.html` · `privacy.html` · `terms.html` · `refund.html` | 한국어 지원(FAQ) · 개인정보 처리방침 · 이용약관 · 환불 정책 |
-| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. Paddle.js 오버레이 결제를 열고, `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. `?done=1` 이면 결제 완료 안내. 메뉴에는 넣지 않습니다 |
-| `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 여덟 페이지) |
+| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 키를 못 받으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
+| `activate.html` | 메일의 「앱에서 바로 등록하기」 링크가 여는 중계 페이지 — `#key=` 의 키를 보여 주고 `shouarchive://activate?key=…` 로 앱을 엽니다(Mac 데스크톱에서만 저절로, 휴대폰에서는 버튼만). 키는 `#` 뒤라 서버로 가지 않고, 읽은 뒤 주소에서 지웁니다. 메뉴에 넣지 않고 검색에서 뺍니다(`noindex`) |
+| `license.html` | 키 다시 받기 — 구매 이메일을 받아 라이선스 서버(`/v1/licenses/resend`)에 보냅니다. 서버는 늘 같은 답을 주고 구매 이메일로만 같은 키를 보냅니다. 메뉴에 넣지 않습니다(`noindex`, 메일 · 지원 FAQ · 앱에서 링크) |
+| `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 열 페이지) |
 | `assets/style.css` | 공용 스타일 (라이트 · 다크) |
+| `assets/license.js` | 결제 완료 화면 · `activate.html` · `license.html` 이 함께 쓰는 스크립트 (언어 중립 — 문구는 각 페이지 HTML 에 있고 보이기 · 숨기기 · 값 채우기만 합니다). 라이선스 서버 주소는 `#paddle-config` 의 `data-license-api`, 없으면 기본값 `https://license.beakbig.com`. 서버 계약은 라이선스 서버 저장소 `docs/app-contract.md` §2.10 – §2.12 |
 | `assets/icon.png` · `icon-64.png` | 앱 아이콘 |
 | `assets/screenshots/<언어>/` | 갤러리 스크린샷 `01.png` ~ `06.png` (2880×1800), 6개 언어 |
 | `assets/samples/` | 심사 · 테스트용 합성 APK · AAB |
@@ -22,7 +25,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `worker/` | `shouarchive.beakbig.com` 을 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 | `tools/localize-nav.py` | 모든 페이지의 6개 언어 전환 메뉴 · 헤더 · 푸터 링크 · `hreflang` 을 다시 맞추는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
 | `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크 · Paddle 공개 설정 · 판매자 정보의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
-| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 8개 페이지 구조 · 링크 · 번역 누락 · 가격 키 · Paddle 설정 · 25 MiB 한도 |
+| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 10개 페이지 구조 · 링크 · 번역 누락 · 가격 키 · Paddle 설정 · 25 MiB 한도 |
 
 ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Mac App Store 판은 출시하지 않고 제출을 거둬들임). 그래서 `pricing.json` 에는 `appstore.*` 키가 없습니다. 다른 5개 언어 페이지는 새 한국어판으로 다시 번역하기 전까지 `appstore.*` 를 가리키므로 `fill-pricing.py` 가 그 자리를 「pricing.json 에 없는 키」로 알리고 코드 1 로 끝납니다 — 번역을 마치면 사라집니다.
 
@@ -39,7 +42,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 ```bash
 python3 tools/fill-pricing.py   # pricing.json → 모든 언어 페이지
 python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · hreflang 다시 맞추기
-python3 tools/check-site.py      # 6개 언어 × 8개 페이지 구조 · 링크 · 번역 · 용량 점검
+python3 tools/check-site.py      # 6개 언어 × 10개 페이지 구조 · 링크 · 번역 · 용량 점검
 ```
 
 페이지에 쓰는 표시 네 가지:
@@ -49,7 +52,7 @@ python3 tools/check-site.py      # 6개 언어 × 8개 페이지 구조 · 링�
 | `<span data-price="commercial.price">US$29</span>` | 글자 사이에 넣기. 값이 `null` 일 때 — `commercial.*` 키는 `undecided` 에 있는 그 언어 문장(「가격 미정」)을 넣고(정하지 않은 금액이 숫자로 남지 않게), `seller.*` 같은 다른 키는 페이지의 주황색 자리 표시(`<span class="placeholder" data-price="seller.owner">[대표자]</span>`)를 그대로 둡니다. 값이 채워지면 `placeholder` class 도 떼어 냅니다. pricing.json 에 없는 키는 건드리지 않고 마지막에 목록으로 알립니다(종료 코드 1) |
 | `<a data-src="commercial.checkout" href="#">` | 링크. JSON 이 비어 있으면 `hidden` 으로 숨겨 두었다가, 값을 채우면 `href` 가 바뀌면서 스스로 나타납니다 |
 | `data-live-hide` / `data-live-show` | 출시 전에만 보이는 문장 / 공개된 뒤에 보이는 문장. 공개 여부는 `commercial.checkout` 이 채워져 있는지로 판단합니다 |
-| `<div id="paddle-config" data-env data-token data-price-license data-price-updates hidden>` | `checkout.html` 의 Paddle.js 설정. 실행할 때마다 `paddle.*` 값으로 속성을 다시 씁니다(값을 바꿔 다시 실행하면 그대로 반영) |
+| `<div id="paddle-config" data-env data-token data-price-license data-price-updates data-license-api hidden>` | `checkout.html` 의 Paddle.js 설정과 라이선스 서버 주소. 실행할 때마다 `paddle.*` 값으로 속성을 다시 씁니다(값을 바꿔 다시 실행하면 그대로 반영) |
 
 `pricing.json` 의 키:
 
@@ -61,7 +64,8 @@ python3 tools/check-site.py      # 6개 언어 × 8개 페이지 구조 · 링�
 | `commercial.checkout` · `download` | 구매 페이지 주소(보통 `checkout.html`) · `.dmg` 주소. `checkout` 이 채워지면 출시(판매 시작)로 봅니다 — 「출시 예정」 안내가 사라지고 구매 · 다운로드 버튼이 나타납니다 |
 | `paddle.environment` | `sandbox` 또는 `production` |
 | `paddle.client_token` | Paddle 의 **client-side token**(`test_…` / `live_…`). 비어 있으면 `checkout.html` 은 「결제를 아직 열지 않았습니다」만 보여 줍니다 |
-| `paddle.price_license` · `price_updates` | 가격 id(`pri_…`) — 라이선스(US$14, 1회) · 업데이트 1년(US$15, 매년 자동 갱신). 처음 구매 화면에 두 항목을 함께 넣어 합계 US$29 |
+| `paddle.price_license` · `price_updates` | 가격 id(`pri_…`) — 라이선스(US$14, 1회) · 업데이트 1년(US$15, 매년 자동 갱신). 처음 구매 화면에 두 항목을 함께 넣어 합계 US$29 (라이선스 서버에 닿지 못할 때만 이 값으로 직접 엽니다) |
+| `paddle.license_api` | 라이선스 서버 주소(`https://license.beakbig.com`) — 결제 완료 화면이 키를 받아 오고 사이트 결제를 만듭니다. 라이선스 서버의 `SITE_ORIGINS` 에 이 사이트 주소가 있어야 브라우저가 부를 수 있습니다(CORS). `activate.html` · `license.html` 은 `assets/license.js` 의 기본값을 쓰므로 주소를 바꾸면 거기도 고칩니다 |
 | `seller.reg_no` · `owner` · `address` · `phone` · `mail_order` | 페이지 바닥 사업자 정보와 이용약관 2항. 사업자등록번호(613-40-01820)만 정해졌고 나머지는 `null`(주황색 자리 표시) |
 | `contact.email` | 문의 주소 `support@beakbig.com` |
 
@@ -69,7 +73,7 @@ python3 tools/check-site.py      # 6개 언어 × 8개 페이지 구조 · 링�
 
 > 숨길 때 쓰는 `hidden` 속성이 CSS 의 `display` 규칙에 밀리지 않게 `assets/style.css` 에 `[hidden] { display: none !important; }` 규칙이 있습니다. 이 규칙을 지우면 출시 전 구매 · 다운로드 버튼이 그대로 보입니다(`check-site.py` 가 확인합니다).
 
-새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 8개 페이지 = 48개 파일이 모두 같은 구조여야 통과합니다.
+새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES` 에 파일 이름을 추가하고 그 페이지를 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 10개 페이지 = 60개 파일이 모두 같은 구조여야 통과합니다.
 
 모든 페이지 바닥(`<footer>` 안 `<p class="biz">`)에 사업자 정보(상호 · 대표 · 사업자등록번호 · 통신판매업 신고 · 주소 · 전화 · 이메일 · 결제 대행 Paddle)가 있습니다. `localize-nav.py` 는 바닥의 `<nav>` 만 다시 쓰므로 이 줄은 건드리지 않습니다.
 
@@ -95,9 +99,10 @@ python3 tools/check-site.py      # 6개 언어 × 8개 페이지 구조 · 링�
 | 개인정보 5항 「사용자 이름 · 기기에 직접 붙인 이름은 쓰지 않습니다」 — 확정했습니다. 기기 식별값이 이미 해시된 값이라 사실과 맞습니다 | 개인정보 처리방침 5항 |
 | 라이선스 서버 — 운영 주체 비그빅(Beakbig) · 613-40-01820 · support@beakbig.com, 서버는 Cloudflare, Inc.(미국)의 Workers, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함), 결제는 Paddle.com Market Limited(영국)가 판매대행 | 이용약관 7항 · 개인정보 처리방침 6항 |
 | 기기 식별값 — 하드웨어 UUID 에 앱 전용 접두어를 붙여 SHA-256 으로 바꾼 값의 앞 32자. 하드웨어 UUID 원문 · 호스트 이름 · 사용자 이름은 서버로 보내지 않으며, 하드웨어 UUID 를 못 읽으면 첫 실행 때 만든 무작위 설치 id 를 같은 방식으로 씁니다. Mac 이름이나 네트워크가 바뀌어도 값은 그대로 | 개인정보 처리방침 5항 |
-| 저장 방식 — 라이선스 키는 SHA-256, 기기 · 설치 식별값은 HMAC-SHA256 해시만, 앱 버전과 구매 이메일은 원문 그대로. 저장하지 않는 것(IP · 요청 헤더와 본문 · macOS 버전 · 이름/주소 · 카드 번호 · 마케팅 동의 · 사용 통계)도 5항에 있음 | 개인정보 처리방침 5항 |
-| 보관 기간 — 접근 기록 30일 · 결제 알림 처리 기록 90일 · 키 발송 기록 365일 · 발급 대기 7일은 매일 자동 삭제, 라이선스 · 기기 · 이메일은 라이선스가 있는 동안 보관하고 환불 · chargeback 으로 해지된 뒤 2년(또는 삭제 요청 시) 삭제 또는 익명화 | 개인정보 처리방침 6항 |
+| 저장 방식 — 기기 · 설치 식별값은 HMAC-SHA256 해시만. 라이선스 키는 조회용 SHA-256 해시와 함께 같은 키를 다시 보내려고 AES-256-GCM 암호문으로 보관(열쇠는 DB 밖 Workers secret — 2026-10-16 결정, 이전 「해시만」 문구를 고침). 결제 확인 값 · 키 다시 받기 이메일은 해시만. Mac 모델명 · 앱 버전 · 구매 이메일은 원문 그대로. 저장하지 않는 것(IP · 요청 헤더와 본문 · macOS 버전 · 이름/주소 · 카드 번호 · 마케팅 동의 · 사용 통계)도 5항에 있음 | 개인정보 처리방침 5항 (시행일 2026-10-17) |
+| 보관 기간 — 접근 기록 30일 · 결제 알림 처리 기록 90일 · 키 발송 기록 365일 · 발급 대기 7일 · 결제 확인 기록 30일 · 다른 Mac 해제 기록 30일 · 키 다시 받기 요청 1일은 매일 자동 삭제, 라이선스 · 기기 · 이메일은 라이선스가 있는 동안 보관하고 환불 · chargeback 으로 해지된 뒤 2년(또는 삭제 요청 시) 삭제 또는 익명화 | 개인정보 처리방침 6항 |
 | 키 발송 이메일 서비스 — Resend, Inc.(미국) | 개인정보 처리방침 6 · 12항 · 이용약관 7항 |
+| 라이선스 등록 — 결제 완료 화면 · 메일의 등록 링크(사이트 중계 `/activate#key=` → 앱 확인 창) · 앱의 「키 입력…」(구매 이메일 + 키) · 앱에서 결제한 Mac 은 「자동 확인」. 결제만으로 Mac 이 등록되지 않음. 자리가 가득 차면 등록된 Mac(모델명 · 등록일 · 마지막 사용일)에서 해제(다른 Mac 해제는 30일에 3번). 키 다시 받기는 구매 이메일로만 같은 키 | 지원 FAQ · 구매 페이지 · 개인정보 처리방침 5항 |
 | 국외 이전 — Cloudflare(미국) · Paddle(영국), 활성화 · 확인 · 결제 때 네트워크로. 저장 위치는 서버가 있는 미국과 데이터베이스의 아시아 · 태평양 지역. 보호 조치와 거부 방법(라이선스를 쓰지 않으면 이전 없음, 빌드 기능은 체험 기간 뒤 잠김) | 개인정보 처리방침 12항 |
 | 좌석 해제 — 다른 Mac 으로 옮길 때 설정 › 라이선스 의 「해제」로 자리를 돌려준 뒤 새 Mac 에서 키 입력. Mac 이름이나 네트워크가 바뀌어도 같은 Mac 으로 계산 | 이용약관 3.2항 |
 | 정지 통지 — 구매에 쓴 이메일 주소로 알림, 문의는 support@beakbig.com | 이용약관 11항 |

@@ -540,6 +540,36 @@ code {
 .checkout-box { max-width: 560px; }
 .checkout-box .plan-actions { margin: 4px 0 0; }
 
+/* ---------- 라이선스 키 (결제 완료 화면 · 앱 여는 페이지 · 키 다시 받기 — assets/license.js) ---------- */
+.license-key {
+  display: inline-block;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: clamp(15px, 4.2vw, 18px);  /* 폰 폭(카드 안)에서도 한 줄에 들어가게 */
+  letter-spacing: .04em;
+  color: var(--text);
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-alt);
+  user-select: all;
+  overflow-wrap: anywhere;  /* 그래도 넘치면 하이픈에서 먼저 줄을 바꾼다 */
+}
+.license-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 8px; }
+.license-form { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 0; max-width: 560px; }
+.license-form input[type="email"] {
+  flex: 1 1 260px;
+  min-width: 0;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--surface);
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.license-form input[type="email"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button.btn:disabled { opacity: .5; cursor: default; transform: none; filter: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }

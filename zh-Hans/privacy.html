@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>隐私政策 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 隐私政策。没有分析 · 跟踪 · 广告，检查的文件只在 Mac 上读取。许可证验证只使用许可证密钥 · 设备标识值 · 应用版本，支付由 Paddle 作为记录商户处理。">
+  <meta name="description" content="ShouArchive 隐私政策。没有分析 · 跟踪 · 广告，检查的文件只在 Mac 上读取。许可证验证只使用许可证密钥 · 设备标识值 · Mac 型号 · 应用版本，支付由 Paddle 作为记录商户处理。">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="隐私政策 — ShouArchive">
@@ -42,14 +42,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>隐私政策</h1>
-      <p>ShouArchive (macOS) · 生效日期 2026年10月15日 · 开发者 · 销售者 Beakbig</p>
+      <p>ShouArchive (macOS) · 生效日期 2026年10月17日 · 开发者 · 销售者 Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>摘要。</strong>没有分析工具 · 跟踪 · 广告 · 账户。检查的文件只在 Mac 上读取。App Store Connect · Google Play 功能使用你亲自登记的密钥直接连接 Apple · Google。发送给销售者的只有验证许可证时的<strong>许可证密钥 · 设备标识值 · 应用版本</strong>（第 5 项），以及作为记录商户处理支付的 <strong>Paddle</strong> 转交的购买信息（第 7 项）。</p>
+        <p><strong>摘要。</strong>没有分析工具 · 跟踪 · 广告 · 账户。检查的文件只在 Mac 上读取。App Store Connect · Google Play 功能使用你亲自登记的密钥直接连接 Apple · Google。发送给销售者的只有验证许可证时的<strong>许可证密钥 · 设备标识值 · Mac 型号 · 应用版本</strong>、注册或重新获取密钥时的购买邮箱地址（第 5 项），以及作为记录商户处理支付的 <strong>Paddle</strong> 转交的购买信息（第 7 项）。</p>
       </div>
 
       <h2>1. 不收集的信息</h2>
@@ -72,7 +72,7 @@
           <tr><td>描述文件列表 · 下载 · 创建 · 续期，设备列表 · 注册，App Store 商店分发</td><td>Apple App Store Connect API（<code>api.appstoreconnect.apple.com</code>）</td><td>由应用签名的身份验证令牌，以及你选择或输入的值（描述文件类型 · Bundle ID · 证书 · 设备名称 · UDID · 商店信息 · 截图等）</td></tr>
           <tr><td>Google Play 上传 · 商店分发</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>用服务账号密钥签名的身份验证请求，以及你选择的 AAB · APK · 商店信息 · 截图</td></tr>
           <tr><td>构建 · 上传应用 · 设备安装</td><td>Apple · Google 的开发工具（<code>xcodebuild</code> · <code>gradle</code> 等）所连接的地方</td><td>这些工具按各自的方式通信。下载依赖项的仓库（Maven 等）也包括在内</td></tr>
-          <tr><td>许可证激活 · 验证 · 解除，开始支付</td><td>销售者的许可证服务器</td><td>第 5 项</td></tr>
+          <tr><td>许可证激活 · 验证 · 解除，已注册 Mac 列表，重新获取密钥，开始支付</td><td>销售者的许可证服务器</td><td>第 5 项</td></tr>
           <tr><td>检查更新</td><td>销售者发布的更新列表</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收更新列表，不发送其他值</td></tr>
         </tbody>
       </table>
@@ -86,29 +86,35 @@
         <li>应用设置（主题 · 语言 · 文本大小 · 项目列表等）保存在 macOS 的用户偏好设置 · 应用支持文件夹中。</li>
         <li>API 密钥正文保存在这台 Mac 的<strong>钥匙串</strong>中，不会通过 iCloud 钥匙串同步。以文件形式选择的密钥只记住该文件的位置。</li>
         <li>描述文件活动记录 · 构建记录只保存在本地，可以在应用中删除。</li>
-        <li>许可证密钥和验证结果只保存在这台 Mac 上。</li>
+        <li>许可证密钥和验证结果保存在这台 Mac 上。许可证服务器上保存的内容见第 5 项。</li>
         <li><code>.p8</code> 文件和构建产物等你自己放置的文件，应用不会删除。</li>
       </ul>
 
       <h2>5. 许可证验证 — 发送的信息</h2>
-      <p>应用仅为验证许可证和更新期，将下列值发送到<strong>许可证服务器</strong>，不作其他用途，所有传输均通过 HTTPS 进行。</p>
+      <p>应用仅为注册和验证许可证以及确认更新期，将下列值发送到<strong>许可证服务器</strong>，不作其他用途，所有传输均通过 HTTPS 进行。网站的重新获取密钥页面和付款完成页面也只发送下面列出的值。</p>
       <table>
         <thead><tr><th>发送的值</th><th>内容</th><th>为什么需要</th></tr></thead>
         <tbody>
           <tr><td><strong>许可证密钥</strong></td><td>用于识别所购许可证的密钥</td><td>确认许可证是否有效，以及更新期截至何时</td></tr>
+          <tr><td><strong>购买邮箱地址</strong></td><td>付款时使用的邮箱地址。仅在密钥输入窗口中注册时和申请重新获取密钥时发送</td><td>确认输入的密钥属于该笔购买，并且只将密钥重新发送到购买时的邮箱</td></tr>
           <tr><td><strong>设备标识值</strong></td><td>这台 Mac 的硬件 UUID 加上应用专用前缀后用 SHA-256 计算哈希所得值的前 32 个字符。硬件 UUID 原文 · 主机名称 · 用户名称不发送。读不到硬件 UUID 时，使用应用首次启动时生成的随机安装 ID 以同样的方式计算。即使 Mac 名称或网络发生变化，该值也保持不变</td><td>确认是否超出许可证允许的设备数量（<span data-price="commercial.devices">2</span> 台 Mac）</td></tr>
+          <tr><td><strong>Mac 型号</strong></td><td>这台 Mac 的硬件型号名称（例如 MacBook Pro (14-inch, Nov 2023)）。不是 Mac 的名称或用户名称</td><td>在已注册 Mac 列表中区分各台 Mac，并在名额已满时选择要解除的 Mac</td></tr>
           <tr><td><strong>应用版本</strong></td><td>应用版本 · 构建号</td><td>确认该版本是否在更新期内发布，并解决问题</td></tr>
           <tr><td>访问记录</td><td>设备标识值的哈希、应用版本、时间、简短的错误原因</td><td>应对故障并解决问题</td></tr>
         </tbody>
       </table>
       <p><strong>何时发送什么。</strong></p>
       <ul>
-        <li><strong>激活</strong> — 许可证密钥、购买邮箱地址、设备标识值、安装标识值、应用版本、macOS 版本</li>
-        <li><strong>许可证验证</strong> — 大约每 12 小时发送许可证密钥、设备标识值、安装标识值、应用版本</li>
-        <li><strong>解除</strong> — 许可证密钥、设备标识值</li>
-        <li><strong>开始支付（购买 · 续订）</strong> — 许可证密钥（续订时）、设备标识值、安装标识值、应用版本。支付本身在 Paddle 的付款页面完成</li>
+        <li><strong>激活</strong> — 许可证密钥、购买邮箱地址（在密钥输入窗口中注册时）、设备标识值、安装标识值、Mac 型号、应用版本、macOS 版本</li>
+        <li><strong>许可证验证</strong> — 大约每 12 小时发送许可证密钥（如有）、设备标识值、安装标识值、Mac 型号、应用版本</li>
+        <li><strong>注册付款的 Mac</strong>（在应用内付款后，于确认窗口中选择“注册此 Mac”） — 设备标识值、安装标识值、Mac 型号、应用版本</li>
+        <li><strong>已注册 Mac 列表 · 解除其他 Mac</strong> — 许可证密钥、设备标识值、安装标识值、要解除的 Mac 在列表中的 id</li>
+        <li><strong>解除</strong> — 许可证密钥（应用中有时）、设备标识值、应用版本</li>
+        <li><strong>开始支付（购买 · 续订）</strong> — 许可证密钥（续订时）、设备标识值、安装标识值、应用版本、语言（购买时）。支付本身在 Paddle 的付款页面完成</li>
+        <li><strong>重新获取密钥</strong>（应用 · 网站） — 购买邮箱地址、语言</li>
+        <li><strong>在网站购买 · 付款完成页面</strong> — 开始购买时发送语言；付款后发送交易 id 和付款确认值，仅用于在该页面显示刚购买的许可证密钥</li>
       </ul>
-      <p><strong>服务器上保存的内容。</strong>许可证密钥和设备 · 安装标识值<strong>不保存原文，只保存哈希值（SHA-256 · HMAC-SHA256）</strong>。应用版本和购买邮箱地址按原样保存，购买邮箱地址用于查询许可证和发送密钥。从 Paddle 接收客户 · 交易 · 自动续订 id、自动续订状态（开启 · 关闭）、价格 id 以及更新期的结束日期。不接收姓名 · 地址 · 卡片信息。</p>
+      <p><strong>服务器上保存的内容。</strong>设备 · 安装标识值<strong>不保存原文，只保存哈希值（SHA-256 · HMAC-SHA256）</strong>。许可证密钥除用于查询的哈希值外，还保存<strong>加密（AES-256-GCM）后的值</strong>，以便将同一密钥重新发送给您；解密密钥与数据库分开保存在服务器的机密设置中，仅凭数据库无法得知许可证密钥。付款确认值和申请重新获取密钥时使用的邮箱地址只保存哈希值。Mac 型号、应用版本和购买邮箱地址按原样保存，购买邮箱地址用于查询许可证和发送密钥。从 Paddle 接收客户 · 交易 · 自动续订 id、自动续订状态（开启 · 关闭）、价格 id 以及更新期的结束日期。不接收姓名 · 地址 · 卡片信息。</p>
       <p><strong>不保存的内容。</strong>IP 地址、请求头和请求正文、macOS 版本（只接收，不保存）、姓名 · 地址、卡号、营销同意、使用统计。</p>
       <ul>
         <li>可用于识别用户身份的值（用户名 · 直接为设备设定的名称等）不用于许可证验证。</li>
@@ -119,7 +125,7 @@
       <h2>6. 许可证服务器与保存</h2>
       <ul>
         <li>许可证服务器由销售者 <strong>Beakbig</strong>（营业登记号 <span data-price="seller.reg_no">613-40-01820</span>）· 联系方式 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 运营。服务器使用 <strong>Cloudflare, Inc.</strong>（美国）的 Workers，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。</li>
-        <li>发送的值和许可证状态（签发 · 更新期 · 终止）在<strong>许可证存续期间</strong>保存。更新期结束后许可证依然存在，因此不会删除。因退款 · 拒付（chargeback）导致许可证被终止的，自终止起 2 年后删除或匿名化（目前由运营者手动处理）；如您请求删除，则在请求时删除。保存期限较短的记录<strong>每天自动</strong>删除 — 访问记录 30 天、支付通知（webhook）处理记录 90 天、密钥发送记录 365 天（收件地址只保存哈希值）、未处理的签发等待 7 天。收到删除请求时，确认本人身份后终止许可证并删除剩余记录——删除后将无法再以该许可证使用应用。</li>
+        <li>发送的值和许可证状态（签发 · 更新期 · 终止）在<strong>许可证存续期间</strong>保存。更新期结束后许可证依然存在，因此不会删除。因退款 · 拒付（chargeback）导致许可证被终止的，自终止起 2 年后删除或匿名化（目前由运营者手动处理）；如您请求删除，则在请求时删除。保存期限较短的记录<strong>每天自动</strong>删除 — 访问记录 30 天、支付通知（webhook）处理记录 90 天、密钥发送记录 365 天（收件地址只保存哈希值）、未处理的签发等待 7 天、将付款与 Mac 关联的付款确认记录 30 天、解除其他 Mac 的记录 30 天、重新获取密钥的申请记录 1 天（邮箱地址只保存哈希值）。收到删除请求时，确认本人身份后终止许可证并删除剩余记录——删除后将无法再以该许可证使用应用。</li>
         <li>此服务器上保存的值与第 5 项所列相同。付款方式信息、卡号、银行账户不会被保存。</li>
         <li>服务器使用 <strong>Cloudflare, Inc.</strong>（美国公司）的 Workers，在离用户较近的 Cloudflare 数据中心运行，数据库位于亚太地区（该地区内的实际位置由 Cloudflare 决定）。支付由 <strong>Paddle.com Market Limited</strong>（英国）作为记录商户（merchant of record）处理。</li>
         <li>许可证密钥通过邮件发送服务 <strong>Resend, Inc.</strong>（美国）发送。我们只向 Resend 提供发送密钥所需的收件邮箱地址和含有许可证密钥的邮件正文。</li>
@@ -163,7 +169,7 @@
       <ul>
         <li><strong>接收方与国家</strong> — 许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle.com Market Limited</strong>（英国）处理，密钥发送邮件由 <strong>Resend, Inc.</strong>（美国）处理。</li>
         <li><strong>保存位置</strong> — 许可证记录保存在亚太地区的数据库（<strong>Cloudflare D1</strong>）中，请求在离用户较近的 Cloudflare 数据中心处理。</li>
-        <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 开始支付（购买 · 续订）时，以及通过电子邮件发送许可证密钥时，通过网络发送。</li>
+        <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 查看已注册 Mac 列表 · 重新获取密钥 · 开始支付（购买 · 续订）时，以及通过电子邮件发送许可证密钥时，通过网络发送。</li>
         <li><strong>项目 · 目的 · 保存期限</strong> — 与第 5 项和第 6 项所列相同。</li>
         <li><strong>保护措施</strong> — Cloudflare 遵守数据处理条款（含 EU 标准合同条款），Paddle 作为记录商户按其自身的隐私政策处理支付信息。</li>
         <li><strong>拒绝方式与结果</strong> — 不使用许可证时不会发生跨境传输。此时试用期结束后只能使用描述文件管理和产物检查。</li>
@@ -176,7 +182,7 @@
       <h2>14. 联系方式</h2>
       <p>有关本政策或应用数据处理的疑问，请发送至 <a href="mailto:support@beakbig.com">support@beakbig.com</a>。</p>
 
-      <p class="meta">生效日期：2026年10月15日 · 开发者 · 销售者：Beakbig</p>
+      <p class="meta">生效日期：2026年10月17日 · 开发者 · 销售者：Beakbig</p>
     </div>
   </section>
 </main>

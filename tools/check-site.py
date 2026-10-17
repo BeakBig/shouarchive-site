@@ -6,7 +6,7 @@ python3 tools/check-site.py
 ```
 
 확인하는 것
-  1. 6개 언어 × 8개 페이지가 모두 있는가
+  1. 6개 언어 × 10개 페이지가 모두 있는가
   2. 한국어 원본과 구조가 같은가 — 태그 순서, 속성 이름, 값이 그대로여야 하는 속성
      (href · src · id · class · data-* · hidden 등)
   3. 번역이 밀리지 않았는가 — 남은 한글, 그리고 언어마다 함께 있으면 안 되는 문자 체계
@@ -26,7 +26,8 @@ import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant', 'es']
-PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html']
+PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
+         'activate.html', 'license.html']
 MAX_BYTES = 25 * 1024 * 1024  # Workers 정적 파일 한도
 KEEP_VALUE = {'href', 'src', 'id', 'class', 'data-price', 'data-src', 'data-live-hide', 'data-live-show'}
 TAG_RE = re.compile(r'<([a-z0-9]+)((?:\s+[a-z0-9-]+(?:="[^"]*")?)*)\s*/?>')
@@ -159,7 +160,8 @@ def check_paddle_config(lang, page):
         return
     paddle = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('paddle') or {}
     for attr, key in (('data-env', 'environment'), ('data-token', 'client_token'),
-                      ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates')):
+                      ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates'),
+                      ('data-license-api', 'license_api')):
         got = re.search(r'\s' + attr + r'="([^"]*)"', m.group(0))
         if not got or got.group(1) != str(paddle.get(key) or ''):
             report('결제', p, f'{attr} 가 pricing.json 의 paddle.{key} 와 다릅니다 — python3 tools/fill-pricing.py 를 실행하세요')

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Política de privacidad — ShouArchive</title>
-  <meta name="description" content="Política de privacidad de ShouArchive. Sin analíticas, rastreo ni anuncios; los archivos que inspeccionas se leen solo en tu Mac. Para comprobar la licencia solo se usan la clave de licencia, el identificador del dispositivo y la versión de la app, y el pago lo gestiona Paddle como revendedor autorizado.">
+  <meta name="description" content="Política de privacidad de ShouArchive. Sin analíticas, rastreo ni anuncios; los archivos que inspeccionas se leen solo en tu Mac. Para comprobar la licencia solo se usan la clave de licencia, el identificador del dispositivo, el modelo del Mac y la versión de la app, y el pago lo gestiona Paddle como revendedor autorizado.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Política de privacidad — ShouArchive">
@@ -42,14 +42,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Política de privacidad</h1>
-      <p>ShouArchive (macOS) · En vigor desde el 15 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
+      <p>ShouArchive (macOS) · En vigor desde el 17 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>Resumen.</strong> No hay herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo y la versión de la app</strong> al comprobar la licencia (sección 5), y los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7).</p>
+        <p><strong>Resumen.</strong> No hay herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo, el modelo del Mac y la versión de la app</strong> al comprobar la licencia, el correo de compra al registrar la clave o pedirla de nuevo (sección 5), y los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7).</p>
       </div>
 
       <h2>1. Lo que no recopilamos</h2>
@@ -72,7 +72,7 @@
           <tr><td>Listar, descargar, crear y renovar perfiles; listar y registrar dispositivos; publicar en el App Store</td><td>API de App Store Connect de Apple (<code>api.appstoreconnect.apple.com</code>)</td><td>El token de autenticación firmado por la app y los valores que eliges o introduces (tipo de perfil · ID de paquete · certificados · nombres de dispositivo · UDID · ficha de la tienda · capturas de pantalla, etc.)</td></tr>
           <tr><td>Subida y publicación en Google Play</td><td>API de Google Play Developer (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Solicitudes de autenticación firmadas con la clave de la cuenta de servicio y los AAB, APK, fichas de la tienda y capturas de pantalla que eliges</td></tr>
           <tr><td>Compilación · subida de apps · instalación en dispositivos</td><td>Los destinos a los que se conectan las herramientas de desarrollo de Apple y Google (<code>xcodebuild</code> · <code>gradle</code>, etc.)</td><td>Cada herramienta se comunica a su manera. Aquí se incluyen también los repositorios de los que se descargan dependencias (Maven, etc.)</td></tr>
-          <tr><td>Activación, comprobación y desactivación de la licencia; inicio del pago</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
+          <tr><td>Activación, comprobación y desactivación de la licencia; lista de Mac registrados; volver a recibir la clave; inicio del pago</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
           <tr><td>Búsqueda de actualizaciones</td><td>La lista de actualizaciones que publica el vendedor</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor</td></tr>
         </tbody>
       </table>
@@ -86,29 +86,35 @@
         <li>Los ajustes de la app (tema · idioma · tamaño del texto · lista de proyectos, etc.) se guardan en las preferencias de usuario y en la carpeta de soporte de la app de macOS.</li>
         <li>El contenido de las claves de API se guarda en el <strong>llavero</strong> de este Mac y no se sincroniza con el Llavero de iCloud. De las claves elegidas como archivo solo se recuerda la ubicación del archivo.</li>
         <li>El historial de actividad de los perfiles y el historial de compilaciones se guardan solo en local y pueden borrarse desde la app.</li>
-        <li>La clave de licencia y el resultado de su comprobación se guardan únicamente en este Mac.</li>
+        <li>La clave de licencia y el resultado de su comprobación se guardan en este Mac. Lo que guarda el servidor de licencias se indica en la sección 5.</li>
         <li>La app no elimina los archivos que colocaste tú mismo, como el archivo <code>.p8</code> o los resultados de compilación.</li>
       </ul>
 
       <h2>5. Comprobación de la licencia: datos que se envían</h2>
-      <p>La app envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para comprobar la licencia y el periodo de actualizaciones. No se usan para ningún otro fin, y todas las transmisiones se realizan por HTTPS.</p>
+      <p>La app envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para registrar y comprobar la licencia y el periodo de actualizaciones. Las páginas del sitio web para volver a recibir la clave y de pago completado también envían solo los valores indicados abajo. No se usan para ningún otro fin, y todas las transmisiones se realizan por HTTPS.</p>
       <table>
         <thead><tr><th>Valor enviado</th><th>Contenido</th><th>Por qué hace falta</th></tr></thead>
         <tbody>
           <tr><td><strong>Clave de licencia</strong></td><td>La clave que identifica la licencia comprada</td><td>Sirve para comprobar que la licencia es válida y hasta cuándo dura el periodo de actualizaciones</td></tr>
+          <tr><td><strong>Correo de compra</strong></td><td>La dirección de correo con la que pagaste. Solo se envía al registrar la clave en la ventana Introducir clave y al pedir que te la enviemos de nuevo</td><td>Sirve para comprobar que la clave introducida pertenece a esa compra y para reenviar la clave solo a la dirección de la compra</td></tr>
           <tr><td><strong>Identificador del dispositivo</strong></td><td>Los 32 primeros caracteres del hash SHA-256 del UUID de hardware de este Mac con un prefijo propio de la app. No se envían el UUID de hardware en texto claro, ni el nombre de host, ni el nombre de usuario. Si no se puede leer el UUID de hardware, se usa del mismo modo un identificador de instalación aleatorio creado en la primera ejecución de la app. El valor no cambia aunque cambien el nombre del Mac o la red</td><td>Sirve para comprobar si se supera el número de dispositivos que permite la licencia (<span data-price="commercial.devices">2</span> Mac)</td></tr>
+          <tr><td><strong>Modelo del Mac</strong></td><td>El nombre del modelo de hardware de este Mac (p. ej., MacBook Pro (14-inch, Nov 2023)). No es el nombre del Mac ni el nombre de usuario</td><td>Sirve para distinguir los Mac en la lista de registrados y elegir cuál liberar cuando todas las plazas están ocupadas</td></tr>
           <tr><td><strong>Versión de la app</strong></td><td>Versión y número de compilación de la app</td><td>Sirve para comprobar si esa versión se publicó dentro del periodo de actualizaciones y para resolver problemas</td></tr>
           <tr><td>Registro de accesos</td><td>El hash del identificador del dispositivo, la versión de la app, la hora y un breve motivo del error</td><td>Sirve para responder a las averías y resolver problemas</td></tr>
         </tbody>
       </table>
       <p><strong>Cuándo se envía cada cosa.</strong></p>
       <ul>
-        <li><strong>Activación</strong> — clave de licencia, correo electrónico de compra, identificador del dispositivo, identificador de instalación, versión de la app, versión de macOS</li>
-        <li><strong>Comprobación de la licencia</strong> — cada 12 horas aproximadamente: clave de licencia, identificador del dispositivo, identificador de instalación, versión de la app</li>
-        <li><strong>Desactivación</strong> — clave de licencia, identificador del dispositivo</li>
-        <li><strong>Inicio del pago (compra · renovación)</strong> — clave de licencia (en las renovaciones), identificador del dispositivo, identificador de instalación, versión de la app. El pago en sí se hace en la pantalla de pago de Paddle</li>
+        <li><strong>Activación</strong> — clave de licencia, correo electrónico de compra (al registrarla en la ventana Introducir clave), identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app, versión de macOS</li>
+        <li><strong>Comprobación de la licencia</strong> — cada 12 horas aproximadamente: clave de licencia (si la hay), identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app</li>
+        <li><strong>Registro del Mac con el que pagaste</strong> (Registrar este Mac en la ventana que aparece tras pagar desde la app) — identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app</li>
+        <li><strong>Lista de Mac registrados · liberar otro Mac</strong> — clave de licencia, identificador del dispositivo, identificador de instalación, el id en la lista del Mac que se libera</li>
+        <li><strong>Desactivación</strong> — clave de licencia (si la app la tiene), identificador del dispositivo, versión de la app</li>
+        <li><strong>Inicio del pago (compra · renovación)</strong> — clave de licencia (en las renovaciones), identificador del dispositivo, identificador de instalación, versión de la app, idioma (en las compras). El pago en sí se hace en la pantalla de pago de Paddle</li>
+        <li><strong>Volver a recibir la clave</strong> (app · sitio web) — correo electrónico de compra, idioma</li>
+        <li><strong>Compra en el sitio web · página de pago completado</strong> — el idioma al iniciar la compra; tras el pago, el id de la transacción y un valor de confirmación del pago, que solo se usan para mostrar en esa página la clave que acabas de comprar</li>
       </ul>
-      <p><strong>Lo que se guarda en el servidor.</strong> La clave de licencia y los identificadores de dispositivo e instalación <strong>no se guardan en texto claro, sino solo como hash (SHA-256 · HMAC-SHA256)</strong>. La versión de la app y el correo electrónico de compra se guardan tal cual, y el correo de compra se usa para consultar la licencia y enviar la clave. De Paddle recibimos los identificadores de cliente, de transacción y de renovación automática, el estado de la renovación automática (activada · desactivada), el identificador de precio y la fecha en que terminan las actualizaciones. No recibimos el nombre, el domicilio ni los datos de la tarjeta.</p>
+      <p><strong>Lo que se guarda en el servidor.</strong> Los identificadores de dispositivo e instalación <strong>no se guardan en texto claro, sino solo como hash (SHA-256 · HMAC-SHA256)</strong>. La clave de licencia se guarda como hash para consultarla y, además, <strong>cifrada (AES-256-GCM)</strong> para poder reenviarte la misma clave; la clave de descifrado se guarda en la configuración secreta del servidor, separada de la base de datos, de modo que la base de datos por sí sola no revela ninguna clave de licencia. Los valores de confirmación del pago y los correos usados para pedir de nuevo la clave se guardan solo como hash. El modelo del Mac, la versión de la app y el correo electrónico de compra se guardan tal cual, y el correo de compra se usa para consultar la licencia y enviar la clave. De Paddle recibimos los identificadores de cliente, de transacción y de renovación automática, el estado de la renovación automática (activada · desactivada), el identificador de precio y la fecha en que terminan las actualizaciones. No recibimos el nombre, el domicilio ni los datos de la tarjeta.</p>
       <p><strong>Lo que no se guarda.</strong> La dirección IP, las cabeceras y el cuerpo de las solicitudes, la versión de macOS (se recibe, pero no se guarda), el nombre y el domicilio, el número de tarjeta, el consentimiento de marketing y las estadísticas de uso.</p>
       <ul>
         <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (nombre de usuario, el nombre que hayas puesto al dispositivo, etc.).</li>
@@ -119,7 +125,7 @@
       <h2>6. Servidor de licencias y conservación</h2>
       <ul>
         <li>El servidor de licencias lo explota el vendedor, <strong>Beakbig</strong> (n.º de registro empresarial <span data-price="seller.reg_no">613-40-01820</span>) · contacto: <a href="mailto:support@beakbig.com">support@beakbig.com</a>. El servidor usa Workers de <strong>Cloudflare, Inc.</strong> (Estados Unidos) y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare).</li>
-        <li>Los valores enviados y el estado de la licencia (emitida · periodo de actualizaciones · revocada) se conservan <strong>mientras exista la licencia</strong>. Como la licencia sigue existiendo cuando termina el periodo de actualizaciones, no se borran en ese momento. Si la licencia se revoca por un reembolso o un contracargo (chargeback), se eliminan o se anonimizan 2 años después (por ahora lo hace el operador a mano), y si solicitas su eliminación, se borran en ese momento. Los registros con plazos cortos se borran <strong>cada día de forma automática</strong>: los registros de accesos, a los 30 días; los registros de tratamiento de avisos de pago (webhooks), a los 90 días; los registros de envío de claves, a los 365 días (de la dirección del destinatario solo se guarda el hash); y las emisiones pendientes sin tratar, a los 7 días. Cuando recibimos una solicitud de eliminación, revocamos la licencia tras verificar tu identidad y borramos los registros restantes; una vez eliminada, esa licencia ya no permite usar la app.</li>
+        <li>Los valores enviados y el estado de la licencia (emitida · periodo de actualizaciones · revocada) se conservan <strong>mientras exista la licencia</strong>. Como la licencia sigue existiendo cuando termina el periodo de actualizaciones, no se borran en ese momento. Si la licencia se revoca por un reembolso o un contracargo (chargeback), se eliminan o se anonimizan 2 años después (por ahora lo hace el operador a mano), y si solicitas su eliminación, se borran en ese momento. Los registros con plazos cortos se borran <strong>cada día de forma automática</strong>: los registros de accesos, a los 30 días; los registros de tratamiento de avisos de pago (webhooks), a los 90 días; los registros de envío de claves, a los 365 días (de la dirección del destinatario solo se guarda el hash); las emisiones pendientes sin tratar, a los 7 días; los registros que vinculan un pago con un Mac (confirmación del pago), a los 30 días; los registros de liberación de otros Mac, a los 30 días; y las solicitudes para volver a recibir la clave, al cabo de 1 día (del correo solo se guarda el hash). Cuando recibimos una solicitud de eliminación, revocamos la licencia tras verificar tu identidad y borramos los registros restantes; una vez eliminada, esa licencia ya no permite usar la app.</li>
         <li>Los valores que se guardan en este servidor son los que se indican en la sección 5. No se guardan datos del método de pago, números de tarjeta ni cuentas bancarias.</li>
         <li>El servidor se ejecuta con Workers de <strong>Cloudflare, Inc.</strong> (una empresa de Estados Unidos) en el centro de datos de Cloudflare más cercano a la persona usuaria, y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare). Los pagos los gestiona <strong>Paddle.com Market Limited</strong> (Reino Unido) como revendedor autorizado (merchant of record).</li>
         <li>La clave de licencia se envía a través del servicio de envío de correo <strong>Resend, Inc.</strong> (Estados Unidos). A Resend solo se le facilitan la dirección de correo del destinatario y el cuerpo del mensaje con la clave de licencia, que son lo necesario para enviarla.</li>
@@ -163,7 +169,7 @@
       <ul>
         <li><strong>Destino y país</strong> — los registros de licencia se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), la información de pago en <strong>Paddle.com Market Limited</strong> (Reino Unido) y los correos de envío de claves en <strong>Resend, Inc.</strong> (Estados Unidos).</li>
         <li><strong>Ubicación del almacenamiento</strong> — los registros de licencia se guardan en la base de datos de la región Asia-Pacífico (<strong>Cloudflare D1</strong>), y las solicitudes se procesan en el centro de datos de Cloudflare más cercano a la persona usuaria.</li>
-        <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla y al iniciar un pago (compra · renovación), así como al enviar la clave de licencia por correo electrónico.</li>
+        <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla, al consultar los Mac registrados, al pedir de nuevo la clave y al iniciar un pago (compra · renovación), así como al enviar la clave de licencia por correo electrónico.</li>
         <li><strong>Categorías, fines y plazos de conservación</strong> — los mismos que se indican en las secciones 5 y 6.</li>
         <li><strong>Medidas de protección</strong> — Cloudflare sigue su acuerdo de tratamiento de datos (con las cláusulas contractuales tipo de la UE incluidas) y Paddle trata la información de pago conforme a su propia política de privacidad en su condición de revendedor autorizado.</li>
         <li><strong>Cómo rechazarlas y qué ocurre</strong> — si no usas una licencia, no se produce ninguna transferencia. En ese caso, cuando termina el periodo de prueba, solo puedes usar la gestión de perfiles y la inspección de artefactos.</li>
@@ -176,7 +182,7 @@
       <h2>14. Contacto</h2>
       <p>Si tienes alguna duda sobre esta política o sobre cómo trata los datos la app, escríbenos a <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
 
-      <p class="meta">Fecha de entrada en vigor: 15 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
+      <p class="meta">Fecha de entrada en vigor: 17 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 </main>

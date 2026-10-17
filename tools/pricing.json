@@ -25,12 +25,13 @@
     "download": ""
   },
 
-  "_paddle": "checkout.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(live_ / test_ 로 시작), price_* 는 가격 id(pri_…). environment 는 \"sandbox\" 또는 \"production\". price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). client_token 이 비어 있으면 checkout.html 은 「결제를 아직 열지 않았습니다」 안내만 보여 준다.",
+  "_paddle": "checkout.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(live_ / test_ 로 시작), price_* 는 가격 id(pri_…). environment 는 \"sandbox\" 또는 \"production\". price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). client_token 이 비어 있으면 checkout.html 은 「결제를 아직 열지 않았습니다」 안내만 보여 준다. license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 한다.",
   "paddle": {
     "environment": "sandbox",
     "client_token": "test_928a76416bd3a848b5a28307512",
     "price_license": "pri_01m4z2wd3gd0nk5e7sn0rkm6nc",
-    "price_updates": "pri_01m4z2sybg1d0p83g6x6hjz9s0"
+    "price_updates": "pri_01m4z2sybg1d0p83g6x6hjz9s0",
+    "license_api": "https://license.beakbig.com"
   },
 
   "_seller": "페이지 바닥 사업자 정보 · 이용약관 2항. null 이면 페이지의 주황색 자리 표시를 그대로 둔다(undecided 문장을 넣지 않음). 값은 문자열이거나, 언어마다 다르게 보여야 하면 {\"ko\": …, \"en\": …} 꼴의 언어별 사전(없는 언어는 en 값).",

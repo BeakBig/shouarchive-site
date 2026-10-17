@@ -49,14 +49,33 @@
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden></div>
+      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden data-license-api="https://license.beakbig.com"></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>El pago todavía no está abierto.</strong> ShouArchive aún no se ha lanzado, así que por ahora no se puede comprar. Consulta el precio y las novedades del lanzamiento en la <a href="pricing.html">página de precios</a>.</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
-        <p><strong>El pago se ha completado. ¡Gracias!</strong> Hemos enviado la clave de licencia a la dirección de correo electrónico que usaste para pagar. Si no llega en unos minutos, revisa la carpeta de spam y, si tampoco está ahí, escríbenos a <a href="mailto:support@beakbig.com?subject=ShouArchive%20-%20clave%20de%20licencia%20no%20recibida">support@beakbig.com</a> indicando el correo electrónico del pago.</p>
+        <p><strong>El pago se ha completado. ¡Gracias!</strong> Hemos enviado la clave de licencia a la dirección de correo electrónico que usaste para pagar. En el Mac donde tengas ShouArchive, pulsa el enlace «Regístrala en la app» del correo para registrarla. Si no llega en unos minutos, revisa la carpeta de spam o <a href="license.html">vuelve a recibirla</a>; si tampoco está ahí, escríbenos a <a href="mailto:support@beakbig.com?subject=ShouArchive%20-%20clave%20de%20licencia%20no%20recibida">support@beakbig.com</a> indicando el correo electrónico del pago.</p>
+      </div>
+
+      <div class="note" id="checkout-processing" hidden>
+        <p><strong>Confirmando el pago…</strong> Estamos preparando tu clave de licencia; tardará un momento. Aunque cierres esta página, la clave llegará al correo con el que pagaste.</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-ready" hidden>
+        <h2>El pago se ha completado. ¡Gracias!</h2>
+        <p>Registra esta clave de licencia en ShouArchive. También hemos enviado la misma clave al correo con el que pagaste.</p>
+        <p><code class="license-key" id="license-key"></code></p>
+        <div class="license-actions">
+          <a class="btn" id="license-open" href="#">Abrir en ShouArchive</a>
+          <button class="btn outline" type="button" id="license-copy" data-done="Copiada">Copiar clave</button>
+        </div>
+        <p class="price-note">Pulsa «Abrir en ShouArchive»: la app se abre y te pregunta si quieres registrar este Mac. Si la app no se abre, ve a Ajustes › Licencia › Introducir clave… e introduce el correo del pago y esta clave.</p>
+      </div>
+
+      <div class="note" id="checkout-renewed" hidden>
+        <p><strong>Se ha ampliado tu periodo de actualizaciones. ¡Gracias!</strong> Tu clave de licencia no cambia; no tienes que volver a introducirla. ShouArchive detectará el nuevo periodo en breve; para aplicarlo ya, pulsa Ajustes › Licencia › Comprobar automáticamente. También te enviamos un correo de confirmación a la dirección con la que pagaste.</p>
       </div>
 
       <div class="plan checkout-box" id="checkout-buy" hidden>
@@ -69,11 +88,12 @@
         </div>
       </div>
 
-      <h2 id="key">Introducir la clave de licencia</h2>
+      <h2 id="key">Registrar la licencia</h2>
       <ol>
-        <li>Al completar el pago, recibirás la clave de licencia en la dirección de correo electrónico que usaste para pagar.</li>
-        <li>En ShouArchive, abre <strong>Ajustes › Licencia</strong>.</li>
-        <li>Pega la clave y pulsa «Activar»; eso es todo. Una clave sirve para <span data-price="commercial.devices">2</span> Mac.</li>
+        <li>Al completar el pago, la clave de licencia aparece en esta página y la misma clave llega al correo con el que pagaste.</li>
+        <li>Pulsa «Abrir en ShouArchive» o el enlace «Regístrala en la app» del correo. La app se abre y te pregunta si quieres registrar este Mac; pulsa «Registrar» y listo.</li>
+        <li>Si el enlace no abre la app, ve a <strong>Ajustes › Licencia › Introducir clave…</strong> en ShouArchive, introduce el correo del pago y la clave, y pulsa «Activar». Si pagaste desde la app, basta con pulsar «Comprobar automáticamente» en ese Mac.</li>
+        <li>Una clave sirve para <span data-price="commercial.devices">2</span> Mac. Si perdiste la clave, puedes <a href="license.html">volver a recibirla</a>.</li>
       </ol>
 
       <h2 id="about">Sobre el pago</h2>
@@ -106,37 +126,8 @@
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-(function () {
-  // Settings come from tools/pricing.json via tools/fill-pricing.py into #paddle-config (all public values).
-  var cfg = document.getElementById('paddle-config').dataset;
-  var params = new URLSearchParams(location.search);
-  var show = function (id, on) { document.getElementById(id).hidden = !on; };
-  if (params.get('done') === '1') {           // returning after a completed payment
-    show('checkout-closed', false);
-    show('checkout-done', true);
-    return;
-  }
-  if (!cfg.token || !window.Paddle) return;    // payment not open yet: show the notice only
-  var LOCALES = { 'ko': 'ko', 'en': 'en', 'ja': 'ja', 'zh-Hans': 'zh-Hans', 'es': 'es' };  // zh-Hant omitted: not supported by Paddle
-  var settings = { displayMode: 'overlay', successUrl: location.origin + location.pathname + '?done=1' };
-  var locale = LOCALES[document.documentElement.lang];
-  if (locale) settings.locale = locale;
-  if (cfg.env === 'sandbox') Paddle.Environment.set('sandbox');
-  Paddle.Initialize({ token: cfg.token, checkout: { settings: settings } });
-  show('checkout-closed', false);
-  // With ?_ptxn= (a renewal or in-app purchase transaction created by the license server), Paddle.js opens the checkout itself.
-  if (params.has('_ptxn')) return;
-  if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
-  show('checkout-buy', true);
-  document.getElementById('checkout-open').addEventListener('click', function () {
-    Paddle.Checkout.open({ items: [
-      { priceId: cfg.priceLicense, quantity: 1 },
-      { priceId: cfg.priceUpdates, quantity: 1 }
-    ] });
-  });
-})();
-</script>
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.checkout();</script>
 <script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
 </body>
 </html>

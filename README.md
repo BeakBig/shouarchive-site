@@ -12,13 +12,15 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | --- | --- |
 | `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(체험 · 구매 후 기능표) · 다운로드 |
 | `support.html` · `privacy.html` · `terms.html` · `refund.html` | 한국어 지원(FAQ) · 개인정보 처리방침 · 이용약관 · 환불 정책 |
-| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) 「결제를 확인하고 있습니다」 카드(도는 원)를 띄우고 `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 1분(2초 간격)이 지나도 키가 없으면 「결제는 완료되었습니다 — 메일함 · 스팸함을 확인하고, 안 오면 support@beakbig.com 으로」 안내(`checkout-slow`)로 바꾸고, 페이지를 열어 둔 동안 5초 간격으로 5분 더 확인해 준비되면 키를 보여 줍니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 서버가 키를 보관하지 않거나 확인 값이 맞지 않으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
+| `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) 「결제를 확인하고 있습니다」 카드(앱과 같은 Lottie 퍼즐 로딩 — 못 불러오면 도는 원)를 띄우고 `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 1분(2초 간격)이 지나도 키가 없으면 「결제는 완료되었습니다 — 메일함 · 스팸함을 확인하고, 안 오면 support@beakbig.com 으로」 안내(`checkout-slow`)로 바꾸고, 페이지를 열어 둔 동안 5초 간격으로 5분 더 확인해 준비되면 키를 보여 줍니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 서버가 키를 보관하지 않거나 확인 값이 맞지 않으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
 | `activate.html` | 메일의 「앱에서 바로 등록하기」 링크가 여는 중계 페이지 — `#key=` 의 키를 보여 주고 `shouarchive://activate?key=…` 로 앱을 엽니다(Mac 데스크톱에서만 저절로, 휴대폰에서는 버튼만). 키는 `#` 뒤라 서버로 가지 않고, 읽은 뒤 주소에서 지웁니다. 메뉴에 넣지 않고 검색에서 뺍니다(`noindex`) |
 | `license.html` | 키 다시 받기 — 구매 이메일을 받아 라이선스 서버(`/v1/licenses/resend`)에 보냅니다. 서버는 늘 같은 답을 주고 구매 이메일로만 같은 키를 보냅니다. 메뉴에 넣지 않습니다(`noindex`, 메일 · 지원 FAQ · 앱에서 링크) |
 | `rotate.html` | 키 바꾸기(2026-10-17) — 키가 남에게 알려진 것 같을 때. 그냥 열면 구매 이메일을 받아 확인 메일을 요청하고(`/v1/licenses/rotate`), 메일의 링크(`#token=`)로 열면 「키 바꾸기」 단추를 보여 줍니다 — **단추를 눌러야** 바뀝니다(`/v1/licenses/rotate/confirm`, 메일 보안 검사기가 링크를 미리 열어도 그대로). 새 키는 페이지에 보여 주지 않고 구매 이메일로만 갑니다. 확인 값은 읽은 뒤 주소에서 지웁니다. 쓴 · 만료된 링크면 안내와 함께 요청 양식을 보여 줍니다. 새 Mac 등록 알림 메일의 「내가 아니라면」 링크도 여기로 옵니다. `noindex` |
 | `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 열한 페이지) |
 | `assets/style.css` | 공용 스타일 (라이트 · 다크) |
 | `assets/license.js` | 결제 완료 화면 · `activate.html` · `license.html` · `rotate.html` 이 함께 쓰는 스크립트 (언어 중립 — 문구는 각 페이지 HTML 에 있고 보이기 · 숨기기 · 값 채우기만 합니다). 라이선스 서버 주소는 `#paddle-config` 의 `data-license-api`, 없으면 기본값 `https://license.beakbig.com`. 서버 계약은 라이선스 서버 저장소 `docs/app-contract.md` §2.10 – §2.13 |
+| `assets/vendor/lottie_light.min.js` | [lottie-web](https://github.com/airbnb/lottie-web) 5.12.2 의 light(SVG) 빌드 — 결제 확인 중 그림. npm 에서 받아 무결성(sha512)을 확인했고 라이선스는 `assets/vendor/lottie-web-LICENSE.md`(MIT). 외부 CDN 을 쓰지 않으려고 사이트에 둔다. 결제 확인 카드를 띄울 때만 불러온다 |
+| `assets/loading/puzzle_loading.json` | 앱의 로딩 표시와 같은 Lottie 퍼즐 — 앱 저장소 `ShouArchive/Resources/Loading/puzzle_loading.json` 의 사본(앱 쪽을 바꾸면 같이 바꾼다) |
 | `assets/icon.png` · `icon-64.png` | 앱 아이콘 |
 | `assets/screenshots/<언어>/` | 갤러리 스크린샷 `01.png` ~ `06.png` (2880×1800), 6개 언어 |
 | `assets/samples/` | 심사 · 테스트용 합성 APK · AAB |

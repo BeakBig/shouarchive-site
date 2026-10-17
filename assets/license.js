@@ -26,6 +26,9 @@
   var SLOW_POLL_MS = 5000;
   var SLOW_POLL_TRIES = 60;
 
+  /** 이 스크립트가 있는 assets/ 주소 — 언어 폴더(en/ …)의 페이지에서 불러도 같은 곳을 가리킨다 */
+  var ASSETS = document.currentScript && document.currentScript.src ? new URL('.', document.currentScript.src).href : null;
+
   function byId(id) { return document.getElementById(id); }
   function show(id, on) { var el = byId(id); if (el) el.hidden = !on; }
 
@@ -170,6 +173,7 @@
       if (renewal) { show('checkout-renewed', true); return; }
       if (!claim || !id) { show('checkout-done', true); return; }
       show('checkout-processing', true);
+      startWaitingAnimation();
       poll(id, 0);
     }
 
@@ -196,11 +200,13 @@
     /** 오래 걸린다 — 결제는 끝났으니 메일을 확인하고, 안 오면 문의하라고 안내한다 (뒤에서 계속 확인한다) */
     function slow() {
       show('checkout-processing', false);
+      stopWaitingAnimation();
       show('checkout-slow', true);
     }
 
     function ready(result) {
       show('checkout-processing', false);
+      stopWaitingAnimation();
       show('checkout-slow', false);
       if (!result.key) return mailed();  // 서버가 키를 보관하지 않는 설정 — 메일로 받는다
       fillKey('license', result.key);
@@ -211,9 +217,63 @@
 
     function mailed() {
       show('checkout-processing', false);
+      stopWaitingAnimation();
       show('checkout-slow', false);
       show('checkout-done', true);
     }
+  }
+
+  // ------------------------------------------------------------------ 결제 확인 중 그림 (앱과 같은 Lottie)
+
+  /**
+   * 앱의 로딩 표시와 같은 Lottie 퍼즐 애니메이션 (assets/loading/puzzle_loading.json · lottie-web 5.12.2 light,
+   * assets/vendor). 결제 확인 카드를 띄울 때 그때 불러온다 — 결제 페이지를 처음 열 때는 받지 않는다.
+   * 못 불러오면 도는 원이 그대로 돈다. 「동작 줄이기」 면 천천히 돈다.
+   */
+  var waitingAnimation = null;
+
+  function startWaitingAnimation() {
+    var box = byId('checkout-loading');
+    if (!box || !ASSETS || waitingAnimation) return;
+    loadScript(ASSETS + 'vendor/lottie_light.min.js')
+      .then(function () {
+        if (!window.lottie || waitingAnimation || box.closest('[hidden]')) return;
+        waitingAnimation = window.lottie.loadAnimation({
+          container: box,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: ASSETS + 'loading/puzzle_loading.json'
+        });
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) waitingAnimation.setSpeed(0.4);
+        waitingAnimation.addEventListener('DOMLoaded', function () { box.classList.add('is-lottie'); });
+      })
+      .catch(function () { /* 도는 원 그대로 */ });
+  }
+
+  function stopWaitingAnimation() {
+    if (waitingAnimation) {
+      waitingAnimation.destroy();
+      waitingAnimation = null;
+    }
+    var box = byId('checkout-loading');
+    if (box) box.classList.remove('is-lottie');
+  }
+
+  /** 스크립트 하나를 한 번만 불러온다 */
+  var scriptLoads = {};
+  function loadScript(src) {
+    if (!scriptLoads[src]) {
+      scriptLoads[src] = new Promise(function (resolve, reject) {
+        var tag = document.createElement('script');
+        tag.src = src;
+        tag.async = true;
+        tag.onload = function () { resolve(); };
+        tag.onerror = function () { delete scriptLoads[src]; reject(new Error('load failed: ' + src)); };
+        document.head.appendChild(tag);
+      });
+    }
+    return scriptLoads[src];
   }
 
   // ------------------------------------------------------------------ 앱을 여는 중계 페이지 (activate.html)

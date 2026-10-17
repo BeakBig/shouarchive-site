@@ -540,9 +540,19 @@ code {
 .checkout-box { max-width: 560px; }
 .checkout-box .plan-actions { margin: 4px 0 0; }
 
-/* 결제 확인 중 — 도는 원 + 제목 (결제 완료 화면 · assets/license.js) */
-.checkout-waiting .waiting-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.checkout-waiting .waiting-head h2 { margin: 0; }
+/* 결제 확인 중 — 앱과 같은 Lottie 퍼즐 로딩 + 제목, 가운데 정렬 (결제 완료 화면 · assets/license.js)
+   Lottie 를 불러오기 전 · 못 불러오면 도는 원을 그대로 보인다 */
+.checkout-waiting { align-items: center; text-align: center; }
+.checkout-waiting h2 { margin-top: 2px; }  /* 본문 제목의 위 여백(40px)은 카드 안에서 너무 넓다 */
+.waiting-anim {
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+}
+.waiting-anim svg { display: block; }
+.waiting-anim.is-lottie .spinner { display: none; }
 .spinner {
   flex: none;
   width: 22px;

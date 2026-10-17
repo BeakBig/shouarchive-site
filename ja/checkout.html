@@ -49,14 +49,33 @@
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden></div>
+      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden data-license-api="https://license.beakbig.com"></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>決済はまだ受け付けていません。</strong>ShouArchive は発売前のため、現在は購入できません。価格と発売のお知らせは<a href="pricing.html">価格ページ</a>でご確認ください。</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
-        <p><strong>決済が完了しました。ありがとうございます。</strong>ライセンスキーを決済に使ったメールアドレスへ送付しました。数分経っても届かない場合は迷惑メールフォルダをご確認ください。それでも見つからない場合は <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%81%8C%E5%B1%8A%E3%81%8B%E3%81%AA%E3%81%84">support@beakbig.com</a> まで決済に使ったメールアドレスをお知らせください。</p>
+        <p><strong>決済が完了しました。ありがとうございます。</strong>ライセンスキーを決済に使ったメールアドレスへ送付しました。ShouArchive をインストールした Mac でメールの「アプリでそのまま登録」リンクを押すと登録されます。数分経っても届かない場合は迷惑メールフォルダをご確認いただくか、<a href="license.html">キーの再送</a>から受け取ってください。それでも見つからない場合は <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%82%AD%E3%83%BC%E3%81%8C%E5%B1%8A%E3%81%8B%E3%81%AA%E3%81%84">support@beakbig.com</a> まで決済に使ったメールアドレスをお知らせください。</p>
+      </div>
+
+      <div class="note" id="checkout-processing" hidden>
+        <p><strong>決済を確認しています…</strong>ライセンスキーを準備しています。しばらくお待ちください。このページを閉じても、キーは決済に使ったメールアドレスに届きます。</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-ready" hidden>
+        <h2>決済が完了しました。ありがとうございます。</h2>
+        <p>このライセンスキーを ShouArchive に登録してください。同じキーを決済に使ったメールアドレスにも送りました。</p>
+        <p><code class="license-key" id="license-key"></code></p>
+        <div class="license-actions">
+          <a class="btn" id="license-open" href="#">ShouArchive で開く</a>
+          <button class="btn outline" type="button" id="license-copy" data-done="コピーしました">キーをコピー</button>
+        </div>
+        <p class="price-note">「ShouArchive で開く」を押すとアプリが開き、この Mac に登録するか確認します。アプリが開かない場合は「設定 › ライセンス › キーを入力…」で決済に使ったメールアドレスとこのキーを入力してください。</p>
+      </div>
+
+      <div class="note" id="checkout-renewed" hidden>
+        <p><strong>アップデート期間を延長しました。ありがとうございます。</strong>ライセンスキーは変わらず、再入力は不要です。ShouArchive がまもなく新しい期間を確認します。すぐに反映するには「設定 › ライセンス › 自動確認」を押してください。お知らせメールも決済に使ったメールアドレスに送ります。</p>
       </div>
 
       <div class="plan checkout-box" id="checkout-buy" hidden>
@@ -69,11 +88,12 @@
         </div>
       </div>
 
-      <h2 id="key">ライセンスキーの入力</h2>
+      <h2 id="key">ライセンスの登録</h2>
       <ol>
-        <li>決済が完了すると、決済に使ったメールアドレスにライセンスキーが届きます。</li>
-        <li>ShouArchive で<strong>「設定 › ライセンス」</strong>を開きます。</li>
-        <li>キーを貼り付けて「有効化」を押せば完了です。キー 1 つで Mac <span data-price="commercial.devices">2</span> 台で使えます。</li>
+        <li>決済が完了すると、このページにライセンスキーが表示され、同じキーが決済に使ったメールアドレスにも届きます。</li>
+        <li>「ShouArchive で開く」またはメールの「アプリでそのまま登録」リンクを押すとアプリが開き、この Mac に登録するか確認します。「登録」を押せば完了です。</li>
+        <li>リンクが開かない場合は、ShouArchive の<strong>「設定 › ライセンス › キーを入力…」</strong>で決済に使ったメールアドレスとキーを入力し、「有効化」を押します。アプリから購入した場合は、その Mac で「自動確認」を押すだけでも登録できます。</li>
+        <li>キー 1 つで Mac <span data-price="commercial.devices">2</span> 台で使えます。キーをなくした場合は<a href="license.html">キーの再送</a>から受け取れます。</li>
       </ol>
 
       <h2 id="about">決済について</h2>
@@ -106,37 +126,8 @@
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-(function () {
-  // 設定は tools/pricing.json → tools/fill-pricing.py が #paddle-config に入れる（すべて公開値）。
-  var cfg = document.getElementById('paddle-config').dataset;
-  var params = new URLSearchParams(location.search);
-  var show = function (id, on) { document.getElementById(id).hidden = !on; };
-  if (params.get('done') === '1') {           // 決済を終えて戻ってきた場合
-    show('checkout-closed', false);
-    show('checkout-done', true);
-    return;
-  }
-  if (!cfg.token || !window.Paddle) return;    // まだ決済を受け付けていない → 案内のみ
-  var LOCALES = { 'ko': 'ko', 'en': 'en', 'ja': 'ja', 'zh-Hans': 'zh-Hans', 'es': 'es' };  // zh-Hant は Paddle が対応していないため省略
-  var settings = { displayMode: 'overlay', successUrl: location.origin + location.pathname + '?done=1' };
-  var locale = LOCALES[document.documentElement.lang];
-  if (locale) settings.locale = locale;
-  if (cfg.env === 'sandbox') Paddle.Environment.set('sandbox');
-  Paddle.Initialize({ token: cfg.token, checkout: { settings: settings } });
-  show('checkout-closed', false);
-  // ?_ptxn=（ライセンスサーバーが作った更新 · アプリ内購入の取引）なら Paddle.js が自ら決済画面を開く。
-  if (params.has('_ptxn')) return;
-  if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
-  show('checkout-buy', true);
-  document.getElementById('checkout-open').addEventListener('click', function () {
-    Paddle.Checkout.open({ items: [
-      { priceId: cfg.priceLicense, quantity: 1 },
-      { priceId: cfg.priceUpdates, quantity: 1 }
-    ] });
-  });
-})();
-</script>
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.checkout();</script>
 <script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
 </body>
 </html>

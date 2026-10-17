@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — ShouArchive</title>
-  <meta name="description" content="ShouArchive Privacy Policy. No analytics, tracking or ads, and the files you inspect are read only on your Mac. License checks use only the license key, a device identifier and the app version, and payment is handled by Paddle as Merchant of Record.">
+  <meta name="description" content="ShouArchive Privacy Policy. No analytics, tracking or ads, and the files you inspect are read only on your Mac. License checks use only the license key, a device identifier, the Mac model and the app version, and payment is handled by Paddle as Merchant of Record.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Privacy Policy — ShouArchive">
@@ -42,14 +42,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Privacy Policy</h1>
-      <p>ShouArchive (macOS) · Effective October 15, 2026 · Developer and seller: Beakbig</p>
+      <p>ShouArchive (macOS) · Effective October 17, 2026 · Developer and seller: Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>Summary.</strong> No analytics, no tracking, no ads, no accounts. The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. The only things that reach the seller are the <strong>license key, device identifier and app version</strong> sent when your license is checked (Section 5), and the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7).</p>
+        <p><strong>Summary.</strong> No analytics, no tracking, no ads, no accounts. The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. The only things that reach the seller are the <strong>license key, device identifier, Mac model and app version</strong> sent when your license is checked, the purchase email when you register or ask for your key again (Section 5), and the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7).</p>
       </div>
 
       <h2>1. What we don't collect</h2>
@@ -72,7 +72,7 @@
           <tr><td>Listing, downloading, creating and renewing profiles; listing and registering devices; App Store releases</td><td>Apple App Store Connect API (<code>api.appstoreconnect.apple.com</code>)</td><td>An authentication token signed by the app, plus the values you choose or enter (profile type, bundle ID, certificate, device name, UDID, store listing, screenshots and so on)</td></tr>
           <tr><td>Google Play uploads and store releases</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Authentication requests signed with your service account key, plus the AAB, APK, store listing and screenshots you choose</td></tr>
           <tr><td>Building, app upload, device install</td><td>Wherever Apple's and Google's developer tools (<code>xcodebuild</code>, <code>gradle</code> and so on) connect</td><td>These tools communicate in their own way. Repositories that dependencies are downloaded from (Maven and so on) are included here</td></tr>
-          <tr><td>License activation, checks and deactivation; starting a payment</td><td>The seller's license server</td><td>Section 5</td></tr>
+          <tr><td>License activation, checks and deactivation; the list of registered Macs; getting your key again; starting a payment</td><td>The seller's license server</td><td>Section 5</td></tr>
           <tr><td>Checking for updates</td><td>The update list the seller publishes</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else</td></tr>
         </tbody>
       </table>
@@ -86,29 +86,35 @@
         <li>App settings (theme, language, text size, project list and so on) are stored in macOS user defaults and the Application Support folder.</li>
         <li>The contents of API keys are stored in this Mac's <strong>keychain</strong> and are not synced through iCloud Keychain. For keys chosen as files, only the file's location is remembered.</li>
         <li>Profile activity history and build history stay local, and you can clear them in the app.</li>
-        <li>Your license key and check results are stored only on this Mac.</li>
+        <li>Your license key and check results are stored on this Mac. What the license server stores is described in Section 5.</li>
         <li>The app does not delete files you placed yourself, such as <code>.p8</code> files and build output.</li>
       </ul>
 
       <h2>5. License checks — what is sent</h2>
-      <p>The app sends the following values to the <strong>license server</strong> only to check your license and update period. They are not used for any other purpose, and everything is sent over HTTPS.</p>
+      <p>The app sends the following values to the <strong>license server</strong> only to register and check your license and update period. The website’s “get your key again” and payment-complete pages also send only the values listed below. They are not used for any other purpose, and everything is sent over HTTPS.</p>
       <table>
         <thead><tr><th>Value sent</th><th>What it is</th><th>Why it is needed</th></tr></thead>
         <tbody>
           <tr><td><strong>License key</strong></td><td>The key that identifies the license you bought</td><td>To check that the license is valid and when the update period ends</td></tr>
+          <tr><td><strong>Purchase email</strong></td><td>The email address you paid with. Sent only when you register in the Enter key window and when you ask for your key again</td><td>To check that the key you entered belongs to that purchase, and to send the key again only to the purchase address</td></tr>
           <tr><td><strong>Device identifier</strong></td><td>The first 32 characters of a SHA-256 hash of this Mac's hardware UUID with an app-specific prefix. The raw hardware UUID, host name and user name are not sent. If the hardware UUID can't be read, a random installation id created at first launch is used in the same way. The value stays the same even if your Mac's name or network changes</td><td>To check whether the number of devices the license allows (<span data-price="commercial.devices">2</span> Macs) has been exceeded</td></tr>
+          <tr><td><strong>Mac model</strong></td><td>This Mac’s hardware model name (e.g. MacBook Pro (14-inch, Nov 2023)). Not your Mac’s name or user name</td><td>To tell the registered Macs apart in the list and let you choose which one to deactivate when all slots are taken</td></tr>
           <tr><td><strong>App version</strong></td><td>App version and build number</td><td>To check whether that version was released within your update period, and to troubleshoot problems</td></tr>
           <tr><td>Access logs</td><td>A hash of the device identifier, app version, time and a short error reason</td><td>To respond to outages and troubleshoot problems</td></tr>
         </tbody>
       </table>
       <p><strong>What is sent, and when.</strong></p>
       <ul>
-        <li><strong>Activation</strong> — license key, purchase email, device identifier, installation identifier, app version, macOS version</li>
-        <li><strong>License check</strong> — about every 12 hours: license key, device identifier, installation identifier, app version</li>
-        <li><strong>Deactivation</strong> — license key, device identifier</li>
-        <li><strong>Starting a payment (purchase or renewal)</strong> — license key (for renewals), device identifier, installation identifier, app version. The payment itself takes place on Paddle's checkout screen</li>
+        <li><strong>Activation</strong> — license key, purchase email (when registering in the Enter key window), device identifier, installation identifier, Mac model, app version, macOS version</li>
+        <li><strong>License check</strong> — about every 12 hours: license key (if any), device identifier, installation identifier, Mac model, app version</li>
+        <li><strong>Registering the Mac you paid on</strong> (Register This Mac in the dialog after paying from the app) — device identifier, installation identifier, Mac model, app version</li>
+        <li><strong>Registered Macs list and deactivating another Mac</strong> — license key, device identifier, installation identifier, the list id of the Mac to deactivate</li>
+        <li><strong>Deactivation</strong> — license key (if the app has it), device identifier, app version</li>
+        <li><strong>Starting a payment (purchase or renewal)</strong> — license key (for renewals), device identifier, installation identifier, app version, language (for purchases). The payment itself takes place on Paddle’s checkout screen</li>
+        <li><strong>Getting your key again</strong> (app and website) — purchase email, language</li>
+        <li><strong>Buying on the website and the payment-complete page</strong> — the language when you start a purchase; after payment, the transaction id and a payment confirmation value, used only to show the license key you just bought on that page</li>
       </ul>
-      <p><strong>What is stored on the server.</strong> License keys and device and installation identifiers are <strong>not stored in their original form — only as hashes (SHA-256 · HMAC-SHA256)</strong>. The app version and purchase email are stored as they are; the purchase email is used to look up licenses and send keys. From Paddle we receive the customer, transaction and auto-renewal ids, the auto-renewal status (on or off), the price id and the date updates end. We do not receive names, addresses or card details.</p>
+      <p><strong>What is stored on the server.</strong> Device and installation identifiers are <strong>not stored in their original form — only as hashes (SHA-256 · HMAC-SHA256)</strong>. License keys are stored as a lookup hash together with an <strong>encrypted copy (AES-256-GCM)</strong> so the same key can be sent to you again; the decryption key is kept in the server’s secret settings, separate from the database, so the database alone does not reveal any license key. Payment confirmation values and email addresses used to ask for a key again are stored only as hashes. The Mac model, app version and purchase email are stored as they are; the purchase email is used to look up licenses and send keys. From Paddle we receive the customer, transaction and auto-renewal ids, the auto-renewal status (on or off), the price id and the date updates end. We do not receive names, addresses or card details.</p>
       <p><strong>What is not stored.</strong> IP addresses, request headers and request bodies, macOS version (received but not stored), names and addresses, card numbers, marketing consent, usage statistics.</p>
       <ul>
         <li>Values that could identify you (user name, a name you gave the device and so on) are not used for license checks.</li>
@@ -119,7 +125,7 @@
       <h2>6. The license server and retention</h2>
       <ul>
         <li>The license server is run by the seller, <strong>Beakbig</strong> (business registration no. <span data-price="seller.reg_no">613-40-01820</span>) · contact <a href="mailto:support@beakbig.com">support@beakbig.com</a>. The server uses Workers from <strong>Cloudflare, Inc.</strong> (USA), and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare).</li>
-        <li>The values sent and the license status (issued, update period, revoked) are kept <strong>for as long as the license exists</strong>. The license remains after the update period ends, so it is not deleted then. If a license is revoked because of a refund or chargeback, its records are deleted or anonymized 2 years later (for now the operator does this manually), or when you ask for deletion. Short-lived records are deleted <strong>automatically every day</strong> — access logs after 30 days, payment notification (webhook) processing records after 90 days, key delivery records after 365 days (only a hash of the recipient address is kept), and unprocessed pending issuances after 7 days. When we receive a deletion request, we verify your identity, revoke the license and delete the remaining records — once deleted, the app can no longer be used with that license.</li>
+        <li>The values sent and the license status (issued, update period, revoked) are kept <strong>for as long as the license exists</strong>. The license remains after the update period ends, so it is not deleted then. If a license is revoked because of a refund or chargeback, its records are deleted or anonymized 2 years later (for now the operator does this manually), or when you ask for deletion. Short-lived records are deleted <strong>automatically every day</strong> — access logs after 30 days, payment notification (webhook) processing records after 90 days, key delivery records after 365 days (only a hash of the recipient address is kept), unprocessed pending issuances after 7 days, records linking a payment to a Mac (payment confirmation records) after 30 days, records of deactivating other Macs after 30 days, and requests to get a key again after 1 day (only a hash of the email address is kept). When we receive a deletion request, we verify your identity, revoke the license and delete the remaining records — once deleted, the app can no longer be used with that license.</li>
         <li>The values stored on this server are the same as those listed in Section 5. Payment method details, card numbers and bank accounts are not stored.</li>
         <li>The server runs on Workers from <strong>Cloudflare, Inc.</strong> (a US company) in the Cloudflare data center closest to you, and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare). Payment is handled by <strong>Paddle.com Market Limited</strong> (UK) as merchant of record.</li>
         <li>License keys are sent through the email delivery service <strong>Resend, Inc.</strong> (USA). Resend receives only the recipient email address needed to deliver the key and the body of the email containing the license key.</li>
@@ -163,7 +169,7 @@
       <ul>
         <li><strong>Recipients and countries</strong> — license records are processed by <strong>Cloudflare, Inc.</strong> (USA), payment information by <strong>Paddle.com Market Limited</strong> (UK), and key delivery emails by <strong>Resend, Inc.</strong> (USA).</li>
         <li><strong>Storage location</strong> — license records are stored in a database in the Asia-Pacific region (<strong>Cloudflare D1</strong>), and requests are processed in the Cloudflare data center closest to you.</li>
-        <li><strong>When and how</strong> — sent over the network when you activate, when your license is checked, when you start a payment (purchase or renewal), and when a license key is emailed to you.</li>
+        <li><strong>When and how</strong> — sent over the network when you activate, when your license is checked, when you view the registered Macs, when you ask for your key again, when you start a payment (purchase or renewal), and when a license key is emailed to you.</li>
         <li><strong>Items, purposes and retention</strong> — as described in Sections 5 and 6.</li>
         <li><strong>Safeguards</strong> — Cloudflare follows its data processing terms (including the EU Standard Contractual Clauses), and Paddle, as Merchant of Record, processes payment information under its own privacy policy.</li>
         <li><strong>How to refuse, and the consequences</strong> — if you do not use a license, no transfer takes place. In that case, after the trial period only profile management and artifact inspection can be used.</li>
@@ -176,7 +182,7 @@
       <h2>14. Contact</h2>
       <p>Send any questions about this policy or the app's handling of data to <a href="mailto:support@beakbig.com">support@beakbig.com</a>.</p>
 
-      <p class="meta">Effective: October 15, 2026 · Developer and seller: Beakbig</p>
+      <p class="meta">Effective: October 17, 2026 · Developer and seller: Beakbig</p>
     </div>
   </section>
 </main>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>개인정보 처리방침 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 개인정보 처리방침. 분석 · 추적 · 광고가 없고, 검사하는 파일은 Mac 안에서만 읽습니다. 라이선스 확인에는 라이선스 키 · 기기 식별값 · 앱 버전만 쓰고, 결제는 Paddle 이 판매대행으로 처리합니다.">
+  <meta name="description" content="ShouArchive 개인정보 처리방침. 분석 · 추적 · 광고가 없고, 검사하는 파일은 Mac 안에서만 읽습니다. 라이선스 확인에는 라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전만 쓰고, 결제는 Paddle 이 판매대행으로 처리합니다.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="개인정보 처리방침 — ShouArchive">
@@ -42,14 +42,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>개인정보 처리방침</h1>
-      <p>ShouArchive (macOS) · 시행일 2026년 10월 15일 · 개발자 · 판매자 비그빅(Beakbig)</p>
+      <p>ShouArchive (macOS) · 시행일 2026년 10월 17일 · 개발자 · 판매자 비그빅(Beakbig)</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>요약.</strong> 분석 도구 · 추적 · 광고 · 계정이 없습니다. 검사하는 파일은 Mac 안에서만 읽습니다. App Store Connect · Google Play 기능은 사용자가 직접 등록한 키로 Apple · Google 에 바로 접속합니다. 판매자에게 오는 것은 라이선스를 확인할 때의 <strong>라이선스 키 · 기기 식별값 · 앱 버전</strong>(5항)과, 결제를 판매대행하는 <strong>Paddle</strong> 이 넘겨주는 구매 정보(7항)뿐입니다.</p>
+        <p><strong>요약.</strong> 분석 도구 · 추적 · 광고 · 계정이 없습니다. 검사하는 파일은 Mac 안에서만 읽습니다. App Store Connect · Google Play 기능은 사용자가 직접 등록한 키로 Apple · Google 에 바로 접속합니다. 판매자에게 오는 것은 라이선스를 확인할 때의 <strong>라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전</strong>, 키를 등록하거나 다시 받을 때의 구매 이메일(5항)과, 결제를 판매대행하는 <strong>Paddle</strong> 이 넘겨주는 구매 정보(7항)뿐입니다.</p>
       </div>
 
       <h2>1. 수집하지 않는 것</h2>
@@ -72,7 +72,7 @@
           <tr><td>프로파일 목록 · 다운로드 · 생성 · 갱신, 기기 목록 · 등록, App Store 스토어 배포</td><td>Apple App Store Connect API (<code>api.appstoreconnect.apple.com</code>)</td><td>앱이 서명한 인증 토큰과, 사용자가 고르거나 입력한 값(프로파일 종류 · 번들 ID · 인증서 · 기기 이름 · UDID · 스토어 정보 · 스크린샷 등)</td></tr>
           <tr><td>Google Play 업로드 · 스토어 배포</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>서비스 계정 키로 서명한 인증 요청과, 사용자가 고른 AAB · APK · 스토어 정보 · 스크린샷</td></tr>
           <tr><td>빌드 · 앱 업로드 · 기기 설치</td><td>Apple · Google 의 개발 도구(<code>xcodebuild</code> · <code>gradle</code> 등)가 접속하는 곳</td><td>이 도구들이 각자의 방식으로 통신합니다. 의존성을 내려받는 저장소(Maven 등)도 여기에 포함됩니다</td></tr>
-          <tr><td>라이선스 활성화 · 확인 · 해제, 결제 시작</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
+          <tr><td>라이선스 활성화 · 확인 · 해제, 등록된 Mac 목록, 키 다시 받기, 결제 시작</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
           <tr><td>업데이트 확인</td><td>판매자가 올려 두는 업데이트 목록</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다</td></tr>
         </tbody>
       </table>
@@ -86,29 +86,35 @@
         <li>앱 설정(테마 · 언어 · 텍스트 크기 · 프로젝트 목록 등)은 macOS 의 사용자 설정 · 앱 지원 폴더에 저장됩니다.</li>
         <li>API 키 본문은 이 Mac 의 <strong>키체인</strong>에 저장되고, iCloud 키체인으로 동기화되지 않습니다. 파일로 고른 키는 그 파일의 위치만 기억합니다.</li>
         <li>프로파일 활동 기록 · 빌드 기록은 로컬에만 남고, 앱에서 지울 수 있습니다.</li>
-        <li>라이선스 키와 확인 결과는 이 Mac 에만 저장됩니다.</li>
+        <li>라이선스 키와 확인 결과는 이 Mac 에 저장됩니다. 라이선스 서버에 저장되는 것은 5항에 적었습니다.</li>
         <li><code>.p8</code> 파일과 빌드 결과물 등 사용자가 직접 둔 파일은 앱이 지우지 않습니다.</li>
       </ul>
 
       <h2>5. 라이선스 확인 — 보내는 정보</h2>
-      <p>앱은 라이선스와 업데이트 기간을 확인하기 위해서만 다음 값을 <strong>라이선스 서버</strong>로 보냅니다. 그 밖의 목적으로 쓰지 않으며, 전송은 모두 HTTPS 로 이루어집니다.</p>
+      <p>앱은 라이선스를 등록 · 확인하고 업데이트 기간을 확인하기 위해서만 다음 값을 <strong>라이선스 서버</strong>로 보냅니다. 웹사이트의 키 다시 받기 · 결제 완료 화면도 아래에 적은 값만 보냅니다. 그 밖의 목적으로 쓰지 않으며, 전송은 모두 HTTPS 로 이루어집니다.</p>
       <table>
         <thead><tr><th>보내는 값</th><th>내용</th><th>왜 필요한가</th></tr></thead>
         <tbody>
           <tr><td><strong>라이선스 키</strong></td><td>구매한 라이선스를 판별하는 키</td><td>라이선스가 유효한지, 업데이트 기간이 언제까지인지 확인합니다</td></tr>
+          <tr><td><strong>구매 이메일</strong></td><td>결제할 때 쓴 이메일 주소. 키 입력 창에서 등록할 때와 키를 다시 받을 때만 보냅니다</td><td>입력한 키가 그 구매의 것인지 확인하고, 키를 구매한 주소로만 다시 보냅니다</td></tr>
           <tr><td><strong>기기 식별값</strong></td><td>이 Mac 의 하드웨어 UUID 에 앱 전용 접두어를 붙여 SHA-256 으로 바꾼 값의 앞 32자. 하드웨어 UUID 원문 · 호스트 이름 · 사용자 이름은 보내지 않습니다. 하드웨어 UUID 를 읽지 못하면 앱이 처음 실행될 때 만든 무작위 설치 id 를 같은 방식으로 씁니다. Mac 이름이나 네트워크가 바뀌어도 값은 그대로입니다</td><td>라이선스가 허용한 기기 수(Mac <span data-price="commercial.devices">2</span>대)를 넘었는지 확인합니다</td></tr>
+          <tr><td><strong>Mac 모델명</strong></td><td>이 Mac 의 하드웨어 모델 이름(예: MacBook Pro (14-inch, Nov 2023)). Mac 이름 · 사용자 이름이 아닙니다</td><td>등록된 Mac 목록에서 어느 Mac 인지 알아보고, 자리가 가득 찼을 때 해제할 Mac 을 고르게 합니다</td></tr>
           <tr><td><strong>앱 버전</strong></td><td>앱 버전 · 빌드 번호</td><td>그 버전이 업데이트 기간 안에 나온 버전인지 확인하고, 문제를 해결합니다</td></tr>
           <tr><td>접근 기록</td><td>기기 식별값의 해시, 앱 버전, 시각, 짧은 오류 사유</td><td>장애에 대응하고 문제를 해결합니다</td></tr>
         </tbody>
       </table>
       <p><strong>언제 무엇을 보내나요.</strong></p>
       <ul>
-        <li><strong>활성화</strong> — 라이선스 키, 구매 이메일, 기기 식별값, 설치 식별값, 앱 버전, macOS 버전</li>
-        <li><strong>라이선스 확인</strong> — 약 12 시간마다 라이선스 키, 기기 식별값, 설치 식별값, 앱 버전</li>
-        <li><strong>해제</strong> — 라이선스 키, 기기 식별값</li>
-        <li><strong>결제 시작(구매 · 갱신)</strong> — 라이선스 키(갱신일 때), 기기 식별값, 설치 식별값, 앱 버전. 결제 자체는 Paddle 의 결제 화면에서 합니다</li>
+        <li><strong>활성화</strong> — 라이선스 키, 구매 이메일(키 입력 창에서 등록할 때), 기기 식별값, 설치 식별값, Mac 모델명, 앱 버전, macOS 버전</li>
+        <li><strong>라이선스 확인</strong> — 약 12 시간마다 라이선스 키(있을 때), 기기 식별값, 설치 식별값, Mac 모델명, 앱 버전</li>
+        <li><strong>결제한 Mac 에 등록</strong>(앱에서 결제한 뒤 확인 창의 「이 Mac 에 등록」) — 기기 식별값, 설치 식별값, Mac 모델명, 앱 버전</li>
+        <li><strong>등록된 Mac 목록 · 다른 Mac 해제</strong> — 라이선스 키, 기기 식별값, 설치 식별값, 해제할 Mac 의 목록 id</li>
+        <li><strong>해제</strong> — 라이선스 키(앱에 있을 때), 기기 식별값, 앱 버전</li>
+        <li><strong>결제 시작(구매 · 갱신)</strong> — 라이선스 키(갱신일 때), 기기 식별값, 설치 식별값, 앱 버전, 언어(구매일 때). 결제 자체는 Paddle 의 결제 화면에서 합니다</li>
+        <li><strong>키 다시 받기</strong>(앱 · 웹사이트) — 구매 이메일, 언어</li>
+        <li><strong>웹사이트 구매 · 결제 완료 화면</strong> — 구매를 시작할 때 언어, 결제가 끝난 뒤 거래 id 와 결제 확인 값. 방금 결제한 라이선스 키를 그 화면에 보여 주는 데만 씁니다</li>
       </ul>
-      <p><strong>서버에 저장되는 것.</strong> 라이선스 키와 기기 · 설치 식별값은 <strong>원문을 저장하지 않고 해시(SHA-256 · HMAC-SHA256)만</strong> 저장합니다. 앱 버전과 구매 이메일은 그대로 저장하며, 구매 이메일은 라이선스 조회와 키 발송에 씁니다. Paddle 에서는 고객 · 거래 · 자동 갱신 id, 자동 갱신 상태(켜짐 · 꺼짐), 가격 id, 업데이트가 끝나는 날을 받습니다. 이름 · 주소 · 카드 정보는 받지 않습니다.</p>
+      <p><strong>서버에 저장되는 것.</strong> 기기 · 설치 식별값은 <strong>원문을 저장하지 않고 해시(SHA-256 · HMAC-SHA256)만</strong> 저장합니다. 라이선스 키는 조회용 해시와 함께, 같은 키를 다시 보내 드리기 위해 <strong>암호화(AES-256-GCM)한 값</strong>으로 저장합니다 — 암호를 푸는 열쇠는 데이터베이스와 따로 서버의 비밀 설정에 두므로, 데이터베이스만으로는 키를 알 수 없습니다. 결제 확인 값과 키 다시 받기에 쓴 이메일은 해시만 저장합니다. Mac 모델명, 앱 버전, 구매 이메일은 그대로 저장하며, 구매 이메일은 라이선스 조회와 키 발송에 씁니다. Paddle 에서는 고객 · 거래 · 자동 갱신 id, 자동 갱신 상태(켜짐 · 꺼짐), 가격 id, 업데이트가 끝나는 날을 받습니다. 이름 · 주소 · 카드 정보는 받지 않습니다.</p>
       <p><strong>저장하지 않는 것.</strong> IP 주소, 요청 헤더와 요청 본문, macOS 버전(받기만 하고 저장하지 않음), 이름 · 주소, 카드 번호, 마케팅 동의, 사용 통계.</p>
       <ul>
         <li>사용자를 알아낼 수 있는 값(사용자 이름 · 기기에 직접 붙인 이름 등)은 라이선스 확인에 쓰지 않습니다.</li>
@@ -119,7 +125,7 @@
       <h2>6. 라이선스 서버와 보관</h2>
       <ul>
         <li>라이선스 서버는 판매자 <strong>비그빅(Beakbig)</strong>(사업자등록번호 <span data-price="seller.reg_no">613-40-01820</span>) · 연락처 <a href="mailto:support@beakbig.com">support@beakbig.com</a>가 운영합니다. 서버는 <strong>Cloudflare, Inc.</strong>(미국)의 Workers 를 쓰고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다.</li>
-        <li>보내는 값과 라이선스 상태(발급 · 업데이트 기간 · 해지)는 <strong>라이선스가 있는 동안</strong> 보관합니다. 업데이트 기간이 끝나도 라이선스는 남으므로 지우지 않습니다. 환불 · 지불 거절(chargeback)로 라이선스가 해지되면 그로부터 2년 뒤에 지우거나 익명화하고(지금은 운영자가 직접 처리합니다), 삭제를 요청하시면 그때 지웁니다. 기간이 짧은 기록은 <strong>매일 자동으로</strong> 지웁니다 — 접근 기록 30일, 결제 알림(웹훅) 처리 기록 90일, 키 발송 기록 365일(받는 주소는 해시만 보관), 처리되지 않은 발급 대기 7일. 삭제 요청을 받으면 본인 확인 뒤 라이선스를 해지하고 남은 기록을 삭제합니다 — 삭제하면 그 라이선스로는 앱을 쓸 수 없습니다.</li>
+        <li>보내는 값과 라이선스 상태(발급 · 업데이트 기간 · 해지)는 <strong>라이선스가 있는 동안</strong> 보관합니다. 업데이트 기간이 끝나도 라이선스는 남으므로 지우지 않습니다. 환불 · 지불 거절(chargeback)로 라이선스가 해지되면 그로부터 2년 뒤에 지우거나 익명화하고(지금은 운영자가 직접 처리합니다), 삭제를 요청하시면 그때 지웁니다. 기간이 짧은 기록은 <strong>매일 자동으로</strong> 지웁니다 — 접근 기록 30일, 결제 알림(웹훅) 처리 기록 90일, 키 발송 기록 365일(받는 주소는 해시만 보관), 처리되지 않은 발급 대기 7일, 결제와 Mac 을 잇는 결제 확인 기록 30일, 다른 Mac 해제 기록 30일, 키 다시 받기 요청 기록 1일(이메일은 해시만 보관). 삭제 요청을 받으면 본인 확인 뒤 라이선스를 해지하고 남은 기록을 삭제합니다 — 삭제하면 그 라이선스로는 앱을 쓸 수 없습니다.</li>
         <li>이 서버에 저장되는 값은 5항에 적은 것과 같습니다. 결제 수단 정보, 카드 번호, 은행 계좌는 저장되지 않습니다.</li>
         <li>서버는 <strong>Cloudflare, Inc.</strong>(미국 회사)의 Workers 로 이용자와 가까운 Cloudflare 데이터센터에서 실행되고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다. 결제는 <strong>Paddle.com Market Limited</strong>(영국)가 판매대행(merchant of record)으로서 처리합니다.</li>
         <li>라이선스 키는 이메일 발송 서비스 <strong>Resend, Inc.</strong>(미국)를 통해 보냅니다. Resend 에는 키 발송에 필요한 받는 이메일 주소와 라이선스 키가 담긴 메일 본문만 넘깁니다.</li>
@@ -163,7 +169,7 @@
       <ul>
         <li><strong>받는 곳과 나라</strong> — 라이선스 기록은 <strong>Cloudflare, Inc.</strong>(미국)로, 결제 정보는 <strong>Paddle.com Market Limited</strong>(영국)로, 키 발송 메일은 <strong>Resend, Inc.</strong>(미국)로 처리됩니다.</li>
         <li><strong>저장 위치</strong> — 라이선스 기록은 아시아 · 태평양 지역의 데이터베이스(<strong>Cloudflare D1</strong>)에 저장되고, 요청은 이용자와 가까운 Cloudflare 데이터센터에서 처리됩니다.</li>
-        <li><strong>언제 · 어떻게</strong> — 활성화 · 라이선스 확인 · 결제(구매 · 갱신)를 시작할 때, 그리고 라이선스 키를 이메일로 보낼 때 네트워크로 보냅니다.</li>
+        <li><strong>언제 · 어떻게</strong> — 활성화 · 라이선스 확인 · 등록된 Mac 목록 · 키 다시 받기 · 결제(구매 · 갱신)를 시작할 때, 그리고 라이선스 키를 이메일로 보낼 때 네트워크로 보냅니다.</li>
         <li><strong>항목 · 목적 · 보관 기간</strong> — 5항과 6항에 적은 것과 같습니다.</li>
         <li><strong>보호 조치</strong> — Cloudflare 는 데이터 처리 약관(EU 표준계약조항 포함)을 따르고, Paddle 은 판매대행자로서 자기 개인정보 처리방침에 따라 결제 정보를 처리합니다.</li>
         <li><strong>거부 방법과 결과</strong> — 라이선스를 쓰지 않으면 이전이 일어나지 않습니다. 그 경우 체험 기간이 지나면 프로파일 관리와 산출물 검사만 쓸 수 있습니다.</li>
@@ -176,7 +182,7 @@
       <h2>14. 문의</h2>
       <p>이 방침이나 앱의 데이터 처리에 관해 궁금한 점은 <a href="mailto:support@beakbig.com">support@beakbig.com</a> 으로 보내 주세요.</p>
 
-      <p class="meta">시행일: 2026년 10월 15일 · 개발자 · 판매자: 비그빅(Beakbig)</p>
+      <p class="meta">시행일: 2026년 10월 17일 · 개발자 · 판매자: 비그빅(Beakbig)</p>
     </div>
   </section>
 </main>

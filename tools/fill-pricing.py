@@ -18,8 +18,8 @@
               값이 채워지면 href 를 바꾸고 hidden 을 지운다(버튼이 저절로 보인다).
 - data-live-hide: commercial.checkout 가 채워지면(출시) hidden 을 건다.
 - data-live-show: commercial.checkout 가 채워지기 전에는 hidden 을 건다.
-- id="paddle-config": data-env · data-token · data-price-license · data-price-updates 를 pricing.json 의
-              paddle.environment · client_token · price_license · price_updates 로 매번 다시 쓴다
+- id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api 를 pricing.json 의
+              paddle.environment · client_token · price_license · price_updates · license_api 로 매번 다시 쓴다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
               pricing.json 에도 페이지에도 넣지 않는다.
 """
@@ -30,7 +30,8 @@ CONFIG = os.path.join(ROOT, 'tools', 'pricing.json')
 MISSING = object()
 missing = set()  # pricing.json 에 없는 키 (파일, 키) — 오타를 조용히 넘기지 않도록 마지막에 한 번에 알린다
 PADDLE_ATTRS = (('data-env', 'environment'), ('data-token', 'client_token'),
-                ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates'))
+                ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates'),
+                ('data-license-api', 'license_api'))
 
 
 def load():

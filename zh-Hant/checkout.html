@@ -49,14 +49,33 @@
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden></div>
+      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden data-license-api="https://license.beakbig.com"></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>付款尚未開放。</strong> ShouArchive 尚未推出，目前還無法購買。價格與推出消息請至<a href="pricing.html">價格頁面</a>查看。</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
-        <p><strong>付款已完成，感謝您的購買。</strong> 授權金鑰已寄至您付款時使用的電子郵件地址。若幾分鐘內沒有收到，請先查看垃圾郵件匣；若仍然沒有，請將付款時的電子郵件地址寄至 <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E6%9C%AA%E6%94%B6%E5%88%B0%E6%8E%88%E6%AC%8A%E9%87%91%E9%91%B0">support@beakbig.com</a> 告訴我們。</p>
+        <p><strong>付款已完成，感謝您的購買。</strong> 授權金鑰已寄至您付款時使用的電子郵件地址。在已安裝 ShouArchive 的 Mac 上按郵件中的「在 App 中直接註冊」連結即可註冊。若幾分鐘內沒有收到，請先查看垃圾郵件匣，或在<a href="license.html">重新取得金鑰</a>頁面重新取得；若仍然沒有，請將付款時的電子郵件地址寄至 <a href="mailto:support@beakbig.com?subject=ShouArchive%20%E6%9C%AA%E6%94%B6%E5%88%B0%E6%8E%88%E6%AC%8A%E9%87%91%E9%91%B0">support@beakbig.com</a> 告訴我們。</p>
+      </div>
+
+      <div class="note" id="checkout-processing" hidden>
+        <p><strong>正在確認付款…</strong> 正在準備授權金鑰，請稍候。即使關閉此頁面，金鑰也會寄至您付款時使用的電子郵件地址。</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-ready" hidden>
+        <h2>付款已完成，感謝您的購買。</h2>
+        <p>請在 ShouArchive 中註冊此授權金鑰。同一組金鑰也已寄至您付款時使用的電子郵件地址。</p>
+        <p><code class="license-key" id="license-key"></code></p>
+        <div class="license-actions">
+          <a class="btn" id="license-open" href="#">在 ShouArchive 中開啟</a>
+          <button class="btn outline" type="button" id="license-copy" data-done="已複製">複製金鑰</button>
+        </div>
+        <p class="price-note">按「在 ShouArchive 中開啟」，App 會開啟並詢問是否在此 Mac 上註冊。如果 App 沒有開啟，請在「設定 › 授權 › 輸入金鑰…」中輸入付款時的電子郵件和此金鑰。</p>
+      </div>
+
+      <div class="note" id="checkout-renewed" hidden>
+        <p><strong>更新期限已延長，感謝您的購買。</strong> 授權金鑰保持不變，無需重新輸入。ShouArchive 很快會確認新的期限；如需立即生效，請按「設定 › 授權 › 自動檢查」。確認郵件也會寄至您付款時使用的電子郵件地址。</p>
       </div>
 
       <div class="plan checkout-box" id="checkout-buy" hidden>
@@ -69,11 +88,12 @@
         </div>
       </div>
 
-      <h2 id="key">輸入授權金鑰</h2>
+      <h2 id="key">註冊授權</h2>
       <ol>
-        <li>付款完成後，授權金鑰會寄至您付款時使用的電子郵件地址。</li>
-        <li>在 ShouArchive 中開啟<strong>「設定」›「授權」</strong>。</li>
-        <li>貼上金鑰並按下「啟用」即可完成。一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac。</li>
+        <li>付款完成後，此頁面會顯示授權金鑰，同一組金鑰也會寄至您付款時使用的電子郵件地址。</li>
+        <li>按「在 ShouArchive 中開啟」或郵件中的「在 App 中直接註冊」連結，App 會開啟並詢問是否在此 Mac 上註冊。按「註冊」即可完成。</li>
+        <li>如果連結無法開啟 App，請在 ShouArchive 的<strong>「設定 › 授權 › 輸入金鑰…」</strong>中輸入付款時的電子郵件和金鑰，然後按「啟用」。如果是在 App 內付款，也可以在那台 Mac 上按「自動檢查」。</li>
+        <li>一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac。如果金鑰遺失，可在<a href="license.html">重新取得金鑰</a>頁面取得。</li>
       </ol>
 
       <h2 id="about">關於付款</h2>
@@ -106,37 +126,8 @@
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-(function () {
-  // Settings are written into #paddle-config by tools/fill-pricing.py from tools/pricing.json (all public values).
-  var cfg = document.getElementById('paddle-config').dataset;
-  var params = new URLSearchParams(location.search);
-  var show = function (id, on) { document.getElementById(id).hidden = !on; };
-  if (params.get('done') === '1') {           // returned after completing payment
-    show('checkout-closed', false);
-    show('checkout-done', true);
-    return;
-  }
-  if (!cfg.token || !window.Paddle) return;    // checkout not open yet → notice only
-  var LOCALES = { 'ko': 'ko', 'en': 'en', 'ja': 'ja', 'zh-Hans': 'zh-Hans', 'es': 'es' };  // zh-Hant omitted: not supported by Paddle
-  var settings = { displayMode: 'overlay', successUrl: location.origin + location.pathname + '?done=1' };
-  var locale = LOCALES[document.documentElement.lang];
-  if (locale) settings.locale = locale;
-  if (cfg.env === 'sandbox') Paddle.Environment.set('sandbox');
-  Paddle.Initialize({ token: cfg.token, checkout: { settings: settings } });
-  show('checkout-closed', false);
-  // With ?_ptxn= (renewal / in-app purchase transaction created by the license server), Paddle.js opens checkout by itself.
-  if (params.has('_ptxn')) return;
-  if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
-  show('checkout-buy', true);
-  document.getElementById('checkout-open').addEventListener('click', function () {
-    Paddle.Checkout.open({ items: [
-      { priceId: cfg.priceLicense, quantity: 1 },
-      { priceId: cfg.priceUpdates, quantity: 1 }
-    ] });
-  });
-})();
-</script>
+<script src="../assets/license.js"></script>
+<script>ShouArchiveLicense.checkout();</script>
 <script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
 </body>
 </html>

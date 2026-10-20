@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eliminación de datos personales — ShouArchive</title>
+  <meta name="description" content="Elimina tus registros (licencia, Mac registrados, correo de compra y clave) del servidor de licencias de ShouArchive.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eliminación de datos personales — ShouArchive">
+  <meta property="og:description" content="Elimina tus registros del servidor de licencias de ShouArchive.">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/es/erase">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/erase">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/erase">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/erase">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/erase">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/erase">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/erase">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/erase">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="./#features">Funciones</a>
+      <a href="pricing">Precios</a>
+      <a href="download">Descargas</a>
+      <a href="support">Soporte</a>
+      <a href="privacy">Privacidad</a>
+      <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../erase">한국어</option><option value="../en/erase">English</option><option value="../ja/erase">日本語</option><option value="../zh-Hans/erase">简体中文</option><option value="../zh-Hant/erase">繁體中文</option><option value="../es/erase" selected>Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Eliminación de datos personales</h1>
+      <p>Borra tus registros del servidor de licencias. Al hacerlo, las licencias compradas con ese correo dejan de poder usarse.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="erase-confirm" hidden>
+        <p class="lead">Al pulsar el botón de abajo se eliminarán las licencias compradas con este correo y sus registros. <strong>No se puede deshacer.</strong> Si quieres un reembolso, solicítalo antes según la <a href="refund">política de reembolso</a>.</p>
+        <ul>
+          <li>Se revocan todas las licencias de este correo y se liberan todos los Mac registrados. La app se bloqueará en la siguiente comprobación.</li>
+          <li>Se borran el correo de compra, las claves de licencia guardadas, los registros de envío de correo y los enlaces de confirmación.</li>
+          <li>Se cancela la renovación automática de las actualizaciones (suscripción).</li>
+          <li>Los registros de pago (id de la transacción · tipo · hora) se conservan 5 años conforme a la Ley de Comercio Electrónico y después se borran. La información de pago que tiene Paddle debes solicitarla a Paddle por separado.</li>
+        </ul>
+        <div class="license-actions">
+          <button class="btn" type="button" id="erase-confirm-button">Eliminar</button>
+        </div>
+        <div class="note" id="erase-confirm-error" hidden>
+          <p>No se ha podido eliminar ahora mismo. Vuelve a pulsar dentro de un momento.</p>
+        </div>
+      </div>
+
+      <div class="note" id="erase-done" hidden>
+        <p><strong>Eliminado.</strong> Se han revocado <span id="erase-count">0</span> licencias y se han borrado los registros del servidor de licencias. Las licencias eliminadas no se pueden recuperar ni se puede volver a enviar la clave. Los registros de pago se conservan 5 años por obligación legal, y la información de pago que tiene Paddle debes solicitarla a Paddle por separado, como se indica abajo.</p>
+      </div>
+      <div class="note" id="erase-used" hidden>
+        <p>Este enlace ya se ha usado o no es válido. Si ya has eliminado tus datos, no tienes que hacer nada más. Para volver a hacerlo, pide abajo un nuevo correo de confirmación.</p>
+      </div>
+      <div class="note" id="erase-expired" hidden>
+        <p>Este enlace ha caducado (24 horas). Pide abajo un nuevo correo de confirmación.</p>
+      </div>
+
+      <div id="erase-request" hidden>
+        <p>Introduce el correo con el que pagaste y te enviaremos un enlace de confirmación a esa dirección. Los datos solo se eliminan cuando abres el enlace y pulsas «Eliminar».</p>
+        <form class="license-form" id="erase-form" novalidate>
+          <label class="visually-hidden" for="erase-email">Correo de compra</label>
+          <input type="email" id="erase-email" name="email" autocomplete="email" placeholder="Correo con el que pagaste" required>
+          <button class="btn" type="submit" id="erase-submit">Enviar correo de confirmación</button>
+        </form>
+        <div class="note" id="erase-sent" hidden>
+          <p><strong>Hemos recibido tu solicitud.</strong> Si hay una compra con esta dirección, el correo de confirmación llegará en unos minutos. Abre el enlace del correo en un plazo de 24 horas. Si no llega, revisa la carpeta de spam.</p>
+        </div>
+        <div class="note" id="erase-invalid" hidden>
+          <p>Comprueba la dirección de correo electrónico.</p>
+        </div>
+        <div class="note" id="erase-error" hidden>
+          <p>No se ha podido enviar la solicitud ahora mismo. Inténtalo de nuevo dentro de un momento o escríbenos a <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-ERASE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Ferase%20%28W-ERASE%29">support@beakbig.com</a>.</p>
+        </div>
+      </div>
+
+      <h2>Qué ocurre al eliminar</h2>
+      <ul>
+        <li><strong>Se revocan todas las licencias</strong> compradas con ese correo y <strong>se liberan todos los Mac registrados</strong>. En la siguiente comprobación de la licencia, la app se bloquea con el aviso «La licencia se ha revocado por la eliminación de datos personales que solicitaste».</li>
+        <li>Se borran el correo de compra, las claves de licencia guardadas, los registros de envío de correo y los enlaces de confirmación de cambio de clave y de eliminación.</li>
+        <li>Se cancela la renovación automática de las actualizaciones (suscripción). No se cobra nada más.</li>
+        <li>Las licencias eliminadas no se pueden recuperar ni se puede volver a recibir la clave. Para usar la app de nuevo, hay que comprarla otra vez.</li>
+      </ul>
+
+      <h2>Qué se conserva</h2>
+      <ul>
+        <li>Los <strong>registros de pago</strong> (id de la transacción · tipo · hora) se conservan <strong>5 años</strong> conforme a la Ley de Comercio Electrónico de la República de Corea y después se borran. Ya no quedan vinculados a ningún correo, clave ni Mac.</li>
+        <li>La <strong>información de pago que tiene Paddle</strong> (nombre · domicilio · método de pago · recibos) la conserva Paddle por separado como revendedor autorizado. Solicítala directamente en <a href="mailto:privacy@paddle.com">privacy@paddle.com</a> o en <a href="https://paddle.net" rel="noopener" target="_blank">paddle.net</a>.</li>
+      </ul>
+
+      <h2>Ten en cuenta</h2>
+      <ul>
+        <li>Si quieres un reembolso, solicítalo <strong>antes de eliminar</strong> tus datos, según la <a href="refund">política de reembolso</a>.</li>
+        <li>Si ya no puedes usar el correo con el que pagaste, envía la fecha del pago y lo que aparece en el extracto de tu tarjeta a <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-ERASE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Ferase%20%28W-ERASE%29">support@beakbig.com</a>. Lo tramitaremos tras verificar tu identidad.</li>
+        <li>Qué se guarda y cuándo se borra se explica en las secciones 5, 6 y 11 de la <a href="privacy">política de privacidad</a>.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Pie de página">
+      <a href="./">Inicio</a>
+      <a href="pricing">Precios</a>
+      <a href="download">Descargas</a>
+      <a href="support">Soporte</a>
+      <a href="privacy">Política de privacidad</a>
+      <a href="terms">Términos del servicio</a>
+      <a href="refund">Política de reembolso</a>
+      <span class="footer-langs"><a href="../erase" lang="ko" hreflang="ko">한국어</a> <a href="../en/erase" lang="en" hreflang="en">English</a> <a href="../ja/erase" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/erase" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/erase" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/erase" lang="es" hreflang="es" aria-current="page">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">Razón social: Beakbig · Titular: <span data-price="seller.owner">Hyunjin Kang</span> · Registro empresarial (Corea del Sur): <span data-price="seller.reg_no">613-40-01820</span> (régimen simplificado del IVA) · Registro de venta a distancia: <span data-price="seller.mail_order">Exento</span> · Dirección: <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, República de Corea</span> · Teléfono: <span data-price="seller.phone">+82-502-6682-9359</span> · Correo: <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-ERASE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Ferase%20%28W-ERASE%29">support@beakbig.com</a> · Gestor de pagos: Paddle</p>
+  </div>
+</footer>
+
+<script src="../assets/license.js" data-page="erase"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

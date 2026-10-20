@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erase My Data — ShouArchive</title>
+  <meta name="description" content="Erase your records on the ShouArchive license server (licenses, registered Macs, purchase email, keys).">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Erase My Data — ShouArchive">
+  <meta property="og:description" content="Erase your records on the ShouArchive license server.">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/en/erase">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/erase">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/erase">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/erase">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/erase">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/erase">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/erase">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/erase">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="pricing">Pricing</a>
+      <a href="download">Download</a>
+      <a href="support">Support</a>
+      <a href="privacy">Privacy</a>
+      <label class="lang-switch"><span class="visually-hidden">Language</span><select class="lang-select" aria-label="Language"><option value="../erase">한국어</option><option value="../en/erase" selected>English</option><option value="../ja/erase">日本語</option><option value="../zh-Hans/erase">简体中文</option><option value="../zh-Hant/erase">繁體中文</option><option value="../es/erase">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Erase My Data</h1>
+      <p>Erases your records on the license server. Once erased, the licenses bought with that email can no longer be used.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="erase-confirm" hidden>
+        <p class="lead">Pressing the button below erases the licenses and records bought with this email. <strong>This cannot be undone.</strong> If you want a refund, request it first under the <a href="refund">Refund Policy</a> before erasing.</p>
+        <ul>
+          <li>Every license under this email is revoked and every registered Mac is deactivated. The app locks at its next check.</li>
+          <li>The purchase email, stored license keys, email delivery records and confirmation links are deleted.</li>
+          <li>Automatic update renewal (the subscription) is cancelled.</li>
+          <li>Payment records (transaction id, type, time) are kept for 5 years as required by the E-Commerce Act and then deleted. Payment information held by Paddle must be requested from Paddle separately.</li>
+        </ul>
+        <div class="license-actions">
+          <button class="btn" type="button" id="erase-confirm-button">Erase</button>
+        </div>
+        <div class="note" id="erase-confirm-error" hidden>
+          <p>We couldn't erase your data just now. Please press the button again in a moment.</p>
+        </div>
+      </div>
+
+      <div class="note" id="erase-done" hidden>
+        <p><strong>Erased.</strong> We revoked <span id="erase-count">0</span> license(s) and deleted your records on the license server. Erased licenses cannot be restored, and the key cannot be sent again. Payment records are kept for 5 years as required by law, and payment information held by Paddle must be requested from Paddle separately, as described below.</p>
+      </div>
+      <div class="note" id="erase-used" hidden>
+        <p>This link has already been used or is invalid. If you have already erased your data, there is nothing more to do. To do it again, request a new confirmation email below.</p>
+      </div>
+      <div class="note" id="erase-expired" hidden>
+        <p>This link has expired (links are valid for 24 hours). Request a new confirmation email below.</p>
+      </div>
+
+      <div id="erase-request" hidden>
+        <p>Enter the email you paid with and we will send a confirmation link to that address. Nothing is erased until you open the link and press "Erase".</p>
+        <form class="license-form" id="erase-form" novalidate>
+          <label class="visually-hidden" for="erase-email">Purchase email</label>
+          <input type="email" id="erase-email" name="email" autocomplete="email" placeholder="The email address you paid with" required>
+          <button class="btn" type="submit" id="erase-submit">Send confirmation email</button>
+        </form>
+        <div class="note" id="erase-sent" hidden>
+          <p><strong>Request received.</strong> If there is a purchase under this address, a confirmation email will arrive within a few minutes. Open the link in the email within 24 hours. If it doesn't arrive, check your spam folder.</p>
+        </div>
+        <div class="note" id="erase-invalid" hidden>
+          <p>Please check the email address.</p>
+        </div>
+        <div class="note" id="erase-error" hidden>
+          <p>We couldn't send your request just now. Try again in a moment or contact <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-ERASE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Ferase%20%28W-ERASE%29">support@beakbig.com</a>.</p>
+        </div>
+      </div>
+
+      <h2>What erasing does</h2>
+      <ul>
+        <li><strong>Every license bought with that email is revoked</strong> and <strong>every registered Mac is deactivated</strong>. At its next license check, the app locks with the notice "This license was revoked at your request to erase your personal data."</li>
+        <li>The purchase email, stored license keys, email delivery records, and key-change and erasure confirmation links are deleted.</li>
+        <li>Automatic update renewal (the subscription) is cancelled. You will not be charged again.</li>
+        <li>Erased licenses cannot be restored, and keys cannot be resent. To use the app again, you need to buy a new license.</li>
+      </ul>
+
+      <h2>What remains</h2>
+      <ul>
+        <li><strong>Payment records</strong> (transaction id, type, time) are kept for <strong>5 years</strong> as required by Korea's E-Commerce Act and then deleted. They are no longer linked to your email, keys or Macs.</li>
+        <li><strong>Payment information held by Paddle</strong> (name, address, payment method, receipts) is kept separately by Paddle as Merchant of Record. Request it directly at <a href="mailto:privacy@paddle.com">privacy@paddle.com</a> or <a href="https://paddle.net" rel="noopener" target="_blank">paddle.net</a>.</li>
+      </ul>
+
+      <h2>Good to know</h2>
+      <ul>
+        <li>If you want a refund, request it <strong>before erasing</strong>, under the <a href="refund">Refund Policy</a>.</li>
+        <li>If you no longer have access to the email you paid with, send the payment date and what appears on your card statement to <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-ERASE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Ferase%20%28W-ERASE%29">support@beakbig.com</a>. We handle it after verifying your identity.</li>
+        <li>What we store and when we delete it is described in Sections 5, 6 and 11 of the <a href="privacy">Privacy Policy</a>.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="./">Home</a>
+      <a href="pricing">Pricing</a>
+      <a href="download">Download</a>
+      <a href="support">Support</a>
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms of Service</a>
+      <a href="refund">Refund Policy</a>
+      <span class="footer-langs"><a href="../erase" lang="ko" hreflang="ko">한국어</a> <a href="../en/erase" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/erase" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/erase" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/erase" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/erase" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">Beakbig · Representative <span data-price="seller.owner">Hyunjin Kang</span> · Business registration no. <span data-price="seller.reg_no">613-40-01820</span> (simplified taxpayer) · Mail-order business registration: <span data-price="seller.mail_order">Exempt</span> · Address <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · Phone <span data-price="seller.phone">+82-502-6682-9359</span> · Email <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-ERASE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Ferase%20%28W-ERASE%29">support@beakbig.com</a> · Payments handled by Paddle</p>
+  </div>
+</footer>
+
+<script src="../assets/license.js" data-page="erase"></script>
+<script src="../assets/nav.js"></script>
+</body>
+</html>

@@ -13,27 +13,28 @@
   <meta property="og:locale" content="ja_JP">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
   <link rel="apple-touch-icon" href="../assets/icon.png">
-  <link rel="alternate" hreflang="ko" href="../privacy.html">
-  <link rel="alternate" hreflang="en" href="../en/privacy.html">
-  <link rel="alternate" hreflang="ja" href="../ja/privacy.html">
-  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/privacy.html">
-  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/privacy.html">
-  <link rel="alternate" hreflang="es" href="../es/privacy.html">
-  <link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/ja/privacy">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/privacy">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/privacy">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/privacy">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/privacy">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/privacy">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/privacy">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <a class="brand" href="./"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="メイン">
-      <a href="index.html#features">機能</a>
-      <a href="pricing.html">価格</a>
-      <a href="download.html">ダウンロード</a>
-      <a href="support.html">サポート</a>
-      <a href="privacy.html" aria-current="page">プライバシー</a>
-      <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html" selected>日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html">Español</option></select></label>
+      <a href="./#features">機能</a>
+      <a href="pricing">価格</a>
+      <a href="download">ダウンロード</a>
+      <a href="support">サポート</a>
+      <a href="privacy" aria-current="page">プライバシー</a>
+      <label class="lang-switch"><span class="visually-hidden">言語</span><select class="lang-select" aria-label="言語"><option value="../privacy">한국어</option><option value="../en/privacy">English</option><option value="../ja/privacy" selected>日本語</option><option value="../zh-Hans/privacy">简体中文</option><option value="../zh-Hant/privacy">繁體中文</option><option value="../es/privacy">Español</option></select></label>
     </nav>
   </div>
 </header>
@@ -49,7 +50,7 @@
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>概要。</strong>分析ツール・トラッキング・広告・アカウントはありません。検査するファイルは Mac 内でのみ読み取ります。App Store Connect・Google Play の機能は、ユーザーが自分で登録したキーを使って Apple・Google に直接接続します。販売者に届くのは、ライセンスの確認時の<strong>ライセンスキー・端末識別値・Mac のモデル名・アプリのバージョン</strong>、キーの登録・再送・変更時の購入時のメールアドレス（第 5 項）と、決済を代行する販売代理店 <strong>Paddle</strong> から受け取る購入情報（第 7 項）だけです。</p>
+        <p><strong>概要。</strong>分析ツール・トラッキング・広告・アカウントはありません。検査するファイルは Mac 内でのみ読み取ります。App Store Connect・Google Play の機能は、ユーザーが自分で登録したキーを使って Apple・Google に直接接続します。販売者に届くのは、ライセンスの確認時の<strong>ライセンスキー・端末識別値・Mac のモデル名・アプリのバージョン</strong>、キーの登録・再送・変更時および記録の削除時の購入時のメールアドレス（第 5 項）、決済を代行する販売代理店 <strong>Paddle</strong> から受け取る購入情報（第 7 項）、そしてお問い合わせメールで直接お送りいただいた内容（第 14 項）だけです。</p>
       </div>
 
       <h2>1. 収集しないもの</h2>
@@ -72,7 +73,7 @@
           <tr><td>プロファイルの一覧・ダウンロード・作成・更新、端末の一覧・登録、App Store へのストア配信</td><td>Apple App Store Connect API（<code>api.appstoreconnect.apple.com</code>）</td><td>アプリが署名した認証トークンと、ユーザーが選択・入力した値（プロファイルの種類・バンドル ID・証明書・端末名・UDID・ストア情報・スクリーンショットなど）</td></tr>
           <tr><td>Google Play へのアップロード・ストア配信</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>サービスアカウントキーで署名した認証リクエストと、ユーザーが選んだ AAB · APK・ストア情報・スクリーンショット</td></tr>
           <tr><td>ビルド・アプリのアップロード・端末へのインストール</td><td>Apple・Google の開発ツール（<code>xcodebuild</code> · <code>gradle</code> など）が接続する先</td><td>これらのツールがそれぞれの方法で通信します。依存関係をダウンロードするリポジトリ（Maven など）もここに含まれます</td></tr>
-          <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送、決済の開始</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
+          <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送・変更、決済の開始・お支払い管理リンク</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
           <tr><td>アップデートの確認</td><td>販売者が公開しているアップデート一覧</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません</td></tr>
         </tbody>
       </table>
@@ -91,7 +92,7 @@
       </ul>
 
       <h2>5. ライセンスの確認 — 送信する情報</h2>
-      <p>アプリは、ライセンスの登録・確認とアップデート期間の確認の目的でのみ、次の値を<strong>ライセンスサーバー</strong>に送信します。ウェブサイトのキー再送ページ・決済完了画面も、下に記載した値だけを送信します。それ以外の目的には使わず、送信はすべて HTTPS で行われます。</p>
+      <p>アプリは、ライセンスの登録・確認とアップデート期間の確認の目的でのみ、次の値を<strong>ライセンスサーバー</strong>に送信します。ウェブサイトのキーの再送・キーの変更・個人情報の削除・決済完了画面も、下に記載した値だけを送信します。それ以外の目的には使わず、送信はすべて HTTPS で行われます。</p>
       <table>
         <thead><tr><th>送信する値</th><th>内容</th><th>必要な理由</th></tr></thead>
         <tbody>
@@ -100,23 +101,25 @@
           <tr><td><strong>端末識別値</strong></td><td>この Mac のハードウェア UUID にアプリ専用の接頭辞を付けて SHA-256 で変換した値の先頭 32 文字。ハードウェア UUID の原文・ホスト名・ユーザー名は送信しません。ハードウェア UUID を読み取れない場合は、アプリの初回起動時に作成したランダムなインストール ID を同じ方法で使います。Mac の名前やネットワークが変わっても値は変わりません</td><td>ライセンスで許可された台数（Mac <span data-price="commercial.devices">2</span> 台）を超えていないか確認します</td></tr>
           <tr><td><strong>Mac のモデル名</strong></td><td>この Mac のハードウェアのモデル名（例: MacBook Pro (14-inch, Nov 2023)）。Mac の名前やユーザー名ではありません</td><td>登録済み Mac の一覧でどの Mac かを見分け、枠が埋まったときに解除する Mac を選べるようにします</td></tr>
           <tr><td><strong>アプリのバージョン</strong></td><td>アプリのバージョン・ビルド番号</td><td>そのバージョンがアップデート期間内に公開されたものかを確認し、問題を解決します</td></tr>
-          <tr><td>アクセス記録</td><td>端末識別値のハッシュ、アプリのバージョン、時刻、短いエラー理由</td><td>障害に対応し、問題を解決します</td></tr>
+          <tr><td>アクセス記録</td><td>時刻、操作（有効化・確認・解除など）、結果、ライセンス ID、端末識別値のハッシュ、アプリのバージョン、短い理由。IP アドレスは含みません。30 日後に自動削除</td><td>障害に対応し、問題を解決します</td></tr>
         </tbody>
       </table>
       <p><strong>いつ、何を送信するか。</strong></p>
       <ul>
-        <li><strong>有効化</strong> — ライセンスキー、購入時のメールアドレス（キー入力画面で登録する場合）、端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン、macOS のバージョン</li>
+        <li><strong>有効化</strong> — ライセンスキー、購入時のメールアドレス（キー入力画面で登録する場合）、端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン</li>
         <li><strong>ライセンスの確認</strong> — 約 12 時間ごとに、ライセンスキー（ある場合）、端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン</li>
         <li><strong>購入した Mac への登録</strong>（アプリから購入したあと、確認画面の「この Mac に登録」） — 端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン</li>
         <li><strong>登録済み Mac の一覧・ほかの Mac の解除</strong> — ライセンスキー、端末識別値、インストール識別値、解除する Mac の一覧上の ID</li>
         <li><strong>解除</strong> — ライセンスキー（アプリにある場合）、端末識別値、アプリのバージョン</li>
         <li><strong>決済の開始（購入・更新）</strong> — ライセンスキー（更新の場合）、端末識別値、インストール識別値、アプリのバージョン、言語（購入の場合）。決済そのものは Paddle の決済画面で行います</li>
+        <li><strong>お支払い管理リンク</strong>（「設定 › ライセンス › お支払いの管理…」） — ライセンスキー（ある場合）、端末識別値、インストール識別値、アプリのバージョン。受け取ったリンクはアプリに保存しません</li>
         <li><strong>キーの再送</strong>（アプリ・ウェブサイト） — 購入時のメールアドレス、言語</li>
         <li><strong>キーの変更</strong>（アプリ・ウェブサイト） — 確認メールを依頼するときは購入時のメールアドレス・言語、メールのリンクから変更するときは確認値・言語</li>
+        <li><strong>個人情報の削除</strong>（ウェブサイト） — 確認メールを依頼するときは購入時のメールアドレス・言語、メールのリンクから削除するときは確認値・言語</li>
         <li><strong>ウェブサイトでの購入・決済完了画面</strong> — 購入を始めるときは言語、決済後は取引 ID と決済確認値。購入したばかりのライセンスキーをその画面に表示するためだけに使います</li>
       </ul>
       <p><strong>サーバーに保存されるもの。</strong>端末・インストール識別値は、<strong>原文を保存せず、ハッシュ（SHA-256 · HMAC-SHA256）だけ</strong>を保存します。ライセンスキーは、照会用のハッシュに加えて、同じキーを再送できるよう<strong>暗号化（AES-256-GCM）した値</strong>を保存します。復号の鍵はデータベースとは別にサーバーの秘密設定に保管するため、データベースだけではキーはわかりません。決済確認値と、キーの再送・変更に使われたメールアドレスはハッシュだけを保存します。キー変更の確認リンクの値と変更前のキーもハッシュだけを保存します。変更前のキーは、そのキーで届いた依頼にキーが変更されたことを伝えるために使います。Mac のモデル名、アプリのバージョン、購入時のメールアドレスはそのまま保存し、メールアドレスはライセンスの照会とキーの送付に使います。Paddle からは、顧客・取引・自動更新の ID、自動更新の状態（オン・オフ）、価格 ID、アップデートの終了日を受け取ります。氏名・住所・カード情報は受け取りません。</p>
-      <p><strong>保存しないもの。</strong>IP アドレス、リクエストヘッダーとリクエスト本文、macOS のバージョン（受け取るだけで保存しません）、氏名・住所、カード番号、マーケティングへの同意、利用統計。</p>
+      <p><strong>保存しないもの。</strong>IP アドレス、リクエストヘッダーとリクエスト本文、氏名・住所、カード番号、マーケティングへの同意、利用統計。macOS のバージョンはアプリが送信しません。</p>
       <ul>
         <li>ユーザーを特定できる値（ユーザー名・端末に直接付けた名前など）は、ライセンスの確認に使いません。</li>
         <li>ファイル（IPA · APK · AAB · <code>.mobileprovision</code>）の内容とビルド成果物検査の結果は、ライセンスサーバーに送信しません。</li>
@@ -126,20 +129,21 @@
       <h2>6. ライセンスサーバーと保管</h2>
       <ul>
         <li>ライセンスサーバーは、販売者 <strong>Beakbig</strong>（事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>） · 連絡先 <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> が運営しています。サーバーには <strong>Cloudflare, Inc.</strong>（米国）の Workers を使い、データベースはアジア太平洋地域（地域内の実際の場所は Cloudflare が決定）にあります。</li>
-        <li>送信された値とライセンスの状態（発行・アップデート期間・取り消し）は、<strong>ライセンスが存在する間</strong>保管します。アップデート期間が終わってもライセンスは残るため、削除しません。返金・チャージバック（chargeback）でライセンスが取り消された場合は、その 2 年後に削除または匿名化し（現在は運営者が手作業で処理しています）、削除のご依頼があればその時点で削除します。保管期間の短い記録は<strong>毎日自動で</strong>削除します — アクセス記録 30 日、決済通知（Webhook）の処理記録 90 日、キー送付の記録 365 日（宛先アドレスはハッシュのみ保管）、未処理の発行待ち 7 日、決済と Mac を結びつける決済確認の記録 30 日、ほかの Mac の解除記録 30 日、キーの再送・変更依頼の記録 1 日（メールアドレスはハッシュのみ保管）、キー変更の確認リンクの記録 30 日（確認値はハッシュのみ保管）。削除のご依頼を受けた場合は、本人確認のうえライセンスを取り消し、残りの記録を削除します — 削除すると、そのライセンスではアプリを使えなくなります。</li>
+        <li>送信された値とライセンスの状態（発行・アップデート期間・取り消し）は、<strong>ライセンスが存在する間</strong>保管します。アップデート期間が終わってもライセンスは残るため、削除しません。返金・チャージバック（chargeback）でライセンスが取り消された場合は、その 2 年後に削除または匿名化し（現在は運営者が手作業で処理しています）、削除のご依頼があればその時点で削除します。保管期間の短い記録は<strong>毎日自動で</strong>削除します — アクセス記録 30 日、決済通知（Webhook）の処理記録 90 日、キー送付の記録 365 日（宛先アドレスはハッシュのみ保管）、未処理の発行待ち 7 日、決済と Mac を結びつける決済確認の記録 30 日、ほかの Mac の解除記録 30 日、キーの再送・変更依頼の記録 1 日（メールアドレスはハッシュのみ保管）、キー変更の確認リンクの記録 30 日（確認値はハッシュのみ保管）。削除は<a href="erase">個人情報の削除</a>ページで、購入時のメールアドレスの確認を経てご自身で行えます（第 11 項） — 削除すると、そのライセンスではアプリを使えなくなり、決済記録（取引 ID・種類・時刻）だけを電子商取引法に基づき 5 年間保管します。</li>
         <li>このサーバーに保存される値は、第 5 項に記載したものと同じです。支払い方法の情報、カード番号、銀行口座は保存されません。</li>
-        <li>サーバーは <strong>Cloudflare, Inc.</strong>（米国企業）の Workers により、ユーザーに近い Cloudflare データセンターで実行され、データベースはアジア太平洋地域（地域内の実際の場所は Cloudflare が決定）にあります。決済は <strong>Paddle.com Market Limited</strong>（英国）が販売代理店（merchant of record）として処理します。</li>
-        <li>ライセンスキーのメール・キー変更の確認メール・新しい Mac の登録のお知らせは、メール送信サービス <strong>Resend, Inc.</strong>（米国）を通じて送付します。Resend には、宛先メールアドレスとメール本文だけを渡します。本文にはライセンスキー、キー変更の確認リンク、新しく登録された Mac のモデル名と登録日時が含まれることがあります。</li>
+        <li>サーバーは <strong>Cloudflare, Inc.</strong>（米国企業）の Workers により、ユーザーに近い Cloudflare データセンターで実行され、データベースはアジア太平洋地域（地域内の実際の場所は Cloudflare が決定）にあります。ライセンスサーバーとこのサイトは Cloudflare が通信・セキュリティの目的で処理し、販売者は Cloudflare のリクエストログをオフにしており、IP アドレスを保存しません。決済は Paddle が販売代理店として処理します（第 7 項）。</li>
+        <li>販売者が送るメールはすべて購入時のメールアドレスにのみ届き、メール送信サービス <strong>Resend, Inc.</strong>（米国）を通じて送付します。Resend には、宛先メールアドレスとメール本文だけを渡します。本文にはライセンスキー、確認リンク、新しく登録された Mac のモデル名と登録日時が含まれることがあります。送るメールの種類: ライセンスキー・キーの再送・キー変更の確認・新しいキー・新しい Mac の登録のお知らせ・更新決済のご案内・更新 7 日前のお知らせ・更新料金の変更予告・個人情報の削除の確認。マーケティングメールは送りません。</li>
         <li>ライセンスサーバーに保存された内容をご自身でダウンロードしたり、削除を依頼したりする場合は、第 11 項の方法でお知らせください。</li>
       </ul>
 
       <h2>7. 決済と Paddle</h2>
-      <p>決済は <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>）が<strong>販売代理店（Merchant of Record）</strong>として処理します。Paddle がお客様に対する販売者となり、支払い方法の確認、税金の計算と課税、領収書の発行、返金処理を担当します。支払い方法の情報は Paddle が保管し、このサイトのサーバーを通りません。</p>
+      <p>決済は <strong>Paddle</strong>（<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a> — Paddle.com Market Limited、英国ロンドン。米国のお客様の取引は Paddle.com Inc.、米国）が<strong>販売代理店（Merchant of Record）</strong>として処理します。この文書で「Paddle」はこの 2 社を指します。Paddle がお客様に対する販売者となり、支払い方法の確認、税金の計算と課税、領収書の発行、返金処理を担当します。支払い方法の情報は Paddle が保管し、このサイトのサーバーを通りません。</p>
       <ul>
         <li><strong>Paddle が収集・処理するもの</strong> — 氏名、住所、メールアドレス、支払い方法の情報と決済履歴、請求先住所、税番号、IP アドレス、位置情報、端末・ブラウザの情報、同意の記録など。これらは <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle のプライバシーポリシー</a>に従って処理され、Paddle は法的義務のために取引データを 5 年間保管します。</li>
         <li><strong>販売者（私）に渡されるもの</strong> — 購入者の氏名・住所・メールアドレス、購入履歴、ダッシュボードで確認できる取引分析。カード番号の全桁とセキュリティコードは渡されません。特別な配慮を要する個人情報のカテゴリーは共有されません。</li>
         <li>販売者と Paddle は、このデータについてそれぞれ<strong>独立したデータ管理者</strong>です。販売者は受け取った情報を、ライセンスの発行、決済の確認、お客様からのお問い合わせへの対応にのみ使い、それ以外の目的には使いません。</li>
-        <li>決済に関するお問い合わせは Paddle のカスタマーサポート窓口で受け付けます。返金の基準は<a href="refund.html">返金ポリシー</a>に記載しています。</li>
+        <li><strong>決済ページの Paddle スクリプト</strong> — このサイトの購入ページは Paddle の決済スクリプト（Paddle.js）を読み込んで決済画面を開きます。その間、Paddle はブラウザ・端末の情報と IP アドレスを自社のプライバシーポリシーに従って処理します。販売者はこのサイトにそれ以外のスクリプト・Cookie・分析ツールを置かず、購入ページを開かなければ Paddle のスクリプトは読み込まれません。</li>
+        <li>返金のご依頼は <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E8%BF%94%E9%87%91%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> まで決済時のメールアドレスと注文番号をお送りいただければ、販売者が Paddle にリクエストします。領収書・税金など決済そのものに関するお問い合わせは、Paddle のカスタマーサポート窓口でも受け付けます。返金の基準は<a href="refund">返金ポリシー</a>に記載しています。</li>
         <li>Paddle が代行する販売者の規約もあわせて適用されます: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 利用規約</a>、<a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 購入者規約</a>。</li>
       </ul>
 
@@ -159,8 +163,9 @@
       <h2>11. ご本人の権利</h2>
       <p>ユーザーは、個人情報について、閲覧・訂正・削除・処理の制限・収集の拒否（決定に基づく停止）の権利を有します。</p>
       <ul>
-        <li><strong>ライセンスサーバーにある記録</strong> — <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> までご依頼ください。本人確認のうえ、<strong>ご依頼を受けた日から 10 日以内</strong>に処理し、その結果をお知らせします。</li>
-        <li><strong>Paddle が保管する決済情報</strong> — Paddle のポリシーと手続きに従って処理されます。必要な情報は Paddle に直接ご依頼ください。</li>
+        <li><strong>削除 — ライセンスサーバーにある記録</strong> — <a href="erase">個人情報の削除</a>ページでご自身で行えます。購入時のメールアドレスを入力すると確認メール（24 時間有効）が届き、メールのリンクで「削除」を押すと、そのメールアドレスのすべてのライセンスを取り消し、登録済みの Mac をすべて解除し、購入時のメールアドレス・保管しているキー・送付記録・確認リンクを削除し、アップデートの自動更新を解約します。削除したライセンスは復元できません。決済記録（取引 ID・種類・時刻）は電子商取引法に基づき 5 年間保管したあと削除します。</li>
+        <li><strong>閲覧・訂正・処理の制限</strong>、および削除ページを使えない場合（決済時のメールアドレスが使えなくなった場合など）の削除 — <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> までご依頼ください。本人確認のうえ、<strong>ご依頼を受けた日から 10 日以内</strong>に処理し、その結果をお知らせします。</li>
+        <li><strong>Paddle が保管する決済情報</strong> — Paddle のポリシーと手続きに従って処理されます。<a href="mailto:privacy@paddle.com">privacy@paddle.com</a> または <a href="https://paddle.net" rel="noopener" target="_blank">paddle.net</a> に直接ご依頼ください。</li>
         <li><strong>拒否できる範囲</strong> — ライセンスの確認は、購入したライセンスを使うために必須の処理です。これを拒否すると、ライセンスで利用できるようになる機能は使えません。</li>
         <li>法定代理人や代理人からのご依頼の場合は、委任関係を確認したうえで処理します。</li>
       </ul>
@@ -168,12 +173,12 @@
 
       <h2>12. 国外移転</h2>
       <ul>
-        <li><strong>移転先と国</strong> — ライセンスの記録は <strong>Cloudflare, Inc.</strong>（米国）で、決済情報は <strong>Paddle.com Market Limited</strong>（英国）で、キー送付のメールは <strong>Resend, Inc.</strong>（米国）で処理されます。</li>
+        <li><strong>移転先と国</strong> — ライセンスの記録は <strong>Cloudflare, Inc.</strong>（米国）で、決済情報は <strong>Paddle</strong>（英国・米国、第 7 項）で、キー送付のメールは <strong>Resend, Inc.</strong>（米国）で処理されます。</li>
         <li><strong>保存場所</strong> — ライセンスの記録はアジア太平洋地域のデータベース（<strong>Cloudflare D1</strong>）に保存され、リクエストはユーザーに近い Cloudflare データセンターで処理されます。</li>
-        <li><strong>時期・方法</strong> — 有効化・ライセンスの確認・登録済み Mac の一覧・キーの再送・キーの変更・決済（購入・更新）の開始時、およびライセンスキー・キー変更の確認・新しい Mac の登録のお知らせをメールで送付するときに、ネットワーク経由で送信します。</li>
+        <li><strong>時期・方法</strong> — 有効化・ライセンスの確認・登録済み Mac の一覧・キーの再送・キーの変更・個人情報の削除・決済（購入・更新）・お支払い管理リンクを依頼するとき、および第 6 項に記載したメールを送付するときに、ネットワーク経由で送信します。</li>
         <li><strong>項目・目的・保管期間</strong> — 第 5 項と第 6 項に記載したものと同じです。</li>
         <li><strong>保護措置</strong> — Cloudflare はデータ処理契約（EU 標準契約条項を含む）に従い、Paddle は販売代理店として自社のプライバシーポリシーに従って決済情報を処理します。</li>
-        <li><strong>拒否の方法とその結果</strong> — ライセンスを使わなければ移転は発生しません。その場合、体験期間が過ぎるとプロファイル管理とビルド成果物検査だけが使えます。</li>
+        <li><strong>拒否の方法とその結果</strong> — ライセンスを使わなければ移転は発生しません。その場合、体験期間が過ぎるとプロファイル管理・ビルド成果物検査・API キー管理・履歴の閲覧だけが使えます。</li>
         <li>Apple・Google へのリクエストは、各社のサーバーに直接送られます（第 3 項）。</li>
       </ul>
 
@@ -182,6 +187,8 @@
 
       <h2>14. お問い合わせ</h2>
       <p>このポリシーやアプリのデータの取り扱いについてご不明な点は、<a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> までお送りください。</p>
+      <p><strong>個人情報保護責任者</strong> — 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a></p>
+      <p><strong>お問い合わせメールで受け取る情報</strong> — support@beakbig.com にお送りいただいたメール（送信元アドレス・件名・本文・添付ファイル）は、お問い合わせへの回答と問題の解決にのみ使い、販売者のメールボックスに保管します。添付ファイルにキーファイル（<code>.p8</code>）や機密情報が含まれないようご注意ください。</p>
 
       <p class="meta">施行日: 2026 年 10 月 17 日 · 開発者・販売者: Beakbig</p>
     </div>
@@ -191,20 +198,20 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="フッター">
-      <a href="index.html">ホーム</a>
-      <a href="pricing.html">価格</a>
-      <a href="download.html">ダウンロード</a>
-      <a href="support.html">サポート</a>
-      <a href="privacy.html" aria-current="page">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="refund.html">返金ポリシー</a>
-      <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es">Español</a></span>
+      <a href="./">ホーム</a>
+      <a href="pricing">価格</a>
+      <a href="download">ダウンロード</a>
+      <a href="support">サポート</a>
+      <a href="privacy" aria-current="page">プライバシーポリシー</a>
+      <a href="terms">利用規約</a>
+      <a href="refund">返金ポリシー</a>
+      <span class="footer-langs"><a href="../privacy" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy" lang="en" hreflang="en">English</a> <a href="../ja/privacy" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/privacy" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
     <p class="biz">商号 Beakbig · 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · 事業者登録番号 <span data-price="seller.reg_no">613-40-01820</span>（簡易課税者） · 通信販売業の届出: <span data-price="seller.mail_order">免除</span> · 所在地 <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span> · 電話 <span data-price="seller.phone">+82-502-6682-9359</span> · メール <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> · 決済代行 Paddle</p>
   </div>
 </footer>
 
-<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+<script src="../assets/nav.js"></script>
 </body>
 </html>

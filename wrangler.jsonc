@@ -1,13 +1,20 @@
 {
   // shouarchive.beakbig.com 을 서비스하는 Worker (정적 파일만). Cloudflare 빌드가 푸시마다 `npx wrangler deploy` 로 올린다.
-  // 이 파일이 없으면 빌드가 매번 같은 설정을 자동으로 만든다 — 고정해 두려고 둔다. 뺄 파일은 .assetsignore
+  // 이 파일이 없으면 빌드가 매번 같은 설정을 자동으로 만든다 — 고정해 두려고 둔다. 뺄 파일은 .assetsignore,
+  // 응답 헤더(CSP 등)는 루트 _headers.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "shouarchive",
   "compatibility_date": "2026-10-01",
   "observability": {
-    "enabled": true
+    // 요청(invocation) 로그는 끈다 — 방문자 IP · 머리글이 Cloudflare 의 Workers Logs 에 남지 않게 (2026-10-20 결정 D3 · 개인정보 처리방침).
+    "enabled": true,
+    "logs": { "invocation_logs": false }
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    // /support → support.html (확장자 없는 주소), /support.html → /support 로 307. 사이트 안 링크는 모두 확장자 없이 쓴다.
+    "html_handling": "auto-trailing-slash",
+    // 없는 주소에는 루트 404.html 을 404 상태로 돌려준다.
+    "not_found_handling": "404-page"
   }
 }

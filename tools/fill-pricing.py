@@ -18,6 +18,9 @@
               값이 채워지면 href 를 바꾸고 hidden 을 지운다(버튼이 저절로 보인다).
 - data-live-hide: commercial.checkout 가 채워지면(출시) hidden 을 건다.
 - data-live-show: commercial.checkout 가 채워지기 전에는 hidden 을 건다.
+- data-if="키":  그 키의 값이 비어 있으면(null · "") hidden 을 걸고, 채워지면 뗀다 — 다운로드 페이지의 SHA-256 줄처럼
+              값이 있을 때만 뜻이 있는 줄에 쓴다. 안의 data-price 자리는 평소 규칙대로(null 이면 「미정」 문장) 채우지만
+              줄이 숨겨져 있으므로 보이지 않는다.
 - id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api 를 pricing.json 의
               paddle.environment · client_token · price_license · price_updates · license_api 로 매번 다시 쓴다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
@@ -129,6 +132,17 @@ def apply_launch(html, cfg, live):
     return html
 
 
+def apply_conditions(html, cfg, where):
+    """data-if="키" 요소 — 키의 값이 비어 있으면 hidden, 채워지면 보인다 (값이 있을 때만 뜻이 있는 줄)."""
+    def sub(m):
+        tag, path = m.group(0), m.group(1)
+        val = resolve(cfg, path, where)
+        if val is MISSING:
+            return tag
+        return set_hidden(tag, not val)
+    return re.sub(r'<[a-z0-9]+\b[^>]*\bdata-if="([^"]+)"[^>]*>', sub, html)
+
+
 def apply_paddle(html, cfg, where):
     """id="paddle-config" 요소의 Paddle.js 설정 속성을 pricing.json 의 paddle 값으로 다시 쓴다.
     속성 값을 통째로 바꾸므로 값을 고쳐 다시 실행해도 새 값이 들어가고, 같은 값이면 바뀌지 않는다."""
@@ -148,7 +162,7 @@ def apply_paddle(html, cfg, where):
 
 def html_files():
     for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if d not in ('.git', 'worker', 'node_modules', '.wrangler')]
+        dirnames[:] = [d for d in dirnames if d not in ('.git', 'node_modules', '.wrangler')]
         for name in sorted(filenames):
             if name.endswith('.html'):
                 yield os.path.join(dirpath, name)
@@ -164,6 +178,7 @@ def main():
         out = apply_prices(src, cfg, lang_of(path), where)
         out = apply_sources(out, cfg, where)
         out = apply_launch(out, cfg, live)
+        out = apply_conditions(out, cfg, where)
         out = apply_paddle(out, cfg, where)
         if out != src:
             open(path, 'w', encoding='utf-8').write(out)

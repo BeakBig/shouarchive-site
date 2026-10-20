@@ -14,27 +14,28 @@
   <meta property="og:locale" content="ko_KR">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
-  <link rel="alternate" hreflang="ko" href="checkout.html">
-  <link rel="alternate" hreflang="en" href="en/checkout.html">
-  <link rel="alternate" hreflang="ja" href="ja/checkout.html">
-  <link rel="alternate" hreflang="zh-Hans" href="zh-Hans/checkout.html">
-  <link rel="alternate" hreflang="zh-Hant" href="zh-Hant/checkout.html">
-  <link rel="alternate" hreflang="es" href="es/checkout.html">
-  <link rel="alternate" hreflang="x-default" href="en/checkout.html">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/checkout">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/checkout">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/checkout">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/checkout">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/checkout">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/checkout">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/checkout">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/checkout">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <a class="brand" href="./"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="주 메뉴">
-      <a href="index.html#features">기능</a>
-      <a href="pricing.html">가격</a>
-      <a href="download.html">다운로드</a>
-      <a href="support.html">지원</a>
-      <a href="privacy.html">개인정보</a>
-      <label class="lang-switch"><span class="visually-hidden">언어</span><select class="lang-select" aria-label="언어"><option value="checkout.html" selected>한국어</option><option value="en/checkout.html">English</option><option value="ja/checkout.html">日本語</option><option value="zh-Hans/checkout.html">简体中文</option><option value="zh-Hant/checkout.html">繁體中文</option><option value="es/checkout.html">Español</option></select></label>
+      <a href="./#features">기능</a>
+      <a href="pricing">가격</a>
+      <a href="download">다운로드</a>
+      <a href="support">지원</a>
+      <a href="privacy">개인정보</a>
+      <label class="lang-switch"><span class="visually-hidden">언어</span><select class="lang-select" aria-label="언어"><option value="checkout" selected>한국어</option><option value="en/checkout">English</option><option value="ja/checkout">日本語</option><option value="zh-Hans/checkout">简体中文</option><option value="zh-Hant/checkout">繁體中文</option><option value="es/checkout">Español</option></select></label>
     </nav>
   </div>
 </header>
@@ -52,11 +53,19 @@
       <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden data-license-api="https://license.beakbig.com"></div>
 
       <div class="note" id="checkout-closed">
-        <p><strong>결제를 아직 열지 않았습니다.</strong> ShouArchive 는 출시 전이라 지금은 살 수 없습니다. 가격과 출시 소식은 <a href="pricing.html">가격 페이지</a>에서 확인해 주세요.</p>
+        <p><strong>결제를 아직 열지 않았습니다.</strong> ShouArchive 는 출시 전이라 지금은 살 수 없습니다. 가격과 출시 소식은 <a href="pricing">가격 페이지</a>에서 확인해 주세요.</p>
+      </div>
+
+      <div class="note note-warn" id="checkout-blocked" hidden>
+        <p><strong>결제 모듈을 불러오지 못했습니다.</strong> 광고 차단기를 끄거나 다른 브라우저에서 이 페이지를 다시 열어 주세요. 그래도 안 되면 <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@beakbig.com</a> 으로 알려 주세요.</p>
+      </div>
+
+      <div class="note note-warn" id="checkout-limit" hidden>
+        <p>지금은 결제 요청이 많습니다. 잠시 뒤 다시 시도하세요.</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
-        <p><strong>결제가 끝났습니다. 고맙습니다.</strong> 라이선스 키를 결제한 이메일 주소로 보냈습니다. ShouArchive 가 설치된 Mac 에서 메일의 「앱에서 바로 등록하기」 링크를 누르면 등록됩니다. 몇 분 안에 오지 않으면 스팸함을 확인하거나 <a href="license.html">키 다시 받기</a> 에서 다시 받으세요. 그래도 없으면 <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4%20%ED%82%A4%20%EB%AF%B8%EC%88%98%EC%8B%A0&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@beakbig.com</a> 으로 결제 이메일을 알려 주세요.</p>
+        <p><strong>결제가 끝났습니다. 고맙습니다.</strong> 라이선스 키를 결제한 이메일 주소로 보냈습니다. ShouArchive 가 설치된 Mac 에서 메일의 「앱에서 바로 등록하기」 링크를 누르면 등록됩니다. 몇 분 안에 오지 않으면 스팸함을 확인하거나 <a href="license">키 다시 받기</a> 에서 다시 받으세요. 그래도 없으면 <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4%20%ED%82%A4%20%EB%AF%B8%EC%88%98%EC%8B%A0&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@beakbig.com</a> 으로 결제 이메일을 알려 주세요.</p>
       </div>
 
       <div class="plan checkout-box checkout-waiting" id="checkout-processing" role="status" aria-live="polite" hidden>
@@ -101,16 +110,16 @@
         <li>결제가 끝나면 이 페이지에 라이선스 키가 나오고, 같은 키가 결제한 이메일 주소로도 옵니다.</li>
         <li>「ShouArchive 에서 열기」 나 메일의 「앱에서 바로 등록하기」 링크를 누르면 앱이 열리고 이 Mac 에 등록할지 묻습니다. 「등록」 을 누르면 끝입니다.</li>
         <li>링크가 열리지 않으면 ShouArchive 의 <strong>설정 › 라이선스 › 키 입력…</strong> 에 결제한 이메일과 키를 넣고 「활성화」 를 누릅니다. 앱에서 결제했다면 그 Mac 에서 「자동 확인」 만 눌러도 됩니다.</li>
-        <li>키 하나로 Mac <span data-price="commercial.devices">2</span>대에서 쓸 수 있습니다. 키를 잃어버렸으면 <a href="license.html">키 다시 받기</a> 에서 다시 받으세요.</li>
+        <li>키 하나로 Mac <span data-price="commercial.devices">2</span>대에서 쓸 수 있습니다. 키를 잃어버렸으면 <a href="license">키 다시 받기</a> 에서 다시 받으세요.</li>
       </ol>
 
       <h2 id="about">결제에 관해</h2>
       <ul>
         <li><strong>판매대행 — Paddle.</strong> 결제는 <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> 이 판매대행(Merchant of Record)으로 처리합니다. 영수증과 결제 관련 메일은 Paddle 이 보냅니다.</li>
         <li><strong>세금</strong>은 가격에 들어 있지 않고, 결제 화면에서 지역에 맞춰 더해집니다.</li>
-        <li><strong>업데이트 갱신</strong>은 1년마다 자동으로 이루어지고, Paddle 결제 안내 메일의 관리 링크에서 언제든 끌 수 있습니다. 꺼도 앱은 계속 씁니다.</li>
-        <li><strong>환불</strong> — 결제 후 <span data-price="commercial.refund_days">14</span>일 안이면 전액 환불합니다. <a href="refund.html">환불 정책</a></li>
-        <li>구매 전에 <a href="terms.html">이용약관</a> 과 <a href="privacy.html">개인정보 처리방침</a> 을 확인해 주세요.</li>
+        <li><strong>업데이트 갱신</strong>은 1년마다 자동으로 이루어지고(갱신 7일 전에 결제 이메일과 앱에서 알립니다), Paddle 결제 안내 메일의 관리 링크 또는 앱의 설정 › 라이선스 › 「결제 관리…」 에서 언제든 끌 수 있습니다. 꺼도 앱은 계속 씁니다.</li>
+        <li><strong>환불</strong> — 결제 후 <span data-price="commercial.refund_days">14</span>일 안이면 전액 환불합니다. <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%ED%99%98%EB%B6%88%20%EC%9A%94%EC%B2%AD&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@beakbig.com</a> 으로 결제 이메일과 주문 번호를 보내 주세요. <a href="refund">환불 정책</a></li>
+        <li>구매 전에 <a href="terms">이용약관</a> 과 <a href="privacy">개인정보 처리방침</a> 을 확인해 주세요.</li>
       </ul>
     </div>
   </section>
@@ -119,14 +128,14 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="바닥 메뉴">
-      <a href="index.html">홈</a>
-      <a href="pricing.html">가격</a>
-      <a href="download.html">다운로드</a>
-      <a href="support.html">지원</a>
-      <a href="privacy.html">개인정보 처리방침</a>
-      <a href="terms.html">이용약관</a>
-      <a href="refund.html">환불 정책</a>
-      <span class="footer-langs"><a href="checkout.html" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/checkout.html" lang="en" hreflang="en">English</a> <a href="ja/checkout.html" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/checkout.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/checkout.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/checkout.html" lang="es" hreflang="es">Español</a></span>
+      <a href="./">홈</a>
+      <a href="pricing">가격</a>
+      <a href="download">다운로드</a>
+      <a href="support">지원</a>
+      <a href="privacy">개인정보 처리방침</a>
+      <a href="terms">이용약관</a>
+      <a href="refund">환불 정책</a>
+      <span class="footer-langs"><a href="checkout" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/checkout" lang="en" hreflang="en">English</a> <a href="ja/checkout" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/checkout" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/checkout" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/checkout" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
     <p class="biz">상호 비그빅(Beakbig) · 대표 <span data-price="seller.owner">강현진</span> · 사업자등록번호 <span data-price="seller.reg_no">613-40-01820</span> (간이과세자) · 통신판매업 신고 <span data-price="seller.mail_order">면제</span> · 주소 <span data-price="seller.address">경기도 화성시 동탄순환대로20길 31</span> · 전화 <span data-price="seller.phone">0502-6682-9359</span> · 이메일 <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@beakbig.com</a> · 결제 대행 Paddle</p>
@@ -134,8 +143,7 @@
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script src="assets/license.js"></script>
-<script>ShouArchiveLicense.checkout();</script>
-<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+<script src="assets/license.js" data-page="checkout"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

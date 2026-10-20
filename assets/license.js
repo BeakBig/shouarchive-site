@@ -1,15 +1,20 @@
 /*
- * ShouArchive 라이선스 — 결제 완료 화면 · 앱을 여는 중계 페이지 · 키 다시 받기 · 키 바꾸기.
+ * ShouArchive 라이선스 — 결제 완료 화면 · 앱을 여는 중계 페이지 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제.
  * 6개 언어 페이지가 모두 이 파일 하나를 쓴다. 문구는 각 페이지의 HTML 에 있고, 여기서는
  * 보이고 숨기기와 값 채우기만 한다 (그래서 tools/check-site.py 의 언어별 구조 비교를 그대로 통과한다).
  *
- * 라이선스 서버 계약: shouarchive-license 저장소 docs/app-contract.md §2.10 ~ §2.13.
- *   POST /v1/web/checkout             사이트에서 사는 결제를 만든다 → { transaction_id, claim }
+ * 실행: 페이지가 <script src="assets/license.js" data-page="checkout|activate|resend|rotate|erase"></script> 로
+ * 불러오면 그 이름의 함수를 바로 실행한다 (인라인 <script> 는 _headers 의 CSP 가 막으므로 두지 않는다).
+ *
+ * 라이선스 서버 계약: shouarchive-license 저장소 docs/app-contract.md §2.10 ~ §2.13, 개인정보 삭제는 2026-10-20 계약 §8.
+ *   POST /v1/web/checkout             사이트에서 사는 결제를 만든다 → { transaction_id, claim } · 409 checkout_limit 이면 잠시 뒤 다시
  *   POST /v1/purchase/status          결제가 끝나면 그 확인 값으로 키를 받는다 → { status: processing | ready, key, … }
  *   POST /v1/licenses/resend          구매 이메일로 같은 키를 다시 보낸다 → 늘 { status: accepted }
  *   POST /v1/licenses/rotate          구매 이메일로 키 바꾸기 확인 링크를 보낸다 → 늘 { status: accepted }
  *   POST /v1/licenses/rotate/confirm  확인 링크의 값으로 키를 바꾼다 → { status: rotated, email_hint, email_sent }
- * 키 · 확인 값은 주소의 # 뒤에만 둔다 — 브라우저가 서버로 보내지 않아 사이트 로그에 남지 않는다.
+ *   POST /v1/privacy/erase            구매 이메일로 개인정보 삭제 확인 링크(24시간)를 보낸다 → 늘 { status: accepted }
+ *   POST /v1/privacy/erase/confirm    확인 링크의 값으로 삭제한다 → { status: erased, licenses } · 404 erase_not_found · 410 erase_expired
+ * 키 · 확인 값은 주소의 # 뒤에만 둔다 — 브라우저가 서버로 보내지 않아 사이트 로그에 남지 않는다. 읽은 뒤에는 주소에서 지운다.
  */
 (function () {
   'use strict';
@@ -116,13 +121,22 @@
     var fromApp = hash.get('from') === 'app';
     var renewal = hash.get('kind') === 'renewal';
     var transactionId = params.get('_ptxn');
+    if (claim !== null || hash.get('from') !== null || hash.get('kind') !== null) {
+      // 확인 값을 읽었으면 주소에서 지운다 — 방문 기록 · 화면 공유에 남지 않게 (# 뒤라 서버로는 애초에 가지 않았다). ?_ptxn= 은 남긴다
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* 그대로 둔다 */ }
+    }
 
     if (params.get('done') === '1') {         // 예전 방식으로 돌아온 경우 (successUrl)
       show('checkout-closed', false);
       show('checkout-done', true);
       return;
     }
-    if (!cfg.token || !window.Paddle) return;  // 아직 결제를 열지 않음 → 안내만
+    if (!cfg.token) return;                    // 아직 결제를 열지 않음 → 「출시 전」 안내만
+    if (!window.Paddle) {                      // Paddle.js 를 불러오지 못함(광고 차단기 · 네트워크) — 출시 전 안내와 구분한다
+      show('checkout-closed', false);
+      show('checkout-blocked', true);
+      return;
+    }
 
     var LOCALES = { 'ko': 'ko', 'en': 'en', 'ja': 'ja', 'zh-Hans': 'zh-Hans', 'es': 'es' };  // zh-Hant 은 Paddle 이 지원하지 않아 생략
     // successUrl 로 페이지를 옮기지 않는다 — 결제 완료를 여기서 받아 확인 값으로 키를 가져온다
@@ -149,13 +163,16 @@
     byId('checkout-open').addEventListener('click', function () {
       var button = this;
       button.disabled = true;
+      show('checkout-limit', false);
       post('/v1/web/checkout', { locale: pageLocale() })
         .then(function (result) {
           transactionId = result.transaction_id;
           claim = result.claim;
           Paddle.Checkout.open({ transactionId: transactionId });
         })
-        .catch(function () {
+        .catch(function (error) {
+          // 시간당 결제 만들기 상한(409 checkout_limit) — 잠시 뒤 다시 누르라고 안내하고 결제 창은 열지 않는다
+          if (error && error.code === 'checkout_limit') { show('checkout-limit', true); return; }
           // 라이선스 서버에 닿지 못하면 예전처럼 연다 — 키는 메일로만 받는다
           claim = null;
           Paddle.Checkout.open({ items: [
@@ -378,5 +395,59 @@
     }
   }
 
-  window.ShouArchiveLicense = { checkout: checkout, activate: activate, resend: resend, rotate: rotate };
+  // ------------------------------------------------------------------ 개인정보 삭제 (erase.html)
+
+  /**
+   * 키 바꾸기와 같은 두 모드 — 메일의 링크(#token=…)로 왔으면 삭제되는 내용과 「삭제」 단추를, 아니면 확인 메일 요청 양식을 보인다.
+   * 단추를 눌러야 지워진다 — 메일 보안 검사기가 링크를 미리 열어도 그대로다. 서버는 구매가 있든 없든 요청에 같은 답을 한다.
+   * 성공하면 해지한 라이선스 수(licenses)를 erase-count 에 채운다. 삭제한 라이선스는 되살리지 못한다.
+   */
+  function erase() {
+    if (!byId('erase-request')) return;
+    var token = fragment().get('token');
+    if (token !== null) {
+      // 주소에서 확인 값을 지운다 — 방문 기록 · 화면 공유에 남지 않게 (# 뒤라 서버로는 애초에 가지 않았다)
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* 그대로 둔다 */ }
+    }
+    if (token === null) show('erase-request', true);
+    else if (!TOKEN_RE.test(token)) requestAgain('erase-used');
+    else show('erase-confirm', true);
+
+    var confirmButton = byId('erase-confirm-button');
+    confirmButton.addEventListener('click', function () {
+      confirmButton.disabled = true;
+      show('erase-confirm-error', false);
+      post('/v1/privacy/erase/confirm', { token: token, locale: pageLocale() })
+        .then(function (result) {
+          show('erase-confirm', false);
+          var count = byId('erase-count');
+          if (count) count.textContent = String(result.licenses == null ? 0 : result.licenses);
+          show('erase-done', true);
+        })
+        .catch(function (error) {
+          var code = error && error.code;
+          if (code === 'erase_not_found' || code === 'erase_expired') {
+            show('erase-confirm', false);
+            requestAgain(code === 'erase_expired' ? 'erase-expired' : 'erase-used');
+            return;
+          }
+          // 연결 실패 · 서버 오류 — 같은 링크로 다시 누를 수 있다
+          show('erase-confirm-error', true);
+          confirmButton.disabled = false;
+        });
+    });
+
+    emailForm('erase', '/v1/privacy/erase');
+
+    function requestAgain(noteId) {
+      show(noteId, true);
+      show('erase-request', true);
+    }
+  }
+
+  window.ShouArchiveLicense = { checkout: checkout, activate: activate, resend: resend, rotate: rotate, erase: erase };
+
+  // <script src="assets/license.js" data-page="…"> 의 이름으로 바로 실행한다 (스크립트는 </body> 앞에 있어 DOM 은 이미 있다)
+  var page = document.currentScript && document.currentScript.dataset.page;
+  if (page && Object.prototype.hasOwnProperty.call(window.ShouArchiveLicense, page)) window.ShouArchiveLicense[page]();
 })();

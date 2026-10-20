@@ -13,27 +13,28 @@
   <meta property="og:locale" content="es_ES">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
   <link rel="apple-touch-icon" href="../assets/icon.png">
-  <link rel="alternate" hreflang="ko" href="../privacy.html">
-  <link rel="alternate" hreflang="en" href="../en/privacy.html">
-  <link rel="alternate" hreflang="ja" href="../ja/privacy.html">
-  <link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/privacy.html">
-  <link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/privacy.html">
-  <link rel="alternate" hreflang="es" href="../es/privacy.html">
-  <link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/es/privacy">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/privacy">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/privacy">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/privacy">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/privacy">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/privacy">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/privacy">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <a class="brand" href="./"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
     <nav class="nav" aria-label="Principal">
-      <a href="index.html#features">Funciones</a>
-      <a href="pricing.html">Precios</a>
-      <a href="download.html">Descargas</a>
-      <a href="support.html">Soporte</a>
-      <a href="privacy.html" aria-current="page">Privacidad</a>
-      <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../privacy.html">한국어</option><option value="../en/privacy.html">English</option><option value="../ja/privacy.html">日本語</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../zh-Hant/privacy.html">繁體中文</option><option value="../es/privacy.html" selected>Español</option></select></label>
+      <a href="./#features">Funciones</a>
+      <a href="pricing">Precios</a>
+      <a href="download">Descargas</a>
+      <a href="support">Soporte</a>
+      <a href="privacy" aria-current="page">Privacidad</a>
+      <label class="lang-switch"><span class="visually-hidden">Idioma</span><select class="lang-select" aria-label="Idioma"><option value="../privacy">한국어</option><option value="../en/privacy">English</option><option value="../ja/privacy">日本語</option><option value="../zh-Hans/privacy">简体中文</option><option value="../zh-Hant/privacy">繁體中文</option><option value="../es/privacy" selected>Español</option></select></label>
     </nav>
   </div>
 </header>
@@ -49,7 +50,7 @@
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>Resumen.</strong> No hay herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo, el modelo del Mac y la versión de la app</strong> al comprobar la licencia, el correo de compra al registrar la clave, pedirla de nuevo o cambiarla (sección 5), y los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7).</p>
+        <p><strong>Resumen.</strong> No hay herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo, el modelo del Mac y la versión de la app</strong> al comprobar la licencia, el correo de compra al registrar la clave, pedirla de nuevo, cambiarla o eliminar tus registros (sección 5), los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7), y lo que nos envíes directamente por correo de consulta (sección 14).</p>
       </div>
 
       <h2>1. Lo que no recopilamos</h2>
@@ -72,7 +73,7 @@
           <tr><td>Listar, descargar, crear y renovar perfiles; listar y registrar dispositivos; publicar en el App Store</td><td>API de App Store Connect de Apple (<code>api.appstoreconnect.apple.com</code>)</td><td>El token de autenticación firmado por la app y los valores que eliges o introduces (tipo de perfil · ID de paquete · certificados · nombres de dispositivo · UDID · ficha de la tienda · capturas de pantalla, etc.)</td></tr>
           <tr><td>Subida y publicación en Google Play</td><td>API de Google Play Developer (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Solicitudes de autenticación firmadas con la clave de la cuenta de servicio y los AAB, APK, fichas de la tienda y capturas de pantalla que eliges</td></tr>
           <tr><td>Compilación · subida de apps · instalación en dispositivos</td><td>Los destinos a los que se conectan las herramientas de desarrollo de Apple y Google (<code>xcodebuild</code> · <code>gradle</code>, etc.)</td><td>Cada herramienta se comunica a su manera. Aquí se incluyen también los repositorios de los que se descargan dependencias (Maven, etc.)</td></tr>
-          <tr><td>Activación, comprobación y desactivación de la licencia; lista de Mac registrados; volver a recibir la clave; inicio del pago</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
+          <tr><td>Activación, comprobación y desactivación de la licencia; lista de Mac registrados; volver a recibir o cambiar la clave; inicio del pago · enlace de gestión del pago</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
           <tr><td>Búsqueda de actualizaciones</td><td>La lista de actualizaciones que publica el vendedor</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor</td></tr>
         </tbody>
       </table>
@@ -91,7 +92,7 @@
       </ul>
 
       <h2>5. Comprobación de la licencia: datos que se envían</h2>
-      <p>La app envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para registrar y comprobar la licencia y el periodo de actualizaciones. Las páginas del sitio web para volver a recibir la clave y de pago completado también envían solo los valores indicados abajo. No se usan para ningún otro fin, y todas las transmisiones se realizan por HTTPS.</p>
+      <p>La app envía los siguientes valores al <strong>servidor de licencias</strong> únicamente para registrar y comprobar la licencia y el periodo de actualizaciones. Las páginas del sitio web para volver a recibir la clave, cambiarla, eliminar tus datos personales y la de pago completado también envían solo los valores indicados abajo. No se usan para ningún otro fin, y todas las transmisiones se realizan por HTTPS.</p>
       <table>
         <thead><tr><th>Valor enviado</th><th>Contenido</th><th>Por qué hace falta</th></tr></thead>
         <tbody>
@@ -100,23 +101,25 @@
           <tr><td><strong>Identificador del dispositivo</strong></td><td>Los 32 primeros caracteres del hash SHA-256 del UUID de hardware de este Mac con un prefijo propio de la app. No se envían el UUID de hardware en texto claro, ni el nombre de host, ni el nombre de usuario. Si no se puede leer el UUID de hardware, se usa del mismo modo un identificador de instalación aleatorio creado en la primera ejecución de la app. El valor no cambia aunque cambien el nombre del Mac o la red</td><td>Sirve para comprobar si se supera el número de dispositivos que permite la licencia (<span data-price="commercial.devices">2</span> Mac)</td></tr>
           <tr><td><strong>Modelo del Mac</strong></td><td>El nombre del modelo de hardware de este Mac (p. ej., MacBook Pro (14-inch, Nov 2023)). No es el nombre del Mac ni el nombre de usuario</td><td>Sirve para distinguir los Mac en la lista de registrados y elegir cuál liberar cuando todas las plazas están ocupadas</td></tr>
           <tr><td><strong>Versión de la app</strong></td><td>Versión y número de compilación de la app</td><td>Sirve para comprobar si esa versión se publicó dentro del periodo de actualizaciones y para resolver problemas</td></tr>
-          <tr><td>Registro de accesos</td><td>El hash del identificador del dispositivo, la versión de la app, la hora y un breve motivo del error</td><td>Sirve para responder a las averías y resolver problemas</td></tr>
+          <tr><td>Registro de accesos</td><td>Hora, operación (activación · comprobación · desactivación, etc.), resultado, id de la licencia, hash del identificador del dispositivo, versión de la app y un breve motivo. No incluye la dirección IP. Se borra automáticamente a los 30 días</td><td>Sirve para responder a las averías y resolver problemas</td></tr>
         </tbody>
       </table>
       <p><strong>Cuándo se envía cada cosa.</strong></p>
       <ul>
-        <li><strong>Activación</strong> — clave de licencia, correo electrónico de compra (al registrarla en la ventana Introducir clave), identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app, versión de macOS</li>
+        <li><strong>Activación</strong> — clave de licencia, correo electrónico de compra (al registrarla en la ventana Introducir clave), identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app</li>
         <li><strong>Comprobación de la licencia</strong> — cada 12 horas aproximadamente: clave de licencia (si la hay), identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app</li>
         <li><strong>Registro del Mac con el que pagaste</strong> (Registrar este Mac en la ventana que aparece tras pagar desde la app) — identificador del dispositivo, identificador de instalación, modelo del Mac, versión de la app</li>
         <li><strong>Lista de Mac registrados · liberar otro Mac</strong> — clave de licencia, identificador del dispositivo, identificador de instalación, el id en la lista del Mac que se libera</li>
         <li><strong>Desactivación</strong> — clave de licencia (si la app la tiene), identificador del dispositivo, versión de la app</li>
         <li><strong>Inicio del pago (compra · renovación)</strong> — clave de licencia (en las renovaciones), identificador del dispositivo, identificador de instalación, versión de la app, idioma (en las compras). El pago en sí se hace en la pantalla de pago de Paddle</li>
+        <li><strong>Enlace de gestión del pago</strong> (Ajustes › Licencia › «Gestionar pago…») — clave de licencia (si la hay), identificador del dispositivo, identificador de instalación, versión de la app. El enlace recibido no se guarda en la app</li>
         <li><strong>Volver a recibir la clave</strong> (app · sitio web) — correo electrónico de compra, idioma</li>
         <li><strong>Cambiar la clave</strong> (app · sitio web) — correo electrónico de compra e idioma al pedir el correo de confirmación; el valor de confirmación y el idioma al cambiarla con el enlace de ese correo</li>
+        <li><strong>Eliminación de datos personales</strong> (sitio web) — correo electrónico de compra e idioma al pedir el correo de confirmación; el valor de confirmación y el idioma al eliminarlos con el enlace de ese correo</li>
         <li><strong>Compra en el sitio web · página de pago completado</strong> — el idioma al iniciar la compra; tras el pago, el id de la transacción y un valor de confirmación del pago, que solo se usan para mostrar en esa página la clave que acabas de comprar</li>
       </ul>
       <p><strong>Lo que se guarda en el servidor.</strong> Los identificadores de dispositivo e instalación <strong>no se guardan en texto claro, sino solo como hash (SHA-256 · HMAC-SHA256)</strong>. La clave de licencia se guarda como hash para consultarla y, además, <strong>cifrada (AES-256-GCM)</strong> para poder reenviarte la misma clave; la clave de descifrado se guarda en la configuración secreta del servidor, separada de la base de datos, de modo que la base de datos por sí sola no revela ninguna clave de licencia. Los valores de confirmación del pago y los correos usados para pedir de nuevo la clave o para cambiarla se guardan solo como hash. Los valores de confirmación del cambio de clave y las claves sustituidas también se guardan solo como hash; las claves sustituidas sirven para avisar de que la clave ha cambiado cuando llega una solicitud con una de ellas. El modelo del Mac, la versión de la app y el correo electrónico de compra se guardan tal cual, y el correo de compra se usa para consultar la licencia y enviar la clave. De Paddle recibimos los identificadores de cliente, de transacción y de renovación automática, el estado de la renovación automática (activada · desactivada), el identificador de precio y la fecha en que terminan las actualizaciones. No recibimos el nombre, el domicilio ni los datos de la tarjeta.</p>
-      <p><strong>Lo que no se guarda.</strong> La dirección IP, las cabeceras y el cuerpo de las solicitudes, la versión de macOS (se recibe, pero no se guarda), el nombre y el domicilio, el número de tarjeta, el consentimiento de marketing y las estadísticas de uso.</p>
+      <p><strong>Lo que no se guarda.</strong> La dirección IP, las cabeceras y el cuerpo de las solicitudes, el nombre y el domicilio, el número de tarjeta, el consentimiento de marketing y las estadísticas de uso. La app no envía la versión de macOS.</p>
       <ul>
         <li>No se usan para comprobar la licencia valores que permitan identificar a la persona usuaria (nombre de usuario, el nombre que hayas puesto al dispositivo, etc.).</li>
         <li>No se envían al servidor de licencias el contenido de los archivos (IPA · APK · AAB · <code>.mobileprovision</code>) ni los resultados de la inspección de artefactos.</li>
@@ -126,20 +129,21 @@
       <h2>6. Servidor de licencias y conservación</h2>
       <ul>
         <li>El servidor de licencias lo explota el vendedor, <strong>Beakbig</strong> (n.º de registro empresarial <span data-price="seller.reg_no">613-40-01820</span>) · contacto: <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a>. El servidor usa Workers de <strong>Cloudflare, Inc.</strong> (Estados Unidos) y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare).</li>
-        <li>Los valores enviados y el estado de la licencia (emitida · periodo de actualizaciones · revocada) se conservan <strong>mientras exista la licencia</strong>. Como la licencia sigue existiendo cuando termina el periodo de actualizaciones, no se borran en ese momento. Si la licencia se revoca por un reembolso o un contracargo (chargeback), se eliminan o se anonimizan 2 años después (por ahora lo hace el operador a mano), y si solicitas su eliminación, se borran en ese momento. Los registros con plazos cortos se borran <strong>cada día de forma automática</strong>: los registros de accesos, a los 30 días; los registros de tratamiento de avisos de pago (webhooks), a los 90 días; los registros de envío de claves, a los 365 días (de la dirección del destinatario solo se guarda el hash); las emisiones pendientes sin tratar, a los 7 días; los registros que vinculan un pago con un Mac (confirmación del pago), a los 30 días; los registros de liberación de otros Mac, a los 30 días; las solicitudes para volver a recibir o cambiar la clave, al cabo de 1 día (del correo solo se guarda el hash); y los enlaces de confirmación del cambio de clave, a los 30 días (del valor de confirmación solo se guarda el hash). Cuando recibimos una solicitud de eliminación, revocamos la licencia tras verificar tu identidad y borramos los registros restantes; una vez eliminada, esa licencia ya no permite usar la app.</li>
+        <li>Los valores enviados y el estado de la licencia (emitida · periodo de actualizaciones · revocada) se conservan <strong>mientras exista la licencia</strong>. Como la licencia sigue existiendo cuando termina el periodo de actualizaciones, no se borran en ese momento. Si la licencia se revoca por un reembolso o un contracargo (chargeback), se eliminan o se anonimizan 2 años después (por ahora lo hace el operador a mano), y si solicitas su eliminación, se borran en ese momento. Los registros con plazos cortos se borran <strong>cada día de forma automática</strong>: los registros de accesos, a los 30 días; los registros de tratamiento de avisos de pago (webhooks), a los 90 días; los registros de envío de claves, a los 365 días (de la dirección del destinatario solo se guarda el hash); las emisiones pendientes sin tratar, a los 7 días; los registros que vinculan un pago con un Mac (confirmación del pago), a los 30 días; los registros de liberación de otros Mac, a los 30 días; las solicitudes para volver a recibir o cambiar la clave, al cabo de 1 día (del correo solo se guarda el hash); y los enlaces de confirmación del cambio de clave, a los 30 días (del valor de confirmación solo se guarda el hash). Puedes eliminarlos tú mismo en la página <a href="erase">Eliminación de datos personales</a>, previa confirmación del correo de compra (sección 11): al hacerlo, esa licencia deja de permitir usar la app y solo se conservan los registros de pago (id de la transacción · tipo · hora) durante 5 años, conforme a la Ley de Comercio Electrónico.</li>
         <li>Los valores que se guardan en este servidor son los que se indican en la sección 5. No se guardan datos del método de pago, números de tarjeta ni cuentas bancarias.</li>
-        <li>El servidor se ejecuta con Workers de <strong>Cloudflare, Inc.</strong> (una empresa de Estados Unidos) en el centro de datos de Cloudflare más cercano a la persona usuaria, y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare). Los pagos los gestiona <strong>Paddle.com Market Limited</strong> (Reino Unido) como revendedor autorizado (merchant of record).</li>
-        <li>Los correos con la clave de licencia, los de confirmación del cambio de clave y los avisos de registro de un Mac nuevo se envían a través del servicio de envío de correo <strong>Resend, Inc.</strong> (Estados Unidos). A Resend solo se le facilitan la dirección de correo del destinatario y el cuerpo del mensaje, que puede incluir la clave de licencia, un enlace de confirmación del cambio de clave o el modelo y la hora de registro de un Mac recién registrado.</li>
+        <li>El servidor se ejecuta con Workers de <strong>Cloudflare, Inc.</strong> (una empresa de Estados Unidos) en el centro de datos de Cloudflare más cercano a la persona usuaria, y la base de datos está en la región Asia-Pacífico (la ubicación exacta dentro de esa región la decide Cloudflare). El servidor de licencias y este sitio los trata Cloudflare con fines de transmisión y seguridad; el vendedor tiene desactivados los registros de solicitudes de Cloudflare y no guarda direcciones IP. Los pagos los gestiona Paddle como revendedor autorizado (sección 7).</li>
+        <li>Todos los correos que envía el vendedor van únicamente al correo de compra y se envían a través del servicio de envío de correo <strong>Resend, Inc.</strong> (Estados Unidos). A Resend solo se le facilitan la dirección de correo del destinatario y el cuerpo del mensaje, que puede incluir la clave de licencia, un enlace de confirmación o el modelo y la hora de registro de un Mac recién registrado. Tipos de correo que enviamos: clave de licencia · reenvío de la clave · confirmación del cambio de clave · clave nueva · aviso de registro de un Mac nuevo · aviso del cobro de la renovación · aviso 7 días antes de la renovación · aviso previo de cambio del precio de renovación · confirmación de la eliminación de datos personales. No enviamos correos de marketing.</li>
         <li>Si quieres descargar directamente o solicitar la eliminación del historial guardado en el servidor de licencias, avísanos por el medio indicado en la sección 11.</li>
       </ul>
 
       <h2>7. Pago y Paddle</h2>
-      <p>Los pagos los gestiona <strong>Paddle</strong> (<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>) como <strong>revendedor autorizado (Merchant of Record)</strong>. Paddle es el vendedor frente al cliente y se encarga de comprobar el método de pago, calcular y aplicar los impuestos, emitir los recibos y tramitar los reembolsos. Los datos del método de pago los conserva Paddle y no pasan por los servidores de este sitio.</p>
+      <p>Los pagos los gestiona <strong>Paddle</strong> (<a href="https://www.paddle.com" rel="noopener" target="_blank">paddle.com</a>: Paddle.com Market Limited, Londres, Reino Unido; las transacciones de clientes de Estados Unidos, Paddle.com Inc., Estados Unidos) como <strong>revendedor autorizado (Merchant of Record)</strong>. En este documento, «Paddle» designa a estas dos sociedades. Paddle es el vendedor frente al cliente y se encarga de comprobar el método de pago, calcular y aplicar los impuestos, emitir los recibos y tramitar los reembolsos. Los datos del método de pago los conserva Paddle y no pasan por los servidores de este sitio.</p>
       <ul>
         <li><strong>Lo que Paddle recopila y trata</strong> — nombre, domicilio, dirección de correo electrónico, datos del método de pago e historial de pagos, dirección de facturación, número de identificación fiscal, dirección IP, información de ubicación, información del dispositivo y del navegador, registros de consentimiento, etc. Todo ello se trata conforme a la <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">política de privacidad de Paddle</a>, y Paddle conserva los datos de las transacciones durante 5 años por obligación legal.</li>
         <li><strong>Lo que llega al vendedor (nosotros)</strong> — nombre, domicilio y dirección de correo electrónico del comprador, el historial de compra y el análisis de transacciones que se ve en el panel. No llegan el número completo de la tarjeta ni su código de seguridad. No se comparte ninguna categoría especial de información sensible.</li>
         <li>El vendedor y Paddle son <strong>responsables independientes del tratamiento</strong> de estos datos. El vendedor solo usa la información recibida para emitir licencias, comprobar pagos y atender las consultas de los clientes, y no para ningún otro fin.</li>
-        <li>Las consultas sobre el pago se atienden en el servicio de atención al cliente de Paddle. Los criterios de reembolso están descritos en la <a href="refund.html">política de reembolso</a>.</li>
+        <li><strong>El script de Paddle en la página de pago</strong> — la página de compra de este sitio carga el script de pago de Paddle (Paddle.js) para abrir la ventana de pago. Mientras tanto, Paddle trata la información del navegador y del dispositivo y la dirección IP conforme a su propia política de privacidad. El vendedor no incluye en este sitio ningún otro script, cookie ni herramienta de analíticas, y si no abres la página de compra, el script de Paddle no se carga.</li>
+        <li>Para solicitar un reembolso, envía el correo electrónico del pago y el número de pedido a <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Solicitud%20de%20reembolso&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> y el vendedor lo solicitará a Paddle. Las consultas sobre el pago en sí (recibos, impuestos, etc.) también se atienden en el servicio de atención al cliente de Paddle. Los criterios de reembolso están descritos en la <a href="refund">política de reembolso</a>.</li>
         <li>También se aplican los términos de venta que Paddle aplica como revendedor autorizado: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">términos de Paddle</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">términos de comprador de Paddle</a>.</li>
       </ul>
 
@@ -159,8 +163,9 @@
       <h2>11. Derechos del interesado</h2>
       <p>Puedes ejercer los derechos de acceso, rectificación, supresión, limitación del tratamiento y oposición a la recogida (la suspensión derivada de esa decisión) sobre tus datos personales.</p>
       <ul>
-        <li><strong>Registros en el servidor de licencias</strong> — envía la solicitud a <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a>. Una vez comprobada tu identidad, la procesaremos <strong>en un plazo de 10 días desde la recepción de la solicitud</strong> y te comunicaremos el resultado.</li>
-        <li><strong>Información de pago que conserva Paddle</strong> — se trata conforme a las políticas y los procedimientos de Paddle. Si necesitas esa información, solicítala directamente a Paddle.</li>
+        <li><strong>Supresión — registros en el servidor de licencias</strong> — puedes hacerla tú mismo en la página <a href="erase">Eliminación de datos personales</a>. Introduce el correo de compra y recibirás un correo de confirmación (válido 24 horas); al pulsar «Eliminar» en el enlace de ese correo, se revocan todas las licencias de ese correo, se liberan todos los Mac registrados, se borran el correo de compra, las claves guardadas, los registros de envío y los enlaces de confirmación, y se cancela la renovación automática de las actualizaciones. Las licencias eliminadas no se pueden recuperar. Los registros de pago (id de la transacción · tipo · hora) se conservan 5 años conforme a la Ley de Comercio Electrónico y después se borran.</li>
+        <li><strong>Acceso · rectificación · limitación del tratamiento</strong>, y la supresión cuando no puedas usar la página de eliminación (por ejemplo, si ya no tienes acceso al correo del pago) — envía la solicitud a <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a>. Una vez comprobada tu identidad, la procesaremos <strong>en un plazo de 10 días desde la recepción de la solicitud</strong> y te comunicaremos el resultado.</li>
+        <li><strong>Información de pago que conserva Paddle</strong> — se trata conforme a las políticas y los procedimientos de Paddle. Solicítala directamente a Paddle en <a href="mailto:privacy@paddle.com">privacy@paddle.com</a> o en <a href="https://paddle.net" rel="noopener" target="_blank">paddle.net</a>.</li>
         <li><strong>Lo que puedes rechazar</strong> — la comprobación de la licencia es un tratamiento necesario para usar la licencia comprada. Si te niegas a ella, no puedes usar las funciones que se activan con la licencia.</li>
         <li>Cuando la solicitud la presente un representante legal o un apoderado, verificamos antes la representación.</li>
       </ul>
@@ -168,12 +173,12 @@
 
       <h2>12. Transferencias internacionales</h2>
       <ul>
-        <li><strong>Destino y país</strong> — los registros de licencia se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), la información de pago en <strong>Paddle.com Market Limited</strong> (Reino Unido) y los correos de envío de claves en <strong>Resend, Inc.</strong> (Estados Unidos).</li>
+        <li><strong>Destino y país</strong> — los registros de licencia se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), la información de pago en <strong>Paddle</strong> (Reino Unido · Estados Unidos, sección 7) y los correos de envío de claves en <strong>Resend, Inc.</strong> (Estados Unidos).</li>
         <li><strong>Ubicación del almacenamiento</strong> — los registros de licencia se guardan en la base de datos de la región Asia-Pacífico (<strong>Cloudflare D1</strong>), y las solicitudes se procesan en el centro de datos de Cloudflare más cercano a la persona usuaria.</li>
-        <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla, al consultar los Mac registrados, al pedir de nuevo la clave o cambiarla y al iniciar un pago (compra · renovación), así como al enviar por correo electrónico la clave de licencia, la confirmación de un cambio de clave o el aviso de registro de un Mac nuevo.</li>
+        <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla, al consultar los Mac registrados, al pedir de nuevo la clave o cambiarla, al eliminar tus datos personales, al iniciar un pago (compra · renovación) y al solicitar el enlace de gestión del pago, así como al enviar los correos indicados en la sección 6.</li>
         <li><strong>Categorías, fines y plazos de conservación</strong> — los mismos que se indican en las secciones 5 y 6.</li>
         <li><strong>Medidas de protección</strong> — Cloudflare sigue su acuerdo de tratamiento de datos (con las cláusulas contractuales tipo de la UE incluidas) y Paddle trata la información de pago conforme a su propia política de privacidad en su condición de revendedor autorizado.</li>
-        <li><strong>Cómo rechazarlas y qué ocurre</strong> — si no usas una licencia, no se produce ninguna transferencia. En ese caso, cuando termina el periodo de prueba, solo puedes usar la gestión de perfiles y la inspección de artefactos.</li>
+        <li><strong>Cómo rechazarlas y qué ocurre</strong> — si no usas una licencia, no se produce ninguna transferencia. En ese caso, cuando termina el periodo de prueba, solo puedes usar la gestión de perfiles, la inspección de artefactos, la gestión de claves de API y la consulta del historial.</li>
         <li>Las solicitudes a Apple y Google van directamente a los servidores de cada empresa (sección 3).</li>
       </ul>
 
@@ -182,6 +187,8 @@
 
       <h2>14. Contacto</h2>
       <p>Si tienes alguna duda sobre esta política o sobre cómo trata los datos la app, escríbenos a <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a>.</p>
+      <p><strong>Responsable de protección de datos</strong> — Representante <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a></p>
+      <p><strong>Información recibida por correo de consulta</strong> — los correos que envías a support@beakbig.com (remitente · asunto · cuerpo · adjuntos) se usan únicamente para responder a la consulta y resolver el problema, y se conservan en el buzón del vendedor. Procura que los adjuntos no contengan archivos de clave (<code>.p8</code>) ni información sensible.</p>
 
       <p class="meta">Fecha de entrada en vigor: 17 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
@@ -192,20 +199,20 @@
 <footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Pie de página">
-      <a href="index.html">Inicio</a>
-      <a href="pricing.html">Precios</a>
-      <a href="download.html">Descargas</a>
-      <a href="support.html">Soporte</a>
-      <a href="privacy.html" aria-current="page">Política de privacidad</a>
-      <a href="terms.html">Términos del servicio</a>
-      <a href="refund.html">Política de reembolso</a>
-      <span class="footer-langs"><a href="../privacy.html" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy.html" lang="en" hreflang="en">English</a> <a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy.html" lang="es" hreflang="es" aria-current="page">Español</a></span>
+      <a href="./">Inicio</a>
+      <a href="pricing">Precios</a>
+      <a href="download">Descargas</a>
+      <a href="support">Soporte</a>
+      <a href="privacy" aria-current="page">Política de privacidad</a>
+      <a href="terms">Términos del servicio</a>
+      <a href="refund">Política de reembolso</a>
+      <span class="footer-langs"><a href="../privacy" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy" lang="en" hreflang="en">English</a> <a href="../ja/privacy" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy" lang="es" hreflang="es" aria-current="page">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>
     <p class="biz">Razón social: Beakbig · Titular: <span data-price="seller.owner">Hyunjin Kang</span> · Registro empresarial (Corea del Sur): <span data-price="seller.reg_no">613-40-01820</span> (régimen simplificado del IVA) · Registro de venta a distancia: <span data-price="seller.mail_order">Exento</span> · Dirección: <span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, República de Corea</span> · Teléfono: <span data-price="seller.phone">+82-502-6682-9359</span> · Correo: <a href="mailto:support@beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@beakbig.com</a> · Gestor de pagos: Paddle</p>
   </div>
 </footer>
 
-<script>document.querySelectorAll(".lang-select").forEach(function(e){e.addEventListener("change",function(){location.href=e.value})})</script>
+<script src="../assets/nav.js"></script>
 </body>
 </html>

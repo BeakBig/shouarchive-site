@@ -31,6 +31,8 @@ PAGE_CODE = {
     "activate": "W-ACT",
     "license": "W-KEY",
     "rotate": "W-ROTATE",
+    "erase": "W-ERASE",
+    "404": "W-404",  # 루트 404.html (한 페이지에 6개 언어) — 메일 링크는 없지만 글롭에 걸리므로 코드를 둔다
 }
 SUBJECT = {
     "ko": "문의",

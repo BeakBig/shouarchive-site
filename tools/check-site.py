@@ -6,19 +6,27 @@ python3 tools/check-site.py
 ```
 
 확인하는 것
-  1. 6개 언어 × 11개 페이지가 모두 있는가
+  1. 6개 언어 × 12개 페이지가 모두 있는가 (+ 루트 404.html)
   2. 한국어 원본과 구조가 같은가 — 태그 순서, 속성 이름, 값이 그대로여야 하는 속성
-     (href · src · id · class · data-* · hidden 등)
+     (href · src · id · class · data-* · hidden 등. canonical 의 href 는 언어마다 다르므로 비교하지 않음)
   3. 번역이 밀리지 않았는가 — 남은 한글, 그리고 언어마다 함께 있으면 안 되는 문자 체계
      (언어 전환 메뉴 · 언어 이름은 제외)
   4. data-price 키가 pricing.json 에 있는가, 값이 없는(null) 자리에 숫자가 그대로 남아 있지 않은가
      (예상해 둔 금액이 페이지에 노출되지 않게 하는 검사 — commercial.* 는 「미정」 문장이어야 하고,
      seller.* 같은 다른 키는 [대표자] 처럼 숫자 없는 자리 표시면 됩니다)
      그리고 checkout.html 의 Paddle 설정(#paddle-config)이 pricing.json 과 같은가
-  5. 내부 링크가 실제 파일을 가리키는가, 현재 페이지 링크가 자기 자신을 가리키는가
+  5. 내부 링크가 실제 파일을 가리키는가 — 링크는 확장자 없이 쓴다(`pricing` → pricing.html, `./` · `en/` → index.html).
+     `.html` 로 끝나는 사이트 안 링크는 문제로 잡습니다. 현재 페이지 링크(aria-current)가 자기 자신을 가리키는가
   6. CSS 에 [hidden] 을 강제하는 규칙이 있는가 — .btn 처럼 display 를 정하는 요소에 달린
      hidden 이 동작하려면 !important 가 필요합니다
   7. 25 MiB 를 넘는 파일이 없는가 (Workers 정적 파일 한도 · README 「주의」 절)
+  8. 인라인 <script> 가 없는가 — 루트 _headers 의 CSP(script-src 'self')가 막습니다. 스크립트는 assets/ 파일로만
+  9. 루트 _headers · 404.html 이 있고 .assetsignore 가 _headers 를 빼지 않는가
+
+경고(종료 코드를 바꾸지 않음)
+  - pricing.json 의 paddle.environment 가 sandbox 이거나 client_token 이 test_ 로 시작하면 — 공개 결제 페이지가
+    샌드박스라는 뜻. 출시 전에 production 토큰으로 바꾸고 서버의 샌드박스 라이선스 · 결제 · Mac 기록을 정리할 것
+    (README 「출시 체크리스트」).
 
 문제는 모두 모아서 마지막에 한 번에 보고합니다. 코드 1 이 나오면 문제가 있다는 뜻입니다.
 """
@@ -27,9 +35,10 @@ import json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant', 'es']
 PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
-         'activate.html', 'license.html', 'rotate.html']
+         'activate.html', 'license.html', 'rotate.html', 'erase.html']
+ROOT_ONLY = ['404.html']  # 언어판이 없는 루트 페이지 — 링크 · 인라인 스크립트만 본다
 MAX_BYTES = 25 * 1024 * 1024  # Workers 정적 파일 한도
-KEEP_VALUE = {'href', 'src', 'id', 'class', 'data-price', 'data-src', 'data-live-hide', 'data-live-show'}
+KEEP_VALUE = {'href', 'src', 'id', 'class', 'data-price', 'data-src', 'data-live-hide', 'data-live-show', 'data-if', 'data-page'}
 TAG_RE = re.compile(r'<([a-z0-9]+)((?:\s+[a-z0-9-]+(?:="[^"]*")?)*)\s*/?>')
 ATTR_RE = re.compile(r'([a-z0-9-]+)(?:="([^"]*)")?')
 HANGUL_RE = re.compile(r'[가-힣ㄱ-ㆎ]')
@@ -46,9 +55,13 @@ MIXED_OK = {  # 언어마다 허용하지 않는 문자 체계 — 한자를 쓰
 LANG_NAMES = ['한국어', 'English', '日本語', '简体中文', '繁體中文', 'Español', 'Korean', 'Chinese', 'Japonese', 'Spanish', '한국어']
 
 problems = []
+warnings = []
 
 def report(kind, path, detail):
     problems.append(f'[{kind}] {os.path.relpath(path, ROOT) if os.path.isabs(path) else path} — {detail}')
+
+def warn(kind, path, detail):
+    warnings.append(f'[{kind}] {path} — {detail}')
 
 def path_for(lang, page):
     return os.path.join(ROOT, page if lang == 'ko' else f'{lang}/{page}')
@@ -56,22 +69,43 @@ def path_for(lang, page):
 def skeleton(html):
     """(태그 이름, 값이 그대로여야 하는 속성들의 쌍) 목록 — 번역과 무관한 구조만 뽑는다.
 
-    언어 폴더의 `../` 접두사는 지웁니다(한국어 원본과 같은 값으로 맞추기 위함)."""
+    언어 폴더의 `../` · `./` 접두사는 지웁니다(한국어 원본과 같은 값으로 맞추기 위함).
+    canonical 의 href 는 언어마다 다른 절대 주소라 값을 비교하지 않습니다."""
     html = re.sub(r'<!--.*?-->', '', html, flags=re.S)
     out = []
     for tag, attrs in TAG_RE.findall(html):
         pairs = []
+        canonical = 'rel="canonical"' in attrs
         for name, value in ATTR_RE.findall(attrs):
             if name == 'hidden':
                 pairs.append(('hidden', ''))
             elif name in KEEP_VALUE:
-                value = re.sub(r'^\.\./', '', value or '')
+                if name == 'href' and canonical:
+                    pairs.append((name, 'CANONICAL'))
+                    continue
+                value = re.sub(r'^(\.\./|\./)', '', value or '')
                 value = re.sub(r'^(assets/screenshots)/[^/]+/', r'\1LANG/', value)  # 스크린샷 폴더는 언어마다 다름
                 if value.startswith('mailto:'):  # 제목(subject)은 언어마다 다를 수 있음
                     value = value.split('?')[0]
                 pairs.append((name, value))
         out.append((tag, tuple(pairs)))
     return out
+
+def resolve_local(p, href):
+    """사이트 안 상대 링크가 가리키는 실제 파일. 확장자 없는 주소를 Cloudflare 와 같은 규칙으로 푼다 —
+    `pricing` → pricing.html, `./` · `en/` · `` → 그 폴더의 index.html. 없으면 None."""
+    path = href.split('#')[0]
+    base = os.path.dirname(p)
+    if path in ('', '.', './') or path.endswith('/'):
+        target = os.path.normpath(os.path.join(base, path, 'index.html'))
+        return target if os.path.exists(target) else None
+    target = os.path.normpath(os.path.join(base, path))
+    if os.path.isdir(target):
+        target = os.path.join(target, 'index.html')
+    for candidate in (target, target + '.html'):
+        if os.path.isfile(candidate):
+            return candidate
+    return None
 
 def visible_text(html):
     """번역이 필요 없는 부분(언어 선택 목록 · 「한국어」 라는 언어 이름)을 뺀 눈에 보이는 글자."""
@@ -96,17 +130,21 @@ def check_hangul(lang, page):
     if found:
         report('번역', path_for(lang, page), f'번역되지 않은 한글이 남았습니다: {"".join(found)[:40]}')
 
-def check_links(lang, page):
-    p = path_for(lang, page)
-    missing = []
-    for href in sorted(set(re.findall(r'href="([^"]+)"', open(p, encoding='utf-8').read()))):
+def check_links(p):
+    """사이트 안 링크가 실제 파일을 가리키는가. 사이트 안 .html 링크는 확장자 없는 주소로 바꿔야 한다
+    (Cloudflare 가 .html 주소를 307 로 돌리고, canonical · hreflang 도 확장자가 없다)."""
+    html = open(p, encoding='utf-8').read()
+    for href in sorted(set(re.findall(r'(?<![\w-])(?:href|src)="([^"]+)"', html))):
         if href.startswith(('http://', 'https://', 'mailto:', 'tel:', '#', 'data:')):
             continue
-        target = os.path.normpath(os.path.join(os.path.dirname(p), href.split('#')[0]))
-        if not os.path.exists(target):
-            missing.append(href)
-    for href in missing:
-        report('링크', p, f'대상이 없습니다: {href}')
+        if href.split('#')[0].endswith('.html'):
+            report('링크', p, f'사이트 안 링크는 확장자 없이 씁니다 (.html 을 떼세요): {href}')
+            continue
+        if resolve_local(p, href) is None:
+            report('링크', p, f'대상이 없습니다: {href}')
+    for href in sorted(set(re.findall(r'<option value="([^"]+)"', html))):
+        if resolve_local(p, href) is None:
+            report('링크', p, f'언어 선택 대상이 없습니다: {href}')
 
 def check_current_page(lang, page):
     """aria-current="page" 링크는 자기 자신을 가리켜야 한다 (../ 로 잘못 가면 한국어판으로 튄다)."""
@@ -114,9 +152,26 @@ def check_current_page(lang, page):
     for href in re.findall(r'<a href="([^"]+)" aria-current="page"', open(p, encoding='utf-8').read()):
         if href.startswith(('http', 'mailto:', '#')):
             continue
-        target = os.path.normpath(os.path.join(os.path.dirname(p), href.split('#')[0]))
-        if target != os.path.normpath(p):
+        target = resolve_local(p, href)
+        if target is None or os.path.normpath(target) != os.path.normpath(p):
             report('현재 페이지', p, f'aria-current 링크가 다른 파일을 가리킵니다: {href}')
+
+def check_inline_script(p):
+    """인라인 <script>…</script> 는 _headers 의 CSP(script-src 'self')가 막는다 — src 가 있는 것만 허용."""
+    html = re.sub(r'<!--.*?-->', '', open(p, encoding='utf-8').read(), flags=re.S)
+    for m in re.finditer(r'<script\b([^>]*)>', html):
+        if not re.search(r'\bsrc="', m.group(1)):
+            report('CSP', p, '인라인 <script> 가 있습니다 — assets/ 의 파일로 빼세요 (_headers 의 script-src 가 막습니다)')
+            break
+
+def check_canonical(lang, page):
+    """canonical 이 확장자 없는 절대 주소인가 — localize-nav.py 가 만든다."""
+    p = path_for(lang, page)
+    m = re.search(r'<link rel="canonical" href="([^"]+)">', open(p, encoding='utf-8').read())
+    if not m:
+        report('canonical', p, 'canonical 링크가 없습니다 — python3 tools/localize-nav.py 를 실행하세요')
+    elif m.group(1).endswith('.html') or not m.group(1).startswith('https://'):
+        report('canonical', p, f'canonical 은 확장자 없는 절대 주소여야 합니다: {m.group(1)}')
 
 def check_mixed_script(lang, page):
     """번역이 밀려 다른 언어 문자가 남았는지 — 언어 전환 메뉴와 지원 언어 목록은 제외."""
@@ -181,6 +236,33 @@ def check_sizes():
             if size > MAX_BYTES:
                 report('용량', f, f'{size / 1024 / 1024:.1f} MiB — 25 MiB 한도를 넘습니다')
 
+def check_deploy_files():
+    """루트 _headers(보안 헤더 · CSP) · 404.html 이 있고, .assetsignore 가 _headers 를 빼지 않는가."""
+    headers = os.path.join(ROOT, '_headers')
+    if not os.path.exists(headers):
+        report('배포', '_headers', '없습니다 — 보안 헤더 · CSP 규칙 파일 (README 「구성」)')
+    elif 'Content-Security-Policy:' not in open(headers, encoding='utf-8').read():
+        report('배포', '_headers', 'Content-Security-Policy 줄이 없습니다')
+    ignore = os.path.join(ROOT, '.assetsignore')
+    if os.path.exists(ignore):
+        lines = [l.strip() for l in open(ignore, encoding='utf-8') if l.strip() and not l.startswith('#')]
+        if '_headers' in lines or '404.html' in lines:
+            report('배포', '.assetsignore', '_headers · 404.html 은 빼면 안 됩니다 (Worker 가 읽어야 합니다)')
+    for name in ROOT_ONLY:
+        p = os.path.join(ROOT, name)
+        if not os.path.exists(p):
+            report('파일', p, '없습니다 (Cloudflare 가 없는 주소에 돌려주는 페이지)')
+            continue
+        check_links(p)
+        check_inline_script(p)
+
+def check_sandbox_warning():
+    """공개 결제 페이지가 Paddle 샌드박스를 가리키면 경고 — 출시 전에 꼭 바꿔야 하지만 개발 중에는 정상이므로 종료 코드는 그대로."""
+    paddle = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('paddle') or {}
+    if paddle.get('environment') == 'sandbox' or str(paddle.get('client_token') or '').startswith('test_'):
+        warn('결제', 'tools/pricing.json', '공개 결제 페이지가 샌드박스입니다(paddle.environment=sandbox 또는 client_token 이 test_). '
+             '출시 전에 production 토큰으로 바꾸고 서버의 샌드박스 라이선스 · 결제 · Mac 기록을 정리할 것 — README 「출시 체크리스트」')
+
 for page in PAGES:
     if not os.path.exists(path_for('ko', page)):
         report('파일', path_for('ko', page), '없습니다')
@@ -195,14 +277,21 @@ for page in PAGES:
             check_mixed_script(lang, page)
         check_undecided_price(lang, page)
         check_paddle_config(lang, page)
-        check_links(lang, page)
+        check_links(path_for(lang, page))
         check_current_page(lang, page)
+        check_inline_script(path_for(lang, page))
+        check_canonical(lang, page)
 check_hidden_rule()
 check_sizes()
+check_deploy_files()
+check_sandbox_warning()
 
+for line in warnings:
+    print('경고', line)
 if problems:
     print(f'문제 {len(problems)}건')
     for line in problems:
         print(' ', line)
     sys.exit(1)
-print(f'이상 없음 — {len(LANGS)}개 언어 × {len(PAGES)}개 페이지, 링크 · 번역 · 구조 · 용량 모두 통과')
+print(f'이상 없음 — {len(LANGS)}개 언어 × {len(PAGES)}개 페이지 + {" · ".join(ROOT_ONLY)}, 링크 · 번역 · 구조 · CSP · 용량 모두 통과'
+      + (f' (경고 {len(warnings)}건)' if warnings else ''))

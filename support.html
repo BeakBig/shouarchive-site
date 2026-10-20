@@ -126,6 +126,13 @@
           <p>Android 15 부터 16 KB 메모리 페이지를 쓰는 기기가 있고, Google Play 는 이를 지원하는 네이티브 라이브러리를 요구합니다. 앱은 64비트(<code>arm64-v8a</code> · <code>x86_64</code>) <code>.so</code> 파일의 ELF LOAD 정렬과, APK 안에 압축 없이 저장된 <code>.so</code> 의 16 KB 경계를 확인해 미지원 라이브러리를 목록으로 보여 줍니다.</p>
         </details>
 
+        <h2 id="ota">OTA 배포</h2>
+
+        <details>
+          <summary>OTA 배포 파일은 ShouArchive 가 올려 두나요?</summary>
+          <p>아니요. ShouArchive 는 IPA · APK 옆 <code>&lt;이름&gt;_OTA</code> 폴더에 설치 페이지(<code>install.html</code>) · <code>manifest.plist</code> · QR 코드를 <strong>만들어 줄 뿐</strong>, 파일을 올려 두거나 다운로드 링크를 제공하지 않습니다. 폴더를 통째로 <strong>직접 운영하는 HTTPS 서버</strong>(회사 웹 서버, 클라우드 저장소의 정적 호스팅 등)에 올리고, 앱에 입력한 IPA 주소와 같은 위치가 되게 해 주세요. iOS 는 HTTPS 주소에서만 설치를 시작합니다.</p>
+        </details>
+
         <h2 id="license">가격 · 라이선스</h2>
 
         <details>

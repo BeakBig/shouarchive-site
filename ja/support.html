@@ -126,6 +126,13 @@
           <p>Android 15 から 16 KB のメモリページを使う端末があり、Google Play はそれに対応したネイティブライブラリを求めています。アプリは 64 ビット（<code>arm64-v8a</code> · <code>x86_64</code>）の <code>.so</code> ファイルの ELF LOAD 整列と、APK 内に無圧縮で保存された <code>.so</code> の 16 KB 境界を確認し、非対応のライブラリを一覧で表示します。</p>
         </details>
 
+        <h2 id="ota">OTA 配布</h2>
+
+        <details>
+          <summary>OTA 配布ファイルは ShouArchive がホスティングしますか?</summary>
+          <p>いいえ。ShouArchive は IPA · APK の隣の <code>&lt;名前&gt;_OTA</code> フォルダにインストールページ(<code>install.html</code>)・<code>manifest.plist</code>・QR コードを<strong>作成するだけ</strong>で、ファイルの公開やダウンロードリンクの提供は行いません。フォルダごと<strong>ご自身で運用する HTTPS サーバー</strong>(会社の Web サーバー、クラウドストレージの静的ホスティングなど)にアップロードし、アプリに入力した IPA の URL と同じ場所になるようにしてください。iOS は HTTPS の URL からのみインストールを開始します。</p>
+        </details>
+
         <h2 id="license">価格 · ライセンス</h2>
 
         <details>

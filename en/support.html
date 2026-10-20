@@ -126,6 +126,13 @@
           <p>Starting with Android 15 some devices use 16 KB memory pages, and Google Play requires native libraries that support them. The app checks the ELF LOAD alignment of 64-bit (<code>arm64-v8a</code>, <code>x86_64</code>) <code>.so</code> files and, for uncompressed <code>.so</code> files stored in an APK, their 16 KB boundary inside the archive, and lists the libraries that don't comply.</p>
         </details>
 
+        <h2 id="ota">OTA distribution</h2>
+
+        <details>
+          <summary>Does ShouArchive host my OTA install files?</summary>
+          <p>No. In a <code>&lt;name&gt;_OTA</code> folder next to your IPA or APK, ShouArchive writes an install page (<code>install.html</code>), a <code>manifest.plist</code> and a QR code. It <strong>only creates</strong> these files; it does not host them or provide a download link. Upload the whole folder to <strong>an HTTPS server you run</strong> (your company web server, static hosting on a cloud storage service, and so on) so that it matches the IPA address you entered in the app. iOS only starts an install from an HTTPS address.</p>
+        </details>
+
         <h2 id="license">Pricing · License</h2>
 
         <details>

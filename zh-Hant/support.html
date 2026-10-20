@@ -126,6 +126,13 @@
           <p>從 Android 15 開始，部分裝置採用 16 KB 記憶體分頁，Google Play 也要求原生函式庫必須支援。App 會檢查 64 位元（<code>arm64-v8a</code> · <code>x86_64</code>）<code>.so</code> 檔案的 ELF LOAD 對齊，以及 APK 中以未壓縮方式存放的 <code>.so</code> 的 16 KB 邊界，並列出不支援的函式庫。</p>
         </details>
 
+        <h2 id="ota">OTA 發佈</h2>
+
+        <details>
+          <summary>ShouArchive 會代管 OTA 安裝檔案嗎?</summary>
+          <p>不會。ShouArchive 在 IPA · APK 旁邊的 <code>&lt;名稱&gt;_OTA</code> 資料夾中產生安裝頁面(<code>install.html</code>)、<code>manifest.plist</code> 和 QR 碼,<strong>只負責產生</strong>這些檔案,不代管檔案,也不提供下載連結。請把整個資料夾上傳到<strong>您自己營運的 HTTPS 伺服器</strong>(公司網站伺服器、雲端儲存的靜態代管等),並讓位置與在 App 中輸入的 IPA 網址一致。iOS 只會從 HTTPS 網址開始安裝。</p>
+        </details>
+
         <h2 id="license">價格 · 授權</h2>
 
         <details>

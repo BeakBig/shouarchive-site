@@ -126,6 +126,13 @@
           <p>A partir de Android 15, algunos dispositivos usan páginas de memoria de 16 KB y Google Play exige bibliotecas nativas compatibles con ellas. La app comprueba la alineación de los segmentos LOAD del ELF en los archivos <code>.so</code> de 64 bits (<code>arm64-v8a</code> · <code>x86_64</code>) y el límite de 16 KB de los <code>.so</code> guardados sin comprimir dentro del APK, y enumera las bibliotecas no compatibles.</p>
         </details>
 
+        <h2 id="ota">Distribución OTA</h2>
+
+        <details>
+          <summary>¿ShouArchive aloja mis archivos de instalación OTA?</summary>
+          <p>No. En una carpeta <code>&lt;nombre&gt;_OTA</code> junto a tu IPA o APK, ShouArchive escribe la página de instalación (<code>install.html</code>), el <code>manifest.plist</code> y un código QR. <strong>Solo crea</strong> estos archivos: no los aloja ni ofrece un enlace de descarga. Sube la carpeta completa a <strong>un servidor HTTPS que gestiones tú</strong> (el servidor web de tu empresa, alojamiento estático en un servicio de almacenamiento en la nube, etc.) para que coincida con la dirección del IPA que indicaste en la app. iOS solo inicia la instalación desde una dirección HTTPS.</p>
+        </details>
+
         <h2 id="license">Precios · licencia</h2>
 
         <details>

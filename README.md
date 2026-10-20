@@ -28,7 +28,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `worker/` | `shouarchive.beakbig.com` 을 이 사이트로 잇는 Cloudflare Worker 와 배포 설명 |
 | `tools/localize-nav.py` | 모든 페이지의 6개 언어 전환 메뉴 · 헤더 · 푸터 링크 · `hreflang` 을 다시 맞추는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
 | `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크 · Paddle 공개 설정 · 판매자 정보의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
-| `tools/mail-links.py` | 모든 페이지의 support 메일 링크에 제목(제목이 없으면 언어별 「[ShouArchive] 문의」, 있으면 「[ShouArchive] …」 모양)과 본문 맨 아래 「보낸 페이지: 주소」 를 붙이는 스크립트 — 받은 메일만 보고 어느 페이지에서 왔는지 안다. 메일 링크를 더하거나 페이지를 고치면 다시 실행(여러 번 돌려도 같다) |
+| `tools/mail-links.py` | 모든 페이지의 support 메일 링크에 제목 「[ShouArchive][<페이지 코드>] <제목>」(제목이 없으면 언어별 「문의」 — 앱의 문의 메일 `[ShouArchive][이슈] …` 과 같은 모양)과 본문 맨 아래 「보낸 페이지: 주소 (코드)」 를 붙이는 스크립트. 페이지 코드(언어 무관, 메일 필터가 쓴다): `W-HOME` 홈 · `W-PRICE` 가격 · `W-DL` 다운로드 · `W-SUP` 지원 · `W-PRIV` 개인정보 · `W-TERMS` 약관 · `W-REFUND` 환불 · `W-BUY` 구매 · `W-ACT` 앱에서 등록 · `W-KEY` 키 다시 받기 · `W-ROTATE` 키 바꾸기. 메일 링크를 더하거나 페이지를 고치면 다시 실행(여러 번 돌려도 같다) |
 | `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 11개 페이지 구조 · 링크 · 번역 누락 · 가격 키 · Paddle 설정 · 25 MiB 한도 |
 
 ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Mac App Store 판은 출시하지 않고 제출을 거둬들임). 그래서 `pricing.json` 에는 `appstore.*` 키가 없습니다. 다른 5개 언어 페이지는 새 한국어판으로 다시 번역하기 전까지 `appstore.*` 를 가리키므로 `fill-pricing.py` 가 그 자리를 「pricing.json 에 없는 키」로 알리고 코드 1 로 끝납니다 — 번역을 마치면 사라집니다.

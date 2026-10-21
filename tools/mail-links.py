@@ -16,7 +16,7 @@ import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://shouarchive.beakbig.com"
-ADDRESS = "support@beakbig.com"
+ADDRESS = "support@shouarchive.beakbig.com"
 LANGS = ["en", "es", "ja", "zh-Hans", "zh-Hant"]  # 한국어는 루트
 # 페이지 코드 — 정해진 값이다(메일 필터가 쓴다)
 PAGE_CODE = {

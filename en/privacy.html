@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — ShouArchive</title>
-  <meta name="description" content="ShouArchive Privacy Policy. No analytics, tracking or ads, and the files you inspect are read only on your Mac. License checks use only the license key, a device identifier, the Mac model and the app version, and payment is handled by Paddle as Merchant of Record.">
+  <meta name="description" content="ShouArchive Privacy Policy. No analytics, tracking or ads in the app (the site uses only cookieless visit statistics), and the files you inspect are read only on your Mac. License checks use only the license key, a device identifier, the Mac model and the app version, and payment is handled by Paddle as Merchant of Record.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Privacy Policy — ShouArchive">
-  <meta property="og:description" content="No analytics, tracking or ads · files stay on your Mac · only what license checks need.">
+  <meta property="og:description" content="No analytics, tracking or ads in the app · cookieless visit statistics only on the site · files stay on your Mac · only what license checks need.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="en_US">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
@@ -50,7 +50,7 @@
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>Summary.</strong> No analytics, no tracking, no ads, no accounts. The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. The only things that reach the seller are the <strong>license key, device identifier, Mac model and app version</strong> sent when your license is checked, the purchase email when you register, ask for your key again, change it or erase your records (Section 5), the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7), and whatever you send us yourself by support email (Section 14).</p>
+        <p><strong>Summary.</strong> The app has no analytics, no tracking, no ads and no accounts. This site uses only cookieless visit statistics (Cloudflare Web Analytics — aggregate figures that do not identify individuals) (Section 6). The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. The only things that reach the seller are the <strong>license key, device identifier, Mac model and app version</strong> sent when your license is checked, the purchase email when you register, ask for your key again, change it or erase your records (Section 5), the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7), and whatever you send us yourself by support email (Section 14).</p>
       </div>
 
       <h2>1. What we don't collect</h2>
@@ -74,7 +74,7 @@
           <tr><td>Google Play uploads and store releases</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Authentication requests signed with your service account key, plus the AAB, APK, store listing and screenshots you choose</td></tr>
           <tr><td>Building, app upload, device install</td><td>Wherever Apple's and Google's developer tools (<code>xcodebuild</code>, <code>gradle</code> and so on) connect</td><td>These tools communicate in their own way. Repositories that dependencies are downloaded from (Maven and so on) are included here</td></tr>
           <tr><td>License activation, checks and deactivation; the list of registered Macs; getting your key again or changing it; starting a payment; the billing management link</td><td>The seller's license server</td><td>Section 5</td></tr>
-          <tr><td>Checking for updates</td><td>The update list the seller publishes</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else</td></tr>
+          <tr><td>Checking for updates · downloading the installer</td><td>The update list the seller publishes · the installer (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else. When you download the installer, your IP address and User-Agent are processed by Cloudflare to deliver the file.</td></tr>
         </tbody>
       </table>
       <ul>
@@ -131,7 +131,7 @@
         <li>The license server is run by the seller, <strong>Beakbig</strong> (business registration no. <span data-price="seller.reg_no">613-40-01820</span>) · contact <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a>. The server uses Workers from <strong>Cloudflare, Inc.</strong> (USA), and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare).</li>
         <li>The values sent and the license status (issued, update period, revoked) are kept <strong>for as long as the license exists</strong>. The license remains after the update period ends, so it is not deleted then. If a license is revoked because of a refund or chargeback, its records are deleted or anonymized 2 years later (for now the operator does this manually), or when you ask for deletion. Short-lived records are deleted <strong>automatically every day</strong> — access logs after 30 days, payment notification (webhook) processing records after 90 days, key delivery records after 365 days (only a hash of the recipient address is kept), unprocessed pending issuances after 7 days, records linking a payment to a Mac (payment confirmation records) after 30 days, records of deactivating other Macs after 30 days, requests to get or change a key after 1 day (only a hash of the email address is kept), and key-change confirmation links after 30 days (only a hash of the confirmation value is kept). You can erase your records yourself on the <a href="erase">Erase my data</a> page after confirming your purchase email (Section 11) — once erased, the app can no longer be used with that license, and only the payment records (transaction id, type, time) are kept for 5 years as required by the E-Commerce Act.</li>
         <li>The values stored on this server are the same as those listed in Section 5. Payment method details, card numbers and bank accounts are not stored.</li>
-        <li>The server runs on Workers from <strong>Cloudflare, Inc.</strong> (a US company) in the Cloudflare data center closest to you, and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare). Cloudflare processes the license server and this site for transport and security purposes; the seller has Cloudflare's request logging turned off and does not store IP addresses. Payment is handled by Paddle as merchant of record (Section 7).</li>
+        <li>The server runs on Workers from <strong>Cloudflare, Inc.</strong> (a US company) in the Cloudflare data center closest to you, and the database is in the Asia-Pacific region (the exact location within that region is determined by Cloudflare). Cloudflare processes the license server and this site for transport and security purposes; the seller has Cloudflare's request logging turned off and does not store IP addresses. This site uses <strong>Cloudflare Web Analytics</strong> for visit statistics — it uses no cookies, local storage or device identifiers, and keeps only aggregate figures such as page address, referrer, browser and country, so the seller cannot see records of individual visitors. Payment is handled by Paddle as merchant of record (Section 7).</li>
         <li>Every email the seller sends goes only to your purchase email address, through the email delivery service <strong>Resend, Inc.</strong> (USA). Resend receives only the recipient email address and the body of the email, which may contain the license key, a confirmation link, or the model and registration time of a newly registered Mac. The emails we send: license key · key resend · key-change confirmation · new key · new-Mac registration alert · renewal payment notice · 7-days-before-renewal notice · advance notice of a renewal price change · data erasure confirmation · purchase-email change alert (to the previous address). We send no marketing email.</li>
         <li>To download the records stored on the license server or ask for them to be deleted, contact us as described in Section 11.</li>
       </ul>
@@ -142,7 +142,7 @@
         <li><strong>What Paddle collects and processes</strong> — name, address, email address, payment method details and payment history, billing address, tax number, IP address, location, device and browser information, consent records and so on. These are processed under the <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle Privacy Policy</a>, and Paddle keeps transaction data for 5 years to meet legal obligations.</li>
         <li><strong>What is passed to the seller (me)</strong> — the buyer's name, address and email address, purchase history, and the transaction analytics visible in the dashboard. Full card numbers and security codes are not passed on. No special categories of sensitive data are shared.</li>
         <li>The seller and Paddle are each <strong>independent data controllers</strong> for this data. The seller uses the information received only to issue licenses, confirm payments and respond to customer inquiries, and for no other purpose.</li>
-        <li><strong>Paddle's script on the checkout page</strong> — this site's checkout page loads Paddle's payment script (Paddle.js) to open the payment window. While it runs, Paddle processes browser and device information and your IP address under its own privacy policy. The seller places no other scripts, cookies or analytics tools on this site, and Paddle's script is not loaded unless you open the checkout page.</li>
+        <li><strong>Paddle's script on the checkout page</strong> — this site's checkout page loads Paddle's payment script (Paddle.js) to open the payment window. While it runs, Paddle processes browser and device information and your IP address under its own privacy policy. Apart from a cookieless visit statistics script (Cloudflare Web Analytics, Section 6), the seller places no other scripts, and no cookies, advertising or tracking tools, on this site, and Paddle's script is not loaded unless you open the checkout page.</li>
         <li>For a refund, send your payment email and order number to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Refund%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a> and the seller requests it from Paddle. Questions about the payment itself, such as receipts and tax, are also handled by Paddle's customer support. Refund terms are described in the <a href="refund">Refund Policy</a>.</li>
         <li>The seller terms under which Paddle acts also apply: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle Terms of Service</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle Buyer Terms</a>.</li>
       </ul>
@@ -155,7 +155,7 @@
       <p>There are no other third-party SDKs that communicate over the network.</p>
 
       <h2>9. Sharing and sale</h2>
-      <p>The only parties the seller shares personal information with are the license server (Cloudflare) and key delivery service (Resend) in Section 6 and Paddle in Section 7; it is not sold or handed to any other third party. Communication with Apple and Google described in Section 3 happens at your request, using your own accounts and keys.</p>
+      <p>The only parties the seller shares personal information with are the license server (Cloudflare) and key delivery service (Resend) in Section 6 and Paddle in Section 7; it is not sold or handed to any other third party. Communication with Apple and Google described in Section 3 happens at your request, using your own accounts and keys. The app installer (DMG) is downloaded from Cloudflare R2, and the seller does not collect download records.</p>
 
       <h2>10. Children</h2>
       <p>ShouArchive is a tool for software developers and is not directed at children. We do not knowingly collect personal information from anyone under 14.</p>
@@ -173,7 +173,7 @@
 
       <h2>12. International transfers</h2>
       <ul>
-        <li><strong>Recipients and countries</strong> — license records are processed by <strong>Cloudflare, Inc.</strong> (USA), payment information by <strong>Paddle</strong> (UK and USA, Section 7), and key delivery emails by <strong>Resend, Inc.</strong> (USA).</li>
+        <li><strong>Recipients and countries</strong> — license records are processed by <strong>Cloudflare, Inc.</strong> (USA), payment information by <strong>Paddle</strong> (UK and USA, Section 7), and key delivery emails by <strong>Resend, Inc.</strong> (USA). Installer downloads go through Cloudflare R2 (Cloudflare, Inc., USA), and site visit statistics are also processed by Cloudflare.</li>
         <li><strong>Storage location</strong> — license records are stored in a database in the Asia-Pacific region (<strong>Cloudflare D1</strong>), and requests are processed in the Cloudflare data center closest to you.</li>
         <li><strong>When and how</strong> — sent over the network when you activate, when your license is checked, when you view the registered Macs, when you ask for your key again or change it, when you erase your data, when you start a payment (purchase or renewal) or request the billing management link, and when any of the emails listed in Section 6 is sent to you.</li>
         <li><strong>Items, purposes and retention</strong> — as described in Sections 5 and 6.</li>
@@ -214,5 +214,6 @@
 </footer>
 
 <script src="../assets/nav.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "271a891f0ce54d0181c33ecab1e43055"}'></script>
 </body>
 </html>

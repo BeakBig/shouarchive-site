@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>개인정보 처리방침 — ShouArchive</title>
-  <meta name="description" content="ShouArchive 개인정보 처리방침. 분석 · 추적 · 광고가 없고, 검사하는 파일은 Mac 안에서만 읽습니다. 라이선스 확인에는 라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전만 쓰고, 결제는 Paddle 이 판매대행으로 처리합니다.">
+  <meta name="description" content="ShouArchive 개인정보 처리방침. 앱에는 분석 · 추적 · 광고가 없고(사이트는 쿠키 없는 방문 통계만), 검사하는 파일은 Mac 안에서만 읽습니다. 라이선스 확인에는 라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전만 쓰고, 결제는 Paddle 이 판매대행으로 처리합니다.">
   <meta name="theme-color" content="#1B1B3A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="개인정보 처리방침 — ShouArchive">
-  <meta property="og:description" content="분석 · 추적 · 광고 없음 · 파일은 Mac 안에서만 · 라이선스 확인에 필요한 값만.">
+  <meta property="og:description" content="앱에 분석 · 추적 · 광고 없음 · 사이트는 쿠키 없는 방문 통계만 · 파일은 Mac 안에서만 · 라이선스 확인에 필요한 값만.">
   <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
   <meta property="og:locale" content="ko_KR">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
@@ -50,7 +50,7 @@
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>요약.</strong> 분석 도구 · 추적 · 광고 · 계정이 없습니다. 검사하는 파일은 Mac 안에서만 읽습니다. App Store Connect · Google Play 기능은 사용자가 직접 등록한 키로 Apple · Google 에 바로 접속합니다. 판매자에게 오는 것은 라이선스를 확인할 때의 <strong>라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전</strong>, 키를 등록하거나 다시 받거나 바꾸거나 기록을 지울 때의 구매 이메일(5항), 결제를 판매대행하는 <strong>Paddle</strong> 이 넘겨주는 구매 정보(7항), 그리고 문의 메일로 직접 보내 주신 내용(14항)뿐입니다.</p>
+        <p><strong>요약.</strong> 앱에는 분석 도구 · 추적 · 광고 · 계정이 없습니다. 이 사이트는 쿠키 없는 방문 통계(Cloudflare Web Analytics — 개인을 식별하지 않는 집계 수치)만 씁니다(6항). 검사하는 파일은 Mac 안에서만 읽습니다. App Store Connect · Google Play 기능은 사용자가 직접 등록한 키로 Apple · Google 에 바로 접속합니다. 판매자에게 오는 것은 라이선스를 확인할 때의 <strong>라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전</strong>, 키를 등록하거나 다시 받거나 바꾸거나 기록을 지울 때의 구매 이메일(5항), 결제를 판매대행하는 <strong>Paddle</strong> 이 넘겨주는 구매 정보(7항), 그리고 문의 메일로 직접 보내 주신 내용(14항)뿐입니다.</p>
       </div>
 
       <h2>1. 수집하지 않는 것</h2>
@@ -74,7 +74,7 @@
           <tr><td>Google Play 업로드 · 스토어 배포</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>서비스 계정 키로 서명한 인증 요청과, 사용자가 고른 AAB · APK · 스토어 정보 · 스크린샷</td></tr>
           <tr><td>빌드 · 앱 업로드 · 기기 설치</td><td>Apple · Google 의 개발 도구(<code>xcodebuild</code> · <code>gradle</code> 등)가 접속하는 곳</td><td>이 도구들이 각자의 방식으로 통신합니다. 의존성을 내려받는 저장소(Maven 등)도 여기에 포함됩니다</td></tr>
           <tr><td>라이선스 활성화 · 확인 · 해제, 등록된 Mac 목록, 키 다시 받기 · 키 바꾸기, 결제 시작 · 결제 관리 링크</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
-          <tr><td>업데이트 확인</td><td>판매자가 올려 두는 업데이트 목록</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다</td></tr>
+          <tr><td>업데이트 확인 · 설치 파일 내려받기</td><td>판매자가 올려 두는 업데이트 목록 · 설치 파일(<code>download.beakbig.com</code>, Cloudflare R2)</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다. 설치 파일을 내려받을 때는 IP 주소와 User-Agent 가 전송 목적으로 Cloudflare 에 처리됩니다.</td></tr>
         </tbody>
       </table>
       <ul>
@@ -131,7 +131,7 @@
         <li>라이선스 서버는 판매자 <strong>비그빅(Beakbig)</strong>(사업자등록번호 <span data-price="seller.reg_no">613-40-01820</span>) · 연락처 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a>가 운영합니다. 서버는 <strong>Cloudflare, Inc.</strong>(미국)의 Workers 를 쓰고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다.</li>
         <li>보내는 값과 라이선스 상태(발급 · 업데이트 기간 · 해지)는 <strong>라이선스가 있는 동안</strong> 보관합니다. 업데이트 기간이 끝나도 라이선스는 남으므로 지우지 않습니다. 환불 · 지불 거절(chargeback)로 라이선스가 해지되면 그로부터 2년 뒤에 지우거나 익명화하고(지금은 운영자가 직접 처리합니다), 삭제를 요청하시면 그때 지웁니다. 기간이 짧은 기록은 <strong>매일 자동으로</strong> 지웁니다 — 접근 기록 30일, 결제 알림(웹훅) 처리 기록 90일, 키 발송 기록 365일(받는 주소는 해시만 보관), 처리되지 않은 발급 대기 7일, 결제와 Mac 을 잇는 결제 확인 기록 30일, 다른 Mac 해제 기록 30일, 키 다시 받기 · 키 바꾸기 요청 기록 1일(이메일은 해시만 보관), 키 바꾸기 확인 링크 기록 30일(확인 값은 해시만 보관). 삭제는 <a href="erase">개인정보 삭제</a> 페이지에서 구매 이메일 확인을 거쳐 직접 할 수 있습니다(11항) — 삭제하면 그 라이선스로는 앱을 쓸 수 없고, 결제 기록(거래 id · 종류 · 시각)만 전자상거래법에 따라 5년 보관합니다.</li>
         <li>이 서버에 저장되는 값은 5항에 적은 것과 같습니다. 결제 수단 정보, 카드 번호, 은행 계좌는 저장되지 않습니다.</li>
-        <li>서버는 <strong>Cloudflare, Inc.</strong>(미국 회사)의 Workers 로 이용자와 가까운 Cloudflare 데이터센터에서 실행되고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다. 라이선스 서버와 이 사이트는 Cloudflare 가 전송 · 보안 목적으로 처리하며, 판매자는 Cloudflare 의 요청 로그를 끄고 IP 주소를 저장하지 않습니다. 결제는 Paddle 이 판매대행으로 처리합니다(7항).</li>
+        <li>서버는 <strong>Cloudflare, Inc.</strong>(미국 회사)의 Workers 로 이용자와 가까운 Cloudflare 데이터센터에서 실행되고, 데이터베이스는 아시아 · 태평양 지역(그 지역 안의 실제 위치는 Cloudflare 가 정함)에 있습니다. 라이선스 서버와 이 사이트는 Cloudflare 가 전송 · 보안 목적으로 처리하며, 판매자는 Cloudflare 의 요청 로그를 끄고 IP 주소를 저장하지 않습니다. 이 사이트는 방문 통계로 <strong>Cloudflare Web Analytics</strong> 를 씁니다 — 쿠키 · 로컬 저장소 · 기기 식별값을 쓰지 않고, 페이지 주소 · 유입 경로 · 브라우저 · 나라 같은 집계 수치만 남아 판매자는 방문자 한 사람 한 사람의 기록을 볼 수 없습니다. 결제는 Paddle 이 판매대행으로 처리합니다(7항).</li>
         <li>판매자가 보내는 메일은 모두 구매 이메일로만 가고, 이메일 발송 서비스 <strong>Resend, Inc.</strong>(미국)를 통해 보냅니다. Resend 에는 받는 이메일 주소와 메일 본문만 넘깁니다 — 본문에는 라이선스 키, 확인 링크, 새로 등록된 Mac 의 모델명과 등록 시각이 들어갈 수 있습니다. 보내는 메일의 종류: 라이선스 키 · 키 다시 받기 · 키 바꾸기 확인 · 새 키 · 새 Mac 등록 알림 · 갱신 결제 안내 · 갱신 7일 전 안내 · 갱신 요금 변경 예고 · 개인정보 삭제 확인 · 구매 이메일 변경 알림(옛 주소로). 마케팅 메일은 보내지 않습니다.</li>
         <li>라이선스 서버에 저장된 내역을 직접 내려받거나 삭제를 요청하려면 11항의 방법으로 알려 주세요.</li>
       </ul>
@@ -142,7 +142,7 @@
         <li><strong>Paddle이 수집 · 처리하는 것</strong> — 이름, 주소, 이메일 주소, 결제 수단 정보와 결제 내역, 청구 주소, 세금 번호, IP 주소, 위치 정보, 기기 · 브라우저 정보, 동의 기록 등. 이는 <a href="https://www.paddle.com/legal/privacy" rel="noopener" target="_blank">Paddle 개인정보 처리방침</a>에 따라 처리되며, Paddle 은 법적 의무를 위해 거래 데이터를 5년 보관합니다.</li>
         <li><strong>판매자(저)에게 넘어오는 것</strong> — 구매자의 이름 · 주소 · 이메일 주소, 구매 내역, 대시보드에서 볼 수 있는 거래 분석. 카드 전체 번호와 보안 코드는 넘어오지 않습니다. 특별한 민감 정보 범주는 공유되지 않습니다.</li>
         <li>판매자와 Paddle은 이 데이터에 대해 각각 <strong>독립적인 데이터 관리 주체</strong>입니다. 판매자는 받은 정보로 라이선스 발급, 결제 확인과 고객 문의에 대응할 뿐 다른 목적으로 쓰지 않습니다.</li>
-        <li><strong>결제 페이지의 Paddle 스크립트</strong> — 이 사이트의 구매 페이지는 Paddle 의 결제 스크립트(Paddle.js)를 불러와 결제 창을 엽니다. 그 동안 Paddle 이 브라우저 · 기기 정보와 IP 주소를 자기 처리방침에 따라 처리합니다. 판매자는 이 사이트에 그 밖의 스크립트 · 쿠키 · 분석 도구를 두지 않으며, 구매 페이지를 열지 않으면 Paddle 스크립트는 불러오지 않습니다.</li>
+        <li><strong>결제 페이지의 Paddle 스크립트</strong> — 이 사이트의 구매 페이지는 Paddle 의 결제 스크립트(Paddle.js)를 불러와 결제 창을 엽니다. 그 동안 Paddle 이 브라우저 · 기기 정보와 IP 주소를 자기 처리방침에 따라 처리합니다. 판매자는 이 사이트에 그 밖에는 쿠키 없는 방문 통계 스크립트(Cloudflare Web Analytics, 6항)만 두고 쿠키 · 광고 · 추적 도구는 두지 않으며, 구매 페이지를 열지 않으면 Paddle 스크립트는 불러오지 않습니다.</li>
         <li>환불 요청은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%ED%99%98%EB%B6%88%20%EC%9A%94%EC%B2%AD&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a> 으로 결제 이메일과 주문 번호를 보내 주시면 판매자가 Paddle 에 요청합니다. 영수증 · 세금 등 결제 자체에 관한 문의는 Paddle 의 고객 지원 창구에서도 받습니다. 환불 기준은 <a href="refund">환불 정책</a>에 적어 두었습니다.</li>
         <li>Paddle이 대행하는 판매자 약관도 함께 적용됩니다: <a href="https://www.paddle.com/legal/terms" rel="noopener" target="_blank">Paddle 이용약관</a>, <a href="https://www.paddle.com/legal/buyer-terms" rel="noopener" target="_blank">Paddle 구매자 약관</a>.</li>
       </ul>
@@ -155,7 +155,7 @@
       <p>그 밖에 네트워크와 통신하는 제3자 SDK 는 없습니다.</p>
 
       <h2>9. 공유와 판매</h2>
-      <p>판매자가 개인정보를 나누는 대상은 6항의 라이선스 서버(Cloudflare) · 키 발송 서비스(Resend)와 7항의 Paddle뿐이며, 그 밖의 제3자에게 팔거나 넘기지 않습니다. 3항에 적은 Apple · Google 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다.</p>
+      <p>판매자가 개인정보를 나누는 대상은 6항의 라이선스 서버(Cloudflare) · 키 발송 서비스(Resend)와 7항의 Paddle뿐이며, 그 밖의 제3자에게 팔거나 넘기지 않습니다. 3항에 적은 Apple · Google 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다. 앱 설치 파일(DMG)은 Cloudflare R2 에서 내려받으며, 판매자는 다운로드 기록을 따로 모으지 않습니다.</p>
 
       <h2>10. 아동</h2>
       <p>ShouArchive 는 소프트웨어 개발자를 위한 도구이며 아동을 대상으로 하지 않습니다. 만 14세 미만의 개인정보를 알면서 수집하지 않습니다.</p>
@@ -173,7 +173,7 @@
 
       <h2>12. 국외 이전</h2>
       <ul>
-        <li><strong>받는 곳과 나라</strong> — 라이선스 기록은 <strong>Cloudflare, Inc.</strong>(미국)로, 결제 정보는 <strong>Paddle</strong>(영국 · 미국, 7항)로, 키 발송 메일은 <strong>Resend, Inc.</strong>(미국)로 처리됩니다.</li>
+        <li><strong>받는 곳과 나라</strong> — 라이선스 기록은 <strong>Cloudflare, Inc.</strong>(미국)로, 결제 정보는 <strong>Paddle</strong>(영국 · 미국, 7항)로, 키 발송 메일은 <strong>Resend, Inc.</strong>(미국)로 처리됩니다. 설치 파일 내려받기는 Cloudflare R2(Cloudflare, Inc., 미국)를 거치고, 사이트 방문 통계도 Cloudflare 가 처리합니다.</li>
         <li><strong>저장 위치</strong> — 라이선스 기록은 아시아 · 태평양 지역의 데이터베이스(<strong>Cloudflare D1</strong>)에 저장되고, 요청은 이용자와 가까운 Cloudflare 데이터센터에서 처리됩니다.</li>
         <li><strong>언제 · 어떻게</strong> — 활성화 · 라이선스 확인 · 등록된 Mac 목록 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제 · 결제(구매 · 갱신) · 결제 관리 링크를 요청할 때, 그리고 6항에 적은 메일을 보낼 때 네트워크로 보냅니다.</li>
         <li><strong>항목 · 목적 · 보관 기간</strong> — 5항과 6항에 적은 것과 같습니다.</li>
@@ -214,5 +214,6 @@
 </footer>
 
 <script src="assets/nav.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "271a891f0ce54d0181c33ecab1e43055"}'></script>
 </body>
 </html>

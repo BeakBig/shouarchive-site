@@ -7,11 +7,15 @@
   - 사이트 안 상대 링크: `pricing`, `./`(홈), `./#features`, 다른 언어는 `../en/pricing` · `../en/`
   - canonical · hreflang: 절대 주소 https://shouarchive.beakbig.com/en/pricing (한국어는 /pricing, 홈은 /en/ · /)
   - 언어 전환 스크립트는 인라인 대신 assets/nav.js (루트 _headers 의 CSP 가 인라인 스크립트를 막는다)
+  - 방문 통계(Cloudflare Web Analytics) 비컨은 pricing.json 의 analytics.cf_beacon_token 이 있을 때만 넣는다 (2026-10-21)
 
 페이지를 고치거나 언어를 더하면 다시 실행한다. 새 페이지를 만들면 아래 PAGES 에 추가한다.
 """
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Cloudflare Web Analytics 사이트 토큰 (tools/pricing.json 의 analytics.cf_beacon_token — 비면 비컨을 넣지 않는다)
+import json
+BEACON_TOKEN = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('analytics', {}).get('cf_beacon_token', '').strip()
 SITE = 'https://shouarchive.beakbig.com'
 LANGS = [('ko', '한국어'), ('en', 'English'), ('ja', '日本語'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'), ('es', 'Español')]
 PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
@@ -96,6 +100,10 @@ def process(lang, page):
     script = f'<script src="{up}assets/nav.js"></script>'
     if script not in s:
         s = s.replace('</body>', script + '\n</body>', 1)
+    # 5) 방문 통계 — pricing.json 의 analytics.cf_beacon_token 이 있으면 Cloudflare Web Analytics 비컨을 넣고, 비면 뺀다
+    s = re.sub(r'<script defer src="https://static\.cloudflareinsights\.com/beacon\.min\.js"[^>]*></script>\n?', '', s)
+    if BEACON_TOKEN:
+        s = s.replace('</body>', f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{{"token": "{BEACON_TOKEN}"}}\'></script>\n</body>', 1)
     open(p, 'w', encoding='utf-8').write(s)
     return True
 

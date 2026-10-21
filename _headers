@@ -10,9 +10,11 @@
 #     API checkout-service.paddle.com 등 *.paddle.com, 스타일은 오버레이가 인라인으로 넣으므로 'unsafe-inline'.
 #   - connect-src 의 license.beakbig.com 은 라이선스 서버(결제 만들기 · 키 받기 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제).
 #   - 라이선스 서버 주소(pricing.json 의 paddle.license_api)를 바꾸면 여기 connect-src 도 같이 고친다.
+#   - 방문 통계 Cloudflare Web Analytics(2026-10-21): 비컨 스크립트 static.cloudflareinsights.com · 보고 cloudflareinsights.com/cdn-cgi/rum.
+#     비컨은 pricing.json 의 analytics.cf_beacon_token 이 있을 때만 localize-nav.py 가 페이지에 넣는다.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com; connect-src 'self' https://license.beakbig.com https://*.paddle.com; img-src 'self' data: https://*.paddle.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com; connect-src 'self' https://cloudflareinsights.com https://license.beakbig.com https://*.paddle.com; img-src 'self' data: https://*.paddle.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'

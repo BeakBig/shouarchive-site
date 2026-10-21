@@ -3,7 +3,7 @@
 ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지입니다. 순수 정적 HTML/CSS 이고 빌드 단계가 없습니다.
 
 - 공개 주소: https://shouarchive.beakbig.com/ — Cloudflare 에서 이 저장소를 서브도메인에 연결해 서비스 중 (`.html` 주소는 확장자 없는 주소로 307 리다이렉트되므로 외부에 알릴 때는 `/support`, `/privacy` 처럼 확장자 없이. **사이트 안 링크 · `canonical` · `hreflang` 도 전부 확장자 없는 주소**다 — 2026-10-20 통일, `check-site.py` 가 `.html` 링크를 잡는다)
-- 원본(GitHub Pages): https://beakbig.github.io/shouarchive-site/ (`main` 브랜치 루트, Worker 배포 전에도 이 주소는 열립니다)
+- 원본(GitHub Pages): https://beakbig.github.io/shouarchive-site/ (`deploy` 브랜치 루트, Worker 배포 전에도 이 주소는 열립니다)
 - 저장소: `BeakBig/shouarchive-site` (공개)
 
 ## 구성
@@ -232,7 +232,7 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
 git add -A && git commit -m "..." && git push
 ```
 
-푸시하면 Cloudflare 빌드가 `npx wrangler deploy` 로 1분 안팎에 shouarchive.beakbig.com 에 올립니다 (GitHub Pages 원본에도 1분 안팎).
+**`deploy` 브랜치에 푸시하면** Cloudflare 빌드가 `npx wrangler deploy` 로 1분 안팎에 shouarchive.beakbig.com 에 올립니다 (GitHub Pages 원본에도 1분 안팎). 다른 브랜치(`release/*` 등)는 공개되지 않으니, 공개할 때 `deploy` 에 병합합니다. 공개 브랜치 이름은 2026-10-21 에 `main` → `deploy` 로 바꿨습니다 — Cloudflare 대시보드의 빌드 브랜치도 `deploy` 여야 합니다.
 
 ### 주의 — 배포 구조와 빌드가 실패했던 일
 

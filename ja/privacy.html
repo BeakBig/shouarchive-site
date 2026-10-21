@@ -74,7 +74,7 @@
           <tr><td>Google Play へのアップロード・ストア配信</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>サービスアカウントキーで署名した認証リクエストと、ユーザーが選んだ AAB · APK・ストア情報・スクリーンショット</td></tr>
           <tr><td>ビルド・アプリのアップロード・端末へのインストール</td><td>Apple・Google の開発ツール（<code>xcodebuild</code> · <code>gradle</code> など）が接続する先</td><td>これらのツールがそれぞれの方法で通信します。依存関係をダウンロードするリポジトリ（Maven など）もここに含まれます</td></tr>
           <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送・変更、決済の開始・お支払い管理リンク</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
-          <tr><td>アップデートの確認</td><td>販売者が公開しているアップデート一覧</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません</td></tr>
+          <tr><td>アップデートの確認・インストーラーのダウンロード</td><td>販売者が公開しているアップデート一覧・インストーラー（<code>download.beakbig.com</code>、Cloudflare R2）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません。インストーラーをダウンロードするときは、IP アドレスと User-Agent が配信のために Cloudflare で処理されます。</td></tr>
         </tbody>
       </table>
       <ul>
@@ -155,7 +155,7 @@
       <p>そのほかに、ネットワークと通信するサードパーティの SDK はありません。</p>
 
       <h2>9. 共有と販売</h2>
-      <p>販売者が個人情報を共有する相手は、第 6 項のライセンスサーバー（Cloudflare）・キー送付サービス（Resend）と、第 7 項の Paddle だけであり、それ以外の第三者に販売したり提供したりすることはありません。第 3 項に記載した Apple・Google との通信は、ユーザーのリクエストにより、ユーザーのアカウントとキーを使って行われます。</p>
+      <p>販売者が個人情報を共有する相手は、第 6 項のライセンスサーバー（Cloudflare）・キー送付サービス（Resend）と、第 7 項の Paddle だけであり、それ以外の第三者に販売したり提供したりすることはありません。第 3 項に記載した Apple・Google との通信は、ユーザーのリクエストにより、ユーザーのアカウントとキーを使って行われます。アプリのインストーラー（DMG）は Cloudflare R2 からダウンロードされ、販売者はダウンロード記録を別途収集しません。</p>
 
       <h2>10. 子ども</h2>
       <p>ShouArchive はソフトウェア開発者向けのツールであり、子どもを対象としていません。14 歳未満の個人情報を、それと知りながら収集することはありません。</p>
@@ -173,7 +173,7 @@
 
       <h2>12. 国外移転</h2>
       <ul>
-        <li><strong>移転先と国</strong> — ライセンスの記録は <strong>Cloudflare, Inc.</strong>（米国）で、決済情報は <strong>Paddle</strong>（英国・米国、第 7 項）で、キー送付のメールは <strong>Resend, Inc.</strong>（米国）で処理されます。</li>
+        <li><strong>移転先と国</strong> — ライセンスの記録は <strong>Cloudflare, Inc.</strong>（米国）で、決済情報は <strong>Paddle</strong>（英国・米国、第 7 項）で、キー送付のメールは <strong>Resend, Inc.</strong>（米国）で処理されます。インストーラーのダウンロードは Cloudflare R2（Cloudflare, Inc.、米国）を経由します。</li>
         <li><strong>保存場所</strong> — ライセンスの記録はアジア太平洋地域のデータベース（<strong>Cloudflare D1</strong>）に保存され、リクエストはユーザーに近い Cloudflare データセンターで処理されます。</li>
         <li><strong>時期・方法</strong> — 有効化・ライセンスの確認・登録済み Mac の一覧・キーの再送・キーの変更・個人情報の削除・決済（購入・更新）・お支払い管理リンクを依頼するとき、および第 6 項に記載したメールを送付するときに、ネットワーク経由で送信します。</li>
         <li><strong>項目・目的・保管期間</strong> — 第 5 項と第 6 項に記載したものと同じです。</li>

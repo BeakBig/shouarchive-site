@@ -74,7 +74,7 @@
           <tr><td>Subida y publicación en Google Play</td><td>API de Google Play Developer (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Solicitudes de autenticación firmadas con la clave de la cuenta de servicio y los AAB, APK, fichas de la tienda y capturas de pantalla que eliges</td></tr>
           <tr><td>Compilación · subida de apps · instalación en dispositivos</td><td>Los destinos a los que se conectan las herramientas de desarrollo de Apple y Google (<code>xcodebuild</code> · <code>gradle</code>, etc.)</td><td>Cada herramienta se comunica a su manera. Aquí se incluyen también los repositorios de los que se descargan dependencias (Maven, etc.)</td></tr>
           <tr><td>Activación, comprobación y desactivación de la licencia; lista de Mac registrados; volver a recibir o cambiar la clave; inicio del pago · enlace de gestión del pago</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
-          <tr><td>Búsqueda de actualizaciones</td><td>La lista de actualizaciones que publica el vendedor</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor</td></tr>
+          <tr><td>Búsqueda de actualizaciones · descarga del instalador</td><td>La lista de actualizaciones que publica el vendedor · el instalador (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor. Al descargar el instalador, Cloudflare procesa tu dirección IP y tu User-Agent para entregar el archivo.</td></tr>
         </tbody>
       </table>
       <ul>
@@ -155,7 +155,7 @@
       <p>No hay ningún otro SDK de terceros que se comunique por la red.</p>
 
       <h2>9. Compartición y venta</h2>
-      <p>Los únicos con quienes el vendedor comparte datos personales son el servidor de licencias (Cloudflare) y el servicio de envío de claves (Resend) de la sección 6 y Paddle de la sección 7; no se venden ni se ceden a ningún otro tercero. La comunicación con Apple y Google descrita en la sección 3 se produce a petición tuya, con tu propia cuenta y tus propias claves.</p>
+      <p>Los únicos con quienes el vendedor comparte datos personales son el servidor de licencias (Cloudflare) y el servicio de envío de claves (Resend) de la sección 6 y Paddle de la sección 7; no se venden ni se ceden a ningún otro tercero. La comunicación con Apple y Google descrita en la sección 3 se produce a petición tuya, con tu propia cuenta y tus propias claves. El instalador de la app (DMG) se descarga desde Cloudflare R2, y el vendedor no recopila registros de descarga.</p>
 
       <h2>10. Menores</h2>
       <p>ShouArchive es una herramienta para desarrolladores de software y no está dirigida a menores. No recopilamos a sabiendas datos personales de menores de 14 años.</p>
@@ -173,7 +173,7 @@
 
       <h2>12. Transferencias internacionales</h2>
       <ul>
-        <li><strong>Destino y país</strong> — los registros de licencia se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), la información de pago en <strong>Paddle</strong> (Reino Unido · Estados Unidos, sección 7) y los correos de envío de claves en <strong>Resend, Inc.</strong> (Estados Unidos).</li>
+        <li><strong>Destino y país</strong> — los registros de licencia se tratan en <strong>Cloudflare, Inc.</strong> (Estados Unidos), la información de pago en <strong>Paddle</strong> (Reino Unido · Estados Unidos, sección 7) y los correos de envío de claves en <strong>Resend, Inc.</strong> (Estados Unidos). Las descargas del instalador pasan por Cloudflare R2 (Cloudflare, Inc., EE. UU.).</li>
         <li><strong>Ubicación del almacenamiento</strong> — los registros de licencia se guardan en la base de datos de la región Asia-Pacífico (<strong>Cloudflare D1</strong>), y las solicitudes se procesan en el centro de datos de Cloudflare más cercano a la persona usuaria.</li>
         <li><strong>Cuándo y cómo</strong> — se envían por la red al activar la licencia, al comprobarla, al consultar los Mac registrados, al pedir de nuevo la clave o cambiarla, al eliminar tus datos personales, al iniciar un pago (compra · renovación) y al solicitar el enlace de gestión del pago, así como al enviar los correos indicados en la sección 6.</li>
         <li><strong>Categorías, fines y plazos de conservación</strong> — los mismos que se indican en las secciones 5 y 6.</li>

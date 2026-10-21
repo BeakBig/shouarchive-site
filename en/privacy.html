@@ -74,7 +74,7 @@
           <tr><td>Google Play uploads and store releases</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Authentication requests signed with your service account key, plus the AAB, APK, store listing and screenshots you choose</td></tr>
           <tr><td>Building, app upload, device install</td><td>Wherever Apple's and Google's developer tools (<code>xcodebuild</code>, <code>gradle</code> and so on) connect</td><td>These tools communicate in their own way. Repositories that dependencies are downloaded from (Maven and so on) are included here</td></tr>
           <tr><td>License activation, checks and deactivation; the list of registered Macs; getting your key again or changing it; starting a payment; the billing management link</td><td>The seller's license server</td><td>Section 5</td></tr>
-          <tr><td>Checking for updates</td><td>The update list the seller publishes</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else</td></tr>
+          <tr><td>Checking for updates · downloading the installer</td><td>The update list the seller publishes · the installer (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else. When you download the installer, your IP address and User-Agent are processed by Cloudflare to deliver the file.</td></tr>
         </tbody>
       </table>
       <ul>
@@ -155,7 +155,7 @@
       <p>There are no other third-party SDKs that communicate over the network.</p>
 
       <h2>9. Sharing and sale</h2>
-      <p>The only parties the seller shares personal information with are the license server (Cloudflare) and key delivery service (Resend) in Section 6 and Paddle in Section 7; it is not sold or handed to any other third party. Communication with Apple and Google described in Section 3 happens at your request, using your own accounts and keys.</p>
+      <p>The only parties the seller shares personal information with are the license server (Cloudflare) and key delivery service (Resend) in Section 6 and Paddle in Section 7; it is not sold or handed to any other third party. Communication with Apple and Google described in Section 3 happens at your request, using your own accounts and keys. The app installer (DMG) is downloaded from Cloudflare R2, and the seller does not collect download records.</p>
 
       <h2>10. Children</h2>
       <p>ShouArchive is a tool for software developers and is not directed at children. We do not knowingly collect personal information from anyone under 14.</p>
@@ -173,7 +173,7 @@
 
       <h2>12. International transfers</h2>
       <ul>
-        <li><strong>Recipients and countries</strong> — license records are processed by <strong>Cloudflare, Inc.</strong> (USA), payment information by <strong>Paddle</strong> (UK and USA, Section 7), and key delivery emails by <strong>Resend, Inc.</strong> (USA).</li>
+        <li><strong>Recipients and countries</strong> — license records are processed by <strong>Cloudflare, Inc.</strong> (USA), payment information by <strong>Paddle</strong> (UK and USA, Section 7), and key delivery emails by <strong>Resend, Inc.</strong> (USA). Installer downloads go through Cloudflare R2 (Cloudflare, Inc., USA).</li>
         <li><strong>Storage location</strong> — license records are stored in a database in the Asia-Pacific region (<strong>Cloudflare D1</strong>), and requests are processed in the Cloudflare data center closest to you.</li>
         <li><strong>When and how</strong> — sent over the network when you activate, when your license is checked, when you view the registered Macs, when you ask for your key again or change it, when you erase your data, when you start a payment (purchase or renewal) or request the billing management link, and when any of the emails listed in Section 6 is sent to you.</li>
         <li><strong>Items, purposes and retention</strong> — as described in Sections 5 and 6.</li>

@@ -74,7 +74,7 @@
           <tr><td>Google Play 업로드 · 스토어 배포</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>서비스 계정 키로 서명한 인증 요청과, 사용자가 고른 AAB · APK · 스토어 정보 · 스크린샷</td></tr>
           <tr><td>빌드 · 앱 업로드 · 기기 설치</td><td>Apple · Google 의 개발 도구(<code>xcodebuild</code> · <code>gradle</code> 등)가 접속하는 곳</td><td>이 도구들이 각자의 방식으로 통신합니다. 의존성을 내려받는 저장소(Maven 등)도 여기에 포함됩니다</td></tr>
           <tr><td>라이선스 활성화 · 확인 · 해제, 등록된 Mac 목록, 키 다시 받기 · 키 바꾸기, 결제 시작 · 결제 관리 링크</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
-          <tr><td>업데이트 확인</td><td>판매자가 올려 두는 업데이트 목록</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다</td></tr>
+          <tr><td>업데이트 확인 · 설치 파일 내려받기</td><td>판매자가 올려 두는 업데이트 목록 · 설치 파일(<code>download.beakbig.com</code>, Cloudflare R2)</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다. 설치 파일을 내려받을 때는 IP 주소와 User-Agent 가 전송 목적으로 Cloudflare 에 처리됩니다.</td></tr>
         </tbody>
       </table>
       <ul>
@@ -155,7 +155,7 @@
       <p>그 밖에 네트워크와 통신하는 제3자 SDK 는 없습니다.</p>
 
       <h2>9. 공유와 판매</h2>
-      <p>판매자가 개인정보를 나누는 대상은 6항의 라이선스 서버(Cloudflare) · 키 발송 서비스(Resend)와 7항의 Paddle뿐이며, 그 밖의 제3자에게 팔거나 넘기지 않습니다. 3항에 적은 Apple · Google 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다.</p>
+      <p>판매자가 개인정보를 나누는 대상은 6항의 라이선스 서버(Cloudflare) · 키 발송 서비스(Resend)와 7항의 Paddle뿐이며, 그 밖의 제3자에게 팔거나 넘기지 않습니다. 3항에 적은 Apple · Google 과의 통신은 사용자의 요청으로, 사용자의 계정과 키를 써서 이루어집니다. 앱 설치 파일(DMG)은 Cloudflare R2 에서 내려받으며, 판매자는 다운로드 기록을 따로 모으지 않습니다.</p>
 
       <h2>10. 아동</h2>
       <p>ShouArchive 는 소프트웨어 개발자를 위한 도구이며 아동을 대상으로 하지 않습니다. 만 14세 미만의 개인정보를 알면서 수집하지 않습니다.</p>
@@ -173,7 +173,7 @@
 
       <h2>12. 국외 이전</h2>
       <ul>
-        <li><strong>받는 곳과 나라</strong> — 라이선스 기록은 <strong>Cloudflare, Inc.</strong>(미국)로, 결제 정보는 <strong>Paddle</strong>(영국 · 미국, 7항)로, 키 발송 메일은 <strong>Resend, Inc.</strong>(미국)로 처리됩니다.</li>
+        <li><strong>받는 곳과 나라</strong> — 라이선스 기록은 <strong>Cloudflare, Inc.</strong>(미국)로, 결제 정보는 <strong>Paddle</strong>(영국 · 미국, 7항)로, 키 발송 메일은 <strong>Resend, Inc.</strong>(미국)로 처리됩니다. 설치 파일 내려받기는 Cloudflare R2(Cloudflare, Inc., 미국)를 거칩니다.</li>
         <li><strong>저장 위치</strong> — 라이선스 기록은 아시아 · 태평양 지역의 데이터베이스(<strong>Cloudflare D1</strong>)에 저장되고, 요청은 이용자와 가까운 Cloudflare 데이터센터에서 처리됩니다.</li>
         <li><strong>언제 · 어떻게</strong> — 활성화 · 라이선스 확인 · 등록된 Mac 목록 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제 · 결제(구매 · 갱신) · 결제 관리 링크를 요청할 때, 그리고 6항에 적은 메일을 보낼 때 네트워크로 보냅니다.</li>
         <li><strong>항목 · 목적 · 보관 기간</strong> — 5항과 6항에 적은 것과 같습니다.</li>

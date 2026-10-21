@@ -74,7 +74,7 @@
           <tr><td>Google Play 上传 · 商店分发</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>用服务账号密钥签名的身份验证请求，以及你选择的 AAB · APK · 商店信息 · 截图</td></tr>
           <tr><td>构建 · 上传应用 · 设备安装</td><td>Apple · Google 的开发工具（<code>xcodebuild</code> · <code>gradle</code> 等）所连接的地方</td><td>这些工具按各自的方式通信。下载依赖项的仓库（Maven 等）也包括在内</td></tr>
           <tr><td>许可证激活 · 验证 · 解除，已注册 Mac 列表，重新获取密钥 · 更换密钥，开始支付 · 管理付款链接</td><td>销售者的许可证服务器</td><td>第 5 项</td></tr>
-          <tr><td>检查更新</td><td>销售者发布的更新列表</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收更新列表，不发送其他值</td></tr>
+          <tr><td>检查更新 · 下载安装文件</td><td>销售者发布的更新列表 · 安装文件（<code>download.beakbig.com</code>，Cloudflare R2）</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收更新列表，不发送其他值。下载安装文件时，IP 地址和 User-Agent 会为传送文件而由 Cloudflare 处理。</td></tr>
         </tbody>
       </table>
       <ul>
@@ -155,7 +155,7 @@
       <p>除此之外，没有其他通过网络通信的第三方 SDK。</p>
 
       <h2>9. 共享与出售</h2>
-      <p>销售者共享个人信息的对象只有第 6 项所述的许可证服务器（Cloudflare）· 密钥发送服务（Resend）和第 7 项所述的 Paddle，不会出售或交给其他第三方。第 3 项所述与 Apple · Google 的通信是应你的请求、使用你自己的账户和密钥进行的。</p>
+      <p>销售者共享个人信息的对象只有第 6 项所述的许可证服务器（Cloudflare）· 密钥发送服务（Resend）和第 7 项所述的 Paddle，不会出售或交给其他第三方。第 3 项所述与 Apple · Google 的通信是应你的请求、使用你自己的账户和密钥进行的。应用安装文件（DMG）从 Cloudflare R2 下载，卖家不会另外收集下载记录。</p>
 
       <h2>10. 儿童</h2>
       <p>ShouArchive 是面向软件开发者的工具，不面向儿童。我们不会在知情的情况下收集未满 14 周岁者的个人信息。</p>
@@ -173,7 +173,7 @@
 
       <h2>12. 跨境传输</h2>
       <ul>
-        <li><strong>接收方与国家</strong> — 许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle</strong>（英国 · 美国，第 7 项）处理，密钥发送邮件由 <strong>Resend, Inc.</strong>（美国）处理。</li>
+        <li><strong>接收方与国家</strong> — 许可证记录由 <strong>Cloudflare, Inc.</strong>（美国）处理，支付信息由 <strong>Paddle</strong>（英国 · 美国，第 7 项）处理，密钥发送邮件由 <strong>Resend, Inc.</strong>（美国）处理。安装文件的下载经由 Cloudflare R2（Cloudflare, Inc.，美国）。</li>
         <li><strong>保存位置</strong> — 许可证记录保存在亚太地区的数据库（<strong>Cloudflare D1</strong>）中，请求在离用户较近的 Cloudflare 数据中心处理。</li>
         <li><strong>何时 · 如何</strong> — 在激活 · 许可证验证 · 查看已注册 Mac 列表 · 重新获取密钥 · 更换密钥 · 删除个人信息 · 开始支付（购买 · 续订）· 请求管理付款链接时，以及发送第 6 项所列邮件时，通过网络发送。</li>
         <li><strong>项目 · 目的 · 保存期限</strong> — 与第 5 项和第 6 项所列相同。</li>

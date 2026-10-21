@@ -68,7 +68,7 @@
   },
   "_analytics": "Cloudflare Web Analytics(쿠키 없는 방문 통계) 사이트 토큰 — 공개해도 되는 값. Cloudflare 대시보드 › Analytics & Logs › Web Analytics › 사이트 추가(shouarchive.beakbig.com) › 「JS 스니펫」 의 token 값. 비어 있으면 tools/localize-nav.py 가 비컨 스크립트를 넣지 않고(이미 있으면 뺀다), 채우면 모든 언어 페이지의 </body> 앞에 넣는다. 대시보드의 자동 삽입(automatic setup)은 켜지 않는다 — 두 번 세게 된다. 출처는 _headers 의 CSP(script-src static.cloudflareinsights.com · connect-src cloudflareinsights.com)에 이미 있다.",
   "analytics": {
-    "cf_beacon_token": ""
+    "cf_beacon_token": "271a891f0ce54d0181c33ecab1e43055"
   },
   "contact": {
     "email": "support@shouarchive.beakbig.com"

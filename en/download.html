@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Download</h1>
-      <p>ShouArchive is downloaded from this page as a <code>.dmg</code> file. The price is set; it has not been released yet.</p>
+      <p>ShouArchive is downloaded from this page as a <code>.dmg</code> file.<span data-if="!commercial.download" hidden> The price is set; it has not been released yet.</span><span data-if="commercial.download !commercial.checkout"> Sales have not started yet; for now you can download it and try it for <span data-price="trial_days">14</span> days.</span></p>
     </div>
   </section>
 
@@ -51,22 +51,23 @@
     <div class="wrap">
       <div class="plans">
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>Coming soon</p>
+          <p class="plan-badge soon" data-if="!commercial.download" hidden>Coming soon</p>
           <h2>ShouArchive for Mac</h2>
           <p class="plan-for">Download and try it for <span data-price="trial_days">14</span> days · if you like it, buy it for <span data-price="commercial.price">US$29</span></p>
           <ul class="plan-feats">
-            <li><strong>Installer</strong> — download it from this page as a <code>.dmg</code>. It goes up at release.</li>
+            <li><strong>Installer</strong> — download it from this page as a <code>.dmg</code>.<span data-if="!commercial.download" hidden> It goes up at release.</span></li>
             <li><strong>Trial</strong> — the <span data-price="trial_days">14</span>-day trial starts as soon as you download and open the app. No payment method needed.</li>
             <li><strong>License</strong> — after payment, enter the license key you receive by email in Settings › License. One key covers <span data-price="commercial.devices">2</span> Macs.</li>
             <li><strong>Updates</strong> — during your update period, check for and install updates inside the app. When the period ends, you keep using every version released until then.</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>Download (.dmg)</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Download (.dmg)</a>
             <a class="btn outline" href="pricing">Pricing and purchase</a>
           </div>
-          <p class="plan-foot" data-live-hide>There is no file to download yet. The file will be posted here once the release date is set. Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
-          <p class="plan-foot" data-live-show hidden>The file was signed and checked against <code>Gatekeeper</code> before it was published. If you ever cannot open the file, let us know through <a href="support">Support</a>.</p>
-          <p class="plan-foot" data-if="commercial.download_sha256" hidden>SHA-256: <code><span data-price="commercial.download_sha256">To be announced</span></code></p>
+          <p class="plan-foot" data-if="!commercial.download" hidden>There is no file to download yet. The file will be posted here once the release date is set. Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout">Sales have not started yet. For now you can download it and try it; when sales start, we will announce it on the <a href="pricing">Pricing page</a>.</p>
+          <p class="plan-foot" data-if="commercial.download">The file was signed and checked against <code>Gatekeeper</code> before it was published. If you ever cannot open the file, let us know through <a href="support">Support</a>.</p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">4360831f1d98f9ff8f10910a4016ab3fb6dc547063bdc261a65ce8e6be3761c2</span></code></p>
         </article>
 
         <article class="plan">
@@ -102,8 +103,8 @@
 
         <details>
           <summary>How can I check that the file is safe?</summary>
-          <p data-live-hide>At release, we will list the checksum (SHA-256) of the <code>.dmg</code> file on this page. After downloading, compare it with <code>shasum -a 256 ShouArchive.dmg</code>.</p>
-          <p data-live-show hidden>The <code>.dmg</code> is signed and notarized, and its checksum (SHA-256) is listed under the download button above. After downloading, compare it with <code>shasum -a 256 ShouArchive.dmg</code>.</p>
+          <p data-if="!commercial.download" hidden>At release, we will list the checksum (SHA-256) of the <code>.dmg</code> file on this page. After downloading, compare it with <code>shasum -a 256 ShouArchive-*.dmg</code>.</p>
+          <p data-if="commercial.download">The <code>.dmg</code> is signed and notarized, and its checksum (SHA-256) is listed under the download button above. After downloading, compare it with <code>shasum -a 256 ShouArchive-*.dmg</code>.</p>
         </details>
       </div>
     </div>
@@ -112,9 +113,9 @@
   <section class="cta">
     <div class="wrap">
       <h2>Get it now</h2>
-      <p data-live-hide>The file will be posted on this page once the release date is set. The price and trial terms are on the Pricing page.</p>
-      <p data-live-show hidden>Download it and try it for <span data-price="trial_days">14</span> days with no payment method.</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>Download (.dmg)</a>
+      <p data-if="!commercial.download" hidden>The file will be posted on this page once the release date is set. The price and trial terms are on the Pricing page.</p>
+      <p data-if="commercial.download">Download it and try it for <span data-price="trial_days">14</span> days with no payment method.</p>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Download (.dmg)</a>
       <a class="btn" href="pricing" data-live-hide>See pricing</a>
     </div>
   </section>

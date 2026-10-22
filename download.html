@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>다운로드</h1>
-      <p>ShouArchive 는 이 페이지에서 <code>.dmg</code> 파일로 내려받습니다. 가격은 정해졌고, 아직 출시되지 않았습니다.</p>
+      <p>ShouArchive 는 이 페이지에서 <code>.dmg</code> 파일로 내려받습니다.<span data-if="!commercial.download" hidden> 가격은 정해졌고, 아직 출시되지 않았습니다.</span><span data-if="commercial.download !commercial.checkout"> 판매는 아직 시작하지 않았고, 지금은 내려받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다.</span></p>
     </div>
   </section>
 
@@ -51,22 +51,23 @@
     <div class="wrap">
       <div class="plans">
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>출시 예정</p>
+          <p class="plan-badge soon" data-if="!commercial.download" hidden>출시 예정</p>
           <h2>ShouArchive for Mac</h2>
           <p class="plan-for">내려받아 <span data-price="trial_days">14</span>일 체험 · 마음에 들면 <span data-price="commercial.price">US$29</span> 로 구매</p>
           <ul class="plan-feats">
-            <li><strong>설치 파일</strong> — 이 페이지에서 <code>.dmg</code> 로 내려받습니다. 출시와 함께 올라갑니다.</li>
+            <li><strong>설치 파일</strong> — 이 페이지에서 <code>.dmg</code> 로 내려받습니다.<span data-if="!commercial.download" hidden> 출시와 함께 올라갑니다.</span></li>
             <li><strong>체험</strong> — 내려받아 실행하면 <span data-price="trial_days">14</span>일 체험이 바로 시작됩니다. 결제 수단은 필요 없습니다.</li>
             <li><strong>라이선스</strong> — 결제 후 이메일로 받은 라이선스 키를 설정 › 라이선스 에 넣습니다. 키 하나로 Mac <span data-price="commercial.devices">2</span>대.</li>
             <li><strong>업데이트</strong> — 업데이트 기간 동안 앱 안에서 확인하고 설치합니다. 기간이 끝나도 그때까지 나온 버전은 계속 씁니다.</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>다운로드 (.dmg)</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">다운로드 (.dmg)</a>
             <a class="btn outline" href="pricing">가격 · 구매 안내</a>
           </div>
-          <p class="plan-foot" data-live-hide>아직 내려받을 수 있는 파일이 없습니다. 출시일이 정해지면 이 자리에 파일을 올립니다. 궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a> 으로 보내 주세요.</p>
-          <p class="plan-foot" data-live-show hidden>파일 내려받기 전에 서명과 <code>Gatekeeper</code> 확인을 거쳐 공개했습니다. 파일을 열 수 없을 때가 있으면 <a href="support">지원</a> 으로 알려 주세요.</p>
-          <p class="plan-foot" data-if="commercial.download_sha256" hidden>SHA-256: <code><span data-price="commercial.download_sha256">가격 미정</span></code></p>
+          <p class="plan-foot" data-if="!commercial.download" hidden>아직 내려받을 수 있는 파일이 없습니다. 출시일이 정해지면 이 자리에 파일을 올립니다. 궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a> 으로 보내 주세요.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout">판매는 아직 시작하지 않았습니다. 지금은 내려받아 체험으로 써 볼 수 있고, 판매를 시작하면 <a href="pricing">가격 페이지</a>에 알립니다.</p>
+          <p class="plan-foot" data-if="commercial.download">파일 내려받기 전에 서명과 <code>Gatekeeper</code> 확인을 거쳐 공개했습니다. 파일을 열 수 없을 때가 있으면 <a href="support">지원</a> 으로 알려 주세요.</p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">4360831f1d98f9ff8f10910a4016ab3fb6dc547063bdc261a65ce8e6be3761c2</span></code></p>
         </article>
 
         <article class="plan">
@@ -102,8 +103,8 @@
 
         <details>
           <summary>이 파일이 안전한지 어떻게 확인하나요?</summary>
-          <p data-live-hide>출시와 함께 이 페이지에 <code>.dmg</code> 파일의 체크섬(SHA-256)을 적어 두겠습니다. 다운로드한 뒤 <code>shasum -a 256 ShouArchive.dmg</code> 로 비교하면 됩니다.</p>
-          <p data-live-show hidden><code>.dmg</code> 는 서명 · 공증을 거쳤고, 위 다운로드 단추 아래에 파일의 체크섬(SHA-256)을 적어 두었습니다. 다운로드한 뒤 <code>shasum -a 256 ShouArchive.dmg</code> 로 비교하세요.</p>
+          <p data-if="!commercial.download" hidden>출시와 함께 이 페이지에 <code>.dmg</code> 파일의 체크섬(SHA-256)을 적어 두겠습니다. 다운로드한 뒤 <code>shasum -a 256 ShouArchive-*.dmg</code> 로 비교하면 됩니다.</p>
+          <p data-if="commercial.download"><code>.dmg</code> 는 서명 · 공증을 거쳤고, 위 다운로드 단추 아래에 파일의 체크섬(SHA-256)을 적어 두었습니다. 다운로드한 뒤 <code>shasum -a 256 ShouArchive-*.dmg</code> 로 비교하세요.</p>
         </details>
       </div>
     </div>
@@ -112,9 +113,9 @@
   <section class="cta">
     <div class="wrap">
       <h2>지금 받기</h2>
-      <p data-live-hide>출시일이 정해지면 이 페이지에 파일을 올립니다. 가격과 체험 조건은 가격 페이지에 있습니다.</p>
-      <p data-live-show hidden>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요.</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>다운로드 (.dmg)</a>
+      <p data-if="!commercial.download" hidden>출시일이 정해지면 이 페이지에 파일을 올립니다. 가격과 체험 조건은 가격 페이지에 있습니다.</p>
+      <p data-if="commercial.download">내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요.</p>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">다운로드 (.dmg)</a>
       <a class="btn" href="pricing" data-live-hide>가격 보기</a>
     </div>
   </section>

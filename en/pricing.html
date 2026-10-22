@@ -62,7 +62,7 @@
             <li><strong>Buy later, pick up where you left off</strong> — enter a license key and the other features open up again</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>Download (.dmg) · <span data-price="trial_days">14</span>-day trial</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Download (.dmg) · <span data-price="trial_days">14</span>-day trial</a>
             <a class="btn outline" href="download">Download info</a>
           </div>
           <p class="plan-foot">macOS 15 Sequoia or later · both Apple Silicon and Intel Macs are supported.</p>
@@ -89,7 +89,7 @@
           <div class="plan-actions">
             <a class="btn" data-src="commercial.checkout" href="#" hidden>Buy now</a>
           </div>
-          <p class="plan-foot" data-live-hide>The price is set; the release date is not yet. As soon as it is, we will post it on this page and the <a href="download">Download page</a>. Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+          <p class="plan-foot" data-live-hide>The price is set; the release date is not yet. As soon as it is, we will post it on this page and the <a href="download">Download page</a>. <span data-if="commercial.download">You can already get it from the <a href="download">Download page</a> and try it for <span data-price="trial_days">14</span> days. </span>Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-live-show hidden>Payment is handled by <strong>Paddle</strong> as Merchant of Record. How to turn off update renewal and how refunds work are described in the <a href="refund">Refund Policy</a>.</p>
         </article>
       </div>
@@ -156,9 +156,10 @@
   <section class="cta">
     <div class="wrap">
       <h2>Get started</h2>
-      <p data-live-hide>Once it is released, download it from this page, try it for <span data-price="trial_days">14</span> days, then buy. If you'd like to hear about the release, let us know at <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+      <p data-if="!commercial.download !commercial.checkout" hidden>Once it is released, download it from this page, try it for <span data-price="trial_days">14</span> days, then buy. If you'd like to hear about the release, let us know at <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+      <p data-if="commercial.download !commercial.checkout">Download it now and try it for <span data-price="trial_days">14</span> days with no payment method. Sales have not started yet — once they do, you can buy a license on this page.</p>
       <p data-live-show hidden>Download it and try it for <span data-price="trial_days">14</span> days with no payment method. If you like it, buy a <a href="pricing">license</a> and enter the key.</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>Download (.dmg)</a>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Download (.dmg)</a>
       <a class="btn" href="download" data-live-hide>Download info</a>
     </div>
   </section>

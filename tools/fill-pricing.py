@@ -21,6 +21,9 @@
 - data-if="키":  그 키의 값이 비어 있으면(null · "") hidden 을 걸고, 채워지면 뗀다 — 다운로드 페이지의 SHA-256 줄처럼
               값이 있을 때만 뜻이 있는 줄에 쓴다. 안의 data-price 자리는 평소 규칙대로(null 이면 「미정」 문장) 채우지만
               줄이 숨겨져 있으므로 보이지 않는다.
+              키 앞에 ! 를 붙이면 반대(비어 있을 때만 보임), 공백으로 여러 개를 적으면 모두 맞을 때만 보인다 —
+              data-if="commercial.download !commercial.checkout" 은 「내려받기는 열렸고 판매는 아직」 일 때만 보인다.
+              data-live-hide / data-live-show 와 한 요소에 같이 쓰지 않는다(둘 다 hidden 을 정한다).
 - id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api 를 pricing.json 의
               paddle.environment · client_token · price_license · price_updates · license_api 로 매번 다시 쓴다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
@@ -133,13 +136,17 @@ def apply_launch(html, cfg, live):
 
 
 def apply_conditions(html, cfg, where):
-    """data-if="키" 요소 — 키의 값이 비어 있으면 hidden, 채워지면 보인다 (값이 있을 때만 뜻이 있는 줄)."""
+    """data-if="키 !키 …" 요소 — 조건이 모두 맞으면 보이고, 하나라도 어긋나면 hidden.
+    키 = 그 값이 채워져 있음, !키 = 비어 있음(null · "")."""
     def sub(m):
-        tag, path = m.group(0), m.group(1)
-        val = resolve(cfg, path, where)
-        if val is MISSING:
-            return tag
-        return set_hidden(tag, not val)
+        tag, show = m.group(0), True
+        for cond in m.group(1).split():
+            want = not cond.startswith('!')
+            val = resolve(cfg, cond.lstrip('!'), where)
+            if val is MISSING:
+                return tag
+            show = show and bool(val) == want
+        return set_hidden(tag, not show)
     return re.sub(r'<[a-z0-9]+\b[^>]*\bdata-if="([^"]+)"[^>]*>', sub, html)
 
 

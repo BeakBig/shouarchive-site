@@ -51,13 +51,14 @@
   <section class="doc">
     <div class="wrap">
       <div id="activate-ready" hidden>
-        <p>ShouArchive 打开后，会询问是否在此 Mac 上注册许可证。点按“注册”即可完成。</p>
+        <p data-mac-only>ShouArchive 打开后，会询问是否在此 Mac 上注册许可证。点按“注册”即可完成。</p>
+        <p data-not-mac hidden>您是在非 Mac 设备上打开此页面的。请在已安装 ShouArchive 的 Mac 上重新打开邮件中的链接，或在该 Mac 上的 ShouArchive 中前往“设置 › 许可证 › 输入密钥…”，输入购买时的邮箱和下面的密钥。</p>
         <p><code class="license-key" id="activate-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="activate-open" href="#">在 ShouArchive 中打开</a>
+          <a class="btn" id="activate-open" href="#" data-mac-only>在 ShouArchive 中打开</a>
           <button class="btn outline" type="button" id="activate-copy" data-done="已复制">复制密钥</button>
         </div>
-        <div class="note">
+        <div class="note" data-mac-only>
           <p><strong>应用没有打开？</strong> 请确认是在已安装 ShouArchive 的 Mac 上打开此页面。如果仍然无法打开，请在 ShouArchive 的“设置 › 许可证 › 输入密钥…”中输入购买时的邮箱和上面的密钥。还没有安装应用？请前往<a href="download">下载</a>页面获取。</p>
         </div>
       </div>

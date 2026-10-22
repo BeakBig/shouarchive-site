@@ -85,10 +85,11 @@
         <p>Register this license key in ShouArchive. The same key has also been sent to the email address you paid with.</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="license-open" href="#">Open in ShouArchive</a>
+          <a class="btn" id="license-open" href="#" data-mac-only>Open in ShouArchive</a>
           <button class="btn outline" type="button" id="license-copy" data-done="Copied">Copy key</button>
         </div>
-        <p class="price-note">Click “Open in ShouArchive” and the app opens and asks whether to register this Mac. If the app doesn’t open, go to Settings › License › Enter key… and enter the email you paid with and this key.</p>
+        <p class="price-note" data-mac-only>Click “Open in ShouArchive” and the app opens and asks whether to register this Mac. If the app doesn’t open, go to Settings › License › Enter key… and enter the email you paid with and this key.</p>
+        <p class="price-note" data-not-mac hidden>Register on the Mac where ShouArchive is installed — open the link in the email we sent on that Mac, or go to Settings › License › Enter key… and enter the email you paid with and this key.</p>
       </div>
 
       <div class="note" id="checkout-renewed" hidden>

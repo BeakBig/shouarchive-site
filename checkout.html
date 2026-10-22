@@ -85,10 +85,11 @@
         <p>이 라이선스 키를 ShouArchive 에 등록하세요. 같은 키를 결제한 이메일 주소로도 보냈습니다.</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="license-open" href="#">ShouArchive 에서 열기</a>
+          <a class="btn" id="license-open" href="#" data-mac-only>ShouArchive 에서 열기</a>
           <button class="btn outline" type="button" id="license-copy" data-done="복사했습니다">키 복사</button>
         </div>
-        <p class="price-note">「ShouArchive 에서 열기」 를 누르면 앱이 열리고 이 Mac 에 등록할지 묻습니다. 앱이 열리지 않으면 설정 › 라이선스 › 「키 입력…」 에 결제한 이메일과 이 키를 넣으세요.</p>
+        <p class="price-note" data-mac-only>「ShouArchive 에서 열기」 를 누르면 앱이 열리고 이 Mac 에 등록할지 묻습니다. 앱이 열리지 않으면 설정 › 라이선스 › 「키 입력…」 에 결제한 이메일과 이 키를 넣으세요.</p>
+        <p class="price-note" data-not-mac hidden>ShouArchive 가 설치된 Mac 에서 등록하세요 — 메일로 보낸 링크를 그 Mac 에서 누르거나, 설정 › 라이선스 › 「키 입력…」 에 결제한 이메일과 이 키를 넣으면 됩니다.</p>
       </div>
 
       <div class="note" id="checkout-renewed" hidden>

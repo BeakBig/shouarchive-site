@@ -51,13 +51,14 @@
   <section class="doc">
     <div class="wrap">
       <div id="activate-ready" hidden>
-        <p>ShouArchive が開くと、この Mac にライセンスを登録するか確認します。「登録」を押せば完了です。</p>
+        <p data-mac-only>ShouArchive が開くと、この Mac にライセンスを登録するか確認します。「登録」を押せば完了です。</p>
+        <p data-not-mac hidden>Mac 以外の端末でこのページを開いています。ShouArchive をインストールした Mac でメールのリンクをもう一度開くか、その Mac の ShouArchive の「設定 › ライセンス › キーを入力…」で購入時のメールアドレスと下のキーを入力してください。</p>
         <p><code class="license-key" id="activate-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="activate-open" href="#">ShouArchive で開く</a>
+          <a class="btn" id="activate-open" href="#" data-mac-only>ShouArchive で開く</a>
           <button class="btn outline" type="button" id="activate-copy" data-done="コピーしました">キーをコピー</button>
         </div>
-        <div class="note">
+        <div class="note" data-mac-only>
           <p><strong>アプリが開かない場合</strong> ShouArchive をインストールした Mac でこのページを開いているか確認してください。それでも開かない場合は、ShouArchive の「設定 › ライセンス › キーを入力…」で購入時のメールアドレスと上のキーを入力してください。アプリをまだお持ちでなければ<a href="download">ダウンロード</a>ページから入手できます。</p>
         </div>
       </div>

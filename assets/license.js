@@ -74,6 +74,15 @@
   /** Mac 데스크톱 브라우저인가 (iPad 는 Macintosh 로 나오지만 터치가 있다) — 여기서만 앱을 저절로 연다 */
   function isMacDesktop() { return /Macintosh/.test(navigator.userAgent) && !('ontouchend' in document); }
 
+  /** Mac 에서만 뜻이 있는 것(data-mac-only — 앱 열기 버튼 · 「이 Mac 에 등록」 안내)과 다른 기기용 안내(data-not-mac)를 고른다 */
+  function fitDevice() {
+    var mac = isMacDesktop();
+    var i, els = document.querySelectorAll('[data-mac-only]');
+    for (i = 0; i < els.length; i++) els[i].hidden = !mac;
+    els = document.querySelectorAll('[data-not-mac]');
+    for (i = 0; i < els.length; i++) els[i].hidden = mac;
+  }
+
   /** 복사 버튼 — 안 되면 키 글자를 골라 둔다 (직접 ⌘C) */
   function wireCopy(buttonId, keyId) {
     var button = byId(buttonId);
@@ -106,6 +115,7 @@
     byId(prefix + '-key').textContent = key;
     byId(prefix + '-open').href = appUrl(key);
     wireCopy(prefix + '-copy', prefix + '-key');
+    fitDevice();
   }
 
   // ------------------------------------------------------------------ 결제 페이지 (checkout.html)

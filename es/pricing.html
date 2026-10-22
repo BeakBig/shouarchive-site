@@ -62,7 +62,7 @@
             <li><strong>Compra cuando quieras</strong> — al introducir la clave de licencia, el resto de funciones se vuelve a activar</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>Descarga (.dmg) · prueba de <span data-price="trial_days">14</span> días</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Descarga (.dmg) · prueba de <span data-price="trial_days">14</span> días</a>
             <a class="btn outline" href="download">Guía de descarga</a>
           </div>
           <p class="plan-foot">macOS 15 Sequoia o posterior · compatible con Mac con Apple Silicon e Intel.</p>
@@ -89,7 +89,7 @@
           <div class="plan-actions">
             <a class="btn" data-src="commercial.checkout" href="#" hidden>Comprar</a>
           </div>
-          <p class="plan-foot" data-live-hide>El precio ya está fijado; la fecha de lanzamiento, todavía no. En cuanto se decida, la publicaremos en esta página y en la <a href="download">página de descargas</a>. Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+          <p class="plan-foot" data-live-hide>El precio ya está fijado; la fecha de lanzamiento, todavía no. En cuanto se decida, la publicaremos en esta página y en la <a href="download">página de descargas</a>. <span data-if="commercial.download">Ya puedes descargarla desde la <a href="download">página de descargas</a> y probarla <span data-price="trial_days">14</span> días. </span>Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-live-show hidden>El pago lo gestiona <strong>Paddle</strong> como revendedor autorizado (Merchant of Record). Cómo desactivar la renovación de las actualizaciones y cómo pedir un reembolso se explica en la <a href="refund">política de reembolso</a>.</p>
         </article>
       </div>
@@ -156,9 +156,10 @@
   <section class="cta">
     <div class="wrap">
       <h2>Empieza ahora</h2>
-      <p data-live-hide>Cuando se publique, descárgala desde esta página, pruébala primero <span data-price="trial_days">14</span> días y cómprala después. Si quieres saber cuándo sale, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+      <p data-if="!commercial.download !commercial.checkout" hidden>Cuando se publique, descárgala desde esta página, pruébala primero <span data-price="trial_days">14</span> días y cómprala después. Si quieres saber cuándo sale, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+      <p data-if="commercial.download !commercial.checkout">Descárgala ya y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago. Las ventas aún no han empezado: cuando empiecen, podrás comprar una licencia en esta página.</p>
       <p data-live-show hidden>Descárgala y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago. Si te convence, compra una <a href="pricing">licencia</a> e introduce la clave.</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>Descarga (.dmg)</a>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Descarga (.dmg)</a>
       <a class="btn" href="download" data-live-hide>Guía de descarga</a>
     </div>
   </section>

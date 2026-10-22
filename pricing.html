@@ -62,7 +62,7 @@
             <li><strong>나중에 사도 그대로</strong> — 라이선스 키를 넣으면 나머지 기능이 다시 열립니다</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>다운로드 (.dmg) · <span data-price="trial_days">14</span>일 체험</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">다운로드 (.dmg) · <span data-price="trial_days">14</span>일 체험</a>
             <a class="btn outline" href="download">다운로드 안내</a>
           </div>
           <p class="plan-foot">macOS 15 Sequoia 이상 · Apple Silicon 과 Intel Mac 모두 지원합니다.</p>
@@ -89,7 +89,7 @@
           <div class="plan-actions">
             <a class="btn" data-src="commercial.checkout" href="#" hidden>구매하기</a>
           </div>
-          <p class="plan-foot" data-live-hide>가격은 정해졌고, 출시일은 아직 정하지 않았습니다. 정해지는 대로 이 페이지와 <a href="download">다운로드 페이지</a> 에 올립니다. 궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
+          <p class="plan-foot" data-live-hide>가격은 정해졌고, 출시일은 아직 정하지 않았습니다. 정해지는 대로 이 페이지와 <a href="download">다운로드 페이지</a> 에 올립니다. <span data-if="commercial.download">지금도 <a href="download">다운로드 페이지</a>에서 받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다. </span>궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
           <p class="plan-foot" data-live-show hidden>결제는 <strong>Paddle</strong> 이 판매대행으로 처리합니다. 업데이트 갱신을 끄는 방법과 환불은 <a href="refund">환불 정책</a> 에 적어 두었습니다.</p>
         </article>
       </div>
@@ -156,9 +156,10 @@
   <section class="cta">
     <div class="wrap">
       <h2>지금 시작하기</h2>
-      <p data-live-hide>출시되면 이 페이지에서 내려받아 <span data-price="trial_days">14</span>일 체험으로 먼저 써 보고 사시면 됩니다. 출시 소식이 궁금하면 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
+      <p data-if="!commercial.download !commercial.checkout" hidden>출시되면 이 페이지에서 내려받아 <span data-price="trial_days">14</span>일 체험으로 먼저 써 보고 사시면 됩니다. 출시 소식이 궁금하면 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
+      <p data-if="commercial.download !commercial.checkout">지금 내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 볼 수 있습니다. 판매는 아직 시작하지 않았습니다 — 시작하면 이 페이지에서 라이선스를 살 수 있습니다.</p>
       <p data-live-show hidden>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요. 마음에 들면 <a href="pricing">라이선스</a> 를 사서 키를 넣으면 됩니다.</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>다운로드 (.dmg)</a>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">다운로드 (.dmg)</a>
       <a class="btn" href="download" data-live-hide>다운로드 안내</a>
     </div>
   </section>

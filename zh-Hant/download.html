@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>下載</h1>
-      <p>ShouArchive 會在本頁面以 <code>.dmg</code> 檔案提供下載。價格已經確定，但尚未推出。</p>
+      <p>ShouArchive 會在本頁面以 <code>.dmg</code> 檔案提供下載。<span data-if="!commercial.download" hidden>價格已經確定，但尚未推出。</span><span data-if="commercial.download !commercial.checkout">尚未開始販售，現在可以先下載並試用 <span data-price="trial_days">14</span> 天。</span></p>
     </div>
   </section>
 
@@ -51,22 +51,23 @@
     <div class="wrap">
       <div class="plans">
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>即將推出</p>
+          <p class="plan-badge soon" data-if="!commercial.download" hidden>即將推出</p>
           <h2>ShouArchive for Mac</h2>
           <p class="plan-for">下載後試用 <span data-price="trial_days">14</span> 天 · 滿意再以 <span data-price="commercial.price">US$29</span> 購買</p>
           <ul class="plan-feats">
-            <li><strong>安裝檔</strong> — 在本頁面下載 <code>.dmg</code>。會在推出時一併上架。</li>
+            <li><strong>安裝檔</strong> — 在本頁面下載 <code>.dmg</code>。<span data-if="!commercial.download" hidden>會在推出時一併上架。</span></li>
             <li><strong>試用</strong> — 下載並執行後，<span data-price="trial_days">14</span> 天試用會立即開始。不需要付款方式。</li>
             <li><strong>授權</strong> — 付款後透過電子郵件收到的授權金鑰，請輸入到「設定」›「授權」。一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac。</li>
             <li><strong>更新</strong> — 在更新期間內，於 App 內檢查並安裝。期間結束後，在那之前推出的版本仍可繼續使用。</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>下載（.dmg）</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">下載（.dmg）</a>
             <a class="btn outline" href="pricing">價格 · 購買說明</a>
           </div>
-          <p class="plan-foot" data-live-hide>目前還沒有可下載的檔案。推出日期確定後，我們會把檔案放在這個位置。有任何疑問，請寄信至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>。</p>
-          <p class="plan-foot" data-live-show hidden>檔案在開放下載之前，已經完成簽章並通過 <code>Gatekeeper</code> 檢查。若發生無法開啟檔案的情況，請告知<a href="support">支援</a>。</p>
-          <p class="plan-foot" data-if="commercial.download_sha256" hidden>SHA-256: <code><span data-price="commercial.download_sha256">價格待定</span></code></p>
+          <p class="plan-foot" data-if="!commercial.download" hidden>目前還沒有可下載的檔案。推出日期確定後，我們會把檔案放在這個位置。有任何疑問，請寄信至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>。</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout">尚未開始販售。現在可以先下載試用，開始販售時會在<a href="pricing">價格頁面</a>公布。</p>
+          <p class="plan-foot" data-if="commercial.download">檔案在開放下載之前，已經完成簽章並通過 <code>Gatekeeper</code> 檢查。若發生無法開啟檔案的情況，請告知<a href="support">支援</a>。</p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">4360831f1d98f9ff8f10910a4016ab3fb6dc547063bdc261a65ce8e6be3761c2</span></code></p>
         </article>
 
         <article class="plan">
@@ -102,8 +103,8 @@
 
         <details>
           <summary>要如何確認這個檔案是否安全？</summary>
-          <p data-live-hide>推出的同時，我們會在本頁面列出 <code>.dmg</code> 檔案的校驗碼（SHA-256）。下載之後用 <code>shasum -a 256 ShouArchive.dmg</code> 加以比對即可。</p>
-          <p data-live-show hidden><code>.dmg</code> 已經過簽章與公證，檔案的校驗碼（SHA-256）列在上方下載按鈕的下面。下載之後請用 <code>shasum -a 256 ShouArchive.dmg</code> 加以比對。</p>
+          <p data-if="!commercial.download" hidden>推出的同時，我們會在本頁面列出 <code>.dmg</code> 檔案的校驗碼（SHA-256）。下載之後用 <code>shasum -a 256 ShouArchive-*.dmg</code> 加以比對即可。</p>
+          <p data-if="commercial.download"><code>.dmg</code> 已經過簽章與公證，檔案的校驗碼（SHA-256）列在上方下載按鈕的下面。下載之後請用 <code>shasum -a 256 ShouArchive-*.dmg</code> 加以比對。</p>
         </details>
       </div>
     </div>
@@ -112,9 +113,9 @@
   <section class="cta">
     <div class="wrap">
       <h2>現在就下載</h2>
-      <p data-live-hide>推出日期確定後，我們會在本頁面放上檔案。價格與試用條件請見價格頁面。</p>
-      <p data-live-show hidden>下載後，可在 <span data-price="trial_days">14</span> 天內不需付款方式試用。</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>下載（.dmg）</a>
+      <p data-if="!commercial.download" hidden>推出日期確定後，我們會在本頁面放上檔案。價格與試用條件請見價格頁面。</p>
+      <p data-if="commercial.download">下載後，可在 <span data-price="trial_days">14</span> 天內不需付款方式試用。</p>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">下載（.dmg）</a>
       <a class="btn" href="pricing" data-live-hide>查看價格</a>
     </div>
   </section>

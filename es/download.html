@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Descargas</h1>
-      <p>ShouArchive se descarga desde esta página como archivo <code>.dmg</code>. El precio ya está fijado, pero todavía no se ha publicado.</p>
+      <p>ShouArchive se descarga desde esta página como archivo <code>.dmg</code>.<span data-if="!commercial.download" hidden> El precio ya está fijado, pero todavía no se ha publicado.</span><span data-if="commercial.download !commercial.checkout"> Las ventas aún no han empezado; por ahora puedes descargarla y probarla <span data-price="trial_days">14</span> días.</span></p>
     </div>
   </section>
 
@@ -51,22 +51,23 @@
     <div class="wrap">
       <div class="plans">
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>Próximamente</p>
+          <p class="plan-badge soon" data-if="!commercial.download" hidden>Próximamente</p>
           <h2>ShouArchive for Mac</h2>
           <p class="plan-for">Descárgala, pruébala <span data-price="trial_days">14</span> días y, si te convence, cómprala por <span data-price="commercial.price">US$29</span></p>
           <ul class="plan-feats">
-            <li><strong>Instalador</strong> — se descarga desde esta página como <code>.dmg</code>. Se publicará con el lanzamiento.</li>
+            <li><strong>Instalador</strong> — se descarga desde esta página como <code>.dmg</code>.<span data-if="!commercial.download" hidden> Se publicará con el lanzamiento.</span></li>
             <li><strong>Prueba</strong> — al descargarla y abrirla, la prueba de <span data-price="trial_days">14</span> días empieza al momento. No necesitas ningún método de pago.</li>
             <li><strong>Licencia</strong> — después de pagar, introduce la clave de licencia que recibes por correo en Ajustes › Licencia. Una clave sirve para <span data-price="commercial.devices">2</span> Mac.</li>
             <li><strong>Actualizaciones</strong> — durante el periodo de actualizaciones, se comprueban e instalan desde la app. Al terminar el periodo, las versiones publicadas hasta entonces se siguen usando.</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="#" hidden>Descarga (.dmg)</a>
+            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Descarga (.dmg)</a>
             <a class="btn outline" href="pricing">Precios y compra</a>
           </div>
-          <p class="plan-foot" data-live-hide>Todavía no hay ningún archivo para descargar. Cuando se fije la fecha de lanzamiento, lo publicaremos aquí. Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
-          <p class="plan-foot" data-live-show hidden>El archivo se ha publicado tras pasar la firma y la comprobación de <code>Gatekeeper</code>. Si alguna vez no puedes abrirlo, avísanos desde <a href="support">Soporte</a>.</p>
-          <p class="plan-foot" data-if="commercial.download_sha256" hidden>SHA-256: <code><span data-price="commercial.download_sha256">Por anunciar</span></code></p>
+          <p class="plan-foot" data-if="!commercial.download" hidden>Todavía no hay ningún archivo para descargar. Cuando se fije la fecha de lanzamiento, lo publicaremos aquí. Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout">Las ventas aún no han empezado. Por ahora puedes descargarla y probarla; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
+          <p class="plan-foot" data-if="commercial.download">El archivo se ha publicado tras pasar la firma y la comprobación de <code>Gatekeeper</code>. Si alguna vez no puedes abrirlo, avísanos desde <a href="support">Soporte</a>.</p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">4360831f1d98f9ff8f10910a4016ab3fb6dc547063bdc261a65ce8e6be3761c2</span></code></p>
         </article>
 
         <article class="plan">
@@ -102,8 +103,8 @@
 
         <details>
           <summary>¿Cómo compruebo que el archivo es seguro?</summary>
-          <p data-live-hide>Con el lanzamiento, publicaremos en esta página la suma de comprobación (SHA-256) del archivo <code>.dmg</code>. Después de descargarlo, compárala con <code>shasum -a 256 ShouArchive.dmg</code>.</p>
-          <p data-live-show hidden>El <code>.dmg</code> está firmado y notarizado, y su suma de comprobación (SHA-256) figura bajo el botón de descarga de arriba. Después de descargarlo, compárala con <code>shasum -a 256 ShouArchive.dmg</code>.</p>
+          <p data-if="!commercial.download" hidden>Con el lanzamiento, publicaremos en esta página la suma de comprobación (SHA-256) del archivo <code>.dmg</code>. Después de descargarlo, compárala con <code>shasum -a 256 ShouArchive-*.dmg</code>.</p>
+          <p data-if="commercial.download">El <code>.dmg</code> está firmado y notarizado, y su suma de comprobación (SHA-256) figura bajo el botón de descarga de arriba. Después de descargarlo, compárala con <code>shasum -a 256 ShouArchive-*.dmg</code>.</p>
         </details>
       </div>
     </div>
@@ -112,9 +113,9 @@
   <section class="cta">
     <div class="wrap">
       <h2>Consigue ShouArchive</h2>
-      <p data-live-hide>Cuando se fije la fecha de lanzamiento, publicaremos el archivo en esta página. El precio y las condiciones de la prueba están en la página de precios.</p>
-      <p data-live-show hidden>Descárgala y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago.</p>
-      <a class="btn" data-src="commercial.download" href="#" hidden>Descarga (.dmg)</a>
+      <p data-if="!commercial.download" hidden>Cuando se fije la fecha de lanzamiento, publicaremos el archivo en esta página. El precio y las condiciones de la prueba están en la página de precios.</p>
+      <p data-if="commercial.download">Descárgala y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago.</p>
+      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Descarga (.dmg)</a>
       <a class="btn" href="pricing" data-live-hide>Ver precios</a>
     </div>
   </section>

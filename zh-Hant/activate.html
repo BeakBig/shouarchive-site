@@ -51,13 +51,14 @@
   <section class="doc">
     <div class="wrap">
       <div id="activate-ready" hidden>
-        <p>ShouArchive 開啟後，會詢問是否在此 Mac 上註冊授權。按「註冊」即可完成。</p>
+        <p data-mac-only>ShouArchive 開啟後，會詢問是否在此 Mac 上註冊授權。按「註冊」即可完成。</p>
+        <p data-not-mac hidden>您是在非 Mac 裝置上開啟此頁面。請在已安裝 ShouArchive 的 Mac 上重新開啟郵件中的連結，或在該 Mac 的 ShouArchive 中前往「設定 › 授權 › 輸入金鑰…」，輸入購買時的電子郵件和下面的金鑰。</p>
         <p><code class="license-key" id="activate-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="activate-open" href="#">在 ShouArchive 中開啟</a>
+          <a class="btn" id="activate-open" href="#" data-mac-only>在 ShouArchive 中開啟</a>
           <button class="btn outline" type="button" id="activate-copy" data-done="已複製">複製金鑰</button>
         </div>
-        <div class="note">
+        <div class="note" data-mac-only>
           <p><strong>App 沒有開啟？</strong> 請確認是在已安裝 ShouArchive 的 Mac 上開啟此頁面。如果仍無法開啟，請在 ShouArchive 的「設定 › 授權 › 輸入金鑰…」中輸入購買時的電子郵件和上面的金鑰。還沒有安裝 App？請前往<a href="download">下載</a>頁面取得。</p>
         </div>
       </div>

@@ -51,13 +51,14 @@
   <section class="doc">
     <div class="wrap">
       <div id="activate-ready" hidden>
-        <p>When ShouArchive opens, it asks whether to register the license on this Mac. Click Register and you’re done.</p>
+        <p data-mac-only>When ShouArchive opens, it asks whether to register the license on this Mac. Click Register and you’re done.</p>
+        <p data-not-mac hidden>You opened this page on a device that isn’t a Mac. Open the link in the email again on the Mac where ShouArchive is installed, or go to Settings › License › Enter key… in ShouArchive on that Mac and enter your purchase email and the key below.</p>
         <p><code class="license-key" id="activate-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="activate-open" href="#">Open in ShouArchive</a>
+          <a class="btn" id="activate-open" href="#" data-mac-only>Open in ShouArchive</a>
           <button class="btn outline" type="button" id="activate-copy" data-done="Copied">Copy key</button>
         </div>
-        <div class="note">
+        <div class="note" data-mac-only>
           <p><strong>The app didn’t open?</strong> Make sure you opened this page on the Mac where ShouArchive is installed. If it still doesn’t open, go to Settings › License › Enter key… in ShouArchive and enter your purchase email and the key above. Don’t have the app yet? Get it from the <a href="download">Download</a> page.</p>
         </div>
       </div>

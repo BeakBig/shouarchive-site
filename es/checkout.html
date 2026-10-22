@@ -85,10 +85,11 @@
         <p>Registra esta clave de licencia en ShouArchive. También hemos enviado la misma clave al correo con el que pagaste.</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="license-open" href="#">Abrir en ShouArchive</a>
+          <a class="btn" id="license-open" href="#" data-mac-only>Abrir en ShouArchive</a>
           <button class="btn outline" type="button" id="license-copy" data-done="Copiada">Copiar clave</button>
         </div>
-        <p class="price-note">Pulsa «Abrir en ShouArchive»: la app se abre y te pregunta si quieres registrar este Mac. Si la app no se abre, ve a Ajustes › Licencia › Introducir clave… e introduce el correo del pago y esta clave.</p>
+        <p class="price-note" data-mac-only>Pulsa «Abrir en ShouArchive»: la app se abre y te pregunta si quieres registrar este Mac. Si la app no se abre, ve a Ajustes › Licencia › Introducir clave… e introduce el correo del pago y esta clave.</p>
+        <p class="price-note" data-not-mac hidden>Regístrala en el Mac donde tienes instalado ShouArchive: abre en ese Mac el enlace del correo que te enviamos, o ve a Ajustes › Licencia › Introducir clave… e introduce el correo del pago y esta clave.</p>
       </div>
 
       <div class="note" id="checkout-renewed" hidden>

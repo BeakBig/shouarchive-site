@@ -85,10 +85,11 @@
         <p>请在 ShouArchive 中注册此许可证密钥。同一密钥也已发送到您付款时使用的邮箱。</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="license-open" href="#">在 ShouArchive 中打开</a>
+          <a class="btn" id="license-open" href="#" data-mac-only>在 ShouArchive 中打开</a>
           <button class="btn outline" type="button" id="license-copy" data-done="已复制">复制密钥</button>
         </div>
-        <p class="price-note">点按“在 ShouArchive 中打开”，应用会打开并询问是否在此 Mac 上注册。如果应用没有打开，请在“设置 › 许可证 › 输入密钥…”中输入付款邮箱和此密钥。</p>
+        <p class="price-note" data-mac-only>点按“在 ShouArchive 中打开”，应用会打开并询问是否在此 Mac 上注册。如果应用没有打开，请在“设置 › 许可证 › 输入密钥…”中输入付款邮箱和此密钥。</p>
+        <p class="price-note" data-not-mac hidden>请在已安装 ShouArchive 的 Mac 上注册：在该 Mac 上打开邮件中的链接，或在“设置 › 许可证 › 输入密钥…”中输入付款邮箱和此密钥。</p>
       </div>
 
       <div class="note" id="checkout-renewed" hidden>

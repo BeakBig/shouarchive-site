@@ -85,10 +85,11 @@
         <p>このライセンスキーを ShouArchive に登録してください。同じキーを決済に使ったメールアドレスにも送りました。</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
-          <a class="btn" id="license-open" href="#">ShouArchive で開く</a>
+          <a class="btn" id="license-open" href="#" data-mac-only>ShouArchive で開く</a>
           <button class="btn outline" type="button" id="license-copy" data-done="コピーしました">キーをコピー</button>
         </div>
-        <p class="price-note">「ShouArchive で開く」を押すとアプリが開き、この Mac に登録するか確認します。アプリが開かない場合は「設定 › ライセンス › キーを入力…」で決済に使ったメールアドレスとこのキーを入力してください。</p>
+        <p class="price-note" data-mac-only>「ShouArchive で開く」を押すとアプリが開き、この Mac に登録するか確認します。アプリが開かない場合は「設定 › ライセンス › キーを入力…」で決済に使ったメールアドレスとこのキーを入力してください。</p>
+        <p class="price-note" data-not-mac hidden>ShouArchive をインストールした Mac で登録してください。その Mac でメールのリンクを開くか、「設定 › ライセンス › キーを入力…」で決済に使ったメールアドレスとこのキーを入力します。</p>
       </div>
 
       <div class="note" id="checkout-renewed" hidden>

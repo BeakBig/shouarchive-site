@@ -1,9 +1,9 @@
 /*
- * ShouArchive 라이선스 — 결제 완료 화면 · 앱을 여는 중계 페이지 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제.
+ * ShouArchive 라이선스 — 결제 완료 화면 · 결제 수단 바꾸기 · 앱을 여는 중계 페이지 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제.
  * 6개 언어 페이지가 모두 이 파일 하나를 쓴다. 문구는 각 페이지의 HTML 에 있고, 여기서는
  * 보이고 숨기기와 값 채우기만 한다 (그래서 tools/check-site.py 의 언어별 구조 비교를 그대로 통과한다).
  *
- * 실행: 페이지가 <script src="assets/license.js" data-page="checkout|activate|resend|rotate|erase"></script> 로
+ * 실행: 페이지가 <script src="assets/license.js" data-page="checkout|billing|activate|resend|rotate|erase"></script> 로
  * 불러오면 그 이름의 함수를 바로 실행한다 (인라인 <script> 는 _headers 의 CSP 가 막으므로 두지 않는다).
  *
  * 라이선스 서버 계약: shouarchive-license 저장소 docs/app-contract.md §2.10 ~ §2.13, 개인정보 삭제는 2026-10-20 계약 §8.
@@ -250,6 +250,27 @@
     }
   }
 
+  // ------------------------------------------------------------------ 결제 수단 바꾸기 (billing.html)
+
+  /*
+   * Paddle Retain 의 결제 복구(갱신 결제 실패 → 결제 수단 바꾸기)가 쓰는 페이지. Retain 설정은 결제 · 가격 페이지가 아닌
+   * 공개 페이지에 Paddle.js 가 있는지 확인하고, 복구 링크가 이 페이지를 열면 Paddle.js 가 결제 수단 변경 창을 스스로 띄운다.
+   * 여기서는 Paddle.js 를 초기화만 한다 — pwCustomer 는 넘기지 않는다(사이트에 로그인한 고객이 없다 · 2026-10-23 결정 41).
+   */
+  function billing() {
+    var config = byId('paddle-config');
+    if (!config) return;
+    var cfg = config.dataset;
+    if (!cfg.token) return;
+    if (!window.Paddle) { show('billing-blocked', true); return; }   // 광고 차단기 · 네트워크
+    var LOCALES = { 'ko': 'ko', 'en': 'en', 'ja': 'ja', 'zh-Hans': 'zh-Hans', 'es': 'es' };  // zh-Hant 은 Paddle 이 지원하지 않아 생략
+    var settings = { displayMode: 'overlay' };
+    var locale = LOCALES[pageLocale()];
+    if (locale) settings.locale = locale;
+    if (cfg.env === 'sandbox') Paddle.Environment.set('sandbox');
+    Paddle.Initialize({ token: cfg.token, checkout: { settings: settings } });
+  }
+
   // ------------------------------------------------------------------ 결제 확인 중 그림 (앱과 같은 Lottie)
 
   /**
@@ -455,7 +476,7 @@
     }
   }
 
-  window.ShouArchiveLicense = { checkout: checkout, activate: activate, resend: resend, rotate: rotate, erase: erase };
+  window.ShouArchiveLicense = { checkout: checkout, billing: billing, activate: activate, resend: resend, rotate: rotate, erase: erase };
 
   // <script src="assets/license.js" data-page="…"> 의 이름으로 바로 실행한다 (스크립트는 </body> 앞에 있어 DOM 은 이미 있다)
   var page = document.currentScript && document.currentScript.dataset.page;

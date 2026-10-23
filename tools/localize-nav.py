@@ -19,7 +19,7 @@ BEACON_TOKEN = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encod
 SITE = 'https://shouarchive.beakbig.com'
 LANGS = [('ko', '한국어'), ('en', 'English'), ('ja', '日本語'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'), ('es', 'Español')]
 PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
-         'activate.html', 'license.html', 'rotate.html', 'erase.html']
+         'activate.html', 'license.html', 'rotate.html', 'erase.html', 'billing.html']
 HEADER_LINKS = [('features', 'index.html', '#features'), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy', 'privacy.html', '')]
 FOOTER_LINKS = [('home', 'index.html', ''), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy_doc', 'privacy.html', ''), ('terms', 'terms.html', ''), ('refund', 'refund.html', '')]
 

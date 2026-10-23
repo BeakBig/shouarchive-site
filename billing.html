@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>결제 수단 바꾸기 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 업데이트 자동 갱신의 결제 수단을 바꿉니다(결제는 Paddle 이 판매대행으로 처리).">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="결제 수단 바꾸기 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 업데이트 갱신의 결제 수단을 바꿉니다.">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/billing">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/billing">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/billing">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/billing">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/billing">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/billing">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/billing">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/billing">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="./#features">기능</a>
+      <a href="pricing">가격</a>
+      <a href="download">다운로드</a>
+      <a href="support">지원</a>
+      <a href="privacy">개인정보</a>
+      <label class="lang-switch"><span class="visually-hidden">언어</span><select class="lang-select" aria-label="언어"><option value="billing" selected>한국어</option><option value="en/billing">English</option><option value="ja/billing">日本語</option><option value="zh-Hans/billing">简体中文</option><option value="zh-Hant/billing">繁體中文</option><option value="es/billing">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>결제 수단 바꾸기</h1>
+      <p>업데이트 자동 갱신(1년에 <span data-price="commercial.price_renewal">US$15</span>) 결제가 되지 않았다는 메일의 버튼으로 오셨다면, 이 페이지 위에 Paddle 의 결제 수단 변경 창이 열립니다.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <div id="paddle-config" data-env="sandbox" data-token="test_928a76416bd3a848b5a28307512" data-price-license="pri_01m4z2wd3gd0nk5e7sn0rkm6nc" data-price-updates="pri_01m4z2sybg1d0p83g6x6hjz9s0" hidden data-license-api="https://license.beakbig.com"></div>
+      <div class="note" id="billing-blocked" hidden>
+        <p>결제 모듈을 불러오지 못했습니다. 광고 차단기를 끄고 새로고침하거나, 아래의 다른 방법으로 결제 수단을 바꿔 주세요.</p>
+      </div>
+
+      <h2>알아 두기</h2>
+      <ul>
+        <li>결제 수단 변경과 갱신 결제는 판매대행 Paddle 이 처리합니다. 카드 정보는 판매자에게 오지 않습니다.</li>
+        <li>Paddle 결제 안내 메일의 관리 링크나 앱의 설정 › 라이선스 › 「결제 관리…」 에서도 결제 수단을 바꿀 수 있습니다.</li>
+        <li>갱신 결제가 끝내 되지 않아도 ShouArchive 는 그대로 쓸 수 있습니다. 업데이트 기간만 늘어나지 않고, 나중에 앱에서 다시 갱신할 수 있습니다.</li>
+        <li>문의는 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BILL%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fbilling%20%28W-BILL%29">support@shouarchive.beakbig.com</a> 으로 보내 주세요.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="바닥 메뉴">
+      <a href="./">홈</a>
+      <a href="pricing">가격</a>
+      <a href="download">다운로드</a>
+      <a href="support">지원</a>
+      <a href="privacy">개인정보 처리방침</a>
+      <a href="terms">이용약관</a>
+      <a href="refund">환불 정책</a>
+      <span class="footer-langs"><a href="billing" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/billing" lang="en" hreflang="en">English</a> <a href="ja/billing" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/billing" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/billing" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/billing" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">비그빅(Beakbig)<br>대표자 : <span data-price="seller.owner">강현진</span><br>사업자등록번호 : <span data-price="seller.reg_no">613-40-01820</span><br><span data-price="seller.address">경기도 화성시 동탄순환대로20길 31</span><br>통신판매업 신고 : <span data-price="seller.mail_order">면제</span><br>고객센터 : <span data-price="seller.phone">0502-6682-9359</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BILL%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fbilling%20%28W-BILL%29">support@shouarchive.beakbig.com</a></p>
+    <p class="biz-links"><a href="terms">이용약관</a> <span aria-hidden="true">|</span> <a href="privacy">개인정보 처리방침</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="assets/license.js" data-page="billing"></script>
+<script src="assets/nav.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "271a891f0ce54d0181c33ecab1e43055"}'></script>
+</body>
+</html>

@@ -20,7 +20,7 @@
     "release_date": null,
     "checkout": "",
     "download": "https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg",
-    "download_sha256": "5ac225111223bf6762a9c9c3274734b6c688ae6c6335881940df38f0d2e6c981"
+    "download_sha256": "a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6"
   },
   "_free_period": "무료 기간 — 이 날(포함, 이용자 Mac 의 시간대)까지 라이선스 없이 모든 기능이 열린다. 앱에 든 날짜는 2026-12-31 이고, 라이선스 서버의 FREE_PERIOD_LAST_DAY 로 늘릴 수 있다(늘리기만 · 앱 계약 §2.19). until = 마지막 날, paid_from = 라이선스가 필요해지는 날 — 언어별 표시 문자열. 늘리면 서버 값과 함께 둘 다 바꾼다. 기간이 끝나면 null 로 비운다 — data-if=\"free_period.until\" 인 안내(홈 · 가격 · 다운로드 · 약관 4.3 · 지원 FAQ)가 모두 숨겨진다.",
   "free_period": {

@@ -12,7 +12,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | --- | --- |
 | `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(체험 · 구매 후 기능표) · 다운로드 |
 | `support.html` · `privacy.html` · `terms.html` · `refund.html` | 한국어 지원(FAQ) · 개인정보 처리방침 · 이용약관 · 환불 정책 |
-| `changelog.html` | 한국어 변경 사항(2026-10-26) — 버전마다 바뀐 점. 새 버전을 낼 때마다 맨 위에 `<h2 id="v<버전>">` 항목을 6개 언어로 더한다(그 버전의 Sparkle 릴리스 노트와 같은 내용). 바닥 메뉴 · 다운로드 페이지에서 링크 |
+| `changelog.html` | 한국어 변경 사항(2026-10-26) — 버전마다 바뀐 점만 적는다(가격 · 라이선스 · 출시 예정 같은 안내는 넣지 않는다). 새 버전을 낼 때마다 맨 위에 `<h2 id="v<버전>">` 항목을 6개 언어로 더한다(그 버전의 Sparkle 릴리스 노트와 같은 내용 · 출시 날짜는 제목 줄에 직접). 바닥 메뉴 · 다운로드 페이지에서 링크 |
 | `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) 「결제를 확인하고 있습니다」 카드(앱과 같은 Lottie 퍼즐 로딩 — 못 불러오면 도는 원)를 띄우고 `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 1분(2초 간격)이 지나도 키가 없으면 「결제는 완료되었습니다 — 메일함 · 스팸함을 확인하고, 안 오면 support@shouarchive.beakbig.com 으로」 안내(`checkout-slow`)로 바꾸고, 페이지를 열어 둔 동안 5초 간격으로 5분 더 확인해 준비되면 키를 보여 줍니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 서버가 키를 보관하지 않거나 확인 값이 맞지 않으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
 | `activate.html` | 메일의 「앱에서 바로 등록하기」 링크가 여는 중계 페이지 — `#key=` 의 키를 보여 주고 `shouarchive://activate?key=…` 로 앱을 엽니다(Mac 데스크톱에서만 저절로, 휴대폰에서는 버튼만). 키는 `#` 뒤라 서버로 가지 않고, 읽은 뒤 주소에서 지웁니다. 메뉴에 넣지 않고 검색에서 뺍니다(`noindex`) |
 | `license.html` | 키 다시 받기 — 구매 이메일을 받아 라이선스 서버(`/v1/licenses/resend`)에 보냅니다. 서버는 늘 같은 답을 주고 구매 이메일로만 같은 키를 보냅니다. 메뉴에 넣지 않습니다(`noindex`, 메일 · 지원 FAQ · 앱에서 링크) |
@@ -73,7 +73,7 @@ python3 tools/check-site.py      # 6개 언어 × 14개 페이지 구조 · 링�
 | --- | --- |
 | `commercial.price` · `price_renewal` | 처음 구매(라이선스 + 업데이트 1년, US$29) · 업데이트 1년 갱신(US$15, 자동 갱신). 세금 별도 |
 | `commercial.devices` · `refund_days` | 라이선스 하나로 쓰는 Mac 수(2) · 결제 후 전액 환불 기간(14일) |
-| `commercial.release_date` | 출시일 — 아직 `null`. 변경 사항 페이지 1.0.0 의 「출시 …」 줄에 그대로 들어가므로 출시하면 `seller.*` 처럼 언어별 사전(`{"ko": "2026년 11월 3일", "en": "November 3, 2026", …}`)으로 넣는다. 비어 있는 동안은 「출시 예정」 줄이 보인다 |
+| `commercial.release_date` | 출시일 — 아직 `null` |
 | `commercial.checkout` · `download` · `download_sha256` | 구매 페이지 주소(보통 `/checkout`) · `.dmg` 주소 · 그 파일의 SHA-256(64자 hex, `null` 이면 다운로드 페이지의 SHA-256 줄이 숨겨짐 — DMG 를 올릴 때마다 `download` 와 함께 바꾼다). `checkout` 이 채워지면 출시(판매 시작)로 봅니다 — 「출시 예정」 안내가 사라지고 구매 · 다운로드 버튼이 나타납니다 |
 | `paddle.environment` | `sandbox` 또는 `production` |
 | `paddle.client_token` | Paddle 의 **client-side token**(`test_…` / `live_…`). 비어 있으면 `checkout.html` 은 「결제를 아직 열지 않았습니다」만 보여 줍니다 |

@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Descargas</h1>
-      <p>ShouArchive se descarga desde esta página como archivo <code>.dmg</code>.<span data-if="!commercial.download" hidden> El precio ya está fijado, pero todavía no se ha publicado.</span><span data-if="commercial.download !commercial.checkout"> Las ventas aún no han empezado; por ahora puedes descargarla y probarla <span data-price="trial_days">14</span> días.</span></p>
+      <p>ShouArchive se descarga desde esta página como archivo <code>.dmg</code>.<span data-if="!commercial.download" hidden> El precio ya está fijado, pero todavía no se ha publicado.</span><span data-if="commercial.download !commercial.checkout !free_period.until" hidden> Las ventas aún no han empezado; por ahora puedes descargarla y probarla <span data-price="trial_days">14</span> días.</span></p>
       <div class="note" data-if="free_period.until">
         <p><strong>Período gratuito hasta el <span data-price="free_period.until">31 de diciembre de 2026</span>.</strong> Descárgala y usa todas las funciones sin licencia. A partir del <span data-price="free_period.paid_from">1 de enero de 2027</span> se necesita una licencia; consulta los detalles en <a href="pricing">Precios</a>.</p>
       </div>
@@ -56,10 +56,12 @@
         <article class="plan coming">
           <p class="plan-badge soon" data-if="!commercial.download" hidden>Próximamente</p>
           <h2>ShouArchive for Mac</h2>
-          <p class="plan-for">Descárgala, pruébala <span data-price="trial_days">14</span> días y, si te convence, cómprala por <span data-price="commercial.price">US$29</span></p>
+          <p class="plan-for" data-if="!free_period.until" hidden>Descárgala, pruébala <span data-price="trial_days">14</span> días y, si te convence, cómprala por <span data-price="commercial.price">US$29</span></p>
+          <p class="plan-for" data-if="free_period.until">Descárgala y úsala gratis hasta el <span data-price="free_period.until">31 de diciembre de 2026</span> · después, cómprala por <span data-price="commercial.price">US$29</span></p>
           <ul class="plan-feats">
             <li><strong>Instalador</strong> — se descarga desde esta página como <code>.dmg</code>.<span data-if="!commercial.download" hidden> Se publicará con el lanzamiento.</span></li>
-            <li><strong>Prueba</strong> — al descargarla y abrirla, la prueba de <span data-price="trial_days">14</span> días empieza al momento. No necesitas ningún método de pago.</li>
+            <li data-if="!free_period.until" hidden><strong>Prueba</strong> — al descargarla y abrirla, la prueba de <span data-price="trial_days">14</span> días empieza al momento. No necesitas ningún método de pago.</li>
+            <li data-if="free_period.until"><strong>Período gratuito</strong> — hasta el <span data-price="free_period.until">31 de diciembre de 2026</span>, al descargarla y abrirla usas todas las funciones sin licencia. No necesitas ningún método de pago.</li>
             <li><strong>Licencia</strong> — después de pagar, introduce la clave de licencia que recibes por correo en Ajustes › Licencia. Una clave sirve para <span data-price="commercial.devices">2</span> Mac.</li>
             <li><strong>Actualizaciones</strong> — durante el periodo de actualizaciones, se comprueban e instalan desde la app. Al terminar el periodo, las versiones publicadas hasta entonces se siguen usando.</li>
           </ul>
@@ -69,7 +71,8 @@
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong>Prueba gratis hasta el <span data-price="free_period.until">31 de diciembre de 2026</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>Todavía no hay ningún archivo para descargar. Cuando se fije la fecha de lanzamiento, lo publicaremos aquí. Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
-          <p class="plan-foot" data-if="commercial.download !commercial.checkout">Las ventas aún no han empezado. Por ahora puedes descargarla y probarla; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout !free_period.until" hidden>Las ventas aún no han empezado. Por ahora puedes descargarla y probarla; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until">Las ventas aún no han empezado. Durante el período gratuito puedes descargarla y usar todas las funciones; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
           <p class="plan-foot" data-if="commercial.download">El archivo se ha publicado tras pasar la firma y la comprobación de <code>Gatekeeper</code>. Si alguna vez no puedes abrirlo, avísanos desde <a href="support">Soporte</a>.</p>
           <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
           <p class="plan-foot">Consulta qué cambió en cada versión en el <a href="changelog">historial de cambios</a>.</p>
@@ -96,9 +99,14 @@
     <div class="wrap">
       <h2>Preguntas frecuentes sobre la descarga</h2>
       <div class="faq">
-        <details open>
+        <details open data-if="!free_period.until" hidden>
           <summary>Si compro cuando termine la prueba, ¿tengo que volver a instalarla?</summary>
           <p>No. Introduce la clave que recibes tras pagar en Ajustes › Licencia de la app que estabas probando y todas las funciones se vuelven a activar al momento. Tus ajustes y tu historial se conservan y se pueden consultar (las tareas nuevas, tras la compra).</p>
+        </details>
+
+        <details open data-if="free_period.until">
+          <summary>Si compro cuando termine el período gratuito, ¿tengo que volver a instalarla?</summary>
+          <p>No. Introduce la clave que recibes tras pagar en Ajustes › Licencia de la app que estabas usando y todas las funciones se vuelven a activar al momento. Tus ajustes y tu historial se conservan y se pueden consultar (las tareas nuevas, tras la compra).</p>
         </details>
 
         <details>
@@ -119,7 +127,8 @@
     <div class="wrap">
       <h2>Consigue ShouArchive</h2>
       <p data-if="!commercial.download" hidden>Cuando se fije la fecha de lanzamiento, publicaremos el archivo en esta página. El precio y las condiciones de la prueba están en la página de precios.</p>
-      <p data-if="commercial.download">Descárgala y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago.</p>
+      <p data-if="commercial.download !free_period.until" hidden>Descárgala y pruébala <span data-price="trial_days">14</span> días sin ningún método de pago.</p>
+      <p data-if="commercial.download free_period.until">Descárgala y usa todas las funciones gratis, sin licencia, hasta el <span data-price="free_period.until">31 de diciembre de 2026</span>.</p>
       <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Descarga (.dmg)</a>
       <a class="btn" href="pricing" data-live-hide>Ver precios</a>
     </div>

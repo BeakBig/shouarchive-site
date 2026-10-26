@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>다운로드</h1>
-      <p>ShouArchive 는 이 페이지에서 <code>.dmg</code> 파일로 내려받습니다.<span data-if="!commercial.download" hidden> 가격은 정해졌고, 아직 출시되지 않았습니다.</span><span data-if="commercial.download !commercial.checkout"> 판매는 아직 시작하지 않았고, 지금은 내려받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다.</span></p>
+      <p>ShouArchive 는 이 페이지에서 <code>.dmg</code> 파일로 내려받습니다.<span data-if="!commercial.download" hidden> 가격은 정해졌고, 아직 출시되지 않았습니다.</span><span data-if="commercial.download !commercial.checkout !free_period.until" hidden> 판매는 아직 시작하지 않았고, 지금은 내려받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다.</span></p>
       <div class="note" data-if="free_period.until">
         <p><strong><span data-price="free_period.until">2026년 12월 31일</span>까지는 무료 기간입니다.</strong> 내려받아 라이선스 없이 모든 기능을 쓰세요. <span data-price="free_period.paid_from">2027년 1월 1일</span>부터는 라이선스가 필요합니다 — 자세한 내용은 <a href="pricing">가격</a>에 있습니다.</p>
       </div>
@@ -56,10 +56,12 @@
         <article class="plan coming">
           <p class="plan-badge soon" data-if="!commercial.download" hidden>출시 예정</p>
           <h2>ShouArchive for Mac</h2>
-          <p class="plan-for">내려받아 <span data-price="trial_days">14</span>일 체험 · 마음에 들면 <span data-price="commercial.price">US$29</span> 로 구매</p>
+          <p class="plan-for" data-if="!free_period.until" hidden>내려받아 <span data-price="trial_days">14</span>일 체험 · 마음에 들면 <span data-price="commercial.price">US$29</span> 로 구매</p>
+          <p class="plan-for" data-if="free_period.until">내려받아 <span data-price="free_period.until">2026년 12월 31일</span>까지 무료 · 그 뒤에는 <span data-price="commercial.price">US$29</span> 로 구매</p>
           <ul class="plan-feats">
             <li><strong>설치 파일</strong> — 이 페이지에서 <code>.dmg</code> 로 내려받습니다.<span data-if="!commercial.download" hidden> 출시와 함께 올라갑니다.</span></li>
-            <li><strong>체험</strong> — 내려받아 실행하면 <span data-price="trial_days">14</span>일 체험이 바로 시작됩니다. 결제 수단은 필요 없습니다.</li>
+            <li data-if="!free_period.until" hidden><strong>체험</strong> — 내려받아 실행하면 <span data-price="trial_days">14</span>일 체험이 바로 시작됩니다. 결제 수단은 필요 없습니다.</li>
+            <li data-if="free_period.until"><strong>무료 기간</strong> — <span data-price="free_period.until">2026년 12월 31일</span>까지는 내려받아 실행하면 라이선스 없이 모든 기능을 씁니다. 결제 수단은 필요 없습니다.</li>
             <li><strong>라이선스</strong> — 결제 후 이메일로 받은 라이선스 키를 설정 › 라이선스 에 넣습니다. 키 하나로 Mac <span data-price="commercial.devices">2</span>대.</li>
             <li><strong>업데이트</strong> — 업데이트 기간 동안 앱 안에서 확인하고 설치합니다. 기간이 끝나도 그때까지 나온 버전은 계속 씁니다.</li>
           </ul>
@@ -69,7 +71,8 @@
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong><span data-price="free_period.until">2026년 12월 31일</span>까지 무료 체험</strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>아직 내려받을 수 있는 파일이 없습니다. 출시일이 정해지면 이 자리에 파일을 올립니다. 궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a> 으로 보내 주세요.</p>
-          <p class="plan-foot" data-if="commercial.download !commercial.checkout">판매는 아직 시작하지 않았습니다. 지금은 내려받아 체험으로 써 볼 수 있고, 판매를 시작하면 <a href="pricing">가격 페이지</a>에 알립니다.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout !free_period.until" hidden>판매는 아직 시작하지 않았습니다. 지금은 내려받아 체험으로 써 볼 수 있고, 판매를 시작하면 <a href="pricing">가격 페이지</a>에 알립니다.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until">판매는 아직 시작하지 않았습니다. 지금은 무료 기간이라 내려받아 모든 기능을 쓸 수 있고, 판매를 시작하면 <a href="pricing">가격 페이지</a>에 알립니다.</p>
           <p class="plan-foot" data-if="commercial.download">파일 내려받기 전에 서명과 <code>Gatekeeper</code> 확인을 거쳐 공개했습니다. 파일을 열 수 없을 때가 있으면 <a href="support">지원</a> 으로 알려 주세요.</p>
           <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
           <p class="plan-foot">버전마다 바뀐 점은 <a href="changelog">변경 사항</a>에 있습니다.</p>
@@ -96,9 +99,14 @@
     <div class="wrap">
       <h2>다운로드에 관해 자주 묻는 것</h2>
       <div class="faq">
-        <details open>
+        <details open data-if="!free_period.until" hidden>
           <summary>체험이 끝난 뒤 사면 다시 설치해야 하나요?</summary>
           <p>아니요. 체험하던 앱의 설정 › 라이선스 에 결제 후 받은 키를 넣으면 바로 모든 기능이 다시 열립니다. 설정과 기록은 그대로 남아 볼 수 있습니다(새 작업은 구매 뒤).</p>
+        </details>
+
+        <details open data-if="free_period.until">
+          <summary>무료 기간이 끝난 뒤 사면 다시 설치해야 하나요?</summary>
+          <p>아니요. 쓰던 앱의 설정 › 라이선스 에 결제 후 받은 키를 넣으면 바로 모든 기능이 다시 열립니다. 설정과 기록은 그대로 남아 볼 수 있습니다(새 작업은 구매 뒤).</p>
         </details>
 
         <details>
@@ -119,7 +127,8 @@
     <div class="wrap">
       <h2>지금 받기</h2>
       <p data-if="!commercial.download" hidden>출시일이 정해지면 이 페이지에 파일을 올립니다. 가격과 체험 조건은 가격 페이지에 있습니다.</p>
-      <p data-if="commercial.download">내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요.</p>
+      <p data-if="commercial.download !free_period.until" hidden>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요.</p>
+      <p data-if="commercial.download free_period.until"><span data-price="free_period.until">2026년 12월 31일</span>까지는 라이선스 없이 모든 기능을 무료로 써 보세요.</p>
       <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">다운로드 (.dmg)</a>
       <a class="btn" href="pricing" data-live-hide>가격 보기</a>
     </div>

@@ -44,6 +44,9 @@
     <div class="wrap">
       <h1>다운로드</h1>
       <p>ShouArchive 는 이 페이지에서 <code>.dmg</code> 파일로 내려받습니다.<span data-if="!commercial.download" hidden> 가격은 정해졌고, 아직 출시되지 않았습니다.</span><span data-if="commercial.download !commercial.checkout"> 판매는 아직 시작하지 않았고, 지금은 내려받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다.</span></p>
+      <div class="note" data-if="free_period.until">
+        <p><strong><span data-price="free_period.until">2026년 12월 31일</span>까지는 무료 기간입니다.</strong> 내려받아 라이선스 없이 모든 기능을 쓰세요. <span data-price="free_period.paid_from">2027년 1월 1일</span>부터는 라이선스가 필요합니다 — 자세한 내용은 <a href="pricing">가격</a>에 있습니다.</p>
+      </div>
     </div>
   </section>
 
@@ -67,7 +70,8 @@
           <p class="plan-foot" data-if="!commercial.download" hidden>아직 내려받을 수 있는 파일이 없습니다. 출시일이 정해지면 이 자리에 파일을 올립니다. 궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a> 으로 보내 주세요.</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout">판매는 아직 시작하지 않았습니다. 지금은 내려받아 체험으로 써 볼 수 있고, 판매를 시작하면 <a href="pricing">가격 페이지</a>에 알립니다.</p>
           <p class="plan-foot" data-if="commercial.download">파일 내려받기 전에 서명과 <code>Gatekeeper</code> 확인을 거쳐 공개했습니다. 파일을 열 수 없을 때가 있으면 <a href="support">지원</a> 으로 알려 주세요.</p>
-          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">5ac225111223bf6762a9c9c3274734b6c688ae6c6335881940df38f0d2e6c981</span></code></p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
+          <p class="plan-foot">버전마다 바뀐 점은 <a href="changelog">변경 사항</a>에 있습니다.</p>
         </article>
 
         <article class="plan">
@@ -131,6 +135,7 @@
       <a href="privacy">개인정보 처리방침</a>
       <a href="terms">이용약관</a>
       <a href="refund">환불 정책</a>
+      <a href="changelog">변경 사항</a>
       <span class="footer-langs"><a href="download" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/download" lang="en" hreflang="en">English</a> <a href="ja/download" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/download" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/download" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/download" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>

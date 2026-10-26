@@ -73,7 +73,7 @@
           <tr><td>Listing, downloading, creating and renewing profiles; listing and registering devices; App Store releases</td><td>Apple App Store Connect API (<code>api.appstoreconnect.apple.com</code>)</td><td>An authentication token signed by the app, plus the values you choose or enter (profile type, bundle ID, certificate, device name, UDID, store listing, screenshots and so on)</td></tr>
           <tr><td>Google Play uploads and store releases</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Authentication requests signed with your service account key, plus the AAB, APK, store listing and screenshots you choose</td></tr>
           <tr><td>Building, app upload, device install</td><td>Wherever Apple's and Google's developer tools (<code>xcodebuild</code>, <code>gradle</code> and so on) connect</td><td>These tools communicate in their own way. Repositories that dependencies are downloaded from (Maven and so on) are included here</td></tr>
-          <tr><td>License activation, checks and deactivation; the list of registered Macs; getting your key again or changing it; starting a payment; the billing management link</td><td>The seller's license server</td><td>Section 5</td></tr>
+          <tr><td>License activation, checks and deactivation; the list of registered Macs; getting your key again or changing it; starting a payment; the billing management link; the free period check</td><td>The seller's license server</td><td>Section 5</td></tr>
           <tr><td>Checking for updates · downloading the installer</td><td>The update list the seller publishes · the installer (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else. When you download the installer, your IP address and User-Agent are processed by Cloudflare to deliver the file.</td></tr>
         </tbody>
       </table>
@@ -108,6 +108,7 @@
       <ul>
         <li><strong>Activation</strong> — license key, purchase email (when registering in the Enter key window), device identifier, installation identifier, Mac model, app version</li>
         <li><strong>License check</strong> — about every 12 hours: license key (if any), device identifier, installation identifier, Mac model, app version</li>
+        <li><strong>Free period check</strong> — about every 12 hours (even without a license). Nothing is sent except a User-Agent with the app name and version, and the server does not record these requests</li>
         <li><strong>Registering the Mac you paid on</strong> (Register This Mac in the dialog after paying from the app) — device identifier, installation identifier, Mac model, app version</li>
         <li><strong>Registered Macs list and deactivating another Mac</strong> — license key, device identifier, installation identifier, the list id of the Mac to deactivate</li>
         <li><strong>Deactivation</strong> — license key (if the app has it), device identifier, app version</li>
@@ -205,6 +206,7 @@
       <a href="privacy" aria-current="page">Privacy Policy</a>
       <a href="terms">Terms of Service</a>
       <a href="refund">Refund Policy</a>
+      <a href="changelog">Changelog</a>
       <span class="footer-langs"><a href="../privacy" lang="ko" hreflang="ko">한국어</a> <a href="../en/privacy" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/privacy" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/privacy" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/privacy" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/privacy" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>

@@ -12,6 +12,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | --- | --- |
 | `index.html` · `pricing.html` · `download.html` | 한국어 랜딩 · 가격(체험 · 구매 후 기능표) · 다운로드 |
 | `support.html` · `privacy.html` · `terms.html` · `refund.html` | 한국어 지원(FAQ) · 개인정보 처리방침 · 이용약관 · 환불 정책 |
+| `changelog.html` | 한국어 변경 사항(2026-10-26) — 버전마다 바뀐 점. 새 버전을 낼 때마다 맨 위에 `<h2 id="v<버전>">` 항목을 6개 언어로 더한다(그 버전의 Sparkle 릴리스 노트와 같은 내용). 바닥 메뉴 · 다운로드 페이지에서 링크 |
 | `checkout.html` | 한국어 구매 페이지 — Paddle 의 「기본 결제 링크(default payment link)」. 「구매하기」 는 라이선스 서버에 결제를 만들고(`/v1/web/checkout`, 실패하면 예전처럼 가격 id 로) Paddle.js 오버레이를 엽니다. `?_ptxn=` 거래(라이선스 서버가 만든 갱신 · 앱 안 구매)는 Paddle.js 가 스스로 엽니다. 결제가 끝나면(`checkout.completed`) 「결제를 확인하고 있습니다」 카드(앱과 같은 Lottie 퍼즐 로딩 — 못 불러오면 도는 원)를 띄우고 `#claim` 확인 값으로 키를 받아 와 「ShouArchive 에서 열기」 · 「키 복사」 를 보여 주고, 앱에서 시작한 결제(`from=app`)면 앱을 바로 엽니다. 1분(2초 간격)이 지나도 키가 없으면 「결제는 완료되었습니다 — 메일함 · 스팸함을 확인하고, 안 오면 support@shouarchive.beakbig.com 으로」 안내(`checkout-slow`)로 바꾸고, 페이지를 열어 둔 동안 5초 간격으로 5분 더 확인해 준비되면 키를 보여 줍니다. 갱신(`#kind=renewal`)은 기간 연장 안내. 서버가 키를 보관하지 않거나 확인 값이 맞지 않으면 메일 안내. `?done=1`(예전 successUrl)도 메일 안내. 메뉴에는 넣지 않습니다 |
 | `activate.html` | 메일의 「앱에서 바로 등록하기」 링크가 여는 중계 페이지 — `#key=` 의 키를 보여 주고 `shouarchive://activate?key=…` 로 앱을 엽니다(Mac 데스크톱에서만 저절로, 휴대폰에서는 버튼만). 키는 `#` 뒤라 서버로 가지 않고, 읽은 뒤 주소에서 지웁니다. 메뉴에 넣지 않고 검색에서 뺍니다(`noindex`) |
 | `license.html` | 키 다시 받기 — 구매 이메일을 받아 라이선스 서버(`/v1/licenses/resend`)에 보냅니다. 서버는 늘 같은 답을 주고 구매 이메일로만 같은 키를 보냅니다. 메뉴에 넣지 않습니다(`noindex`, 메일 · 지원 FAQ · 앱에서 링크) |
@@ -34,8 +35,8 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `wrangler.jsonc` · `.assetsignore` | 루트 `wrangler.jsonc` 가 저장소 루트를 정적 자산으로 배포합니다(Cloudflare 빌드가 푸시마다 `npx wrangler deploy`). `html_handling: auto-trailing-slash`(확장자 없는 주소) · `not_found_handling: 404-page`. 올리지 않을 파일은 `.assetsignore`. 예전 프록시 Worker(`worker/`)는 2026-10-20 에 지웠습니다 — 계정에 배포된 적이 없는 죽은 코드였습니다 |
 | `tools/localize-nav.py` | 모든 페이지의 6개 언어 전환 메뉴 · 헤더 · 푸터 링크 · `canonical` · `hreflang`(절대 주소, 확장자 없음) 을 다시 맞추고 `assets/nav.js` 를 넣는 스크립트 (페이지를 고치거나 언어를 더하면 다시 실행) |
 | `tools/pricing.json` · `tools/fill-pricing.py` | 가격 · 링크 · Paddle 공개 설정 · 판매자 정보 · 방문 통계 토큰(`analytics.cf_beacon_token` — Cloudflare Web Analytics, 쿠키 없음. 비컨은 `localize-nav.py` 가 토큰이 있을 때만 넣는다 · 2026-10-21)의 유일한 출처와, 그 값을 페이지에 넣는 스크립트 |
-| `tools/mail-links.py` | 모든 페이지의 support 메일 링크에 제목 「[ShouArchive][<페이지 코드>] <제목>」(제목이 없으면 언어별 「문의」 — 앱의 문의 메일 `[ShouArchive][이슈] …` 과 같은 모양)과 본문 맨 아래 「보낸 페이지: 주소 (코드)」 를 붙이는 스크립트. 페이지 코드(언어 무관, 메일 필터가 쓴다): `W-HOME` 홈 · `W-PRICE` 가격 · `W-DL` 다운로드 · `W-SUP` 지원 · `W-PRIV` 개인정보 · `W-TERMS` 약관 · `W-REFUND` 환불 · `W-BUY` 구매 · `W-ACT` 앱에서 등록 · `W-KEY` 키 다시 받기 · `W-ROTATE` 키 바꾸기 · `W-ERASE` 개인정보 삭제 · `W-BILL` 결제 수단 바꾸기 · `W-404` 없는 페이지. 메일 링크를 더하거나 페이지를 고치면 다시 실행(여러 번 돌려도 같다) |
-| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 13개 페이지 구조 · 링크(확장자 없는 주소) · 번역 누락 · 가격 키 · Paddle 설정 · 인라인 스크립트(CSP) · `_headers` · `404.html` · 25 MiB 한도. `paddle.*` 가 샌드박스면 **경고**(종료 코드는 그대로) |
+| `tools/mail-links.py` | 모든 페이지의 support 메일 링크에 제목 「[ShouArchive][<페이지 코드>] <제목>」(제목이 없으면 언어별 「문의」 — 앱의 문의 메일 `[ShouArchive][이슈] …` 과 같은 모양)과 본문 맨 아래 「보낸 페이지: 주소 (코드)」 를 붙이는 스크립트. 페이지 코드(언어 무관, 메일 필터가 쓴다): `W-HOME` 홈 · `W-PRICE` 가격 · `W-DL` 다운로드 · `W-SUP` 지원 · `W-PRIV` 개인정보 · `W-TERMS` 약관 · `W-REFUND` 환불 · `W-BUY` 구매 · `W-ACT` 앱에서 등록 · `W-KEY` 키 다시 받기 · `W-ROTATE` 키 바꾸기 · `W-ERASE` 개인정보 삭제 · `W-BILL` 결제 수단 바꾸기 · `W-LOG` 변경 사항 · `W-404` 없는 페이지. 메일 링크를 더하거나 페이지를 고치면 다시 실행(여러 번 돌려도 같다) |
+| `tools/check-site.py` | 사이트 전체 점검 — 6개 언어 × 14개 페이지 구조 · 링크(확장자 없는 주소) · 번역 누락 · 가격 키 · Paddle 설정 · 인라인 스크립트(CSP) · `_headers` · `404.html` · 25 MiB 한도. `paddle.*` 가 샌드박스면 **경고**(종료 코드는 그대로) |
 
 ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Mac App Store 판은 출시하지 않고 제출을 거둬들임). 그래서 `pricing.json` 에는 `appstore.*` 키가 없고, 6개 언어 페이지 모두 `commercial.*` · `seller.*` 키만 씁니다(`fill-pricing.py` 가 없는 키를 만나면 코드 1 로 알립니다).
 
@@ -53,7 +54,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 python3 tools/fill-pricing.py   # pricing.json → 모든 언어 페이지
 python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · canonical · hreflang 다시 맞추기
 python3 tools/mail-links.py      # support 메일 링크에 페이지 코드 · 「보낸 페이지」 줄
-python3 tools/check-site.py      # 6개 언어 × 13개 페이지 구조 · 링크 · 번역 · CSP · 용량 점검
+python3 tools/check-site.py      # 6개 언어 × 14개 페이지 구조 · 링크 · 번역 · CSP · 용량 점검
 ```
 
 페이지에 쓰는 표시 다섯 가지:
@@ -72,7 +73,7 @@ python3 tools/check-site.py      # 6개 언어 × 13개 페이지 구조 · 링�
 | --- | --- |
 | `commercial.price` · `price_renewal` | 처음 구매(라이선스 + 업데이트 1년, US$29) · 업데이트 1년 갱신(US$15, 자동 갱신). 세금 별도 |
 | `commercial.devices` · `refund_days` | 라이선스 하나로 쓰는 Mac 수(2) · 결제 후 전액 환불 기간(14일) |
-| `commercial.release_date` | 출시일 — 아직 `null` |
+| `commercial.release_date` | 출시일 — 아직 `null`. 변경 사항 페이지 1.0.0 의 「출시 …」 줄에 그대로 들어가므로 출시하면 `seller.*` 처럼 언어별 사전(`{"ko": "2026년 11월 3일", "en": "November 3, 2026", …}`)으로 넣는다. 비어 있는 동안은 「출시 예정」 줄이 보인다 |
 | `commercial.checkout` · `download` · `download_sha256` | 구매 페이지 주소(보통 `/checkout`) · `.dmg` 주소 · 그 파일의 SHA-256(64자 hex, `null` 이면 다운로드 페이지의 SHA-256 줄이 숨겨짐 — DMG 를 올릴 때마다 `download` 와 함께 바꾼다). `checkout` 이 채워지면 출시(판매 시작)로 봅니다 — 「출시 예정」 안내가 사라지고 구매 · 다운로드 버튼이 나타납니다 |
 | `paddle.environment` | `sandbox` 또는 `production` |
 | `paddle.client_token` | Paddle 의 **client-side token**(`test_…` / `live_…`). 비어 있으면 `checkout.html` 은 「결제를 아직 열지 않았습니다」만 보여 줍니다 |
@@ -85,7 +86,7 @@ python3 tools/check-site.py      # 6개 언어 × 13개 페이지 구조 · 링�
 
 > 숨길 때 쓰는 `hidden` 속성이 CSS 의 `display` 규칙에 밀리지 않게 `assets/style.css` 에 `[hidden] { display: none !important; }` 규칙이 있습니다. 이 규칙을 지우면 출시 전 구매 · 다운로드 버튼이 그대로 보입니다(`check-site.py` 가 확인합니다).
 
-새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES`, `tools/mail-links.py` 의 `PAGE_CODE` 에 파일 이름을 추가하고 그 페이지를 6개 언어로 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 13개 페이지 = 72개 파일이 모두 같은 구조여야 통과합니다. 사이트 안 링크는 확장자 없이(`href="pricing"`, 홈은 `href="./"`, 다른 언어는 `href="../en/pricing"`) 쓰고, 스크립트는 인라인 대신 `assets/` 파일로 둡니다(`_headers` 의 CSP).
+새 페이지를 만들면 `tools/localize-nav.py` 와 `tools/check-site.py` 의 `PAGES`, `tools/mail-links.py` 의 `PAGE_CODE` 에 파일 이름을 추가하고 그 페이지를 6개 언어로 만들고, 스크립트를 한 번씩 실행하세요. `check-site.py` 가 번역이 밀렸거나 링크가 끊긴 페이지를 찾아냅니다 — 6개 언어 × 14개 페이지 = 84개 파일이 모두 같은 구조여야 통과합니다. 사이트 안 링크는 확장자 없이(`href="pricing"`, 홈은 `href="./"`, 다른 언어는 `href="../en/pricing"`) 쓰고, 스크립트는 인라인 대신 `assets/` 파일로 둡니다(`_headers` 의 CSP).
 
 모든 페이지 바닥(`<footer>` 안 `<p class="biz">`)에 사업자 정보(상호 · 대표 · 사업자등록번호 · 통신판매업 신고 · 주소 · 전화 · 이메일 · 결제 대행 Paddle)가 있습니다. `localize-nav.py` 는 바닥의 `<nav>` 만 다시 쓰므로 이 줄은 건드리지 않습니다.
 

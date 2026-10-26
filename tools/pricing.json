@@ -20,7 +20,26 @@
     "release_date": null,
     "checkout": "",
     "download": "https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg",
-    "download_sha256": "5ac225111223bf6762a9c9c3274734b6c688ae6c6335881940df38f0d2e6c981"
+    "download_sha256": "a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6"
+  },
+  "_free_period": "무료 기간 — 이 날(포함, 이용자 Mac 의 시간대)까지 라이선스 없이 모든 기능이 열린다. 앱에 든 날짜는 2026-12-31 이고, 라이선스 서버의 FREE_PERIOD_LAST_DAY 로 늘릴 수 있다(늘리기만 · 앱 계약 §2.19). until = 마지막 날, paid_from = 라이선스가 필요해지는 날 — 언어별 표시 문자열. 늘리면 서버 값과 함께 둘 다 바꾼다. 기간이 끝나면 null 로 비운다 — data-if=\"free_period.until\" 인 안내(홈 · 가격 · 다운로드 · 약관 4.3 · 지원 FAQ)가 모두 숨겨진다.",
+  "free_period": {
+    "until": {
+      "ko": "2026년 12월 31일",
+      "en": "December 31, 2026",
+      "es": "31 de diciembre de 2026",
+      "ja": "2026年12月31日",
+      "zh-Hans": "2026年12月31日",
+      "zh-Hant": "2026年12月31日"
+    },
+    "paid_from": {
+      "ko": "2027년 1월 1일",
+      "en": "January 1, 2027",
+      "es": "1 de enero de 2027",
+      "ja": "2027年1月1日",
+      "zh-Hans": "2027年1月1日",
+      "zh-Hant": "2027年1月1日"
+    }
   },
   "_paddle": "checkout.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(live_ / test_ 로 시작), price_* 는 가격 id(pri_…). environment 는 \"sandbox\" 또는 \"production\". price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). client_token 이 비어 있으면 checkout.html 은 「결제를 아직 열지 않았습니다」 안내만 보여 준다. license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 한다.",
   "paddle": {

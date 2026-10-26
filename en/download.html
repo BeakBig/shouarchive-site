@@ -44,6 +44,9 @@
     <div class="wrap">
       <h1>Download</h1>
       <p>ShouArchive is downloaded from this page as a <code>.dmg</code> file.<span data-if="!commercial.download" hidden> The price is set; it has not been released yet.</span><span data-if="commercial.download !commercial.checkout"> Sales have not started yet; for now you can download it and try it for <span data-price="trial_days">14</span> days.</span></p>
+      <div class="note" data-if="free_period.until">
+        <p><strong>Free period through <span data-price="free_period.until">December 31, 2026</span>.</strong> Download it and use every feature without a license. From <span data-price="free_period.paid_from">January 1, 2027</span>, a license is required — see <a href="pricing">Pricing</a> for details.</p>
+      </div>
     </div>
   </section>
 
@@ -67,7 +70,8 @@
           <p class="plan-foot" data-if="!commercial.download" hidden>There is no file to download yet. The file will be posted here once the release date is set. Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout">Sales have not started yet. For now you can download it and try it; when sales start, we will announce it on the <a href="pricing">Pricing page</a>.</p>
           <p class="plan-foot" data-if="commercial.download">The file was signed and checked against <code>Gatekeeper</code> before it was published. If you ever cannot open the file, let us know through <a href="support">Support</a>.</p>
-          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">5ac225111223bf6762a9c9c3274734b6c688ae6c6335881940df38f0d2e6c981</span></code></p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
+          <p class="plan-foot">See what changed in each version in the <a href="changelog">Changelog</a>.</p>
         </article>
 
         <article class="plan">
@@ -131,6 +135,7 @@
       <a href="privacy">Privacy Policy</a>
       <a href="terms">Terms of Service</a>
       <a href="refund">Refund Policy</a>
+      <a href="changelog">Changelog</a>
       <span class="footer-langs"><a href="../download" lang="ko" hreflang="ko">한국어</a> <a href="../en/download" lang="en" hreflang="en" aria-current="page">English</a> <a href="../ja/download" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/download" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/download" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/download" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>

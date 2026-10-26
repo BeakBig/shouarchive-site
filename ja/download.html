@@ -44,6 +44,9 @@
     <div class="wrap">
       <h1>ダウンロード</h1>
       <p>ShouArchive はこのページから <code>.dmg</code> ファイルでダウンロードします。<span data-if="!commercial.download" hidden>価格は決まりましたが、まだ発売されていません。</span><span data-if="commercial.download !commercial.checkout">販売はまだ始まっていませんが、今すぐダウンロードして <span data-price="trial_days">14</span> 日間お試しいただけます。</span></p>
+      <div class="note" data-if="free_period.until">
+        <p><strong><span data-price="free_period.until">2026年12月31日</span>までは無料期間です。</strong>ダウンロードして、ライセンスなしで全機能をお使いください。<span data-price="free_period.paid_from">2027年1月1日</span>からはライセンスが必要です。詳しくは<a href="pricing">価格</a>をご覧ください。</p>
+      </div>
     </div>
   </section>
 
@@ -67,7 +70,8 @@
           <p class="plan-foot" data-if="!commercial.download" hidden>まだダウンロードできるファイルはありません。発売日が決まり次第、ここにファイルを公開します。ご不明な点は <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a> までお送りください。</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout">販売はまだ始まっていません。今はダウンロードして体験版としてお試しいただけます。販売を始めたら<a href="pricing">価格ページ</a>でお知らせします。</p>
           <p class="plan-foot" data-if="commercial.download">ファイルは公開前に署名と <code>Gatekeeper</code> の確認を済ませています。ファイルを開けない場合は<a href="support">サポート</a>までお知らせください。</p>
-          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">5ac225111223bf6762a9c9c3274734b6c688ae6c6335881940df38f0d2e6c981</span></code></p>
+          <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
+          <p class="plan-foot">バージョンごとの変更点は<a href="changelog">変更履歴</a>にあります。</p>
         </article>
 
         <article class="plan">
@@ -131,6 +135,7 @@
       <a href="privacy">プライバシーポリシー</a>
       <a href="terms">利用規約</a>
       <a href="refund">返金ポリシー</a>
+      <a href="changelog">変更履歴</a>
       <span class="footer-langs"><a href="../download" lang="ko" hreflang="ko">한국어</a> <a href="../en/download" lang="en" hreflang="en">English</a> <a href="../ja/download" lang="ja" hreflang="ja" aria-current="page">日本語</a> <a href="../zh-Hans/download" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="../zh-Hant/download" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/download" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>

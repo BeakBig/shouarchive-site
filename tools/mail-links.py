@@ -27,6 +27,7 @@ PAGE_CODE = {
     "privacy": "W-PRIV",
     "terms": "W-TERMS",
     "refund": "W-REFUND",
+    "changelog": "W-LOG",
     "checkout": "W-BUY",
     "activate": "W-ACT",
     "license": "W-KEY",

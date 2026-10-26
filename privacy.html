@@ -73,7 +73,7 @@
           <tr><td>프로파일 목록 · 다운로드 · 생성 · 갱신, 기기 목록 · 등록, App Store 스토어 배포</td><td>Apple App Store Connect API (<code>api.appstoreconnect.apple.com</code>)</td><td>앱이 서명한 인증 토큰과, 사용자가 고르거나 입력한 값(프로파일 종류 · 번들 ID · 인증서 · 기기 이름 · UDID · 스토어 정보 · 스크린샷 등)</td></tr>
           <tr><td>Google Play 업로드 · 스토어 배포</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>서비스 계정 키로 서명한 인증 요청과, 사용자가 고른 AAB · APK · 스토어 정보 · 스크린샷</td></tr>
           <tr><td>빌드 · 앱 업로드 · 기기 설치</td><td>Apple · Google 의 개발 도구(<code>xcodebuild</code> · <code>gradle</code> 등)가 접속하는 곳</td><td>이 도구들이 각자의 방식으로 통신합니다. 의존성을 내려받는 저장소(Maven 등)도 여기에 포함됩니다</td></tr>
-          <tr><td>라이선스 활성화 · 확인 · 해제, 등록된 Mac 목록, 키 다시 받기 · 키 바꾸기, 결제 시작 · 결제 관리 링크</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
+          <tr><td>라이선스 활성화 · 확인 · 해제, 등록된 Mac 목록, 키 다시 받기 · 키 바꾸기, 결제 시작 · 결제 관리 링크, 무료 기간 확인</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
           <tr><td>업데이트 확인 · 설치 파일 내려받기</td><td>판매자가 올려 두는 업데이트 목록 · 설치 파일(<code>download.beakbig.com</code>, Cloudflare R2)</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다. 설치 파일을 내려받을 때는 IP 주소와 User-Agent 가 전송 목적으로 Cloudflare 에 처리됩니다.</td></tr>
         </tbody>
       </table>
@@ -108,6 +108,7 @@
       <ul>
         <li><strong>활성화</strong> — 라이선스 키, 구매 이메일(키 입력 창에서 등록할 때), 기기 식별값, 설치 식별값, Mac 모델명, 앱 버전</li>
         <li><strong>라이선스 확인</strong> — 약 12 시간마다 라이선스 키(있을 때), 기기 식별값, 설치 식별값, Mac 모델명, 앱 버전</li>
+        <li><strong>무료 기간 확인</strong> — 약 12 시간마다(라이선스가 없어도). 보내는 값이 없습니다 — 앱 이름 · 버전이 담긴 User-Agent 뿐이고, 서버는 이 요청을 기록하지 않습니다</li>
         <li><strong>결제한 Mac 에 등록</strong>(앱에서 결제한 뒤 확인 창의 「이 Mac 에 등록」) — 기기 식별값, 설치 식별값, Mac 모델명, 앱 버전</li>
         <li><strong>등록된 Mac 목록 · 다른 Mac 해제</strong> — 라이선스 키, 기기 식별값, 설치 식별값, 해제할 Mac 의 목록 id</li>
         <li><strong>해제</strong> — 라이선스 키(앱에 있을 때), 기기 식별값, 앱 버전</li>
@@ -205,6 +206,7 @@
       <a href="privacy" aria-current="page">개인정보 처리방침</a>
       <a href="terms">이용약관</a>
       <a href="refund">환불 정책</a>
+      <a href="changelog">변경 사항</a>
       <span class="footer-langs"><a href="privacy" lang="ko" hreflang="ko" aria-current="page">한국어</a> <a href="en/privacy" lang="en" hreflang="en">English</a> <a href="ja/privacy" lang="ja" hreflang="ja">日本語</a> <a href="zh-Hans/privacy" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> <a href="zh-Hant/privacy" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="es/privacy" lang="es" hreflang="es">Español</a></span>
     </nav>
     <div>© 2026 BeakBig</div>

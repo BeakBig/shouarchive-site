@@ -34,7 +34,7 @@ import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['ko', 'en', 'ja', 'zh-Hans', 'zh-Hant', 'es']
-PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
+PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'changelog.html', 'checkout.html',
          'activate.html', 'license.html', 'rotate.html', 'erase.html', 'billing.html']
 ROOT_ONLY = ['404.html']  # 언어판이 없는 루트 페이지 — 링크 · 인라인 스크립트만 본다
 MAX_BYTES = 25 * 1024 * 1024  # Workers 정적 파일 한도

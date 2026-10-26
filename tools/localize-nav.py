@@ -18,19 +18,19 @@ import json
 BEACON_TOKEN = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('analytics', {}).get('cf_beacon_token', '').strip()
 SITE = 'https://shouarchive.beakbig.com'
 LANGS = [('ko', '한국어'), ('en', 'English'), ('ja', '日本語'), ('zh-Hans', '简体中文'), ('zh-Hant', '繁體中文'), ('es', 'Español')]
-PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'checkout.html',
+PAGES = ['index.html', 'pricing.html', 'download.html', 'support.html', 'privacy.html', 'terms.html', 'refund.html', 'changelog.html', 'checkout.html',
          'activate.html', 'license.html', 'rotate.html', 'erase.html', 'billing.html']
 HEADER_LINKS = [('features', 'index.html', '#features'), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy', 'privacy.html', '')]
-FOOTER_LINKS = [('home', 'index.html', ''), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy_doc', 'privacy.html', ''), ('terms', 'terms.html', ''), ('refund', 'refund.html', '')]
+FOOTER_LINKS = [('home', 'index.html', ''), ('pricing', 'pricing.html', ''), ('download', 'download.html', ''), ('support', 'support.html', ''), ('privacy_doc', 'privacy.html', ''), ('terms', 'terms.html', ''), ('refund', 'refund.html', ''), ('changelog', 'changelog.html', '')]
 
 # 페이지마다 쓰는 문구. lang: 셀렉트 옆 보조 문구, main/footer: 내비게이션 aria-label, 나머지: 링크 글자
 TXT = {
-  'ko': {'lang': '언어', 'main': '주 메뉴', 'footer': '바닥 메뉴', 'features': '기능', 'pricing': '가격', 'download': '다운로드', 'support': '지원', 'privacy': '개인정보', 'home': '홈', 'privacy_doc': '개인정보 처리방침', 'terms': '이용약관', 'refund': '환불 정책'},
-  'en': {'lang': 'Language', 'main': 'Main', 'footer': 'Footer', 'features': 'Features', 'pricing': 'Pricing', 'download': 'Download', 'support': 'Support', 'privacy': 'Privacy', 'home': 'Home', 'privacy_doc': 'Privacy Policy', 'terms': 'Terms of Service', 'refund': 'Refund Policy'},
-  'ja': {'lang': '言語', 'main': 'メイン', 'footer': 'フッター', 'features': '機能', 'pricing': '価格', 'download': 'ダウンロード', 'support': 'サポート', 'privacy': 'プライバシー', 'home': 'ホーム', 'privacy_doc': 'プライバシーポリシー', 'terms': '利用規約', 'refund': '返金ポリシー'},
-  'zh-Hans': {'lang': '语言', 'main': '主导航', 'footer': '页脚', 'features': '功能', 'pricing': '价格', 'download': '下载', 'support': '支持', 'privacy': '隐私', 'home': '首页', 'privacy_doc': '隐私政策', 'terms': '服务条款', 'refund': '退款政策'},
-  'zh-Hant': {'lang': '語言', 'main': '主要導覽', 'footer': '頁尾', 'features': '功能', 'pricing': '價格', 'download': '下載', 'support': '支援', 'privacy': '隱私權', 'home': '首頁', 'privacy_doc': '隱私權政策', 'terms': '服務條款', 'refund': '退款政策'},
-  'es': {'lang': 'Idioma', 'main': 'Principal', 'footer': 'Pie de página', 'features': 'Funciones', 'pricing': 'Precios', 'download': 'Descargas', 'support': 'Soporte', 'privacy': 'Privacidad', 'home': 'Inicio', 'privacy_doc': 'Política de privacidad', 'terms': 'Términos del servicio', 'refund': 'Política de reembolso'},
+  'ko': {'lang': '언어', 'main': '주 메뉴', 'footer': '바닥 메뉴', 'features': '기능', 'pricing': '가격', 'download': '다운로드', 'support': '지원', 'privacy': '개인정보', 'home': '홈', 'privacy_doc': '개인정보 처리방침', 'terms': '이용약관', 'refund': '환불 정책', 'changelog': '변경 사항'},
+  'en': {'lang': 'Language', 'main': 'Main', 'footer': 'Footer', 'features': 'Features', 'pricing': 'Pricing', 'download': 'Download', 'support': 'Support', 'privacy': 'Privacy', 'home': 'Home', 'privacy_doc': 'Privacy Policy', 'terms': 'Terms of Service', 'refund': 'Refund Policy', 'changelog': 'Changelog'},
+  'ja': {'lang': '言語', 'main': 'メイン', 'footer': 'フッター', 'features': '機能', 'pricing': '価格', 'download': 'ダウンロード', 'support': 'サポート', 'privacy': 'プライバシー', 'home': 'ホーム', 'privacy_doc': 'プライバシーポリシー', 'terms': '利用規約', 'refund': '返金ポリシー', 'changelog': '変更履歴'},
+  'zh-Hans': {'lang': '语言', 'main': '主导航', 'footer': '页脚', 'features': '功能', 'pricing': '价格', 'download': '下载', 'support': '支持', 'privacy': '隐私', 'home': '首页', 'privacy_doc': '隐私政策', 'terms': '服务条款', 'refund': '退款政策', 'changelog': '更新日志'},
+  'zh-Hant': {'lang': '語言', 'main': '主要導覽', 'footer': '頁尾', 'features': '功能', 'pricing': '價格', 'download': '下載', 'support': '支援', 'privacy': '隱私權', 'home': '首頁', 'privacy_doc': '隱私權政策', 'terms': '服務條款', 'refund': '退款政策', 'changelog': '更新紀錄'},
+  'es': {'lang': 'Idioma', 'main': 'Principal', 'footer': 'Pie de página', 'features': 'Funciones', 'pricing': 'Precios', 'download': 'Descargas', 'support': 'Soporte', 'privacy': 'Privacidad', 'home': 'Inicio', 'privacy_doc': 'Política de privacidad', 'terms': 'Términos del servicio', 'refund': 'Política de reembolso', 'changelog': 'Historial de cambios'},
 }
 
 def page_path(lang, page):  # 저장소 루트 기준 파일 경로

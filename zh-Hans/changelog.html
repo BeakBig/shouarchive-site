@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>更新日志 — ShouArchive</title>
+  <meta name="description" content="ShouArchive 各版本的更新内容 — 新功能与修复。">
+  <meta name="theme-color" content="#1B1B3A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="更新日志 — ShouArchive">
+  <meta property="og:description" content="ShouArchive 各版本的更新内容 — 新功能与修复。">
+  <meta property="og:image" content="https://shouarchive.beakbig.com/assets/icon.png">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/icon-64.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="canonical" href="https://shouarchive.beakbig.com/zh-Hans/changelog">
+  <link rel="alternate" hreflang="ko" href="https://shouarchive.beakbig.com/changelog">
+  <link rel="alternate" hreflang="en" href="https://shouarchive.beakbig.com/en/changelog">
+  <link rel="alternate" hreflang="ja" href="https://shouarchive.beakbig.com/ja/changelog">
+  <link rel="alternate" hreflang="zh-Hans" href="https://shouarchive.beakbig.com/zh-Hans/changelog">
+  <link rel="alternate" hreflang="zh-Hant" href="https://shouarchive.beakbig.com/zh-Hant/changelog">
+  <link rel="alternate" hreflang="es" href="https://shouarchive.beakbig.com/es/changelog">
+  <link rel="alternate" hreflang="x-default" href="https://shouarchive.beakbig.com/en/changelog">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../assets/icon-64.png" alt="" width="30" height="30">ShouArchive</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="./#features">功能</a>
+      <a href="pricing">价格</a>
+      <a href="download">下载</a>
+      <a href="support">支持</a>
+      <a href="privacy">隐私</a>
+      <label class="lang-switch"><span class="visually-hidden">语言</span><select class="lang-select" aria-label="语言"><option value="../changelog">한국어</option><option value="../en/changelog">English</option><option value="../ja/changelog">日本語</option><option value="../zh-Hans/changelog" selected>简体中文</option><option value="../zh-Hant/changelog">繁體中文</option><option value="../es/changelog">Español</option></select></label>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>更新日志</h1>
+      <p>这里记录每个版本的更新内容。有新版本时应用会提醒你，也可以在应用菜单中选择「检查更新…」立即查看。</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <div class="wrap">
+      <h2 id="v1-0-0">1.0.0 — 首次发布</h2>
+      <p data-if="!commercial.release_date">即将发布 — 日期确定后会写在这里。</p>
+      <p data-if="commercial.release_date" hidden>发布于 <span data-price="commercial.release_date">价格待定</span></p>
+      <p>macOS 15 Sequoia 或更高版本 · Apple Silicon 与 Intel Mac · 应用界面语言：한국어 · English · 日本語 · 简体中文 · 繁體中文 · Español</p>
+      <h3>功能</h3>
+      <ul>
+        <li><strong>描述文件管理</strong> — 已安装的描述文件 · 到期徽章 · 筛选 · 两个比较</li>
+        <li><strong>描述文件下载 · 创建 · 续期 · 设备注册</strong>（App Store Connect API 密钥）</li>
+        <li><strong>产物检查</strong> — IPA · APK · AAB，签名 · 权限 · 安全设置</li>
+        <li><strong>历史记录</strong> — 描述文件 · 构建 · 分发的操作记录</li>
+        <li><strong>应用构建 · 任务队列</strong> — 直接构建 IPA · APK，多个任务排队执行</li>
+        <li><strong>上传应用</strong> — 上传到 TestFlight · Play Console</li>
+        <li><strong>设备安装</strong> — 设备列表 · 安装 · 重新安装</li>
+        <li><strong>重新签名 · 库 · IPA 整理</strong> — 用其他描述文件重新签名、保管产物、整理 IPA</li>
+        <li><strong>OTA 分发</strong> — 生成用于分发的安装包</li>
+        <li><strong>商店分发</strong>（iOS · Android）— 商店信息 · 截图 · 提交审核 · 回复评论</li>
+      </ul>
+      <h3>许可证</h3>
+      <ul>
+        <li><strong>一次购买 <span data-price="commercial.price">US$29</span></strong> — <span data-price="commercial.devices">2</span> 台 Mac · 含 1 年更新。之后的更新每年 <span data-price="commercial.price_renewal">US$15</span>（不含税）</li>
+        <li><strong><span data-price="trial_days">14</span> 天试用</strong> — 在应用内开始，无需付款方式</li>
+        <li data-if="free_period.until"><strong>免费期至 <span data-price="free_period.until">2026年12月31日</span></strong> — 无需许可证即可使用所有功能</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="页脚">
+      <a href="./">首页</a>
+      <a href="pricing">价格</a>
+      <a href="download">下载</a>
+      <a href="support">支持</a>
+      <a href="privacy">隐私政策</a>
+      <a href="terms">服务条款</a>
+      <a href="refund">退款政策</a>
+      <a href="changelog" aria-current="page">更新日志</a>
+      <span class="footer-langs"><a href="../changelog" lang="ko" hreflang="ko">한국어</a> <a href="../en/changelog" lang="en" hreflang="en">English</a> <a href="../ja/changelog" lang="ja" hreflang="ja">日本語</a> <a href="../zh-Hans/changelog" lang="zh-Hans" hreflang="zh-Hans" aria-current="page">简体中文</a> <a href="../zh-Hant/changelog" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="../es/changelog" lang="es" hreflang="es">Español</a></span>
+    </nav>
+    <div>© 2026 BeakBig</div>
+    <p class="biz">Beakbig<br>代表：<span data-price="seller.owner">Hyunjin Kang</span><br>营业登记号：<span data-price="seller.reg_no">613-40-01820</span><br><span data-price="seller.address">31 Dongtansunhwan-daero 20-gil, Hwaseong-si, Gyeonggi-do, Republic of Korea</span><br>通信销售业申报：<span data-price="seller.mail_order">免申报</span><br>客服：<span data-price="seller.phone">+82-502-6682-9359</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-LOG%5D%20%E5%92%A8%E8%AF%A2&amp;body=%0A%0A%0A---%0A%E6%9D%A5%E8%87%AA%E9%A1%B5%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hans%2Fchangelog%20%28W-LOG%29">support@shouarchive.beakbig.com</a></p>
+    <p class="biz-links"><a href="terms">服务条款</a> <span aria-hidden="true">|</span> <a href="privacy">隐私政策</a></p>
+  </div>
+</footer>
+
+<script src="../assets/nav.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "271a891f0ce54d0181c33ecab1e43055"}'></script>
+</body>
+</html>

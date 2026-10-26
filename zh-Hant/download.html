@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>下載</h1>
-      <p>ShouArchive 會在本頁面以 <code>.dmg</code> 檔案提供下載。<span data-if="!commercial.download" hidden>價格已經確定，但尚未推出。</span><span data-if="commercial.download !commercial.checkout">尚未開始販售，現在可以先下載並試用 <span data-price="trial_days">14</span> 天。</span></p>
+      <p>ShouArchive 會在本頁面以 <code>.dmg</code> 檔案提供下載。<span data-if="!commercial.download" hidden>價格已經確定，但尚未推出。</span><span data-if="commercial.download !commercial.checkout !free_period.until" hidden>尚未開始販售，現在可以先下載並試用 <span data-price="trial_days">14</span> 天。</span></p>
       <div class="note" data-if="free_period.until">
         <p><strong>免費期至 <span data-price="free_period.until">2026年12月31日</span>。</strong>下載後無需授權即可使用所有功能。自 <span data-price="free_period.paid_from">2027年1月1日</span> 起需要授權，詳情請見<a href="pricing">價格</a>。</p>
       </div>
@@ -56,10 +56,12 @@
         <article class="plan coming">
           <p class="plan-badge soon" data-if="!commercial.download" hidden>即將推出</p>
           <h2>ShouArchive for Mac</h2>
-          <p class="plan-for">下載後試用 <span data-price="trial_days">14</span> 天 · 滿意再以 <span data-price="commercial.price">US$29</span> 購買</p>
+          <p class="plan-for" data-if="!free_period.until" hidden>下載後試用 <span data-price="trial_days">14</span> 天 · 滿意再以 <span data-price="commercial.price">US$29</span> 購買</p>
+          <p class="plan-for" data-if="free_period.until">下載後免費使用至 <span data-price="free_period.until">2026年12月31日</span> · 之後以 <span data-price="commercial.price">US$29</span> 購買</p>
           <ul class="plan-feats">
             <li><strong>安裝檔</strong> — 在本頁面下載 <code>.dmg</code>。<span data-if="!commercial.download" hidden>會在推出時一併上架。</span></li>
-            <li><strong>試用</strong> — 下載並執行後，<span data-price="trial_days">14</span> 天試用會立即開始。不需要付款方式。</li>
+            <li data-if="!free_period.until" hidden><strong>試用</strong> — 下載並執行後，<span data-price="trial_days">14</span> 天試用會立即開始。不需要付款方式。</li>
+            <li data-if="free_period.until"><strong>免費期</strong> — 至 <span data-price="free_period.until">2026年12月31日</span>，下載並執行後不需授權即可使用所有功能。不需要付款方式。</li>
             <li><strong>授權</strong> — 付款後透過電子郵件收到的授權金鑰，請輸入到「設定」›「授權」。一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac。</li>
             <li><strong>更新</strong> — 在更新期間內，於 App 內檢查並安裝。期間結束後，在那之前推出的版本仍可繼續使用。</li>
           </ul>
@@ -69,7 +71,8 @@
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong>免費試用至 <span data-price="free_period.until">2026年12月31日</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>目前還沒有可下載的檔案。推出日期確定後，我們會把檔案放在這個位置。有任何疑問，請寄信至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>。</p>
-          <p class="plan-foot" data-if="commercial.download !commercial.checkout">尚未開始販售。現在可以先下載試用，開始販售時會在<a href="pricing">價格頁面</a>公布。</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout !free_period.until" hidden>尚未開始販售。現在可以先下載試用，開始販售時會在<a href="pricing">價格頁面</a>公布。</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until">尚未開始販售。現在是免費期，下載後即可使用所有功能，開始販售時會在<a href="pricing">價格頁面</a>公布。</p>
           <p class="plan-foot" data-if="commercial.download">檔案在開放下載之前，已經完成簽章並通過 <code>Gatekeeper</code> 檢查。若發生無法開啟檔案的情況，請告知<a href="support">支援</a>。</p>
           <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
           <p class="plan-foot">各版本的更新內容請見<a href="changelog">更新紀錄</a>。</p>
@@ -96,9 +99,14 @@
     <div class="wrap">
       <h2>關於下載的常見問題</h2>
       <div class="faq">
-        <details open>
+        <details open data-if="!free_period.until" hidden>
           <summary>試用結束後才購買，需要重新安裝嗎？</summary>
           <p>不需要。在試用中的 App 的「設定」›「授權」輸入付款後收到的金鑰，所有功能就會立即重新開放。設定與記錄會原封不動保留並可檢視（新工作須在購買後執行）。</p>
+        </details>
+
+        <details open data-if="free_period.until">
+          <summary>免費期結束後才購買，需要重新安裝嗎？</summary>
+          <p>不需要。在使用中的 App 的「設定」›「授權」輸入付款後收到的金鑰，所有功能就會立即重新開放。設定與記錄會原封不動保留並可檢視（新工作須在購買後執行）。</p>
         </details>
 
         <details>
@@ -119,7 +127,8 @@
     <div class="wrap">
       <h2>現在就下載</h2>
       <p data-if="!commercial.download" hidden>推出日期確定後，我們會在本頁面放上檔案。價格與試用條件請見價格頁面。</p>
-      <p data-if="commercial.download">下載後，可在 <span data-price="trial_days">14</span> 天內不需付款方式試用。</p>
+      <p data-if="commercial.download !free_period.until" hidden>下載後，可在 <span data-price="trial_days">14</span> 天內不需付款方式試用。</p>
+      <p data-if="commercial.download free_period.until">下載後，至 <span data-price="free_period.until">2026年12月31日</span> 不需授權即可免費使用所有功能。</p>
       <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">下載（.dmg）</a>
       <a class="btn" href="pricing" data-live-hide>查看價格</a>
     </div>

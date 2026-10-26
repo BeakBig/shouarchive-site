@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Download</h1>
-      <p>ShouArchive is downloaded from this page as a <code>.dmg</code> file.<span data-if="!commercial.download" hidden> The price is set; it has not been released yet.</span><span data-if="commercial.download !commercial.checkout"> Sales have not started yet; for now you can download it and try it for <span data-price="trial_days">14</span> days.</span></p>
+      <p>ShouArchive is downloaded from this page as a <code>.dmg</code> file.<span data-if="!commercial.download" hidden> The price is set; it has not been released yet.</span><span data-if="commercial.download !commercial.checkout !free_period.until" hidden> Sales have not started yet; for now you can download it and try it for <span data-price="trial_days">14</span> days.</span></p>
       <div class="note" data-if="free_period.until">
         <p><strong>Free period through <span data-price="free_period.until">December 31, 2026</span>.</strong> Download it and use every feature without a license. From <span data-price="free_period.paid_from">January 1, 2027</span>, a license is required — see <a href="pricing">Pricing</a> for details.</p>
       </div>
@@ -56,10 +56,12 @@
         <article class="plan coming">
           <p class="plan-badge soon" data-if="!commercial.download" hidden>Coming soon</p>
           <h2>ShouArchive for Mac</h2>
-          <p class="plan-for">Download and try it for <span data-price="trial_days">14</span> days · if you like it, buy it for <span data-price="commercial.price">US$29</span></p>
+          <p class="plan-for" data-if="!free_period.until" hidden>Download and try it for <span data-price="trial_days">14</span> days · if you like it, buy it for <span data-price="commercial.price">US$29</span></p>
+          <p class="plan-for" data-if="free_period.until">Download it and use it free through <span data-price="free_period.until">December 31, 2026</span> · after that, buy it for <span data-price="commercial.price">US$29</span></p>
           <ul class="plan-feats">
             <li><strong>Installer</strong> — download it from this page as a <code>.dmg</code>.<span data-if="!commercial.download" hidden> It goes up at release.</span></li>
-            <li><strong>Trial</strong> — the <span data-price="trial_days">14</span>-day trial starts as soon as you download and open the app. No payment method needed.</li>
+            <li data-if="!free_period.until" hidden><strong>Trial</strong> — the <span data-price="trial_days">14</span>-day trial starts as soon as you download and open the app. No payment method needed.</li>
+            <li data-if="free_period.until"><strong>Free period</strong> — through <span data-price="free_period.until">December 31, 2026</span>, download and open the app to use every feature without a license. No payment method needed.</li>
             <li><strong>License</strong> — after payment, enter the license key you receive by email in Settings › License. One key covers <span data-price="commercial.devices">2</span> Macs.</li>
             <li><strong>Updates</strong> — during your update period, check for and install updates inside the app. When the period ends, you keep using every version released until then.</li>
           </ul>
@@ -69,7 +71,8 @@
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong>Free to try through <span data-price="free_period.until">December 31, 2026</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>There is no file to download yet. The file will be posted here once the release date is set. Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
-          <p class="plan-foot" data-if="commercial.download !commercial.checkout">Sales have not started yet. For now you can download it and try it; when sales start, we will announce it on the <a href="pricing">Pricing page</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout !free_period.until" hidden>Sales have not started yet. For now you can download it and try it; when sales start, we will announce it on the <a href="pricing">Pricing page</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until">Sales have not started yet. During the free period you can download it and use every feature; when sales start, we will announce it on the <a href="pricing">Pricing page</a>.</p>
           <p class="plan-foot" data-if="commercial.download">The file was signed and checked against <code>Gatekeeper</code> before it was published. If you ever cannot open the file, let us know through <a href="support">Support</a>.</p>
           <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">a7950e2b1b4322593bdbe5a0e1c17cca02f246e22073195c79b6c33026a426a6</span></code></p>
           <p class="plan-foot">See what changed in each version in the <a href="changelog">Changelog</a>.</p>
@@ -96,9 +99,14 @@
     <div class="wrap">
       <h2>Download FAQ</h2>
       <div class="faq">
-        <details open>
+        <details open data-if="!free_period.until" hidden>
           <summary>If I buy after the trial ends, do I need to reinstall?</summary>
           <p>No. Enter the key you receive after payment in Settings › License of the app you were trying, and every feature opens up again right away. Your settings and history stay as they were and remain viewable (new jobs after purchase).</p>
+        </details>
+
+        <details open data-if="free_period.until">
+          <summary>If I buy after the free period ends, do I need to reinstall?</summary>
+          <p>No. Enter the key you receive after payment in Settings › License of the app you have been using, and every feature opens up again right away. Your settings and history stay as they were and remain viewable (new jobs after purchase).</p>
         </details>
 
         <details>
@@ -119,7 +127,8 @@
     <div class="wrap">
       <h2>Get it now</h2>
       <p data-if="!commercial.download" hidden>The file will be posted on this page once the release date is set. The price and trial terms are on the Pricing page.</p>
-      <p data-if="commercial.download">Download it and try it for <span data-price="trial_days">14</span> days with no payment method.</p>
+      <p data-if="commercial.download !free_period.until" hidden>Download it and try it for <span data-price="trial_days">14</span> days with no payment method.</p>
+      <p data-if="commercial.download free_period.until">Download it and use every feature free, without a license, through <span data-price="free_period.until">December 31, 2026</span>.</p>
       <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Download (.dmg)</a>
       <a class="btn" href="pricing" data-live-hide>See pricing</a>
     </div>

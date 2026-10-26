@@ -53,11 +53,11 @@
         <div class="hero-actions">
           <a class="btn" href="download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            ダウンロード · <span data-price="trial_days">14</span> 日間の体験版
+            <span data-if="!free_period.until" hidden>ダウンロード · <span data-price="trial_days">14</span> 日間の体験版</span><span data-if="free_period.until">無料ダウンロード</span>
           </a>
           <a class="btn ghost" href="#features">機能を見る</a>
         </div>
-        <p class="hero-note">macOS 15 Sequoia 以降 · Apple Silicon · Intel · <a href="pricing">買い切り <span data-price="commercial.price">US$29</span></a> · 支払い方法の登録なしで <span data-price="trial_days">14</span> 日間体験</p>
+        <p class="hero-note">macOS 15 Sequoia 以降 · Apple Silicon · Intel · <a href="pricing">買い切り <span data-price="commercial.price">US$29</span></a><span data-if="!free_period.until" hidden> · 支払い方法の登録なしで <span data-price="trial_days">14</span> 日間体験</span></p>
         <p class="hero-note" data-if="free_period.until"><strong><span data-price="free_period.until">2026年12月31日</span>まで全機能が無料</strong> — ライセンスなしで、アプリビルド・OTA 配布・ストア配信まで使えます。</p>
       </div>
     </div>
@@ -216,7 +216,7 @@
     <div class="wrap">
       <h2>今すぐ入手</h2>
       <p>プロファイル・ビルド成果物検査。リリース直前の確認は ShouArchive で。</p>
-      <a class="btn" href="download">ダウンロード · <span data-price="trial_days">14</span> 日間の体験版</a>
+      <a class="btn" href="download"><span data-if="!free_period.until" hidden>ダウンロード · <span data-price="trial_days">14</span> 日間の体験版</span><span data-if="free_period.until">無料ダウンロード</span></a>
     </div>
   </section>
 </main>

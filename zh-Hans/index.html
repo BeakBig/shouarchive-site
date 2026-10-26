@@ -53,11 +53,11 @@
         <div class="hero-actions">
           <a class="btn" href="download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            下载 · <span data-price="trial_days">14</span> 天试用
+            <span data-if="!free_period.until" hidden>下载 · <span data-price="trial_days">14</span> 天试用</span><span data-if="free_period.until">免费下载</span>
           </a>
           <a class="btn ghost" href="#features">看看它能做什么</a>
         </div>
-        <p class="hero-note">macOS 15 Sequoia 或更高版本 · Apple Silicon · Intel · <a href="pricing">一次购买 <span data-price="commercial.price">US$29</span></a> · 无需绑定支付方式即可试用 <span data-price="trial_days">14</span> 天</p>
+        <p class="hero-note">macOS 15 Sequoia 或更高版本 · Apple Silicon · Intel · <a href="pricing">一次购买 <span data-price="commercial.price">US$29</span></a><span data-if="!free_period.until" hidden> · 无需绑定支付方式即可试用 <span data-price="trial_days">14</span> 天</span></p>
         <p class="hero-note" data-if="free_period.until"><strong>截至 <span data-price="free_period.until">2026年12月31日</span>，所有功能免费</strong> — 无需许可证即可使用应用构建、OTA 分发和商店分发。</p>
       </div>
     </div>
@@ -216,7 +216,7 @@
     <div class="wrap">
       <h2>立即获取</h2>
       <p>描述文件与产物检查。发布前的确认，交给 ShouArchive。</p>
-      <a class="btn" href="download">下载 · <span data-price="trial_days">14</span> 天试用</a>
+      <a class="btn" href="download"><span data-if="!free_period.until" hidden>下载 · <span data-price="trial_days">14</span> 天试用</span><span data-if="free_period.until">免费下载</span></a>
     </div>
   </section>
 </main>

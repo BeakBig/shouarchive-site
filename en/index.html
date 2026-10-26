@@ -53,11 +53,11 @@
         <div class="hero-actions">
           <a class="btn" href="download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            Download · <span data-price="trial_days">14</span>-day trial
+            <span data-if="!free_period.until" hidden>Download · <span data-price="trial_days">14</span>-day trial</span><span data-if="free_period.until">Free download</span>
           </a>
           <a class="btn ghost" href="#features">See what it does</a>
         </div>
-        <p class="hero-note">macOS 15 Sequoia or later · Apple Silicon and Intel · <a href="pricing">One-time purchase <span data-price="commercial.price">US$29</span></a> · <span data-price="trial_days">14</span>-day trial, no payment method needed</p>
+        <p class="hero-note">macOS 15 Sequoia or later · Apple Silicon and Intel · <a href="pricing">One-time purchase <span data-price="commercial.price">US$29</span></a><span data-if="!free_period.until" hidden> · <span data-price="trial_days">14</span>-day trial, no payment method needed</span></p>
         <p class="hero-note" data-if="free_period.until"><strong>Every feature is free through <span data-price="free_period.until">December 31, 2026</span></strong> — app builds, OTA distribution and store release, no license needed.</p>
       </div>
     </div>
@@ -216,7 +216,7 @@
     <div class="wrap">
       <h2>Get ShouArchive</h2>
       <p>Profiles and artifact inspection — the last checks before you ship.</p>
-      <a class="btn" href="download">Download · <span data-price="trial_days">14</span>-day trial</a>
+      <a class="btn" href="download"><span data-if="!free_period.until" hidden>Download · <span data-price="trial_days">14</span>-day trial</span><span data-if="free_period.until">Free download</span></a>
     </div>
   </section>
 </main>

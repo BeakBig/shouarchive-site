@@ -53,11 +53,11 @@
         <div class="hero-actions">
           <a class="btn" href="download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            Descargar · prueba de <span data-price="trial_days">14</span> días
+            <span data-if="!free_period.until" hidden>Descargar · prueba de <span data-price="trial_days">14</span> días</span><span data-if="free_period.until">Descarga gratis</span>
           </a>
           <a class="btn ghost" href="#features">Ver qué hace</a>
         </div>
-        <p class="hero-note">macOS 15 Sequoia o posterior · Apple Silicon · Intel · <a href="pricing">compra única por <span data-price="commercial.price">US$29</span></a> · prueba de <span data-price="trial_days">14</span> días sin método de pago</p>
+        <p class="hero-note">macOS 15 Sequoia o posterior · Apple Silicon · Intel · <a href="pricing">compra única por <span data-price="commercial.price">US$29</span></a><span data-if="!free_period.until" hidden> · prueba de <span data-price="trial_days">14</span> días sin método de pago</span></p>
         <p class="hero-note" data-if="free_period.until"><strong>Todas las funciones gratis hasta el <span data-price="free_period.until">31 de diciembre de 2026</span></strong>: compilación de apps, distribución OTA y publicación en tiendas, sin licencia.</p>
       </div>
     </div>
@@ -216,7 +216,7 @@
     <div class="wrap">
       <h2>Consigue ShouArchive</h2>
       <p>Perfiles e inspección de artefactos. Las comprobaciones de última hora antes de publicar, con ShouArchive.</p>
-      <a class="btn" href="download">Descargar · prueba de <span data-price="trial_days">14</span> días</a>
+      <a class="btn" href="download"><span data-if="!free_period.until" hidden>Descargar · prueba de <span data-price="trial_days">14</span> días</span><span data-if="free_period.until">Descarga gratis</span></a>
     </div>
   </section>
 </main>

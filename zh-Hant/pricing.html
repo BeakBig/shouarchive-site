@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>價格</h1>
-      <p>ShouArchive 是在本網站買一次就能一直使用的 App。請先在 <span data-price="trial_days">14</span> 天內不需付款方式試用所有功能，滿意後再購買授權。這是一套開發者工具，以您本人的 Apple · Google 開發者帳號與憑證，建置、簽署並發佈您自己開發的 App。</p>
+      <p>ShouArchive 是在本網站買一次就能一直使用的 App。<span data-if="!free_period.until" hidden>請先在 <span data-price="trial_days">14</span> 天內不需付款方式試用所有功能，滿意後再購買授權。</span>這是一套開發者工具，以您本人的 Apple · Google 開發者帳號與憑證，建置、簽署並發佈您自己開發的 App。</p>
       <div class="note" data-if="free_period.until">
         <p><strong>免費期至 <span data-price="free_period.until">2026年12月31日</span>。</strong>無需授權即可使用所有功能。自 <span data-price="free_period.paid_from">2027年1月1日</span> 起適用下方價格，免費期間使用過的 Mac 也需要授權才能使用 App 建置、資源庫、OTA 發佈與商店發佈。若你在免費期最後 <span data-price="trial_days">14</span> 天內首次啟動 App，試用會持續到首次啟動後 <span data-price="trial_days">14</span> 天。描述檔管理、產物檢查、API 金鑰管理與檢視歷史記錄仍然免費。</p>
       </div>
@@ -92,7 +92,7 @@
           <div class="plan-actions">
             <a class="btn" data-src="commercial.checkout" href="#" hidden>立即購買</a>
           </div>
-          <p class="plan-foot" data-live-hide>價格已經確定，推出日期尚未確定。一旦確定，我們會更新本頁面與 <a href="download">下載頁面</a>。<span data-if="commercial.download">現在已可從<a href="download">下載頁面</a>下載，試用 <span data-price="trial_days">14</span> 天。</span>有任何疑問，請寫信到 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 告訴我們。</p>
+          <p class="plan-foot" data-live-hide>價格已經確定，推出日期尚未確定。一旦確定，我們會更新本頁面與 <a href="download">下載頁面</a>。<span data-if="commercial.download !free_period.until" hidden>現在已可從<a href="download">下載頁面</a>下載，試用 <span data-price="trial_days">14</span> 天。</span><span data-if="commercial.download free_period.until">現在已可從<a href="download">下載頁面</a>下載，至 <span data-price="free_period.until">2026年12月31日</span> 免費使用所有功能。</span>有任何疑問，請寫信到 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 告訴我們。</p>
           <p class="plan-foot" data-live-show hidden>付款由 <strong>Paddle</strong> 以銷售代理（Merchant of Record）身分處理。關閉更新續訂的方法與退款，已寫在 <a href="refund">退款政策</a> 中。</p>
         </article>
       </div>
@@ -160,7 +160,8 @@
     <div class="wrap">
       <h2>現在就開始</h2>
       <p data-if="!commercial.download !commercial.checkout" hidden>推出後，可以在本頁面下載，先用 <span data-price="trial_days">14</span> 天試用體驗，再決定是否購買。想知道推出消息，請寫信到 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 告訴我們。</p>
-      <p data-if="commercial.download !commercial.checkout">現在即可下載，不需付款方式試用 <span data-price="trial_days">14</span> 天。尚未開始販售 — 開始後即可在本頁面購買授權。</p>
+      <p data-if="commercial.download !commercial.checkout !free_period.until" hidden>現在即可下載，不需付款方式試用 <span data-price="trial_days">14</span> 天。尚未開始販售 — 開始後即可在本頁面購買授權。</p>
+      <p data-if="commercial.download !commercial.checkout free_period.until">現在即可下載，至 <span data-price="free_period.until">2026年12月31日</span> 不需授權即可免費使用所有功能。尚未開始販售 — 開始後即可在本頁面購買授權。</p>
       <p data-live-show hidden>下載後，可在 <span data-price="trial_days">14</span> 天內不需付款方式試用。滿意的話，購買 <a href="pricing">授權</a> 並輸入金鑰即可。</p>
       <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">下載（.dmg）</a>
       <a class="btn" href="download" data-live-hide>下載說明</a>

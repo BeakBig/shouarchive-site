@@ -65,8 +65,9 @@
           </ul>
           <div class="plan-actions">
             <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">下載（.dmg）</a>
-            <a class="btn outline" href="pricing">價格 · 購買說明</a>
+            <a class="btn outline" href="pricing" data-live-show hidden>價格 · 購買說明</a>
           </div>
+          <p class="plan-foot" data-if="free_period.until"><strong>免費試用至 <span data-price="free_period.until">2026年12月31日</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>目前還沒有可下載的檔案。推出日期確定後，我們會把檔案放在這個位置。有任何疑問，請寄信至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%E8%AB%AE%E8%A9%A2&amp;body=%0A%0A%0A---%0A%E4%BE%86%E8%87%AA%E9%A0%81%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hant%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>。</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout">尚未開始販售。現在可以先下載試用，開始販售時會在<a href="pricing">價格頁面</a>公布。</p>
           <p class="plan-foot" data-if="commercial.download">檔案在開放下載之前，已經完成簽章並通過 <code>Gatekeeper</code> 檢查。若發生無法開啟檔案的情況，請告知<a href="support">支援</a>。</p>

@@ -65,8 +65,9 @@
           </ul>
           <div class="plan-actions">
             <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Descarga (.dmg)</a>
-            <a class="btn outline" href="pricing">Precios y compra</a>
+            <a class="btn outline" href="pricing" data-live-show hidden>Precios y compra</a>
           </div>
+          <p class="plan-foot" data-if="free_period.until"><strong>Prueba gratis hasta el <span data-price="free_period.until">31 de diciembre de 2026</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>Todavía no hay ningún archivo para descargar. Cuando se fije la fecha de lanzamiento, lo publicaremos aquí. Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout">Las ventas aún no han empezado. Por ahora puedes descargarla y probarla; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
           <p class="plan-foot" data-if="commercial.download">El archivo se ha publicado tras pasar la firma y la comprobación de <code>Gatekeeper</code>. Si alguna vez no puedes abrirlo, avísanos desde <a href="support">Soporte</a>.</p>

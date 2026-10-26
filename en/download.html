@@ -65,8 +65,9 @@
           </ul>
           <div class="plan-actions">
             <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/1.0.0/ShouArchive-1.0.0.dmg">Download (.dmg)</a>
-            <a class="btn outline" href="pricing">Pricing and purchase</a>
+            <a class="btn outline" href="pricing" data-live-show hidden>Pricing and purchase</a>
           </div>
+          <p class="plan-foot" data-if="free_period.until"><strong>Free to try through <span data-price="free_period.until">December 31, 2026</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>There is no file to download yet. The file will be posted here once the release date is set. Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout">Sales have not started yet. For now you can download it and try it; when sales start, we will announce it on the <a href="pricing">Pricing page</a>.</p>
           <p class="plan-foot" data-if="commercial.download">The file was signed and checked against <code>Gatekeeper</code> before it was published. If you ever cannot open the file, let us know through <a href="support">Support</a>.</p>

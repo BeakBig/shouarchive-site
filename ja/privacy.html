@@ -73,7 +73,7 @@
           <tr><td>プロファイルの一覧・ダウンロード・作成・更新、端末の一覧・登録、App Store へのストア配信</td><td>Apple App Store Connect API（<code>api.appstoreconnect.apple.com</code>）</td><td>アプリが署名した認証トークンと、ユーザーが選択・入力した値（プロファイルの種類・バンドル ID・証明書・端末名・UDID・ストア情報・スクリーンショットなど）</td></tr>
           <tr><td>Google Play へのアップロード・ストア配信</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>サービスアカウントキーで署名した認証リクエストと、ユーザーが選んだ AAB · APK・ストア情報・スクリーンショット</td></tr>
           <tr><td>ビルド・アプリのアップロード・端末へのインストール</td><td>Apple・Google の開発ツール（<code>xcodebuild</code> · <code>gradle</code> など）が接続する先</td><td>これらのツールがそれぞれの方法で通信します。依存関係をダウンロードするリポジトリ（Maven など）もここに含まれます</td></tr>
-          <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送・変更、決済の開始・お支払い管理リンク</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
+          <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送・変更、決済の開始・お支払い管理リンク、無料期間の確認</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
           <tr><td>アップデートの確認・インストーラーのダウンロード</td><td>販売者が公開しているアップデート一覧・インストーラー（<code>download.beakbig.com</code>、Cloudflare R2）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません。インストーラーをダウンロードするときは、IP アドレスと User-Agent が配信のために Cloudflare で処理されます。</td></tr>
         </tbody>
       </table>
@@ -108,6 +108,7 @@
       <ul>
         <li><strong>有効化</strong> — ライセンスキー、購入時のメールアドレス（キー入力画面で登録する場合）、端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン</li>
         <li><strong>ライセンスの確認</strong> — 約 12 時間ごとに、ライセンスキー（ある場合）、端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン</li>
+        <li><strong>無料期間の確認</strong> — 約 12 時間ごと（ライセンスがなくても）。送る値はありません — アプリ名とバージョンを含む User-Agent だけで、サーバーはこのリクエストを記録しません</li>
         <li><strong>購入した Mac への登録</strong>（アプリから購入したあと、確認画面の「この Mac に登録」） — 端末識別値、インストール識別値、Mac のモデル名、アプリのバージョン</li>
         <li><strong>登録済み Mac の一覧・ほかの Mac の解除</strong> — ライセンスキー、端末識別値、インストール識別値、解除する Mac の一覧上の ID</li>
         <li><strong>解除</strong> — ライセンスキー（アプリにある場合）、端末識別値、アプリのバージョン</li>

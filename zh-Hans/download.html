@@ -44,6 +44,9 @@
     <div class="wrap">
       <h1>下载</h1>
       <p>ShouArchive 在本页以 <code>.dmg</code> 文件提供下载。<span data-if="!commercial.download" hidden>价格已经确定，但尚未推出。</span><span data-if="commercial.download !commercial.checkout">尚未开始销售，现在可以先下载并试用 <span data-price="trial_days">14</span> 天。</span></p>
+      <div class="note" data-if="free_period.until">
+        <p><strong>免费期至 <span data-price="free_period.until">2026年12月31日</span>。</strong>下载后无需许可证即可使用所有功能。自 <span data-price="free_period.paid_from">2027年1月1日</span> 起需要许可证，详情见<a href="pricing">价格</a>。</p>
+      </div>
     </div>
   </section>
 

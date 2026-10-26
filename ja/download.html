@@ -44,6 +44,9 @@
     <div class="wrap">
       <h1>ダウンロード</h1>
       <p>ShouArchive はこのページから <code>.dmg</code> ファイルでダウンロードします。<span data-if="!commercial.download" hidden>価格は決まりましたが、まだ発売されていません。</span><span data-if="commercial.download !commercial.checkout">販売はまだ始まっていませんが、今すぐダウンロードして <span data-price="trial_days">14</span> 日間お試しいただけます。</span></p>
+      <div class="note" data-if="free_period.until">
+        <p><strong><span data-price="free_period.until">2026年12月31日</span>までは無料期間です。</strong>ダウンロードして、ライセンスなしで全機能をお使いください。<span data-price="free_period.paid_from">2027年1月1日</span>からはライセンスが必要です。詳しくは<a href="pricing">価格</a>をご覧ください。</p>
+      </div>
     </div>
   </section>
 

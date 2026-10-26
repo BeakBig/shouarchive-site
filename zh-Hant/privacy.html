@@ -73,7 +73,7 @@
           <tr><td>描述檔清單 · 下載 · 建立 · 續期，裝置清單 · 註冊，App Store 商店發佈</td><td>Apple App Store Connect API（<code>api.appstoreconnect.apple.com</code>）</td><td>由 App 簽署的驗證權杖，以及您選擇或輸入的值（描述檔類型 · Bundle ID · 憑證 · 裝置名稱 · UDID · 商店資訊 · 螢幕截圖等）</td></tr>
           <tr><td>Google Play 上傳 · 商店發佈</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>以服務帳戶金鑰簽署的驗證請求，以及您選擇的 AAB · APK · 商店資訊 · 螢幕截圖</td></tr>
           <tr><td>建置 · App 上傳 · 裝置安裝</td><td>Apple · Google 的開發工具（<code>xcodebuild</code> · <code>gradle</code> 等）所連線的位置</td><td>這些工具以各自的方式通訊。下載相依套件的儲存庫（Maven 等）也包含在內</td></tr>
-          <tr><td>授權啟用 · 驗證 · 解除，已註冊 Mac 列表，重新取得金鑰 · 更換金鑰，開始付款 · 付款管理連結</td><td>銷售者的授權伺服器</td><td>第 5 項</td></tr>
+          <tr><td>授權啟用 · 驗證 · 解除，已註冊 Mac 列表，重新取得金鑰 · 更換金鑰，開始付款 · 付款管理連結，免費期查詢</td><td>銷售者的授權伺服器</td><td>第 5 項</td></tr>
           <tr><td>檢查更新 · 下載安裝檔</td><td>銷售者提供的更新清單 · 安裝檔（<code>download.beakbig.com</code>，Cloudflare R2）</td><td>一般的網頁請求（含 App 名稱 · 版本的 User-Agent）。只接收更新清單，不傳送其他值。下載安裝檔時，IP 位址與 User-Agent 會為了傳送檔案而由 Cloudflare 處理。</td></tr>
         </tbody>
       </table>
@@ -108,6 +108,7 @@
       <ul>
         <li><strong>啟用</strong> — 授權金鑰、購買電子郵件地址（在金鑰輸入視窗中註冊時）、裝置識別值、安裝識別值、Mac 機型、App 版本</li>
         <li><strong>授權驗證</strong> — 約每 12 小時一次，傳送授權金鑰（若有）、裝置識別值、安裝識別值、Mac 機型、App 版本</li>
+        <li><strong>免費期查詢</strong> — 約每 12 小時一次（即使沒有授權）。不傳送任何值，只有包含 App 名稱與版本的 User-Agent，伺服器也不記錄這些請求</li>
         <li><strong>註冊付款的 Mac</strong>（在 App 內付款後，於確認視窗中選擇「註冊此 Mac」） — 裝置識別值、安裝識別值、Mac 機型、App 版本</li>
         <li><strong>已註冊 Mac 列表 · 解除其他 Mac</strong> — 授權金鑰、裝置識別值、安裝識別值、要解除的 Mac 在列表中的 id</li>
         <li><strong>解除</strong> — 授權金鑰（App 中有時）、裝置識別值、App 版本</li>

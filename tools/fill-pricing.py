@@ -28,6 +28,8 @@
               paddle.environment · client_token · price_license · price_updates · license_api 로 매번 다시 쓴다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
               pricing.json 에도 페이지에도 넣지 않는다.
+- 루트 _redirects: 「최신 앱 받기」 고정 주소 /download/latest 를 commercial.download(지금 DMG)로 302 로 넘긴다.
+              SNS 등에 한 번 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다. 이 스크립트가 매번 다시 쓴다(손으로 고치지 않는다).
 """
 import json, os, re, sys
 
@@ -175,6 +177,24 @@ def html_files():
                 yield os.path.join(dirpath, name)
 
 
+REDIRECTS = os.path.join(ROOT, '_redirects')
+LATEST_PATHS = ('/download/latest', '/download/latest/')
+
+
+def write_redirects(cfg):
+    """/download/latest → 지금 DMG (302 — 다음 릴리스에 바뀌므로 영구 이동이 아니다). 다운로드가 없으면 규칙을 두지 않는다."""
+    target = (cfg.get('commercial', {}) or {}).get('download') or ''
+    lines = ['# fill-pricing.py 가 tools/pricing.json 의 commercial.download 로 만든다 — 손으로 고치지 않는다.',
+             '# 「최신 앱 받기」 고정 주소: SNS · 메일에 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다.']
+    lines += [f'{path} {target} 302' for path in LATEST_PATHS] if target else []
+    out = '\n'.join(lines) + '\n'
+    old = open(REDIRECTS, encoding='utf-8').read() if os.path.exists(REDIRECTS) else None
+    if out != old:
+        open(REDIRECTS, 'w', encoding='utf-8').write(out)
+        return True
+    return False
+
+
 def main():
     cfg = load()
     live = bool(cfg.get('commercial', {}).get('checkout'))
@@ -190,6 +210,8 @@ def main():
         if out != src:
             open(path, 'w', encoding='utf-8').write(out)
             changed.append(where)
+    if write_redirects(cfg):
+        changed.append('_redirects')
     print(f'pricing.json 적용 — 출시(구매 열림): {"예" if live else "아니오"} · 바뀐 파일 {len(changed)}개')
     for p in changed:
         print('  ' + p)

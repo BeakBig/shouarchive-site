@@ -18,3 +18,9 @@
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com; connect-src 'self' https://cloudflareinsights.com https://license.beakbig.com https://*.paddle.com; img-src 'self' data: https://*.paddle.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# 앱 자동 업데이트(Sparkle) 목록 — SUFeedURL = https://shouarchive.beakbig.com/appcast.xml (앱에 박혀 있어 주소를 바꾸면 안 된다).
+# 새 빌드마다 바뀌므로 캐시하지 않는다. 항목의 DMG 는 빌드 번호가 붙은 새 주소(download.beakbig.com, immutable)다 — docs/release-direct.md
+/appcast.xml
+  Cache-Control: no-cache
+  Content-Type: application/xml; charset=utf-8

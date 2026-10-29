@@ -149,6 +149,142 @@
         "zh-Hant": "自 4 月 28 日起，上傳到 App Store Connect 的應用程式必須使用 Xcode 26 以上版本，並以 iOS 26、iPadOS 26、tvOS 26、visionOS 26 或 watchOS 26 SDK 建置。",
         "es": "Desde el 28 de abril, las apps que se suben a App Store Connect deben compilarse con Xcode 26 o posterior y el SDK de iOS 26, iPadOS 26, tvOS 26, visionOS 26 o watchOS 26."
       }
+    },
+    {
+      "id": "shouarchive-1.0.3",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.3",
+      "published": "2026-10-29",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-3",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-3",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-3",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-3",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-3",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-3"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.3",
+        "en": "ShouArchive 1.0.3",
+        "ja": "ShouArchive 1.0.3",
+        "zh-Hans": "ShouArchive 1.0.3",
+        "zh-Hant": "ShouArchive 1.0.3",
+        "es": "ShouArchive 1.0.3"
+      },
+      "summary": {
+        "ko": "- 소식 — 왼쪽 위 iOS / Android 옆 「소식」 으로 옮겼습니다(아래 탭 바에서 빠짐). 안에서 iOS · Android · ShouArchive 를 고릅니다\n- 업데이트 내역 — 소식 › ShouArchive 에 버전마다 바뀐 점을 보여 줍니다. 새 버전이 있으면 「새 버전」 과 「업데이트 확인…」",
+        "en": "- News — moved to the top-left switcher next to iOS / Android (no longer in the bottom tab bar). Inside, choose iOS, Android or ShouArchive\n- Release notes — News › ShouArchive shows what changed in each version. When a newer version is out, you’ll see New Version and Check for Updates…",
+        "ja": "- ニュース — 左上の iOS / Android の隣に移動しました（下のタブバーからは外れました）。中で iOS・Android・ShouArchive を選べます\n- アップデート履歴 — ニュース › ShouArchive にバージョンごとの変更点を表示します。新しいバージョンがあると「新バージョン」と「アップデートを確認…」",
+        "zh-Hans": "- 资讯 — 移到左上角 iOS / Android 旁边（不再位于底部标签栏），可在其中选择 iOS、Android 或 ShouArchive\n- 更新记录 — 资讯 › ShouArchive 列出每个版本的变更；有新版本时显示“新版本”和“检查更新…”",
+        "zh-Hant": "- 資訊 — 移到左上角 iOS / Android 旁邊（不再位於底部分頁列），可在其中選擇 iOS、Android 或 ShouArchive\n- 更新記錄 — 資訊 › ShouArchive 列出每個版本的變更；有新版本時顯示「新版本」與「檢查更新…」",
+        "es": "- Noticias — ahora está arriba a la izquierda, junto a iOS / Android (ya no en la barra de pestañas inferior). Dentro eliges iOS, Android o ShouArchive\n- Notas de versión — Noticias › ShouArchive muestra lo que cambió en cada versión. Si hay una versión nueva, aparecen Nueva versión y Buscar actualizaciones…"
+      }
+    },
+    {
+      "id": "shouarchive-1.0.2",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.2",
+      "published": "2026-10-29",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-2",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-2",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-2",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-2",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-2",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-2"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.2",
+        "en": "ShouArchive 1.0.2",
+        "ja": "ShouArchive 1.0.2",
+        "zh-Hans": "ShouArchive 1.0.2",
+        "zh-Hant": "ShouArchive 1.0.2",
+        "es": "ShouArchive 1.0.2"
+      },
+      "summary": {
+        "ko": "- 소식 — 「원문 보기」 가 앱 언어로 번역된 원문을 엽니다(번역이 없으면 영어 원문)\n- API 키 — 키를 저장 · 삭제한 결과를 화면 위쪽에 잠깐 알려 줍니다",
+        "en": "- News — View original opens the original in the app’s language when a translation exists (otherwise in English)\n- API Key — the result of saving or deleting a key appears briefly at the top of the screen",
+        "ja": "- ニュース — 「原文を見る」は、アプリの言語に翻訳された原文があればそのページを開きます（なければ英語の原文）\n- API キー — キーの保存・削除の結果を画面上部に短く表示します",
+        "zh-Hans": "- 资讯 — “查看原文”会打开应用语言的译文页面（没有译文时打开英文原文）\n- API 密钥 — 保存或删除密钥的结果会在屏幕顶部短暂显示",
+        "zh-Hant": "- 資訊 — 「查看原文」會開啟 App 語言的譯文頁面（沒有譯文時開啟英文原文）\n- API 金鑰 — 儲存或刪除金鑰的結果會在畫面上方短暫顯示",
+        "es": "- Noticias — Ver original abre el original en el idioma de la app cuando hay traducción (si no, en inglés)\n- Clave de API — el resultado de guardar o eliminar una clave aparece unos segundos en la parte superior de la pantalla"
+      }
+    },
+    {
+      "id": "shouarchive-1.0.1",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.1",
+      "published": "2026-10-29",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-1",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-1",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-1",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-1",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-1",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-1"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.1",
+        "en": "ShouArchive 1.0.1",
+        "ja": "ShouArchive 1.0.1",
+        "zh-Hans": "ShouArchive 1.0.1",
+        "zh-Hant": "ShouArchive 1.0.1",
+        "es": "ShouArchive 1.0.1"
+      },
+      "summary": {
+        "ko": "- 소식 — Apple · Google 의 심사 · 정책 소식을 모은 새 탭 (아래 탭 바 맨 끝, 읽지 않은 소식 배지). 설정 › 일반에서 자동으로 받기를 끌 수 있습니다",
+        "en": "- News — a new tab with App Review and policy news from Apple and Google (at the end of the bottom tab bar, with an unread badge). You can turn off automatic fetching in Settings › General",
+        "ja": "- ニュース — Apple・Google の審査・ポリシーに関するニュースをまとめた新しいタブ（下のタブバーの右端、未読バッジ付き）。自動取得は 設定 › 一般 でオフにできます",
+        "zh-Hans": "- 资讯 — 汇集 Apple 和 Google 审核与政策资讯的新标签页（位于底部标签栏末尾，带未读标记）。可在 设置 › 通用 中关闭自动获取",
+        "zh-Hant": "- 資訊 — 彙整 Apple 與 Google 審查與政策資訊的新分頁（位於底部分頁列最右側，附未讀標記）。可在 設定 › 一般 中關閉自動取得",
+        "es": "- Noticias — una pestaña nueva con noticias de revisión y políticas de Apple y Google (al final de la barra de pestañas inferior, con indicador de no leídas). Puedes desactivar la descarga automática en Ajustes › General"
+      }
+    },
+    {
+      "id": "shouarchive-1.0.0",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.0",
+      "published": "2026-10-22",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-0",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-0",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-0",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-0",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-0",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-0"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.0 — 첫 출시",
+        "en": "ShouArchive 1.0.0 — First release",
+        "ja": "ShouArchive 1.0.0 — 初回リリース",
+        "zh-Hans": "ShouArchive 1.0.0 — 首次发布",
+        "zh-Hant": "ShouArchive 1.0.0 — 首次發佈",
+        "es": "ShouArchive 1.0.0 — Primera versión"
+      },
+      "summary": {
+        "ko": "- 프로파일 관리 — 설치된 프로파일 · 만료 배지 · 필터 · 두 개 비교\n- 프로파일 다운로드 · 생성 · 갱신 · 기기 등록 (App Store Connect API 키)\n- 산출물 검사 — IPA · APK · AAB, 서명 · 권한 · 보안 설정\n- 히스토리 — 프로파일 · 빌드 · 배포 작업 기록\n- 앱 빌드 · 작업 대기열 — IPA · APK 를 직접 빌드, 여러 작업을 줄 세워 실행\n- 앱 업로드 — TestFlight · Play Console 로 올리기\n- 기기 설치 — 기기 목록 · 설치 · 재설치\n- 다시 서명 · 라이브러리 · IPA 정리 — 다른 프로파일로 다시 서명, 산출물 보관, IPA 정리\n- OTA 배포 — 배포용 설치 파일 만들기\n- 스토어 배포 (iOS · Android) — 스토어 정보 · 스크린샷 · 심사 제출 · 리뷰 답글",
+        "en": "- Profile management — installed profiles · expiry badges · filters · side-by-side comparison\n- Download, create and renew profiles · register devices (App Store Connect API key)\n- File inspection — IPA · APK · AAB, signing · permissions · security settings\n- History — a record of profile, build and release jobs\n- App build · job queue — build IPAs and APKs yourself, queue several jobs to run in turn\n- App upload — upload to TestFlight and Play Console\n- Device install — device list · install · reinstall\n- Re-signing · library · IPA cleanup — re-sign with another profile, keep your artifacts, clean up IPAs\n- OTA distribution — create install files for distribution\n- Store release (iOS · Android) — store listing · screenshots · submission for review · review replies",
+        "ja": "- プロファイル管理 — インストール済みプロファイル · 有効期限バッジ · フィルター · 2 つの比較\n- プロファイルのダウンロード・作成・更新・端末登録（App Store Connect API キー）\n- ビルド成果物検査 — IPA · APK · AAB の署名・権限・セキュリティ設定\n- 履歴 — プロファイル・ビルド・配信の作業記録\n- アプリビルド · ジョブキュー — IPA · APK を直接ビルド、複数の作業を順に実行\n- アプリのアップロード — TestFlight · Play Console へアップロード\n- 端末へのインストール — 端末一覧 · インストール · 再インストール\n- 再署名 · ライブラリ · IPA 整理 — 別のプロファイルで再署名、成果物の保管、IPA の整理\n- OTA 配布 — 配布用のインストールファイルを作成\n- ストア配信（iOS · Android）— ストア情報 · スクリーンショット · 審査への提出 · レビューへの返信",
+        "zh-Hans": "- 描述文件管理 — 已安装的描述文件 · 到期徽章 · 筛选 · 两个比较\n- 描述文件下载 · 创建 · 续期 · 设备注册（App Store Connect API 密钥）\n- 产物检查 — IPA · APK · AAB，签名 · 权限 · 安全设置\n- 历史记录 — 描述文件 · 构建 · 分发的操作记录\n- 应用构建 · 任务队列 — 直接构建 IPA · APK，多个任务排队执行\n- 上传应用 — 上传到 TestFlight · Play Console\n- 设备安装 — 设备列表 · 安装 · 重新安装\n- 重新签名 · 库 · IPA 整理 — 用其他描述文件重新签名、保管产物、整理 IPA\n- OTA 分发 — 生成用于分发的安装包\n- 商店分发（iOS · Android）— 商店信息 · 截图 · 提交审核 · 回复评论",
+        "zh-Hant": "- 描述檔管理 — 已安裝的描述檔 · 到期標記 · 篩選 · 兩個並排比較\n- 描述檔下載 · 建立 · 續期 · 裝置註冊（App Store Connect API 金鑰）\n- 產物檢查 — IPA · APK · AAB，簽署 · 權限 · 安全設定\n- 歷史記錄 — 描述檔 · 建置 · 發佈工作的記錄\n- App 建置 · 工作佇列 — 直接建置 IPA · APK，多項工作排隊執行\n- App 上傳 — 上傳到 TestFlight · Play Console\n- 裝置安裝 — 裝置清單 · 安裝 · 重新安裝\n- 重新簽署 · 資源庫 · IPA 整理 — 以其他描述檔重新簽署、保管產物、整理 IPA\n- OTA 發佈 — 製作發佈用的安裝檔\n- 商店發佈（iOS · Android）— 商店資訊 · 螢幕截圖 · 送審 · 回覆評論",
+        "es": "- Gestión de perfiles — perfiles instalados · insignias de caducidad · filtros · comparación de dos\n- Descargar, crear y renovar perfiles · registrar dispositivos (clave de API de App Store Connect)\n- Inspección de artefactos — IPA · APK · AAB, firma · permisos · configuración de seguridad\n- Historial — registro de las tareas de perfiles, compilación y distribución\n- Compilación de apps · cola de tareas — compila IPA y APK directamente y encadena varias tareas\n- Subir apps — publícalas en TestFlight o Play Console\n- Instalar en dispositivos — lista de dispositivos · instalación · reinstalación\n- Refirmado · biblioteca · limpieza de IPA — vuelve a firmar con otro perfil, conserva los artefactos y limpia los IPA\n- Distribución OTA — crea el archivo de instalación para la distribución\n- Publicación en tiendas (iOS · Android) — ficha de la tienda · capturas de pantalla · envío a revisión · respuestas a reseñas"
+      }
     }
   ]
 }

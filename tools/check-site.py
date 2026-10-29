@@ -263,6 +263,21 @@ def check_sandbox_warning():
         warn('결제', 'tools/pricing.json', '공개 결제 페이지가 샌드박스입니다(paddle.environment=sandbox 또는 client_token 이 test_). '
              '출시 전에 production 토큰으로 바꾸고 서버의 샌드박스 라이선스 · 결제 · Mac 기록을 정리할 것 — README 「출시 체크리스트」')
 
+def check_release_notes(feed):
+    """news.json 의 ShouArchive 업데이트 내역이 변경 사항 페이지(6개 언어)와 같은지 — 원본은 changelog.html, 맞추기는 tools/sync-releases.py"""
+    import importlib.util
+    sys.dont_write_bytecode = True  # tools/__pycache__ 를 남기지 않는다
+    spec = importlib.util.spec_from_file_location('sync_releases', os.path.join(ROOT, 'tools', 'sync-releases.py'))
+    sync = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(sync)
+    try:
+        want = sync.synced(feed)
+    except SystemExit as error:
+        report('소식', 'changelog.html', str(error))
+        return
+    if want != feed:
+        report('소식', 'news.json', 'ShouArchive 업데이트 내역이 변경 사항 페이지와 다릅니다 — python3 tools/sync-releases.py')
+
 def check_news():
     """앱 「소식」 탭의 news.json — 앱(NewsFeed.decode)이 빼 버릴 항목이 없게: id · 날짜 · https 링크 · 6개 언어 제목 · 요약, 같은 id 없음."""
     path = os.path.join(ROOT, 'news.json')
@@ -294,13 +309,17 @@ def check_news():
                 report('소식', 'news.json', f'{where} — urls 의 언어 {lang} 는 ko · ja · zh-Hans · zh-Hant · es 중 하나 (영어는 url)')
             if not str(link or '').startswith('https://'):
                 report('소식', 'news.json', f'{where} — urls.{lang} 은 https:// 로 시작해야 합니다')
-        if not set(item.get('platforms') or []) <= {'ios', 'android'}:
-            report('소식', 'news.json', f'{where} — platforms 는 ios · android 만 (비우면 양쪽)')
+        platforms = set(item.get('platforms') or [])
+        if not platforms <= {'ios', 'android', 'shouarchive'}:
+            report('소식', 'news.json', f'{where} — platforms 는 ios · android · shouarchive 만 (비우면 양쪽)')
+        if 'shouarchive' in platforms and not re.match(r'^\d+(\.\d+)*$', str(item.get('version') or '')):
+            report('소식', 'news.json', f'{where} — ShouArchive 업데이트 내역은 version(「1.0.3」) 이 있어야 합니다')
         for field in ('title', 'summary'):
             texts = item.get(field) or {}
             missing = [lang for lang in LANGS if not str(texts.get(lang) or '').strip()]
             if missing:
                 report('소식', 'news.json', f'{where} — {field} 에 빠진 언어: {", ".join(missing)}')
+    check_release_notes(feed)
 
 for page in PAGES:
     if not os.path.exists(path_for('ko', page)):

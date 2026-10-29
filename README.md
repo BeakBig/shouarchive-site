@@ -67,6 +67,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 - `source` — 출처 이름(번역하지 않는다). `url` — 원문(영어), **https 만**(아니면 앱이 그 항목을 뺀다).
 - `urls` — 번역된 원문이 있는 언어만(`ko` · `ja` · `zh-Hans` · `zh-Hant` · `es`, 1.0.2~). 앱은 앱 언어의 주소를 열고, 없으면 `url`(영어)을 연다 — 다른 언어로 물러나지 않는다(번체에 간체를 열지 않음). **번역판이 영어판과 같은 내용인지 열어 보고** 넣는다 — Apple 「새로 추가될 요구사항」 번역판은 10/29 에 아직 Xcode 16 기준이라 넣지 않았다. Apple 은 `/kr/` · `/jp/` · `/cn/`(간체)만 있고, Android 는 `?hl=ko` · `ja` · `zh-cn` · `zh-tw` · `es-419`. 1.0.1 앱은 `urls` 를 모르고 `url` 을 연다.
 - `title` · `summary` — 6개 언어 모두. 원문을 옮겨 적지 않고 짧게 다시 쓴다(저작권). 사실은 원문에서 확인한 것만 — 기술 문장은 개발 세션 검수(마케팅 TC 와 같은 기준).
+- **ShouArchive 업데이트 내역**(앱 1.0.3~ 「소식 › ShouArchive」) — `"platforms": ["shouarchive"]` + `"version": "1.0.3"` 항목. 손으로 쓰지 않는다: 변경 사항 페이지(6개 언어)에 버전을 더한 뒤 `python3 tools/sync-releases.py` 가 만든다(제목 「ShouArchive 1.0.3」 · 요약 = 그 버전의 항목들 · 원문 = 그 언어의 변경 사항 #v1-0-3). `check-site.py` 가 둘이 같은지 본다. 1.0.1 · 1.0.2 앱은 이 항목을 뺀다(모르는 플랫폼).
 - 형식을 바꿔야 하면 `version` 을 올리고 앱을 먼저 고친다 — 지금 앱은 `version` 1 만 읽고 더 높은 번호는 통째로 무시한다.
 
 ## 가격 · 링크는 한 곳에서 바꾸기
@@ -77,6 +78,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 python3 tools/fill-pricing.py   # pricing.json → 모든 언어 페이지
 python3 tools/localize-nav.py    # 언어 전환 · 헤더 · 푸터 · canonical · hreflang 다시 맞추기
 python3 tools/mail-links.py      # support 메일 링크에 페이지 코드 · 「보낸 페이지」 줄
+python3 tools/sync-releases.py   # 변경 사항 페이지 → news.json 의 ShouArchive 업데이트 내역
 python3 tools/check-site.py      # 6개 언어 × 14개 페이지 구조 · 링크 · 번역 · CSP · 용량 점검
 ```
 

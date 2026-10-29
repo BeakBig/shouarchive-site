@@ -3,11 +3,18 @@
   "items": [
     {
       "id": "2026-10-16-app-review-2-5-19",
-      "platforms": ["ios"],
+      "platforms": [
+        "ios"
+      ],
       "published": "2026-10-16",
       "deadline": null,
       "source": "Apple",
       "url": "https://developer.apple.com/news/?id=vvzx6cul",
+      "urls": {
+        "ko": "https://developer.apple.com/kr/news/?id=vvzx6cul",
+        "ja": "https://developer.apple.com/jp/news/?id=vvzx6cul",
+        "zh-Hans": "https://developer.apple.com/cn/news/?id=vvzx6cul"
+      },
       "title": {
         "ko": "App Review 가이드라인 2.5.19 — 숨긴 · 잠든 기능 금지 명시",
         "en": "App Review Guideline 2.5.19: no hidden or dormant features",
@@ -27,11 +34,20 @@
     },
     {
       "id": "2026-09-30-android-developer-verification",
-      "platforms": ["android"],
+      "platforms": [
+        "android"
+      ],
       "published": "2026-09-30",
       "deadline": null,
       "source": "Android",
       "url": "https://developer.android.com/developer-verification",
+      "urls": {
+        "ko": "https://developer.android.com/developer-verification?hl=ko",
+        "ja": "https://developer.android.com/developer-verification?hl=ja",
+        "zh-Hans": "https://developer.android.com/developer-verification?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/developer-verification?hl=zh-tw",
+        "es": "https://developer.android.com/developer-verification?hl=es-419"
+      },
       "title": {
         "ko": "Android 개발자 인증 시작 — 2027년 전 세계로",
         "en": "Android developer verification begins, going global in 2027",
@@ -51,7 +67,9 @@
     },
     {
       "id": "2026-09-09-ios-13-minimum",
-      "platforms": ["ios"],
+      "platforms": [
+        "ios"
+      ],
       "published": "2026-09-09",
       "deadline": null,
       "source": "Apple",
@@ -75,11 +93,20 @@
     },
     {
       "id": "2026-08-31-play-target-api-36",
-      "platforms": ["android"],
+      "platforms": [
+        "android"
+      ],
       "published": "2026-08-31",
       "deadline": "2026-11-01",
       "source": "Google Play",
       "url": "https://developer.android.com/google/play/requirements/target-sdk",
+      "urls": {
+        "ko": "https://developer.android.com/google/play/requirements/target-sdk?hl=ko",
+        "ja": "https://developer.android.com/google/play/requirements/target-sdk?hl=ja",
+        "zh-Hans": "https://developer.android.com/google/play/requirements/target-sdk?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/google/play/requirements/target-sdk?hl=zh-tw",
+        "es": "https://developer.android.com/google/play/requirements/target-sdk?hl=es-419"
+      },
       "title": {
         "ko": "Google Play 타깃 API 36 — 연장 기한 11월 1일",
         "en": "Google Play target API 36: extended deadline Nov 1",
@@ -99,7 +126,9 @@
     },
     {
       "id": "2026-04-28-xcode-26-sdk",
-      "platforms": ["ios"],
+      "platforms": [
+        "ios"
+      ],
       "published": "2026-04-28",
       "deadline": null,
       "source": "Apple",

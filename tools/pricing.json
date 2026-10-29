@@ -19,8 +19,8 @@
     "refund_days": "14",
     "release_date": null,
     "checkout": "",
-    "download": "https://download.beakbig.com/shouarchive/ShouArchive-1.0.1-2026110310.dmg",
-    "download_sha256": "b5edc2ba6d9fcbfb8b7ee841f034cfb37a5964ae94018837fbe83d80d19ce69d"
+    "download": "https://download.beakbig.com/shouarchive/ShouArchive-1.0.2-2026110311.dmg",
+    "download_sha256": "439d1c35b9d33ce10874599089f8feb099c091d4f8e4bde1da351b5ddd1edec0"
   },
   "_free_period": "무료 기간 — 이 날(포함, 이용자 Mac 의 시간대)까지 라이선스 없이 모든 기능이 열린다. 앱에 든 날짜는 2026-12-31 이고, 라이선스 서버의 FREE_PERIOD_LAST_DAY 로 늘릴 수 있다(늘리기만 · 앱 계약 §2.19). until = 마지막 날, paid_from = 라이선스가 필요해지는 날 — 언어별 표시 문자열. 늘리면 서버 값과 함께 둘 다 바꾼다. 기간이 끝나면 null 로 비운다 — data-if=\"free_period.until\" 인 안내(홈 · 가격 · 다운로드 · 약관 4.3 · 지원 FAQ)가 모두 숨겨지고, 그동안 data-if=\"!free_period.until\" 로 숨겨 둔 「14일 체험」 문장(홈 버튼 · 다운로드 · 가격 머리말과 안내)과 무료 기간 문장이 서로 자리를 바꾼다.",
   "free_period": {

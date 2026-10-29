@@ -55,6 +55,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 { "version": 1,
   "items": [ { "id": "2026-10-16-app-review-2-5-19", "platforms": ["ios"], "published": "2026-10-16", "deadline": null,
                "source": "Apple", "url": "https://developer.apple.com/news/?id=…",
+               "urls": { "ko": "https://developer.apple.com/kr/news/?id=…" },
                "title": { "ko": "…", "en": "…", "ja": "…", "zh-Hans": "…", "zh-Hant": "…", "es": "…" },
                "summary": { "ko": "…", "en": "…", "ja": "…", "zh-Hans": "…", "zh-Hant": "…", "es": "…" } } ] }
 ```
@@ -63,7 +64,8 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 - `platforms` — `ios` · `android` 중 해당하는 것(비우면 양쪽). 앱은 iOS 화면에서 iOS · 양쪽 소식만 보인다.
 - `published` — 원문의 날짜(`YYYY-MM-DD`). 앱은 최근 것을 위에 두고, 60일보다 오래된 소식은 새로 쓰는 사람의 배지에 세지 않는다.
 - `deadline` — 개발자가 맞춰야 하는 날이 있을 때만(`YYYY-MM-DD`, 없으면 `null`). 앱이 「D-N」 으로 보인다(30일 안이면 경고색).
-- `source` — 출처 이름(번역하지 않는다). `url` — 원문, **https 만**(아니면 앱이 그 항목을 뺀다).
+- `source` — 출처 이름(번역하지 않는다). `url` — 원문(영어), **https 만**(아니면 앱이 그 항목을 뺀다).
+- `urls` — 번역된 원문이 있는 언어만(`ko` · `ja` · `zh-Hans` · `zh-Hant` · `es`, 1.0.2~). 앱은 앱 언어의 주소를 열고, 없으면 `url`(영어)을 연다 — 다른 언어로 물러나지 않는다(번체에 간체를 열지 않음). **번역판이 영어판과 같은 내용인지 열어 보고** 넣는다 — Apple 「새로 추가될 요구사항」 번역판은 10/29 에 아직 Xcode 16 기준이라 넣지 않았다. Apple 은 `/kr/` · `/jp/` · `/cn/`(간체)만 있고, Android 는 `?hl=ko` · `ja` · `zh-cn` · `zh-tw` · `es-419`. 1.0.1 앱은 `urls` 를 모르고 `url` 을 연다.
 - `title` · `summary` — 6개 언어 모두. 원문을 옮겨 적지 않고 짧게 다시 쓴다(저작권). 사실은 원문에서 확인한 것만 — 기술 문장은 개발 세션 검수(마케팅 TC 와 같은 기준).
 - 형식을 바꿔야 하면 `version` 을 올리고 앱을 먼저 고친다 — 지금 앱은 `version` 1 만 읽고 더 높은 번호는 통째로 무시한다.
 

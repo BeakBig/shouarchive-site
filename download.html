@@ -66,7 +66,8 @@
             <li><strong>업데이트</strong> — 업데이트 기간 동안 앱 안에서 확인하고 설치합니다. 기간이 끝나도 그때까지 나온 버전은 계속 씁니다.</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">다운로드 (.dmg)</a>
+            <a class="btn mac-only" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">다운로드 (.dmg)</a>
+            <p class="mac-note" data-if="commercial.download">ShouArchive 는 Mac 용 앱입니다. Mac 에서 이 페이지를 열어 내려받으세요.</p>
             <a class="btn outline" href="pricing" data-live-show hidden>가격 · 구매 안내</a>
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong><span data-price="free_period.until">2026년 12월 31일</span>까지 무료 체험</strong></p>
@@ -129,7 +130,8 @@
       <p data-if="!commercial.download" hidden>출시일이 정해지면 이 페이지에 파일을 올립니다. 가격과 체험 조건은 가격 페이지에 있습니다.</p>
       <p data-if="commercial.download !free_period.until" hidden>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요.</p>
       <p data-if="commercial.download free_period.until"><span data-price="free_period.until">2026년 12월 31일</span>까지는 라이선스 없이 모든 기능을 무료로 써 보세요.</p>
-      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">다운로드 (.dmg)</a>
+      <a class="btn mac-only" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">다운로드 (.dmg)</a>
+      <p class="mac-note" data-if="commercial.download">ShouArchive 는 Mac 용 앱입니다. Mac 에서 이 페이지를 열어 내려받으세요.</p>
       <a class="btn" href="pricing" data-live-hide>가격 보기</a>
     </div>
   </section>

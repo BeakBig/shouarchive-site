@@ -51,10 +51,11 @@
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
         <div class="hero-actions">
-          <a class="btn" href="download">
+          <a class="btn mac-only" href="download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
             <span data-if="!free_period.until" hidden>다운로드 · <span data-price="trial_days">14</span>일 체험</span><span data-if="free_period.until">무료 다운로드</span>
           </a>
+          <p class="mac-note" data-if="commercial.download">ShouArchive 는 Mac 용 앱입니다. Mac 에서 이 페이지를 열어 내려받으세요.</p>
           <a class="btn ghost" href="#features">기능 살펴보기</a>
         </div>
         <p class="hero-note">macOS 15 Sequoia 이상 · Apple Silicon · Intel · <a href="pricing">한 번 구매 <span data-price="commercial.price">US$29</span></a><span data-if="!free_period.until" hidden> · 결제 수단 없이 <span data-price="trial_days">14</span>일 체험</span></p>
@@ -216,7 +217,8 @@
     <div class="wrap">
       <h2>지금 받기</h2>
       <p>프로파일 · 산출물 검사. 배포 직전 확인은 ShouArchive 에서.</p>
-      <a class="btn" href="download"><span data-if="!free_period.until" hidden>다운로드 · <span data-price="trial_days">14</span>일 체험</span><span data-if="free_period.until">무료 다운로드</span></a>
+      <a class="btn mac-only" href="download"><span data-if="!free_period.until" hidden>다운로드 · <span data-price="trial_days">14</span>일 체험</span><span data-if="free_period.until">무료 다운로드</span></a>
+      <p class="mac-note" data-if="commercial.download">ShouArchive 는 Mac 용 앱입니다. Mac 에서 이 페이지를 열어 내려받으세요.</p>
     </div>
   </section>
 </main>

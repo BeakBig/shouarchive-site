@@ -66,7 +66,8 @@
             <li><strong>更新</strong> — 在更新期内于应用中检查并安装更新。更新期结束后，此前已发布的版本仍可继续使用。</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">下载 (.dmg)</a>
+            <a class="btn mac-only" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">下载 (.dmg)</a>
+            <p class="mac-note" data-if="commercial.download">ShouArchive 是 Mac 应用。请在 Mac 上打开本页面下载。</p>
             <a class="btn outline" href="pricing" data-live-show hidden>价格 · 购买说明</a>
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong>免费试用至 <span data-price="free_period.until">2026年12月31日</span></strong></p>
@@ -129,7 +130,8 @@
       <p data-if="!commercial.download" hidden>推出日期确定后，我们会在本页放上文件。价格和试用条件请查看价格页面。</p>
       <p data-if="commercial.download !free_period.until" hidden>下载后，无需付款方式即可试用 <span data-price="trial_days">14</span> 天。</p>
       <p data-if="commercial.download free_period.until">下载后，至 <span data-price="free_period.until">2026年12月31日</span> 无需许可证即可免费使用所有功能。</p>
-      <a class="btn" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">下载 (.dmg)</a>
+      <a class="btn mac-only" data-src="commercial.download" href="https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg">下载 (.dmg)</a>
+      <p class="mac-note" data-if="commercial.download">ShouArchive 是 Mac 应用。请在 Mac 上打开本页面下载。</p>
       <a class="btn" href="pricing" data-live-hide>查看价格</a>
     </div>
   </section>

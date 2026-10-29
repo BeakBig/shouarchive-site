@@ -289,6 +289,11 @@ def check_news():
             report('소식', 'news.json', f'{where} — deadline 은 YYYY-MM-DD 또는 null')
         if not str(item.get('url') or '').startswith('https://'):
             report('소식', 'news.json', f'{where} — url 은 https:// 로 시작해야 합니다 (앱이 다른 링크는 뺍니다)')
+        for lang, link in (item.get('urls') or {}).items():
+            if lang not in LANGS or lang == 'en':
+                report('소식', 'news.json', f'{where} — urls 의 언어 {lang} 는 ko · ja · zh-Hans · zh-Hant · es 중 하나 (영어는 url)')
+            if not str(link or '').startswith('https://'):
+                report('소식', 'news.json', f'{where} — urls.{lang} 은 https:// 로 시작해야 합니다')
         if not set(item.get('platforms') or []) <= {'ios', 'android'}:
             report('소식', 'news.json', f'{where} — platforms 는 ios · android 만 (비우면 양쪽)')
         for field in ('title', 'summary'):

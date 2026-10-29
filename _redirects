@@ -1,4 +1,4 @@
 # fill-pricing.py 가 tools/pricing.json 의 commercial.download 로 만든다 — 손으로 고치지 않는다.
 # 「최신 앱 받기」 고정 주소: SNS · 메일에 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다.
-/download/latest https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg 302
-/download/latest/ https://download.beakbig.com/shouarchive/ShouArchive-1.0.0-2026110308.dmg 302
+/download/latest https://download.beakbig.com/shouarchive/ShouArchive-1.0.1-2026110310.dmg 302
+/download/latest/ https://download.beakbig.com/shouarchive/ShouArchive-1.0.1-2026110310.dmg 302

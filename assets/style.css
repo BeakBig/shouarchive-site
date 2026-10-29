@@ -613,3 +613,25 @@ button.btn:disabled { opacity: .5; cursor: default; transform: none; filter: non
 .lang-select:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .footer-langs { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; }
 .footer-langs a[aria-current="page"] { font-weight: 600; text-decoration: underline; }
+
+/* Mac 앱 내려받기 단추(mac-only)는 터치가 주 입력인 기기(휴대폰 · 태블릿)에서 숨기고, 바로 뒤의 안내(mac-note)를 대신 보여 준다.
+   창 너비가 아니라 입력 장치로 가른다 — 좁게 줄인 Mac 창에서는 단추가 그대로 보인다. `.cta p` 보다 뒤에 둬야 여백 · 색이 이긴다. */
+.mac-note { display: none; }
+@media (hover: none) and (pointer: coarse) {
+  .btn.mac-only { display: none; }
+  p.mac-note {
+    display: block;
+    flex-basis: 100%;
+    max-width: 34em;
+    margin: 0;
+    padding: 12px 16px;
+    border: 1px solid currentColor;
+    border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+    border-radius: 12px;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .cta p.mac-note { margin: 0 auto 16px; }
+}

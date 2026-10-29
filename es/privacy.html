@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Política de privacidad</h1>
-      <p>ShouArchive (macOS) · En vigor desde el 27 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
+      <p>ShouArchive (macOS) · En vigor desde el 29 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 
@@ -75,6 +75,7 @@
           <tr><td>Compilación · subida de apps · instalación en dispositivos</td><td>Los destinos a los que se conectan las herramientas de desarrollo de Apple y Google (<code>xcodebuild</code> · <code>gradle</code>, etc.)</td><td>Cada herramienta se comunica a su manera. Aquí se incluyen también los repositorios de los que se descargan dependencias (Maven, etc.)</td></tr>
           <tr><td>Activación, comprobación y desactivación de la licencia; lista de Mac registrados; volver a recibir o cambiar la clave; inicio del pago · enlace de gestión del pago; comprobación del período gratuito</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
           <tr><td>Búsqueda de actualizaciones · descarga del instalador</td><td>La lista de actualizaciones que publica el vendedor (<code>shouarchive.beakbig.com</code>) · el instalador (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor. Al descargar el instalador, Cloudflare procesa tu dirección IP y tu User-Agent para entregar el archivo. La app pregunta en su segundo inicio si quieres la comprobación automática; si la activas, revisa la lista una vez al día. Puedes desactivarla en Ajustes › General.</td></tr>
+          <tr><td>Descarga de noticias</td><td>La lista de noticias que publica el vendedor (<code>shouarchive.beakbig.com</code>)</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de noticias y no se envía ningún otro valor. La app la descarga al abrirse y al abrir la pestaña Noticias (como máximo una vez cada 6 horas), y cuando pulsas Actualizar. Puedes desactivar la descarga automática en Ajustes › General.</td></tr>
         </tbody>
       </table>
       <ul>
@@ -87,6 +88,7 @@
         <li>Los ajustes de la app (tema · idioma · tamaño del texto · lista de proyectos, etc.) se guardan en las preferencias de usuario y en la carpeta de soporte de la app de macOS.</li>
         <li>El contenido de las claves de API se guarda en el <strong>llavero</strong> de este Mac y no se sincroniza con el Llavero de iCloud. De las claves elegidas como archivo solo se recuerda la ubicación del archivo.</li>
         <li>El historial de actividad de los perfiles y el historial de compilaciones se guardan solo en local y pueden borrarse desde la app.</li>
+        <li>La lista de noticias que descarga la pestaña Noticias y las que ya leíste se guardan solo en este Mac.</li>
         <li>La clave de licencia y el resultado de su comprobación se guardan en este Mac. Lo que guarda el servidor de licencias se indica en la sección 5.</li>
         <li>La app no elimina los archivos que colocaste tú mismo, como el archivo <code>.p8</code> o los resultados de compilación.</li>
       </ul>
@@ -191,7 +193,7 @@
       <p><strong>Responsable de protección de datos</strong> — Representante <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>Información recibida por correo de consulta</strong> — los correos que envías a support@shouarchive.beakbig.com (remitente · asunto · cuerpo · adjuntos) se usan únicamente para responder a la consulta y resolver el problema, y se conservan en el buzón del vendedor. Procura que los adjuntos no contengan archivos de clave (<code>.p8</code>) ni información sensible.</p>
 
-      <p class="meta">Fecha de entrada en vigor: 27 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
+      <p class="meta">Fecha de entrada en vigor: 29 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 </main>

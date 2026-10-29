@@ -51,10 +51,11 @@
           <span style="background:#3EC0F0"></span><span style="background:#E6007E"></span><span style="background:#FF6B1A"></span><span style="background:#6B3FE0"></span><span style="background:#8BE000"></span>
         </div>
         <div class="hero-actions">
-          <a class="btn" href="download">
+          <a class="btn mac-only" href="download">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
             <span data-if="!free_period.until" hidden>下載 · <span data-price="trial_days">14</span> 天試用</span><span data-if="free_period.until">免費下載</span>
           </a>
+          <p class="mac-note" data-if="commercial.download">ShouArchive 是 Mac 應用程式。請在 Mac 上開啟本頁面下載。</p>
           <a class="btn ghost" href="#features">看看它能做什麼</a>
         </div>
         <p class="hero-note">macOS 15 Sequoia 或以上版本 · Apple Silicon · Intel · <a href="pricing">一次購買 <span data-price="commercial.price">US$29</span></a><span data-if="!free_period.until" hidden> · 無需付款方式即可試用 <span data-price="trial_days">14</span> 天</span></p>
@@ -216,7 +217,8 @@
     <div class="wrap">
       <h2>立即取得</h2>
       <p>描述檔與產物檢查。出貨前的確認，就交給 ShouArchive。</p>
-      <a class="btn" href="download"><span data-if="!free_period.until" hidden>下載 · <span data-price="trial_days">14</span> 天試用</span><span data-if="free_period.until">免費下載</span></a>
+      <a class="btn mac-only" href="download"><span data-if="!free_period.until" hidden>下載 · <span data-price="trial_days">14</span> 天試用</span><span data-if="free_period.until">免費下載</span></a>
+      <p class="mac-note" data-if="commercial.download">ShouArchive 是 Mac 應用程式。請在 Mac 上開啟本頁面下載。</p>
     </div>
   </section>
 </main>

@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>プライバシーポリシー</h1>
-      <p>ShouArchive（macOS） · 施行日 2026 年 10 月 27 日 · 開発者・販売者 Beakbig</p>
+      <p>ShouArchive（macOS） · 施行日 2026 年 10 月 29 日 · 開発者・販売者 Beakbig</p>
     </div>
   </section>
 
@@ -75,6 +75,7 @@
           <tr><td>ビルド・アプリのアップロード・端末へのインストール</td><td>Apple・Google の開発ツール（<code>xcodebuild</code> · <code>gradle</code> など）が接続する先</td><td>これらのツールがそれぞれの方法で通信します。依存関係をダウンロードするリポジトリ（Maven など）もここに含まれます</td></tr>
           <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送・変更、決済の開始・お支払い管理リンク、無料期間の確認</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
           <tr><td>アップデートの確認・インストーラーのダウンロード</td><td>販売者が公開しているアップデート一覧（<code>shouarchive.beakbig.com</code>）・インストーラー（<code>download.beakbig.com</code>、Cloudflare R2）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません。インストーラーをダウンロードするときは、IP アドレスと User-Agent が配信のために Cloudflare で処理されます。自動確認は 2 回目の起動時にオンにするか確認し、オンにすると 1 日 1 回一覧を確認します。設定 › 一般 でオフにできます。</td></tr>
+          <tr><td>ニュースの取得</td><td>販売者が公開しているニュース一覧（<code>shouarchive.beakbig.com</code>）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。ニュース一覧を受け取るだけで、ほかの値は送信しません。アプリを開いたときと「ニュース」タブを開いたとき（6 時間に 1 回まで）、および「更新」を押したときに取得します。自動取得は 設定 › 一般 でオフにできます。</td></tr>
         </tbody>
       </table>
       <ul>
@@ -87,6 +88,7 @@
         <li>アプリの設定（テーマ・言語・文字サイズ・プロジェクト一覧など）は、macOS のユーザー設定・Application Support フォルダに保存されます。</li>
         <li>API キーの本体はこの Mac の<strong>キーチェーン</strong>に保存され、iCloud キーチェーンには同期されません。ファイルとして選んだキーは、そのファイルの場所だけを記憶します。</li>
         <li>プロファイルの操作履歴・ビルド履歴はローカルにのみ残り、アプリから削除できます。</li>
+        <li>「ニュース」タブが取得したニュース一覧と既読の記録は、この Mac にだけ保存されます。</li>
         <li>ライセンスキーと確認結果はこの Mac に保存されます。ライセンスサーバーに保存されるものは第 5 項に記載しています。</li>
         <li><code>.p8</code> ファイルやビルド成果物など、ユーザーが自分で置いたファイルをアプリが削除することはありません。</li>
       </ul>
@@ -191,7 +193,7 @@
       <p><strong>個人情報保護責任者</strong> — 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>お問い合わせメールで受け取る情報</strong> — support@shouarchive.beakbig.com にお送りいただいたメール（送信元アドレス・件名・本文・添付ファイル）は、お問い合わせへの回答と問題の解決にのみ使い、販売者のメールボックスに保管します。添付ファイルにキーファイル（<code>.p8</code>）や機密情報が含まれないようご注意ください。</p>
 
-      <p class="meta">施行日: 2026 年 10 月 27 日 · 開発者・販売者: Beakbig</p>
+      <p class="meta">施行日: 2026 年 10 月 29 日 · 開発者・販売者: Beakbig</p>
     </div>
   </section>
 </main>

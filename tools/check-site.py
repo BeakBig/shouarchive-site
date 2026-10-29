@@ -263,6 +263,40 @@ def check_sandbox_warning():
         warn('결제', 'tools/pricing.json', '공개 결제 페이지가 샌드박스입니다(paddle.environment=sandbox 또는 client_token 이 test_). '
              '출시 전에 production 토큰으로 바꾸고 서버의 샌드박스 라이선스 · 결제 · Mac 기록을 정리할 것 — README 「출시 체크리스트」')
 
+def check_news():
+    """앱 「소식」 탭의 news.json — 앱(NewsFeed.decode)이 빼 버릴 항목이 없게: id · 날짜 · https 링크 · 6개 언어 제목 · 요약, 같은 id 없음."""
+    path = os.path.join(ROOT, 'news.json')
+    if not os.path.exists(path):
+        report('소식', 'news.json', '없습니다 — 앱의 소식 탭이 이 주소를 받습니다 (README 「소식 목록」)')
+        return
+    try:
+        feed = json.load(open(path, encoding='utf-8'))
+    except ValueError as error:
+        report('소식', 'news.json', f'JSON 이 아닙니다: {error}')
+        return
+    if feed.get('version', 1) != 1:
+        report('소식', 'news.json', f'version 은 1 이어야 합니다 (앱이 읽는 형식): {feed.get("version")}')
+    seen = set()
+    date = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+    for i, item in enumerate(feed.get('items') or []):
+        where = f'items[{i}] {item.get("id", "")}'
+        if not item.get('id') or item['id'] in seen:
+            report('소식', 'news.json', f'{where} — id 가 비었거나 겹칩니다')
+        seen.add(item.get('id'))
+        if not date.match(str(item.get('published') or '')):
+            report('소식', 'news.json', f'{where} — published 는 YYYY-MM-DD')
+        if item.get('deadline') is not None and not date.match(str(item['deadline'])):
+            report('소식', 'news.json', f'{where} — deadline 은 YYYY-MM-DD 또는 null')
+        if not str(item.get('url') or '').startswith('https://'):
+            report('소식', 'news.json', f'{where} — url 은 https:// 로 시작해야 합니다 (앱이 다른 링크는 뺍니다)')
+        if not set(item.get('platforms') or []) <= {'ios', 'android'}:
+            report('소식', 'news.json', f'{where} — platforms 는 ios · android 만 (비우면 양쪽)')
+        for field in ('title', 'summary'):
+            texts = item.get(field) or {}
+            missing = [lang for lang in LANGS if not str(texts.get(lang) or '').strip()]
+            if missing:
+                report('소식', 'news.json', f'{where} — {field} 에 빠진 언어: {", ".join(missing)}')
+
 for page in PAGES:
     if not os.path.exists(path_for('ko', page)):
         report('파일', path_for('ko', page), '없습니다')
@@ -285,6 +319,7 @@ check_hidden_rule()
 check_sizes()
 check_deploy_files()
 check_sandbox_warning()
+check_news()
 
 for line in warnings:
     print('경고', line)

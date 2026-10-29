@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "2026-10-16-app-review-2-5-19",
+      "platforms": ["ios"],
+      "published": "2026-10-16",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=vvzx6cul",
+      "title": {
+        "ko": "App Review 가이드라인 2.5.19 — 숨긴 · 잠든 기능 금지 명시",
+        "en": "App Review Guideline 2.5.19: no hidden or dormant features",
+        "ja": "App Review ガイドライン 2.5.19 — 隠し機能・休眠機能の禁止を明記",
+        "zh-Hans": "App Review 准则 2.5.19：明确禁止隐藏或休眠功能",
+        "zh-Hant": "App Review 準則 2.5.19：明確禁止隱藏或休眠功能",
+        "es": "Directriz 2.5.19 de App Review: sin funciones ocultas ni latentes"
+      },
+      "summary": {
+        "ko": "심사 때 숨겼다가 승인 뒤 켜는 기능은 스토어 삭제 · 개발자 계정 해지 사유로 명시됐습니다. 새 기능은 심사 노트에 구체적으로 적고, 심사 때도 써 볼 수 있게 켜 두세요.",
+        "en": "Hiding features during review and enabling them after approval is now explicit grounds for removal from the App Store and termination of your developer account. Describe new features specifically in your review notes and keep them reachable during review.",
+        "ja": "審査中は隠し、承認後に有効にする機能は、App Store からの削除と開発者アカウント停止の理由になると明記されました。新機能は審査メモに具体的に書き、審査中も試せるようにしておきましょう。",
+        "zh-Hans": "在审核时隐藏、获批后才启用的功能，已明确列为从 App Store 下架和终止开发者账户的理由。请在审核备注中具体说明新功能，并在审核期间保持可用。",
+        "zh-Hant": "在審查時隱藏、核准後才啟用的功能，已明確列為從 App Store 下架與終止開發者帳號的理由。請在審查備註中具體說明新功能，並在審查期間保持可用。",
+        "es": "Ocultar funciones durante la revisión y activarlas tras la aprobación es ahora motivo explícito para retirar la app del App Store y cancelar tu cuenta de desarrollador. Describe las funciones nuevas con detalle en las notas para la revisión y mantenlas accesibles durante la revisión."
+      }
+    },
+    {
+      "id": "2026-09-30-android-developer-verification",
+      "platforms": ["android"],
+      "published": "2026-09-30",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/developer-verification",
+      "title": {
+        "ko": "Android 개발자 인증 시작 — 2027년 전 세계로",
+        "en": "Android developer verification begins, going global in 2027",
+        "ja": "Android デベロッパー認証が開始 — 2027 年に全世界へ",
+        "zh-Hans": "Android 开发者验证启动，2027 年扩展至全球",
+        "zh-Hant": "Android 開發人員驗證啟動，2027 年擴及全球",
+        "es": "Comienza la verificación de desarrolladores de Android, global en 2027"
+      },
+      "summary": {
+        "ko": "9월 30일부터 브라질 · 인도네시아 · 싱가포르 · 태국의 인증된 Android 기기(Android 7 이상)에서 사용자 보호가 시작됐고, 2027년에 전 세계로 넓어집니다. Play 밖에서만 배포한다면 Android Developer Console, Play 에도 올린다면 Play Console 에서 등록 상태를 확인하세요(Play 앱은 대부분 자동 등록).",
+        "en": "Since Sept 30, user protections apply on certified Android devices (Android 7+) in Brazil, Indonesia, Singapore and Thailand, expanding globally in 2027. If you distribute only outside Google Play, register in the Android Developer Console; if you also use Play, check Play Console (most Play apps are registered automatically).",
+        "ja": "9 月 30 日から、ブラジル・インドネシア・シンガポール・タイの認定 Android 端末（Android 7 以上）でユーザー保護が始まり、2027 年に全世界へ拡大します。Google Play 以外だけで配布する場合は Android Developer Console、Play でも配布する場合は Play Console で登録状況を確認してください（Play のアプリの多くは自動で登録されます）。",
+        "zh-Hans": "自 9 月 30 日起，巴西、印度尼西亚、新加坡和泰国的已认证 Android 设备（Android 7 及以上）开始实施用户保护，2027 年将扩展至全球。如果只在 Google Play 之外分发，请在 Android Developer Console 注册；如果也在 Play 上分发，请在 Play Console 中确认（大多数 Play 应用会自动注册）。",
+        "zh-Hant": "自 9 月 30 日起，巴西、印尼、新加坡和泰國的認證 Android 裝置（Android 7 以上）開始實施使用者保護，2027 年將擴及全球。若只在 Google Play 以外發布，請在 Android Developer Console 註冊；若也在 Play 上發布，請在 Play Console 確認（多數 Play 應用程式會自動註冊）。",
+        "es": "Desde el 30 de septiembre, las protecciones para usuarios se aplican en dispositivos Android certificados (Android 7+) de Brasil, Indonesia, Singapur y Tailandia, y se ampliarán a todo el mundo en 2027. Si distribuyes solo fuera de Google Play, regístrate en Android Developer Console; si también usas Play, revisa Play Console (la mayoría de las apps de Play se registran automáticamente)."
+      }
+    },
+    {
+      "id": "2026-09-09-ios-13-minimum",
+      "platforms": ["ios"],
+      "published": "2026-09-09",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/upcoming-requirements/",
+      "title": {
+        "ko": "App Store Connect 업로드 — 최소 iOS 13",
+        "en": "App Store Connect uploads: iOS 13 minimum",
+        "ja": "App Store Connect へのアップロード — 最低 iOS 13",
+        "zh-Hans": "上传到 App Store Connect：最低 iOS 13",
+        "zh-Hant": "上傳到 App Store Connect：最低 iOS 13",
+        "es": "Subidas a App Store Connect: iOS 13 como mínimo"
+      },
+      "summary": {
+        "ko": "9월 9일부터 App Store Connect 에 올리는 iOS · iPadOS 앱은 iOS 13 이상을 타깃해야 합니다. 프로젝트의 최소 배포 버전(Minimum Deployments)을 확인하세요.",
+        "en": "Since Sept 9, iOS and iPadOS apps uploaded to App Store Connect must target iOS 13 or later. Check your project's Minimum Deployments setting.",
+        "ja": "9 月 9 日から、App Store Connect にアップロードする iOS・iPadOS アプリは iOS 13 以上をターゲットにする必要があります。プロジェクトの Minimum Deployments を確認してください。",
+        "zh-Hans": "自 9 月 9 日起，上传到 App Store Connect 的 iOS 和 iPadOS 应用必须以 iOS 13 或更高版本为目标。请检查项目的 Minimum Deployments 设置。",
+        "zh-Hant": "自 9 月 9 日起，上傳到 App Store Connect 的 iOS 與 iPadOS 應用程式必須以 iOS 13 以上為目標。請檢查專案的 Minimum Deployments 設定。",
+        "es": "Desde el 9 de septiembre, las apps de iOS y iPadOS que se suben a App Store Connect deben orientarse a iOS 13 o posterior. Revisa el ajuste Minimum Deployments de tu proyecto."
+      }
+    },
+    {
+      "id": "2026-08-31-play-target-api-36",
+      "platforms": ["android"],
+      "published": "2026-08-31",
+      "deadline": "2026-11-01",
+      "source": "Google Play",
+      "url": "https://developer.android.com/google/play/requirements/target-sdk",
+      "title": {
+        "ko": "Google Play 타깃 API 36 — 연장 기한 11월 1일",
+        "en": "Google Play target API 36: extended deadline Nov 1",
+        "ja": "Google Play ターゲット API 36 — 延長期限は 11 月 1 日",
+        "zh-Hans": "Google Play 目标 API 36：延期截止日 11 月 1 日",
+        "zh-Hant": "Google Play 目標 API 36：延期截止日 11 月 1 日",
+        "es": "API de destino 36 en Google Play: prórroga hasta el 1 de noviembre"
+      },
+      "summary": {
+        "ko": "8월 31일부터 새 앱과 업데이트는 Android 16(API 36) 이상을 타깃해야 Google Play 에 제출할 수 있습니다(Wear OS · Automotive 는 35, TV · XR 은 34). 연장을 받았다면 11월 1일까지 올리세요. 타깃이 API 35 미만인 기존 앱은 더 새 Android 기기의 신규 사용자에게 보이지 않습니다.",
+        "en": "Since Aug 31, new apps and updates must target Android 16 (API 36) or higher to be submitted to Google Play (Wear OS and Automotive: 35; TV and XR: 34). If you got an extension, upload by Nov 1. Existing apps targeting below API 35 aren't available to new users on newer Android devices.",
+        "ja": "8 月 31 日から、新規アプリとアップデートは Android 16（API 36）以上をターゲットにしないと Google Play に提出できません（Wear OS・Automotive は 35、TV・XR は 34）。延長を受けた場合は 11 月 1 日までにアップロードしてください。ターゲットが API 35 未満の既存アプリは、より新しい Android 端末の新規ユーザーには表示されません。",
+        "zh-Hans": "自 8 月 31 日起，新应用和更新必须以 Android 16（API 36）或更高版本为目标，才能提交到 Google Play（Wear OS 和 Automotive 为 35，TV 和 XR 为 34）。如已获得延期，请在 11 月 1 日前上传。目标低于 API 35 的现有应用，不会向更新版本 Android 设备上的新用户显示。",
+        "zh-Hant": "自 8 月 31 日起，新應用程式和更新必須以 Android 16（API 36）以上為目標，才能提交到 Google Play（Wear OS 與 Automotive 為 35，TV 與 XR 為 34）。若已取得延期，請在 11 月 1 日前上傳。目標低於 API 35 的現有應用程式，不會向較新 Android 裝置上的新使用者顯示。",
+        "es": "Desde el 31 de agosto, las apps nuevas y las actualizaciones deben orientarse a Android 16 (API 36) o superior para enviarse a Google Play (Wear OS y Automotive: 35; TV y XR: 34). Si obtuviste una prórroga, súbela a más tardar el 1 de noviembre. Las apps existentes por debajo de API 35 no aparecen para usuarios nuevos en dispositivos Android más recientes."
+      }
+    },
+    {
+      "id": "2026-04-28-xcode-26-sdk",
+      "platforms": ["ios"],
+      "published": "2026-04-28",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/upcoming-requirements/",
+      "title": {
+        "ko": "업로드에는 Xcode 26 · iOS 26 SDK 필요",
+        "en": "Uploads require Xcode 26 and the iOS 26 SDK",
+        "ja": "アップロードには Xcode 26・iOS 26 SDK が必要",
+        "zh-Hans": "上传需要 Xcode 26 和 iOS 26 SDK",
+        "zh-Hant": "上傳需要 Xcode 26 與 iOS 26 SDK",
+        "es": "Las subidas requieren Xcode 26 y el SDK de iOS 26"
+      },
+      "summary": {
+        "ko": "4월 28일부터 App Store Connect 에 올리는 앱은 Xcode 26 이상과 iOS 26 · iPadOS 26 · tvOS 26 · visionOS 26 · watchOS 26 SDK 로 빌드해야 합니다.",
+        "en": "Since Apr 28, apps uploaded to App Store Connect must be built with Xcode 26 or later using the iOS 26, iPadOS 26, tvOS 26, visionOS 26 or watchOS 26 SDK.",
+        "ja": "4 月 28 日から、App Store Connect にアップロードするアプリは Xcode 26 以降と iOS 26・iPadOS 26・tvOS 26・visionOS 26・watchOS 26 の SDK でビルドする必要があります。",
+        "zh-Hans": "自 4 月 28 日起，上传到 App Store Connect 的应用必须使用 Xcode 26 或更高版本，并以 iOS 26、iPadOS 26、tvOS 26、visionOS 26 或 watchOS 26 SDK 构建。",
+        "zh-Hant": "自 4 月 28 日起，上傳到 App Store Connect 的應用程式必須使用 Xcode 26 以上版本，並以 iOS 26、iPadOS 26、tvOS 26、visionOS 26 或 watchOS 26 SDK 建置。",
+        "es": "Desde el 28 de abril, las apps que se suben a App Store Connect deben compilarse con Xcode 26 o posterior y el SDK de iOS 26, iPadOS 26, tvOS 26, visionOS 26 o watchOS 26."
+      }
+    }
+  ]
+}

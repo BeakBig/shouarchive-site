@@ -22,6 +22,7 @@ ShouArchive(macOS) 의 소개 · 지원 · 개인정보 처리방침 페이지�
 | `404.html` | 없는 주소에 Cloudflare 가 404 로 돌려주는 페이지(`wrangler.jsonc` 의 `not_found_handling: "404-page"`, GitHub Pages 도 루트 `404.html` 을 씀). 어느 경로에서든 열리므로 주소는 절대 주소이고, 6개 언어 안내가 한 페이지에 있습니다. 언어판이 없고 `localize-nav.py` 가 건드리지 않습니다 |
 | `en/` · `ja/` · `zh-Hans/` · `zh-Hant/` · `es/` | 영어 · 일본어 · 중국어 간체 · 번체 · 스페인어판 (같은 열세 페이지) |
 | `_headers` | Cloudflare Workers 정적 자산의 응답 헤더 규칙 — 모든 경로에 `X-Content-Type-Options: nosniff` · `Referrer-Policy: strict-origin-when-cross-origin` · `X-Frame-Options: DENY` · `Permissions-Policy` · `Content-Security-Policy`(`default-src 'self'`, 스크립트는 자기 사이트 · Paddle CDN · Cloudflare Web Analytics 비컨(`static.cloudflareinsights.com`, 보고는 `connect-src` 의 `cloudflareinsights.com`), 결제 창 `frame-src` 는 `*.paddle.com`, `connect-src` 는 라이선스 서버와 `*.paddle.com`, 스타일만 `'unsafe-inline'`, `frame-ancestors 'none'`). **인라인 `<script>` 는 막히므로 두지 않습니다** — 언어 전환은 `assets/nav.js`, 라이선스 페이지는 `assets/license.js` 의 `data-page` 로 실행하고 `check-site.py` 가 인라인 스크립트를 잡습니다. 파일 자체는 서빙되지 않고 `.assetsignore` 에 넣으면 안 됩니다. 라이선스 서버 주소를 바꾸면 `connect-src` 도 고칩니다 |
+| `news.json` | 앱 「소식」 탭(1.0.1~)이 받는 소식 목록 — 앱에 박힌 주소 `https://shouarchive.beakbig.com/news.json` 이라 옮기거나 이름을 바꾸면 안 된다. `_headers` 가 `no-cache` 로 내보낸다. 형식 · 쓰는 법은 아래 「소식 목록」, `check-site.py` 가 형식을 검사한다 |
 | `assets/style.css` | 공용 스타일 (라이트 · 다크). Mac 앱 내려받기 단추에는 `mac-only` 를 붙이고 바로 뒤에 `<p class="mac-note" data-if="commercial.download">` 안내(「Mac 에서 이 페이지를 열어 내려받으세요」)를 둔다 — 터치가 주 입력인 기기(휴대폰 · 태블릿, `(hover: none) and (pointer: coarse)`)에서는 단추가 숨고 안내가 보인다. 창 너비가 아니라 입력 장치로 가르므로 좁게 줄인 Mac 창에서는 단추가 그대로다(2026-10-29). 다운로드 단추를 새로 넣으면 둘 다 붙인다 |
 | `assets/nav.js` | 언어 전환 `<select>` 동작 하나 — 모든 페이지가 `</body>` 앞에서 불러옵니다(`localize-nav.py` 가 넣음). 예전 인라인 스크립트를 CSP 때문에 파일로 뺀 것 |
 | `assets/license.js` | 결제 완료 화면 · `billing.html` · `activate.html` · `license.html` · `rotate.html` · `erase.html` 이 함께 쓰는 스크립트 (언어 중립 — 문구는 각 페이지 HTML 에 있고 보이기 · 숨기기 · 값 채우기만 합니다). 페이지는 `<script src="assets/license.js" data-page="checkout|billing|activate|resend|rotate|erase">` 로 불러오고 그 이름의 함수가 바로 실행됩니다. 라이선스 서버 주소는 `#paddle-config` 의 `data-license-api`, 없으면 기본값 `https://license.beakbig.com`. 결제 페이지는 `#claim` 등 확인 값을 읽은 직후 주소에서 지우고, Paddle.js 를 불러오지 못하면(광고 차단기) 「결제 모듈을 불러오지 못했습니다」(`#checkout-blocked`), 결제 만들기 상한(409 `checkout_limit`)이면 「지금은 결제 요청이 많습니다」(`#checkout-limit`)를 보여 줍니다. 서버 계약은 라이선스 서버 저장소 `docs/app-contract.md` §2.10 – §2.13 과 2026-10-20 계약(개인정보 삭제 §8) |
@@ -45,6 +46,26 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 - 지원: `https://shouarchive.beakbig.com/support` (다른 언어는 `<언어>/support`)
 - 홈: `https://shouarchive.beakbig.com/` (다른 언어는 `<언어>/`)
 - 개인정보 처리방침: `https://shouarchive.beakbig.com/privacy` (다른 언어는 `<언어>/privacy`)
+
+## 소식 목록 (`news.json`)
+
+앱의 「소식」 탭(1.0.1~)은 앱을 열 때 · 탭을 열 때(6시간에 한 번까지) · 「새로고침」 을 누를 때 이 파일을 받는다. 푸시하면 1분쯤 뒤 모든 앱에 보인다(앱 업데이트 필요 없음).
+
+```json
+{ "version": 1,
+  "items": [ { "id": "2026-10-16-app-review-2-5-19", "platforms": ["ios"], "published": "2026-10-16", "deadline": null,
+               "source": "Apple", "url": "https://developer.apple.com/news/?id=…",
+               "title": { "ko": "…", "en": "…", "ja": "…", "zh-Hans": "…", "zh-Hant": "…", "es": "…" },
+               "summary": { "ko": "…", "en": "…", "ja": "…", "zh-Hans": "…", "zh-Hant": "…", "es": "…" } } ] }
+```
+
+- `id` — 바꾸지 않는다(앱이 읽음 표시를 id 로 기억한다). `<날짜>-<짧은 이름>` 꼴. 목록에서 빼면 앱의 읽음 기록도 지워진다.
+- `platforms` — `ios` · `android` 중 해당하는 것(비우면 양쪽). 앱은 iOS 화면에서 iOS · 양쪽 소식만 보인다.
+- `published` — 원문의 날짜(`YYYY-MM-DD`). 앱은 최근 것을 위에 두고, 60일보다 오래된 소식은 새로 쓰는 사람의 배지에 세지 않는다.
+- `deadline` — 개발자가 맞춰야 하는 날이 있을 때만(`YYYY-MM-DD`, 없으면 `null`). 앱이 「D-N」 으로 보인다(30일 안이면 경고색).
+- `source` — 출처 이름(번역하지 않는다). `url` — 원문, **https 만**(아니면 앱이 그 항목을 뺀다).
+- `title` · `summary` — 6개 언어 모두. 원문을 옮겨 적지 않고 짧게 다시 쓴다(저작권). 사실은 원문에서 확인한 것만 — 기술 문장은 개발 세션 검수(마케팅 TC 와 같은 기준).
+- 형식을 바꿔야 하면 `version` 을 올리고 앱을 먼저 고친다 — 지금 앱은 `version` 1 만 읽고 더 높은 번호는 통째로 무시한다.
 
 ## 가격 · 링크는 한 곳에서 바꾸기
 

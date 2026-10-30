@@ -68,12 +68,12 @@
           <div class="plan-actions">
             <a class="btn mac-only" data-src="commercial.download_link" href="https://license.beakbig.com/download/latest">下载 (.dmg)</a>
             <p class="mac-note" data-if="commercial.download">ShouArchive 是 Mac 应用。请在 Mac 上打开本页面下载。</p>
-            <a class="btn outline" href="pricing" data-live-show hidden>价格 · 购买说明</a>
+            <a class="btn outline" href="pricing" data-live-show>价格 · 购买说明</a>
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong>免费试用至 <span data-price="free_period.until">2026年12月31日</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>目前还没有可下载的文件。推出日期确定后，我们会在这里放上文件。如有疑问，请发送邮件至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20%E5%92%A8%E8%AF%A2&amp;body=%0A%0A%0A---%0A%E6%9D%A5%E8%87%AA%E9%A1%B5%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hans%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>。</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout !free_period.until" hidden>尚未开始销售。现在可以先下载试用，开始销售时会在<a href="pricing">价格页面</a>公布。</p>
-          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until">尚未开始销售。现在是免费期，下载后即可使用所有功能，开始销售时会在<a href="pricing">价格页面</a>公布。</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until" hidden>尚未开始销售。现在是免费期，下载后即可使用所有功能，开始销售时会在<a href="pricing">价格页面</a>公布。</p>
           <p class="plan-foot" data-if="commercial.download">文件在提供下载前已通过签名与 <code>Gatekeeper</code> 检查并发布。如果无法打开文件，请通过<a href="support">支持</a>告诉我们。</p>
           <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">1697c7d6baf5353b8c05549490291da1a5593b48aa21afcb80761caadefe6224</span></code></p>
           <p class="plan-foot">各版本的更新内容见<a href="changelog">更新日志</a>。</p>
@@ -132,7 +132,7 @@
       <p data-if="commercial.download free_period.until">下载后，至 <span data-price="free_period.until">2026年12月31日</span> 无需许可证即可免费使用所有功能。</p>
       <a class="btn mac-only" data-src="commercial.download_link" href="https://license.beakbig.com/download/latest">下载 (.dmg)</a>
       <p class="mac-note" data-if="commercial.download">ShouArchive 是 Mac 应用。请在 Mac 上打开本页面下载。</p>
-      <a class="btn" href="pricing" data-live-hide>查看价格</a>
+      <a class="btn" href="pricing" data-live-hide hidden>查看价格</a>
     </div>
   </section>
 </main>

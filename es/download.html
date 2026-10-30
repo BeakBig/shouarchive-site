@@ -68,12 +68,12 @@
           <div class="plan-actions">
             <a class="btn mac-only" data-src="commercial.download_link" href="https://license.beakbig.com/download/latest">Descarga (.dmg)</a>
             <p class="mac-note" data-if="commercial.download">ShouArchive es una app para Mac. Abre esta página en tu Mac para descargarla.</p>
-            <a class="btn outline" href="pricing" data-live-show hidden>Precios y compra</a>
+            <a class="btn outline" href="pricing" data-live-show>Precios y compra</a>
           </div>
           <p class="plan-foot" data-if="free_period.until"><strong>Prueba gratis hasta el <span data-price="free_period.until">31 de diciembre de 2026</span></strong></p>
           <p class="plan-foot" data-if="!commercial.download" hidden>Todavía no hay ningún archivo para descargar. Cuando se fije la fecha de lanzamiento, lo publicaremos aquí. Si tienes alguna duda, escríbenos a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-DL%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fdownload%20%28W-DL%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-if="commercial.download !commercial.checkout !free_period.until" hidden>Las ventas aún no han empezado. Por ahora puedes descargarla y probarla; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
-          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until">Las ventas aún no han empezado. Durante el período gratuito puedes descargarla y usar todas las funciones; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
+          <p class="plan-foot" data-if="commercial.download !commercial.checkout free_period.until" hidden>Las ventas aún no han empezado. Durante el período gratuito puedes descargarla y usar todas las funciones; cuando empiecen, lo anunciaremos en la <a href="pricing">página de precios</a>.</p>
           <p class="plan-foot" data-if="commercial.download">El archivo se ha publicado tras pasar la firma y la comprobación de <code>Gatekeeper</code>. Si alguna vez no puedes abrirlo, avísanos desde <a href="support">Soporte</a>.</p>
           <p class="plan-foot" data-if="commercial.download_sha256">SHA-256: <code><span data-price="commercial.download_sha256">1697c7d6baf5353b8c05549490291da1a5593b48aa21afcb80761caadefe6224</span></code></p>
           <p class="plan-foot">Consulta qué cambió en cada versión en el <a href="changelog">historial de cambios</a>.</p>
@@ -132,7 +132,7 @@
       <p data-if="commercial.download free_period.until">Descárgala y usa todas las funciones gratis, sin licencia, hasta el <span data-price="free_period.until">31 de diciembre de 2026</span>.</p>
       <a class="btn mac-only" data-src="commercial.download_link" href="https://license.beakbig.com/download/latest">Descarga (.dmg)</a>
       <p class="mac-note" data-if="commercial.download">ShouArchive es una app para Mac. Abre esta página en tu Mac para descargarla.</p>
-      <a class="btn" href="pricing" data-live-hide>Ver precios</a>
+      <a class="btn" href="pricing" data-live-hide hidden>Ver precios</a>
     </div>
   </section>
 </main>

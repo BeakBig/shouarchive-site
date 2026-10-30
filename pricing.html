@@ -54,7 +54,7 @@
     <div class="wrap">
       <div class="plans">
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>2027년 1월 1일 판매 시작</p>
+          <p class="plan-badge soon" data-live-hide hidden>2027년 1월 1일 판매 시작</p>
           <h2><span data-price="trial_days">14</span>일 체험</h2>
           <p class="plan-for">사기 전에 모든 기능을 먼저 써 보고 싶은 분</p>
           <p class="price">무료</p>
@@ -73,11 +73,11 @@
         </article>
 
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>2027년 1월 1일 판매 시작</p>
+          <p class="plan-badge soon" data-live-hide hidden>2027년 1월 1일 판매 시작</p>
           <h2>ShouArchive 라이선스</h2>
           <p class="plan-for">웹에서 한 번 사서 계속 쓰고 싶은 분</p>
           <p class="price"><span data-price="commercial.price">US$29</span></p>
-          <p class="price-early" data-if="early_bird.percent commercial.checkout" hidden><strong>얼리버드 <span data-price="early_bird.percent">30%</span> 할인</strong> — <span data-price="early_bird.until">2026년 12월 31일</span>까지 첫 구매에 적용 · 갱신 요금은 그대로</p>
+          <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>얼리버드 <span data-price="early_bird.percent">30%</span> 할인</strong> — <span data-price="early_bird.until">2026년 12월 31일</span>까지 첫 구매에 적용 · 갱신 요금은 그대로</p>
           <p class="price-note">한 번 구매 · Mac <span data-price="commercial.devices">2</span>대 · 업데이트 1년 포함 (세금 별도)<br>그 뒤 업데이트는 1년에 <span data-price="commercial.price_renewal">US$15</span> — 갱신하지 않아도 앱은 계속 씁니다.</p>
           <ul class="plan-feats">
             <li><strong>프로파일 관리</strong> — 설치된 프로파일 · 만료 배지 · 필터 · 두 개 비교</li>
@@ -92,10 +92,10 @@
             <li><strong>스토어 배포</strong> (iOS · Android) — 스토어 정보 · 스크린샷 · 심사 제출 · 리뷰 답글</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.checkout" href="#" hidden>구매하기</a>
+            <a class="btn" data-src="commercial.checkout" href="https://shouarchive.beakbig.com/checkout">구매하기</a>
           </div>
-          <p class="plan-foot" data-live-hide>구매는 2027년 1월 1일부터 할 수 있습니다. <span data-if="commercial.download !free_period.until" hidden>지금도 <a href="download">다운로드 페이지</a>에서 받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다. </span><span data-if="commercial.download free_period.until">지금도 <a href="download">다운로드 페이지</a>에서 받아 <span data-price="free_period.until">2026년 12월 31일</span>까지 무료로 모든 기능을 쓸 수 있습니다. </span>궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
-          <p class="plan-foot" data-live-show hidden>결제는 <strong>Paddle</strong> 이 판매대행으로 처리합니다. 업데이트 갱신을 끄는 방법과 환불은 <a href="refund">환불 정책</a> 에 적어 두었습니다.</p>
+          <p class="plan-foot" data-live-hide hidden>구매는 2027년 1월 1일부터 할 수 있습니다. <span data-if="commercial.download !free_period.until" hidden>지금도 <a href="download">다운로드 페이지</a>에서 받아 <span data-price="trial_days">14</span>일 동안 체험할 수 있습니다. </span><span data-if="commercial.download free_period.until">지금도 <a href="download">다운로드 페이지</a>에서 받아 <span data-price="free_period.until">2026년 12월 31일</span>까지 무료로 모든 기능을 쓸 수 있습니다. </span>궁금한 점은 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
+          <p class="plan-foot" data-live-show>결제는 <strong>Paddle</strong> 이 판매대행으로 처리합니다. 업데이트 갱신을 끄는 방법과 환불은 <a href="refund">환불 정책</a> 에 적어 두었습니다.</p>
         </article>
       </div>
     </div>
@@ -142,7 +142,7 @@
   <section class="section alt doc">
     <div class="wrap">
       <h2>결제 · 업데이트 안내</h2>
-      <div class="note" data-live-hide>
+      <div class="note" data-live-hide hidden>
         <p><strong>아직 판매를 시작하지 않았습니다.</strong> 구매는 2027년 1월 1일에 열립니다. 이 절의 내용은 그때의 결제 방식입니다 — 그 전에 바뀌면 이 페이지를 먼저 고칩니다.</p>
       </div>
       <ul>
@@ -163,11 +163,11 @@
       <h2>지금 시작하기</h2>
       <p data-if="!commercial.download !commercial.checkout" hidden>출시되면 이 페이지에서 내려받아 <span data-price="trial_days">14</span>일 체험으로 먼저 써 보고 사시면 됩니다. 출시 소식이 궁금하면 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 으로 알려 주세요.</p>
       <p data-if="commercial.download !commercial.checkout !free_period.until" hidden>지금 내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 볼 수 있습니다. 판매는 아직 시작하지 않았습니다 — 시작하면 이 페이지에서 라이선스를 살 수 있습니다.</p>
-      <p data-if="commercial.download !commercial.checkout free_period.until">지금 내려받아 <span data-price="free_period.until">2026년 12월 31일</span>까지 라이선스 없이 모든 기능을 무료로 쓸 수 있습니다. 판매는 아직 시작하지 않았습니다 — 시작하면 이 페이지에서 라이선스를 살 수 있습니다.</p>
-      <p data-live-show hidden>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요. 마음에 들면 <a href="pricing">라이선스</a> 를 사서 키를 넣으면 됩니다.</p>
+      <p data-if="commercial.download !commercial.checkout free_period.until" hidden>지금 내려받아 <span data-price="free_period.until">2026년 12월 31일</span>까지 라이선스 없이 모든 기능을 무료로 쓸 수 있습니다. 판매는 아직 시작하지 않았습니다 — 시작하면 이 페이지에서 라이선스를 살 수 있습니다.</p>
+      <p data-live-show>내려받아 <span data-price="trial_days">14</span>일 동안 결제 수단 없이 써 보세요. 마음에 들면 <a href="pricing">라이선스</a> 를 사서 키를 넣으면 됩니다.</p>
       <a class="btn mac-only" data-src="commercial.download_link" href="https://license.beakbig.com/download/latest">다운로드 (.dmg)</a>
       <p class="mac-note" data-if="commercial.download">ShouArchive 는 Mac 용 앱입니다. Mac 에서 이 페이지를 열어 내려받으세요.</p>
-      <a class="btn" href="download" data-live-hide>다운로드 안내</a>
+      <a class="btn" href="download" data-live-hide hidden>다운로드 안내</a>
     </div>
   </section>
 </main>

@@ -49,6 +49,22 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-5">1.0.5 — 2026年10月31日</h2>
+      <h3>變更</h3>
+      <ul>
+        <li><strong>API 金鑰</strong> — iOS 金鑰的 .p8 內容現在儲存在 macOS 鑰匙串中。刪除或移動原 .p8 檔案後仍可繼續使用；已加入的金鑰只要原檔案還在，啟動時也會移入鑰匙串</li>
+        <li><strong>API 金鑰</strong> — iOS 金鑰也新增了「匯出備份」，可將鑰匙串中儲存的 .p8 存成 AuthKey_&lt;Key ID&gt;.p8 檔案</li>
+        <li><strong>授權</strong> — 開啟這台 Mac 正在使用的金鑰的連結時，只會提示「此授權已在這台 Mac 上註冊」</li>
+        <li><strong>授權</strong> — 換成另一個授權的金鑰時，會釋出這台 Mac 在先前授權中的席位</li>
+        <li><strong>授權</strong> — 已撤銷的授權在 設定 › 授權 中顯示為購買前的樣子（只保留狀態、原因與金鑰）</li>
+      </ul>
+      <h3>修正</h3>
+      <ul>
+        <li><strong>授權</strong> — 透過連結註冊金鑰失敗時，錯誤不再與警告重複顯示兩次</li>
+        <li><strong>API 金鑰</strong> — 修正「匯出備份」因未建立新資料夾而無法儲存的問題</li>
+        <li><strong>確認視窗</strong> — 修正部分確認視窗（金鑰備份、刪除金鑰、建立封閉測試軌道）出現兩個「取消」按鈕的問題</li>
+      </ul>
+
       <h2 id="v1-0-4">1.0.4 — 2026年10月30日</h2>
       <h3>修正</h3>
       <ul>

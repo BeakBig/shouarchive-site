@@ -3,5 +3,5 @@
 # /download/latest 는 라이선스 서버를 한 번 거쳐(날짜별 다운로드 수만 센다) /download/file(지금 DMG)로 간다.
 /download/latest https://license.beakbig.com/download/latest 302
 /download/latest/ https://license.beakbig.com/download/latest 302
-/download/file https://download.beakbig.com/shouarchive/ShouArchive-1.0.4-2026110313.dmg 302
-/download/file/ https://download.beakbig.com/shouarchive/ShouArchive-1.0.4-2026110313.dmg 302
+/download/file https://download.beakbig.com/shouarchive/ShouArchive-1.0.5-2026110314.dmg 302
+/download/file/ https://download.beakbig.com/shouarchive/ShouArchive-1.0.5-2026110314.dmg 302

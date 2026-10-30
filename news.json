@@ -151,6 +151,40 @@
       }
     },
     {
+      "id": "shouarchive-1.0.5",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.5",
+      "published": "2026-10-31",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-5",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-5",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-5",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-5",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-5",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-5"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.5",
+        "en": "ShouArchive 1.0.5",
+        "ja": "ShouArchive 1.0.5",
+        "zh-Hans": "ShouArchive 1.0.5",
+        "zh-Hant": "ShouArchive 1.0.5",
+        "es": "ShouArchive 1.0.5"
+      },
+      "summary": {
+        "ko": "- API 키 — iOS 키의 .p8 내용을 macOS 키체인에 보관합니다. 원본 .p8 파일을 지우거나 옮겨도 계속 쓸 수 있고, 이미 등록한 키도 원본이 남아 있으면 앱을 켤 때 키체인에 넣습니다\n- API 키 — iOS 키에도 「백업 내보내기」 가 생겼습니다. 키체인에 보관한 .p8 을 AuthKey_<Key ID>.p8 파일로 저장합니다\n- 라이선스 — 이 Mac 에서 쓰고 있는 키의 링크를 열면 「이미 이 Mac 에 등록된 라이선스입니다」 안내만 보입니다\n- 라이선스 — 다른 라이선스의 키로 바꾸면 예전 라이선스에서 이 Mac 의 자리를 돌려줍니다\n- 라이선스 — 철회된 라이선스는 설정 › 라이선스에서 구매 전처럼 보입니다(상태 · 이유 · 키만 남음)\n- 라이선스 — 링크로 키를 등록하다 실패하면 오류가 경고와 함께 두 번 보이던 것을 한 곳에만 보이게 했습니다\n- API 키 — 「백업 내보내기」 가 새 폴더를 만들지 않아 파일을 저장하지 못하던 것을 고쳤습니다\n- 확인 창 — 일부 확인 창(키 백업 · 키 삭제 · 비공개 테스트 트랙 만들기)에 「취소」 단추가 두 개 보이던 것을 고쳤습니다",
+        "en": "- API Key — iOS keys now keep the .p8 contents in the macOS keychain. You can delete or move the original .p8 file and keep using the key; keys you already added move to the keychain at launch while the original file is still there\n- API Key — iOS keys now have “Export backup”, which saves the .p8 kept in the keychain as an AuthKey_<Key ID>.p8 file\n- License — opening the link for the key this Mac already uses now just says “This license is already registered on this Mac”\n- License — switching to a key for a different license releases this Mac’s seat on the previous license\n- License — a revoked license now looks like before purchase in Settings › License (only the status, reason, and key remain)\n- License — when registering a key from a link fails, the error now appears in one place instead of twice next to the warning\n- API Key — fixed “Export backup” failing to save because it didn’t create the new folder\n- Confirmation dialogs — fixed two “Cancel” buttons in some dialogs (key backup, key deletion, creating a closed testing track)",
+        "ja": "- API キー — iOS キーの .p8 の内容を macOS のキーチェーンに保存します。元の .p8 ファイルを削除・移動しても使い続けられ、登録済みのキーも元ファイルが残っていれば起動時にキーチェーンに移します\n- API キー — iOS キーにも「バックアップを書き出す」を追加しました。キーチェーンに保存した .p8 を AuthKey_<Key ID>.p8 ファイルとして保存します\n- ライセンス — この Mac で使っているキーのリンクを開くと、「このライセンスはすでにこの Mac に登録されています」とだけ表示します\n- ライセンス — 別のライセンスのキーに変更すると、以前のライセンスからこの Mac の枠を解放します\n- ライセンス — 取り消し済みのライセンスは、設定 › ライセンスで購入前と同じように表示されます（状態・理由・キーだけが残ります）\n- ライセンス — リンクからキーを登録して失敗したとき、エラーが警告と並んで二重に表示されないようにしました\n- API キー — 「バックアップを書き出す」が新しいフォルダを作らず保存できなかった問題を修正しました\n- 確認ダイアログ — 一部の確認ダイアログ（キーのバックアップ・キーの削除・限定テストトラックの作成）で「キャンセル」が 2 つ表示されていた問題を修正しました",
+        "zh-Hans": "- API 密钥 — iOS 密钥的 .p8 内容现在保存在 macOS 钥匙串中。删除或移动原 .p8 文件后仍可继续使用；已添加的密钥只要原文件还在，启动时也会移入钥匙串\n- API 密钥 — iOS 密钥也新增了“导出备份”，可将钥匙串中保存的 .p8 存为 AuthKey_<Key ID>.p8 文件\n- 许可证 — 打开这台 Mac 正在使用的密钥的链接时，只会提示“此许可证已在这台 Mac 上注册”\n- 许可证 — 换成另一个许可证的密钥时，会释放这台 Mac 在之前许可证中的席位\n- 许可证 — 已撤销的许可证在 设置 › 许可证 中显示为购买前的样子（只保留状态、原因和密钥）\n- 许可证 — 通过链接注册密钥失败时，错误不再与警告重复显示两次\n- API 密钥 — 修复了“导出备份”因未创建新文件夹而无法保存的问题\n- 确认窗口 — 修复了部分确认窗口（密钥备份、删除密钥、创建封闭测试轨道）中出现两个“取消”按钮的问题",
+        "zh-Hant": "- API 金鑰 — iOS 金鑰的 .p8 內容現在儲存在 macOS 鑰匙串中。刪除或移動原 .p8 檔案後仍可繼續使用；已加入的金鑰只要原檔案還在，啟動時也會移入鑰匙串\n- API 金鑰 — iOS 金鑰也新增了「匯出備份」，可將鑰匙串中儲存的 .p8 存成 AuthKey_<Key ID>.p8 檔案\n- 授權 — 開啟這台 Mac 正在使用的金鑰的連結時，只會提示「此授權已在這台 Mac 上註冊」\n- 授權 — 換成另一個授權的金鑰時，會釋出這台 Mac 在先前授權中的席位\n- 授權 — 已撤銷的授權在 設定 › 授權 中顯示為購買前的樣子（只保留狀態、原因與金鑰）\n- 授權 — 透過連結註冊金鑰失敗時，錯誤不再與警告重複顯示兩次\n- API 金鑰 — 修正「匯出備份」因未建立新資料夾而無法儲存的問題\n- 確認視窗 — 修正部分確認視窗（金鑰備份、刪除金鑰、建立封閉測試軌道）出現兩個「取消」按鈕的問題",
+        "es": "- Clave de API — las claves de iOS guardan ahora el contenido del .p8 en el llavero de macOS. Puedes borrar o mover el archivo .p8 original y seguir usando la clave; las claves que ya añadiste pasan al llavero al abrir la app si el archivo original sigue ahí\n- Clave de API — las claves de iOS tienen ahora «Exportar copia de seguridad», que guarda el .p8 del llavero como archivo AuthKey_<Key ID>.p8\n- Licencia — al abrir el enlace de la clave que ya usa este Mac solo verás «Esta licencia ya está registrada en este Mac»\n- Licencia — al cambiar a una clave de otra licencia se libera el puesto de este Mac en la licencia anterior\n- Licencia — una licencia revocada se ve en Ajustes › Licencia como antes de comprar (solo quedan el estado, el motivo y la clave)\n- Licencia — si registrar una clave desde un enlace falla, el error aparece en un solo lugar y no dos veces junto al aviso\n- Clave de API — se corrigió que «Exportar copia de seguridad» no guardara porque no creaba la carpeta nueva\n- Diálogos de confirmación — se corrigieron los dos botones «Cancelar» de algunos diálogos (copia de la clave, borrar la clave, crear una vía de prueba cerrada)"
+      }
+    },
+    {
       "id": "shouarchive-1.0.4",
       "platforms": [
         "shouarchive"

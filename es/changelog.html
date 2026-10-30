@@ -49,6 +49,22 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-5">1.0.5 — 31 de octubre de 2026</h2>
+      <h3>Cambios</h3>
+      <ul>
+        <li><strong>Clave de API</strong> — las claves de iOS guardan ahora el contenido del .p8 en el llavero de macOS. Puedes borrar o mover el archivo .p8 original y seguir usando la clave; las claves que ya añadiste pasan al llavero al abrir la app si el archivo original sigue ahí</li>
+        <li><strong>Clave de API</strong> — las claves de iOS tienen ahora «Exportar copia de seguridad», que guarda el .p8 del llavero como archivo AuthKey_&lt;Key ID&gt;.p8</li>
+        <li><strong>Licencia</strong> — al abrir el enlace de la clave que ya usa este Mac solo verás «Esta licencia ya está registrada en este Mac»</li>
+        <li><strong>Licencia</strong> — al cambiar a una clave de otra licencia se libera el puesto de este Mac en la licencia anterior</li>
+        <li><strong>Licencia</strong> — una licencia revocada se ve en Ajustes › Licencia como antes de comprar (solo quedan el estado, el motivo y la clave)</li>
+      </ul>
+      <h3>Correcciones</h3>
+      <ul>
+        <li><strong>Licencia</strong> — si registrar una clave desde un enlace falla, el error aparece en un solo lugar y no dos veces junto al aviso</li>
+        <li><strong>Clave de API</strong> — se corrigió que «Exportar copia de seguridad» no guardara porque no creaba la carpeta nueva</li>
+        <li><strong>Diálogos de confirmación</strong> — se corrigieron los dos botones «Cancelar» de algunos diálogos (copia de la clave, borrar la clave, crear una vía de prueba cerrada)</li>
+      </ul>
+
       <h2 id="v1-0-4">1.0.4 — 30 de octubre de 2026</h2>
       <h3>Correcciones</h3>
       <ul>

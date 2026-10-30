@@ -49,6 +49,22 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-5">1.0.5 — October 31, 2026</h2>
+      <h3>Changes</h3>
+      <ul>
+        <li><strong>API Key</strong> — iOS keys now keep the .p8 contents in the macOS keychain. You can delete or move the original .p8 file and keep using the key; keys you already added move to the keychain at launch while the original file is still there</li>
+        <li><strong>API Key</strong> — iOS keys now have “Export backup”, which saves the .p8 kept in the keychain as an AuthKey_&lt;Key ID&gt;.p8 file</li>
+        <li><strong>License</strong> — opening the link for the key this Mac already uses now just says “This license is already registered on this Mac”</li>
+        <li><strong>License</strong> — switching to a key for a different license releases this Mac’s seat on the previous license</li>
+        <li><strong>License</strong> — a revoked license now looks like before purchase in Settings › License (only the status, reason, and key remain)</li>
+      </ul>
+      <h3>Fixes</h3>
+      <ul>
+        <li><strong>License</strong> — when registering a key from a link fails, the error now appears in one place instead of twice next to the warning</li>
+        <li><strong>API Key</strong> — fixed “Export backup” failing to save because it didn’t create the new folder</li>
+        <li><strong>Confirmation dialogs</strong> — fixed two “Cancel” buttons in some dialogs (key backup, key deletion, creating a closed testing track)</li>
+      </ul>
+
       <h2 id="v1-0-4">1.0.4 — October 30, 2026</h2>
       <h3>Fixes</h3>
       <ul>

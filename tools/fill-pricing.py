@@ -31,7 +31,8 @@
               data-discount 를 비운다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
               pricing.json 에도 페이지에도 넣지 않는다.
-- 루트 _redirects: 「최신 앱 받기」 고정 주소 /download/latest 를 commercial.download(지금 DMG)로 302 로 넘긴다.
+- 루트 _redirects: 「최신 앱 받기」 고정 주소 /download/latest 를 라이선스 서버의 /download/latest(날짜별 숫자만 센다)로,
+  /download/file 을 commercial.download(지금 DMG)로 302 로 넘긴다. 내려받기 단추(data-src="commercial.download_link")도 서버를 거친다.
               SNS 등에 한 번 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다. 이 스크립트가 매번 다시 쓴다(손으로 고치지 않는다).
 """
 import json, os, re, sys
@@ -64,7 +65,13 @@ def paddle_attrs(cfg):
 
 def load():
     with open(CONFIG, encoding='utf-8') as f:
-        return json.load(f)
+        cfg = json.load(f)
+    # 내려받기 단추 · 고정 링크가 거치는 주소 — 라이선스 서버가 날짜별 숫자만 세고 /download/file(지금 DMG)로 보낸다 (2026-10-31).
+    # pricing.json 에 따로 적지 않고 paddle.license_api 에서 만든다 — sandbox 판은 sandbox 서버로 저절로 바뀐다
+    commercial = cfg.setdefault('commercial', {})
+    api = ((cfg.get('paddle') or {}).get('license_api') or '').rstrip('/')
+    commercial['download_link'] = f'{api}/download/latest' if commercial.get('download') and api else commercial.get('download')
+    return cfg
 
 
 def resolve(cfg, path, where=''):
@@ -202,12 +209,20 @@ REDIRECTS = os.path.join(ROOT, '_redirects')
 LATEST_PATHS = ('/download/latest', '/download/latest/')
 
 
+FILE_PATHS = ('/download/file', '/download/file/')
+
+
 def write_redirects(cfg):
-    """/download/latest → 지금 DMG (302 — 다음 릴리스에 바뀌므로 영구 이동이 아니다). 다운로드가 없으면 규칙을 두지 않는다."""
-    target = (cfg.get('commercial', {}) or {}).get('download') or ''
-    lines = ['# fill-pricing.py 가 tools/pricing.json 의 commercial.download 로 만든다 — 손으로 고치지 않는다.',
-             '# 「최신 앱 받기」 고정 주소: SNS · 메일에 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다.']
-    lines += [f'{path} {target} 302' for path in LATEST_PATHS] if target else []
+    """/download/latest → 라이선스 서버(날짜별 숫자 +1) → /download/file → 지금 DMG (모두 302 — 다음 릴리스에 바뀌므로 영구 이동이
+    아니다). 다운로드가 없으면 규칙을 두지 않는다. 라이선스 서버 주소가 없으면 /download/latest 도 DMG 로 바로 보낸다."""
+    commercial = cfg.get('commercial', {}) or {}
+    target = commercial.get('download') or ''
+    counted = commercial.get('download_link') or target
+    lines = ['# fill-pricing.py 가 tools/pricing.json 의 commercial.download · paddle.license_api 로 만든다 — 손으로 고치지 않는다.',
+             '# 「최신 앱 받기」 고정 주소: SNS · 메일에 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다.',
+             '# /download/latest 는 라이선스 서버를 한 번 거쳐(날짜별 다운로드 수만 센다) /download/file(지금 DMG)로 간다.']
+    lines += [f'{path} {counted} 302' for path in LATEST_PATHS] if target else []
+    lines += [f'{path} {target} 302' for path in FILE_PATHS] if target else []
     out = '\n'.join(lines) + '\n'
     old = open(REDIRECTS, encoding='utf-8').read() if os.path.exists(REDIRECTS) else None
     if out != old:

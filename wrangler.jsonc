@@ -16,5 +16,21 @@
     "html_handling": "auto-trailing-slash",
     // 없는 주소에는 루트 404.html 을 404 상태로 돌려준다.
     "not_found_handling": "404-page"
+  },
+  // sandbox 결제 사이트 (2026-10-30) — shouarchive-sandbox.beakbig.com. tools/deploy-sandbox.py 가 저장소를 임시 폴더에 풀어
+  // sandbox 값(Paddle sandbox · 결제 열림 · sandbox 라이선스 서버 license-staging.beakbig.com)으로 다시 만든 뒤
+  // `wrangler deploy --env sandbox` 로 올린다. 운영 빌드(deploy 브랜치 · `npx wrangler deploy`)는 이 설정을 쓰지 않는다.
+  "env": {
+    "sandbox": {
+      "name": "shouarchive-sandbox",
+      "routes": [
+        { "pattern": "shouarchive-sandbox.beakbig.com", "custom_domain": true }
+      ],
+      "assets": {
+        "directory": ".",
+        "html_handling": "auto-trailing-slash",
+        "not_found_handling": "404-page"
+      }
+    }
   }
 }

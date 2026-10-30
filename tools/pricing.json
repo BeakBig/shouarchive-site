@@ -56,7 +56,7 @@
   },
   "_paddle": "checkout.html · billing.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(sandbox 는 test_, live 는 live_), price_* 는 가격 id(pri_…), early_bird_discount 는 얼리버드 할인 id(dsc_…, 비율 할인 · 첫 결제만). sandbox · production 두 묶음을 따로 두고 environment(\"sandbox\" 또는 \"production\")로 쓸 묶음을 고른다 — 출시 때는 environment 한 줄만 바꾼다. checkout_open 이 false 면 어느 묶음이든 client token 을 페이지에 넣지 않는다 — checkout.html 은 「결제를 아직 열지 않았습니다」 안내만, billing.html 은 Paddle.js 를 열지 않는다(2026-10-25 구매 막기 — DMG 가 공개돼 있어 sandbox 결제로 키를 받을 수 있었다). price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 하고, 서버의 PADDLE_ENVIRONMENT 가 이 environment 와 같아야 한다.",
   "paddle": {
-    "environment": "sandbox",
+    "environment": "production",
     "checkout_open": false,
     "license_api": "https://license.beakbig.com",
     "sandbox": {

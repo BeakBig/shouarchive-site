@@ -25,7 +25,8 @@
               data-if="commercial.download !commercial.checkout" 은 「내려받기는 열렸고 판매는 아직」 일 때만 보인다.
               data-live-hide / data-live-show 와 한 요소에 같이 쓰지 않는다(둘 다 hidden 을 정한다).
 - id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api 를 pricing.json 의
-              paddle.environment · client_token · price_license · price_updates · license_api 로 매번 다시 쓴다
+              paddle.environment · client_token · price_license · price_updates · license_api 로, data-discount ·
+              data-discount-last-day 를 early_bird.discount_id · last_day 로 매번 다시 쓴다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
               pricing.json 에도 페이지에도 넣지 않는다.
 - 루트 _redirects: 「최신 앱 받기」 고정 주소 /download/latest 를 commercial.download(지금 DMG)로 302 로 넘긴다.
@@ -37,9 +38,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG = os.path.join(ROOT, 'tools', 'pricing.json')
 MISSING = object()
 missing = set()  # pricing.json 에 없는 키 (파일, 키) — 오타를 조용히 넘기지 않도록 마지막에 한 번에 알린다
-PADDLE_ATTRS = (('data-env', 'environment'), ('data-token', 'client_token'),
-                ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates'),
-                ('data-license-api', 'license_api'))
+PADDLE_ATTRS = (('data-env', 'paddle.environment'), ('data-token', 'paddle.client_token'),
+                ('data-price-license', 'paddle.price_license'), ('data-price-updates', 'paddle.price_updates'),
+                ('data-license-api', 'paddle.license_api'),
+                ('data-discount', 'early_bird.discount_id'), ('data-discount-last-day', 'early_bird.last_day'))
 
 
 def load():
@@ -158,7 +160,7 @@ def apply_paddle(html, cfg, where):
     def sub(m):
         tag = m.group(0)
         for attr, key in PADDLE_ATTRS:
-            val = resolve(cfg, 'paddle.' + key, where)
+            val = resolve(cfg, key, where)
             val = '' if val is None or val is MISSING else str(val)
             val = val.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
             if re.search(r'\s' + attr + r'="[^"]*"', tag):

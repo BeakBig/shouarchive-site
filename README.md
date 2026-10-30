@@ -253,7 +253,13 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
 6. [ ] **DMG 호스팅을 정한다** — GitHub Releases(저장소 `BeakBig/…` 의 Release 자산, 다운로드가 GitHub 을 거침) vs Cloudflare R2(판매자 계정, 커스텀 도메인 가능). 정한 뒤 **개인정보 처리방침의 제3자 목록(3 · 9 · 12항)** 에 다운로드 호스트(GitHub, Inc. 또는 Cloudflare R2)와 그때 처리되는 정보(IP · User-Agent 등 접속 기록)를 추가하고, Sparkle 업데이트 목록(`SUFeedURL`)이 같은 곳을 가리키는지 확인한다(W19).
 7. [ ] 법률 문서 세 개의 시행일을 공개하는 날짜로 바꾼다(`terms.html` · `refund.html` · `privacy.html` 의 hero · `p.meta`, 6개 언어).
 8. [ ] 푸시 뒤 공개 주소에서 확인: `curl -sI https://shouarchive.beakbig.com/checkout | grep -i content-security` 에 CSP 가 보이고, `/checkout` 에서 결제 창이 실제로 열리는지(광고 차단기를 켠 브라우저에서는 「결제 모듈을 불러오지 못했습니다」 가 뜨는지), `/없는주소` 가 404.html 인지.
-9. [ ] Paddle 라이브 대시보드 › Retain 설정 Step 4 「Check Paddle.js installation」 에 `https://shouarchive.beakbig.com/en/billing` 을 넣고 Check → Step 5 Live. 1번(라이브 client token)이 배포된 뒤에야 통과한다 — 샌드박스 토큰으로는 라이브 Retain 이 설치를 알아보지 못한다. Step 1 – 3(보내는 사람 `support@shouarchive.beakbig.com` 확인)은 2026-10-23 에 끝냈다.
+9. [ ] **얼리버드(2026-10-30 결정 · 첫 구매 30% · 12/31 까지)** — Paddle 라이브에 할인을 하나 새로 만든다: `type percentage` ·
+   `amount 30` · `recur false`(첫 결제만) · 적용 대상 제한 없음 · 만료는 비우거나 2027-01-01 12:00 UTC 보다 늦게. 나라마다 현지
+   가격이 있어 금액 할인은 쓸 수 없다. 그 `dsc_…` 를 서버 vars `EARLY_BIRD_DISCOUNT_ID` 와 여기 `early_bird.discount_id` 에 넣는다
+   (sandbox 시험에는 sandbox 할인 id). `early_bird.percent` 가 채워져 있으면 판매가 열리는 순간 가격 · 결제 · 홈에 얼리버드 줄이 보인다.
+   **끝나면(2027-01-01)** `early_bird.percent` · `discount_id` 를 `null` 로, `free_period.until` · `paid_from` 도 `null` 로 비우고
+   `fill-pricing.py` → 배포. 서버 `EARLY_BIRD_DISCOUNT_ID` 도 비운다(비우지 않아도 마지막 날이 지나면 붙이지 않는다).
+10. [ ] Paddle 라이브 대시보드 › Retain 설정 Step 4 「Check Paddle.js installation」 에 `https://shouarchive.beakbig.com/en/billing` 을 넣고 Check → Step 5 Live. 1번(라이브 client token)이 배포된 뒤에야 통과한다 — 샌드박스 토큰으로는 라이브 Retain 이 설치를 알아보지 못한다. Step 1 – 3(보내는 사람 `support@shouarchive.beakbig.com` 확인)은 2026-10-23 에 끝냈다.
 
 ## 올리기
 

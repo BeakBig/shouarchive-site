@@ -100,9 +100,9 @@ python3 tools/check-site.py      # 6개 언어 × 14개 페이지 구조 · 링�
 | `commercial.devices` · `refund_days` | 라이선스 하나로 쓰는 Mac 수(2) · 결제 후 전액 환불 기간(14일) |
 | `commercial.release_date` | 출시일 — 아직 `null` |
 | `commercial.checkout` · `download` · `download_sha256` | 구매 페이지 주소(보통 `/checkout`) · `.dmg` 주소 · 그 파일의 SHA-256(64자 hex, `null` 이면 다운로드 페이지의 SHA-256 줄이 숨겨짐 — DMG 를 올릴 때마다 `download` 와 함께 바꾼다). `checkout` 이 채워지면 출시(판매 시작)로 봅니다 — 「출시 예정」 안내가 사라지고 구매 · 다운로드 버튼이 나타납니다 |
-| `paddle.environment` | `sandbox` 또는 `production` |
-| `paddle.client_token` | Paddle 의 **client-side token**(`test_…` / `live_…`). 비어 있으면 `checkout.html` 은 「결제를 아직 열지 않았습니다」만 보여 줍니다 |
-| `paddle.price_license` · `price_updates` | 가격 id(`pri_…`) — 라이선스(US$14, 1회) · 업데이트 1년(US$15, 매년 자동 갱신). 처음 구매 화면에 두 항목을 함께 넣어 합계 US$29 (라이선스 서버에 닿지 못할 때만 이 값으로 직접 엽니다) |
+| `paddle.environment` | `sandbox` 또는 `production` — 아래 두 묶음 중 페이지에 쓸 것. 출시 때는 이 한 줄만 바꾼다(라이선스 서버의 `PADDLE_ENVIRONMENT` 와 같게) |
+| `paddle.checkout_open` | `false` 면 어느 묶음이든 client token 을 페이지에 넣지 않는다 — `checkout.html` 은 「결제를 아직 열지 않았습니다」만, `billing.html` 은 Paddle.js 를 열지 않는다(2026-10-25 부터 구매 막음). 결제 시험 · 판매를 열 때 `true` |
+| `paddle.sandbox` · `paddle.production` | 환경마다 따로 두는 값 묶음 — `client_token`(Paddle **client-side token**, `test_…` / `live_…`) · `price_license` · `price_updates`(가격 id `pri_…` — 라이선스 US$14 1회 · 업데이트 1년 US$15 매년 자동 갱신, 처음 구매 화면에 둘을 함께 넣어 합계 US$29. 라이선스 서버에 닿지 못할 때만 이 값으로 직접 엽니다) · `early_bird_discount`(얼리버드 할인 id `dsc_…`, 아래 `early_bird`) |
 | `paddle.license_api` | 라이선스 서버 주소(`https://license.beakbig.com`) — 결제 완료 화면이 키를 받아 오고 사이트 결제를 만듭니다. 라이선스 서버의 `SITE_ORIGINS` 에 이 사이트 주소가 있어야 브라우저가 부를 수 있습니다(CORS). `activate.html` · `license.html` · `rotate.html` 은 `assets/license.js` 의 기본값을 쓰므로 주소를 바꾸면 거기도 고칩니다 |
 | `seller.reg_no` · `owner` · `address` · `phone` · `mail_order` | 페이지 바닥 사업자 정보와 이용약관 2항. 사업자등록번호(613-40-01820)만 정해졌고 나머지는 `null`(주황색 자리 표시) |
 | `contact.email` | 문의 주소 `support@shouarchive.beakbig.com` |
@@ -185,7 +185,7 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
   - https://www.paddle.com/help/start/account-verification · https://developer.paddle.com/build/go-live-checklist
 - [ ] **제품 · 가격 등록** — 상품 설명 · 세금 분류(`tax_category`, 기본값 `standard`) · 라이선스 가격(US$14, 1회) · 업데이트 가격(US$15, 1년마다 반복). 체험은 Paddle 이 아니라 앱이 처리하므로 Paddle 가격에 `trial_period` 를 넣지 않습니다. 가격 id 두 개를 `paddle.price_license` · `price_updates` 에 넣습니다.
   - https://developer.paddle.com/build/products/create-products-prices · https://developer.paddle.com/build/trials/create-trial
-- [ ] **기본 결제 링크 · 공개 설정 넣기** — Paddle › Checkout settings 의 기본 결제 링크(default payment link)를 `https://shouarchive.beakbig.com/checkout` 으로 정합니다. 라이선스 서버가 만든 거래(`?_ptxn=…`)는 이 페이지에서 Paddle.js 가 열고, 그냥 들어온 방문자에게는 「구매하기」 버튼(라이선스 + 업데이트 두 항목, 오버레이 결제)을 보여 줍니다. client-side token 을 `paddle.client_token` 에, 실서비스로 바꿀 때는 `paddle.environment` 를 `production` 으로 바꾸고, 판매를 열 때 `commercial.checkout` 에 구매 페이지 주소를 넣습니다.
+- [ ] **기본 결제 링크 · 공개 설정 넣기** — Paddle › Checkout settings 의 기본 결제 링크(default payment link)를 `https://shouarchive.beakbig.com/checkout` 으로 정합니다. 라이선스 서버가 만든 거래(`?_ptxn=…`)는 이 페이지에서 Paddle.js 가 열고, 그냥 들어온 방문자에게는 「구매하기」 버튼(라이선스 + 업데이트 두 항목, 오버레이 결제)을 보여 줍니다. client-side token 은 `paddle.sandbox` · `paddle.production` 의 `client_token` 에 두고, 실서비스로 바꿀 때는 `paddle.environment` 를 `production` 으로 바꾸고(`paddle.checkout_open` 이 `true` 여야 결제가 열림), 판매를 열 때 `commercial.checkout` 에 구매 페이지 주소를 넣습니다.
   - https://developer.paddle.com/build/transactions/default-payment-link
 - [ ] **다운로드 링크(.dmg) 넣기** — 승인된 도메인에 파일을 올리고 `commercial.download` 에 경로를 넣습니다.
 - [ ] **세금 표시 방식 정하기** — 가격에 세금을 포함(유럽형) / 별도(미국형) / 지역에 따라 자동 중 고릅니다. **Paddle 의무가 아니라 판매자 선택**입니다.
@@ -245,7 +245,7 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
 
 지금 공개된 결제 페이지는 **Paddle 샌드박스**를 가리킵니다(`check-site.py` 가 경고로 알려 줍니다). 판매를 열기 전에 순서대로:
 
-1. [ ] `tools/pricing.json` 의 `paddle.environment` 를 `production`, `paddle.client_token` 을 라이브 client-side token(`live_…`), `paddle.price_license` · `price_updates` 를 라이브 가격 id 로 바꾼다 → `python3 tools/fill-pricing.py`. `check-site.py` 의 샌드박스 경고가 사라져야 한다.
+1. [ ] `tools/pricing.json` 의 `paddle.environment` 를 `production`, `paddle.checkout_open` 을 `true` 로 바꾼다(라이브 client token · 가격 id 는 `paddle.production` 에 이미 들어 있다) → `python3 tools/fill-pricing.py`. `check-site.py` 의 샌드박스 경고가 사라져야 한다.
 2. [ ] 라이선스 서버(`~/Developer/shouarchive-license`)의 `PADDLE_ENVIRONMENT` 와 Paddle 시크릿(API 키 · 웹훅 비밀값)을 production 으로 바꾸고 배포한다. 라이브 웹훅 주소를 Paddle 대시보드에 등록한다.
 3. [ ] 샌드박스로 생긴 라이선스 · 결제 · Mac · 알림 · 발송 기록을 서버 데이터베이스에서 정리한다 — 서버 저장소 `scripts/` 의 정리 스크립트 참고. 테스트 구매 이메일로 `erase.html` 을 돌려 보는 것도 방법이다.
 4. [ ] `commercial.checkout`(`https://shouarchive.beakbig.com/checkout`) · `commercial.download`(`.dmg` 주소) · `commercial.download_sha256`(`shasum -a 256 ShouArchive.dmg`) · `commercial.release_date` 를 채운다 → `fill-pricing.py`. 「출시 예정」 안내가 사라지고 구매 · 다운로드 버튼과 SHA-256 줄이 나타나는지 본다.
@@ -255,10 +255,11 @@ Paddle 공식 문서(developer.paddle.com · paddle.com/help · paddle.com/legal
 8. [ ] 푸시 뒤 공개 주소에서 확인: `curl -sI https://shouarchive.beakbig.com/checkout | grep -i content-security` 에 CSP 가 보이고, `/checkout` 에서 결제 창이 실제로 열리는지(광고 차단기를 켠 브라우저에서는 「결제 모듈을 불러오지 못했습니다」 가 뜨는지), `/없는주소` 가 404.html 인지.
 9. [ ] **얼리버드(2026-10-30 결정 · 첫 구매 30% · 12/31 까지)** — Paddle 라이브에 할인을 하나 새로 만든다: `type percentage` ·
    `amount 30` · `recur false`(첫 결제만) · 적용 대상 제한 없음 · 만료는 비우거나 2027-01-01 12:00 UTC 보다 늦게. 나라마다 현지
-   가격이 있어 금액 할인은 쓸 수 없다. 그 `dsc_…` 를 서버 vars `EARLY_BIRD_DISCOUNT_ID` 와 여기 `early_bird.discount_id` 에 넣는다
-   (sandbox 시험에는 sandbox 할인 id). `early_bird.percent` 가 채워져 있으면 판매가 열리는 순간 가격 · 결제 · 홈에 얼리버드 줄이 보인다.
-   **끝나면(2027-01-01)** `early_bird.percent` · `discount_id` 를 `null` 로, `free_period.until` · `paid_from` 도 `null` 로 비우고
-   `fill-pricing.py` → 배포. 서버 `EARLY_BIRD_DISCOUNT_ID` 도 비운다(비우지 않아도 마지막 날이 지나면 붙이지 않는다).
+   가격이 있어 금액 할인은 쓸 수 없다. 그 `dsc_…` 를 서버 vars `PRODUCTION_EARLY_BIRD_DISCOUNT_ID` 와 여기
+   `paddle.production.early_bird_discount` 에 넣는다(sandbox 할인 `dsc_01m66023cv9wkx0vp4jpgp7pcg` 는 2026-10-30 에 만들어 넣어 둠).
+   `early_bird.percent` 가 채워져 있으면 판매가 열리는 순간 가격 · 결제 · 홈에 얼리버드 줄이 보인다.
+   **끝나면(2027-01-01)** `early_bird.percent` 를 `null` 로, `free_period.until` · `paid_from` 도 `null` 로 비우고
+   `fill-pricing.py` → 배포. 서버는 마지막 날(`EARLY_BIRD_LAST_DAY`)이 지나면 저절로 할인을 붙이지 않는다.
 10. [ ] Paddle 라이브 대시보드 › Retain 설정 Step 4 「Check Paddle.js installation」 에 `https://shouarchive.beakbig.com/en/billing` 을 넣고 Check → Step 5 Live. 1번(라이브 client token)이 배포된 뒤에야 통과한다 — 샌드박스 토큰으로는 라이브 Retain 이 설치를 알아보지 못한다. Step 1 – 3(보내는 사람 `support@shouarchive.beakbig.com` 확인)은 2026-10-23 에 끝냈다.
 
 ## 올리기

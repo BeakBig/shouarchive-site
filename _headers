@@ -8,6 +8,7 @@
 #   - Paddle.js(결제 오버레이)가 쓰는 출처는 Paddle 문서 기준으로 넉넉히 둔다 — 결제가 막히면 안 된다.
 #     스크립트 cdn.paddle.com · sandbox-cdn.paddle.com, 결제 창 buy.paddle.com · sandbox-buy.paddle.com,
 #     API checkout-service.paddle.com 등 *.paddle.com, 스타일은 오버레이가 인라인으로 넣으므로 'unsafe-inline'.
+#   - Paddle.js 가 불러오는 스타일(cdn.paddle.com/paddle/v2/assets/css/paddle.css)을 위해 style-src 에 cdn.paddle.com (2026-10-31).
 #   - connect-src 의 license.beakbig.com 은 라이선스 서버(결제 만들기 · 키 받기 · 키 다시 받기 · 키 바꾸기 · 개인정보 삭제).
 #   - 라이선스 서버 주소(pricing.json 의 paddle.license_api)를 바꾸면 여기 connect-src 도 같이 고친다.
 #   - 방문 통계 Cloudflare Web Analytics(2026-10-21): 비컨 스크립트 static.cloudflareinsights.com · 보고 cloudflareinsights.com/cdn-cgi/rum.
@@ -17,7 +18,18 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com; connect-src 'self' https://cloudflareinsights.com https://license.beakbig.com https://*.paddle.com; img-src 'self' data: https://*.paddle.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com; connect-src 'self' https://cloudflareinsights.com https://license.beakbig.com https://*.paddle.com; img-src 'self' data: https://*.paddle.com; style-src 'self' 'unsafe-inline' https://cdn.paddle.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# 결제 수단 바꾸기 페이지(billing, 6개 언어) — Paddle Retain(결제 실패 복구 · 2026-10-31)이 ProfitWell 스크립트(public.profitwell.com)와
+# 인라인 스크립트 · 스타일을 넣는다. 이 페이지만 위 /* 의 CSP 를 떼고(! 줄) Retain 을 허용하는 CSP 를 따로 둔다 — 다른 페이지는 그대로 엄격하다.
+# 사용자 입력이 그려지지 않는 정적 페이지라 script-src 'unsafe-inline' 의 위험이 작다. Paddle Retain 설정의 「Paddle.js 확인」 주소가 이 페이지다.
+/billing
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com https://public.profitwell.com https://*.profitwell.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com https://*.profitwell.com; connect-src 'self' https://cloudflareinsights.com https://license.beakbig.com https://*.paddle.com https://*.profitwell.com; img-src 'self' data: https://*.paddle.com https://*.profitwell.com; style-src 'self' 'unsafe-inline' https://cdn.paddle.com https://*.profitwell.com; font-src 'self' data: https://*.profitwell.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+/*/billing
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cdn.paddle.com https://sandbox-cdn.paddle.com https://*.paddle.com https://public.profitwell.com https://*.profitwell.com; frame-src https://*.paddle.com https://sandbox-buy.paddle.com https://buy.paddle.com https://*.profitwell.com; connect-src 'self' https://cloudflareinsights.com https://license.beakbig.com https://*.paddle.com https://*.profitwell.com; img-src 'self' data: https://*.paddle.com https://*.profitwell.com; style-src 'self' 'unsafe-inline' https://cdn.paddle.com https://*.profitwell.com; font-src 'self' data: https://*.profitwell.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
 
 # 앱 자동 업데이트(Sparkle) 목록 — SUFeedURL = https://shouarchive.beakbig.com/appcast.xml (앱에 박혀 있어 주소를 바꾸면 안 된다).
 # 새 빌드마다 바뀌므로 캐시하지 않는다. 항목의 DMG 는 빌드 번호가 붙은 새 주소(download.beakbig.com, immutable)다 — docs/release-direct.md

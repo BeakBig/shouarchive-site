@@ -12,6 +12,8 @@ sandbox 값
   pricing.json  paddle.environment = sandbox · checkout_open = true · license_api = sandbox 라이선스 서버
                 commercial.checkout = 이 사이트의 /checkout (구매 버튼이 보인다 — 출시 화면 미리보기)
   _headers      connect-src 에 sandbox 라이선스 서버 · X-Robots-Tag noindex (검색에 안 나오게)
+  license.js    「앱에서 바로 등록」 링크를 shouarchive-sandbox:// 로 — 앱 Debug 빌드만 받아 「sandbox 서버」 로 바꿔 등록한다
+                (출시판 앱은 이 스킴이 없어 열리지 않는다)
   style.css     화면 위에 「SANDBOX — 테스트 카드로만 결제됩니다」 띠
 
 sandbox 라이선스 서버(shouarchive-license-staging)의 SITE_ORIGINS · SITE_CHECKOUT_URL 이 이 사이트 주소여야 하고,
@@ -68,6 +70,12 @@ def main():
     assert text.count('/*\n') == 1, '_headers 의 /* 규칙을 찾지 못했습니다'
     text = text.replace('/*\n', '/*\n  X-Robots-Tag: noindex, nofollow\n')
     open(headers, 'w', encoding='utf-8').write(text)
+
+    script = os.path.join(out, 'assets', 'license.js')
+    text = open(script, encoding='utf-8').read()
+    old = "'shouarchive://activate?key='"
+    assert text.count(old) == 1, 'license.js 의 앱 링크를 찾지 못했습니다'
+    open(script, 'w', encoding='utf-8').write(text.replace(old, "'shouarchive-sandbox://activate?key='"))
 
     with open(os.path.join(out, 'assets', 'style.css'), 'a', encoding='utf-8') as css:
         css.write(BANNER)

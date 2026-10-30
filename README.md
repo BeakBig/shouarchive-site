@@ -290,6 +290,8 @@ python3 tools/deploy-sandbox.py --dry-run  # 만들기만
 - 저장소를 임시 폴더에 풀어 `paddle.environment=sandbox` · `checkout_open=true` · `license_api=https://license-staging.beakbig.com`
   (sandbox 라이선스 서버) · `commercial.checkout`(구매 버튼) 으로 다시 만든다. `_headers` 의 `connect-src` 도 sandbox 서버로, 검색에 안 나오게
   `X-Robots-Tag: noindex`, 화면 위에 SANDBOX 띠. **저장소의 운영 HTML · `pricing.json` 은 바뀌지 않는다.**
+- 「앱에서 바로 등록」 링크는 `shouarchive-sandbox://activate?key=…` 다 — 앱 **Debug 빌드만** 이 스킴을 받아 「sandbox 서버」 로 바꾼 뒤 등록한다.
+  출시판 앱은 이 스킴이 없어 열리지 않는다. (키 메일의 링크는 아직 운영 사이트의 `/activate` 를 거친다 — 메일 대신 결제 완료 화면의 단추를 쓴다.)
 - 운영 사이트를 바꾼 뒤 sandbox 에도 반영하려면 그 커밋에서 다시 돌린다(자동으로 따라가지 않는다).
 - sandbox 라이선스 서버의 `SITE_ORIGINS` · `SITE_CHECKOUT_URL` 과 Paddle **sandbox** 의 기본 결제 링크가 이 사이트를 가리켜야 한다.
 - 여기서 산 키는 sandbox 서명이라 출시판 앱에서는 통하지 않는다 — 앱 Debug 빌드를 sandbox 서버로 바꿔서 시험한다.

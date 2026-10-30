@@ -151,6 +151,40 @@
       }
     },
     {
+      "id": "shouarchive-1.0.4",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.4",
+      "published": "2026-10-30",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-4",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-4",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-4",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-4",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-4",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-4"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.4",
+        "en": "ShouArchive 1.0.4",
+        "ja": "ShouArchive 1.0.4",
+        "zh-Hans": "ShouArchive 1.0.4",
+        "zh-Hant": "ShouArchive 1.0.4",
+        "es": "ShouArchive 1.0.4"
+      },
+      "summary": {
+        "ko": "- 창 크기 — 아래 탭 바 · 하위 메뉴로 화면을 옮길 때 창이 저절로 세로로 길어지면, 바로 전 높이로 되돌립니다\n- macOS 26 — 툴바에 바탕을 깔아, 창 제목이 왼쪽 칸 경계선에 걸쳐 보이지 않습니다\n- 프로파일 — 영어 화면에서 인증서 만료일 앞의 띄어쓰기가 빠지던 것을 고쳤습니다",
+        "en": "- Window size — if the window grows taller on its own when you switch screens with the bottom tab bar or a sub-menu, it goes back to its previous height\n- macOS 26 — the toolbar now has a background, so the window title no longer sits across the left column’s divider\n- Profiles — fixed the missing space before certificate expiry dates in English",
+        "ja": "- ウィンドウサイズ — 下のタブバーやサブメニューで画面を切り替えたときにウィンドウが勝手に縦に伸びたら、直前の高さに戻します\n- macOS 26 — ツールバーに背景を付け、ウィンドウタイトルが左の列の境界線にかからないようにしました\n- プロファイル — 英語表示で証明書の有効期限の前のスペースが抜けていたのを修正しました",
+        "zh-Hans": "- 窗口大小 — 用底部标签栏或子菜单切换界面时，如果窗口自行纵向变长，会恢复到之前的高度\n- macOS 26 — 工具栏加上了背景，窗口标题不再压在左栏的分隔线上\n- 描述文件 — 修正了英文界面中证书到期日前缺少空格的问题",
+        "zh-Hant": "- 視窗大小 — 用底部分頁列或子選單切換畫面時，若視窗自行縱向變長，會恢復到之前的高度\n- macOS 26 — 工具列加上了背景，視窗標題不再壓在左欄的分隔線上\n- 描述檔 — 修正了英文介面中憑證到期日前少了空格的問題",
+        "es": "- Tamaño de la ventana — si la ventana se alarga sola al cambiar de pantalla con la barra de pestañas inferior o un submenú, vuelve a su altura anterior\n- macOS 26 — la barra de herramientas ahora tiene fondo, así que el título de la ventana ya no queda sobre el separador de la columna izquierda\n- Perfiles — se corrigió el espacio que faltaba antes de la fecha de caducidad de los certificados en inglés"
+      }
+    },
+    {
       "id": "shouarchive-1.0.3",
       "platforms": [
         "shouarchive"

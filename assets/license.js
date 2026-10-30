@@ -120,6 +120,13 @@
 
   // ------------------------------------------------------------------ 결제 페이지 (checkout.html)
 
+  /** 얼리버드 할인 id (data-discount) — 마지막 날(data-discount-last-day, 이 날 포함)이 세계 어디서든 끝나기 전(다음 날 12:00 UTC)일 때만 */
+  function earlyBirdDiscount(cfg) {
+    if (!cfg.discount || !/^\d{4}-\d{2}-\d{2}$/.test(cfg.discountLastDay || '')) return null;
+    var ends = Date.parse(cfg.discountLastDay + 'T00:00:00Z') + 36 * 3600000;
+    return Date.now() < ends ? cfg.discount : null;
+  }
+
   function checkout() {
     var config = byId('paddle-config');
     if (!config) return;
@@ -185,10 +192,14 @@
           if (error && error.code === 'checkout_limit') { show('checkout-limit', true); return; }
           // 라이선스 서버에 닿지 못하면 예전처럼 연다 — 키는 메일로만 받는다
           claim = null;
-          Paddle.Checkout.open({ items: [
+          var settings = { items: [
             { priceId: cfg.priceLicense, quantity: 1 },
             { priceId: cfg.priceUpdates, quantity: 1 }
-          ] });
+          ] };
+          // 얼리버드 — 서버가 붙이는 할인을 이 예비 길에서도 붙인다
+          var discount = earlyBirdDiscount(cfg);
+          if (discount) settings.discountId = discount;
+          Paddle.Checkout.open(settings);
         })
         .then(function () { button.disabled = false; });
     });

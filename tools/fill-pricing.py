@@ -24,8 +24,11 @@
               키 앞에 ! 를 붙이면 반대(비어 있을 때만 보임), 공백으로 여러 개를 적으면 모두 맞을 때만 보인다 —
               data-if="commercial.download !commercial.checkout" 은 「내려받기는 열렸고 판매는 아직」 일 때만 보인다.
               data-live-hide / data-live-show 와 한 요소에 같이 쓰지 않는다(둘 다 hidden 을 정한다).
-- id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api 를 pricing.json 의
-              paddle.environment · client_token · price_license · price_updates · license_api 로 매번 다시 쓴다
+- id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api · data-discount ·
+              data-discount-last-day 를 pricing.json 의 paddle.environment 가 고른 묶음(paddle.sandbox · paddle.production —
+              client_token · price_license · price_updates · early_bird_discount)과 paddle.license_api · early_bird.last_day 로
+              매번 다시 쓴다. paddle.checkout_open 이 false 면 data-token 을 비워 결제를 막고, early_bird.percent 가 비면
+              data-discount 를 비운다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
               pricing.json 에도 페이지에도 넣지 않는다.
 - 루트 _redirects: 「최신 앱 받기」 고정 주소 /download/latest 를 commercial.download(지금 DMG)로 302 로 넘긴다.
@@ -37,9 +40,26 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG = os.path.join(ROOT, 'tools', 'pricing.json')
 MISSING = object()
 missing = set()  # pricing.json 에 없는 키 (파일, 키) — 오타를 조용히 넘기지 않도록 마지막에 한 번에 알린다
-PADDLE_ATTRS = (('data-env', 'environment'), ('data-token', 'client_token'),
-                ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates'),
-                ('data-license-api', 'license_api'))
+PADDLE_ENVIRONMENTS = ('sandbox', 'production')
+
+
+def paddle_attrs(cfg):
+    """#paddle-config 에 쓸 (속성, 값) — paddle.environment 가 고른 묶음(sandbox · production)에서 읽는다.
+    checkout_open 이 false 면 client token 을 넣지 않고(결제 막힘), 얼리버드 percent 가 비면 할인 id 를 넣지 않는다.
+    environment 가 둘 중 하나가 아니거나 그 묶음이 없으면 ValueError — 틀린 묶음으로 페이지를 쓰지 않게."""
+    paddle = cfg.get('paddle') or {}
+    env = paddle.get('environment')
+    active = paddle.get(env) if env in PADDLE_ENVIRONMENTS else None
+    if not isinstance(active, dict):
+        raise ValueError(f'paddle.environment 는 sandbox 또는 production 이고 그 묶음이 있어야 합니다: {env!r}')
+    early = cfg.get('early_bird') or {}
+    return (('data-env', env),
+            ('data-token', active.get('client_token') if paddle.get('checkout_open') else ''),
+            ('data-price-license', active.get('price_license')),
+            ('data-price-updates', active.get('price_updates')),
+            ('data-license-api', paddle.get('license_api')),
+            ('data-discount', active.get('early_bird_discount') if early.get('percent') else ''),
+            ('data-discount-last-day', early.get('last_day')))
 
 
 def load():
@@ -155,11 +175,12 @@ def apply_conditions(html, cfg, where):
 def apply_paddle(html, cfg, where):
     """id="paddle-config" 요소의 Paddle.js 설정 속성을 pricing.json 의 paddle 값으로 다시 쓴다.
     속성 값을 통째로 바꾸므로 값을 고쳐 다시 실행해도 새 값이 들어가고, 같은 값이면 바뀌지 않는다."""
+    attrs = paddle_attrs(cfg)
+
     def sub(m):
         tag = m.group(0)
-        for attr, key in PADDLE_ATTRS:
-            val = resolve(cfg, 'paddle.' + key, where)
-            val = '' if val is None or val is MISSING else str(val)
+        for attr, val in attrs:
+            val = '' if val is None else str(val)
             val = val.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
             if re.search(r'\s' + attr + r'="[^"]*"', tag):
                 tag = re.sub(r'(\s' + attr + r'=)"[^"]*"', lambda a: a.group(1) + '"' + val + '"', tag, count=1)

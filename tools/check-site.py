@@ -14,7 +14,7 @@ python3 tools/check-site.py
   4. data-price 키가 pricing.json 에 있는가, 값이 없는(null) 자리에 숫자가 그대로 남아 있지 않은가
      (예상해 둔 금액이 페이지에 노출되지 않게 하는 검사 — commercial.* 는 「미정」 문장이어야 하고,
      seller.* 같은 다른 키는 [대표자] 처럼 숫자 없는 자리 표시면 됩니다)
-     그리고 checkout.html 의 Paddle 설정(#paddle-config)이 pricing.json 과 같은가
+     그리고 checkout.html 의 Paddle 설정(#paddle-config)이 pricing.json 과 같은가, 끝난 얼리버드가 남아 있지 않은가
   5. 내부 링크가 실제 파일을 가리키는가 — 링크는 확장자 없이 쓴다(`pricing` → pricing.html, `./` · `en/` → index.html).
      `.html` 로 끝나는 사이트 안 링크는 문제로 잡습니다. 현재 페이지 링크(aria-current)가 자기 자신을 가리키는가
   6. CSS 에 [hidden] 을 강제하는 규칙이 있는가 — .btn 처럼 display 를 정하는 요소에 달린
@@ -213,13 +213,42 @@ def check_paddle_config(lang, page):
         if page == 'checkout.html':
             report('결제', p, 'id="paddle-config" 요소가 없습니다')
         return
-    paddle = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('paddle') or {}
-    for attr, key in (('data-env', 'environment'), ('data-token', 'client_token'),
-                      ('data-price-license', 'price_license'), ('data-price-updates', 'price_updates'),
-                      ('data-license-api', 'license_api')):
+    cfg = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8'))
+    try:
+        attrs = fill_pricing().paddle_attrs(cfg)
+    except ValueError as error:
+        report('결제', 'tools/pricing.json', str(error))
+        return
+    for attr, want in attrs:
         got = re.search(r'\s' + attr + r'="([^"]*)"', m.group(0))
-        if not got or got.group(1) != str(paddle.get(key) or ''):
-            report('결제', p, f'{attr} 가 pricing.json 의 paddle.{key} 와 다릅니다 — python3 tools/fill-pricing.py 를 실행하세요')
+        if not got or got.group(1) != str(want or ''):
+            report('결제', p, f'{attr} 가 pricing.json 과 다릅니다 — python3 tools/fill-pricing.py 를 실행하세요')
+
+_FILL_PRICING = None
+
+def fill_pricing():
+    """tools/fill-pricing.py 를 모듈로 — #paddle-config 값을 고르는 규칙(paddle_attrs)을 두 곳에 따로 두지 않게."""
+    global _FILL_PRICING
+    if _FILL_PRICING is None:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('fill_pricing', os.path.join(ROOT, 'tools', 'fill-pricing.py'))
+        _FILL_PRICING = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(_FILL_PRICING)
+    return _FILL_PRICING
+
+def check_early_bird():
+    """얼리버드가 끝났는데(last_day 다음 날 12:00 UTC 가 지남) percent · discount_id 가 남아 있으면 — 페이지가 끝난 할인을 계속 알린다."""
+    import datetime
+    early = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('early_bird') or {}
+    if not early.get('percent'):
+        return
+    try:
+        last = datetime.datetime.strptime(str(early.get('last_day')), '%Y-%m-%d').replace(tzinfo=datetime.timezone.utc)
+    except ValueError:
+        report('가격', 'tools/pricing.json', 'early_bird.last_day 가 YYYY-MM-DD 날짜가 아닙니다')
+        return
+    if datetime.datetime.now(datetime.timezone.utc) >= last + datetime.timedelta(hours=36):
+        report('가격', 'tools/pricing.json', f'얼리버드가 {early.get("last_day")} 에 끝났습니다 — early_bird.percent 를 null 로 비우고 fill-pricing 을 다시 실행하세요')
 
 def check_hidden_rule():
     """.btn 처럼 display 를 정하는 요소에 달린 hidden 이 동작하려면 CSS 강제 규칙이 있어야 합니다."""
@@ -259,7 +288,8 @@ def check_deploy_files():
 def check_sandbox_warning():
     """공개 결제 페이지가 Paddle 샌드박스를 가리키면 경고 — 출시 전에 꼭 바꿔야 하지만 개발 중에는 정상이므로 종료 코드는 그대로."""
     paddle = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('paddle') or {}
-    if paddle.get('environment') == 'sandbox' or str(paddle.get('client_token') or '').startswith('test_'):
+    active = paddle.get(paddle.get('environment')) or {}
+    if paddle.get('environment') == 'sandbox' or str(active.get('client_token') or '').startswith('test_'):
         warn('결제', 'tools/pricing.json', '공개 결제 페이지가 샌드박스입니다(paddle.environment=sandbox 또는 client_token 이 test_). '
              '출시 전에 production 토큰으로 바꾸고 서버의 샌드박스 라이선스 · 결제 · Mac 기록을 정리할 것 — README 「출시 체크리스트」')
 
@@ -339,6 +369,7 @@ for page in PAGES:
         check_current_page(lang, page)
         check_inline_script(path_for(lang, page))
         check_canonical(lang, page)
+check_early_bird()
 check_hidden_rule()
 check_sizes()
 check_deploy_files()

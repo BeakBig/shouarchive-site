@@ -396,6 +396,7 @@ h2 {
   margin: 0 0 6px;
 }
 .plan .price-note { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+.plan .price-early { font-size: 13.5px; color: var(--accent); margin: 0 0 8px; }
 .plan-feats { flex: 1; margin: 0 0 20px; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
 .plan-feats li { margin: 5px 0; }
 .plan-feats strong { color: var(--text); font-weight: 600; }

@@ -41,13 +41,36 @@
       "zh-Hant": "2027年1月1日"
     }
   },
-  "_paddle": "checkout.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(live_ / test_ 로 시작), price_* 는 가격 id(pri_…). environment 는 \"sandbox\" 또는 \"production\". price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). client_token 이 비어 있으면 checkout.html 은 「결제를 아직 열지 않았습니다」 안내만 보여 준다. license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 한다.",
+  "_early_bird": "얼리버드 — 첫 구매만 할인(갱신 요금은 그대로). percent 가 채워져 있고 판매가 열려 있으면(commercial.checkout) 가격 · 결제 · 홈 페이지의 얼리버드 줄(data-if=\"early_bird.percent commercial.checkout\")이 보인다. until = 마지막 날(언어별 표시), last_day = YYYY-MM-DD(이 날 포함 · 세계 어디서든 끝날 때까지, 다음 날 12:00 UTC). 실제 할인은 라이선스 서버(vars EARLY_BIRD_DISCOUNT_ID · EARLY_BIRD_LAST_DAY)가 결제에 붙인다 — 마지막 날을 서로 같게 둔다. 할인 id 는 paddle 의 sandbox · production 묶음(early_bird_discount)에 있다 — 서버에 닿지 못해 결제 페이지가 직접 Paddle 결제를 열 때(예비 길)만 쓰고, percent 가 비어 있으면 쓰지 않는다. 끝나면 percent 를 null 로 비우고 다시 배포한다(check-site 가 기간이 지났는데 남아 있으면 문제로 잡는다).",
+  "early_bird": {
+    "percent": "30%",
+    "until": {
+      "ko": "2026년 12월 31일",
+      "en": "December 31, 2026",
+      "es": "31 de diciembre de 2026",
+      "ja": "2026年12月31日",
+      "zh-Hans": "2026年12月31日",
+      "zh-Hant": "2026年12月31日"
+    },
+    "last_day": "2026-12-31"
+  },
+  "_paddle": "checkout.html · billing.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(sandbox 는 test_, live 는 live_), price_* 는 가격 id(pri_…), early_bird_discount 는 얼리버드 할인 id(dsc_…, 비율 할인 · 첫 결제만). sandbox · production 두 묶음을 따로 두고 environment(\"sandbox\" 또는 \"production\")로 쓸 묶음을 고른다 — 출시 때는 environment 한 줄만 바꾼다. checkout_open 이 false 면 어느 묶음이든 client token 을 페이지에 넣지 않는다 — checkout.html 은 「결제를 아직 열지 않았습니다」 안내만, billing.html 은 Paddle.js 를 열지 않는다(2026-10-25 구매 막기 — DMG 가 공개돼 있어 sandbox 결제로 키를 받을 수 있었다). price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 하고, 서버의 PADDLE_ENVIRONMENT 가 이 environment 와 같아야 한다.",
   "paddle": {
     "environment": "sandbox",
-    "client_token": "",
-    "price_license": "pri_01m4z2wd3gd0nk5e7sn0rkm6nc",
-    "price_updates": "pri_01m4z2sybg1d0p83g6x6hjz9s0",
-    "license_api": "https://license.beakbig.com"
+    "checkout_open": true,
+    "license_api": "https://license.beakbig.com",
+    "sandbox": {
+      "client_token": "test_928a76416bd3a848b5a28307512",
+      "price_license": "pri_01m4z2wd3gd0nk5e7sn0rkm6nc",
+      "price_updates": "pri_01m4z2sybg1d0p83g6x6hjz9s0",
+      "early_bird_discount": "dsc_01m66023cv9wkx0vp4jpgp7pcg"
+    },
+    "production": {
+      "client_token": "live_a0bd4c8c7e9363e43927f1bbc7b",
+      "price_license": "pri_01m5h1dgzqa0txf61e02e647kk",
+      "price_updates": "pri_01m5h1gf3grpcq2ez2s572wwxf",
+      "early_bird_discount": null
+    }
   },
   "_seller": "페이지 바닥 사업자 정보 · 이용약관 2항. null 이면 페이지의 주황색 자리 표시를 그대로 둔다(undecided 문장을 넣지 않음). 값은 문자열이거나, 언어마다 다르게 보여야 하면 {\"ko\": …, \"en\": …} 꼴의 언어별 사전(없는 언어는 en 값).",
   "seller": {

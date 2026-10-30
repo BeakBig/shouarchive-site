@@ -54,7 +54,7 @@
     <div class="wrap">
       <div class="plans">
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>On sale Jan 1, 2027</p>
+          <p class="plan-badge soon" data-live-hide hidden>On sale Jan 1, 2027</p>
           <h2><span data-price="trial_days">14</span>-day trial</h2>
           <p class="plan-for">For anyone who wants to try every feature before buying</p>
           <p class="price">Free</p>
@@ -73,11 +73,11 @@
         </article>
 
         <article class="plan coming">
-          <p class="plan-badge soon" data-live-hide>On sale Jan 1, 2027</p>
+          <p class="plan-badge soon" data-live-hide hidden>On sale Jan 1, 2027</p>
           <h2>ShouArchive license</h2>
           <p class="plan-for">For anyone who wants to buy once on the web and keep using it</p>
           <p class="price"><span data-price="commercial.price">US$29</span></p>
-          <p class="price-early" data-if="early_bird.percent commercial.checkout" hidden><strong>Early bird: <span data-price="early_bird.percent">30%</span> off</strong> — your first purchase through <span data-price="early_bird.until">December 31, 2026</span> · renewal price unchanged</p>
+          <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>Early bird: <span data-price="early_bird.percent">30%</span> off</strong> — your first purchase through <span data-price="early_bird.until">December 31, 2026</span> · renewal price unchanged</p>
           <p class="price-note">One-time purchase · <span data-price="commercial.devices">2</span> Macs · 1 year of updates included (plus tax)<br>After that, updates are <span data-price="commercial.price_renewal">US$15</span> a year — the app keeps working even if you don't renew.</p>
           <ul class="plan-feats">
             <li><strong>Profile management</strong> — installed profiles · expiry badges · filters · side-by-side comparison</li>
@@ -92,10 +92,10 @@
             <li><strong>Store release</strong> (iOS · Android) — store listing · screenshots · submission for review · review replies</li>
           </ul>
           <div class="plan-actions">
-            <a class="btn" data-src="commercial.checkout" href="#" hidden>Buy now</a>
+            <a class="btn" data-src="commercial.checkout" href="https://shouarchive.beakbig.com/checkout">Buy now</a>
           </div>
-          <p class="plan-foot" data-live-hide>Purchases open on January 1, 2027. <span data-if="commercial.download !free_period.until" hidden>You can already get it from the <a href="download">Download page</a> and try it for <span data-price="trial_days">14</span> days. </span><span data-if="commercial.download free_period.until">You can already get it from the <a href="download">Download page</a> and use every feature free through <span data-price="free_period.until">December 31, 2026</span>. </span>Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
-          <p class="plan-foot" data-live-show hidden>Payment is handled by <strong>Paddle</strong> as Merchant of Record. How to turn off update renewal and how refunds work are described in the <a href="refund">Refund Policy</a>.</p>
+          <p class="plan-foot" data-live-hide hidden>Purchases open on January 1, 2027. <span data-if="commercial.download !free_period.until" hidden>You can already get it from the <a href="download">Download page</a> and try it for <span data-price="trial_days">14</span> days. </span><span data-if="commercial.download free_period.until">You can already get it from the <a href="download">Download page</a> and use every feature free through <span data-price="free_period.until">December 31, 2026</span>. </span>Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
+          <p class="plan-foot" data-live-show>Payment is handled by <strong>Paddle</strong> as Merchant of Record. How to turn off update renewal and how refunds work are described in the <a href="refund">Refund Policy</a>.</p>
         </article>
       </div>
     </div>
@@ -142,7 +142,7 @@
   <section class="section alt doc">
     <div class="wrap">
       <h2>Payment and updates</h2>
-      <div class="note" data-live-hide>
+      <div class="note" data-live-hide hidden>
         <p><strong>Sales have not started yet.</strong> Purchases open on January 1, 2027. This section describes how payment will work then — if anything changes before then, this page is updated first.</p>
       </div>
       <ul>
@@ -163,11 +163,11 @@
       <h2>Get started</h2>
       <p data-if="!commercial.download !commercial.checkout" hidden>Once it is released, download it from this page, try it for <span data-price="trial_days">14</span> days, then buy. If you'd like to hear about the release, let us know at <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
       <p data-if="commercial.download !commercial.checkout !free_period.until" hidden>Download it now and try it for <span data-price="trial_days">14</span> days with no payment method. Sales have not started yet — once they do, you can buy a license on this page.</p>
-      <p data-if="commercial.download !commercial.checkout free_period.until">Download it now and use every feature free, without a license, through <span data-price="free_period.until">December 31, 2026</span>. Sales have not started yet — once they do, you can buy a license on this page.</p>
-      <p data-live-show hidden>Download it and try it for <span data-price="trial_days">14</span> days with no payment method. If you like it, buy a <a href="pricing">license</a> and enter the key.</p>
+      <p data-if="commercial.download !commercial.checkout free_period.until" hidden>Download it now and use every feature free, without a license, through <span data-price="free_period.until">December 31, 2026</span>. Sales have not started yet — once they do, you can buy a license on this page.</p>
+      <p data-live-show>Download it and try it for <span data-price="trial_days">14</span> days with no payment method. If you like it, buy a <a href="pricing">license</a> and enter the key.</p>
       <a class="btn mac-only" data-src="commercial.download_link" href="https://license.beakbig.com/download/latest">Download (.dmg)</a>
       <p class="mac-note" data-if="commercial.download">ShouArchive is a Mac app. Open this page on your Mac to download it.</p>
-      <a class="btn" href="download" data-live-hide>Download info</a>
+      <a class="btn" href="download" data-live-hide hidden>Download info</a>
     </div>
   </section>
 </main>

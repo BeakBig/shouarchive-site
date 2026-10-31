@@ -49,6 +49,23 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-6">1.0.6 — 2026 年 10 月 31 日</h2>
+      <h3>追加</h3>
+      <ul>
+        <li><strong>アプリのビルド</strong> — Xcode がない場合、iOS のアプリのビルド画面を開くとウインドウ中央に案内が表示されます。「App Store へ移動」で App Store の Xcode のページを開き、「閉じる」で前の画面に戻ります</li>
+        <li><strong>アプリのビルド</strong> — Android SDK や JDK がない場合も同じ案内が表示されます。「ダウンロードページへ移動」で Android Studio のダウンロードページを開きます。Android Studio がすでにインストールされていれば「Android Studio を開く」に変わります</li>
+        <li><strong>アプリのビルド</strong> — ビルド画面上部の案内と失敗したジョブにも「App Store で Xcode を入手」・「Android Studio を入手」ボタンを追加しました。インストールして ShouArchive に戻ると案内は消えます</li>
+      </ul>
+      <h3>変更</h3>
+      <ul>
+        <li><strong>API キー</strong> — 「バックアップを書き出す」で保存すると、保存したファイルを Finder で選択して表示します</li>
+      </ul>
+      <h3>修正</h3>
+      <ul>
+        <li><strong>アプリのビルド</strong> — Xcode がないとき、iOS のビルド・アップロード・デバイスへのインストールなどで Apple の英語のエラーがそのまま表示されていたのを、「この操作には Xcode が必要です」という案内に変えました。macOS のデベロッパツールのインストール画面も表示されなくなりました</li>
+        <li><strong>アプリのビルド</strong> — Xcode がインストールされていても xcode-select が Command Line Tools を指していると iOS の作業が失敗していた問題を修正しました。インストール済みの Xcode を見つけて使います</li>
+      </ul>
+
       <h2 id="v1-0-5">1.0.5 — 2026 年 10 月 31 日</h2>
       <h3>変更</h3>
       <ul>

@@ -49,6 +49,23 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-6">1.0.6 — 31 de octubre de 2026</h2>
+      <h3>Novedades</h3>
+      <ul>
+        <li><strong>Compilación de la app</strong> — si Xcode no está instalado, al abrir la pantalla Compilación de la app de iOS aparece un aviso en el centro de la ventana. «Ir a la App Store» abre la página de Xcode en la App Store y «Cerrar» te devuelve a la pantalla anterior</li>
+        <li><strong>Compilación de la app</strong> — el mismo aviso aparece cuando faltan el SDK de Android o el JDK. «Ir a la página de descarga» abre la página de descarga de Android Studio; si Android Studio ya está instalado, el botón pasa a ser «Abrir Android Studio»</li>
+        <li><strong>Compilación de la app</strong> — el aviso de la parte superior de la pantalla de compilación y las tareas fallidas tienen ahora los botones «Obtener Xcode en la App Store» y «Obtener Android Studio». El aviso desaparece cuando instalas la herramienta y vuelves a ShouArchive</li>
+      </ul>
+      <h3>Cambios</h3>
+      <ul>
+        <li><strong>Clave de API</strong> — al guardar con «Exportar copia de seguridad», Finder muestra el archivo guardado seleccionado</li>
+      </ul>
+      <h3>Correcciones</h3>
+      <ul>
+        <li><strong>Compilación de la app</strong> — sin Xcode, compilar, subir, instalar en dispositivos y otras tareas de iOS mostraban el error de Apple en inglés; ahora dicen «Esto requiere Xcode» y qué hacer. Ya no aparece la ventana de macOS para instalar las herramientas de desarrollo</li>
+        <li><strong>Compilación de la app</strong> — se corrigió que las tareas de iOS fallaran con Xcode instalado si xcode-select apuntaba a las Command Line Tools; ahora se busca y se usa el Xcode instalado</li>
+      </ul>
+
       <h2 id="v1-0-5">1.0.5 — 31 de octubre de 2026</h2>
       <h3>Cambios</h3>
       <ul>

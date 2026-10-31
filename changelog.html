@@ -49,6 +49,23 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-6">1.0.6 — 2026년 10월 31일</h2>
+      <h3>추가</h3>
+      <ul>
+        <li><strong>앱 빌드</strong> — Xcode 가 없으면 iOS 앱 빌드 화면에 들어올 때 창 가운데에 안내가 뜹니다. 「App Store 로 이동」 은 App Store 의 Xcode 페이지를 열고, 「닫기」 는 이전 화면으로 돌아갑니다</li>
+        <li><strong>앱 빌드</strong> — Android SDK 나 JDK 가 없을 때도 같은 안내가 뜹니다. 「다운로드 페이지로 이동」 은 Android Studio 다운로드 페이지를 열고, Android Studio 가 이미 설치돼 있으면 「Android Studio 열기」 로 바뀝니다</li>
+        <li><strong>앱 빌드</strong> — 빌드 화면 위 안내와 실패한 작업에도 「App Store 에서 Xcode 받기」 · 「Android Studio 받기」 단추가 생겼습니다. 설치하고 ShouArchive 로 돌아오면 안내가 사라집니다</li>
+      </ul>
+      <h3>바뀐 점</h3>
+      <ul>
+        <li><strong>API 키</strong> — 「백업 내보내기」 로 저장하면 Finder 에서 저장한 파일을 골라 보여 줍니다</li>
+      </ul>
+      <h3>고친 점</h3>
+      <ul>
+        <li><strong>앱 빌드</strong> — Xcode 가 없을 때 iOS 빌드 · 업로드 · 기기 설치 등에서 Apple 의 영어 오류가 그대로 보이던 것을 「이 작업에는 Xcode 가 필요합니다」 안내로 바꿨습니다. macOS 의 개발자 도구 설치 창도 더 이상 뜨지 않습니다</li>
+        <li><strong>앱 빌드</strong> — Xcode 가 설치돼 있어도 xcode-select 가 Command Line Tools 를 가리키면 iOS 작업이 실패하던 것을 고쳤습니다. 이제 설치된 Xcode 를 찾아 씁니다</li>
+      </ul>
+
       <h2 id="v1-0-5">1.0.5 — 2026년 10월 31일</h2>
       <h3>바뀐 점</h3>
       <ul>

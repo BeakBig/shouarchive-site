@@ -151,6 +151,40 @@
       }
     },
     {
+      "id": "shouarchive-1.0.6",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.6",
+      "published": "2026-10-31",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-6",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-6",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-6",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-6",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-6",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-6"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.6",
+        "en": "ShouArchive 1.0.6",
+        "ja": "ShouArchive 1.0.6",
+        "zh-Hans": "ShouArchive 1.0.6",
+        "zh-Hant": "ShouArchive 1.0.6",
+        "es": "ShouArchive 1.0.6"
+      },
+      "summary": {
+        "ko": "- 앱 빌드 — Xcode 가 없으면 iOS 앱 빌드 화면에 들어올 때 창 가운데에 안내가 뜹니다. 「App Store 로 이동」 은 App Store 의 Xcode 페이지를 열고, 「닫기」 는 이전 화면으로 돌아갑니다\n- 앱 빌드 — Android SDK 나 JDK 가 없을 때도 같은 안내가 뜹니다. 「다운로드 페이지로 이동」 은 Android Studio 다운로드 페이지를 열고, Android Studio 가 이미 설치돼 있으면 「Android Studio 열기」 로 바뀝니다\n- 앱 빌드 — 빌드 화면 위 안내와 실패한 작업에도 「App Store 에서 Xcode 받기」 · 「Android Studio 받기」 단추가 생겼습니다. 설치하고 ShouArchive 로 돌아오면 안내가 사라집니다\n- API 키 — 「백업 내보내기」 로 저장하면 Finder 에서 저장한 파일을 골라 보여 줍니다\n- 앱 빌드 — Xcode 가 없을 때 iOS 빌드 · 업로드 · 기기 설치 등에서 Apple 의 영어 오류가 그대로 보이던 것을 「이 작업에는 Xcode 가 필요합니다」 안내로 바꿨습니다. macOS 의 개발자 도구 설치 창도 더 이상 뜨지 않습니다\n- 앱 빌드 — Xcode 가 설치돼 있어도 xcode-select 가 Command Line Tools 를 가리키면 iOS 작업이 실패하던 것을 고쳤습니다. 이제 설치된 Xcode 를 찾아 씁니다",
+        "en": "- App Build — If Xcode isn’t installed, a notice now appears in the middle of the window when you open the iOS App Build screen. “Go to the App Store” opens Xcode’s App Store page, and “Close” takes you back to the previous screen\n- App Build — The same notice appears when the Android SDK or JDK is missing. “Go to the Download Page” opens the Android Studio download page; if Android Studio is already installed, the button becomes “Open Android Studio”\n- App Build — The notice at the top of the build screen and failed jobs now also have “Get Xcode from the App Store” / “Get Android Studio” buttons. The notice goes away once you install the tool and come back to ShouArchive\n- API Key — Saving with “Export backup” now shows the saved file selected in Finder\n- App Build — Without Xcode, iOS builds, uploads, device installs and similar tasks showed Apple’s raw English error; they now say “This needs Xcode” and what to do next. The macOS prompt to install developer tools no longer appears\n- App Build — Fixed iOS tasks failing when Xcode is installed but xcode-select points to the Command Line Tools; ShouArchive now finds and uses the installed Xcode",
+        "ja": "- アプリのビルド — Xcode がない場合、iOS のアプリのビルド画面を開くとウインドウ中央に案内が表示されます。「App Store へ移動」で App Store の Xcode のページを開き、「閉じる」で前の画面に戻ります\n- アプリのビルド — Android SDK や JDK がない場合も同じ案内が表示されます。「ダウンロードページへ移動」で Android Studio のダウンロードページを開きます。Android Studio がすでにインストールされていれば「Android Studio を開く」に変わります\n- アプリのビルド — ビルド画面上部の案内と失敗したジョブにも「App Store で Xcode を入手」・「Android Studio を入手」ボタンを追加しました。インストールして ShouArchive に戻ると案内は消えます\n- API キー — 「バックアップを書き出す」で保存すると、保存したファイルを Finder で選択して表示します\n- アプリのビルド — Xcode がないとき、iOS のビルド・アップロード・デバイスへのインストールなどで Apple の英語のエラーがそのまま表示されていたのを、「この操作には Xcode が必要です」という案内に変えました。macOS のデベロッパツールのインストール画面も表示されなくなりました\n- アプリのビルド — Xcode がインストールされていても xcode-select が Command Line Tools を指していると iOS の作業が失敗していた問題を修正しました。インストール済みの Xcode を見つけて使います",
+        "zh-Hans": "- 应用构建 — 未安装 Xcode 时，打开 iOS 的应用构建页面会在窗口中央显示提示。“前往 App Store”会打开 App Store 中的 Xcode 页面，“关闭”会回到上一个页面\n- 应用构建 — 缺少 Android SDK 或 JDK 时也会显示同样的提示。“前往下载页面”会打开 Android Studio 下载页面；如果已安装 Android Studio，按钮会变为“打开 Android Studio”\n- 应用构建 — 构建页面顶部的提示和失败的任务中也新增了“从 App Store 获取 Xcode”“获取 Android Studio”按钮。安装后回到 ShouArchive，提示就会消失\n- API 密钥 — 用“导出备份”保存后，会在访达中选中显示保存的文件\n- 应用构建 — 未安装 Xcode 时，iOS 构建、上传、安装到设备等操作会直接显示 Apple 的英文错误，现在改为“此操作需要 Xcode”的提示，也不再弹出 macOS 的开发者工具安装窗口\n- 应用构建 — 修复了已安装 Xcode 但 xcode-select 指向 Command Line Tools 时 iOS 操作失败的问题。现在会自动找到并使用已安装的 Xcode",
+        "zh-Hant": "- App 建置 — 未安裝 Xcode 時，開啟 iOS 的 App 建置畫面會在視窗中央顯示提示。「前往 App Store」會開啟 App Store 中的 Xcode 頁面，「關閉」會回到上一個畫面\n- App 建置 — 缺少 Android SDK 或 JDK 時也會顯示同樣的提示。「前往下載頁面」會開啟 Android Studio 下載頁面；若已安裝 Android Studio，按鈕會變為「開啟 Android Studio」\n- App 建置 — 建置畫面上方的提示與失敗的工作中也新增了「從 App Store 取得 Xcode」「取得 Android Studio」按鈕。安裝後回到 ShouArchive，提示就會消失\n- API 金鑰 — 用「匯出備份」儲存後，會在 Finder 中選取並顯示儲存的檔案\n- App 建置 — 未安裝 Xcode 時，iOS 建置、上傳、安裝到裝置等操作會直接顯示 Apple 的英文錯誤，現在改為「此操作需要 Xcode」的提示，也不再跳出 macOS 的開發者工具安裝視窗\n- App 建置 — 修正已安裝 Xcode 但 xcode-select 指向 Command Line Tools 時 iOS 作業失敗的問題。現在會自動找到並使用已安裝的 Xcode",
+        "es": "- Compilación de la app — si Xcode no está instalado, al abrir la pantalla Compilación de la app de iOS aparece un aviso en el centro de la ventana. «Ir a la App Store» abre la página de Xcode en la App Store y «Cerrar» te devuelve a la pantalla anterior\n- Compilación de la app — el mismo aviso aparece cuando faltan el SDK de Android o el JDK. «Ir a la página de descarga» abre la página de descarga de Android Studio; si Android Studio ya está instalado, el botón pasa a ser «Abrir Android Studio»\n- Compilación de la app — el aviso de la parte superior de la pantalla de compilación y las tareas fallidas tienen ahora los botones «Obtener Xcode en la App Store» y «Obtener Android Studio». El aviso desaparece cuando instalas la herramienta y vuelves a ShouArchive\n- Clave de API — al guardar con «Exportar copia de seguridad», Finder muestra el archivo guardado seleccionado\n- Compilación de la app — sin Xcode, compilar, subir, instalar en dispositivos y otras tareas de iOS mostraban el error de Apple en inglés; ahora dicen «Esto requiere Xcode» y qué hacer. Ya no aparece la ventana de macOS para instalar las herramientas de desarrollo\n- Compilación de la app — se corrigió que las tareas de iOS fallaran con Xcode instalado si xcode-select apuntaba a las Command Line Tools; ahora se busca y se usa el Xcode instalado"
+      }
+    },
+    {
       "id": "shouarchive-1.0.5",
       "platforms": [
         "shouarchive"

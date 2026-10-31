@@ -49,6 +49,23 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-6">1.0.6 — 2026年10月31日</h2>
+      <h3>新增</h3>
+      <ul>
+        <li><strong>App 建置</strong> — 未安裝 Xcode 時，開啟 iOS 的 App 建置畫面會在視窗中央顯示提示。「前往 App Store」會開啟 App Store 中的 Xcode 頁面，「關閉」會回到上一個畫面</li>
+        <li><strong>App 建置</strong> — 缺少 Android SDK 或 JDK 時也會顯示同樣的提示。「前往下載頁面」會開啟 Android Studio 下載頁面；若已安裝 Android Studio，按鈕會變為「開啟 Android Studio」</li>
+        <li><strong>App 建置</strong> — 建置畫面上方的提示與失敗的工作中也新增了「從 App Store 取得 Xcode」「取得 Android Studio」按鈕。安裝後回到 ShouArchive，提示就會消失</li>
+      </ul>
+      <h3>變更</h3>
+      <ul>
+        <li><strong>API 金鑰</strong> — 用「匯出備份」儲存後，會在 Finder 中選取並顯示儲存的檔案</li>
+      </ul>
+      <h3>修正</h3>
+      <ul>
+        <li><strong>App 建置</strong> — 未安裝 Xcode 時，iOS 建置、上傳、安裝到裝置等操作會直接顯示 Apple 的英文錯誤，現在改為「此操作需要 Xcode」的提示，也不再跳出 macOS 的開發者工具安裝視窗</li>
+        <li><strong>App 建置</strong> — 修正已安裝 Xcode 但 xcode-select 指向 Command Line Tools 時 iOS 作業失敗的問題。現在會自動找到並使用已安裝的 Xcode</li>
+      </ul>
+
       <h2 id="v1-0-5">1.0.5 — 2026年10月31日</h2>
       <h3>變更</h3>
       <ul>

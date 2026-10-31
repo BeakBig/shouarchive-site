@@ -49,6 +49,23 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-0-6">1.0.6 — October 31, 2026</h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>App Build</strong> — If Xcode isn’t installed, a notice now appears in the middle of the window when you open the iOS App Build screen. “Go to the App Store” opens Xcode’s App Store page, and “Close” takes you back to the previous screen</li>
+        <li><strong>App Build</strong> — The same notice appears when the Android SDK or JDK is missing. “Go to the Download Page” opens the Android Studio download page; if Android Studio is already installed, the button becomes “Open Android Studio”</li>
+        <li><strong>App Build</strong> — The notice at the top of the build screen and failed jobs now also have “Get Xcode from the App Store” / “Get Android Studio” buttons. The notice goes away once you install the tool and come back to ShouArchive</li>
+      </ul>
+      <h3>Changes</h3>
+      <ul>
+        <li><strong>API Key</strong> — Saving with “Export backup” now shows the saved file selected in Finder</li>
+      </ul>
+      <h3>Fixes</h3>
+      <ul>
+        <li><strong>App Build</strong> — Without Xcode, iOS builds, uploads, device installs and similar tasks showed Apple’s raw English error; they now say “This needs Xcode” and what to do next. The macOS prompt to install developer tools no longer appears</li>
+        <li><strong>App Build</strong> — Fixed iOS tasks failing when Xcode is installed but xcode-select points to the Command Line Tools; ShouArchive now finds and uses the installed Xcode</li>
+      </ul>
+
       <h2 id="v1-0-5">1.0.5 — October 31, 2026</h2>
       <h3>Changes</h3>
       <ul>

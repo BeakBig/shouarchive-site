@@ -151,6 +151,40 @@
       }
     },
     {
+      "id": "shouarchive-1.0.7",
+      "platforms": [
+        "shouarchive"
+      ],
+      "version": "1.0.7",
+      "published": "2026-11-01",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-0-7",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-0-7",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-0-7",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-0-7",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-0-7",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-0-7"
+      },
+      "title": {
+        "ko": "ShouArchive 1.0.7",
+        "en": "ShouArchive 1.0.7",
+        "ja": "ShouArchive 1.0.7",
+        "zh-Hans": "ShouArchive 1.0.7",
+        "zh-Hant": "ShouArchive 1.0.7",
+        "es": "ShouArchive 1.0.7"
+      },
+      "summary": {
+        "ko": "- 앱 빌드 — 도구 없음 안내에서 「App Store 로 이동」 · 「다운로드 페이지로 이동」 · 「Android Studio 열기」 를 누르면, 받는 곳을 연 뒤 「닫기」 처럼 이전 화면으로 돌아갑니다",
+        "en": "- App Build — In the missing-tools notice, “Go to the App Store”, “Go to the Download Page” and “Open Android Studio” now open where to get the tool and then take you back to the previous screen, just like “Close”",
+        "ja": "- アプリのビルド — ツールがない場合の案内で「App Store へ移動」・「ダウンロードページへ移動」・「Android Studio を開く」を押すと、入手先を開いたあと「閉じる」と同じように前の画面に戻ります",
+        "zh-Hans": "- 应用构建 — 在缺少工具的提示中，点按“前往 App Store”“前往下载页面”“打开 Android Studio”后，会在打开获取页面后像“关闭”一样回到上一个页面",
+        "zh-Hant": "- App 建置 — 在缺少工具的提示中，按下「前往 App Store」「前往下載頁面」「開啟 Android Studio」後，會在開啟取得頁面後像「關閉」一樣回到上一個畫面",
+        "es": "- Compilación de la app — en el aviso de herramientas que faltan, «Ir a la App Store», «Ir a la página de descarga» y «Abrir Android Studio» ahora abren dónde conseguir la herramienta y luego te devuelven a la pantalla anterior, igual que «Cerrar»"
+      }
+    },
+    {
       "id": "shouarchive-1.0.6",
       "platforms": [
         "shouarchive"

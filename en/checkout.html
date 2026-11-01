@@ -44,13 +44,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Buy ShouArchive</h1>
-      <p>One-time purchase <span data-price="commercial.price">US$29</span> · <span data-price="commercial.devices">2</span> Macs · 1 year of updates included (plus tax)</p>
+      <p data-plan-perpetual>One-time purchase <span data-price="commercial.price">US$29</span> · <span data-price="commercial.devices">2</span> Macs · 1 year of updates included (plus tax)</p>
+      <p data-plan-monthly hidden>Monthly subscription <span data-price="commercial.price_monthly">US$3</span> / month · <span data-price="commercial.devices">2</span> Macs · every feature while subscribed (plus tax)</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31"></div>
+      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31" data-price-monthly="" data-monthly-from="2027-01-01"></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>Checkout is not open yet.</strong> ShouArchive has not been released yet, so it cannot be bought right now. Check the <a href="pricing">Pricing page</a> for the price and release news.</p>
@@ -62,6 +63,10 @@
 
       <div class="note note-warn" id="checkout-limit" hidden>
         <p>We are receiving a lot of checkout requests right now. Please try again in a moment.</p>
+      </div>
+
+      <div class="note" id="checkout-monthly-soon" hidden>
+        <p><strong>The monthly subscription isn’t available yet.</strong> You can subscribe on this page from <span data-price="monthly.from">January 1, 2027</span>. Until then, please use the ShouArchive license on the <a href="pricing">pricing page</a>.</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
@@ -83,6 +88,7 @@
       <div class="plan checkout-box" id="checkout-ready" hidden>
         <h2>Your payment is complete. Thank you.</h2>
         <p>Register this license key in ShouArchive. The same key has also been sent to the email address you paid with.</p>
+        <p class="price-note" id="checkout-ready-monthly" hidden>This is a monthly subscription key — every feature works on <span data-price="commercial.devices">2</span> Macs while you’re subscribed. Register it in ShouArchive <span data-price="monthly.min_app">1.0.9</span> or later. To cancel, use Settings › License › "Manage Billing…" in the app.</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
           <a class="btn" id="license-open" href="#" data-mac-only>Open in ShouArchive</a>
@@ -96,6 +102,10 @@
         <p><strong>Your update period has been extended. Thank you.</strong> Your license key is unchanged; there’s nothing to re-enter. ShouArchive picks up the new period shortly — to apply it right away, click Settings › License › Check Automatically. A confirmation email is also on its way to the address you paid with.</p>
       </div>
 
+      <div class="note" id="checkout-resubscribed" hidden>
+        <p><strong>Your monthly subscription has restarted. Thank you.</strong> Your license key is unchanged; there’s nothing to re-enter. ShouArchive picks up the new billing period shortly — to apply it right away, click Settings › License › Check Automatically.</p>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive license</h2>
         <p class="plan-for">License + 1 year of updates · after that, updates are <span data-price="commercial.price_renewal">US$15</span> a year (auto-renewal · turn it off any time)</p>
@@ -104,6 +114,16 @@
         <p class="price-note">Tax for your region is added on the checkout screen. The checkout screen shows amounts in your local currency.</p>
         <div class="plan-actions">
           <button class="btn" type="button" id="checkout-open">Buy now</button>
+        </div>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-buy-monthly" hidden>
+        <h2>Monthly subscription</h2>
+        <p class="plan-for">Charged automatically every month · cancel any time — you keep using it until the end of that month’s billing period · not a perpetual license</p>
+        <p class="price"><span data-price="commercial.price_monthly">US$3</span> / month</p>
+        <p class="price-note">Tax is added for your region on the checkout screen, which shows prices in your local currency. Months already paid aren’t refunded.</p>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-open-monthly">Subscribe</button>
         </div>
       </div>
 
@@ -119,8 +139,10 @@
       <ul>
         <li><strong>Merchant of Record — Paddle.</strong> Payment is handled by <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> as the Merchant of Record. Receipts and payment-related emails are sent by Paddle.</li>
         <li><strong>Tax</strong> is not included in the price; it is added for your region on the checkout screen.</li>
-        <li><strong>Update renewal</strong> happens automatically every year (we notify you 7 days before by email and in the app), and you can turn it off at any time from the management link in Paddle's billing emails or in the app under Settings › License › "Manage billing…". The app keeps working when you do.</li>
-        <li><strong>Refunds</strong> — within <span data-price="commercial.refund_days">14</span> days of payment, we refund in full. Send your payment email and order number to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20Refund%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a>. <a href="refund">Refund Policy</a></li>
+        <li data-plan-perpetual><strong>Update renewal</strong> happens automatically every year (we notify you 7 days before by email and in the app), and you can turn it off at any time from the management link in Paddle's billing emails or in the app under Settings › License › "Manage Billing…". The app keeps working when you do.</li>
+        <li data-plan-perpetual><strong>Refunds</strong> — within <span data-price="commercial.refund_days">14</span> days of payment, we refund in full. Send your payment email and order number to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20Refund%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a>. <a href="refund">Refund Policy</a></li>
+        <li data-plan-monthly hidden><strong>The monthly subscription</strong> is charged automatically every month, and you can cancel it any time from the management link in Paddle’s billing emails or in the app under Settings › License › "Manage Billing…". After you cancel, you keep using it until the end of that month’s billing period. If a payment fails, Paddle retries it, and you can keep using the app meanwhile.</li>
+        <li data-plan-monthly hidden><strong>Refunds</strong> — months already paid for the monthly subscription aren’t refunded, except where the law of your country gives you that right. <a href="refund">Refund Policy</a></li>
         <li>Before you buy, please read the <a href="terms">Terms of Service</a> and the <a href="privacy">Privacy Policy</a>.</li>
       </ul>
     </div>

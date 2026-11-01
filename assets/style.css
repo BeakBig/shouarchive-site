@@ -362,6 +362,8 @@ h2 {
 /* ---------- pricing (두 판 · 가격) ---------- */
 .plans { display: grid; gap: 16px; }
 @media (min-width: 860px) { .plans { grid-template-columns: 1fr 1fr; } }
+/* 체험 · 라이선스 · 월 구독 세 판 (가격 페이지 · 2026-11-02) — 넓으면 한 줄에 셋, 좁으면 둘씩 */
+@media (min-width: 1000px) { .plans.plans-3 { grid-template-columns: repeat(3, 1fr); } }
 .plan {
   display: flex;
   flex-direction: column;

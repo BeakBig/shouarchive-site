@@ -94,7 +94,7 @@ def skeleton(html):
 def resolve_local(p, href):
     """사이트 안 상대 링크가 가리키는 실제 파일. 확장자 없는 주소를 Cloudflare 와 같은 규칙으로 푼다 —
     `pricing` → pricing.html, `./` · `en/` · `` → 그 폴더의 index.html. 없으면 None."""
-    path = href.split('#')[0]
+    path = href.split('#')[0].split('?')[0]  # ?plan=monthly 같은 쿼리는 같은 파일
     base = os.path.dirname(p)
     if path in ('', '.', './') or path.endswith('/'):
         target = os.path.normpath(os.path.join(base, path, 'index.html'))

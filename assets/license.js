@@ -8,7 +8,8 @@
  *
  * 라이선스 서버 계약: shouarchive-license 저장소 docs/app-contract.md §2.10 ~ §2.13, 개인정보 삭제는 2026-10-20 계약 §8.
  *   POST /v1/web/checkout             사이트에서 사는 결제를 만든다 → { transaction_id, claim } · 409 checkout_limit 이면 잠시 뒤 다시
- *   POST /v1/purchase/status          결제가 끝나면 그 확인 값으로 키를 받는다 → { status: processing | ready, key, … }
+ *                                     월 구독은 { plan: "monthly" } (2026-11-02 · §2.20) — 판매 전이면 403 not_on_sale
+ *   POST /v1/purchase/status          결제가 끝나면 그 확인 값으로 키를 받는다 → { status: processing | ready, key, plan, paid_until, … }
  *   POST /v1/licenses/resend          구매 이메일로 같은 키를 다시 보낸다 → 늘 { status: accepted }
  *   POST /v1/licenses/rotate          구매 이메일로 키 바꾸기 확인 링크를 보낸다 → 늘 { status: accepted }
  *   POST /v1/licenses/rotate/confirm  확인 링크의 값으로 키를 바꾼다 → { status: rotated, email_hint, email_sent }
@@ -127,6 +128,25 @@
     return Date.now() < ends ? cfg.discount : null;
   }
 
+  /** 이 브라우저의 오늘 (YYYY-MM-DD) — 월 구독 판매일은 방문자의 날짜로 본다 (assets/nav.js 와 같은 규칙) */
+  function localDay() {
+    var now = new Date();
+    return now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
+  }
+
+  /** 월 구독을 지금 열 수 있나 — 가격 id(data-price-monthly)가 있고 판매일(data-monthly-from)이 방문자의 날짜로 왔다 */
+  function monthlyOpen(cfg) {
+    return Boolean(cfg.priceMonthly) && /^\d{4}-\d{2}-\d{2}$/.test(cfg.monthlyFrom || '') && localDay() >= cfg.monthlyFrom;
+  }
+
+  /** 월 구독(?plan=monthly · #kind=monthly)이면 [data-plan-monthly] 문구를, 아니면 [data-plan-perpetual] 문구를 보인다 */
+  function fitPlan(monthly) {
+    var i, els = document.querySelectorAll('[data-plan-monthly]');
+    for (i = 0; i < els.length; i++) els[i].hidden = !monthly;
+    els = document.querySelectorAll('[data-plan-perpetual]');
+    for (i = 0; i < els.length; i++) els[i].hidden = monthly;
+  }
+
   function checkout() {
     var config = byId('paddle-config');
     if (!config) return;
@@ -137,7 +157,11 @@
     var claim = hash.get('claim');
     var fromApp = hash.get('from') === 'app';
     var renewal = hash.get('kind') === 'renewal';
+    // 월 구독 (2026-11-02) — 가격 페이지의 「구독하기」(?plan=monthly) · 앱의 「다시 구독…」(#kind=monthly) — 영구 문구 대신 월 구독 문구
+    var resubscribe = hash.get('kind') === 'monthly';
+    var monthly = params.get('plan') === 'monthly' || hash.get('plan') === 'monthly' || resubscribe;
     var transactionId = params.get('_ptxn');
+    fitPlan(monthly);
     if (claim !== null || hash.get('from') !== null || hash.get('kind') !== null) {
       // 확인 값을 읽었으면 주소에서 지운다 — 방문 기록 · 화면 공유에 남지 않게 (# 뒤라 서버로는 애초에 가지 않았다). ?_ptxn= 은 남긴다
       try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* 그대로 둔다 */ }
@@ -149,6 +173,11 @@
       return;
     }
     if (!cfg.token) return;                    // 아직 결제를 열지 않음 → 「출시 전」 안내만
+    if (monthly && !transactionId && !monthlyOpen(cfg)) {   // 월 구독 판매 전(또는 가격 id 없음) → 「아직 구독할 수 없습니다」
+      show('checkout-closed', false);
+      show('checkout-monthly-soon', true);
+      return;
+    }
     if (!window.Paddle) {                      // Paddle.js 를 불러오지 못함(광고 차단기 · 네트워크) — 출시 전 안내와 구분한다
       show('checkout-closed', false);
       show('checkout-blocked', true);
@@ -172,8 +201,9 @@
     });
     show('checkout-closed', false);
 
-    // ?_ptxn= (라이선스 서버가 만든 앱 구매 · 갱신 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
+    // ?_ptxn= (라이선스 서버가 만든 앱 구매 · 갱신 · 다시 구독 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
     if (transactionId) return;
+    if (monthly) { openMonthly(); return; }
     if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
     show('checkout-buy', true);
 
@@ -204,11 +234,42 @@
         .then(function () { button.disabled = false; });
     });
 
+    /** 월 구독 「구독하기」 — 서버가 월 구독 거래를 만든다. 판매 전(403 not_on_sale)이면 안내로 바꾼다 */
+    function openMonthly() {
+      show('checkout-buy-monthly', true);
+      byId('checkout-open-monthly').addEventListener('click', function () {
+        var button = this;
+        button.disabled = true;
+        show('checkout-limit', false);
+        post('/v1/web/checkout', { locale: pageLocale(), plan: 'monthly' })
+          .then(function (result) {
+            transactionId = result.transaction_id;
+            claim = result.claim;
+            Paddle.Checkout.open({ transactionId: transactionId });
+          })
+          .catch(function (error) {
+            if (error && error.code === 'checkout_limit') { show('checkout-limit', true); return; }
+            // 서버의 판매일이 아직이다 (사이트의 판매일 · 방문자의 시계와 어긋남) — 결제 창을 열지 않는다
+            if (error && error.code === 'not_on_sale') {
+              show('checkout-buy-monthly', false);
+              show('checkout-monthly-soon', true);
+              return;
+            }
+            // 라이선스 서버에 닿지 못하면 월 구독 가격 하나로 연다 — 영구 라이선스 항목 · 얼리버드 할인은 넣지 않는다. 키는 메일로만 받는다
+            claim = null;
+            Paddle.Checkout.open({ items: [{ priceId: cfg.priceMonthly, quantity: 1 }] });
+          })
+          .then(function () { button.disabled = false; });
+      });
+    }
+
     function completed(id) {
       show('checkout-buy', false);
+      show('checkout-buy-monthly', false);
       // Paddle 의 완료 화면을 잠깐 보여 준 뒤 닫고, 이 페이지의 안내로 넘어간다
       setTimeout(function () { try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ } }, 1500);
       if (renewal) { show('checkout-renewed', true); return; }
+      if (resubscribe) { show('checkout-resubscribed', true); return; }   // 같은 키 · 같은 Mac 으로 월 구독을 다시 시작
       if (!claim || !id) { show('checkout-done', true); return; }
       show('checkout-processing', true);
       startWaitingAnimation();
@@ -248,6 +309,8 @@
       show('checkout-slow', false);
       if (!result.key) return mailed();  // 서버가 키를 보관하지 않는 설정 — 메일로 받는다
       fillKey('license', result.key);
+      // 월 구독 키 — 앱에서 시작한 결제는 주소에 종류가 없어 서버 답(plan)으로 고른다
+      show('checkout-ready-monthly', monthly || result.plan === 'monthly');
       show('checkout-ready', true);
       // 앱에서 시작한 결제면 앱을 바로 연다 (브라우저가 열지 묻는다 · 앱은 등록할지 한 번 더 묻는다)
       if (fromApp) location.href = appUrl(result.key);

@@ -11,10 +11,11 @@
     "zh-Hant": "價格待定",
     "es": "Por anunciar"
   },
-  "_commercial": "ShouArchive — 한 번 사는 영구 라이선스. price = 처음 구매(라이선스 + 업데이트 1년, 세금 별도), price_renewal = 업데이트 1년 갱신(자동 갱신), devices = 라이선스 하나로 쓰는 Mac 수, refund_days = 결제 후 전액 환불 기간. checkout 이 채워지면 출시(구매 버튼이 나타나고 「출시 예정」 안내가 숨겨짐) — 보통 이 사이트의 /checkout 주소. download 는 .dmg 주소, download_sha256 은 그 파일의 SHA-256(64자 hex) — null 이면 다운로드 페이지의 SHA-256 줄(data-if)이 숨겨진다. DMG 를 새로 올릴 때마다 둘을 함께 바꾼다.",
+  "_commercial": "ShouArchive — 한 번 사는 영구 라이선스. price = 처음 구매(라이선스 + 업데이트 1년, 세금 별도), price_renewal = 업데이트 1년 갱신(자동 갱신), price_monthly = 월 구독 한 달 요금(2027-01-01 판매 · 아래 monthly), devices = 라이선스 하나로 쓰는 Mac 수, refund_days = 결제 후 전액 환불 기간. checkout 이 채워지면 출시(구매 버튼이 나타나고 「출시 예정」 안내가 숨겨짐) — 보통 이 사이트의 /checkout 주소. download 는 .dmg 주소, download_sha256 은 그 파일의 SHA-256(64자 hex) — null 이면 다운로드 페이지의 SHA-256 줄(data-if)이 숨겨진다. DMG 를 새로 올릴 때마다 둘을 함께 바꾼다.",
   "commercial": {
     "price": "US$29",
     "price_renewal": "US$15",
+    "price_monthly": "US$3",
     "devices": "2",
     "refund_days": "14",
     "release_date": null,
@@ -54,7 +55,20 @@
     },
     "last_day": "2026-12-31"
   },
-  "_paddle": "checkout.html · billing.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(sandbox 는 test_, live 는 live_), price_* 는 가격 id(pri_…), early_bird_discount 는 얼리버드 할인 id(dsc_…, 비율 할인 · 첫 결제만). sandbox · production 두 묶음을 따로 두고 environment(\"sandbox\" 또는 \"production\")로 쓸 묶음을 고른다 — 출시 때는 environment 한 줄만 바꾼다. checkout_open 이 false 면 어느 묶음이든 client token 을 페이지에 넣지 않는다 — checkout.html 은 「결제를 아직 열지 않았습니다」 안내만, billing.html 은 Paddle.js 를 열지 않는다(2026-10-25 구매 막기 — DMG 가 공개돼 있어 sandbox 결제로 키를 받을 수 있었다). price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 하고, 서버의 PADDLE_ENVIRONMENT 가 이 environment 와 같아야 한다.",
+  "_monthly": "월 구독 (2026-11-02 결정 · 앱 1.0.9 · 앱 저장소 docs/licensing.md §7) — commercial.price_monthly 한 달 · Mac commercial.devices 대 · 영구 권리 없음 · 환불 없음(해지만). first_day = 판매 시작일(YYYY-MM-DD) — 가격 페이지의 「구독하기」 · 구매 페이지의 월 구독은 방문자의 날짜로 이 날부터 열린다(assets/nav.js · license.js, 그 전에는 「판매 시작」 안내). 라이선스 서버 MONTHLY_SALE_FIRST_DAY · 앱 LicenseMonthlyPlan.saleFirstDay 와 같은 날로 둔다. from = 그 날의 언어별 표기, min_app = 월 구독 키를 쓸 수 있는 앱 버전. 가격 id 는 paddle.<환경>.price_monthly — 비어 있으면 구매 페이지가 월 구독을 열지 않는다.",
+  "monthly": {
+    "first_day": "2027-01-01",
+    "min_app": "1.0.9",
+    "from": {
+      "ko": "2027년 1월 1일",
+      "en": "January 1, 2027",
+      "es": "1 de enero de 2027",
+      "ja": "2027年1月1日",
+      "zh-Hans": "2027年1月1日",
+      "zh-Hant": "2027年1月1日"
+    }
+  },
+  "_paddle": "checkout.html · billing.html 의 <div id=\"paddle-config\"> 에 들어가는 Paddle.js 설정. 모두 공개해도 되는 값이다 — client_token 은 Paddle 대시보드 › Developer tools › Authentication 의 client-side token(sandbox 는 test_, live 는 live_), price_* 는 가격 id(pri_…), early_bird_discount 는 얼리버드 할인 id(dsc_…, 비율 할인 · 첫 결제만). sandbox · production 두 묶음을 따로 두고 environment(\"sandbox\" 또는 \"production\")로 쓸 묶음을 고른다 — 출시 때는 environment 한 줄만 바꾼다. checkout_open 이 false 면 어느 묶음이든 client token 을 페이지에 넣지 않는다 — checkout.html 은 「결제를 아직 열지 않았습니다」 안내만, billing.html 은 Paddle.js 를 열지 않는다(2026-10-25 구매 막기 — DMG 가 공개돼 있어 sandbox 결제로 키를 받을 수 있었다). price_license = 라이선스(US$14, 1회) · price_updates = 업데이트 1년(US$15, 매년 자동 갱신) — 처음 구매 화면에는 두 항목이 함께 들어가 합계 US$29 가 된다. price_monthly = 월 구독(US$3, 매달 자동 결제 · 2026-11-02) — 아직 Paddle 에 만들지 않았으면 빈 값(구매 페이지가 월 구독을 열지 않는다). API 키 · 웹훅 비밀값은 절대 여기에 넣지 않는다(라이선스 서버의 비밀값으로만 둔다). license_api 는 라이선스 서버 주소 — 결제 완료 화면이 키를 받아 오고(assets/license.js) 사이트 결제를 만든다. 라이선스 서버의 SITE_ORIGINS 에 이 사이트 주소가 있어야 하고, 서버의 PADDLE_ENVIRONMENT 가 이 environment 와 같아야 한다.",
   "paddle": {
     "environment": "production",
     "checkout_open": true,
@@ -63,12 +77,14 @@
       "client_token": "test_928a76416bd3a848b5a28307512",
       "price_license": "pri_01m4z2wd3gd0nk5e7sn0rkm6nc",
       "price_updates": "pri_01m4z2sybg1d0p83g6x6hjz9s0",
+      "price_monthly": "",
       "early_bird_discount": "dsc_01m66023cv9wkx0vp4jpgp7pcg"
     },
     "production": {
       "client_token": "live_a0bd4c8c7e9363e43927f1bbc7b",
       "price_license": "pri_01m5h1dgzqa0txf61e02e647kk",
       "price_updates": "pri_01m5h1gf3grpcq2ez2s572wwxf",
+      "price_monthly": "",
       "early_bird_discount": "dsc_01m668tcg6xt2be9nrq4yzzg0g"
     }
   },

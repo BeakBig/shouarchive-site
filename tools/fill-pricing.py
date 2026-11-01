@@ -7,6 +7,7 @@
   링크          <a data-src="commercial.checkout" href="#">구매하기</a>
   출시 여부     <p data-live-hide>출시 예정입니다</p> / <p data-live-show>지금 살 수 있습니다</p>
   Paddle 설정   <div id="paddle-config" data-env="sandbox" data-token="" data-price-license="" data-price-updates="" hidden></div>
+  판매일        <div id="sale-config" data-monthly-from="2027-01-01" hidden></div>   (월 구독 — assets/nav.js)
 
 - data-price: JSON 값이 있으면 그 값으로 바꾸고, 자리 표시였다면 class="placeholder"(주황색)를 뗀다.
              값이 null 일 때
@@ -24,13 +25,17 @@
               키 앞에 ! 를 붙이면 반대(비어 있을 때만 보임), 공백으로 여러 개를 적으면 모두 맞을 때만 보인다 —
               data-if="commercial.download !commercial.checkout" 은 「내려받기는 열렸고 판매는 아직」 일 때만 보인다.
               data-live-hide / data-live-show 와 한 요소에 같이 쓰지 않는다(둘 다 hidden 을 정한다).
-- id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-license-api · data-discount ·
-              data-discount-last-day 를 pricing.json 의 paddle.environment 가 고른 묶음(paddle.sandbox · paddle.production —
-              client_token · price_license · price_updates · early_bird_discount)과 paddle.license_api · early_bird.last_day 로
+- id="paddle-config": data-env · data-token · data-price-license · data-price-updates · data-price-monthly · data-license-api ·
+              data-discount · data-discount-last-day · data-monthly-from 을 pricing.json 의 paddle.environment 가 고른 묶음
+              (paddle.sandbox · paddle.production — client_token · price_license · price_updates · price_monthly · early_bird_discount)과
+              paddle.license_api · early_bird.last_day · monthly.first_day 로
               매번 다시 쓴다. paddle.checkout_open 이 false 면 data-token 을 비워 결제를 막고, early_bird.percent 가 비면
               data-discount 를 비운다
               (값을 바꿔 다시 실행해도 그대로 반영된다). 모두 공개 값이다 — API 키 · 웹훅 비밀값은
               pricing.json 에도 페이지에도 넣지 않는다.
+- id="sale-config": data-monthly-from 을 monthly.first_day 로 매번 다시 쓴다 (2026-11-02 · 월 구독) — 가격 · 지원 페이지의
+              [data-monthly-open] · [data-monthly-soon] 을 assets/nav.js 가 방문자의 날짜로 보이고 숨긴다(스크립트가 없으면
+              HTML 그대로 — 「판매 시작」 안내가 보이고 「구독하기」 는 숨은 채).
 - 루트 _redirects: 「최신 앱 받기」 고정 주소 /download/latest 를 라이선스 서버의 /download/latest(날짜별 숫자만 센다)로,
   /download/file 을 commercial.download(지금 DMG)로 302 로 넘긴다. 내려받기 단추(data-src="commercial.download_link")도 서버를 거친다.
               SNS 등에 한 번 올린 링크가 릴리스마다 새 이름의 DMG 를 따라간다. 이 스크립트가 매번 다시 쓴다(손으로 고치지 않는다).
@@ -58,9 +63,16 @@ def paddle_attrs(cfg):
             ('data-token', active.get('client_token') if paddle.get('checkout_open') else ''),
             ('data-price-license', active.get('price_license')),
             ('data-price-updates', active.get('price_updates')),
+            ('data-price-monthly', active.get('price_monthly')),
             ('data-license-api', paddle.get('license_api')),
             ('data-discount', active.get('early_bird_discount') if early.get('percent') else ''),
-            ('data-discount-last-day', early.get('last_day')))
+            ('data-discount-last-day', early.get('last_day')),
+            ('data-monthly-from', (cfg.get('monthly') or {}).get('first_day')))
+
+
+def sale_attrs(cfg):
+    """#sale-config 에 쓸 (속성, 값) — 월 구독 판매 시작일 (assets/nav.js 가 읽는다)."""
+    return (('data-monthly-from', (cfg.get('monthly') or {}).get('first_day')),)
 
 
 def load():
@@ -180,10 +192,14 @@ def apply_conditions(html, cfg, where):
 
 
 def apply_paddle(html, cfg, where):
-    """id="paddle-config" 요소의 Paddle.js 설정 속성을 pricing.json 의 paddle 값으로 다시 쓴다.
-    속성 값을 통째로 바꾸므로 값을 고쳐 다시 실행해도 새 값이 들어가고, 같은 값이면 바뀌지 않는다."""
-    attrs = paddle_attrs(cfg)
+    """id="paddle-config" 요소의 Paddle.js 설정 속성을 pricing.json 의 paddle 값으로, id="sale-config" 요소의 판매일을
+    monthly 값으로 다시 쓴다. 속성 값을 통째로 바꾸므로 값을 고쳐 다시 실행해도 새 값이 들어가고, 같은 값이면 바뀌지 않는다."""
+    html = apply_attrs(html, 'paddle-config', paddle_attrs(cfg))
+    return apply_attrs(html, 'sale-config', sale_attrs(cfg))
 
+
+def apply_attrs(html, element_id, attrs):
+    """id 가 element_id 인 요소의 속성들을 attrs 값으로 (없으면 더한다)."""
     def sub(m):
         tag = m.group(0)
         for attr, val in attrs:
@@ -194,7 +210,7 @@ def apply_paddle(html, cfg, where):
             else:
                 tag = re.sub(r'\s*(/?>)$', lambda a: f' {attr}="{val}"' + a.group(1), tag, count=1)
         return tag
-    return re.sub(r'<[a-z0-9]+\b[^>]*\bid="paddle-config"[^>]*>', sub, html)
+    return re.sub(r'<[a-z0-9]+\b[^>]*\bid="' + element_id + r'"[^>]*>', sub, html)
 
 
 def html_files():

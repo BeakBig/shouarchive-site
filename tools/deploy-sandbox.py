@@ -7,10 +7,13 @@
 
   python3 tools/deploy-sandbox.py             # 만들고 올린다
   python3 tools/deploy-sandbox.py --dry-run   # 만들기만 하고 폴더를 알려 준다 (올리지 않음)
+  python3 tools/deploy-sandbox.py --monthly-from 2026-11-02   # 월 구독 판매일을 sandbox 판에서만 앞당긴다 (시험용 —
+                                              # sandbox 라이선스 서버의 MONTHLY_SALE_FIRST_DAY 도 같이 앞당겨야 결제가 만들어진다)
 
 sandbox 값
   pricing.json  paddle.environment = sandbox · checkout_open = true · license_api = sandbox 라이선스 서버
                 commercial.checkout = 이 사이트의 /checkout (구매 버튼이 보인다 — 출시 화면 미리보기)
+                월 구독 가격 id 는 paddle.sandbox.price_monthly (비어 있으면 월 구독을 열지 않는다) · --monthly-from 이면 monthly.first_day
   _headers      connect-src 에 sandbox 라이선스 서버 · X-Robots-Tag noindex (검색에 안 나오게)
   license.js    「앱에서 바로 등록」 링크를 shouarchive-sandbox:// 로 — 앱 Debug 빌드만 받아 「sandbox 서버」 로 바꿔 등록한다
                 (출시판 앱은 이 스킴이 없어 열리지 않는다)
@@ -42,7 +45,9 @@ def run(cmd, cwd):
 
 
 def main():
-    dry = '--dry-run' in sys.argv[1:]
+    args = sys.argv[1:]
+    dry = '--dry-run' in args
+    monthly_from = args[args.index('--monthly-from') + 1] if '--monthly-from' in args[:-1] else None
     commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=ROOT, check=True,
                             capture_output=True, text=True).stdout.strip()
     if subprocess.run(['git', 'status', '--porcelain'], cwd=ROOT, capture_output=True, text=True).stdout.strip():
@@ -58,6 +63,8 @@ def main():
     cfg['paddle']['checkout_open'] = True
     cfg['paddle']['license_api'] = LICENSE_API
     cfg['commercial']['checkout'] = SITE + '/checkout'
+    if monthly_from:
+        cfg['monthly']['first_day'] = monthly_from
     json.dump(cfg, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 
     run([sys.executable, os.path.join(out, 'tools', 'fill-pricing.py')], out)

@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Pricing</h1>
-      <p>ShouArchive is an app you buy once on this site and keep using. <span data-if="!free_period.until" hidden>First try every feature for <span data-price="trial_days">14</span> days with no payment method, then buy a license if you like it. </span>It is a developer tool for building, signing and shipping the apps you make, with your own Apple and Google developer accounts and certificates.</p>
+      <p>ShouArchive is an app you buy on this site. <span data-if="!free_period.until" hidden>First try every feature for <span data-price="trial_days">14</span> days with no payment method, then buy a license if you like it. </span>It is a developer tool for building, signing and shipping the apps you make, with your own Apple and Google developer accounts and certificates.</p>
       <div class="note" data-if="free_period.until">
         <p><strong>Free period through <span data-price="free_period.until">December 31, 2026</span>.</strong> Use every feature without a license. From <span data-price="free_period.paid_from">January 1, 2027</span>, the pricing below applies, and Macs you used during the free period also need a license for app builds, libraries, OTA distribution and store release. If you first opened the app in the last <span data-price="trial_days">14</span> days of the free period, your trial continues until <span data-price="trial_days">14</span> days after that first launch. Profile management, artifact inspection, API key management and viewing history stay free.</p>
       </div>
@@ -52,7 +52,8 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="plans">
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden></div>
+      <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>On sale Jan 1, 2027</p>
           <h2><span data-price="trial_days">14</span>-day trial</h2>
@@ -96,6 +97,25 @@
           </div>
           <p class="plan-foot" data-live-hide hidden>Purchases open on January 1, 2027. <span data-if="commercial.download !free_period.until" hidden>You can already get it from the <a href="download">Download page</a> and try it for <span data-price="trial_days">14</span> days. </span><span data-if="commercial.download free_period.until">You can already get it from the <a href="download">Download page</a> and use every feature free through <span data-price="free_period.until">December 31, 2026</span>. </span>Send any questions to <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a>.</p>
           <p class="plan-foot" data-live-show>Payment is handled by <strong>Paddle</strong> as Merchant of Record. How to turn off update renewal and how refunds work are described in the <a href="refund">Refund Policy</a>.</p>
+        </article>
+
+        <article class="plan coming">
+          <p class="plan-badge soon" data-monthly-soon>On sale <span data-price="monthly.from">January 1, 2027</span></p>
+          <h2>Monthly subscription</h2>
+          <p class="plan-for">For anyone who’d rather pay month by month, only while they need it</p>
+          <p class="price"><span data-price="commercial.price_monthly">US$3</span> / month</p>
+          <p class="price-note">Charged automatically every month · <span data-price="commercial.devices">2</span> Macs (plus tax)<br>Not a perpetual license — every feature works only while you’re subscribed.</p>
+          <ul class="plan-feats">
+            <li><strong>Every feature while subscribed</strong> — the same features as the ShouArchive license</li>
+            <li><strong>Cancel any time</strong> — in the app under Settings › License › "Manage Billing…" or from the management link in Paddle’s billing emails. After you cancel, you keep using it until the end of that month’s billing period</li>
+            <li><strong>When the subscription ends</strong> — as when a trial ends, only profile management, file inspection, API key management and viewing history keep working. You can subscribe again with the same key from "Subscribe Again…" in the app</li>
+            <li><strong>No refunds</strong> — months already paid aren’t refunded (<a href="refund">Refund Policy</a>, Section 10)</li>
+            <li>Works with <strong>ShouArchive <span data-price="monthly.min_app">1.0.9</span> or later</strong></li>
+          </ul>
+          <div class="plan-actions">
+            <a class="btn" href="checkout?plan=monthly" data-monthly-open hidden>Subscribe</a>
+          </div>
+          <p class="plan-foot" data-monthly-soon>The monthly subscription opens on <span data-price="monthly.from">January 1, 2027</span>. Until then, please use the ShouArchive license.</p>
         </article>
       </div>
     </div>
@@ -149,10 +169,11 @@
         <li><strong>Payments by Paddle.</strong> Payment is handled by Paddle as the Merchant of Record. Paddle takes care of payment and tax calculation and issues receipts. Prices are listed in USD, and the checkout screen shows your local currency.</li>
         <li><strong>Tax is extra.</strong> The prices above do not include tax. At checkout, Paddle automatically calculates and adds tax for your region.</li>
         <li><strong>Buy once, keep using it.</strong> <span data-price="commercial.price">US$29</span> includes the license and 1 year of updates. When the update period ends, the app does not stop, and you can keep using every version released during that period.</li>
-        <li><strong>Update renewal — <span data-price="commercial.price_renewal">US$15</span> a year.</strong> The update period renews automatically every year. You can turn off auto-renewal at any time (from the management link in Paddle's billing emails or in the app under Settings › License › "Manage billing…"). We notify you 7 days before each renewal by email and in the app. If you renew again after the period has ended, a new year starts from that payment date.</li>
+        <li><strong>Update renewal — <span data-price="commercial.price_renewal">US$15</span> a year.</strong> The update period renews automatically every year. You can turn off auto-renewal at any time (from the management link in Paddle's billing emails or in the app under Settings › License › "Manage Billing…"). We notify you 7 days before each renewal by email and in the app. If you renew again after the period has ended, a new year starts from that payment date.</li>
         <li><strong>Versions released after the period ends.</strong> Versions released after your update period has ended can be installed and activated only after you renew. The in-app update check shows only versions released within your period.</li>
         <li><strong><span data-price="trial_days">14</span>-day trial.</strong> It starts inside the app with no payment method, and you are not charged automatically when it ends. If the trial ends without a key, profile management (including download, creation and device registration), file inspection, API key management and history (viewing records only) keep working; app build, job queue, app upload, device install, re-signing, library, IPA cleanup, OTA distribution and store release open up again when you buy.</li>
         <li><strong>Refunds.</strong> For both the first purchase and update renewals, you can ask for a full refund within <span data-price="commercial.refund_days">14</span> days of payment. The details are in the <a href="refund">Refund Policy</a>.</li>
+        <li data-monthly-open hidden><strong>Monthly subscription — <span data-price="commercial.price_monthly">US$3</span> a month.</strong> No perpetual rights: every feature works only for the period you’ve paid for. It’s charged automatically every month and you can cancel any time; after you cancel, you keep using it until the end of that month’s billing period. Months already paid aren’t refunded (<a href="refund">Refund Policy</a>, Section 10).</li>
         <li><strong>Terms of use.</strong> Before you buy, please read the <a href="terms">Terms of Service</a> and the <a href="privacy">Privacy Policy</a>.</li>
       </ul>
     </div>

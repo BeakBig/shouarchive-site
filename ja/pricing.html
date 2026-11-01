@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>価格</h1>
-      <p>ShouArchive は、このサイトで一度購入すればずっと使えるアプリです。<span data-if="!free_period.until" hidden>まずは <span data-price="trial_days">14</span> 日間、支払い方法の登録なしですべての機能を試し、気に入ったらライセンスをご購入ください。</span>ご本人の Apple・Google の開発者アカウントと証明書で、自分で作ったアプリをビルド・署名・配布する開発者ツールです。</p>
+      <p>ShouArchive は、このサイトで購入して使うアプリです。<span data-if="!free_period.until" hidden>まずは <span data-price="trial_days">14</span> 日間、支払い方法の登録なしですべての機能を試し、気に入ったらライセンスをご購入ください。</span>ご本人の Apple・Google の開発者アカウントと証明書で、自分で作ったアプリをビルド・署名・配布する開発者ツールです。</p>
       <div class="note" data-if="free_period.until">
         <p><strong><span data-price="free_period.until">2026年12月31日</span>までは無料期間です。</strong>ライセンスなしで全機能を使えます。<span data-price="free_period.paid_from">2027年1月1日</span>からは下の料金が適用され、無料期間に使っていた Mac でもアプリビルド・ライブラリ・OTA 配布・ストア配信にはライセンスが必要になります。無料期間の最後の <span data-price="trial_days">14</span> 日以内に初めて起動した場合は、初回起動から <span data-price="trial_days">14</span> 日まで体験期間が続きます。プロファイル管理・ビルド成果物検査・API キー管理・履歴の閲覧は引き続き無料です。</p>
       </div>
@@ -52,7 +52,8 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="plans">
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden></div>
+      <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日 販売開始</p>
           <h2><span data-price="trial_days">14</span> 日間の体験版</h2>
@@ -96,6 +97,25 @@
           </div>
           <p class="plan-foot" data-live-hide hidden>購入は 2027 年 1 月 1 日から可能です。<span data-if="commercial.download !free_period.until" hidden>今すぐ<a href="download">ダウンロードページ</a>から入手して、<span data-price="trial_days">14</span> 日間お試しいただけます。</span><span data-if="commercial.download free_period.until">今すぐ<a href="download">ダウンロードページ</a>から入手して、<span data-price="free_period.until">2026年12月31日</span>まで全機能を無料でお使いいただけます。</span>ご不明な点は <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> までお問い合わせください。</p>
           <p class="plan-foot" data-live-show>決済は <strong>Paddle</strong> が販売代理店として処理します。アップデートの自動更新を止める方法と返金については<a href="refund">返金ポリシー</a>に記載しています。</p>
+        </article>
+
+        <article class="plan coming">
+          <p class="plan-badge soon" data-monthly-soon><span data-price="monthly.from">2027年1月1日</span> 販売開始</p>
+          <h2>月額プラン</h2>
+          <p class="plan-for">必要な間だけ毎月支払って使いたい方</p>
+          <p class="price"><span data-price="commercial.price_monthly">US$3</span> / 月</p>
+          <p class="price-note">毎月自動で決済 · Mac <span data-price="commercial.devices">2</span> 台（税別）<br>買い切りライセンスではありません — 購読中だけすべての機能を使えます。</p>
+          <ul class="plan-feats">
+            <li><strong>購読中はすべての機能</strong> — ShouArchive ライセンスと同じ機能をすべて使えます</li>
+            <li><strong>いつでも解約</strong> — アプリの「設定 › ライセンス › 支払い管理…」または Paddle の決済案内メールの管理リンクから。解約してもその月の支払い期間が終わるまで使えます</li>
+            <li><strong>購読が終わると</strong> — 体験期間の終了後と同じく、プロファイル管理・ビルド成果物検査・API キー管理・履歴の閲覧だけが残ります。アプリの「再登録…」から同じキーで再登録できます</li>
+            <li><strong>返金なし</strong> — 支払い済みの月は返金しません（<a href="refund">返金ポリシー</a> 第 10 項）</li>
+            <li><strong>ShouArchive <span data-price="monthly.min_app">1.0.9</span> 以降</strong>で使えます</li>
+          </ul>
+          <div class="plan-actions">
+            <a class="btn" href="checkout?plan=monthly" data-monthly-open hidden>申し込む</a>
+          </div>
+          <p class="plan-foot" data-monthly-soon>月額プランは <span data-price="monthly.from">2027年1月1日</span> から申し込めます。それまでは ShouArchive ライセンスをご利用ください。</p>
         </article>
       </div>
     </div>
@@ -149,10 +169,11 @@
         <li><strong>決済代行 — Paddle。</strong>決済は Paddle が販売代理店（Merchant of Record）として処理します。Paddle が決済・税金の計算を代行し、領収書を発行します。価格は USD で表記しており、決済画面では地域の通貨で表示されます。</li>
         <li><strong>税金は別途です。</strong>上記の価格には税金が含まれていません。決済時に Paddle がお客様の地域に合わせて税金を自動で計算し、加算します。</li>
         <li><strong>一度買えばずっと使えます。</strong><span data-price="commercial.price">US$29</span> にはライセンスと 1 年間のアップデートが含まれます。アップデート期間が終わってもアプリは止まらず、その期間内に公開されたバージョンはすべて引き続き使えます。</li>
-        <li><strong>アップデートの更新 — 年 <span data-price="commercial.price_renewal">US$15</span>。</strong>アップデート期間は毎年自動で更新されます。自動更新はいつでも止められます（Paddle の決済案内メールの管理リンク、またはアプリの「設定 › ライセンス › お支払いの管理…」）。更新の 7 日前に、決済時のメールアドレスとアプリでお知らせします。期間が終わったあとに改めて更新すると、その決済日から新たに 1 年が始まります。</li>
+        <li><strong>アップデートの更新 — 年 <span data-price="commercial.price_renewal">US$15</span>。</strong>アップデート期間は毎年自動で更新されます。自動更新はいつでも止められます（Paddle の決済案内メールの管理リンク、またはアプリの「設定 › ライセンス › 支払い管理…」）。更新の 7 日前に、決済時のメールアドレスとアプリでお知らせします。期間が終わったあとに改めて更新すると、その決済日から新たに 1 年が始まります。</li>
         <li><strong>期間の終了後に公開されたバージョン。</strong>アップデート期間の終了後に公開されたバージョンは、更新しないとインストール・有効化できません。アプリ内のアップデート確認は、期間内に公開されたバージョンだけを表示します。</li>
         <li><strong><span data-price="trial_days">14</span> 日間の体験版。</strong>アプリ内から支払い方法の登録なしで始められ、終了しても自動で課金されることはありません。キーなしで体験期間が終わると、プロファイル管理（ダウンロード・作成・端末登録を含む）・ビルド成果物検査・API キー管理・履歴（記録の閲覧のみ）は引き続き使え、アプリビルド・ジョブキュー・アプリのアップロード・端末へのインストール・再署名・ライブラリ・IPA 整理・OTA 配布・ストア配信は購入すると再び使えるようになります。</li>
         <li><strong>返金。</strong>初回購入とアップデートの更新のどちらも、決済から <span data-price="commercial.refund_days">14</span> 日以内であれば全額返金をリクエストできます。詳しい基準は<a href="refund">返金ポリシー</a>に記載しています。</li>
+        <li data-monthly-open hidden><strong>月額プラン — 月 <span data-price="commercial.price_monthly">US$3</span>。</strong>買い切りの権利はなく、支払い済みの期間だけすべての機能を使えます。毎月自動で決済され、いつでも解約でき、解約してもその月の支払い期間が終わるまで使えます。支払い済みの月は返金しません（<a href="refund">返金ポリシー</a> 第 10 項）。</li>
         <li><strong>利用条件。</strong>購入前に<a href="terms">利用規約</a>と<a href="privacy">プライバシーポリシー</a>をご確認ください。</li>
       </ul>
     </div>

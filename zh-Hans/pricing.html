@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>价格</h1>
-      <p>ShouArchive 是在本网站一次购买、长期使用的应用。<span data-if="!free_period.until" hidden>先用 <span data-price="trial_days">14</span> 天免费体验全部功能，无需付款方式；满意后再购买许可证。</span>这是一款开发者工具，使用您本人的 Apple · Google 开发者账户和证书，构建、签名并分发您自己开发的应用。</p>
+      <p>ShouArchive 是在本网站购买使用的应用。<span data-if="!free_period.until" hidden>先用 <span data-price="trial_days">14</span> 天免费体验全部功能，无需付款方式；满意后再购买许可证。</span>这是一款开发者工具，使用您本人的 Apple · Google 开发者账户和证书，构建、签名并分发您自己开发的应用。</p>
       <div class="note" data-if="free_period.until">
         <p><strong>免费期至 <span data-price="free_period.until">2026年12月31日</span>。</strong>无需许可证即可使用所有功能。自 <span data-price="free_period.paid_from">2027年1月1日</span> 起适用下方价格，免费期内使用过的 Mac 也需要许可证才能使用应用构建、库、OTA 分发和商店分发。如果你在免费期最后 <span data-price="trial_days">14</span> 天内首次启动应用，试用会持续到首次启动后 <span data-price="trial_days">14</span> 天。描述文件管理、产物检查、API 密钥管理和查看历史记录仍然免费。</p>
       </div>
@@ -52,7 +52,8 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="plans">
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden></div>
+      <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日开售</p>
           <h2><span data-price="trial_days">14</span> 天试用</h2>
@@ -96,6 +97,25 @@
           </div>
           <p class="plan-foot" data-live-hide hidden>2027 年 1 月 1 日起可以购买。<span data-if="commercial.download !free_period.until" hidden>现在已可从<a href="download">下载页面</a>下载，试用 <span data-price="trial_days">14</span> 天。</span><span data-if="commercial.download free_period.until">现在已可从<a href="download">下载页面</a>下载，至 <span data-price="free_period.until">2026年12月31日</span> 免费使用所有功能。</span>如有疑问，请通过 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRICE%5D%20%E5%92%A8%E8%AF%A2&amp;body=%0A%0A%0A---%0A%E6%9D%A5%E8%87%AA%E9%A1%B5%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hans%2Fpricing%20%28W-PRICE%29">support@shouarchive.beakbig.com</a> 告知我们。</p>
           <p class="plan-foot" data-live-show>支付由 <strong>Paddle</strong> 作为代理销售商处理。关闭更新自动续订的方法和退款事宜写在<a href="refund">退款政策</a>中。</p>
+        </article>
+
+        <article class="plan coming">
+          <p class="plan-badge soon" data-monthly-soon><span data-price="monthly.from">2027年1月1日</span>开售</p>
+          <h2>月度订阅</h2>
+          <p class="plan-for">只想在需要期间按月付费使用的用户</p>
+          <p class="price"><span data-price="commercial.price_monthly">US$3</span> / 月</p>
+          <p class="price-note">每月自动扣款 · <span data-price="commercial.devices">2</span> 台 Mac（不含税）<br>不是永久许可证 — 仅在订阅期间可使用全部功能。</p>
+          <ul class="plan-feats">
+            <li><strong>订阅期间全部功能</strong> — 与 ShouArchive 许可证的功能相同</li>
+            <li><strong>随时取消</strong> — 在应用的“设置 › 许可证 › 管理付款…”或 Paddle 付款通知邮件中的管理链接取消。取消后仍可使用到当月付款期结束</li>
+            <li><strong>订阅结束后</strong> — 与试用结束时一样，只保留描述文件管理 · 产物检查 · API 密钥管理 · 历史记录查看。可在应用的“重新订阅…”中用同一密钥重新订阅</li>
+            <li><strong>不退款</strong> — 已付款的月份不予退款（<a href="refund">退款政策</a>第 10 项）</li>
+            <li><strong>需要 ShouArchive <span data-price="monthly.min_app">1.0.9</span> 或更高版本</strong></li>
+          </ul>
+          <div class="plan-actions">
+            <a class="btn" href="checkout?plan=monthly" data-monthly-open hidden>订阅</a>
+          </div>
+          <p class="plan-foot" data-monthly-soon>月度订阅自 <span data-price="monthly.from">2027年1月1日</span>起可以订阅。在此之前，请使用 ShouArchive 许可证。</p>
         </article>
       </div>
     </div>
@@ -153,6 +173,7 @@
         <li><strong>更新期结束后发布的版本。</strong>更新期结束后发布的版本，需续订后才能安装 · 激活。应用内的更新检查只显示更新期内发布的版本。</li>
         <li><strong><span data-price="trial_days">14</span> 天试用。</strong>在应用内无需付款方式即可开始，结束后也不会自动扣款。如果试用结束时没有密钥，可继续使用描述文件管理（含下载 · 创建 · 设备注册）· 产物检查 · API 密钥管理 · 历史记录（仅查看）；应用构建 · 任务队列 · 上传应用 · 设备安装 · 重新签名 · 库 · IPA 整理 · OTA 分发 · 商店分发在购买后重新开启。</li>
         <li><strong>退款。</strong>首次购买和更新续订均可在付款后 <span data-price="commercial.refund_days">14</span> 天内申请全额退款。详细标准写在<a href="refund">退款政策</a>中。</li>
+        <li data-monthly-open hidden><strong>月度订阅 — 每月 <span data-price="commercial.price_monthly">US$3</span>。</strong>没有永久权利，仅在已付款的期间可使用全部功能。每月自动扣款，可随时取消，取消后仍可使用到当月付款期结束。已付款的月份不予退款（<a href="refund">退款政策</a>第 10 项）。</li>
         <li><strong>使用条件。</strong>购买前请先阅读<a href="terms">服务条款</a>和<a href="privacy">隐私政策</a>。</li>
       </ul>
     </div>

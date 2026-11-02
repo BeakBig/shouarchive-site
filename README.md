@@ -53,7 +53,7 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 
 ```json
 { "version": 1,
-  "items": [ { "id": "2026-10-16-app-review-2-5-19", "platforms": ["ios"], "published": "2026-10-16", "deadline": null,
+  "items": [ { "id": "2026-10-16-app-review-2-5-19", "platforms": ["ios"], "category": "policy", "published": "2026-10-16", "deadline": null,
                "source": "Apple", "url": "https://developer.apple.com/news/?id=…",
                "urls": { "ko": "https://developer.apple.com/kr/news/?id=…" },
                "title": { "ko": "…", "en": "…", "ja": "…", "zh-Hans": "…", "zh-Hant": "…", "es": "…" },
@@ -62,6 +62,11 @@ ShouArchive 는 이 사이트에서만 판매합니다 (2026-10-15 결정 — Ma
 
 - `id` — 바꾸지 않는다(앱이 읽음 표시를 id 로 기억한다). `<날짜>-<짧은 이름>` 꼴. 목록에서 빼면 앱의 읽음 기록도 지워진다.
 - `platforms` — `ios` · `android` 중 해당하는 것(비우면 양쪽). 앱은 iOS 화면에서 iOS · 양쪽 소식만 보인다.
+- `category` — 소식의 종류 (2026-11-02 Jin: 공식 소식은 넓게 넣고, 많아지면 앱에서 종류별 탭으로 나눈다). 하나만:
+  `requirement` 요구 사항 · 기한(최소 SDK · Xcode · targetSdk · 16 KB · 바뀌는 API 동작) · `policy` 심사 · 스토어 정책 · 개발자 인증 ·
+  `business` 판매 · 수수료 · 구독 · 약관 · `platform` 새 OS 기능 · 기기 · API · `tools` 개발 도구(Xcode · Android Studio · CLI) ·
+  `story` 사례 · 행사 · `update` ShouArchive 업데이트 내역(`sync-releases.py` 가 붙인다). 앱(1.0.x)은 아직 이 값을 읽지 않는다 — 모르는 칸은 무시한다.
+  `check-site.py` 가 값을 검사한다.
 - `published` — 원문의 날짜(`YYYY-MM-DD`). 앱은 최근 것을 위에 두고, 60일보다 오래된 소식은 새로 쓰는 사람의 배지에 세지 않는다.
 - `deadline` — 개발자가 맞춰야 하는 날이 있을 때만(`YYYY-MM-DD`, 없으면 `null`). 앱이 「D-N」 으로 보인다(30일 안이면 경고색).
 - `source` — 출처 이름(번역하지 않는다). `url` — 원문(영어), **https 만**(아니면 앱이 그 항목을 뺀다).

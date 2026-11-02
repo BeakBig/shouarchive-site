@@ -2,10 +2,227 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-10-29-app-store-taiwan-commission",
+      "platforms": [
+        "ios"
+      ],
+      "category": "business",
+      "published": "2026-10-29",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=w9mxlhek",
+      "title": {
+        "ko": "대만 App Store 수수료 30% → 26% (10월 31일부터)",
+        "en": "App Store commission in Taiwan drops from 30% to 26% (from October 31)",
+        "ja": "台湾 App Store の手数料が 30% → 26% に（10月31日から）",
+        "zh-Hans": "台湾 App Store 佣金从 30% 降至 26%（10 月 31 日起）",
+        "zh-Hant": "台灣 App Store 佣金從 30% 降至 26%（10 月 31 日起）",
+        "es": "La comisión de la App Store en Taiwán baja del 30% al 26% (desde el 31 de octubre)"
+      },
+      "summary": {
+        "ko": "대만 공정거래위원회와의 협의에 따라 iOS · iPadOS 대만 스토어의 인앱 결제 · 유료 앱 수수료가 10월 31일부터 30%에서 26%로 내려갔습니다. 개정된 Apple Developer Program 약관은 개발자 계정에서 동의할 수 있고, 낮아진 수수료를 받으려고 10월 31일까지 동의할 필요는 없습니다.",
+        "en": "Following discussions with the Taiwan Fair Trade Commission, the commission on In-App Purchases and paid apps in the Taiwan storefront for iOS and iPadOS dropped from 30% to 26% on October 31. You can accept the revised Apple Developer Program License Agreement in your developer account; accepting it by October 31 wasn't required to get the lower rate.",
+        "ja": "台湾公正取引委員会との協議を受け、iOS・iPadOS の台湾ストアでのアプリ内課金と有料アプリの手数料が 10月31日から 30% から 26% に下がりました。改訂された Apple Developer Program 使用許諾契約は開発者アカウントで同意でき、引き下げ後の手数料を受けるために 10月31日までに同意する必要はありませんでした。",
+        "zh-Hans": "经与台湾公平交易委员会协商，iOS 和 iPadOS 台湾店面的 App 内购买及付费 App 佣金自 10 月 31 日起由 30% 降至 26%。可在开发者账户中接受修订后的 Apple Developer Program 许可协议，享受较低佣金无需在 10 月 31 日前接受。",
+        "zh-Hant": "經與台灣公平交易委員會協商，iOS 與 iPadOS 台灣店面的 App 內購買及付費 App 佣金自 10 月 31 日起由 30% 調降為 26%。可在開發者帳號中接受修訂後的 Apple Developer Program 授權合約，適用較低佣金不需在 10 月 31 日前接受。",
+        "es": "Tras conversaciones con la Comisión de Comercio Justo de Taiwán, la comisión de las compras dentro de la app y las apps de pago en la tienda de Taiwán para iOS y iPadOS bajó del 30% al 26% el 31 de octubre. Puedes aceptar el Acuerdo de Licencia del Apple Developer Program revisado en tu cuenta de desarrollador; no hacía falta aceptarlo antes del 31 de octubre para obtener la tarifa más baja."
+      }
+    },
+    {
+      "id": "2026-10-28-touch-on-mac",
+      "platforms": [
+        "ios"
+      ],
+      "category": "platform",
+      "published": "2026-10-28",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=i9boeiqc",
+      "title": {
+        "ko": "Mac 에 터치 — MacBook Pro with Touch 준비",
+        "en": "Touch comes to Mac — prepare for MacBook Pro with Touch",
+        "ja": "Mac にタッチ — MacBook Pro with Touch への準備",
+        "zh-Hans": "Mac 支持触控 — 为 MacBook Pro with Touch 做准备",
+        "zh-Hant": "Mac 支援觸控 — 為 MacBook Pro with Touch 做準備",
+        "es": "El tacto llega al Mac: prepárate para el MacBook Pro with Touch"
+      },
+      "summary": {
+        "ko": "Apple 이 곧 나올 MacBook Pro with Touch 와 함께 Mac 의 터치 지원을 소개했습니다. 개발자 영상 · 그룹 랩 · 새 문서가 공개됐으니 Mac 앱이 터치로 어떻게 쓰일지 미리 준비하세요.",
+        "en": "Apple introduced touch support on Mac alongside the upcoming MacBook Pro with Touch. New developer videos, Group Labs and articles are available to help you prepare your Mac apps for touch.",
+        "ja": "Apple は近く登場する MacBook Pro with Touch とともに Mac のタッチ対応を紹介しました。開発者向けビデオ・グループラボ・新しい記事が公開されているので、Mac アプリをタッチに備えて準備しましょう。",
+        "zh-Hans": "Apple 随即将推出的 MacBook Pro with Touch 介绍了 Mac 的触控支持。已发布开发者视频、小组实验室和新文章，可帮助你让 Mac App 为触控做好准备。",
+        "zh-Hant": "Apple 隨即將推出的 MacBook Pro with Touch 介紹了 Mac 的觸控支援。已推出開發者影片、小組實驗室與新文章，協助你讓 Mac App 為觸控做好準備。",
+        "es": "Apple presentó la compatibilidad táctil en el Mac junto con el próximo MacBook Pro with Touch. Hay nuevos vídeos para desarrolladores, Group Labs y artículos para ayudarte a preparar tus apps de Mac para el uso táctil."
+      }
+    },
+    {
+      "id": "2026-10-28-android-dev-summit-agentic",
+      "platforms": [
+        "android"
+      ],
+      "category": "platform",
+      "published": "2026-10-28",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/build-it-your-way-a-next-era-of-android-development",
+      "title": {
+        "ko": "Android Dev Summit — 에이전트 API · 적응형 앱 · Android XR",
+        "en": "Android Dev Summit — agentic APIs, adaptive apps and Android XR",
+        "ja": "Android Dev Summit — エージェント API・アダプティブアプリ・Android XR",
+        "zh-Hans": "Android Dev Summit — 智能体 API、自适应应用与 Android XR",
+        "zh-Hant": "Android Dev Summit — 代理 API、自適應應用程式與 Android XR",
+        "es": "Android Dev Summit: API agénticas, apps adaptables y Android XR"
+      },
+      "summary": {
+        "ko": "AppFunctions(베타) · Jetpack Compose 용 A2UI(알파) · Gemini Nano 4 로 도는 ML Kit Agentic API(알파) 같은 에이전트용 API와 Navigation 3 1.2 · Jetpack XR 핵심 라이브러리 정식판이 발표됐습니다. Google Play 는 내년부터 폴더블에서 앱이 어떻게 도는지 평가하고 요건은 올해 안에 알린다고 하니, 적응형 앱 품질 가이드라인을 미리 살펴보세요.",
+        "en": "Google announced agentic APIs such as AppFunctions (beta), A2UI for Jetpack Compose (alpha) and the ML Kit Agentic API with Gemini Nano 4 (alpha), plus stable Navigation 3 1.2 and core Jetpack XR libraries. Google Play plans to evaluate how apps run on foldables starting next year, with requirements to be announced later this year, so review the adaptive app quality guidelines.",
+        "ja": "AppFunctions（ベータ）、Jetpack Compose 向け A2UI（アルファ）、Gemini Nano 4 を使う ML Kit Agentic API（アルファ）などのエージェント向け API と、Navigation 3 1.2・Jetpack XR のコアライブラリの安定版が発表されました。Google Play は来年からフォルダブルでのアプリの動作を評価し、要件は年内に発表されるため、アダプティブアプリの品質ガイドラインを確認しておきましょう。",
+        "zh-Hans": "Google 发布了 AppFunctions（Beta）、适用于 Jetpack Compose 的 A2UI（Alpha）、基于 Gemini Nano 4 的 ML Kit Agentic API（Alpha）等智能体 API，以及稳定版 Navigation 3 1.2 和 Jetpack XR 核心库。Google Play 计划从明年起评估应用在折叠屏设备上的表现，具体要求将于今年内公布，建议先查看自适应应用质量指南。",
+        "zh-Hant": "Google 發表 AppFunctions（Beta）、適用於 Jetpack Compose 的 A2UI（Alpha）、以 Gemini Nano 4 執行的 ML Kit Agentic API（Alpha）等代理 API，以及穩定版 Navigation 3 1.2 和 Jetpack XR 核心程式庫。Google Play 預計從明年起評估應用程式在摺疊裝置上的表現，詳細規定將於今年內公布，建議先查看自適應應用程式品質指南。",
+        "es": "Google anunció API agénticas como AppFunctions (beta), A2UI para Jetpack Compose (alfa) y ML Kit Agentic API con Gemini Nano 4 (alfa), además de Navigation 3 1.2 y las bibliotecas principales de Jetpack XR en versión estable. Google Play prevé evaluar desde el próximo año cómo funcionan las apps en plegables y anunciará los requisitos este año, así que revisa las pautas de calidad de apps adaptables."
+      }
+    },
+    {
+      "id": "2026-10-28-android-studio-tools-performance",
+      "platforms": [
+        "android"
+      ],
+      "category": "tools",
+      "published": "2026-10-28",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/android-dev-summit-26-developer-tools-performance",
+      "title": {
+        "ko": "Android Studio Rabbit 2 · Android CLI · R8 분석 도구",
+        "en": "Android Studio Rabbit 2, Android CLI and R8 analysis tools",
+        "ja": "Android Studio Rabbit 2・Android CLI・R8 分析ツール",
+        "zh-Hans": "Android Studio Rabbit 2、Android CLI 与 R8 分析工具",
+        "zh-Hant": "Android Studio Rabbit 2、Android CLI 與 R8 分析工具",
+        "es": "Android Studio Rabbit 2, Android CLI y herramientas de análisis de R8"
+      },
+      "summary": {
+        "ko": "Android Studio Rabbit 2 정식판에 원하는 코딩 에이전트를 쓰는 Bring Your Own Agent 와 XR 에뮬레이터가 들어왔고, Android CLI 에는 실기기 원격 스트리밍 · Compose 미리보기 · R8 결과 분석이 더해졌습니다. AGP 9.3 의 R8 Configuration Analyzer 로 keep 규칙을 점수로 볼 수 있고, Lightbuild 와 XML → Compose 이전 도우미는 아직 Canary 입니다.",
+        "en": "Android Studio Rabbit 2 (stable) adds Bring Your Own Agent for your preferred coding agent plus XR emulators, and the Android CLI gains remote real-device streaming, Compose previews and R8 output analysis. AGP 9.3's R8 Configuration Analyzer scores your keep rules, while Lightbuild and the XML-to-Compose Migration Assistant are still in Canary.",
+        "ja": "Android Studio Rabbit 2（安定版）に好みのコーディングエージェントを使える Bring Your Own Agent と XR エミュレータが加わり、Android CLI には実機のリモートストリーミング・Compose プレビュー・R8 結果の分析が追加されました。AGP 9.3 の R8 Configuration Analyzer で keep ルールをスコアで確認でき、Lightbuild と XML から Compose への移行アシスタントはまだ Canary です。",
+        "zh-Hans": "Android Studio Rabbit 2（稳定版）新增可使用你偏好的编码智能体的 Bring Your Own Agent 和 XR 模拟器，Android CLI 增加了真机远程串流、Compose 预览和 R8 结果分析。AGP 9.3 的 R8 Configuration Analyzer 可为 keep 规则评分，Lightbuild 和 XML 转 Compose 迁移助手仍处于 Canary 阶段。",
+        "zh-Hant": "Android Studio Rabbit 2（穩定版）新增可使用你偏好之程式設計代理的 Bring Your Own Agent 與 XR 模擬器，Android CLI 加入實機遠端串流、Compose 預覽與 R8 結果分析。AGP 9.3 的 R8 Configuration Analyzer 可為 keep 規則評分，Lightbuild 與 XML 轉 Compose 遷移助理仍在 Canary 階段。",
+        "es": "Android Studio Rabbit 2 (estable) añade Bring Your Own Agent para usar tu agente de programación preferido y emuladores de XR, y la Android CLI incorpora streaming remoto de dispositivos reales, vistas previas de Compose y análisis del resultado de R8. El R8 Configuration Analyzer de AGP 9.3 puntúa tus reglas keep, mientras que Lightbuild y el asistente de migración de XML a Compose siguen en Canary."
+      }
+    },
+    {
+      "id": "2026-10-28-android-studio-agents",
+      "platforms": [
+        "android"
+      ],
+      "category": "tools",
+      "published": "2026-10-28",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/ai-agents-android-studio-integration",
+      "title": {
+        "ko": "Android Studio 에서 Claude · Codex 같은 에이전트 쓰기",
+        "en": "Use agents like Claude and Codex in Android Studio",
+        "ja": "Android Studio で Claude や Codex などのエージェントを使う",
+        "zh-Hans": "在 Android Studio 中使用 Claude、Codex 等智能体",
+        "zh-Hant": "在 Android Studio 中使用 Claude、Codex 等代理",
+        "es": "Usa agentes como Claude y Codex en Android Studio"
+      },
+      "summary": {
+        "ko": "Android Studio Rabbit 2 정식판에서 Claude Agent · Codex · Junie · Google Antigravity 등 40개가 넘는 ACP 호환 코딩 에이전트를 쓸 수 있고, 에이전트가 에뮬레이터 · 빌드 · Logcat 을 함께 다룹니다. Settings › Tools › AI › Agents 에서 에이전트를 고르고 로그인하면 됩니다.",
+        "en": "Android Studio Rabbit 2 (stable) supports over 40 ACP-compatible coding agents, including Claude Agent, Codex, Junie and Google Antigravity, and they can work with the emulator, build system and Logcat. Pick an agent under Settings > Tools > AI > Agents and sign in.",
+        "ja": "Android Studio Rabbit 2（安定版）では Claude Agent・Codex・Junie・Google Antigravity など 40 を超える ACP 互換のコーディングエージェントを使え、エージェントがエミュレータ・ビルド・Logcat を扱えます。Settings › Tools › AI › Agents でエージェントを選んでサインインします。",
+        "zh-Hans": "Android Studio Rabbit 2（稳定版）支持 Claude Agent、Codex、Junie、Google Antigravity 等 40 多个兼容 ACP 的编码智能体，它们可以使用模拟器、构建系统和 Logcat。在 Settings > Tools > AI > Agents 中选择智能体并登录即可。",
+        "zh-Hant": "Android Studio Rabbit 2（穩定版）支援 Claude Agent、Codex、Junie、Google Antigravity 等 40 多個相容 ACP 的程式設計代理，代理可以操作模擬器、建置系統與 Logcat。在 Settings > Tools > AI > Agents 選擇代理並登入即可。",
+        "es": "Android Studio Rabbit 2 (estable) admite más de 40 agentes de programación compatibles con ACP, como Claude Agent, Codex, Junie y Google Antigravity, que pueden trabajar con el emulador, el sistema de compilación y Logcat. Elige un agente en Settings > Tools > AI > Agents e inicia sesión."
+      }
+    },
+    {
+      "id": "2026-10-22-subscriptions-for-organizations",
+      "platforms": [
+        "ios"
+      ],
+      "category": "business",
+      "published": "2026-10-22",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=yfo21auu",
+      "title": {
+        "ko": "기업 · 학교가 구독을 여러 자리로 살 수 있게",
+        "en": "Businesses and schools can buy your subscriptions by the seat",
+        "ja": "企業・学校がサブスクリプションを複数席で購入可能に",
+        "zh-Hans": "企业和学校可按席位购买你的订阅",
+        "zh-Hant": "企業與學校可依席位購買你的訂閱",
+        "es": "Empresas y centros educativos pueden comprar tus suscripciones por plazas"
+      },
+      "summary": {
+        "ko": "10월 22일부터 Apple Business · Apple School Manager 를 쓰는 기관이 자동 갱신 구독을 필요한 자리 수만큼 한 번의 인앱 결제로 사고, 기기 관리 도구로 나눠 줄 수 있습니다. App Store Connect 에서 이 여러 자리 구매는 (전에 바꾼 적이 없다면) 기본으로 켜져 있으니 구독의 구매 방식 설정을 확인하고, 그룹 구매는 11월부터 sandbox 계정으로 시험할 수 있습니다.",
+        "en": "Since October 22, organizations using Apple Business or Apple School Manager can buy the seats they need of an auto-renewable subscription in a single In-App Purchase and assign them with their device management tools. Multiseat purchasing is on by default in App Store Connect unless you changed it, so review the subscription's purchase options; group purchases can be tested with a Sandbox Apple Account from November.",
+        "ja": "10月22日から、Apple Business や Apple School Manager を使う組織が自動更新サブスクリプションを必要な席数だけ 1 回のアプリ内課金で購入し、デバイス管理ツールで割り当てられます。App Store Connect ではこの複数席購入が（以前に変更していなければ）既定でオンなので、サブスクリプションの購入オプションを確認し、グループ購入は 11 月から Sandbox アカウントで試せます。",
+        "zh-Hans": "自 10 月 22 日起，使用 Apple Business 或 Apple School Manager 的机构可以通过一次 App 内购买按需购买自动续期订阅的席位，并用设备管理工具分配。App Store Connect 中多席位购买默认开启（除非你以前改过），请检查订阅的购买选项；群组购买可从 11 月起用沙盒 Apple 账户测试。",
+        "zh-Hant": "自 10 月 22 日起，使用 Apple Business 或 Apple School Manager 的機構可透過一次 App 內購買依需求購買自動續訂訂閱的席位，並以裝置管理工具分配。App Store Connect 中多席位購買預設開啟（除非你先前變更過），請檢查訂閱的購買選項；群組購買可從 11 月起以沙盒 Apple 帳號測試。",
+        "es": "Desde el 22 de octubre, las organizaciones que usan Apple Business o Apple School Manager pueden comprar las plazas que necesiten de una suscripción de renovación automática en una sola compra dentro de la app y asignarlas con sus herramientas de gestión de dispositivos. La compra de varias plazas está activada por defecto en App Store Connect salvo que la hayas cambiado, así que revisa las opciones de compra de la suscripción; las compras para grupos se pueden probar con una cuenta de Sandbox desde noviembre."
+      }
+    },
+    {
+      "id": "2026-10-21-android-contacts-intents",
+      "platforms": [
+        "android"
+      ],
+      "category": "requirement",
+      "published": "2026-10-21",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/reliable-way-to-add-and-edit-contacts-android",
+      "title": {
+        "ko": "연락처 직접 쓰기 제한 — 연락처 인텐트로 바꾸기",
+        "en": "Direct contact writes restricted — switch to contact intents",
+        "ja": "連絡先への直接書き込みを制限 — 連絡先インテントへ移行",
+        "zh-Hans": "限制直接写入联系人 — 改用联系人 Intent",
+        "zh-Hant": "限制直接寫入聯絡人 — 改用聯絡人 Intent",
+        "es": "Se restringe la escritura directa de contactos: usa los intents de contactos"
+      },
+      "summary": {
+        "ko": "다음 Android 버전(2027)을 타깃하는 앱은 WRITE_CONTACTS 로 연락처를 직접 쓸 수 없고, 권한이 필요 없는 ACTION_INSERT · ACTION_EDIT · ACTION_INSERT_OR_EDIT 인텐트를 써야 합니다. 연락처 관리가 핵심인 앱만 새 MANAGE_CONTACTS 권한(Android 17 QPR2)과 Play Console 신고로 직접 쓸 수 있으니, 코드의 직접 쓰기를 미리 찾아 바꾸세요.",
+        "en": "Apps targeting the next Android release (2027) can no longer write contacts directly with WRITE_CONTACTS and should use the ACTION_INSERT, ACTION_EDIT and ACTION_INSERT_OR_EDIT intents, which need no permission. Only apps whose core purpose is managing contacts can keep writing directly with the new MANAGE_CONTACTS permission (Android 17 QPR2) and a Play Console declaration, so find and replace your direct writes early.",
+        "ja": "次の Android リリース（2027）をターゲットにするアプリは WRITE_CONTACTS で連絡先に直接書き込めなくなり、権限不要の ACTION_INSERT・ACTION_EDIT・ACTION_INSERT_OR_EDIT インテントを使う必要があります。連絡先管理が主目的のアプリだけが新しい MANAGE_CONTACTS 権限（Android 17 QPR2）と Play Console の申告で直接書き込めるので、コード内の直接書き込みを早めに見つけて置き換えてください。",
+        "zh-Hans": "以下一个 Android 版本（2027）为目标的应用将无法再通过 WRITE_CONTACTS 直接写入联系人，应改用无需权限的 ACTION_INSERT、ACTION_EDIT 和 ACTION_INSERT_OR_EDIT Intent。只有以管理联系人为核心用途的应用才能通过新的 MANAGE_CONTACTS 权限（Android 17 QPR2）并在 Play Console 中申报后继续直接写入，请尽早找出并替换代码中的直接写入。",
+        "zh-Hant": "以下一個 Android 版本（2027）為目標的應用程式將無法再透過 WRITE_CONTACTS 直接寫入聯絡人，應改用不需權限的 ACTION_INSERT、ACTION_EDIT 與 ACTION_INSERT_OR_EDIT Intent。只有以管理聯絡人為核心用途的應用程式，才能透過新的 MANAGE_CONTACTS 權限（Android 17 QPR2）並在 Play Console 申報後繼續直接寫入，請及早找出並替換程式碼中的直接寫入。",
+        "es": "Las apps orientadas a la próxima versión de Android (2027) ya no podrán escribir contactos directamente con WRITE_CONTACTS y deberán usar los intents ACTION_INSERT, ACTION_EDIT y ACTION_INSERT_OR_EDIT, que no requieren permiso. Solo las apps cuyo propósito principal es gestionar contactos podrán seguir escribiendo directamente con el nuevo permiso MANAGE_CONTACTS (Android 17 QPR2) y una declaración en Play Console, así que localiza y sustituye pronto las escrituras directas."
+      }
+    },
+    {
+      "id": "2026-10-19-grab-r8-baseline-profiles",
+      "platforms": [
+        "android"
+      ],
+      "category": "story",
+      "published": "2026-10-19",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time",
+      "title": {
+        "ko": "사례: Grab, R8 · Baseline Profiles 로 ANR 32% 줄여",
+        "en": "Case study: Grab cuts ANRs by 32% with R8 and Baseline Profiles",
+        "ja": "事例: Grab が R8 と Baseline Profiles で ANR を 32% 削減",
+        "zh-Hans": "案例：Grab 借助 R8 与 Baseline Profiles 将 ANR 减少 32%",
+        "zh-Hant": "案例：Grab 透過 R8 與 Baseline Profiles 將 ANR 減少 32%",
+        "es": "Caso práctico: Grab reduce los ANR un 32% con R8 y Baseline Profiles"
+      },
+      "summary": {
+        "ko": "Grab 은 R8 최적화를 켜고 R8 Full Mode 로 옮긴 뒤 keep 규칙을 다듬고 Baseline Profiles 를 더해 ANR 을 약 32%, 앱 크기를 약 30% 줄이고 콜드 스타트를 약 35% 빠르게 했습니다. proguard-android-optimize.txt 로 바꾸기, 리플렉션을 쓰는 코드에만 좁은 keep 규칙 쓰기, R8 Configuration Analyzer 로 점수 보기 순서였습니다.",
+        "en": "Grab enabled R8 optimization, moved to R8 Full Mode, refined its keep rules and added Baseline Profiles, cutting ANRs by about 32% and app size by about 30% and making cold start about 35% faster. The steps were switching to proguard-android-optimize.txt, writing narrow keep rules only for reflection-based code and tracking scores with the R8 Configuration Analyzer.",
+        "ja": "Grab は R8 の最適化を有効にして R8 Full Mode に移行し、keep ルールを見直して Baseline Profiles を加えた結果、ANR を約 32%、アプリサイズを約 30% 減らし、コールドスタートを約 35% 速くしました。proguard-android-optimize.txt への切り替え、リフレクションを使うコードだけへの限定的な keep ルール、R8 Configuration Analyzer でのスコア確認という順に進めました。",
+        "zh-Hans": "Grab 启用 R8 优化、迁移到 R8 Full Mode、精简 keep 规则并加入 Baseline Profiles，使 ANR 减少约 32%、应用体积缩小约 30%、冷启动加快约 35%。做法依次是改用 proguard-android-optimize.txt、只为使用反射的代码编写精确的 keep 规则，并用 R8 Configuration Analyzer 跟踪评分。",
+        "zh-Hant": "Grab 啟用 R8 最佳化、改用 R8 Full Mode、精簡 keep 規則並加入 Baseline Profiles，使 ANR 減少約 32%、應用程式大小縮小約 30%、冷啟動加快約 35%。做法依序是改用 proguard-android-optimize.txt、只為使用反射的程式碼撰寫精確的 keep 規則，並以 R8 Configuration Analyzer 追蹤分數。",
+        "es": "Grab activó la optimización de R8, pasó a R8 Full Mode, depuró sus reglas keep y añadió Baseline Profiles, con lo que redujo los ANR alrededor de un 32% y el tamaño de la app alrededor de un 30%, y aceleró el arranque en frío alrededor de un 35%. Los pasos fueron cambiar a proguard-android-optimize.txt, escribir reglas keep acotadas solo para el código con reflexión y seguir las puntuaciones con el R8 Configuration Analyzer."
+      }
+    },
+    {
       "id": "2026-10-16-app-review-2-5-19",
       "platforms": [
         "ios"
       ],
+      "category": "policy",
       "published": "2026-10-16",
       "deadline": null,
       "source": "Apple",
@@ -37,6 +254,7 @@
       "platforms": [
         "android"
       ],
+      "category": "policy",
       "published": "2026-09-30",
       "deadline": null,
       "source": "Android",
@@ -70,6 +288,7 @@
       "platforms": [
         "ios"
       ],
+      "category": "requirement",
       "published": "2026-09-09",
       "deadline": null,
       "source": "Apple",
@@ -96,6 +315,7 @@
       "platforms": [
         "android"
       ],
+      "category": "requirement",
       "published": "2026-08-31",
       "deadline": "2026-11-01",
       "source": "Google Play",
@@ -129,6 +349,7 @@
       "platforms": [
         "ios"
       ],
+      "category": "requirement",
       "published": "2026-04-28",
       "deadline": null,
       "source": "Apple",
@@ -155,6 +376,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.7",
       "published": "2026-11-01",
       "deadline": null,
@@ -189,6 +411,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.6",
       "published": "2026-10-31",
       "deadline": null,
@@ -223,6 +446,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.5",
       "published": "2026-10-31",
       "deadline": null,
@@ -257,6 +481,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.4",
       "published": "2026-10-30",
       "deadline": null,
@@ -291,6 +516,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.3",
       "published": "2026-10-29",
       "deadline": null,
@@ -325,6 +551,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.2",
       "published": "2026-10-29",
       "deadline": null,
@@ -359,6 +586,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.1",
       "published": "2026-10-29",
       "deadline": null,
@@ -393,6 +621,7 @@
       "platforms": [
         "shouarchive"
       ],
+      "category": "update",
       "version": "1.0.0",
       "published": "2026-10-22",
       "deadline": null,

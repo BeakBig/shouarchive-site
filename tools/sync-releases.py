@@ -70,6 +70,7 @@ def release_items():
         items.append({
             'id': f'shouarchive-{version}',
             'platforms': ['shouarchive'],
+            'category': 'update',
             'version': version,
             'published': published,
             'deadline': None,

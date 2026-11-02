@@ -308,6 +308,11 @@ def check_release_notes(feed):
     if want != feed:
         report('소식', 'news.json', 'ShouArchive 업데이트 내역이 변경 사항 페이지와 다릅니다 — python3 tools/sync-releases.py')
 
+# news.json 의 category — requirement 요구 사항 · 기한 / policy 심사 · 정책 / business 판매 · 수수료 / platform 새 기능 · 기기 /
+# tools 개발 도구 / story 사례 · 행사 / update ShouArchive 업데이트 내역 (README 「소식 목록」)
+NEWS_CATEGORIES = ('requirement', 'policy', 'business', 'platform', 'tools', 'story', 'update')
+
+
 def check_news():
     """앱 「소식」 탭의 news.json — 앱(NewsFeed.decode)이 빼 버릴 항목이 없게: id · 날짜 · https 링크 · 6개 언어 제목 · 요약, 같은 id 없음."""
     path = os.path.join(ROOT, 'news.json')
@@ -344,6 +349,12 @@ def check_news():
             report('소식', 'news.json', f'{where} — platforms 는 ios · android · shouarchive 만 (비우면 양쪽)')
         if 'shouarchive' in platforms and not re.match(r'^\d+(\.\d+)*$', str(item.get('version') or '')):
             report('소식', 'news.json', f'{where} — ShouArchive 업데이트 내역은 version(「1.0.3」) 이 있어야 합니다')
+        # 종류 — 나중에 앱 「소식」 을 탭으로 나눌 때 쓴다 (2026-11-02 Jin). 업데이트 내역은 update 만
+        category = item.get('category')
+        if category not in NEWS_CATEGORIES:
+            report('소식', 'news.json', f'{where} — category 는 {" · ".join(NEWS_CATEGORIES)} 중 하나: {category}')
+        elif ('shouarchive' in platforms) != (category == 'update'):
+            report('소식', 'news.json', f'{where} — category update 는 ShouArchive 업데이트 내역(platforms shouarchive)에만')
         for field in ('title', 'summary'):
             texts = item.get(field) or {}
             missing = [lang for lang in LANGS if not str(texts.get(lang) or '').strip()]

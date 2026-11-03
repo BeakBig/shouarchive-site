@@ -43,14 +43,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Privacy Policy</h1>
-      <p>ShouArchive (macOS) · Effective October 31, 2026 · Developer and seller: Beakbig</p>
+      <p>ShouArchive (macOS) · Effective November 3, 2026 · Developer and seller: Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>Summary.</strong> The app has no analytics, no tracking, no ads and no accounts. This site uses only cookieless visit statistics (Cloudflare Web Analytics — aggregate figures that do not identify individuals) (Section 6). The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. The only things that reach the seller are the <strong>license key, device identifier, Mac model and app version</strong> sent when your license is checked, the purchase email when you register, ask for your key again, change it or erase your records (Section 5), the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7), and whatever you send us yourself by support email (Section 14).</p>
+        <p><strong>Summary.</strong> The app has no analytics, no tracking, no ads and no accounts. This site uses only cookieless visit statistics (Cloudflare Web Analytics — aggregate figures that do not identify individuals) (Section 6). The files you inspect are read only on your Mac. App Store Connect and Google Play features connect directly to Apple and Google with keys you register yourself. If you turn on AI Integration, the AI tools you connected receive only the results of the features they call (Section 3). The only things that reach the seller are the <strong>license key, device identifier, Mac model and app version</strong> sent when your license is checked, the purchase email when you register, ask for your key again, change it or erase your records (Section 5), the purchase details passed on by <strong>Paddle</strong>, which handles payment as Merchant of Record (Section 7), and whatever you send us yourself by support email (Section 14).</p>
       </div>
 
       <h2>1. What we don't collect</h2>
@@ -74,13 +74,20 @@
           <tr><td>Google Play uploads and store releases</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Authentication requests signed with your service account key, plus the AAB, APK, store listing and screenshots you choose</td></tr>
           <tr><td>Building, app upload, device install</td><td>Wherever Apple's and Google's developer tools (<code>xcodebuild</code>, <code>gradle</code> and so on) connect</td><td>These tools communicate in their own way. Repositories that dependencies are downloaded from (Maven and so on) are included here</td></tr>
           <tr><td>License activation, checks and deactivation; the list of registered Macs; getting your key again or changing it; starting a payment; the billing management link; the free period check</td><td>The seller's license server</td><td>Section 5</td></tr>
-          <tr><td>Checking for updates · downloading the installer</td><td>The update list the seller publishes (<code>shouarchive.beakbig.com</code>) · the installer (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else. When you download the installer, your IP address and User-Agent are processed by Cloudflare to deliver the file. The app asks on its second launch whether to check automatically; if you turn it on, it checks the list once a day. You can turn it off in Settings › General.</td></tr>
+          <tr><td>Checking for updates · downloading the installer</td><td>The update list the seller publishes (<code>shouarchive.beakbig.com</code>) · the installer (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the update list and sends nothing else. When you download the installer, your IP address and User-Agent are processed by Cloudflare to deliver the file. The app asks on its second launch whether to check automatically; if you turn it on, it checks the list when the app launches and once a day. You can turn it off in Settings › General.</td></tr>
           <tr><td>Fetching news</td><td>The news list the seller publishes (<code>shouarchive.beakbig.com</code>)</td><td>An ordinary web request (a User-Agent containing the app name and version). It only downloads the news list and sends nothing else. The app fetches it when it opens and when you open the News tab (at most once every 6 hours), and when you click Refresh. You can turn off automatic fetching in Settings › General.</td></tr>
         </tbody>
       </table>
       <ul>
         <li>Your App Store Connect <code>.p8</code> private key and Google service account key stay on your Mac. The app signs the tokens needed for requests <strong>locally</strong> and never sends the keys themselves anywhere, including to Apple and Google.</li>
         <li>How Apple and Google handle these requests is governed by each company's developer terms and privacy policy.</li>
+      </ul>
+      <h3>AI Integration</h3>
+      <p>If you allow connections in the AI screen or in Settings › AI Integration (off by default), the AI tools you use on this Mac (Claude Code, Cursor and so on) run ShouArchive and exchange data with it within the same Mac. ShouArchive itself sends nothing directly to any AI service.</p>
+      <ul>
+        <li>What is handed to the AI tool is only the result of the feature it called (profile lists, artifact inspection results, App Store Connect and Google Play status and so on). The contents of API keys, key file paths and the Issuer ID are never handed over. How the AI tool handles the results it receives (for example, whether it sends them to an AI service) is governed by the policy of the AI tool or service you use.</li>
+        <li>Action requests (re-creating profiles, changing store information, submitting for review and so on) are sent to the Apple and Google APIs in the table above only if you have turned on “Allow action requests”, and only those you approved in the ShouArchive approval window for each request, or those you set to “Run without approval” for a tool.</li>
+        <li>When you press “Install” or “Remove” under “Install in AI tool”, only the ShouArchive entry is added to or removed from that AI tool's settings file (for example mcpServers of Claude Desktop or Cursor), and the original file is backed up in the same folder before it is changed. Claude Code is added and removed with Claude Code's own command (claude mcp). This is done only within this Mac and nothing is sent anywhere.</li>
       </ul>
 
       <h2>4. What is stored on your Mac</h2>
@@ -89,6 +96,7 @@
         <li>The contents of API keys are stored in this Mac's <strong>keychain</strong> and are not synced through iCloud Keychain. For keys chosen as files, only the file's location is remembered.</li>
         <li>Profile activity history and build history stay local, and you can clear them in the app.</li>
         <li>The news list the News tab downloads, and which items you have read, are stored only on this Mac.</li>
+        <li>AI Integration settings (connection and action permissions, approval mode per tool), the history of action requests and information about the AI tools currently connected are stored only on this Mac. You can clear the action request history in Settings › AI Integration.</li>
         <li>Your license key and check results are stored on this Mac. What the license server stores is described in Section 5.</li>
         <li>The app does not delete files you placed yourself, such as <code>.p8</code> files and build output.</li>
       </ul>
@@ -193,7 +201,7 @@
       <p><strong>Data protection officer</strong> — Representative <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Support%20request&amp;body=%0A%0A%0A---%0ASent%20from%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fen%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>Information received by support email</strong> — emails you send to support@shouarchive.beakbig.com (sender address, subject, body and attachments) are used only to answer your inquiry and solve the problem, and are kept in the seller's mailbox. Please make sure attachments do not contain key files (<code>.p8</code>) or sensitive information.</p>
 
-      <p class="meta">Effective: October 31, 2026 · Developer and seller: Beakbig</p>
+      <p class="meta">Effective: November 3, 2026 · Developer and seller: Beakbig</p>
     </div>
   </section>
 </main>

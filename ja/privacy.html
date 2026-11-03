@@ -43,14 +43,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>プライバシーポリシー</h1>
-      <p>ShouArchive（macOS） · 施行日 2026 年 10 月 31 日 · 開発者・販売者 Beakbig</p>
+      <p>ShouArchive（macOS） · 施行日 2026 年 11 月 3 日 · 開発者・販売者 Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>概要。</strong>アプリには分析ツール・トラッキング・広告・アカウントはありません。このサイトは Cookie を使わない訪問統計（Cloudflare Web Analytics — 個人を識別しない集計値）だけを使います（第 6 項）。検査するファイルは Mac 内でのみ読み取ります。App Store Connect・Google Play の機能は、ユーザーが自分で登録したキーを使って Apple・Google に直接接続します。販売者に届くのは、ライセンスの確認時の<strong>ライセンスキー・端末識別値・Mac のモデル名・アプリのバージョン</strong>、キーの登録・再送・変更時および記録の削除時の購入時のメールアドレス（第 5 項）、決済を代行する販売代理店 <strong>Paddle</strong> から受け取る購入情報（第 7 項）、そしてお問い合わせメールで直接お送りいただいた内容（第 14 項）だけです。</p>
+        <p><strong>概要。</strong>アプリには分析ツール・トラッキング・広告・アカウントはありません。このサイトは Cookie を使わない訪問統計（Cloudflare Web Analytics — 個人を識別しない集計値）だけを使います（第 6 項）。検査するファイルは Mac 内でのみ読み取ります。App Store Connect・Google Play の機能は、ユーザーが自分で登録したキーを使って Apple・Google に直接接続します。AI 連携をオンにすると、ユーザーが接続した AI ツールには、そのツールが呼び出した機能の結果だけを渡します（第 3 項）。販売者に届くのは、ライセンスの確認時の<strong>ライセンスキー・端末識別値・Mac のモデル名・アプリのバージョン</strong>、キーの登録・再送・変更時および記録の削除時の購入時のメールアドレス（第 5 項）、決済を代行する販売代理店 <strong>Paddle</strong> から受け取る購入情報（第 7 項）、そしてお問い合わせメールで直接お送りいただいた内容（第 14 項）だけです。</p>
       </div>
 
       <h2>1. 収集しないもの</h2>
@@ -74,13 +74,20 @@
           <tr><td>Google Play へのアップロード・ストア配信</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>サービスアカウントキーで署名した認証リクエストと、ユーザーが選んだ AAB · APK・ストア情報・スクリーンショット</td></tr>
           <tr><td>ビルド・アプリのアップロード・端末へのインストール</td><td>Apple・Google の開発ツール（<code>xcodebuild</code> · <code>gradle</code> など）が接続する先</td><td>これらのツールがそれぞれの方法で通信します。依存関係をダウンロードするリポジトリ（Maven など）もここに含まれます</td></tr>
           <tr><td>ライセンスの有効化・確認・解除、登録済み Mac の一覧、キーの再送・変更、決済の開始・お支払い管理リンク、無料期間の確認</td><td>販売者のライセンスサーバー</td><td>第 5 項</td></tr>
-          <tr><td>アップデートの確認・インストーラーのダウンロード</td><td>販売者が公開しているアップデート一覧（<code>shouarchive.beakbig.com</code>）・インストーラー（<code>download.beakbig.com</code>、Cloudflare R2）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません。インストーラーをダウンロードするときは、IP アドレスと User-Agent が配信のために Cloudflare で処理されます。自動確認は 2 回目の起動時にオンにするか確認し、オンにすると 1 日 1 回一覧を確認します。設定 › 一般 でオフにできます。</td></tr>
+          <tr><td>アップデートの確認・インストーラーのダウンロード</td><td>販売者が公開しているアップデート一覧（<code>shouarchive.beakbig.com</code>）・インストーラー（<code>download.beakbig.com</code>、Cloudflare R2）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。アップデート一覧を受け取るだけで、ほかの値は送信しません。インストーラーをダウンロードするときは、IP アドレスと User-Agent が配信のために Cloudflare で処理されます。自動確認は 2 回目の起動時にオンにするか確認し、オンにするとアプリの起動時と 1 日 1 回、一覧を確認します。設定 › 一般 でオフにできます。</td></tr>
           <tr><td>ニュースの取得</td><td>販売者が公開しているニュース一覧（<code>shouarchive.beakbig.com</code>）</td><td>一般的な Web リクエスト（アプリ名・バージョンを含む User-Agent）。ニュース一覧を受け取るだけで、ほかの値は送信しません。アプリを開いたときと「ニュース」タブを開いたとき（6 時間に 1 回まで）、および「更新」を押したときに取得します。自動取得は 設定 › 一般 でオフにできます。</td></tr>
         </tbody>
       </table>
       <ul>
         <li>App Store Connect の <code>.p8</code> 秘密鍵と Google のサービスアカウントキーは、ユーザーの Mac にそのまま置かれます。アプリはリクエストに必要なトークンを<strong>ローカルで</strong>署名し、キー自体を Apple・Google を含むどこにも送信しません。</li>
         <li>Apple・Google がこれらのリクエストをどう処理するかは、各社の開発者向け規約とプライバシーポリシーに従います。</li>
+      </ul>
+      <h3>AI 連携</h3>
+      <p>AI 画面（または 設定 › AI 連携）で接続を許可すると（初期状態はオフ）、ユーザーがこの Mac で使っている AI ツール（Claude Code・Cursor など）が ShouArchive を起動し、同じ Mac の中でやり取りします。ShouArchive が AI サービスに直接送信するものはありません。</p>
+      <ul>
+        <li>AI ツールに渡すのは、そのツールが呼び出した機能の結果（プロファイルの一覧・成果物の検査結果・App Store Connect・Google Play の状態など）だけです。API キーの本体・キーファイルのパス・Issuer ID は渡しません。渡した結果を AI ツールがどう処理するか（AI サービスに送信するかなど）は、ユーザーが使う AI ツール・サービスのポリシーに従います。</li>
+        <li>実行リクエスト（プロファイルの再作成・ストア情報の変更・審査提出など）は、「実行リクエストを許可」をオンにした場合に限り、リクエストごとに ShouArchive の承認ウインドウでユーザーが承認したもの、またはユーザーがツールごとに「承認なしで実行」と定めたものだけを、上の表の Apple・Google の API に送信します。</li>
+        <li>「AI ツールにインストール」で「インストール」・「削除」を押すと、その AI ツールの設定ファイル（例: Claude デスクトップ・Cursor の mcpServers）に ShouArchive の項目だけを追加または削除し、変更前の元のファイルを同じフォルダにバックアップします。Claude Code は Claude Code のコマンド（claude mcp）で追加・削除します。この処理はこの Mac の中だけで行い、どこにも送信しません。</li>
       </ul>
 
       <h2>4. Mac に保存されるもの</h2>
@@ -89,6 +96,7 @@
         <li>API キーの本体はこの Mac の<strong>キーチェーン</strong>に保存され、iCloud キーチェーンには同期されません。ファイルとして選んだキーは、そのファイルの場所だけを記憶します。</li>
         <li>プロファイルの操作履歴・ビルド履歴はローカルにのみ残り、アプリから削除できます。</li>
         <li>「ニュース」タブが取得したニュース一覧と既読の記録は、この Mac にだけ保存されます。</li>
+        <li>AI 連携の設定（接続・実行の許可、ツールごとの承認方法）、実行リクエストの記録、現在接続している AI ツールの情報は、この Mac にだけ保存されます。実行リクエストの記録は 設定 › AI 連携 で削除できます。</li>
         <li>ライセンスキーと確認結果はこの Mac に保存されます。ライセンスサーバーに保存されるものは第 5 項に記載しています。</li>
         <li><code>.p8</code> ファイルやビルド成果物など、ユーザーが自分で置いたファイルをアプリが削除することはありません。</li>
       </ul>
@@ -193,7 +201,7 @@
       <p><strong>個人情報保護責任者</strong> — 代表者 <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>お問い合わせメールで受け取る情報</strong> — support@shouarchive.beakbig.com にお送りいただいたメール（送信元アドレス・件名・本文・添付ファイル）は、お問い合わせへの回答と問題の解決にのみ使い、販売者のメールボックスに保管します。添付ファイルにキーファイル（<code>.p8</code>）や機密情報が含まれないようご注意ください。</p>
 
-      <p class="meta">施行日: 2026 年 10 月 31 日 · 開発者・販売者: Beakbig</p>
+      <p class="meta">施行日: 2026 年 11 月 3 日 · 開発者・販売者: Beakbig</p>
     </div>
   </section>
 </main>

@@ -43,14 +43,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>개인정보 처리방침</h1>
-      <p>ShouArchive (macOS) · 시행일 2026년 10월 31일 · 개발자 · 판매자 비그빅(Beakbig)</p>
+      <p>ShouArchive (macOS) · 시행일 2026년 11월 3일 · 개발자 · 판매자 비그빅(Beakbig)</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>요약.</strong> 앱에는 분석 도구 · 추적 · 광고 · 계정이 없습니다. 이 사이트는 쿠키 없는 방문 통계(Cloudflare Web Analytics — 개인을 식별하지 않는 집계 수치)만 씁니다(6항). 검사하는 파일은 Mac 안에서만 읽습니다. App Store Connect · Google Play 기능은 사용자가 직접 등록한 키로 Apple · Google 에 바로 접속합니다. 판매자에게 오는 것은 라이선스를 확인할 때의 <strong>라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전</strong>, 키를 등록하거나 다시 받거나 바꾸거나 기록을 지울 때의 구매 이메일(5항), 결제를 판매대행하는 <strong>Paddle</strong> 이 넘겨주는 구매 정보(7항), 그리고 문의 메일로 직접 보내 주신 내용(14항)뿐입니다.</p>
+        <p><strong>요약.</strong> 앱에는 분석 도구 · 추적 · 광고 · 계정이 없습니다. 이 사이트는 쿠키 없는 방문 통계(Cloudflare Web Analytics — 개인을 식별하지 않는 집계 수치)만 씁니다(6항). 검사하는 파일은 Mac 안에서만 읽습니다. App Store Connect · Google Play 기능은 사용자가 직접 등록한 키로 Apple · Google 에 바로 접속합니다. AI 연동을 켜면 사용자가 연결한 AI 도구에 그 도구가 부른 기능의 결과만 건넵니다(3항). 판매자에게 오는 것은 라이선스를 확인할 때의 <strong>라이선스 키 · 기기 식별값 · Mac 모델명 · 앱 버전</strong>, 키를 등록하거나 다시 받거나 바꾸거나 기록을 지울 때의 구매 이메일(5항), 결제를 판매대행하는 <strong>Paddle</strong> 이 넘겨주는 구매 정보(7항), 그리고 문의 메일로 직접 보내 주신 내용(14항)뿐입니다.</p>
       </div>
 
       <h2>1. 수집하지 않는 것</h2>
@@ -74,13 +74,20 @@
           <tr><td>Google Play 업로드 · 스토어 배포</td><td>Google Play Developer API (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>서비스 계정 키로 서명한 인증 요청과, 사용자가 고른 AAB · APK · 스토어 정보 · 스크린샷</td></tr>
           <tr><td>빌드 · 앱 업로드 · 기기 설치</td><td>Apple · Google 의 개발 도구(<code>xcodebuild</code> · <code>gradle</code> 등)가 접속하는 곳</td><td>이 도구들이 각자의 방식으로 통신합니다. 의존성을 내려받는 저장소(Maven 등)도 여기에 포함됩니다</td></tr>
           <tr><td>라이선스 활성화 · 확인 · 해제, 등록된 Mac 목록, 키 다시 받기 · 키 바꾸기, 결제 시작 · 결제 관리 링크, 무료 기간 확인</td><td>판매자의 라이선스 서버</td><td>5항</td></tr>
-          <tr><td>업데이트 확인 · 설치 파일 내려받기</td><td>판매자가 올려 두는 업데이트 목록(<code>shouarchive.beakbig.com</code>) · 설치 파일(<code>download.beakbig.com</code>, Cloudflare R2)</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다. 설치 파일을 내려받을 때는 IP 주소와 User-Agent 가 전송 목적으로 Cloudflare 에 처리됩니다. 자동 확인은 앱을 두 번째로 실행할 때 켤지 묻고, 켜면 하루에 한 번 목록을 확인합니다. 설정 › 일반에서 끌 수 있습니다.</td></tr>
+          <tr><td>업데이트 확인 · 설치 파일 내려받기</td><td>판매자가 올려 두는 업데이트 목록(<code>shouarchive.beakbig.com</code>) · 설치 파일(<code>download.beakbig.com</code>, Cloudflare R2)</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 업데이트 목록을 받기만 하고 다른 값은 보내지 않습니다. 설치 파일을 내려받을 때는 IP 주소와 User-Agent 가 전송 목적으로 Cloudflare 에 처리됩니다. 자동 확인은 앱을 두 번째로 실행할 때 켤지 묻고, 켜면 앱을 켤 때와 하루에 한 번 목록을 확인합니다. 설정 › 일반에서 끌 수 있습니다.</td></tr>
           <tr><td>소식 받기</td><td>판매자가 올려 두는 소식 목록(<code>shouarchive.beakbig.com</code>)</td><td>일반적인 웹 요청(앱 이름 · 버전이 담긴 User-Agent). 소식 목록을 받기만 하고 다른 값은 보내지 않습니다. 앱을 열 때와 소식 탭을 열 때(6시간에 한 번까지), 그리고 새로고침할 때 받습니다. 자동으로 받기는 설정 › 일반에서 끌 수 있습니다.</td></tr>
         </tbody>
       </table>
       <ul>
         <li>App Store Connect 의 <code>.p8</code> 개인 키와 Google 서비스 계정 키는 사용자의 Mac 에 그대로 있습니다. 앱은 요청에 필요한 토큰을 <strong>로컬에서</strong> 서명하며, 키 자체를 Apple · Google 을 포함한 어느 곳에도 보내지 않습니다.</li>
         <li>Apple · Google 이 이 요청을 어떻게 처리하는지는 각 회사의 개발자 약관과 개인정보 처리방침을 따릅니다.</li>
+      </ul>
+      <h3>AI 연동</h3>
+      <p>AI 화면(또는 설정 › AI 연동)에서 연결을 허용하면(기본 꺼짐), 사용자가 이 Mac 에서 쓰는 AI 도구(Claude Code · Cursor 등)가 ShouArchive 를 실행해 같은 Mac 안에서 주고받습니다. ShouArchive 가 AI 서비스로 직접 보내는 것은 없습니다.</p>
+      <ul>
+        <li>AI 도구에 건네는 것은 그 도구가 부른 기능의 결과(프로파일 목록 · 산출물 검사 결과 · App Store Connect · Google Play 상태 등)뿐입니다. API 키 본문 · 키 파일 경로 · Issuer ID 는 건네지 않습니다. 건넨 결과를 AI 도구가 어떻게 처리하는지(AI 서비스로 보내는지 등)는 사용자가 쓰는 AI 도구 · 서비스의 정책을 따릅니다.</li>
+        <li>실행 요청(프로파일 다시 만들기 · 스토어 정보 바꾸기 · 심사 제출 등)은 「실행 요청 허용」 을 켠 경우에만, 요청마다 ShouArchive 승인 창에서 사용자가 승인한 것 또는 사용자가 도구별로 「승인 없이 실행」 으로 정한 것만 위 표의 Apple · Google API 로 보냅니다.</li>
+        <li>「AI 도구에 설치」 에서 「설치」 · 「제거」 를 누르면 그 AI 도구의 설정 파일(예: Claude 데스크톱 · Cursor 의 mcpServers)에 ShouArchive 항목만 넣거나 빼고, 바꾸기 전 원래 파일을 같은 폴더에 백업합니다. Claude Code 는 Claude Code 의 명령(claude mcp)으로 넣고 뺍니다. 이 일은 이 Mac 안에서만 하며 어디로도 보내지 않습니다.</li>
       </ul>
 
       <h2>4. Mac 에 저장되는 것</h2>
@@ -89,6 +96,7 @@
         <li>API 키 본문은 이 Mac 의 <strong>키체인</strong>에 저장되고, iCloud 키체인으로 동기화되지 않습니다. 파일로 고른 키는 그 파일의 위치만 기억합니다.</li>
         <li>프로파일 활동 기록 · 빌드 기록은 로컬에만 남고, 앱에서 지울 수 있습니다.</li>
         <li>소식 탭이 받은 소식 목록과 읽음 표시는 이 Mac 에만 저장됩니다.</li>
+        <li>AI 연동 설정(연결 · 실행 허용, 도구별 승인 방식), 실행 요청 기록, 지금 연결된 AI 도구 정보는 이 Mac 에만 저장됩니다. 실행 요청 기록은 설정 › AI 연동 에서 지울 수 있습니다.</li>
         <li>라이선스 키와 확인 결과는 이 Mac 에 저장됩니다. 라이선스 서버에 저장되는 것은 5항에 적었습니다.</li>
         <li><code>.p8</code> 파일과 빌드 결과물 등 사용자가 직접 둔 파일은 앱이 지우지 않습니다.</li>
       </ul>
@@ -193,7 +201,7 @@
       <p><strong>개인정보 보호책임자</strong> — 대표 <span data-price="seller.owner">강현진</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%EB%AC%B8%EC%9D%98&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>문의 메일로 받은 정보</strong> — support@shouarchive.beakbig.com 으로 보내 주신 메일(보낸 주소 · 제목 · 본문 · 첨부)은 문의에 답하고 문제를 해결하는 데만 쓰고, 판매자의 메일함에 보관합니다. 첨부에 키 파일(<code>.p8</code>)이나 민감한 정보가 들어가지 않게 해 주세요.</p>
 
-      <p class="meta">시행일: 2026년 10월 31일 · 개발자 · 판매자: 비그빅(Beakbig)</p>
+      <p class="meta">시행일: 2026년 11월 3일 · 개발자 · 판매자: 비그빅(Beakbig)</p>
     </div>
   </section>
 </main>

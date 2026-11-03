@@ -83,10 +83,11 @@
         <li>How Apple and Google handle these requests is governed by each company's developer terms and privacy policy.</li>
       </ul>
       <h3>AI Integration</h3>
-      <p>If you allow connections in Settings › AI Integration (off by default), the AI tools you use on this Mac (Claude Code, Cursor and so on) run ShouArchive and exchange data with it within the same Mac. ShouArchive itself sends nothing directly to any AI service.</p>
+      <p>If you allow connections in the AI screen or in Settings › AI Integration (off by default), the AI tools you use on this Mac (Claude Code, Cursor and so on) run ShouArchive and exchange data with it within the same Mac. ShouArchive itself sends nothing directly to any AI service.</p>
       <ul>
         <li>What is handed to the AI tool is only the result of the feature it called (profile lists, artifact inspection results, App Store Connect and Google Play status and so on). The contents of API keys, key file paths and the Issuer ID are never handed over. How the AI tool handles the results it receives (for example, whether it sends them to an AI service) is governed by the policy of the AI tool or service you use.</li>
         <li>Action requests (re-creating profiles, changing store information, submitting for review and so on) are sent to the Apple and Google APIs in the table above only if you have turned on “Allow action requests”, and only those you approved in the ShouArchive approval window for each request, or those you set to “Run without approval” for a tool.</li>
+        <li>When you press “Install” or “Remove” under “Install in AI tool”, only the ShouArchive entry is added to or removed from that AI tool's settings file (for example mcpServers of Claude Desktop or Cursor), and the original file is backed up in the same folder before it is changed. Claude Code is added and removed with Claude Code's own command (claude mcp). This is done only within this Mac and nothing is sent anywhere.</li>
       </ul>
 
       <h2>4. What is stored on your Mac</h2>

@@ -83,10 +83,11 @@
         <li>El tratamiento que Apple y Google dan a estas solicitudes se rige por sus respectivos acuerdos para desarrolladores y políticas de privacidad.</li>
       </ul>
       <h3>Integración con IA</h3>
-      <p>Si permites la conexión en Ajustes › Integración con IA (desactivada por defecto), las herramientas de IA que usas en este Mac (Claude Code, Cursor, etc.) ejecutan ShouArchive e intercambian datos con la app dentro del mismo Mac. ShouArchive no envía nada directamente a ningún servicio de IA.</p>
+      <p>Si permites la conexión en la pantalla de IA o en Ajustes › Integración con IA (desactivada por defecto), las herramientas de IA que usas en este Mac (Claude Code, Cursor, etc.) ejecutan ShouArchive e intercambian datos con la app dentro del mismo Mac. ShouArchive no envía nada directamente a ningún servicio de IA.</p>
       <ul>
         <li>A la herramienta de IA solo se le entrega el resultado de la función que invocó (listas de perfiles, resultados de inspección de artefactos, estado de App Store Connect y Google Play, etc.). No se entregan el contenido de las claves de API, las rutas de los archivos de clave ni el Issuer ID. Cómo trata la herramienta de IA los resultados recibidos (por ejemplo, si los envía a un servicio de IA) depende de la política de la herramienta o el servicio de IA que uses.</li>
         <li>Las solicitudes de acciones (volver a crear perfiles, cambiar datos de la tienda, enviar a revisión, etc.) solo se envían a las API de Apple y Google de la tabla anterior si has activado «Permitir solicitudes de acciones», y únicamente las que apruebes tú en la ventana de aprobación de ShouArchive para cada solicitud o las que hayas fijado en «Ejecutar sin aprobar» para una herramienta.</li>
+        <li>Al pulsar «Instalar» o «Quitar» en «Instalar en la herramienta de IA», solo se añade o se quita la entrada de ShouArchive en el archivo de configuración de esa herramienta de IA (por ejemplo, mcpServers de Claude Desktop o Cursor), y antes de cambiarlo se guarda una copia del archivo original en la misma carpeta. Claude Code se añade y se quita con su propio comando (claude mcp). Todo esto ocurre solo dentro de este Mac y no se envía a ningún sitio.</li>
       </ul>
 
       <h2>4. Lo que se guarda en tu Mac</h2>

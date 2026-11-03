@@ -83,10 +83,11 @@
         <li>Apple · Google 如何处理这些请求，遵循各公司的开发者协议和隐私政策。</li>
       </ul>
       <h3>AI 集成</h3>
-      <p>在 设置 › AI 集成 中允许连接后（默认关闭），你在这台 Mac 上使用的 AI 工具（Claude Code · Cursor 等）会运行 ShouArchive，并在同一台 Mac 内与其交互。ShouArchive 不会直接向任何 AI 服务发送内容。</p>
+      <p>在 AI 界面（或 设置 › AI 集成）中允许连接后（默认关闭），你在这台 Mac 上使用的 AI 工具（Claude Code · Cursor 等）会运行 ShouArchive，并在同一台 Mac 内与其交互。ShouArchive 不会直接向任何 AI 服务发送内容。</p>
       <ul>
         <li>交给 AI 工具的只有该工具所调用功能的结果（描述文件列表 · 产物检查结果 · App Store Connect · Google Play 状态等）。API 密钥正文 · 密钥文件路径 · Issuer ID 不会交出。AI 工具如何处理收到的结果（是否发送到 AI 服务等），遵循你所使用的 AI 工具 · 服务的政策。</li>
         <li>执行请求（重新创建描述文件 · 更改商店信息 · 提交审核等）仅在开启“允许执行请求”时才会发送，且只发送你在 ShouArchive 批准窗口中逐条请求批准的内容，或你为某个工具设为“无需批准即执行”的内容，发往上表中的 Apple · Google API。</li>
+        <li>在“安装到 AI 工具”中点按“安装”或“移除”，只会在该 AI 工具的设置文件（例如 Claude 桌面版、Cursor 的 mcpServers）中加入或删去 ShouArchive 条目，并在更改前把原文件备份到同一文件夹。Claude Code 则通过 Claude Code 的命令（claude mcp）加入和移除。这些操作只在这台 Mac 内进行，不会发送到任何地方。</li>
       </ul>
 
       <h2>4. 保存在 Mac 上的数据</h2>

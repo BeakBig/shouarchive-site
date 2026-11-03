@@ -2,6 +2,60 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-02-age-rating-shared-location-dating",
+      "platforms": [
+        "ios"
+      ],
+      "category": "requirement",
+      "published": "2026-11-02",
+      "deadline": "2027-01-12",
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=yxkh08us",
+      "title": {
+        "ko": "연령 등급 설문에 위치 공유 · 데이트 및 관계 항목 추가 — 2027년 1월 12일까지 답하기",
+        "en": "New age rating descriptors for shared location and dating — answer by January 12, 2027",
+        "ja": "年齢制限指定の質問に位置情報の共有・デートと交際の項目が追加 — 2027年1月12日までに回答",
+        "zh-Hans": "年龄分级问卷新增位置共享与约会和恋爱关系项 — 须在 2027 年 1 月 12 日前回答",
+        "zh-Hant": "年齡分級問卷新增位置分享與約會和戀愛關係項目 — 須在 2027 年 1 月 12 日前回答",
+        "es": "Nuevos descriptores de clasificación por edad para ubicación compartida y citas: responde antes del 12 de enero de 2027"
+      },
+      "summary": {
+        "ko": "11월 16일부터 App Store Connect 연령 등급 설문에 실제 위치를 다른 사람과 공유하는지(위치 공유)와, 실제 사람 사이의 데이트 · 연애 연결이나 성적 · 낭만적 내용의 가상 동반자가 있는지(데이트 및 관계)를 묻는 항목이 생기며, 데이트 및 관계가 있으면 최소 18+ 입니다. 앱 업데이트를 제출하거나 설문을 바꿀 때 답해야 하고 모든 앱은 2027년 1월 12일까지 답을 마쳐야 합니다(브라질은 위치 공유 A16 · 데이트 및 관계 A18).",
+        "en": "Starting November 16, the App Store Connect age rating questionnaire asks whether your app lets people share their real-world location with others (Shared Location) and whether it enables dating or relationship connections between real people or offers a virtual companion with sexual or romantic content (Dating and Relationships); Dating and Relationships means a minimum rating of 18+. You answer these when you submit an app update or change the questionnaire, and every app must have them answered by January 12, 2027 (in Brazil, Shared Location requires A16 and Dating and Relationships A18).",
+        "ja": "11月16日から App Store Connect の年齢制限指定の質問に、現実の位置情報を他の人と共有できるか（位置情報の共有）と、実在の人どうしのデートや交際のつながり、または性的・恋愛的な内容のバーチャルコンパニオンがあるか（デートと交際）を問う項目が加わり、デートと交際がある場合は最低 18+ になります。アプリのアップデートを提出するときや回答を変えるときに答える必要があり、すべてのアプリは 2027年1月12日までに回答を済ませる必要があります（ブラジルでは位置情報の共有が A16、デートと交際が A18）。",
+        "zh-Hans": "自 11 月 16 日起，App Store Connect 的年龄分级问卷将询问 App 是否可与他人共享真实位置（位置共享），以及是否支持真人之间的约会或恋爱关系联系、或提供涉及性或恋爱内容的虚拟伴侣（约会和恋爱关系）；含约会和恋爱关系的 App 最低分级为 18+。提交 App 更新或修改问卷时需要回答，所有 App 须在 2027 年 1 月 12 日前完成回答（巴西要求位置共享为 A16、约会和恋爱关系为 A18）。",
+        "zh-Hant": "自 11 月 16 日起，App Store Connect 的年齡分級問卷將詢問 App 是否可與他人分享真實位置（位置分享），以及是否支援真人之間的約會或戀愛關係聯繫、或提供涉及性或戀愛內容的虛擬伴侶（約會和戀愛關係）；含約會和戀愛關係的 App 最低分級為 18+。提交 App 更新或修改問卷時需要回答，所有 App 須在 2027 年 1 月 12 日前完成回答（巴西要求位置分享為 A16、約會和戀愛關係為 A18）。",
+        "es": "Desde el 16 de noviembre, el cuestionario de clasificación por edad de App Store Connect pregunta si la app permite compartir la ubicación real con otras personas (Ubicación compartida) y si facilita citas o relaciones entre personas reales u ofrece un acompañante virtual con contenido sexual o romántico (Citas y relaciones); en ese último caso la clasificación mínima es 18+. Hay que responder al enviar una actualización o al cambiar el cuestionario, y todas las apps deben tenerlo respondido antes del 12 de enero de 2027 (en Brasil se exige A16 para Ubicación compartida y A18 para Citas y relaciones)."
+      }
+    },
+    {
+      "id": "2026-11-02-android-dev-summit-sessions",
+      "platforms": [
+        "android"
+      ],
+      "category": "story",
+      "published": "2026-11-02",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/building-apps-developer-sessions",
+      "title": {
+        "ko": "Android Dev Summit 세션 50여 개 공개 — 영상 · 대본",
+        "en": "50+ Android Dev Summit sessions now available, with transcripts",
+        "ja": "Android Dev Summit のセッション 50 本以上を公開 — 動画と文字起こし",
+        "zh-Hans": "Android Dev Summit 50 多场会议上线，附文字稿",
+        "zh-Hant": "Android Dev Summit 50 多場議程上線，附逐字稿",
+        "es": "Ya están disponibles más de 50 sesiones de la Android Dev Summit, con transcripciones"
+      },
+      "summary": {
+        "ko": "Mountain View · 런던에서 열린 Android Dev Summit 의 세션 50여 개가 YouTube 와 d.android.com/events/dev-summit 에 올라왔고, App Foundations · Intelligent Apps · Tools and Performance · Android XR 네 트랙으로 나뉩니다. 세션마다 슬라이드 내용까지 담은 대본을 내려받을 수 있고 트랙별 Gemini 노트북도 있으니, 필요한 주제만 골라 보거나 대본을 코딩 에이전트에 넣어 참고하세요.",
+        "en": "Over 50 sessions from Android Dev Summit in Mountain View and London are now on YouTube and d.android.com/events/dev-summit, in four tracks: App Foundations, Intelligent Apps, Tools and Performance, and Android XR. Each talk has a downloadable transcript that includes the slide content, and each track has a Gemini Notebook, so you can pick the topics you need or hand a transcript to your coding agent.",
+        "ja": "Mountain View とロンドンで開かれた Android Dev Summit のセッション 50 本以上が YouTube と d.android.com/events/dev-summit で公開され、App Foundations・Intelligent Apps・Tools and Performance・Android XR の 4 トラックに分かれています。各セッションにはスライドの内容も含む文字起こしがあってダウンロードでき、トラックごとに Gemini Notebook もあるので、必要なテーマを選んで見るか、文字起こしをコーディングエージェントに渡して参考にできます。",
+        "zh-Hans": "在 Mountain View 和伦敦举办的 Android Dev Summit 的 50 多场会议已发布到 YouTube 和 d.android.com/events/dev-summit，分为 App Foundations、Intelligent Apps、Tools and Performance 和 Android XR 四个专题。每场演讲都提供包含幻灯片内容的可下载文字稿，每个专题还有 Gemini Notebook，可按需挑选主题观看，或把文字稿交给你的编码智能体参考。",
+        "zh-Hant": "在 Mountain View 與倫敦舉辦的 Android Dev Summit 有 50 多場議程已上架 YouTube 和 d.android.com/events/dev-summit，分為 App Foundations、Intelligent Apps、Tools and Performance 與 Android XR 四個主題。每場演講都提供包含投影片內容、可下載的逐字稿，每個主題也有 Gemini Notebook，可挑選需要的主題觀看，或把逐字稿交給你的程式設計代理參考。",
+        "es": "Más de 50 sesiones de la Android Dev Summit de Mountain View y Londres ya están en YouTube y en d.android.com/events/dev-summit, en cuatro bloques: App Foundations, Intelligent Apps, Tools and Performance y Android XR. Cada charla tiene una transcripción descargable que incluye el contenido de las diapositivas y cada bloque tiene un Gemini Notebook, así que puedes elegir los temas que necesites o pasarle una transcripción a tu agente de programación."
+      }
+    },
+    {
       "id": "2026-10-29-app-store-taiwan-commission",
       "platforms": [
         "ios"

@@ -43,14 +43,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Política de privacidad</h1>
-      <p>ShouArchive (macOS) · En vigor desde el 31 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
+      <p>ShouArchive (macOS) · En vigor desde el 3 de noviembre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>Resumen.</strong> La app no tiene herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Este sitio solo usa estadísticas de visitas sin cookies (Cloudflare Web Analytics: cifras agregadas que no identifican a nadie) (sección 6). Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo, el modelo del Mac y la versión de la app</strong> al comprobar la licencia, el correo de compra al registrar la clave, pedirla de nuevo, cambiarla o eliminar tus registros (sección 5), los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7), y lo que nos envíes directamente por correo de consulta (sección 14).</p>
+        <p><strong>Resumen.</strong> La app no tiene herramientas de analíticas, ni rastreo, ni anuncios, ni cuentas. Este sitio solo usa estadísticas de visitas sin cookies (Cloudflare Web Analytics: cifras agregadas que no identifican a nadie) (sección 6). Los archivos que inspeccionas se leen únicamente en tu Mac. Las funciones de App Store Connect y Google Play se conectan directamente con Apple y Google usando las claves que registras tú mismo. Si activas la integración con IA, a las herramientas de IA que hayas conectado solo se les entregan los resultados de las funciones que invocan (sección 3). Lo único que llega al vendedor es la <strong>clave de licencia, el identificador del dispositivo, el modelo del Mac y la versión de la app</strong> al comprobar la licencia, el correo de compra al registrar la clave, pedirla de nuevo, cambiarla o eliminar tus registros (sección 5), los datos de compra que nos facilita <strong>Paddle</strong>, que gestiona el pago como revendedor autorizado (sección 7), y lo que nos envíes directamente por correo de consulta (sección 14).</p>
       </div>
 
       <h2>1. Lo que no recopilamos</h2>
@@ -74,13 +74,19 @@
           <tr><td>Subida y publicación en Google Play</td><td>API de Google Play Developer (<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>)</td><td>Solicitudes de autenticación firmadas con la clave de la cuenta de servicio y los AAB, APK, fichas de la tienda y capturas de pantalla que eliges</td></tr>
           <tr><td>Compilación · subida de apps · instalación en dispositivos</td><td>Los destinos a los que se conectan las herramientas de desarrollo de Apple y Google (<code>xcodebuild</code> · <code>gradle</code>, etc.)</td><td>Cada herramienta se comunica a su manera. Aquí se incluyen también los repositorios de los que se descargan dependencias (Maven, etc.)</td></tr>
           <tr><td>Activación, comprobación y desactivación de la licencia; lista de Mac registrados; volver a recibir o cambiar la clave; inicio del pago · enlace de gestión del pago; comprobación del período gratuito</td><td>El servidor de licencias del vendedor</td><td>Sección 5</td></tr>
-          <tr><td>Búsqueda de actualizaciones · descarga del instalador</td><td>La lista de actualizaciones que publica el vendedor (<code>shouarchive.beakbig.com</code>) · el instalador (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor. Al descargar el instalador, Cloudflare procesa tu dirección IP y tu User-Agent para entregar el archivo. La app pregunta en su segundo inicio si quieres la comprobación automática; si la activas, revisa la lista una vez al día. Puedes desactivarla en Ajustes › General.</td></tr>
+          <tr><td>Búsqueda de actualizaciones · descarga del instalador</td><td>La lista de actualizaciones que publica el vendedor (<code>shouarchive.beakbig.com</code>) · el instalador (<code>download.beakbig.com</code>, Cloudflare R2)</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de actualizaciones y no se envía ningún otro valor. Al descargar el instalador, Cloudflare procesa tu dirección IP y tu User-Agent para entregar el archivo. La app pregunta en su segundo inicio si quieres la comprobación automática; si la activas, revisa la lista al iniciar la app y una vez al día. Puedes desactivarla en Ajustes › General.</td></tr>
           <tr><td>Descarga de noticias</td><td>La lista de noticias que publica el vendedor (<code>shouarchive.beakbig.com</code>)</td><td>Una solicitud web normal (User-Agent con el nombre y la versión de la app). Solo se descarga la lista de noticias y no se envía ningún otro valor. La app la descarga al abrirse y al abrir la pestaña Noticias (como máximo una vez cada 6 horas), y cuando pulsas Actualizar. Puedes desactivar la descarga automática en Ajustes › General.</td></tr>
         </tbody>
       </table>
       <ul>
         <li>La clave privada <code>.p8</code> de App Store Connect y la clave de la cuenta de servicio de Google se quedan en tu Mac. La app firma <strong>en local</strong> los tokens que necesitan las solicitudes, y la clave en sí no se envía a ningún sitio, tampoco a Apple ni a Google.</li>
         <li>El tratamiento que Apple y Google dan a estas solicitudes se rige por sus respectivos acuerdos para desarrolladores y políticas de privacidad.</li>
+      </ul>
+      <h3>Integración con IA</h3>
+      <p>Si permites la conexión en Ajustes › Integración con IA (desactivada por defecto), las herramientas de IA que usas en este Mac (Claude Code, Cursor, etc.) ejecutan ShouArchive e intercambian datos con la app dentro del mismo Mac. ShouArchive no envía nada directamente a ningún servicio de IA.</p>
+      <ul>
+        <li>A la herramienta de IA solo se le entrega el resultado de la función que invocó (listas de perfiles, resultados de inspección de artefactos, estado de App Store Connect y Google Play, etc.). No se entregan el contenido de las claves de API, las rutas de los archivos de clave ni el Issuer ID. Cómo trata la herramienta de IA los resultados recibidos (por ejemplo, si los envía a un servicio de IA) depende de la política de la herramienta o el servicio de IA que uses.</li>
+        <li>Las solicitudes de acciones (volver a crear perfiles, cambiar datos de la tienda, enviar a revisión, etc.) solo se envían a las API de Apple y Google de la tabla anterior si has activado «Permitir solicitudes de acciones», y únicamente las que apruebes tú en la ventana de aprobación de ShouArchive para cada solicitud o las que hayas fijado en «Ejecutar sin aprobar» para una herramienta.</li>
       </ul>
 
       <h2>4. Lo que se guarda en tu Mac</h2>
@@ -89,6 +95,7 @@
         <li>El contenido de las claves de API se guarda en el <strong>llavero</strong> de este Mac y no se sincroniza con el Llavero de iCloud. De las claves elegidas como archivo solo se recuerda la ubicación del archivo.</li>
         <li>El historial de actividad de los perfiles y el historial de compilaciones se guardan solo en local y pueden borrarse desde la app.</li>
         <li>La lista de noticias que descarga la pestaña Noticias y las que ya leíste se guardan solo en este Mac.</li>
+        <li>Los ajustes de la integración con IA (permisos de conexión y de acciones, modo de aprobación por herramienta), el historial de solicitudes de acciones y los datos de las herramientas de IA conectadas en este momento se guardan solo en este Mac. Puedes borrar el historial de solicitudes de acciones en Ajustes › Integración con IA.</li>
         <li>La clave de licencia y el resultado de su comprobación se guardan en este Mac. Lo que guarda el servidor de licencias se indica en la sección 5.</li>
         <li>La app no elimina los archivos que colocaste tú mismo, como el archivo <code>.p8</code> o los resultados de compilación.</li>
       </ul>
@@ -193,7 +200,7 @@
       <p><strong>Responsable de protección de datos</strong> — Representante <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20Consulta&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>Información recibida por correo de consulta</strong> — los correos que envías a support@shouarchive.beakbig.com (remitente · asunto · cuerpo · adjuntos) se usan únicamente para responder a la consulta y resolver el problema, y se conservan en el buzón del vendedor. Procura que los adjuntos no contengan archivos de clave (<code>.p8</code>) ni información sensible.</p>
 
-      <p class="meta">Fecha de entrada en vigor: 31 de octubre de 2026 · Desarrollador y vendedor: Beakbig</p>
+      <p class="meta">Fecha de entrada en vigor: 3 de noviembre de 2026 · Desarrollador y vendedor: Beakbig</p>
     </div>
   </section>
 </main>

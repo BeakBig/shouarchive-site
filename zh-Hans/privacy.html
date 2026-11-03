@@ -43,14 +43,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>隐私政策</h1>
-      <p>ShouArchive (macOS) · 生效日期 2026年10月31日 · 开发者 · 销售者 Beakbig</p>
+      <p>ShouArchive (macOS) · 生效日期 2026年11月3日 · 开发者 · 销售者 Beakbig</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
       <div class="note">
-        <p><strong>摘要。</strong>应用没有分析工具 · 跟踪 · 广告 · 账户。本网站只使用不用 Cookie 的访问统计（Cloudflare Web Analytics — 不识别个人的汇总数据）（第 6 项）。检查的文件只在 Mac 上读取。App Store Connect · Google Play 功能使用你亲自登记的密钥直接连接 Apple · Google。发送给销售者的只有验证许可证时的<strong>许可证密钥 · 设备标识值 · Mac 型号 · 应用版本</strong>、注册、重新获取、更换密钥或删除记录时的购买邮箱地址（第 5 项）、作为记录商户处理支付的 <strong>Paddle</strong> 转交的购买信息（第 7 项），以及您通过咨询邮件直接发来的内容（第 14 项）。</p>
+        <p><strong>摘要。</strong>应用没有分析工具 · 跟踪 · 广告 · 账户。本网站只使用不用 Cookie 的访问统计（Cloudflare Web Analytics — 不识别个人的汇总数据）（第 6 项）。检查的文件只在 Mac 上读取。App Store Connect · Google Play 功能使用你亲自登记的密钥直接连接 Apple · Google。开启 AI 集成后，只会把你所连接的 AI 工具调用的功能的结果交给该工具（第 3 项）。发送给销售者的只有验证许可证时的<strong>许可证密钥 · 设备标识值 · Mac 型号 · 应用版本</strong>、注册、重新获取、更换密钥或删除记录时的购买邮箱地址（第 5 项）、作为记录商户处理支付的 <strong>Paddle</strong> 转交的购买信息（第 7 项），以及您通过咨询邮件直接发来的内容（第 14 项）。</p>
       </div>
 
       <h2>1. 不收集的信息</h2>
@@ -74,13 +74,19 @@
           <tr><td>Google Play 上传 · 商店分发</td><td>Google Play Developer API（<code>androidpublisher.googleapis.com</code> · <code>oauth2.googleapis.com</code>）</td><td>用服务账号密钥签名的身份验证请求，以及你选择的 AAB · APK · 商店信息 · 截图</td></tr>
           <tr><td>构建 · 上传应用 · 设备安装</td><td>Apple · Google 的开发工具（<code>xcodebuild</code> · <code>gradle</code> 等）所连接的地方</td><td>这些工具按各自的方式通信。下载依赖项的仓库（Maven 等）也包括在内</td></tr>
           <tr><td>许可证激活 · 验证 · 解除，已注册 Mac 列表，重新获取密钥 · 更换密钥，开始支付 · 管理付款链接，免费期查询</td><td>销售者的许可证服务器</td><td>第 5 项</td></tr>
-          <tr><td>检查更新 · 下载安装文件</td><td>销售者发布的更新列表（<code>shouarchive.beakbig.com</code>） · 安装文件（<code>download.beakbig.com</code>，Cloudflare R2）</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收更新列表，不发送其他值。下载安装文件时，IP 地址和 User-Agent 会为传送文件而由 Cloudflare 处理。应用会在第二次启动时询问是否开启自动检查；开启后每天检查一次更新列表。可在 设置 › 通用 中关闭。</td></tr>
+          <tr><td>检查更新 · 下载安装文件</td><td>销售者发布的更新列表（<code>shouarchive.beakbig.com</code>） · 安装文件（<code>download.beakbig.com</code>，Cloudflare R2）</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收更新列表，不发送其他值。下载安装文件时，IP 地址和 User-Agent 会为传送文件而由 Cloudflare 处理。应用会在第二次启动时询问是否开启自动检查；开启后会在启动应用时以及每天检查一次更新列表。可在 设置 › 通用 中关闭。</td></tr>
           <tr><td>获取资讯</td><td>销售者发布的资讯列表（<code>shouarchive.beakbig.com</code>）</td><td>普通的网页请求（包含应用名称 · 版本的 User-Agent）。只接收资讯列表，不发送其他值。在打开应用和打开“资讯”标签页时（每 6 小时最多一次）以及点按刷新时获取。可在 设置 › 通用 中关闭自动获取。</td></tr>
         </tbody>
       </table>
       <ul>
         <li>App Store Connect 的 <code>.p8</code> 私钥和 Google 服务账号密钥保存在你的 Mac 上。应用在<strong>本地</strong>签名请求所需的令牌，密钥本身不会发送到包括 Apple · Google 在内的任何地方。</li>
         <li>Apple · Google 如何处理这些请求，遵循各公司的开发者协议和隐私政策。</li>
+      </ul>
+      <h3>AI 集成</h3>
+      <p>在 设置 › AI 集成 中允许连接后（默认关闭），你在这台 Mac 上使用的 AI 工具（Claude Code · Cursor 等）会运行 ShouArchive，并在同一台 Mac 内与其交互。ShouArchive 不会直接向任何 AI 服务发送内容。</p>
+      <ul>
+        <li>交给 AI 工具的只有该工具所调用功能的结果（描述文件列表 · 产物检查结果 · App Store Connect · Google Play 状态等）。API 密钥正文 · 密钥文件路径 · Issuer ID 不会交出。AI 工具如何处理收到的结果（是否发送到 AI 服务等），遵循你所使用的 AI 工具 · 服务的政策。</li>
+        <li>执行请求（重新创建描述文件 · 更改商店信息 · 提交审核等）仅在开启“允许执行请求”时才会发送，且只发送你在 ShouArchive 批准窗口中逐条请求批准的内容，或你为某个工具设为“无需批准即执行”的内容，发往上表中的 Apple · Google API。</li>
       </ul>
 
       <h2>4. 保存在 Mac 上的数据</h2>
@@ -89,6 +95,7 @@
         <li>API 密钥正文保存在这台 Mac 的<strong>钥匙串</strong>中，不会通过 iCloud 钥匙串同步。以文件形式选择的密钥只记住该文件的位置。</li>
         <li>描述文件活动记录 · 构建记录只保存在本地，可以在应用中删除。</li>
         <li>“资讯”标签页获取的资讯列表和已读记录只保存在这台 Mac 上。</li>
+        <li>AI 集成设置（连接 · 执行许可，各工具的批准方式）、执行请求记录以及当前已连接的 AI 工具的信息只保存在这台 Mac 上。执行请求记录可在 设置 › AI 集成 中删除。</li>
         <li>许可证密钥和验证结果保存在这台 Mac 上。许可证服务器上保存的内容见第 5 项。</li>
         <li><code>.p8</code> 文件和构建产物等你自己放置的文件，应用不会删除。</li>
       </ul>
@@ -193,7 +200,7 @@
       <p><strong>个人信息保护负责人</strong> — 代表 <span data-price="seller.owner">Hyunjin Kang</span> · <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-PRIV%5D%20%E5%92%A8%E8%AF%A2&amp;body=%0A%0A%0A---%0A%E6%9D%A5%E8%87%AA%E9%A1%B5%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hans%2Fprivacy%20%28W-PRIV%29">support@shouarchive.beakbig.com</a></p>
       <p><strong>通过咨询邮件收到的信息</strong> — 您发送至 support@shouarchive.beakbig.com 的邮件（发件地址 · 主题 · 正文 · 附件）仅用于回复咨询和解决问题，并保存在销售者的邮箱中。请勿在附件中包含密钥文件（<code>.p8</code>）或敏感信息。</p>
 
-      <p class="meta">生效日期：2026年10月31日 · 开发者 · 销售者：Beakbig</p>
+      <p class="meta">生效日期：2026年11月3日 · 开发者 · 销售者：Beakbig</p>
     </div>
   </section>
 </main>

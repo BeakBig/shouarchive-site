@@ -49,6 +49,17 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-1-1">1.1.1 — 2026年11月4日</h2>
+      <h3>新增</h3>
+      <ul>
+        <li><strong>产物检查</strong> — 新增“检查记录”：已检查的安装文件（文件、应用名称、Bundle ID、版本、签名、结果）会累积保存，每条都可添加备注。点击“打开已生成的文件”左侧的按钮打开</li>
+        <li><strong>应用构建</strong> — 将 iOS 构建所用的 Swift 编译设置（SWIFT_ACTIVE_COMPILATION_CONDITIONS、OTHER_SWIFT_FLAGS、优化级别等）记录在历史记录中。用产物检查打开该 IPA 时，会在“配置”中显示（这些值不会保留在 IPA 中，因此只有用 ShouArchive 构建的 IPA 才会显示）</li>
+      </ul>
+      <h3>变更</h3>
+      <ul>
+        <li><strong>Android</strong> — 底部菜单中的产物检查已与 iOS 一样移到“构建”中</li>
+      </ul>
+
       <h2 id="v1-1-0">1.1.0 — 2026年11月3日</h2>
       <h3>新增</h3>
       <ul>

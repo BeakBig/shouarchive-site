@@ -127,23 +127,25 @@
   window.addEventListener('hashchange', openFromHash);
   openFromHash();
 
-  // 스크롤하면 지금 보는 버전을 목록에 표시
-  if ('IntersectionObserver' in window) {
-    var visible = new Set();
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
-      });
-      var first = cards.find(function (c) { return visible.has(c); });
-      links.forEach(function (l, i) {
-        var current = cards[i] === first;
-        l.classList.toggle('current', current);
-        if (current && nav.scrollWidth > nav.clientWidth) {
-          // 좁은 화면(가로 목록)에서는 지금 버전이 보이게 옆으로 민다
-          nav.scrollLeft = l.offsetLeft - nav.clientWidth / 2 + l.clientWidth / 2;
-        }
-      });
-    }, { rootMargin: '-90px 0px -55% 0px' });
-    cards.forEach(function (c) { observer.observe(c); });
+  // 스크롤하면 지금 보는 버전을 목록에 표시 — 머리 아래 선(120px)을 지난 마지막 카드
+  var ticking = false;
+  function markCurrent() {
+    ticking = false;
+    var line = 120;
+    var current = 0;
+    cards.forEach(function (c, i) { if (c.getBoundingClientRect().top <= line) current = i; });
+    links.forEach(function (l, i) {
+      var on = i === current;
+      l.classList.toggle('current', on);
+      if (on && nav.scrollWidth > nav.clientWidth) {
+        // 좁은 화면(가로 목록)에서는 지금 버전이 보이게 옆으로 민다
+        nav.scrollLeft = l.offsetLeft - nav.clientWidth / 2 + l.clientWidth / 2;
+      }
+    });
   }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(markCurrent); }
+  }, { passive: true });
+  cards.forEach(function (c) { c.addEventListener('toggle', markCurrent); });
+  markCurrent();
 })();

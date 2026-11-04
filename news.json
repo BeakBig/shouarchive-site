@@ -2,6 +2,60 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-03-siri-ai-developer-preview",
+      "platforms": [
+        "ios"
+      ],
+      "category": "platform",
+      "published": "2026-11-03",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=gdk2umrf",
+      "title": {
+        "ko": "Siri AI 개발자 프리뷰 — iOS 27.3 베타부터 App Intents 로 연결",
+        "en": "Siri AI Developer Preview — integrate via App Intents starting with the iOS 27.3 beta",
+        "ja": "Siri AI デベロッパプレビュー — iOS 27.3 ベータから App Intents で連携",
+        "zh-Hans": "Siri AI 开发者预览版 — 从 iOS 27.3 Beta 起通过 App Intents 集成",
+        "zh-Hant": "Siri AI 開發者預覽版 — 從 iOS 27.3 Beta 起透過 App Intents 整合",
+        "es": "Vista previa para desarrolladores de Siri AI: integra tu app con App Intents desde la beta de iOS 27.3"
+      },
+      "summary": {
+        "ko": "iOS · iPadOS · macOS · visionOS 27.3 베타에서 누구나 App Intents 로 앱의 콘텐츠와 동작을 Siri AI 에 연결해 볼 수 있고, 여러 동작을 하나로 묶는 Skills 와 Spotlight 의미 인덱스도 쓸 수 있습니다. App Store 제출은 봄에 열리고 고객에게는 몇 달 뒤 나오므로, 지금은 베타에서 연결을 만들어 보고 의견을 보내는 단계입니다.",
+        "en": "In the iOS, iPadOS, macOS and visionOS 27.3 betas, any developer can connect app content and actions to Siri AI with App Intents, and use Skills to combine several actions plus the Spotlight semantic index. App Store submissions open in the spring and Siri AI reaches customers in a few months, so for now you can build integrations in the betas and send feedback.",
+        "ja": "iOS・iPadOS・macOS・visionOS 27.3 ベータで、誰でも App Intents を使ってアプリのコンテンツやアクションを Siri AI につなげられ、複数のアクションをまとめる Skills や Spotlight のセマンティックインデックスも使えます。App Store への提出は春に始まり、ユーザーへの提供は数か月後のため、今はベータで連携を作ってフィードバックを送る段階です。",
+        "zh-Hans": "在 iOS、iPadOS、macOS 和 visionOS 27.3 Beta 中，任何开发者都可以用 App Intents 将应用的内容和操作接入 Siri AI，还可使用将多个操作组合起来的 Skills 以及 Spotlight 语义索引。App Store 提交将于春季开放，几个月后才向用户推出，目前可先在 Beta 中构建集成并提交反馈。",
+        "zh-Hant": "在 iOS、iPadOS、macOS 與 visionOS 27.3 Beta 中，任何開發者都能用 App Intents 將 App 的內容與動作接入 Siri AI，也能使用將多個動作組合起來的 Skills 及 Spotlight 語意索引。App Store 提交將於春季開放，幾個月後才會推出給使用者，目前可先在 Beta 中建立整合並回報意見。",
+        "es": "En las betas de iOS, iPadOS, macOS y visionOS 27.3, cualquier desarrollador puede conectar el contenido y las acciones de su app a Siri AI con App Intents, y usar Skills para combinar varias acciones y el índice semántico de Spotlight. El envío a la App Store abre en primavera y Siri AI llegará a los usuarios en unos meses, así que por ahora puedes crear integraciones en las betas y enviar comentarios."
+      }
+    },
+    {
+      "id": "2026-11-03-os-27-3-betas",
+      "platforms": [
+        "ios"
+      ],
+      "category": "platform",
+      "published": "2026-11-03",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=6gpufove",
+      "title": {
+        "ko": "iOS · iPadOS · macOS 27.3 베타 공개 — Xcode 27.3 으로 시험",
+        "en": "iOS, iPadOS and macOS 27.3 betas available — test with Xcode 27.3",
+        "ja": "iOS・iPadOS・macOS 27.3 ベータを公開 — Xcode 27.3 でテスト",
+        "zh-Hans": "iOS、iPadOS、macOS 27.3 Beta 发布 — 用 Xcode 27.3 测试",
+        "zh-Hant": "iOS、iPadOS、macOS 27.3 Beta 推出 — 用 Xcode 27.3 測試",
+        "es": "Ya están las betas de iOS, iPadOS y macOS 27.3: prueba con Xcode 27.3"
+      },
+      "summary": {
+        "ko": "iOS · iPadOS · macOS · tvOS · visionOS · watchOS 27.3 베타가 나왔습니다. Xcode 27.3 으로 빌드해 앱이 이 버전들에서 그대로 동작하는지 확인해 두세요.",
+        "en": "Betas of iOS, iPadOS, macOS, tvOS, visionOS and watchOS 27.3 are out. Build with Xcode 27.3 and check that your app works as expected on these releases.",
+        "ja": "iOS・iPadOS・macOS・tvOS・visionOS・watchOS 27.3 のベータが公開されました。Xcode 27.3 でビルドし、アプリがこれらのバージョンで問題なく動くか確認しておきましょう。",
+        "zh-Hans": "iOS、iPadOS、macOS、tvOS、visionOS 和 watchOS 27.3 Beta 已发布。请用 Xcode 27.3 构建，确认应用在这些版本上运行正常。",
+        "zh-Hant": "iOS、iPadOS、macOS、tvOS、visionOS 與 watchOS 27.3 Beta 已推出。請用 Xcode 27.3 建置，確認 App 在這些版本上運作正常。",
+        "es": "Ya están disponibles las betas de iOS, iPadOS, macOS, tvOS, visionOS y watchOS 27.3. Compila con Xcode 27.3 y comprueba que tu app funciona bien en estas versiones."
+      }
+    },
+    {
       "id": "2026-11-02-age-rating-shared-location-dating",
       "platforms": [
         "ios"

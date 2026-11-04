@@ -636,3 +636,108 @@ button.btn:disabled { opacity: .5; cursor: default; transform: none; filter: non
   }
   .cta p.mac-note { margin: 0 auto 16px; }
 }
+
+/* ── 변경 사항 (assets/changelog.js · 2026-11-04) ──────────────────────────
+   버전 목록(왼쪽, 좁으면 위 가로) + 버전마다 접는 카드. HTML 은 그대로 두고 스크립트가 이 꼴로 바꾼다 */
+.doc .wrap.changelog-wide { max-width: var(--max); }
+.changelog-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.release-side { position: sticky; top: 84px; }
+.release-index {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+}
+.release-index a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.release-index a b { color: var(--text); font-weight: 600; }
+.release-index a small { font-size: 12px; }
+.release-index a:hover { background: var(--accent-soft); }
+.release-index a.current { background: var(--accent-soft); }
+.release-index a.current b { color: var(--accent); }
+.release-toggle {
+  margin-top: 12px;
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.release-toggle:hover { color: var(--text); }
+.releases { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.release {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.release > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+}
+.release > summary::-webkit-details-marker { display: none; }
+.release > summary::before {
+  content: "›";
+  flex: none;
+  width: 14px;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+.release[open] > summary::before { transform: rotate(90deg); }
+.doc .release > summary h2 { margin: 0; font-size: 19px; scroll-margin-top: 90px; }
+.release-latest {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+.release-meta { margin-left: auto; color: var(--muted); font-size: 13px; text-align: right; }
+.release-body { padding: 2px 22px 12px 44px; border-top: 1px solid var(--line); }
+.release-body h3:first-child { margin-top: 16px; }
+@media (max-width: 859px) {
+  .changelog-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .release-side {
+    top: 60px;
+    z-index: 5;
+    margin: 0 -16px;
+    padding: 8px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .release-index { flex-direction: row; overflow-x: auto; max-height: none; gap: 4px; scrollbar-width: none; }
+  .release-index::-webkit-scrollbar { display: none; }
+  .release-index a { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+  .release-index a small { display: none; }
+  .release-toggle { display: none; }
+  .release > summary { padding: 14px 16px; flex-wrap: wrap; }
+  .release-meta { width: 100%; margin-left: 24px; text-align: left; }
+  .release-body { padding: 2px 16px 10px 24px; }
+}

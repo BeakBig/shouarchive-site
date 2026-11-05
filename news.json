@@ -2,6 +2,60 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-04-subscription-retention-messages",
+      "platforms": [
+        "ios"
+      ],
+      "category": "business",
+      "published": "2026-11-04",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=fk9ps3gv",
+      "title": {
+        "ko": "구독 해지 화면에 띄우는 「유지 메시지」 — App Store Connect · Retention Messaging API",
+        "en": "Retention messages for subscriptions — App Store Connect and the Retention Messaging API",
+        "ja": "サブスクリプション解約画面の「リテンションメッセージ」— App Store Connect・Retention Messaging API",
+        "zh-Hans": "订阅取消流程中的挽留消息 — App Store Connect 与 Retention Messaging API",
+        "zh-Hant": "訂閱取消流程中的挽留訊息 — App Store Connect 與 Retention Messaging API",
+        "es": "Mensajes de retención para suscripciones — App Store Connect y la Retention Messaging API"
+      },
+      "summary": {
+        "ko": "자동 갱신 구독을 해지하려는 사용자에게 해지 흐름 안에서 구독의 가치를 알리는 메시지(글 · 이미지 · 특별 할인)를 보여 줄 수 있게 됐습니다. App Store Connect 에서 메시지와 받을 사용자 조건 · 메시지 사이 대기 시간을 정하고, 사용자마다 다른 메시지를 고르려면 Retention Messaging API 사용을 신청하세요.",
+        "en": "You can now show subscribers who are about to cancel an auto-renewable subscription a message about its value — text, an image or a special offer — right in the cancellation flow. Set up the messages, who is eligible and the wait time between messages in App Store Connect, and request access to the Retention Messaging API if you want to pick a message per subscriber.",
+        "ja": "自動更新サブスクリプションを解約しようとしているユーザーに、解約の流れの中でサブスクリプションの価値を伝えるメッセージ(テキスト・画像・特別オファー)を表示できるようになりました。App Store Connect でメッセージ、対象となるユーザーの条件、メッセージ間の待ち時間を設定し、ユーザーごとにメッセージを選びたい場合は Retention Messaging API の利用を申請してください。",
+        "zh-Hans": "现在可以在自动续期订阅的取消流程中，向准备取消的订阅者显示说明订阅价值的消息（文字、图片或优惠）。请在 App Store Connect 中设置消息、适用的订阅者条件和消息之间的等待时间；如需按订阅者选择不同消息，请申请使用 Retention Messaging API。",
+        "zh-Hant": "現在可以在自動續訂訂閱的取消流程中，向準備取消的訂閱者顯示說明訂閱價值的訊息（文字、圖片或優惠）。請在 App Store Connect 中設定訊息、適用的訂閱者條件與訊息之間的等待時間；若要依訂閱者選擇不同訊息，請申請使用 Retention Messaging API。",
+        "es": "Ahora puedes mostrar a quien está a punto de cancelar una suscripción con renovación automática un mensaje sobre su valor —texto, una imagen o una oferta especial— dentro del propio flujo de cancelación. Configura los mensajes, quién es elegible y el tiempo de espera entre mensajes en App Store Connect, y solicita acceso a la Retention Messaging API si quieres elegir un mensaje para cada suscriptor."
+      }
+    },
+    {
+      "id": "2026-11-04-jetpack-compose-adaptive-updates",
+      "platforms": [
+        "android"
+      ],
+      "category": "platform",
+      "published": "2026-11-04",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/build-for-every-screen-jetpack-compose-updates",
+      "title": {
+        "ko": "Jetpack Compose 소식 — 1.13 의 Grid · FlexBox, AppState 알파, Navigation 3 1.2 딥 링크",
+        "en": "Jetpack Compose updates — Grid and FlexBox in 1.13, AppState alpha, deep links in Navigation 3 1.2",
+        "ja": "Jetpack Compose の新情報 — 1.13 の Grid・FlexBox、AppState アルファ、Navigation 3 1.2 のディープリンク",
+        "zh-Hans": "Jetpack Compose 更新 — 1.13 的 Grid 与 FlexBox、AppState Alpha、Navigation 3 1.2 深层链接",
+        "zh-Hant": "Jetpack Compose 更新 — 1.13 的 Grid 與 FlexBox、AppState Alpha、Navigation 3 1.2 深層連結",
+        "es": "Novedades de Jetpack Compose — Grid y FlexBox en 1.13, AppState en alfa y enlaces profundos en Navigation 3 1.2"
+      },
+      "summary": {
+        "ko": "곧 나올 Compose 1.13 안정판에 적응형 레이아웃용 Grid · FlexBox 와 Progressive Blur · 서식 있는 텍스트가 들어가고, BasicTextField 가 TextFieldState 기반으로 새로 쓰였으며, Compose 상태를 앱 구조로 넓히는 Jetpack AppState 가 알파로, Navigation 3 1.2 에는 타입 안전 딥 링크가 들어왔습니다. 접는 기기 · 태블릿 · 데스크톱까지 여러 화면에 맞추려면 Dev Summit 세션 영상과 코딩 에이전트용 Android skills(Adaptive · Compose 성능 · XML 에서 Compose 로 옮기기)를 참고하세요.",
+        "en": "The upcoming Compose 1.13 stable release adds Grid and FlexBox for adaptive layouts plus Progressive Blur and formatted text, BasicTextField has been rewritten around TextFieldState, Jetpack AppState brings Compose state into your app architecture in alpha, and Navigation 3 1.2 adds type-safe deep links. To fit foldables, tablets and desktop screens, see the Dev Summit sessions and the Android skills for coding agents (Adaptive, Compose performance, XML-to-Compose migration).",
+        "ja": "まもなく公開される Compose 1.13 安定版に、アダプティブレイアウト向けの Grid・FlexBox と Progressive Blur・書式付きテキストが加わり、BasicTextField は TextFieldState ベースに書き直されました。Compose の状態をアプリの構造に広げる Jetpack AppState がアルファで登場し、Navigation 3 1.2 には型安全なディープリンクが入りました。折りたたみ端末・タブレット・デスクトップまで画面に合わせるには、Dev Summit のセッション動画とコーディングエージェント向けの Android skills(Adaptive・Compose パフォーマンス・XML から Compose への移行)を参考にしてください。",
+        "zh-Hans": "即将推出的 Compose 1.13 稳定版加入了用于自适应布局的 Grid 与 FlexBox，以及 Progressive Blur 和格式化文本；BasicTextField 以 TextFieldState 为基础重写，把 Compose 状态扩展到应用架构的 Jetpack AppState 推出 Alpha 版，Navigation 3 1.2 加入了类型安全的深层链接。要适配折叠屏、平板和桌面等各种屏幕，请参考 Dev Summit 会议视频以及面向编码代理的 Android skills（Adaptive、Compose 性能、从 XML 迁移到 Compose）。",
+        "zh-Hant": "即將推出的 Compose 1.13 穩定版加入了用於自動調整版面的 Grid 與 FlexBox，以及 Progressive Blur 和格式化文字；BasicTextField 以 TextFieldState 為基礎重寫，把 Compose 狀態延伸到應用程式架構的 Jetpack AppState 推出 Alpha 版，Navigation 3 1.2 加入了型別安全的深層連結。若要配合折疊裝置、平板和桌面等各種螢幕，請參考 Dev Summit 議程影片以及給程式設計代理使用的 Android skills（Adaptive、Compose 效能、從 XML 遷移到 Compose）。",
+        "es": "La próxima versión estable de Compose 1.13 añade Grid y FlexBox para diseños adaptables, además de Progressive Blur y texto con formato; BasicTextField se ha reescrito en torno a TextFieldState, Jetpack AppState lleva el estado de Compose a la arquitectura de la app en alfa y Navigation 3 1.2 añade enlaces profundos con seguridad de tipos. Para adaptarte a plegables, tabletas y escritorio, consulta las sesiones de la Dev Summit y las Android skills para agentes de programación (Adaptive, rendimiento de Compose, migración de XML a Compose)."
+      }
+    },
+    {
       "id": "2026-11-03-siri-ai-developer-preview",
       "platforms": [
         "ios"

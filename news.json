@@ -534,6 +534,41 @@
       }
     },
     {
+      "id": "shouarchive-1.1.2",
+      "platforms": [
+        "shouarchive"
+      ],
+      "category": "update",
+      "version": "1.1.2",
+      "published": "2026-11-05",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-1-2",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-1-2",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-1-2",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-1-2",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-1-2",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-1-2"
+      },
+      "title": {
+        "ko": "ShouArchive 1.1.2",
+        "en": "ShouArchive 1.1.2",
+        "ja": "ShouArchive 1.1.2",
+        "zh-Hans": "ShouArchive 1.1.2",
+        "zh-Hant": "ShouArchive 1.1.2",
+        "es": "ShouArchive 1.1.2"
+      },
+      "summary": {
+        "ko": "- 새 버전 알림 — 새 버전이 나오면 메인 창 오른쪽 아래 모서리에 「새 버전이 나왔습니다. v1.1.3」 처럼 한 줄로 알려 줍니다. 누르면 소식 › ShouArchive 에서 바뀐 점을 보고 「업데이트」 할 수 있습니다\n- 산출물 검사 — 앱 언어가 简体中文 · 繁體中文 · Español 일 때 Android 결과의 「빌드 · 구성」 을 열면 앱이 꺼지던 문제를 고쳤습니다\n- 산출물 검사 — Android 「검사 기록」 에도 패키지명 · versionCode 가 남습니다",
+        "en": "- New version notice — When a new version is out, a one-line notice such as “A new version is available. v1.1.3” appears in the bottom-right corner of the main window. Click it to see what changed in News › ShouArchive and choose “Update”\n- Artifact Inspection — Fixed the app quitting when opening “Build · Configuration” in an Android result while the app language was 简体中文, 繁體中文 or Español\n- Artifact Inspection — Android entries in “Inspection History” now keep the package name and versionCode too",
+        "ja": "- 新しいバージョンのお知らせ — 新しいバージョンが出ると、メインウインドウの右下の角に「新しいバージョンがあります。v1.1.3」のように 1 行で知らせます。クリックするとニュース › ShouArchive で変更点を確認して「更新」できます\n- ビルド成果物検査 — アプリの言語が 简体中文・繁體中文・Español のとき、Android の結果で「ビルド · 構成」を開くとアプリが終了していた問題を修正しました\n- ビルド成果物検査 — Android の「検査履歴」にもパッケージ名・versionCode が残るようになりました",
+        "zh-Hans": "- 新版本提醒 — 有新版本时，会在主窗口右下角用一行提示，例如“有新版本。v1.1.3”。点击后可在 资讯 › ShouArchive 中查看变更并“更新”\n- 产物检查 — 修复了应用语言为简体中文、繁體中文或 Español 时，在 Android 结果中打开“构建 · 配置”会导致应用退出的问题\n- 产物检查 — Android 的“检查记录”现在也会保存包名和 versionCode",
+        "zh-Hant": "- 新版本提醒 — 有新版本時，會在主視窗右下角以一行提示，例如「有新版本。v1.1.3」。點一下即可在 資訊 › ShouArchive 查看變更並「更新」\n- 產物檢查 — 修正了 App 語言為简体中文、繁體中文或 Español 時，在 Android 結果中開啟「建置 · 組態」會讓 App 結束的問題\n- 產物檢查 — Android 的「檢查記錄」現在也會保存套件名稱和 versionCode",
+        "es": "- Aviso de nueva versión — Cuando sale una nueva versión, un aviso de una línea como «Hay una nueva versión. v1.1.3» aparece en la esquina inferior derecha de la ventana principal. Al pulsarlo ves los cambios en Noticias › ShouArchive y puedes elegir «Actualizar»\n- Inspección de artefactos — Se corrigió el cierre de la app al abrir «Compilación · Configuración» en un resultado de Android con la app en 简体中文, 繁體中文 o Español\n- Inspección de artefactos — Las entradas de Android en el «Historial de inspecciones» ahora también guardan el nombre del paquete y el versionCode"
+      }
+    },
+    {
       "id": "shouarchive-1.1.1",
       "platforms": [
         "shouarchive"
@@ -560,12 +595,12 @@
         "es": "ShouArchive 1.1.1"
       },
       "summary": {
-        "ko": "- 산출물 검사 — 「검사 기록」 을 새로 두었습니다. 검사한 설치 파일(파일 · 앱 이름 · 번들 ID · 버전 · 서명 · 결과)이 쌓이고 줄마다 메모를 남길 수 있습니다. 「만든 파일 열기」 왼쪽 버튼으로 엽니다\n- 앱 빌드 — iOS 빌드에 쓴 Swift 컴파일 설정(SWIFT_ACTIVE_COMPILATION_CONDITIONS · OTHER_SWIFT_FLAGS · 최적화 수준 등)을 히스토리에 남깁니다. 그 IPA 를 산출물 검사로 열면 「구성」 에서 보여 줍니다 (이 값은 IPA 안에 남지 않아, ShouArchive 로 빌드한 IPA 에만 보입니다)\n- Android — 아래 메뉴에서 산출물 검사를 iOS 처럼 「빌드」 안으로 옮겼습니다",
-        "en": "- Artifact Inspection — New “Inspection History”: the install files you inspect (file, app name, bundle ID, version, signing, result) are listed, and you can add a note to each. Open it with the button to the left of “Open Built File”\n- App Build — The Swift compile settings used for an iOS build (SWIFT_ACTIVE_COMPILATION_CONDITIONS, OTHER_SWIFT_FLAGS, optimization level and more) are saved in History. Open that IPA in Artifact Inspection to see them under “Configuration” (these values aren’t stored inside an IPA, so only IPAs built with ShouArchive show them)\n- Android — In the bottom menu, Artifact Inspection now sits inside “Build”, as on iOS",
-        "ja": "- ビルド成果物検査 — 「検査履歴」を追加しました。検査したインストールファイル（ファイル・アプリ名・バンドル ID・バージョン・署名・結果）がたまり、行ごとにメモを残せます。「作ったファイルを開く」の左のボタンで開きます\n- アプリのビルド — iOS ビルドで使った Swift のコンパイル設定（SWIFT_ACTIVE_COMPILATION_CONDITIONS・OTHER_SWIFT_FLAGS・最適化レベルなど）を履歴に残します。その IPA をビルド成果物検査で開くと「構成」に表示します（この値は IPA に残らないため、ShouArchive でビルドした IPA にだけ表示されます）\n- Android — 下のメニューで、ビルド成果物検査を iOS と同じく「ビルド」の中に移しました",
-        "zh-Hans": "- 产物检查 — 新增“检查记录”：已检查的安装文件（文件、应用名称、Bundle ID、版本、签名、结果）会累积保存，每条都可添加备注。点击“打开已生成的文件”左侧的按钮打开\n- 应用构建 — 将 iOS 构建所用的 Swift 编译设置（SWIFT_ACTIVE_COMPILATION_CONDITIONS、OTHER_SWIFT_FLAGS、优化级别等）记录在历史记录中。用产物检查打开该 IPA 时，会在“配置”中显示（这些值不会保留在 IPA 中，因此只有用 ShouArchive 构建的 IPA 才会显示）\n- Android — 底部菜单中的产物检查已与 iOS 一样移到“构建”中",
-        "zh-Hant": "- 產物檢查 — 新增「檢查記錄」：已檢查的安裝檔（檔案、App 名稱、Bundle ID、版本、簽署、結果）會累積保存，每筆都能加上備註。點「開啟已產生的檔案」左側的按鈕開啟\n- App 建置 — 將 iOS 建置所用的 Swift 編譯設定（SWIFT_ACTIVE_COMPILATION_CONDITIONS、OTHER_SWIFT_FLAGS、最佳化等級等）記錄在歷史記錄中。用產物檢查開啟該 IPA 時，會在「配置」中顯示（這些值不會保留在 IPA 中，因此只有用 ShouArchive 建置的 IPA 才會顯示）\n- Android — 底部選單中的產物檢查已和 iOS 一樣移到「建置」中",
-        "es": "- Inspección de artefactos — Nuevo «Historial de inspecciones»: se guardan los archivos de instalación que inspeccionas (archivo, nombre de la app, ID de paquete, versión, firma, resultado) y puedes añadir una nota a cada uno. Se abre con el botón a la izquierda de «Abrir archivo compilado»\n- Compilación de la app — Los ajustes de compilación de Swift usados en una compilación de iOS (SWIFT_ACTIVE_COMPILATION_CONDITIONS, OTHER_SWIFT_FLAGS, nivel de optimización, etc.) se guardan en el historial. Al abrir ese IPA en Inspección de artefactos se muestran en «Configuración» (estos valores no se guardan dentro del IPA, así que solo aparecen en los IPA compilados con ShouArchive)\n- Android — En el menú inferior, Inspección de artefactos está ahora dentro de «Compilación», como en iOS"
+        "ko": "- 산출물 검사 — 「검사 기록」 을 새로 두었습니다. 검사한 설치 파일(파일 · 앱 이름 · 버전 · 결과, iOS 는 번들 ID · 서명까지)이 쌓이고 줄마다 메모를 남길 수 있습니다. 「만든 파일 열기」 왼쪽 버튼으로 엽니다\n- 앱 빌드 — iOS 빌드에 쓴 Swift 컴파일 설정(SWIFT_ACTIVE_COMPILATION_CONDITIONS · OTHER_SWIFT_FLAGS · 최적화 수준 등)을 히스토리에 남깁니다. 그 IPA 를 산출물 검사로 열면 「구성」 에서 보여 줍니다 (이 값은 IPA 안에 남지 않아, ShouArchive 로 빌드한 IPA 에만 보입니다)\n- Android — 아래 메뉴에서 산출물 검사를 iOS 처럼 「빌드」 안으로 옮겼습니다",
+        "en": "- Artifact Inspection — New “Inspection History”: the install files you inspect (file, app name, version and result; bundle ID and signing too for iOS) are listed, and you can add a note to each. Open it with the button to the left of “Open Built File”\n- App Build — The Swift compile settings used for an iOS build (SWIFT_ACTIVE_COMPILATION_CONDITIONS, OTHER_SWIFT_FLAGS, optimization level and more) are saved in History. Open that IPA in Artifact Inspection to see them under “Configuration” (these values aren’t stored inside an IPA, so only IPAs built with ShouArchive show them)\n- Android — In the bottom menu, Artifact Inspection now sits inside “Build”, as on iOS",
+        "ja": "- ビルド成果物検査 — 「検査履歴」を追加しました。検査したインストールファイル（ファイル・アプリ名・バージョン・結果、iOS はバンドル ID・署名も）がたまり、行ごとにメモを残せます。「作ったファイルを開く」の左のボタンで開きます\n- アプリのビルド — iOS ビルドで使った Swift のコンパイル設定（SWIFT_ACTIVE_COMPILATION_CONDITIONS・OTHER_SWIFT_FLAGS・最適化レベルなど）を履歴に残します。その IPA をビルド成果物検査で開くと「構成」に表示します（この値は IPA に残らないため、ShouArchive でビルドした IPA にだけ表示されます）\n- Android — 下のメニューで、ビルド成果物検査を iOS と同じく「ビルド」の中に移しました",
+        "zh-Hans": "- 产物检查 — 新增“检查记录”：已检查的安装文件（文件、应用名称、版本、结果；iOS 还包括 Bundle ID 和签名）会累积保存，每条都可添加备注。点击“打开已生成的文件”左侧的按钮打开\n- 应用构建 — 将 iOS 构建所用的 Swift 编译设置（SWIFT_ACTIVE_COMPILATION_CONDITIONS、OTHER_SWIFT_FLAGS、优化级别等）记录在历史记录中。用产物检查打开该 IPA 时，会在“配置”中显示（这些值不会保留在 IPA 中，因此只有用 ShouArchive 构建的 IPA 才会显示）\n- Android — 底部菜单中的产物检查已与 iOS 一样移到“构建”中",
+        "zh-Hant": "- 產物檢查 — 新增「檢查記錄」：已檢查的安裝檔（檔案、App 名稱、版本、結果；iOS 還包括 Bundle ID 和簽署）會累積保存，每筆都能加上備註。點「開啟已產生的檔案」左側的按鈕開啟\n- App 建置 — 將 iOS 建置所用的 Swift 編譯設定（SWIFT_ACTIVE_COMPILATION_CONDITIONS、OTHER_SWIFT_FLAGS、最佳化等級等）記錄在歷史記錄中。用產物檢查開啟該 IPA 時，會在「配置」中顯示（這些值不會保留在 IPA 中，因此只有用 ShouArchive 建置的 IPA 才會顯示）\n- Android — 底部選單中的產物檢查已和 iOS 一樣移到「建置」中",
+        "es": "- Inspección de artefactos — Nuevo «Historial de inspecciones»: se guardan los archivos de instalación que inspeccionas (archivo, nombre de la app, versión y resultado; en iOS también el ID de paquete y la firma) y puedes añadir una nota a cada uno. Se abre con el botón a la izquierda de «Abrir archivo compilado»\n- Compilación de la app — Los ajustes de compilación de Swift usados en una compilación de iOS (SWIFT_ACTIVE_COMPILATION_CONDITIONS, OTHER_SWIFT_FLAGS, nivel de optimización, etc.) se guardan en el historial. Al abrir ese IPA en Inspección de artefactos se muestran en «Configuración» (estos valores no se guardan dentro del IPA, así que solo aparecen en los IPA compilados con ShouArchive)\n- Android — En el menú inferior, Inspección de artefactos está ahora dentro de «Compilación», como en iOS"
       }
     },
     {

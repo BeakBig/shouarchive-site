@@ -49,10 +49,21 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-1-2">1.1.2 — November 5, 2026</h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>New version notice</strong> — When a new version is out, a one-line notice such as “A new version is available. v1.1.3” appears in the bottom-right corner of the main window. Click it to see what changed in News › ShouArchive and choose “Update”</li>
+      </ul>
+      <h3>Fixes</h3>
+      <ul>
+        <li><strong>Artifact Inspection</strong> — Fixed the app quitting when opening “Build · Configuration” in an Android result while the app language was 简体中文, 繁體中文 or Español</li>
+        <li><strong>Artifact Inspection</strong> — Android entries in “Inspection History” now keep the package name and versionCode too</li>
+      </ul>
+
       <h2 id="v1-1-1">1.1.1 — November 4, 2026</h2>
       <h3>New</h3>
       <ul>
-        <li><strong>Artifact Inspection</strong> — New “Inspection History”: the install files you inspect (file, app name, bundle ID, version, signing, result) are listed, and you can add a note to each. Open it with the button to the left of “Open Built File”</li>
+        <li><strong>Artifact Inspection</strong> — New “Inspection History”: the install files you inspect (file, app name, version and result; bundle ID and signing too for iOS) are listed, and you can add a note to each. Open it with the button to the left of “Open Built File”</li>
         <li><strong>App Build</strong> — The Swift compile settings used for an iOS build (SWIFT_ACTIVE_COMPILATION_CONDITIONS, OTHER_SWIFT_FLAGS, optimization level and more) are saved in History. Open that IPA in Artifact Inspection to see them under “Configuration” (these values aren’t stored inside an IPA, so only IPAs built with ShouArchive show them)</li>
       </ul>
       <h3>Changes</h3>

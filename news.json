@@ -2,6 +2,40 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-05-android-intelligence-system",
+      "platforms": [
+        "android"
+      ],
+      "category": "platform",
+      "published": "2026-11-05",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads?hl=es"
+      },
+      "title": {
+        "ko": "Android 인텔리전스 시스템 — Android MCP(AppFunctions) · ML Kit Agentic API · A2UI Compose 알파",
+        "en": "Android intelligence system — Android MCP (AppFunctions), ML Kit Agentic API, A2UI Compose renderer in alpha",
+        "ja": "Android インテリジェンス システム — Android MCP(AppFunctions)・ML Kit Agentic API・A2UI Compose レンダラー アルファ",
+        "zh-Hans": "Android 智能系统 — Android MCP（AppFunctions）、ML Kit Agentic API、A2UI Compose 渲染器 Alpha",
+        "zh-Hant": "Android 智慧系統 — Android MCP（AppFunctions）、ML Kit Agentic API、A2UI Compose 轉譯器 Alpha",
+        "es": "Sistema de inteligencia de Android — Android MCP (AppFunctions), ML Kit Agentic API y renderizador A2UI Compose en alfa"
+      },
+      "summary": {
+        "ko": "앱 기능을 기기 안의 에이전트(시스템 에이전트인 Gemini 나 앱 안의 에이전트)에 연결하는 Android MCP(AppFunctions Jetpack 라이브러리 기반)가 소개됐고, Gemini Nano 4 로 기기 안에서 함수 호출을 돌리는 ML Kit Agentic API, JSON 으로 Compose 화면을 그리는 A2UI Compose 렌더러(알파), APK 에서 런타임을 빼는 LiteRT in Google Play services 도 나왔습니다. Gemini 앱 · Google 검색에서 앱으로 바로 이어 주는 Connected Apps Platform 은 지금 Gemini Apps Developer Mode 로 직접 시험해 볼 수 있고, 실제 출시는 프리뷰 대기 명단에 신청해야 합니다(지금은 선정된 앱만).",
+        "en": "Google introduced Android MCP, built on the AppFunctions Jetpack library, for connecting your app's capabilities to on-device agents (the system agent, Gemini, or an in-app agent), along with the ML Kit Agentic API for on-device function calling with Gemini Nano 4, the A2UI Compose renderer in alpha for drawing Compose UI from JSON, and LiteRT in Google Play services, which takes the runtime out of your APK. You can try the Connected Apps Platform, which links your app to the Gemini app and Google Search, locally with Gemini Apps Developer Mode now; going live requires joining the preview waitlist, currently limited to selected apps.",
+        "ja": "アプリの機能をデバイス上のエージェント(システム エージェントの Gemini やアプリ内エージェント)につなぐ Android MCP(AppFunctions Jetpack ライブラリがベース)が紹介され、Gemini Nano 4 でデバイス上の関数呼び出しを行う ML Kit Agentic API、JSON から Compose の画面を描く A2UI Compose レンダラー(アルファ)、APK からランタイムを外せる LiteRT in Google Play services も登場しました。Gemini アプリや Google 検索からアプリへ直接つなぐ Connected Apps Platform は今すぐ Gemini Apps Developer Mode で試せますが、本番公開にはプレビューの待機リストへの申請が必要です(現在は選ばれたアプリのみ)。",
+        "zh-Hans": "Google 推出了基于 AppFunctions Jetpack 库的 Android MCP，可将应用功能连接到设备上的智能体（系统智能体 Gemini 或应用内智能体），同时推出了用 Gemini Nano 4 在设备上执行函数调用的 ML Kit Agentic API、从 JSON 渲染 Compose 界面的 A2UI Compose 渲染器（Alpha），以及把运行时移出 APK 的 LiteRT in Google Play services。让 Gemini 应用和 Google 搜索直接连接到应用的 Connected Apps Platform 现在可用 Gemini Apps Developer Mode 在本地试用，正式上线需申请加入预览候补名单（目前仅限选定的应用）。",
+        "zh-Hant": "Google 推出以 AppFunctions Jetpack 程式庫為基礎的 Android MCP，可將應用程式功能連接到裝置上的代理（系統代理 Gemini 或應用程式內代理），同時推出以 Gemini Nano 4 在裝置上執行函式呼叫的 ML Kit Agentic API、從 JSON 轉譯 Compose 介面的 A2UI Compose 轉譯器（Alpha），以及將執行階段移出 APK 的 LiteRT in Google Play services。讓 Gemini 應用程式和 Google 搜尋直接連到應用程式的 Connected Apps Platform 現在可用 Gemini Apps Developer Mode 在本機試用，正式上線需申請加入預覽候補名單（目前僅限選定的應用程式）。",
+        "es": "Google presentó Android MCP, basado en la biblioteca de Jetpack AppFunctions, para conectar las funciones de tu app con agentes en el dispositivo (el agente del sistema, Gemini, o un agente dentro de la app), junto con la ML Kit Agentic API para llamadas a funciones en el dispositivo con Gemini Nano 4, el renderizador A2UI Compose en alfa para dibujar UI de Compose a partir de JSON y LiteRT en los servicios de Google Play, que saca el entorno de ejecución del APK. Ya puedes probar en local con Gemini Apps Developer Mode la Connected Apps Platform, que conecta tu app con la app de Gemini y la Búsqueda de Google; para publicarla hay que unirse a la lista de espera de la vista previa, por ahora limitada a apps seleccionadas."
+      }
+    },
+    {
       "id": "2026-11-04-subscription-retention-messages",
       "platforms": [
         "ios"

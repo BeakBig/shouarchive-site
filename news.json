@@ -2,6 +2,40 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-06-android-xr-stable-tools",
+      "platforms": [
+        "android"
+      ],
+      "category": "platform",
+      "published": "2026-11-06",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/build-android-xr-devices-tools",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/build-android-xr-devices-tools?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/build-android-xr-devices-tools?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/build-android-xr-devices-tools?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/build-android-xr-devices-tools?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/build-android-xr-devices-tools?hl=es"
+      },
+      "title": {
+        "ko": "Android XR — Jetpack XR 핵심 라이브러리 · 에뮬레이터 정식(stable), 첫 유선 XR 안경 XREAL AURA",
+        "en": "Android XR — core Jetpack XR libraries and emulators reach stable, XREAL AURA is the first wired XR glasses",
+        "ja": "Android XR — Jetpack XR のコア ライブラリとエミュレータが安定版に、初の有線 XR グラス XREAL AURA",
+        "zh-Hans": "Android XR — Jetpack XR 核心库和模拟器进入稳定版，首款有线 XR 眼镜 XREAL AURA 推出",
+        "zh-Hant": "Android XR — Jetpack XR 核心程式庫和模擬器進入穩定版，首款有線 XR 眼鏡 XREAL AURA 推出",
+        "es": "Android XR — las bibliotecas principales de Jetpack XR y los emuladores llegan a estable, y XREAL AURA, las primeras gafas XR con cable"
+      },
+      "summary": {
+        "ko": "Android XR 을 쓰는 첫 유선 XR 안경 XREAL AURA 가 나왔고(기존 앱이 그대로 돌아감), Jetpack XR 핵심 라이브러리(SceneCore · ARCore for Jetpack XR · XR Runtime)와 Android Studio 의 Android XR 에뮬레이터, ARCore for Jetpack XR 의 Geospatial API, Unity · Godot · Unreal Engine 용 Android XR Engine Hub 가 정식(stable)이 됐습니다. 기기 안에서 목소리를 만드는 ML Kit Gen AI Text to Speech API 도 나왔고, 시작하려면 Android Studio 최신 안정판에서 XR 가상 기기를 만들고 정식 Jetpack XR 의존성을 넣거나 쓰는 엔진에 Engine Hub 플러그인을 설치하면 됩니다.",
+        "en": "XREAL AURA, the first wired XR glasses powered by Android XR, has launched and runs existing apps out of the box, and the core Jetpack XR libraries (SceneCore, ARCore for Jetpack XR, XR Runtime), the Android XR emulators in Android Studio, the Geospatial APIs in ARCore for Jetpack XR, and the Android XR Engine Hub for Unity, Godot, and Unreal Engine are now stable. Google also introduced the ML Kit Gen AI Text to Speech API for on-device voices; to get started, set up Android XR virtual devices in the latest stable Android Studio, then add the stable Jetpack XR dependencies or install the Engine Hub plugin for your engine.",
+        "ja": "Android XR を搭載した初の有線 XR グラス XREAL AURA が発売され(既存のアプリがそのまま動作)、Jetpack XR のコア ライブラリ(SceneCore・ARCore for Jetpack XR・XR Runtime)、Android Studio の Android XR エミュレータ、ARCore for Jetpack XR の Geospatial API、Unity・Godot・Unreal Engine 向けの Android XR Engine Hub が安定版になりました。デバイス上で音声を生成する ML Kit Gen AI Text to Speech API も登場し、始めるには最新の安定版 Android Studio で XR 仮想デバイスを作り、安定版の Jetpack XR 依存関係を追加するか、使っているエンジンに Engine Hub プラグインを入れます。",
+        "zh-Hans": "首款搭载 Android XR 的有线 XR 眼镜 XREAL AURA 已推出（现有应用可直接运行），Jetpack XR 核心库（SceneCore、ARCore for Jetpack XR、XR Runtime）、Android Studio 中的 Android XR 模拟器、ARCore for Jetpack XR 的 Geospatial API，以及面向 Unity、Godot 和 Unreal Engine 的 Android XR Engine Hub 均已进入稳定版。Google 还推出了在设备上生成语音的 ML Kit Gen AI Text to Speech API；如需开始，请在最新稳定版 Android Studio 中设置 XR 虚拟设备，然后添加稳定版 Jetpack XR 依赖项，或为所用引擎安装 Engine Hub 插件。",
+        "zh-Hant": "首款搭載 Android XR 的有線 XR 眼鏡 XREAL AURA 已推出（現有應用程式可直接執行），Jetpack XR 核心程式庫（SceneCore、ARCore for Jetpack XR、XR Runtime）、Android Studio 中的 Android XR 模擬器、ARCore for Jetpack XR 的 Geospatial API，以及適用於 Unity、Godot 和 Unreal Engine 的 Android XR Engine Hub 皆已進入穩定版。Google 也推出在裝置上產生語音的 ML Kit Gen AI Text to Speech API；如要開始，請在最新穩定版 Android Studio 中設定 XR 虛擬裝置，再加入穩定版 Jetpack XR 依附元件，或為使用的引擎安裝 Engine Hub 外掛程式。",
+        "es": "Ya salieron las XREAL AURA, las primeras gafas XR con cable con Android XR, que ejecutan las apps existentes sin cambios, y ya son estables las bibliotecas principales de Jetpack XR (SceneCore, ARCore para Jetpack XR y XR Runtime), los emuladores de Android XR en Android Studio, las API de Geospatial de ARCore para Jetpack XR y el Android XR Engine Hub para Unity, Godot y Unreal Engine. Google también presentó la API ML Kit Gen AI Text to Speech para generar voces en el dispositivo; para empezar, configura dispositivos virtuales de Android XR en la versión estable más reciente de Android Studio y agrega las dependencias estables de Jetpack XR o instala el complemento Engine Hub para tu motor."
+      }
+    },
+    {
       "id": "2026-11-05-android-intelligence-system",
       "platforms": [
         "android"

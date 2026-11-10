@@ -602,6 +602,41 @@
       }
     },
     {
+      "id": "shouarchive-1.1.4",
+      "platforms": [
+        "shouarchive"
+      ],
+      "category": "update",
+      "version": "1.1.4",
+      "published": "2026-11-10",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-1-4",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-1-4",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-1-4",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-1-4",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-1-4",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-1-4"
+      },
+      "title": {
+        "ko": "ShouArchive 1.1.4",
+        "en": "ShouArchive 1.1.4",
+        "ja": "ShouArchive 1.1.4",
+        "zh-Hans": "ShouArchive 1.1.4",
+        "zh-Hant": "ShouArchive 1.1.4",
+        "es": "ShouArchive 1.1.4"
+      },
+      "summary": {
+        "ko": "- 프로파일 관리 속도 — 프로파일이 많을 때 「프로파일 관리」 에서 목록을 고르거나 내보낼 때마다 잠깐씩 멈추던 문제를 고쳤습니다 (1.1.3 에서 생김)",
+        "en": "- Manage Profiles speed — With many profiles, “Manage Profiles” no longer pauses briefly each time you select in the list or export (introduced in 1.1.3)",
+        "ja": "- プロファイル管理の速度 — プロファイルが多いとき、「プロファイル管理」でリストを選んだりエクスポートしたりするたびに一瞬止まる問題を修正しました（1.1.3 で発生）",
+        "zh-Hans": "- 管理描述文件的速度 — 描述文件较多时，在“管理描述文件”中选择列表项或导出时每次都会短暂卡顿的问题已修复（1.1.3 中出现）",
+        "zh-Hant": "- 管理描述檔的速度 — 描述檔較多時，在「管理描述檔」中選取清單項目或匯出時每次都會短暫停頓的問題已修正（1.1.3 中出現）",
+        "es": "- Velocidad de Gestionar perfiles — Con muchos perfiles, «Gestionar perfiles» ya no se detiene un momento cada vez que seleccionas en la lista o exportas (problema introducido en 1.1.3)"
+      }
+    },
+    {
       "id": "shouarchive-1.1.3",
       "platforms": [
         "shouarchive"

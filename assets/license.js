@@ -37,12 +37,36 @@
 
   function byId(id) { return document.getElementById(id); }
   function show(id, on) { var el = byId(id); if (el) el.hidden = !on; }
-  /** 결제 창을 닫고 보여 주는 안내 — 그냥 닫힌 것처럼 보이지 않게 화면 가운데로 올리고 초점을 준다 (Jin 11/11) */
+  /** 결제 창을 닫고 보여 주는 안내 — 그냥 닫힌 것처럼 보이지 않게 팝업으로 띄운다(Jin 11/11 「왜 창을 닫았는지 알려줘야」).
+   *  상자는 페이지에도 남긴다(팝업을 닫은 뒤에도 읽을 수 있게). 팝업은 그 상자의 제목 · 글을 그대로 옮긴 <dialog> 다. */
   function reveal(id) {
     show(id, true);
     var el = byId(id);
     if (!el) return;
-    try { el.scrollIntoView({ block: 'center' }); el.focus({ preventScroll: true }); } catch (e) { /* 옛 브라우저 */ }
+    try { el.scrollIntoView({ block: 'center' }); } catch (e) { /* 옛 브라우저 */ }
+    var title = el.querySelector('h2');
+    var text = el.querySelector('p');
+    if (!title || !text || typeof HTMLDialogElement === 'undefined') { try { el.focus({ preventScroll: true }); } catch (e) { /* 그대로 */ } return; }
+    var old = byId(id + '-dialog');
+    if (old) old.remove();
+    var dialog = document.createElement('dialog');
+    dialog.id = id + '-dialog';
+    dialog.className = 'checkout-dialog';
+    dialog.appendChild(title.cloneNode(true));
+    dialog.appendChild(text.cloneNode(true));
+    var actions = document.createElement('div');
+    actions.className = 'plan-actions';
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn';
+    button.textContent = el.dataset.ok || 'OK';
+    button.addEventListener('click', function () { dialog.close(); });
+    actions.appendChild(button);
+    dialog.appendChild(actions);
+    dialog.addEventListener('close', function () { dialog.remove(); });
+    document.body.appendChild(dialog);
+    // Paddle 결제 창(iframe)이 닫히는 중이어도 맨 위 층에 뜬다
+    try { dialog.showModal(); button.focus(); } catch (e) { dialog.remove(); }
   }
 
   function apiBase() {

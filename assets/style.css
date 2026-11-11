@@ -546,6 +546,20 @@ code {
 /* ---------- checkout (Paddle 결제) ---------- */
 .checkout-box { max-width: 560px; }
 .checkout-box .plan-actions { margin: 4px 0 0; }
+/* 결제 창을 닫은 이유를 알리는 팝업 (license.js reveal) */
+.checkout-dialog {
+  width: min(480px, calc(100vw - 32px));
+  padding: 26px 24px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 48px rgba(10, 10, 30, 0.35);
+}
+.checkout-dialog::backdrop { background: rgba(10, 10, 30, 0.55); }
+.checkout-dialog h2 { font-size: 22px; margin: 0 0 10px; }
+.checkout-dialog p { color: var(--muted); font-size: 14.5px; margin: 0 0 20px; }
+.checkout-dialog .plan-actions { justify-content: flex-end; }
 
 /* 결제 확인 중 — 앱과 같은 Lottie 퍼즐 로딩 + 제목, 가운데 정렬 (결제 완료 화면 · assets/license.js)
    Lottie 를 불러오기 전 · 못 불러오면 도는 원을 그대로 보인다 */

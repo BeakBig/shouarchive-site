@@ -194,8 +194,13 @@
       token: cfg.token,
       checkout: { settings: settings },
       eventCallback: function (event) {
-        if (event && event.name === 'checkout.completed') {
+        if (!event) return;
+        if (event.name === 'checkout.completed') {
           completed((event.data && event.data.transaction_id) || transactionId);
+        }
+        // 결제 창에서 이메일을 넣었다 — 이미 월 구독 중인 고객이면 결제 전에 막는다 (2026-11-11 · 중복 월 구독)
+        if (event.name === 'checkout.customer.created' || event.name === 'checkout.customer.updated') {
+          checkSubscribed((event.data && event.data.transaction_id) || transactionId);
         }
       }
     });
@@ -263,6 +268,22 @@
       });
     }
 
+    /** 이 결제의 고객이 이미 월 구독 중인지 서버에 묻는다 (이메일은 보내지 않는다 — 거래 id + 확인 값). 구독 중이면 결제 창을 닫고 안내한다.
+     *  앱의 「다시 구독…」 · 영구 라이선스 결제 · 확인 값이 없는 예비 길에서는 묻지 않는다. 서버에 닿지 못하면 그대로 둔다(결제 뒤 서버가 해지 · 환불한다). */
+    var subscribedShown = false;
+    function checkSubscribed(id) {
+      if (!monthly || resubscribe || !claim || !id || subscribedShown) return;
+      post('/v1/web/checkout/check', { transaction_id: id, claim: claim })
+        .then(function (result) {
+          if (!result || !result.subscribed || subscribedShown) return;
+          subscribedShown = true;
+          try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ }
+          show('checkout-buy-monthly', false);
+          show('checkout-already-subscribed', true);
+        })
+        .catch(function () { /* 묻지 못함 — 결제를 막지 않는다 */ });
+    }
+
     function completed(id) {
       show('checkout-buy', false);
       show('checkout-buy-monthly', false);
@@ -280,6 +301,7 @@
       post('/v1/purchase/status', { transaction_id: id, claim: claim })
         .then(function (result) {
           if (result.status === 'ready') return ready(result);
+          if (result.status === 'already_subscribed') return duplicate();   // 이미 구독 중 — 서버가 새 구독을 해지 · 환불했다
           retry(id, attempt);
         })
         .catch(function (error) {
@@ -314,6 +336,13 @@
       show('checkout-ready', true);
       // 앱에서 시작한 결제면 앱을 바로 연다 (브라우저가 열지 묻는다 · 앱은 등록할지 한 번 더 묻는다)
       if (fromApp) location.href = appUrl(result.key);
+    }
+
+    function duplicate() {
+      show('checkout-processing', false);
+      stopWaitingAnimation();
+      show('checkout-slow', false);
+      show('checkout-duplicate', true);
     }
 
     function mailed() {

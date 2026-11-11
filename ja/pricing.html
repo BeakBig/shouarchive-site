@@ -126,7 +126,7 @@
       <div class="section-head">
         <p class="eyebrow violet">機能</p>
         <h2>いつ、何が使えるのか</h2>
-        <p class="lead">体験期間中はすべての機能が使えます。キーなしで体験期間が終わっても、プロファイル管理・ビルド成果物検査・API キー管理・履歴の閲覧はそのまま残ります。</p>
+        <p class="lead">体験期間中はすべての機能が使えます。キーなしで体験期間が終わっても、プロファイル管理・ビルド成果物検査・API キー管理・履歴の閲覧はそのまま残ります。月額プランが終わったときも同じです。</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
@@ -135,24 +135,25 @@
               <th scope="col">機能</th>
               <th scope="col">体験期間中</th>
               <th scope="col">体験期間の終了後（キーなし）</th>
-              <th scope="col">購入後</th>
+              <th scope="col">月額プラン購読中</th>
+              <th scope="col">ライセンス購入後</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">期間 · 料金</th><td><span data-price="trial_days">14</span> 日間 · 無料<small>支払い方法の登録なしで開始 · 自動課金なし</small></td><td>無料 · 期間の制限なし</td><td>1 回の購入 · <span data-price="commercial.price">US$29</span><small>1 年間のアップデート付き · 以降は年 <span data-price="commercial.price_renewal">US$15</span> — 自動更新（いつでも停止可）</small></td></tr>
-            <tr><th scope="row">プロファイル管理 · 比較</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">プロファイルのダウンロード · 作成 · 端末登録</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">API キーの保存 · 管理</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">ビルド成果物検査（IPA · APK · AAB）</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">履歴</th><td class="yes">✓</td><td class="yes">記録の閲覧のみ</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">アプリビルド · ジョブキュー</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">アプリのアップロード</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">端末へのインストール</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">再署名 · ライブラリ · IPA 整理</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">OTA 配布</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">ストア配信（iOS · Android）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">アップデート</th><td>体験期間中に公開されたバージョン</td><td class="no">—</td><td>アップデート期間中はアプリ内で<small>期間が終わっても、それまでに公開されたバージョンは引き続き使用可能</small></td></tr>
-            <tr><th scope="row">ライセンスキー</th><td class="no">不要</td><td class="no">不要</td><td>1 つのキーで Mac <span data-price="commercial.devices">2</span> 台<small>決済したメールアドレスに届きます</small></td></tr>
+            <tr><th scope="row">期間 · 料金</th><td><span data-price="trial_days">14</span> 日間 · 無料<small>支払い方法の登録なしで開始 · 自動課金なし</small></td><td>無料 · 期間の制限なし</td><td>月 <span data-price="commercial.price_monthly">US$3</span> · 自動決済<small>いつでも解約可 · 解約後もその月の支払い期間が終わるまで使用可能</small></td><td>1 回の購入 · <span data-price="commercial.price">US$29</span><small>1 年間のアップデート付き · 以降は年 <span data-price="commercial.price_renewal">US$15</span> — 自動更新（いつでも停止可）</small></td></tr>
+            <tr><th scope="row">プロファイル管理 · 比較</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">プロファイルのダウンロード · 作成 · 端末登録</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">API キーの保存 · 管理</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">ビルド成果物検査（IPA · APK · AAB）</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">履歴</th><td class="yes">✓</td><td class="yes">記録の閲覧のみ</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">アプリビルド · ジョブキュー</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">アプリのアップロード</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">端末へのインストール</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">再署名 · ライブラリ · IPA 整理</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">OTA 配布</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">ストア配信（iOS · Android）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">アップデート</th><td>体験期間中に公開されたバージョン</td><td class="no">—</td><td>購読中はアプリ内で<small>購読が終わると体験期間の終了後と同じ</small></td><td>アップデート期間中はアプリ内で<small>期間が終わっても、それまでに公開されたバージョンは引き続き使用可能</small></td></tr>
+            <tr><th scope="row">ライセンスキー</th><td class="no">不要</td><td class="no">不要</td><td>1 つのキーで Mac <span data-price="commercial.devices">2</span> 台<small>決済したメールアドレスに届きます</small></td><td>1 つのキーで Mac <span data-price="commercial.devices">2</span> 台<small>決済したメールアドレスに届きます</small></td></tr>
           </tbody>
         </table>
       </div>

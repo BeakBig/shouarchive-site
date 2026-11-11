@@ -2,6 +2,101 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-10-google-sign-in-unity-plugin",
+      "platforms": [
+        "android"
+      ],
+      "category": "tools",
+      "published": "2026-11-10",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/open-source-google-sign-in-unity",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/open-source-google-sign-in-unity?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/open-source-google-sign-in-unity?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/open-source-google-sign-in-unity?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/open-source-google-sign-in-unity?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/open-source-google-sign-in-unity?hl=es"
+      },
+      "title": {
+        "ko": "Unity 용 Sign in with Google 플러그인 — 오픈 소스로 공개",
+        "en": "Sign in with Google plugin for Unity — now open source",
+        "ja": "Unity 向け Sign in with Google プラグイン — オープンソースで公開",
+        "zh-Hans": "适用于 Unity 的 Sign in with Google 插件 — 已开源发布",
+        "zh-Hant": "適用於 Unity 的 Sign in with Google 外掛程式 — 已開放原始碼",
+        "es": "Plugin Sign in with Google para Unity — ahora de código abierto"
+      },
+      "summary": {
+        "ko": "Google 이 Unity 게임용 Sign in with Google Mobile Plugin 을 GitHub 에 오픈 소스로 공개했습니다 — Android 는 Credential Manager, iOS 는 GIDSignIn 을 쓰고 Unity 6.5 와 호환되며, 서명된 Google ID 토큰을 C# 콜백으로 넘겨줍니다. 쓰려면 미리 빌드된 .unitypackage 를 받아 넣고 에디터의 Window > Google Sign-In Native > Settings 에서 Web Client ID 와 iOS Reversed Client ID 를 설정하세요.",
+        "en": "Google released the Sign in with Google Mobile Plugin for Unity as open source on GitHub — it uses Credential Manager on Android and GIDSignIn on iOS, is compatible with Unity 6.5, and hands a signed Google ID token to your C# scripts through callbacks. To use it, import the pre-built .unitypackage and set your Web Client ID and iOS Reversed Client ID in the editor under Window > Google Sign-In Native > Settings.",
+        "ja": "Google は Unity ゲーム向けの Sign in with Google Mobile Plugin を GitHub でオープンソースとして公開しました。Android では Credential Manager、iOS では GIDSignIn を使い、Unity 6.5 に対応し、署名付きの Google ID トークンを C# のコールバックで受け取れます。使うには、ビルド済みの .unitypackage を取り込み、エディタの Window > Google Sign-In Native > Settings で Web Client ID と iOS Reversed Client ID を設定してください。",
+        "zh-Hans": "Google 在 GitHub 上以开源形式发布了面向 Unity 游戏的 Sign in with Google Mobile Plugin：Android 端使用 Credential Manager，iOS 端使用 GIDSignIn，兼容 Unity 6.5，并通过回调把已签名的 Google ID 令牌交给 C# 脚本。使用时请导入预构建的 .unitypackage，并在编辑器的 Window > Google Sign-In Native > Settings 中设置 Web Client ID 和 iOS Reversed Client ID。",
+        "zh-Hant": "Google 在 GitHub 上以開放原始碼形式發布了適用於 Unity 遊戲的 Sign in with Google Mobile Plugin：Android 使用 Credential Manager，iOS 使用 GIDSignIn，相容 Unity 6.5，並透過回呼把已簽署的 Google ID 權杖交給 C# 指令碼。使用時請匯入預先建構的 .unitypackage，並在編輯器的 Window > Google Sign-In Native > Settings 中設定 Web Client ID 和 iOS Reversed Client ID。",
+        "es": "Google publicó como código abierto en GitHub el Sign in with Google Mobile Plugin para Unity: usa Credential Manager en Android y GIDSignIn en iOS, es compatible con Unity 6.5 y entrega a tus scripts de C# un token de ID de Google firmado mediante callbacks. Para usarlo, importa el .unitypackage precompilado y configura tu Web Client ID y tu iOS Reversed Client ID en el editor, en Window > Google Sign-In Native > Settings."
+      }
+    },
+    {
+      "id": "2026-11-10-swift-student-challenge-2027",
+      "platforms": [
+        "ios"
+      ],
+      "category": "story",
+      "published": "2026-11-10",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=jkykd58d",
+      "urls": {
+        "ja": "https://developer.apple.com/jp/news/?id=jkykd58d",
+        "zh-Hans": "https://developer.apple.com/cn/news/?id=jkykd58d"
+      },
+      "title": {
+        "ko": "Swift Student Challenge 2027 발표 — 접수 2027년 2월 8일~28일",
+        "en": "Swift Student Challenge 2027 announced — open February 8–28, 2027",
+        "ja": "Swift Student Challenge 2027 発表 — 応募期間は 2027年2月8日〜28日",
+        "zh-Hans": "Swift Student Challenge 2027 公布 — 提交时间为 2027 年 2 月 8 日至 28 日",
+        "zh-Hant": "Swift Student Challenge 2027 公布 — 提交時間為 2027 年 2 月 8 日至 28 日",
+        "es": "Anunciado el Swift Student Challenge 2027 — abierto del 8 al 28 de febrero de 2027"
+      },
+      "summary": {
+        "ko": "Apple 이 학생 개발자를 위한 Swift Student Challenge 2027 을 발표했고, 올해부터는 어느 Apple 플랫폼용 앱이든 낼 수 있습니다. 접수는 2027년 2월 8일부터 28일까지이니, 참가할 학생은 그 기간에 앱을 제출하세요.",
+        "en": "Apple announced the Swift Student Challenge 2027 for student developers, and new this year, students can submit an app for any Apple platform. The Challenge is open February 8–28, 2027, so students who want to take part should submit during that window.",
+        "ja": "Apple は学生デベロッパ向けの Swift Student Challenge 2027 を発表し、今年からは Apple のどのプラットフォーム向けのアプリでも応募できるようになりました。応募期間は 2027年2月8日〜28日なので、参加したい学生はその期間にアプリを提出してください。",
+        "zh-Hans": "Apple 公布了面向学生开发者的 Swift Student Challenge 2027，今年起学生可以提交面向任意 Apple 平台的 App。提交时间为 2027 年 2 月 8 日至 28 日，想参加的学生请在此期间提交作品。",
+        "zh-Hant": "Apple 公布了針對學生開發者的 Swift Student Challenge 2027，今年起學生可以提交適用於任何 Apple 平台的 App。提交時間為 2027 年 2 月 8 日至 28 日，想參加的學生請在這段期間提交作品。",
+        "es": "Apple anunció el Swift Student Challenge 2027 para estudiantes desarrolladores y, como novedad de este año, se puede presentar una app para cualquier plataforma de Apple. El plazo está abierto del 8 al 28 de febrero de 2027, así que quienes quieran participar deben enviar su app en esas fechas."
+      }
+    },
+    {
+      "id": "2026-11-10-hello-developer-november",
+      "platforms": [
+        "ios"
+      ],
+      "category": "story",
+      "published": "2026-11-10",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=ow0j45ny",
+      "urls": {
+        "zh-Hans": "https://developer.apple.com/cn/news/?id=ow0j45ny"
+      },
+      "title": {
+        "ko": "Hello Developer 2026년 11월호",
+        "en": "Hello Developer: November 2026",
+        "ja": "Hello Developer：2026年11月号",
+        "zh-Hans": "Hello Developer：2026 年 11 月",
+        "zh-Hant": "Hello Developer：2026 年 11 月",
+        "es": "Hello Developer: noviembre de 2026"
+      },
+      "summary": {
+        "ko": "Apple 의 개발자 소식지 11월호가 나왔습니다 — 유럽의 첫 Apple Developer Center, Mac 의 터치, Swift Student Challenge 2027, 새 앱 심사 도움말 글, 새 구독 기능을 다룹니다. 자세한 내용은 원문의 소식지에서 읽어 보세요.",
+        "en": "The November edition of Apple's developer newsletter is out, covering Europe's first Apple Developer Center, Touch on Mac, the Swift Student Challenge 2027, new App Review help articles and new subscription features. Read the full edition from the original post.",
+        "ja": "Apple のデベロッパ向けニュースレター 11月号が公開されました。ヨーロッパ初の Apple Developer Center、Mac のタッチ、Swift Student Challenge 2027、新しい App Review のヘルプ記事、新しいサブスクリプション機能を取り上げています。詳しくは原文のニュースレターをご覧ください。",
+        "zh-Hans": "Apple 开发者通讯 11 月刊已发布，内容包括欧洲首个 Apple Developer Center、Mac 屏幕触控、Swift Student Challenge 2027、全新的 App 审核帮助文章和新的订阅功能。详情请通过原文阅读完整内容。",
+        "zh-Hant": "Apple 開發者通訊 11 月號已發布，內容包括歐洲首個 Apple Developer Center、Mac 觸控、Swift Student Challenge 2027、全新的 App 審查說明文章和新的訂閱功能。詳情請透過原文閱讀完整內容。",
+        "es": "Ya está disponible la edición de noviembre del boletín para desarrolladores de Apple, con el primer Apple Developer Center de Europa, Touch en el Mac, el Swift Student Challenge 2027, nuevos artículos de ayuda de App Review y nuevas funciones de suscripción. Lee la edición completa desde la publicación original."
+      }
+    },
+    {
       "id": "2026-11-06-android-xr-stable-tools",
       "platforms": [
         "android"

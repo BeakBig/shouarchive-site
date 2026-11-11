@@ -415,6 +415,14 @@ h2 {
 .compare td.yes { color: var(--accent); font-weight: 700; font-size: 16px; line-height: 1.2; }
 .compare td.no { color: var(--muted); }
 .compare td small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.compare tbody th small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; margin-top: 3px; }
+.compare tbody th { width: 30%; }
+
+/* 결제 안내 — 공통 · 라이선스 · 월 구독 묶음 */
+.pay-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 22px; margin: 14px 0 0; }
+.doc .pay-group h3 { margin: 0 0 8px; }
+.doc .pay-group ul { margin: 0; }
+.doc .pay-group li { margin: 6px 0; }
 
 /* ---------- footer ---------- */
 .site-footer {

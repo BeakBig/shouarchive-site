@@ -96,6 +96,25 @@
         <p><strong>Your update period has been extended. Thank you.</strong> Your license key is unchanged; there’s nothing to re-enter. ShouArchive picks up the new period shortly — to apply it right away, click Settings › License › Check Automatically. A confirmation email is also on its way to the address you paid with.</p>
       </div>
 
+      <div class="plan checkout-box" id="checkout-owned" hidden>
+        <h2>This email already has a license</h2>
+        <p class="plan-for">Nothing has been charged yet. Choose what you want to do.</p>
+        <ul>
+          <li><strong>Extend updates</strong> — Adds 1 year of updates to the license you already have (<span data-price="commercial.price_renewal">US$15</span>). Your key stays the same.</li>
+          <li><strong>Buy another license</strong> — For more Macs: you get one more key (<span data-price="commercial.devices">2</span> Macs). Your existing license is unchanged.</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>Updates for this license already renew automatically, so there is nothing to extend. Nothing was charged.</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>We couldn’t open the renewal checkout right now. Please try again in a moment.</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">Extend updates</button>
+          <button class="btn outline" type="button" id="checkout-add">Buy another license</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive license</h2>
         <p class="plan-for">License + 1 year of updates · after that, updates are <span data-price="commercial.price_renewal">US$15</span> a year (auto-renewal · turn it off any time)</p>

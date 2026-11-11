@@ -96,6 +96,25 @@
         <p><strong>更新期限已延长，感谢您的购买。</strong>许可证密钥保持不变，无需重新输入。ShouArchive 很快会确认新的期限；如需立即生效，请点按“设置 › 许可证 › 自动检查”。确认邮件也会发送到您付款时使用的邮箱。</p>
       </div>
 
+      <div class="plan checkout-box" id="checkout-owned" hidden>
+        <h2>此邮箱已有许可证</h2>
+        <p class="plan-for">尚未付款。请选择您要做的事。</p>
+        <ul>
+          <li><strong>延长更新期限</strong> — 将现有许可证的更新期限延长 1 年（<span data-price="commercial.price_renewal">US$15</span>）。密钥保持不变。</li>
+          <li><strong>加购许可证</strong> — 需要在更多 Mac 上使用时 — 再获得一个新密钥（<span data-price="commercial.devices">2</span> 台 Mac）。现有许可证保持不变。</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>此许可证的更新已自动续订，无需另行延长。未进行付款。</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>目前无法打开延长付款。请稍后再试。</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">延长更新期限</button>
+          <button class="btn outline" type="button" id="checkout-add">加购许可证</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive 许可证</h2>
         <p class="plan-for">许可证 + 1 年更新 · 之后的更新为每年 <span data-price="commercial.price_renewal">US$15</span>（自动续订 · 可随时关闭）</p>

@@ -96,6 +96,25 @@
         <p><strong>Se ha ampliado tu periodo de actualizaciones. ¡Gracias!</strong> Tu clave de licencia no cambia; no tienes que volver a introducirla. ShouArchive detectará el nuevo periodo en breve; para aplicarlo ya, pulsa Ajustes › Licencia › Comprobar automáticamente. También te enviamos un correo de confirmación a la dirección con la que pagaste.</p>
       </div>
 
+      <div class="plan checkout-box" id="checkout-owned" hidden>
+        <h2>Este correo ya tiene una licencia</h2>
+        <p class="plan-for">Aún no se ha cobrado nada. Elige qué quieres hacer.</p>
+        <ul>
+          <li><strong>Ampliar actualizaciones</strong>: Añade 1 año de actualizaciones a la licencia que ya tienes (<span data-price="commercial.price_renewal">US$15</span>). Tu clave no cambia.</li>
+          <li><strong>Comprar otra licencia</strong>: Para usar más Mac: recibes una clave más (<span data-price="commercial.devices">2</span> Mac). Tu licencia actual no cambia.</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>Las actualizaciones de esta licencia ya se renuevan automáticamente, así que no hay nada que ampliar. No se ha cobrado nada.</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>Ahora mismo no hemos podido abrir el pago de la ampliación. Inténtalo de nuevo en unos minutos.</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">Ampliar actualizaciones</button>
+          <button class="btn outline" type="button" id="checkout-add">Comprar otra licencia</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>Licencia de ShouArchive</h2>
         <p class="plan-for">Licencia + 1 año de actualizaciones · después, las actualizaciones cuestan <span data-price="commercial.price_renewal">US$15</span> al año (renovación automática · se puede desactivar en cualquier momento)</p>

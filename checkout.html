@@ -96,6 +96,25 @@
         <p><strong>업데이트 기간을 연장했습니다. 고맙습니다.</strong> 라이선스 키는 그대로이고 다시 넣을 필요가 없습니다. ShouArchive 가 곧 새 기간을 확인합니다 — 바로 반영하려면 설정 › 라이선스 › 「자동 확인」 을 누르세요. 안내 메일도 결제한 이메일 주소로 보냅니다.</p>
       </div>
 
+      <div class="plan checkout-box" id="checkout-owned" hidden>
+        <h2>이 이메일로 이미 라이선스가 있습니다</h2>
+        <p class="plan-for">아직 결제하지 않았습니다. 무엇을 하려는지 골라 주세요.</p>
+        <ul>
+          <li><strong>업데이트 기간 연장</strong> — 쓰던 라이선스의 업데이트 기간을 1년 늘립니다 (<span data-price="commercial.price_renewal">US$15</span>). 키는 그대로입니다.</li>
+          <li><strong>라이선스 추가 구매</strong> — Mac 을 더 쓰려면 새 키(Mac <span data-price="commercial.devices">2</span>대)를 하나 더 받습니다. 쓰던 라이선스는 그대로입니다.</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>이 라이선스는 업데이트가 자동으로 갱신되고 있어 따로 연장할 필요가 없습니다. 결제하지 않았습니다.</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>지금은 연장 결제를 열지 못했습니다. 잠시 뒤 다시 시도하세요.</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">업데이트 기간 연장</button>
+          <button class="btn outline" type="button" id="checkout-add">라이선스 추가 구매</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive 라이선스</h2>
         <p class="plan-for">라이선스 + 업데이트 1년 · 그 뒤 업데이트는 1년에 <span data-price="commercial.price_renewal">US$15</span> (자동 갱신 · 언제든 끄기)</p>

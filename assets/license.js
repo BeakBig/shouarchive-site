@@ -137,8 +137,10 @@
     var claim = hash.get('claim');
     var fromApp = hash.get('from') === 'app';
     var renewal = hash.get('kind') === 'renewal';
+    // 앱의 「라이선스 추가 구매…」 — 이미 라이선스가 있는 것을 알고 왔으니 갱신 · 추가 구매를 다시 묻지 않는다
+    var addIntent = hash.get('intent') === 'add';
     var transactionId = params.get('_ptxn');
-    if (claim !== null || hash.get('from') !== null || hash.get('kind') !== null) {
+    if (claim !== null || hash.get('from') !== null || hash.get('kind') !== null || hash.get('intent') !== null) {
       // 확인 값을 읽었으면 주소에서 지운다 — 방문 기록 · 화면 공유에 남지 않게 (# 뒤라 서버로는 애초에 가지 않았다). ?_ptxn= 은 남긴다
       try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* 그대로 둔다 */ }
     }
@@ -165,8 +167,13 @@
       token: cfg.token,
       checkout: { settings: settings },
       eventCallback: function (event) {
-        if (event && event.name === 'checkout.completed') {
+        if (!event) return;
+        if (event.name === 'checkout.completed') {
           completed((event.data && event.data.transaction_id) || transactionId);
+        }
+        // 결제 창에서 이메일을 넣었다 — 이미 라이선스가 있는 구매자면 결제 전에 갱신 · 추가 구매를 고르게 한다 (2026-11-11)
+        if (event.name === 'checkout.customer.created' || event.name === 'checkout.customer.updated') {
+          checkOwned((event.data && event.data.transaction_id) || transactionId);
         }
       }
     });
@@ -204,10 +211,63 @@
         .then(function () { button.disabled = false; });
     });
 
+    /*
+     * 이미 라이선스가 있는 구매자 — 막지 않고 고르게 한다. 이메일은 보내지 않는다(거래 id + 확인 값으로 서버가 Paddle 에서 고객을 읽는다).
+     * 갱신 결제 · 앱의 「라이선스 추가 구매…」 · 확인 값이 없는 예비 길 · 이미 고른 뒤에는 묻지 않는다.
+     * 서버에 닿지 못하면 그대로 둔다 — 결제하면 지금처럼 라이선스가 하나 더 생긴다.
+     */
+    var forkDone = addIntent;
+    var purchaseId = null;
+    function checkOwned(id) {
+      if (forkDone || renewal || !claim || !id) return;
+      post('/v1/web/checkout/check', { transaction_id: id, claim: claim })
+        .then(function (result) {
+          if (!result || !result.owned || forkDone) return;
+          forkDone = true;
+          purchaseId = id;
+          try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ }
+          show('checkout-buy', false);
+          show('checkout-owned', true);
+        })
+        .catch(function () { /* 묻지 못함 — 결제를 막지 않는다 */ });
+    }
+
+    var renewButton = byId('checkout-renew');
+    var addButton = byId('checkout-add');
+    if (renewButton) renewButton.addEventListener('click', function () {
+      if (!purchaseId) return;
+      renewButton.disabled = true;
+      show('checkout-auto-renew', false);
+      show('checkout-fork-failed', false);
+      show('checkout-limit', false);
+      // 업데이트 기간 연장 — 쓰던 라이선스의 갱신 결제를 새로 받아 연다. 끝나면 「연장했습니다」 안내 (키는 그대로)
+      post('/v1/web/checkout/renew', { transaction_id: purchaseId, claim: claim })
+        .then(function (result) {
+          renewal = true;
+          transactionId = result.transaction_id;
+          show('checkout-owned', false);
+          Paddle.Checkout.open({ transactionId: transactionId });
+        })
+        .catch(function (error) {
+          var code = error && error.code;
+          show(code === 'auto_renew_active' ? 'checkout-auto-renew' : code === 'checkout_limit' ? 'checkout-limit' : 'checkout-fork-failed', true);
+        })
+        .then(function () { renewButton.disabled = false; });
+    });
+    if (addButton) addButton.addEventListener('click', function () {
+      if (!purchaseId) return;
+      // 라이선스 추가 구매 — 열려 있던 첫 구매 결제를 그대로 다시 연다. 끝나면 새 키가 나온다
+      show('checkout-owned', false);
+      if (!transactionId || transactionId !== purchaseId) transactionId = purchaseId;
+      if (byId('checkout-open') && !new URLSearchParams(location.search).get('_ptxn')) show('checkout-buy', true);
+      Paddle.Checkout.open({ transactionId: purchaseId });
+    });
+
     function completed(id) {
       show('checkout-buy', false);
       // Paddle 의 완료 화면을 잠깐 보여 준 뒤 닫고, 이 페이지의 안내로 넘어간다
       setTimeout(function () { try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ } }, 1500);
+      show('checkout-owned', false);
       if (renewal) { show('checkout-renewed', true); return; }
       if (!claim || !id) { show('checkout-done', true); return; }
       show('checkout-processing', true);

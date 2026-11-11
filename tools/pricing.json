@@ -55,8 +55,9 @@
     },
     "last_day": "2026-12-31"
   },
-  "_monthly": "월 구독 (2026-11-02 결정 · 앱 1.2.0 · 앱 저장소 docs/licensing.md §7) — commercial.price_monthly 한 달 · Mac commercial.devices 대 · 영구 권리 없음 · 환불 없음(해지만). first_day = 판매 시작일(YYYY-MM-DD) — 가격 페이지의 「구독하기」 · 구매 페이지의 월 구독은 방문자의 날짜로 이 날부터 열린다(assets/nav.js · license.js, 그 전에는 「판매 시작」 안내). 라이선스 서버 MONTHLY_SALE_FIRST_DAY · 앱 LicenseMonthlyPlan.saleFirstDay 와 같은 날로 둔다. from = 그 날의 언어별 표기, min_app = 월 구독 키를 쓸 수 있는 앱 버전. 가격 id 는 paddle.<환경>.price_monthly — 비어 있으면 구매 페이지가 월 구독을 열지 않는다.",
+  "_monthly": "월 구독 (2026-11-02 결정 · 앱 1.2.0 · 앱 저장소 docs/licensing.md §7) — commercial.price_monthly 한 달 · Mac monthly.devices 대(2026-11-11 — 영구 라이선스 commercial.devices 는 2대, 라이선스 서버 seatsFor 와 같게) · 영구 권리 없음 · 환불 없음(해지만). first_day = 판매 시작일(YYYY-MM-DD) — 가격 페이지의 「구독하기」 · 구매 페이지의 월 구독은 방문자의 날짜로 이 날부터 열린다(assets/nav.js · license.js, 그 전에는 「판매 시작」 안내). 라이선스 서버 MONTHLY_SALE_FIRST_DAY · 앱 LicenseMonthlyPlan.saleFirstDay 와 같은 날로 둔다. from = 그 날의 언어별 표기, min_app = 월 구독 키를 쓸 수 있는 앱 버전. 가격 id 는 paddle.<환경>.price_monthly — 비어 있으면 구매 페이지가 월 구독을 열지 않는다.",
   "monthly": {
+    "devices": "4",
     "first_day": "2027-01-01",
     "min_app": "1.2.0",
     "from": {

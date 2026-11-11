@@ -360,7 +360,8 @@ h2 {
 .cta p { color: var(--hero-muted); margin: 0 0 20px; }
 
 /* ---------- pricing (두 판 · 가격) ---------- */
-.plans { display: grid; gap: 16px; }
+/* 카드 높이는 저마다 내용만큼 — 가장 긴 카드(라이선스)에 맞춰 늘이지 않는다 (Jin 11/11) */
+.plans { display: grid; gap: 16px; align-items: start; }
 @media (min-width: 860px) { .plans { grid-template-columns: 1fr 1fr; } }
 /* 체험 · 라이선스 · 월 구독 세 판 (가격 페이지 · 2026-11-02) — 넓으면 한 줄에 셋, 좁으면 둘씩 */
 @media (min-width: 1000px) { .plans.plans-3 { grid-template-columns: repeat(3, 1fr); } }

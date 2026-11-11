@@ -37,6 +37,13 @@
 
   function byId(id) { return document.getElementById(id); }
   function show(id, on) { var el = byId(id); if (el) el.hidden = !on; }
+  /** 결제 창을 닫고 보여 주는 안내 — 그냥 닫힌 것처럼 보이지 않게 화면 가운데로 올리고 초점을 준다 (Jin 11/11) */
+  function reveal(id) {
+    show(id, true);
+    var el = byId(id);
+    if (!el) return;
+    try { el.scrollIntoView({ block: 'center' }); el.focus({ preventScroll: true }); } catch (e) { /* 옛 브라우저 */ }
+  }
 
   function apiBase() {
     var config = byId('paddle-config');
@@ -279,7 +286,7 @@
           subscribedShown = true;
           try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ }
           show('checkout-buy-monthly', false);
-          show('checkout-already-subscribed', true);
+          reveal('checkout-already-subscribed');
         })
         .catch(function () { /* 묻지 못함 — 결제를 막지 않는다 */ });
     }

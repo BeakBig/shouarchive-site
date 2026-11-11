@@ -69,8 +69,12 @@
         <p><strong>La suscripción mensual aún no está disponible.</strong> Podrás suscribirte en esta página a partir del <span data-price="monthly.from">1 de enero de 2027</span>. Hasta entonces, usa la licencia de ShouArchive de la <a href="pricing">página de precios</a>.</p>
       </div>
 
-      <div class="note" id="checkout-already-subscribed" hidden>
-        <p><strong>Ya tienes una suscripción mensual.</strong> Hay una suscripción mensual activa con este correo, así que no se ha cobrado nada. Sigue usando tu clave de licencia; si no la tienes, <a href="license">vuelve a recibirla</a>. Para cambiar el método de pago o cancelar, usa Ajustes › Licencia › «Gestionar pagos…» en la app.</p>
+      <div class="plan checkout-box" id="checkout-already-subscribed" role="alert" tabindex="-1" hidden>
+        <h2>Ya tienes una suscripción mensual</h2>
+        <p class="plan-for">Hay una suscripción mensual activa con este correo, así que hemos cerrado el pago. No se ha cobrado nada. Sigue usando tu clave de licencia; si no la tienes, <a href="license">vuelve a recibirla</a>. Para cambiar el método de pago o cancelar, usa Ajustes › Licencia › «Gestionar pagos…» en la app.</p>
+        <div class="plan-actions">
+          <a class="btn" href="license">Volver a recibir la clave</a>
+        </div>
       </div>
 
       <div class="note" id="checkout-duplicate" hidden>

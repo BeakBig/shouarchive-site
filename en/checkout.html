@@ -69,8 +69,12 @@
         <p><strong>The monthly subscription isn’t available yet.</strong> You can subscribe on this page from <span data-price="monthly.from">January 1, 2027</span>. Until then, please use the ShouArchive license on the <a href="pricing">pricing page</a>.</p>
       </div>
 
-      <div class="note" id="checkout-already-subscribed" hidden>
-        <p><strong>You already have a monthly subscription.</strong> There is an active monthly subscription for this email, so nothing was charged. Keep using your existing license key — if you don’t have it, <a href="license">get it again</a>. To change your payment method or cancel, use Settings › License › Manage Billing… in the app.</p>
+      <div class="plan checkout-box" id="checkout-already-subscribed" role="alert" tabindex="-1" hidden>
+        <h2>You already have a monthly subscription</h2>
+        <p class="plan-for">There is an active monthly subscription for this email, so we closed the checkout. Nothing was charged. Keep using your existing license key — if you don’t have it, <a href="license">get it again</a>. To change your payment method or cancel, use Settings › License › Manage Billing… in the app.</p>
+        <div class="plan-actions">
+          <a class="btn" href="license">Get your key again</a>
+        </div>
       </div>
 
       <div class="note" id="checkout-duplicate" hidden>

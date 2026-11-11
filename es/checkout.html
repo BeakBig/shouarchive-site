@@ -44,13 +44,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Comprar ShouArchive</h1>
-      <p>Compra única de <span data-price="commercial.price">US$29</span> · <span data-price="commercial.devices">2</span> Mac · 1 año de actualizaciones incluido (impuestos aparte)</p>
+      <p data-plan-perpetual>Compra única de <span data-price="commercial.price">US$29</span> · <span data-price="commercial.devices">2</span> Mac · 1 año de actualizaciones incluido (impuestos aparte)</p>
+      <p data-plan-monthly hidden>Suscripción mensual de <span data-price="commercial.price_monthly">US$3</span> / mes · <span data-price="monthly.devices">4</span> Mac · todas las funciones mientras estés suscrito (impuestos aparte)</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31"></div>
+      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31" data-price-monthly="" data-monthly-from="2027-01-01" data-presale-from="" data-presale-until=""></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>El pago todavía no está abierto.</strong> ShouArchive aún no se ha lanzado, así que por ahora no se puede comprar. Consulta el precio y las novedades del lanzamiento en la <a href="pricing">página de precios</a>.</p>
@@ -62,6 +63,23 @@
 
       <div class="note note-warn" id="checkout-limit" hidden>
         <p>Ahora mismo hay muchas solicitudes de pago. Inténtalo de nuevo en unos minutos.</p>
+      </div>
+
+      <div class="note" id="checkout-monthly-soon" hidden>
+        <p><strong>La suscripción mensual aún no está disponible.</strong> Podrás suscribirte en esta página a partir del <span data-price="monthly.from">1 de enero de 2027</span>. Hasta entonces, usa la licencia de ShouArchive de la <a href="pricing">página de precios</a>.</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-already-subscribed" role="alert" tabindex="-1" data-ok="Aceptar" hidden>
+        <h2>Ya tienes una suscripción mensual</h2>
+        <p class="plan-for">Hay una suscripción mensual activa con este correo, así que hemos cerrado el pago. No se ha cobrado nada. Sigue usando tu clave de licencia; si no la tienes, <a href="license">vuelve a recibirla</a>. Para cambiar el método de pago o cancelar, usa Ajustes › Licencia › «Gestionar pagos…» en la app.</p>
+        <div class="plan-actions">
+          <a class="btn" href="license">Volver a recibir la clave</a>
+        </div>
+      </div>
+
+      <div class="note" id="checkout-duplicate" hidden>
+        <p><strong>Ya estabas suscrito, así que estamos cancelando este pago.</strong> La cancelación de la suscripción que acabas de crear y la solicitud de reembolso tardan <em class="key">como máximo 5 minutos</em>; cuando terminen, te enviaremos <em class="key">un aviso de cancelación</em> al correo electrónico del pago. El reembolso puede tardar unos días según el emisor de la tarjeta. Sigue usando <em class="key">tu clave de licencia</em>.</p>
+        <p>Puede que primero llegue un <em class="key">correo de confirmación de suscripción</em> de Paddle, nuestro proveedor de pagos. Se envía automáticamente al pagar, así que no tienes que hacer nada: la suscripción se cancela.</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
@@ -83,6 +101,7 @@
       <div class="plan checkout-box" id="checkout-ready" hidden>
         <h2>El pago se ha completado. ¡Gracias!</h2>
         <p>Registra esta clave de licencia en ShouArchive. También hemos enviado la misma clave al correo con el que pagaste.</p>
+        <p class="price-note" id="checkout-ready-monthly" hidden>Es una clave de suscripción mensual: mientras estés suscrito, todas las funciones funcionan en <span data-price="monthly.devices">4</span> Mac. Regístrala en ShouArchive <span data-price="monthly.min_app">1.2.0</span> o posterior. Para cancelar, usa Ajustes › Licencia › «Gestionar pagos…» en la app.</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
           <a class="btn" id="license-open" href="#" data-mac-only>Abrir en ShouArchive</a>
@@ -96,7 +115,11 @@
         <p><strong>Se ha ampliado tu periodo de actualizaciones. ¡Gracias!</strong> Tu clave de licencia no cambia; no tienes que volver a introducirla. ShouArchive detectará el nuevo periodo en breve; para aplicarlo ya, pulsa Ajustes › Licencia › Comprobar automáticamente. También te enviamos un correo de confirmación a la dirección con la que pagaste.</p>
       </div>
 
-      <div class="plan checkout-box" id="checkout-owned" hidden>
+      <div class="note" id="checkout-resubscribed" hidden>
+        <p><strong>Tu suscripción mensual se ha reanudado. ¡Gracias!</strong> Tu clave de licencia no cambia; no tienes que volver a introducirla. ShouArchive detectará el nuevo periodo de facturación en breve; para aplicarlo ya, pulsa Ajustes › Licencia › Comprobar automáticamente.</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-owned" role="alert" tabindex="-1" data-ok="Aceptar" hidden>
         <h2>Este correo ya tiene una licencia</h2>
         <p class="plan-for">Aún no se ha cobrado nada. Elige qué quieres hacer.</p>
         <ul>
@@ -118,11 +141,24 @@
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>Licencia de ShouArchive</h2>
         <p class="plan-for">Licencia + 1 año de actualizaciones · después, las actualizaciones cuestan <span data-price="commercial.price_renewal">US$15</span> al año (renovación automática · se puede desactivar en cualquier momento)</p>
-        <p class="price"><span data-price="commercial.price">US$29</span></p>
+        <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
         <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>Oferta de lanzamiento: <span data-price="early_bird.percent">30%</span> de descuento</strong> — en la primera compra hasta el <span data-price="early_bird.until">31 de diciembre de 2026</span> · la renovación no cambia</p>
         <p class="price-note">Los impuestos se añaden en la pantalla de pago según tu región. La pantalla de pago muestra los importes en tu moneda local.</p>
         <div class="plan-actions">
           <button class="btn" type="button" id="checkout-open">Comprar</button>
+        </div>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-buy-monthly" hidden>
+        <h2>Suscripción mensual</h2>
+        <p class="plan-for">Cobro automático cada mes · cancela cuando quieras: puedes seguir usándola hasta el final del periodo de facturación de ese mes · no es una licencia perpetua</p>
+        <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / mes</p>
+        <p class="price-early" data-monthly-presale hidden><strong>Suscripción anticipada: primeros <span data-price="monthly.presale.months">3</span> pagos a <span data-price="monthly.presale.price">US$2</span></strong> — si te suscribes hasta el <span data-price="monthly.presale.until">31 de diciembre de 2026</span> · después, <span data-price="commercial.price_monthly">US$3</span></p>
+        <p class="price-note">Los impuestos se añaden en la pantalla de pago según tu región, y la pantalla de pago muestra los importes en tu moneda local. Los meses ya pagados no se reembolsan.</p>
+        <p class="price-note" data-monthly-presale hidden><strong>Suscripción anticipada: reembolso íntegro</strong> — Si lo pides hasta el <span data-price="monthly.presale.until">31 de diciembre de 2026</span>, te devolvemos todo lo pagado.</p>
+        <p class="price-note" data-monthly-presale hidden><strong>Pagos de la suscripción anticipada</strong> — Los <span data-price="monthly.presale.price">US$2</span> que pagas ahora cubren el primer mes tras el periodo gratuito y el siguiente pago es el <span data-price="monthly.presale.next_bill">1 de febrero de 2027</span>; el periodo gratuito no se cobra.</p>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-open-monthly">Suscribirse</button>
         </div>
       </div>
 
@@ -131,15 +167,17 @@
         <li>Al completar el pago, la clave de licencia aparece en esta página y la misma clave llega al correo con el que pagaste.</li>
         <li>Pulsa «Abrir en ShouArchive» o el enlace «Regístrala en la app» del correo. La app se abre y te pregunta si quieres registrar este Mac; pulsa «Registrar» y listo.</li>
         <li>Si el enlace no abre la app, ve a <strong>Ajustes › Licencia › Introducir clave…</strong> en ShouArchive, introduce el correo del pago y la clave, y pulsa «Activar». Si pagaste desde la app, basta con pulsar «Comprobar automáticamente» en ese Mac.</li>
-        <li>Una clave sirve para <span data-price="commercial.devices">2</span> Mac. Si perdiste la clave, puedes <a href="license">volver a recibirla</a>.</li>
+        <li>Una clave sirve para <span data-price="commercial.devices">2</span> Mac (<span data-price="monthly.devices">4</span> con la suscripción mensual). Si perdiste la clave, puedes <a href="license">volver a recibirla</a>.</li>
       </ol>
 
       <h2 id="about">Sobre el pago</h2>
       <ul>
         <li><strong>Revendedor autorizado — Paddle.</strong> El pago lo gestiona <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> como revendedor autorizado (Merchant of Record). Los recibos y los correos relacionados con el pago los envía Paddle.</li>
         <li><strong>Los impuestos</strong> no están incluidos en el precio y se añaden en la pantalla de pago según tu región.</li>
-        <li><strong>La renovación de las actualizaciones</strong> se realiza automáticamente cada año (te avisamos 7 días antes por el correo del pago y en la app) y puedes desactivarla en cualquier momento desde el enlace de gestión del correo de pago de Paddle o en Ajustes › Licencia › «Gestionar pago…» de la app. Aunque la desactives, puedes seguir usando la app.</li>
-        <li><strong>Reembolsos</strong> — dentro de los <span data-price="commercial.refund_days">14</span> días siguientes al pago, el reembolso es íntegro. Envía el correo electrónico del pago y el número de pedido a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20Solicitud%20de%20reembolso&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a>. <a href="refund">Política de reembolso</a></li>
+        <li data-plan-perpetual><strong>La renovación de las actualizaciones</strong> se realiza automáticamente cada año (te avisamos 7 días antes por el correo del pago y en la app) y puedes desactivarla en cualquier momento desde el enlace de gestión del correo de pago de Paddle o en Ajustes › Licencia › «Gestionar pagos…» de la app. Aunque la desactives, puedes seguir usando la app.</li>
+        <li data-plan-perpetual><strong>Reembolsos</strong> — dentro de los <span data-price="commercial.refund_days">14</span> días siguientes al pago, el reembolso es íntegro. Envía el correo electrónico del pago y el número de pedido a <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20Solicitud%20de%20reembolso&amp;body=%0A%0A%0A---%0AEnviado%20desde%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fes%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a>. <a href="refund">Política de reembolso</a></li>
+        <li data-plan-monthly hidden><strong>La suscripción mensual</strong> se cobra automáticamente cada mes y puedes cancelarla cuando quieras desde el enlace de gestión del correo de pago de Paddle o en Ajustes › Licencia › «Gestionar pagos…» de la app. Tras cancelar, puedes seguir usándola hasta el final del periodo de facturación de ese mes. Si un pago falla, Paddle lo reintenta y mientras tanto puedes seguir usando la app.</li>
+        <li data-plan-monthly hidden><strong>Reembolsos</strong> — los meses ya pagados de la suscripción mensual no se reembolsan, salvo cuando la ley de tu país te reconozca ese derecho. <a href="refund">Política de reembolso</a></li>
         <li>Antes de comprar, revisa los <a href="terms">términos del servicio</a> y la <a href="privacy">política de privacidad</a>.</li>
       </ul>
     </div>

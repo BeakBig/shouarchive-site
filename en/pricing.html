@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Pricing</h1>
-      <p>ShouArchive is an app you buy once on this site and keep using. <span data-if="!free_period.until" hidden>First try every feature for <span data-price="trial_days">14</span> days with no payment method, then buy a license if you like it. </span>It is a developer tool for building, signing and shipping the apps you make, with your own Apple and Google developer accounts and certificates.</p>
+      <p>ShouArchive is an app you buy on this site. <span data-if="!free_period.until" hidden>First try every feature for <span data-price="trial_days">14</span> days with no payment method, then buy a license if you like it. </span>It is a developer tool for building, signing and shipping the apps you make, with your own Apple and Google developer accounts and certificates.</p>
       <div class="note" data-if="free_period.until">
         <p><strong>Free period through <span data-price="free_period.until">December 31, 2026</span>.</strong> Use every feature without a license. From <span data-price="free_period.paid_from">January 1, 2027</span>, the pricing below applies, and Macs you used during the free period also need a license for app builds, libraries, OTA distribution and store release. If you first opened the app in the last <span data-price="trial_days">14</span> days of the free period, your trial continues until <span data-price="trial_days">14</span> days after that first launch. Profile management, artifact inspection, API key management and viewing history stay free.</p>
       </div>
@@ -52,7 +52,8 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="plans">
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden data-presale-from="" data-presale-until=""></div>
+      <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>On sale Jan 1, 2027</p>
           <h2><span data-price="trial_days">14</span>-day trial</h2>
@@ -73,10 +74,33 @@
         </article>
 
         <article class="plan coming">
+          <p class="plan-badge soon" data-monthly-soon>On sale <span data-price="monthly.from">January 1, 2027</span></p>
+          <p class="plan-badge live" data-monthly-presale hidden>Early subscription · until <span data-price="monthly.presale.until">December 31, 2026</span></p>
+          <h2>Monthly subscription</h2>
+          <p class="plan-for">For anyone who’d rather pay month by month, only while they need it</p>
+          <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / month</p>
+          <p class="price-early" data-monthly-presale hidden><strong>Early subscription: first <span data-price="monthly.presale.months">3</span> payments <span data-price="monthly.presale.price">US$2</span></strong> — when you subscribe by <span data-price="monthly.presale.until">December 31, 2026</span> · <span data-price="commercial.price_monthly">US$3</span> after that</p>
+          <p class="price-note">Charged automatically every month · <span data-price="monthly.devices">4</span> Macs (plus tax)<br>Not a perpetual license — every feature works only while you’re subscribed.</p>
+          <p class="price-note" data-monthly-presale hidden><strong>Early subscription billing</strong> — The <span data-price="monthly.presale.price">US$2</span> you pay now covers the first month after the free period, and your next payment is on <span data-price="monthly.presale.next_bill">February 1, 2027</span> — the free period isn’t charged.</p>
+          <ul class="plan-feats">
+            <li><strong>Every feature while subscribed</strong> — the same features as the ShouArchive license</li>
+            <li><strong>Cancel any time</strong> — in the app under Settings › License › "Manage Billing…" or from the management link in Paddle’s billing emails. After you cancel, you keep using it until the end of that month’s billing period</li>
+            <li><strong>When the subscription ends</strong> — as when a trial ends, only profile management, file inspection, API key management and viewing history keep working. You can subscribe again with the same key from "Subscribe Again…" in the app</li>
+            <li><strong>No refunds</strong> — months already paid aren’t refunded (<a href="refund">Refund Policy</a>, Section 10)</li>
+            <li data-monthly-presale hidden><strong>Early subscriptions: full refund</strong> — ask by <span data-price="monthly.presale.until">December 31, 2026</span> and we refund everything you paid (<a href="refund">Refund Policy</a>, Section 10)</li>
+            <li>Works with <strong>ShouArchive <span data-price="monthly.min_app">1.2.0</span> or later</strong></li>
+          </ul>
+          <div class="plan-actions">
+            <a class="btn" href="checkout?plan=monthly" data-monthly-open hidden>Subscribe</a>
+          </div>
+          <p class="plan-foot" data-monthly-soon>The monthly subscription opens on <span data-price="monthly.from">January 1, 2027</span>. Until then, please use the ShouArchive license.</p>
+        </article>
+
+        <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>On sale Jan 1, 2027</p>
           <h2>ShouArchive license</h2>
           <p class="plan-for">For anyone who wants to buy once on the web and keep using it</p>
-          <p class="price"><span data-price="commercial.price">US$29</span></p>
+          <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
           <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>Early bird: <span data-price="early_bird.percent">30%</span> off</strong> — your first purchase through <span data-price="early_bird.until">December 31, 2026</span> · renewal price unchanged</p>
           <p class="price-note">One-time purchase · <span data-price="commercial.devices">2</span> Macs · 1 year of updates included (plus tax)<br>After that, updates are <span data-price="commercial.price_renewal">US$15</span> a year — the app keeps working even if you don't renew.</p>
           <ul class="plan-feats">
@@ -106,7 +130,7 @@
       <div class="section-head">
         <p class="eyebrow violet">Features</p>
         <h2>What you can use, and when</h2>
-        <p class="lead">During the trial you get every feature. If the trial ends without a key, profile management, file inspection, API key management and viewing history stay.</p>
+        <p class="lead">During the trial you get every feature. If the trial ends without a key, profile management, file inspection, API key management and viewing history stay. The same applies when a monthly subscription ends.</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
@@ -115,25 +139,17 @@
               <th scope="col">Feature</th>
               <th scope="col">During the trial</th>
               <th scope="col">After the trial (no key)</th>
-              <th scope="col">After purchase</th>
+              <th scope="col">While subscribed monthly</th>
+              <th scope="col">With a license</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Period · price</th><td><span data-price="trial_days">14</span> days · free<small>No payment method to start · no automatic charge</small></td><td>Free · no time limit</td><td>One-time purchase · <span data-price="commercial.price">US$29</span><small>1 year of updates included · then <span data-price="commercial.price_renewal">US$15</span> a year — auto-renews (can be turned off at any time)</small></td></tr>
-            <tr><th scope="row">Profile management · comparison</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Download and create profiles · register devices</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Save and manage API keys</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">File inspection (IPA · APK · AAB)</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">History</th><td class="yes">✓</td><td class="yes">View records only</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">App build · job queue</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">App upload</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Device install</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Re-signing · library · IPA cleanup</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">OTA distribution</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Store release (iOS · Android)</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">AI Integration (MCP)</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">Updates</th><td>Versions released during the trial</td><td class="no">—</td><td>Inside the app during your update period<small>When it ends, you keep using every version released until then</small></td></tr>
-            <tr><th scope="row">License key</th><td class="no">Not needed</td><td class="no">Not needed</td><td>One key for <span data-price="commercial.devices">2</span> Macs<small>Sent to the email address you paid with</small></td></tr>
+            <tr><th scope="row">Period · price</th><td><span data-price="trial_days">14</span> days · free<small>No payment method to start · no automatic charge</small></td><td>Free · no time limit</td><td><span data-price="commercial.price_monthly">US$3</span> a month · charged automatically<small>Cancel any time · works until the end of the paid month</small></td><td>One-time purchase · <span data-price="commercial.price">US$29</span><small>1 year of updates included · then <span data-price="commercial.price_renewal">US$15</span> a year — auto-renews (can be turned off at any time)</small></td></tr>
+            <tr><th scope="row">Always available<small>Profile management · comparison, Download and create profiles · register devices, Save and manage API keys, File inspection (IPA · APK · AAB)</small></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">History</th><td class="yes">✓</td><td class="yes">View records only</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Paid features<small>App build · job queue, App upload, Device install, Re-signing · library · IPA cleanup, OTA distribution, Store release (iOS · Android), AI Integration (MCP)</small></th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">Updates</th><td>Versions released during the trial</td><td class="no">—</td><td>Inside the app while subscribed<small>When it ends, same as after the trial</small></td><td>Inside the app during your update period<small>When it ends, you keep using every version released until then</small></td></tr>
+            <tr><th scope="row">License key</th><td class="no">Not needed</td><td class="no">Not needed</td><td>One key for <span data-price="monthly.devices">4</span> Macs<small>Sent to the email address you paid with</small></td><td>One key for <span data-price="commercial.devices">2</span> Macs<small>Sent to the email address you paid with</small></td></tr>
           </tbody>
         </table>
       </div>
@@ -146,16 +162,30 @@
       <div class="note" data-live-hide hidden>
         <p><strong>Sales have not started yet.</strong> Purchases open on January 1, 2027. This section describes how payment will work then — if anything changes before then, this page is updated first.</p>
       </div>
-      <ul>
-        <li><strong>Payments by Paddle.</strong> Payment is handled by Paddle as the Merchant of Record. Paddle takes care of payment and tax calculation and issues receipts. Prices are listed in USD, and the checkout screen shows your local currency.</li>
-        <li><strong>Tax is extra.</strong> The prices above do not include tax. At checkout, Paddle automatically calculates and adds tax for your region.</li>
-        <li><strong>Buy once, keep using it.</strong> <span data-price="commercial.price">US$29</span> includes the license and 1 year of updates. When the update period ends, the app does not stop, and you can keep using every version released during that period.</li>
-        <li><strong>Update renewal — <span data-price="commercial.price_renewal">US$15</span> a year.</strong> The update period renews automatically every year. You can turn off auto-renewal at any time (from the management link in Paddle's billing emails or in the app under Settings › License › "Manage billing…"). We notify you 7 days before each renewal by email and in the app. If you renew again after the period has ended, a new year starts from that payment date.</li>
-        <li><strong>Versions released after the period ends.</strong> Versions released after your update period has ended can be installed and activated only after you renew. The in-app update check shows only versions released within your period.</li>
-        <li><strong><span data-price="trial_days">14</span>-day trial.</strong> It starts inside the app with no payment method, and you are not charged automatically when it ends. If the trial ends without a key, profile management (including download, creation and device registration), file inspection, API key management and history (viewing records only) keep working; app build, job queue, app upload, device install, re-signing, library, IPA cleanup, OTA distribution and store release open up again when you buy.</li>
-        <li><strong>Refunds.</strong> For both the first purchase and update renewals, you can ask for a full refund within <span data-price="commercial.refund_days">14</span> days of payment. The details are in the <a href="refund">Refund Policy</a>.</li>
-        <li><strong>Terms of use.</strong> Before you buy, please read the <a href="terms">Terms of Service</a> and the <a href="privacy">Privacy Policy</a>.</li>
-      </ul>
+      <div class="pay-group">
+        <h3>All plans</h3>
+        <ul>
+          <li><strong>Payments by Paddle.</strong> Payment is handled by Paddle as the Merchant of Record. Paddle takes care of payment and tax calculation and issues receipts. Prices are listed in USD, and the checkout screen shows your local currency.</li>
+          <li><strong>Tax is extra.</strong> The prices above do not include tax. At checkout, Paddle automatically calculates and adds tax for your region.</li>
+          <li><strong>Terms of use.</strong> Before you buy, please read the <a href="terms">Terms of Service</a> and the <a href="privacy">Privacy Policy</a>.</li>
+        </ul>
+      </div>
+      <div class="pay-group">
+        <h3>ShouArchive license</h3>
+        <ul>
+          <li><strong>Buy once, keep using it.</strong> <span data-price="commercial.price">US$29</span> includes the license and 1 year of updates. When the update period ends, the app does not stop, and you can keep using every feature added during that period.</li>
+          <li><strong>Update renewal — <span data-price="commercial.price_renewal">US$15</span> a year.</strong> The update period renews automatically every year. You can turn off auto-renewal at any time (from the management link in Paddle's billing emails or in the app under Settings › License › "Manage Billing…"). We notify you 7 days before each renewal by email and in the app. If you renew again after the period has ended, a new year starts from that payment date.</li>
+          <li><strong>Features added after the period ends.</strong> You can install new versions at any time, regardless of your update period. Only features added after your update period ends need a renewal to unlock; everything that was there before keeps working.</li>
+          <li><strong>Refunds.</strong> For both the first purchase and update renewals, you can ask for a full refund within <span data-price="commercial.refund_days">14</span> days of payment. The details are in the <a href="refund">Refund Policy</a>.</li>
+        </ul>
+      </div>
+      <div class="pay-group">
+        <h3>Monthly subscription</h3>
+        <ul>
+          <li><strong>Cancelling.</strong> You can cancel any time. You aren’t charged from the next month, and you keep using it until the end of the period you’ve paid for.</li>
+          <li><strong>Refunds.</strong> Months already paid aren’t refunded. Rights under the law where you live are unchanged (<a href="refund">Refund Policy</a>, Section 10).</li>
+        </ul>
+      </div>
     </div>
   </section>
 

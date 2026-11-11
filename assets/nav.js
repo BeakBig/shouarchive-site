@@ -7,3 +7,26 @@
 document.querySelectorAll('.lang-select').forEach(function (select) {
   select.addEventListener('change', function () { location.href = select.value; });
 });
+
+/*
+ * 월 구독 판매일 (2026-11-02) — #sale-config(결제 페이지는 #paddle-config)의 data-monthly-from(YYYY-MM-DD · tools/pricing.json 의
+ * monthly.first_day, fill-pricing.py 가 넣는다)이 방문자의 날짜로 오면 [data-monthly-open](「구독하기」 등)을 보이고
+ * [data-monthly-soon](「판매 시작」 안내)을 숨긴다. 스크립트가 없거나 날짜를 못 읽으면 HTML 그대로 — 판매 시작 안내만 보인다.
+ * 미리 구독 (2026-11-11) — data-presale-from ~ data-presale-until(monthly.presale.first_day · last_day, 둘 다 포함) 동안에는
+ * 판매일 전이라도 똑같이 열고, [data-monthly-presale](미리 구독 안내)도 보인다.
+ */
+(function () {
+  var config = document.getElementById('sale-config') || document.getElementById('paddle-config');
+  if (!config) return;
+  var day = /^\d{4}-\d{2}-\d{2}$/;
+  var from = config.getAttribute('data-monthly-from') || '';
+  var presaleFrom = config.getAttribute('data-presale-from') || '';
+  var presaleUntil = config.getAttribute('data-presale-until') || '';
+  var now = new Date();
+  var today = now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
+  var presale = day.test(presaleFrom) && day.test(presaleUntil) && today >= presaleFrom && today <= presaleUntil;
+  if (presale) document.querySelectorAll('[data-monthly-presale]').forEach(function (el) { el.hidden = false; });
+  if (!presale && !(day.test(from) && today >= from)) return;
+  document.querySelectorAll('[data-monthly-open]').forEach(function (el) { el.hidden = false; });
+  document.querySelectorAll('[data-monthly-soon]').forEach(function (el) { el.hidden = true; });
+})();

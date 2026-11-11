@@ -44,13 +44,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>购买 ShouArchive</h1>
-      <p>一次性购买 <span data-price="commercial.price">US$29</span> · <span data-price="commercial.devices">2</span> 台 Mac · 含 1 年更新（不含税）</p>
+      <p data-plan-perpetual>一次性购买 <span data-price="commercial.price">US$29</span> · <span data-price="commercial.devices">2</span> 台 Mac · 含 1 年更新（不含税）</p>
+      <p data-plan-monthly hidden>月度订阅 <span data-price="commercial.price_monthly">US$3</span> / 月 · <span data-price="monthly.devices">4</span> 台 Mac · 订阅期间全部功能（不含税）</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31"></div>
+      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31" data-price-monthly="" data-monthly-from="2027-01-01" data-presale-from="" data-presale-until=""></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>付款尚未开放。</strong>ShouArchive 尚未推出，目前还无法购买。价格和推出消息请查看<a href="pricing">价格页面</a>。</p>
@@ -62,6 +63,23 @@
 
       <div class="note note-warn" id="checkout-limit" hidden>
         <p>当前付款请求较多，请稍后再试。</p>
+      </div>
+
+      <div class="note" id="checkout-monthly-soon" hidden>
+        <p><strong>月度订阅暂时还不能订阅。</strong>自 <span data-price="monthly.from">2027年1月1日</span>起可在本页订阅。在此之前，请使用<a href="pricing">价格页面</a>中的 ShouArchive 许可证。</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-already-subscribed" role="alert" tabindex="-1" data-ok="确定" hidden>
+        <h2>您已在使用月度订阅</h2>
+        <p class="plan-for">此邮箱已有正在使用的月度订阅，因此已关闭付款窗口，未进行扣款。请继续使用原有的许可证密钥；如果找不到密钥，可在<a href="license">重新获取密钥</a>页面获取。更改付款方式或取消订阅，请在应用的“设置 › 许可证 › 管理付款…”中操作。</p>
+        <div class="plan-actions">
+          <a class="btn" href="license">重新获取密钥</a>
+        </div>
+      </div>
+
+      <div class="note" id="checkout-duplicate" hidden>
+        <p><strong>您已在使用月度订阅，因此我们正在取消本次付款。</strong>刚创建的订阅的取消和退款申请会在 <em class="key">5 分钟内</em>完成，完成后我们会向您付款时使用的邮箱发送<em class="key">取消通知</em>。退款视发卡机构而定，可能需要几天。请继续使用<em class="key">原有的许可证密钥</em>。</p>
+        <p>支付服务商 Paddle 发送的<em class="key">订阅确认邮件</em>可能会先到达。该邮件在付款时自动发出，您无需进行任何操作 — 该订阅会被取消。</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
@@ -83,6 +101,7 @@
       <div class="plan checkout-box" id="checkout-ready" hidden>
         <h2>付款已完成，感谢您的购买。</h2>
         <p>请在 ShouArchive 中注册此许可证密钥。同一密钥也已发送到您付款时使用的邮箱。</p>
+        <p class="price-note" id="checkout-ready-monthly" hidden>这是月度订阅密钥 — 订阅期间可在 <span data-price="monthly.devices">4</span> 台 Mac 上使用全部功能。请在 ShouArchive <span data-price="monthly.min_app">1.2.0</span> 或更高版本中注册。如需取消，请在应用的“设置 › 许可证 › 管理付款…”中操作。</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
           <a class="btn" id="license-open" href="#" data-mac-only>在 ShouArchive 中打开</a>
@@ -96,7 +115,11 @@
         <p><strong>更新期限已延长，感谢您的购买。</strong>许可证密钥保持不变，无需重新输入。ShouArchive 很快会确认新的期限；如需立即生效，请点按“设置 › 许可证 › 自动检查”。确认邮件也会发送到您付款时使用的邮箱。</p>
       </div>
 
-      <div class="plan checkout-box" id="checkout-owned" hidden>
+      <div class="note" id="checkout-resubscribed" hidden>
+        <p><strong>月度订阅已重新开始，感谢您的支持。</strong>许可证密钥保持不变，无需重新输入。ShouArchive 很快会确认新的付款期；如需立即生效，请点按“设置 › 许可证 › 自动检查”。</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-owned" role="alert" tabindex="-1" data-ok="确定" hidden>
         <h2>此邮箱已有许可证</h2>
         <p class="plan-for">尚未付款。请选择您要做的事。</p>
         <ul>
@@ -118,11 +141,24 @@
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive 许可证</h2>
         <p class="plan-for">许可证 + 1 年更新 · 之后的更新为每年 <span data-price="commercial.price_renewal">US$15</span>（自动续订 · 可随时关闭）</p>
-        <p class="price"><span data-price="commercial.price">US$29</span></p>
+        <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
         <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>早鸟优惠 立减 <span data-price="early_bird.percent">30%</span></strong> — 截至 <span data-price="early_bird.until">2026年12月31日</span>的首次购买适用 · 续订价格不变</p>
         <p class="price-note">税款会在付款页面按所在地区加收。付款页面会以当地货币显示。</p>
         <div class="plan-actions">
           <button class="btn" type="button" id="checkout-open">立即购买</button>
+        </div>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-buy-monthly" hidden>
+        <h2>月度订阅</h2>
+        <p class="plan-for">每月自动扣款 · 可随时取消 — 取消后仍可使用到当月付款期结束 · 不是永久许可证</p>
+        <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / 月</p>
+        <p class="price-early" data-monthly-presale hidden><strong>提前订阅优惠：前 <span data-price="monthly.presale.months">3</span> 次付款 <span data-price="monthly.presale.price">US$2</span></strong> — <span data-price="monthly.presale.until">2026年12月31日</span> 前订阅适用 · 之后为 <span data-price="commercial.price_monthly">US$3</span></p>
+        <p class="price-note">税款会在付款页面按所在地区加收，付款页面以当地货币显示。已付款的月份不予退款。</p>
+        <p class="price-note" data-monthly-presale hidden><strong>提前订阅可全额退款</strong> — <span data-price="monthly.presale.until">2026年12月31日</span> 前申请，退还全部已付金额。</p>
+        <p class="price-note" data-monthly-presale hidden><strong>提前订阅的付款日</strong> — 现在支付的 <span data-price="monthly.presale.price">US$2</span> 是免费期结束后第一个月的费用，下次付款日为 <span data-price="monthly.presale.next_bill">2027年2月1日</span> — 免费期不计费。</p>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-open-monthly">订阅</button>
         </div>
       </div>
 
@@ -131,15 +167,17 @@
         <li>付款完成后，此页面会显示许可证密钥，同一密钥也会发送到您付款时使用的邮箱。</li>
         <li>点按“在 ShouArchive 中打开”或邮件中的“在应用中直接注册”链接，应用会打开并询问是否在此 Mac 上注册。点按“注册”即可完成。</li>
         <li>如果链接无法打开应用，请在 ShouArchive 的<strong>设置 › 许可证 › 输入密钥…</strong>中输入付款邮箱和密钥，然后点按“激活”。如果是在应用内付款的，也可以在那台 Mac 上点按“自动检查”。</li>
-        <li>一个密钥可在 <span data-price="commercial.devices">2</span> 台 Mac 上使用。如果密钥丢失，可在<a href="license">重新获取密钥</a>页面获取。</li>
+        <li>一个密钥可在 <span data-price="commercial.devices">2</span> 台 Mac 上使用（月度订阅为 <span data-price="monthly.devices">4</span> 台）。如果密钥丢失，可在<a href="license">重新获取密钥</a>页面获取。</li>
       </ol>
 
       <h2 id="about">关于付款</h2>
       <ul>
         <li><strong>代理销售 — Paddle。</strong>付款由 <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> 作为记录商户（Merchant of Record，即代理销售商）处理。收据和与付款相关的邮件由 Paddle 发送。</li>
         <li><strong>税款</strong>不含在价格中，会在付款页面按所在地区加收。</li>
-        <li><strong>更新续订</strong>每年自动进行（续订前 7 天通过付款邮箱和应用内提示通知您），可随时通过 Paddle 付款通知邮件中的管理链接，或在应用的“设置 › 许可证 › 管理付款…”中关闭。关闭后应用仍可继续使用。</li>
-        <li><strong>退款</strong> — 付款后 <span data-price="commercial.refund_days">14</span> 天内可全额退款。请将付款邮箱和订单号发送至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%E9%80%80%E6%AC%BE%E7%94%B3%E8%AF%B7&amp;body=%0A%0A%0A---%0A%E6%9D%A5%E8%87%AA%E9%A1%B5%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hans%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a>。<a href="refund">退款政策</a></li>
+        <li data-plan-perpetual><strong>更新续订</strong>每年自动进行（续订前 7 天通过付款邮箱和应用内提示通知您），可随时通过 Paddle 付款通知邮件中的管理链接，或在应用的“设置 › 许可证 › 管理付款…”中关闭。关闭后应用仍可继续使用。</li>
+        <li data-plan-perpetual><strong>退款</strong> — 付款后 <span data-price="commercial.refund_days">14</span> 天内可全额退款。请将付款邮箱和订单号发送至 <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%E9%80%80%E6%AC%BE%E7%94%B3%E8%AF%B7&amp;body=%0A%0A%0A---%0A%E6%9D%A5%E8%87%AA%E9%A1%B5%E9%9D%A2%EF%BC%9A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fzh-Hans%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a>。<a href="refund">退款政策</a></li>
+        <li data-plan-monthly hidden><strong>月度订阅</strong>每月自动扣款，可随时通过 Paddle 付款通知邮件中的管理链接，或在应用的“设置 › 许可证 › 管理付款…”中取消。取消后仍可使用到当月付款期结束。付款失败时 Paddle 会重试，在此期间仍可继续使用。</li>
+        <li data-plan-monthly hidden><strong>退款</strong> — 月度订阅已付款的月份不予退款，但您所在国家法律规定的权利不受影响。<a href="refund">退款政策</a></li>
         <li>购买前请先阅读<a href="terms">服务条款</a>和<a href="privacy">隐私政策</a>。</li>
       </ul>
     </div>

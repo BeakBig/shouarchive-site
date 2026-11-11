@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>价格</h1>
-      <p>ShouArchive 是在本网站一次购买、长期使用的应用。<span data-if="!free_period.until" hidden>先用 <span data-price="trial_days">14</span> 天免费体验全部功能，无需付款方式；满意后再购买许可证。</span>这是一款开发者工具，使用您本人的 Apple · Google 开发者账户和证书，构建、签名并分发您自己开发的应用。</p>
+      <p>ShouArchive 是在本网站购买使用的应用。<span data-if="!free_period.until" hidden>先用 <span data-price="trial_days">14</span> 天免费体验全部功能，无需付款方式；满意后再购买许可证。</span>这是一款开发者工具，使用您本人的 Apple · Google 开发者账户和证书，构建、签名并分发您自己开发的应用。</p>
       <div class="note" data-if="free_period.until">
         <p><strong>免费期至 <span data-price="free_period.until">2026年12月31日</span>。</strong>无需许可证即可使用所有功能。自 <span data-price="free_period.paid_from">2027年1月1日</span> 起适用下方价格，免费期内使用过的 Mac 也需要许可证才能使用应用构建、库、OTA 分发和商店分发。如果你在免费期最后 <span data-price="trial_days">14</span> 天内首次启动应用，试用会持续到首次启动后 <span data-price="trial_days">14</span> 天。描述文件管理、产物检查、API 密钥管理和查看历史记录仍然免费。</p>
       </div>
@@ -52,7 +52,8 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="plans">
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden data-presale-from="" data-presale-until=""></div>
+      <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日开售</p>
           <h2><span data-price="trial_days">14</span> 天试用</h2>
@@ -73,10 +74,33 @@
         </article>
 
         <article class="plan coming">
+          <p class="plan-badge soon" data-monthly-soon><span data-price="monthly.from">2027年1月1日</span>开售</p>
+          <p class="plan-badge live" data-monthly-presale hidden>提前订阅 · 截至 <span data-price="monthly.presale.until">2026年12月31日</span></p>
+          <h2>月度订阅</h2>
+          <p class="plan-for">只想在需要期间按月付费使用的用户</p>
+          <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / 月</p>
+          <p class="price-early" data-monthly-presale hidden><strong>提前订阅优惠：前 <span data-price="monthly.presale.months">3</span> 次付款 <span data-price="monthly.presale.price">US$2</span></strong> — <span data-price="monthly.presale.until">2026年12月31日</span> 前订阅适用 · 之后为 <span data-price="commercial.price_monthly">US$3</span></p>
+          <p class="price-note">每月自动扣款 · <span data-price="monthly.devices">4</span> 台 Mac（不含税）<br>不是永久许可证 — 仅在订阅期间可使用全部功能。</p>
+          <p class="price-note" data-monthly-presale hidden><strong>提前订阅的付款日</strong> — 现在支付的 <span data-price="monthly.presale.price">US$2</span> 是免费期结束后第一个月的费用，下次付款日为 <span data-price="monthly.presale.next_bill">2027年2月1日</span> — 免费期不计费。</p>
+          <ul class="plan-feats">
+            <li><strong>订阅期间全部功能</strong> — 与 ShouArchive 许可证的功能相同</li>
+            <li><strong>随时取消</strong> — 在应用的“设置 › 许可证 › 管理付款…”或 Paddle 付款通知邮件中的管理链接取消。取消后仍可使用到当月付款期结束</li>
+            <li><strong>订阅结束后</strong> — 与试用结束时一样，只保留描述文件管理 · 产物检查 · API 密钥管理 · 历史记录查看。可在应用的“重新订阅…”中用同一密钥重新订阅</li>
+            <li><strong>不退款</strong> — 已付款的月份不予退款（<a href="refund">退款政策</a>第 10 项）</li>
+            <li data-monthly-presale hidden><strong>提前订阅可全额退款</strong> — <span data-price="monthly.presale.until">2026年12月31日</span> 前申请，退还全部已付金额（<a href="refund">退款政策</a>第 10 项）</li>
+            <li><strong>需要 ShouArchive <span data-price="monthly.min_app">1.2.0</span> 或更高版本</strong></li>
+          </ul>
+          <div class="plan-actions">
+            <a class="btn" href="checkout?plan=monthly" data-monthly-open hidden>订阅</a>
+          </div>
+          <p class="plan-foot" data-monthly-soon>月度订阅自 <span data-price="monthly.from">2027年1月1日</span>起可以订阅。在此之前，请使用 ShouArchive 许可证。</p>
+        </article>
+
+        <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日开售</p>
           <h2>ShouArchive 许可证</h2>
           <p class="plan-for">想在网页上一次购买、长期使用的用户</p>
-          <p class="price"><span data-price="commercial.price">US$29</span></p>
+          <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
           <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>早鸟优惠 立减 <span data-price="early_bird.percent">30%</span></strong> — 截至 <span data-price="early_bird.until">2026年12月31日</span>的首次购买适用 · 续订价格不变</p>
           <p class="price-note">一次性购买 · <span data-price="commercial.devices">2</span> 台 Mac · 含 1 年更新（不含税）<br>之后的更新为每年 <span data-price="commercial.price_renewal">US$15</span>——即使不续订，应用也可以继续使用。</p>
           <ul class="plan-feats">
@@ -106,7 +130,7 @@
       <div class="section-head">
         <p class="eyebrow violet">功能</p>
         <h2>什么时候能用哪些功能</h2>
-        <p class="lead">试用期间可以使用全部功能。即使试用结束时没有密钥，描述文件管理 · 产物检查 · API 密钥管理 · 历史记录查看也会保留。</p>
+        <p class="lead">试用期间可以使用全部功能。即使试用结束时没有密钥，描述文件管理 · 产物检查 · API 密钥管理 · 历史记录查看也会保留。月度订阅结束后也一样。</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
@@ -115,25 +139,17 @@
               <th scope="col">功能</th>
               <th scope="col">试用期间</th>
               <th scope="col">试用结束后（无密钥）</th>
-              <th scope="col">购买后</th>
+              <th scope="col">月度订阅期间</th>
+              <th scope="col">购买许可证后</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">期限 · 费用</th><td><span data-price="trial_days">14</span> 天 · 免费<small>无需付款方式 · 不会自动扣款</small></td><td>免费 · 不限期限</td><td>一次性购买 · <span data-price="commercial.price">US$29</span><small>含 1 年更新 · 之后每年 <span data-price="commercial.price_renewal">US$15</span> — 自动续订（可随时关闭）</small></td></tr>
-            <tr><th scope="row">描述文件管理 · 比较</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">描述文件下载 · 创建 · 设备注册</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">API 密钥保存 · 管理</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">产物检查（IPA · APK · AAB）</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">历史记录</th><td class="yes">✓</td><td class="yes">仅查看记录</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">应用构建 · 任务队列</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">上传应用</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">设备安装</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">重新签名 · 库 · IPA 整理</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">OTA 分发</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">商店分发（iOS · Android）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">AI 集成（MCP）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">更新</th><td>试用期间发布的版本</td><td class="no">—</td><td>更新期内在应用中更新<small>更新期结束后，此前已发布的版本仍可继续使用</small></td></tr>
-            <tr><th scope="row">许可证密钥</th><td class="no">不需要</td><td class="no">不需要</td><td>一个密钥可用于 <span data-price="commercial.devices">2</span> 台 Mac<small>发送到付款时使用的邮箱</small></td></tr>
+            <tr><th scope="row">期限 · 费用</th><td><span data-price="trial_days">14</span> 天 · 免费<small>无需付款方式 · 不会自动扣款</small></td><td>免费 · 不限期限</td><td>每月 <span data-price="commercial.price_monthly">US$3</span> · 自动扣款<small>可随时取消 · 取消后仍可使用到当月付款期结束</small></td><td>一次性购买 · <span data-price="commercial.price">US$29</span><small>含 1 年更新 · 之后每年 <span data-price="commercial.price_renewal">US$15</span> — 自动续订（可随时关闭）</small></td></tr>
+            <tr><th scope="row">始终可用的功能<small>描述文件管理 · 比较、描述文件下载 · 创建 · 设备注册、API 密钥保存 · 管理、产物检查（IPA · APK · AAB）</small></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">历史记录</th><td class="yes">✓</td><td class="yes">仅查看记录</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">付费功能<small>应用构建 · 任务队列、上传应用、设备安装、重新签名 · 库 · IPA 整理、OTA 分发、商店分发（iOS · Android）、AI 集成（MCP）</small></th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">更新</th><td>试用期间发布的版本</td><td class="no">—</td><td>订阅期间在应用中更新<small>订阅结束后与试用结束后相同</small></td><td>更新期内在应用中更新<small>更新期结束后，此前已发布的版本仍可继续使用</small></td></tr>
+            <tr><th scope="row">许可证密钥</th><td class="no">不需要</td><td class="no">不需要</td><td>一个密钥可用于 <span data-price="monthly.devices">4</span> 台 Mac<small>发送到付款时使用的邮箱</small></td><td>一个密钥可用于 <span data-price="commercial.devices">2</span> 台 Mac<small>发送到付款时使用的邮箱</small></td></tr>
           </tbody>
         </table>
       </div>
@@ -146,16 +162,30 @@
       <div class="note" data-live-hide hidden>
         <p><strong>尚未开始销售。</strong>2027 年 1 月 1 日开始销售。本节内容是届时的支付方式——如果在此之前有所变动，我们会先更新本页。</p>
       </div>
-      <ul>
-        <li><strong>支付代理 — Paddle。</strong>支付由 Paddle 作为记录商户（Merchant of Record，即代理销售商）处理。Paddle 代为处理支付与税款计算，并开具收据。价格以美元标示，付款页面会以当地货币显示。</li>
-        <li><strong>税款另计。</strong>以上价格不含税款。付款时，Paddle 会按客户所在地区自动计算税款并加收。</li>
-        <li><strong>一次购买，长期使用。</strong><span data-price="commercial.price">US$29</span> 包含许可证和 1 年更新。更新期结束后应用不会停止运行，更新期内发布的所有版本都可以继续使用。</li>
-        <li><strong>更新续订 — 每年 <span data-price="commercial.price_renewal">US$15</span>。</strong>更新期每年自动续订。自动续订可随时关闭（通过 Paddle 付款通知邮件中的管理链接，或在应用的“设置 › 许可证 › 管理付款…”中）。续订前 7 天，我们会通过付款邮箱和应用内提示通知您。更新期结束后再续订的，从该次付款之日起重新计算 1 年。</li>
-        <li><strong>更新期结束后发布的版本。</strong>更新期结束后发布的版本，需续订后才能安装 · 激活。应用内的更新检查只显示更新期内发布的版本。</li>
-        <li><strong><span data-price="trial_days">14</span> 天试用。</strong>在应用内无需付款方式即可开始，结束后也不会自动扣款。如果试用结束时没有密钥，可继续使用描述文件管理（含下载 · 创建 · 设备注册）· 产物检查 · API 密钥管理 · 历史记录（仅查看）；应用构建 · 任务队列 · 上传应用 · 设备安装 · 重新签名 · 库 · IPA 整理 · OTA 分发 · 商店分发在购买后重新开启。</li>
-        <li><strong>退款。</strong>首次购买和更新续订均可在付款后 <span data-price="commercial.refund_days">14</span> 天内申请全额退款。详细标准写在<a href="refund">退款政策</a>中。</li>
-        <li><strong>使用条件。</strong>购买前请先阅读<a href="terms">服务条款</a>和<a href="privacy">隐私政策</a>。</li>
-      </ul>
+      <div class="pay-group">
+        <h3>通用</h3>
+        <ul>
+          <li><strong>支付代理 — Paddle。</strong>支付由 Paddle 作为记录商户（Merchant of Record，即代理销售商）处理。Paddle 代为处理支付与税款计算，并开具收据。价格以美元标示，付款页面会以当地货币显示。</li>
+          <li><strong>税款另计。</strong>以上价格不含税款。付款时，Paddle 会按客户所在地区自动计算税款并加收。</li>
+          <li><strong>使用条件。</strong>购买前请先阅读<a href="terms">服务条款</a>和<a href="privacy">隐私政策</a>。</li>
+        </ul>
+      </div>
+      <div class="pay-group">
+        <h3>ShouArchive 许可证</h3>
+        <ul>
+          <li><strong>一次购买，长期使用。</strong><span data-price="commercial.price">US$29</span> 包含许可证和 1 年更新。更新期结束后应用不会停止运行，更新期内新增的所有功能都可以继续使用。</li>
+          <li><strong>更新续订 — 每年 <span data-price="commercial.price_renewal">US$15</span>。</strong>更新期每年自动续订。自动续订可随时关闭（通过 Paddle 付款通知邮件中的管理链接，或在应用的“设置 › 许可证 › 管理付款…”中）。续订前 7 天，我们会通过付款邮箱和应用内提示通知您。更新期结束后再续订的，从该次付款之日起重新计算 1 年。</li>
+          <li><strong>更新期结束后新增的功能。</strong>无论更新期是否结束，都可以随时安装新版本。只有更新期结束后新增的功能需要续订才能使用，之前已有的功能照常可用。</li>
+          <li><strong>退款。</strong>首次购买和更新续订均可在付款后 <span data-price="commercial.refund_days">14</span> 天内申请全额退款。详细标准写在<a href="refund">退款政策</a>中。</li>
+        </ul>
+      </div>
+      <div class="pay-group">
+        <h3>月度订阅</h3>
+        <ul>
+          <li><strong>取消。</strong>可随时取消。取消后从下个月起不再扣款，并可使用到已付款期间结束。</li>
+          <li><strong>退款。</strong>已付款的月份不予退款。您所在国家法律规定的权利不受影响（<a href="refund">退款政策</a>第 10 项）。</li>
+        </ul>
+      </div>
     </div>
   </section>
 

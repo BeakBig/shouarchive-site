@@ -94,7 +94,7 @@ def skeleton(html):
 def resolve_local(p, href):
     """사이트 안 상대 링크가 가리키는 실제 파일. 확장자 없는 주소를 Cloudflare 와 같은 규칙으로 푼다 —
     `pricing` → pricing.html, `./` · `en/` · `` → 그 폴더의 index.html. 없으면 None."""
-    path = href.split('#')[0]
+    path = href.split('#')[0].split('?')[0]  # ?plan=monthly 같은 쿼리는 같은 파일
     base = os.path.dirname(p)
     if path in ('', '.', './') or path.endswith('/'):
         target = os.path.normpath(os.path.join(base, path, 'index.html'))
@@ -239,9 +239,20 @@ def fill_pricing():
 def check_early_bird():
     """얼리버드가 끝났는데(last_day 다음 날 12:00 UTC 가 지남) percent · discount_id 가 남아 있으면 — 페이지가 끝난 할인을 계속 알린다."""
     import datetime
-    early = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8')).get('early_bird') or {}
+    cfg = json.load(open(os.path.join(ROOT, 'tools', 'pricing.json'), encoding='utf-8'))
+    early = cfg.get('early_bird') or {}
     if not early.get('percent'):
         return
+    # 가격 카드의 할인 금액(early_bird.price) = 첫 구매 금액(commercial.price) − percent — 둘 중 하나만 바꾸면 틀린 금액을 보인다
+    def cents(text):
+        m = re.fullmatch(r'US\$(\d+)(?:\.(\d{2}))?', str(text or ''))
+        return int(m.group(1)) * 100 + int(m.group(2) or 0) if m else None
+    full, shown = cents((cfg.get('commercial') or {}).get('price')), cents(early.get('price'))
+    pct = re.fullmatch(r'(\d+(?:\.\d+)?)%', str(early.get('percent')))
+    if full is None or shown is None or not pct:
+        report('가격', 'tools/pricing.json', 'early_bird.price 는 commercial.price 처럼 US$금액 꼴이어야 합니다')
+    elif shown != round(full * (100 - float(pct.group(1))) / 100):
+        report('가격', 'tools/pricing.json', f'early_bird.price {early.get("price")} 가 {cfg["commercial"]["price"]} 의 {early["percent"]} 할인 금액과 다릅니다')
     try:
         last = datetime.datetime.strptime(str(early.get('last_day')), '%Y-%m-%d').replace(tzinfo=datetime.timezone.utc)
     except ValueError:

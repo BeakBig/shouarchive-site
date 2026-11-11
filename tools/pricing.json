@@ -42,9 +42,10 @@
       "zh-Hant": "2027年1月1日"
     }
   },
-  "_early_bird": "얼리버드 — 첫 구매만 할인(갱신 요금은 그대로). percent 가 채워져 있고 판매가 열려 있으면(commercial.checkout) 가격 · 결제 · 홈 페이지의 얼리버드 줄(data-if=\"early_bird.percent commercial.checkout\")이 보인다. until = 마지막 날(언어별 표시), last_day = YYYY-MM-DD(이 날 포함 · 세계 어디서든 끝날 때까지, 다음 날 12:00 UTC). 실제 할인은 라이선스 서버(vars EARLY_BIRD_DISCOUNT_ID · EARLY_BIRD_LAST_DAY)가 결제에 붙인다 — 마지막 날을 서로 같게 둔다. 할인 id 는 paddle 의 sandbox · production 묶음(early_bird_discount)에 있다 — 서버에 닿지 못해 결제 페이지가 직접 Paddle 결제를 열 때(예비 길)만 쓰고, percent 가 비어 있으면 쓰지 않는다. 끝나면 percent 를 null 로 비우고 다시 배포한다(check-site 가 기간이 지났는데 남아 있으면 문제로 잡는다).",
+  "_early_bird": "얼리버드 — 첫 구매만 할인(갱신 요금은 그대로). percent 가 채워져 있고 판매가 열려 있으면(commercial.checkout) 가격 · 결제 · 홈 페이지의 얼리버드 줄(data-if=\"early_bird.percent commercial.checkout\")이 보인다. price = 할인된 첫 구매 금액(가격 · 결제 페이지에서 원래 금액에 취소선을 긋고 옆에 보인다 — commercial.price 와 percent 로 Paddle 이 계산한 금액, check-site 가 맞는지 본다), until = 마지막 날(언어별 표시), last_day = YYYY-MM-DD(이 날 포함 · 세계 어디서든 끝날 때까지, 다음 날 12:00 UTC). 실제 할인은 라이선스 서버(vars EARLY_BIRD_DISCOUNT_ID · EARLY_BIRD_LAST_DAY)가 결제에 붙인다 — 마지막 날을 서로 같게 둔다. 할인 id 는 paddle 의 sandbox · production 묶음(early_bird_discount)에 있다 — 서버에 닿지 못해 결제 페이지가 직접 Paddle 결제를 열 때(예비 길)만 쓰고, percent 가 비어 있으면 쓰지 않는다. 끝나면 percent 를 null 로 비우고 다시 배포한다(check-site 가 기간이 지났는데 남아 있으면 문제로 잡는다).",
   "early_bird": {
     "percent": "30%",
+    "price": "US$20.30",
     "until": {
       "ko": "2026년 12월 31일",
       "en": "December 31, 2026",

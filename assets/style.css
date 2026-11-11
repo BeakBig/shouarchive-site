@@ -400,6 +400,8 @@ h2 {
 }
 .plan .price-note { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
 .plan .price-early { font-size: 13.5px; color: var(--accent); margin: 0 0 8px; }
+/* 할인 중 (2026-11-11) — 할인 금액(.price-now)이 보이면 원래 금액(.price-was)은 작게 · 취소선 */
+.plan .price:has(> .price-now:not([hidden])) > .price-was { font-size: 0.55em; font-weight: 600; color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; margin-right: 0.1em; }
 .plan-feats { flex: 1; margin: 0 0 20px; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
 .plan-feats li { margin: 5px 0; }
 .plan-feats strong { color: var(--text); font-weight: 600; }

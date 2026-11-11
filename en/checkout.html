@@ -122,7 +122,7 @@
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive license</h2>
         <p class="plan-for">License + 1 year of updates · after that, updates are <span data-price="commercial.price_renewal">US$15</span> a year (auto-renewal · turn it off any time)</p>
-        <p class="price"><span data-price="commercial.price">US$29</span></p>
+        <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
         <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>Early bird: <span data-price="early_bird.percent">30%</span> off</strong> — your first purchase through <span data-price="early_bird.until">December 31, 2026</span> · renewal price unchanged</p>
         <p class="price-note">Tax for your region is added on the checkout screen. The checkout screen shows amounts in your local currency.</p>
         <div class="plan-actions">
@@ -133,7 +133,7 @@
       <div class="plan checkout-box" id="checkout-buy-monthly" hidden>
         <h2>Monthly subscription</h2>
         <p class="plan-for">Charged automatically every month · cancel any time — you keep using it until the end of that month’s billing period · not a perpetual license</p>
-        <p class="price"><span data-price="commercial.price_monthly">US$3</span> / month</p>
+        <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / month</p>
         <p class="price-early" data-monthly-presale hidden><strong>Early subscription: first <span data-price="monthly.presale.months">3</span> payments <span data-price="monthly.presale.price">US$2</span></strong> — when you subscribe by <span data-price="monthly.presale.until">December 31, 2026</span> · <span data-price="commercial.price_monthly">US$3</span> after that</p>
         <p class="price-note">Tax is added for your region on the checkout screen, which shows prices in your local currency. Months already paid aren’t refunded.</p>
         <p class="price-note" data-monthly-presale hidden><strong>Early subscriptions: full refund</strong> — Ask by <span data-price="monthly.presale.until">December 31, 2026</span> and we refund everything you paid.</p>

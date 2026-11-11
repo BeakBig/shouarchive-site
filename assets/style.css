@@ -496,6 +496,8 @@ code {
   margin: 16px 0;
 }
 .note p:last-child { margin-bottom: 0; }
+/* 안내 글에서 꼭 읽어야 할 말 (기다릴 시간 · 올 메일 · 할 일) */
+.note em.key { font-style: normal; font-weight: 700; color: var(--accent); }
 
 .faq details {
   border: 1px solid var(--line);

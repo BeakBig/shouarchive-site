@@ -67,12 +67,23 @@ def paddle_attrs(cfg):
             ('data-license-api', paddle.get('license_api')),
             ('data-discount', active.get('early_bird_discount') if early.get('percent') else ''),
             ('data-discount-last-day', early.get('last_day')),
-            ('data-monthly-from', (cfg.get('monthly') or {}).get('first_day')))
+            ('data-monthly-from', (cfg.get('monthly') or {}).get('first_day'))) + presale_attrs(cfg)
+
+
+def presale_attrs(cfg):
+    """미리 구독 기간 (속성, 값) — monthly.presale.first_day · last_day. 쓰는 Paddle 묶음에 월 구독 가격 id 가 없으면
+    빈 값(구독 버튼만 열리고 결제는 못 여는 일이 없게)."""
+    paddle = cfg.get('paddle') or {}
+    active = paddle.get(paddle.get('environment')) or {}
+    presale = (cfg.get('monthly') or {}).get('presale') or {}
+    on = bool(active.get('price_monthly')) and bool(presale.get('first_day')) and bool(presale.get('last_day'))
+    return (('data-presale-from', presale.get('first_day') if on else ''),
+            ('data-presale-until', presale.get('last_day') if on else ''))
 
 
 def sale_attrs(cfg):
-    """#sale-config 에 쓸 (속성, 값) — 월 구독 판매 시작일 (assets/nav.js 가 읽는다)."""
-    return (('data-monthly-from', (cfg.get('monthly') or {}).get('first_day')),)
+    """#sale-config 에 쓸 (속성, 값) — 월 구독 판매 시작일 · 미리 구독 기간 (assets/nav.js 가 읽는다)."""
+    return (('data-monthly-from', (cfg.get('monthly') or {}).get('first_day')),) + presale_attrs(cfg)
 
 
 def load():

@@ -167,7 +167,14 @@
 
   /** 월 구독을 지금 열 수 있나 — 가격 id(data-price-monthly)가 있고 판매일(data-monthly-from)이 방문자의 날짜로 왔다 */
   function monthlyOpen(cfg) {
-    return Boolean(cfg.priceMonthly) && /^\d{4}-\d{2}-\d{2}$/.test(cfg.monthlyFrom || '') && localDay() >= cfg.monthlyFrom;
+    if (!cfg.priceMonthly) return false;
+    return monthlyPresale(cfg) || (/^\d{4}-\d{2}-\d{2}$/.test(cfg.monthlyFrom || '') && localDay() >= cfg.monthlyFrom);
+  }
+
+  /** 미리 구독 기간인가 (2026-11-11) — data-presale-from ~ data-presale-until, 방문자의 날짜로 둘 다 포함 (assets/nav.js 와 같은 규칙) */
+  function monthlyPresale(cfg) {
+    var day = /^\d{4}-\d{2}-\d{2}$/, today = localDay();
+    return day.test(cfg.presaleFrom || '') && day.test(cfg.presaleUntil || '') && today >= cfg.presaleFrom && today <= cfg.presaleUntil;
   }
 
   /** 월 구독(?plan=monthly · #kind=monthly)이면 [data-plan-monthly] 문구를, 아니면 [data-plan-perpetual] 문구를 보인다 */
@@ -291,6 +298,8 @@
               show('checkout-monthly-soon', true);
               return;
             }
+            // 미리 구독 기간에는 예비 길로 열지 않는다 — 할인과 다음 결제일은 서버만 붙일 수 있어, 그대로 열면 제값이 바로 결제된다
+            if (monthlyPresale(cfg)) { show('checkout-limit', true); return; }
             // 라이선스 서버에 닿지 못하면 월 구독 가격 하나로 연다 — 영구 라이선스 항목 · 얼리버드 할인은 넣지 않는다. 키는 메일로만 받는다
             claim = null;
             Paddle.Checkout.open({ items: [{ priceId: cfg.priceMonthly, quantity: 1 }] });

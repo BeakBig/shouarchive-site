@@ -48,6 +48,7 @@ def main():
     args = sys.argv[1:]
     dry = '--dry-run' in args
     monthly_from = args[args.index('--monthly-from') + 1] if '--monthly-from' in args[:-1] else None
+    presale_from = args[args.index('--presale-from') + 1] if '--presale-from' in args[:-1] else None
     commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=ROOT, check=True,
                             capture_output=True, text=True).stdout.strip()
     if subprocess.run(['git', 'status', '--porcelain'], cwd=ROOT, capture_output=True, text=True).stdout.strip():
@@ -65,6 +66,8 @@ def main():
     cfg['commercial']['checkout'] = SITE + '/checkout'
     if monthly_from:
         cfg['monthly']['first_day'] = monthly_from
+    if presale_from:   # 미리 구독 시작일을 sandbox 판에서만 앞당긴다 (staging 서버의 MONTHLY_PRESALE_FIRST_DAY 와 맞춘다)
+        cfg['monthly']['presale']['first_day'] = presale_from
     json.dump(cfg, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 
     run([sys.executable, os.path.join(out, 'tools', 'fill-pricing.py')], out)

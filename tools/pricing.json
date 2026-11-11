@@ -59,6 +59,29 @@
   "monthly": {
     "devices": "4",
     "first_day": "2027-01-01",
+    "_presale": "미리 구독(2026-11-11) — first_day ~ last_day(방문자의 날짜, 둘 다 포함) 동안 월 구독을 판매일 전에 연다: 처음 months 번의 결제가 price, 첫 결제가 무료 기간 뒤 첫 달 요금, 다음 결제일 next_bill, last_day 까지 전액 환불. 할인 · 다음 결제일은 라이선스 서버(vars MONTHLY_PRESALE_* · *_MONTHLY_PRESALE_DISCOUNT_ID)가 붙인다 — 날짜를 서로 같게 둔다. 끄려면 first_day 를 빈 값으로(안내 문구 · 약관 · 환불 정책의 미리 구독 줄이 모두 숨는다). 쓰는 묶음의 price_monthly 가 비어 있으면 페이지에 날짜를 넣지 않는다.",
+    "presale": {
+      "first_day": "2026-11-13",
+      "last_day": "2026-12-31",
+      "price": "US$2",
+      "months": "3",
+      "until": {
+        "ko": "2026년 12월 31일",
+        "en": "December 31, 2026",
+        "es": "31 de diciembre de 2026",
+        "ja": "2026年12月31日",
+        "zh-Hans": "2026年12月31日",
+        "zh-Hant": "2026年12月31日"
+      },
+      "next_bill": {
+        "ko": "2027년 2월 1일",
+        "en": "February 1, 2027",
+        "es": "1 de febrero de 2027",
+        "ja": "2027年2月1日",
+        "zh-Hans": "2027年2月1日",
+        "zh-Hant": "2027年2月1日"
+      }
+    },
     "min_app": "1.2.0",
     "from": {
       "ko": "2027년 1월 1일",

@@ -52,7 +52,7 @@
 
   <section class="section">
     <div class="wrap">
-      <div id="sale-config" data-monthly-from="2027-01-01" hidden></div>
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden data-presale-from="" data-presale-until=""></div>
       <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日開始販售</p>
@@ -75,10 +75,12 @@
 
         <article class="plan coming">
           <p class="plan-badge soon" data-monthly-soon><span data-price="monthly.from">2027年1月1日</span>開始販售</p>
+          <p class="plan-badge live" data-monthly-presale hidden>提前訂閱 · 至 <span data-price="monthly.presale.until">2026年12月31日</span> 止</p>
           <h2>月訂閱</h2>
           <p class="plan-for">只想在需要期間按月付費使用的人</p>
           <p class="price"><span data-price="commercial.price_monthly">US$3</span> / 月</p>
           <p class="price-note">每月自動扣款 · <span data-price="monthly.devices">4</span> 台 Mac（未稅）<br>不是永久授權 — 僅在訂閱期間可使用所有功能。</p>
+          <p class="price-note" data-monthly-presale hidden><strong>提前訂閱優惠</strong> — 在 <span data-price="monthly.presale.until">2026年12月31日</span> 前訂閱，前 <span data-price="monthly.presale.months">3</span> 次付款每次 <span data-price="monthly.presale.price">US$2</span>（之後為 <span data-price="commercial.price_monthly">US$3</span>）。現在支付的 <span data-price="monthly.presale.price">US$2</span> 是免費期結束後第一個月的費用，下次付款日為 <span data-price="monthly.presale.next_bill">2027年2月1日</span> — 免費期不計費。<span data-price="monthly.presale.until">2026年12月31日</span> 前申請可全額退款。</p>
           <ul class="plan-feats">
             <li><strong>訂閱期間所有功能</strong> — 與 ShouArchive 授權的功能相同</li>
             <li><strong>隨時取消</strong> — 在 App 的「設定」›「授權」›「管理付款…」或 Paddle 付款通知郵件中的管理連結取消。取消後仍可使用到當月付款期間結束</li>

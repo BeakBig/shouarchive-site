@@ -52,7 +52,7 @@
 
   <section class="section">
     <div class="wrap">
-      <div id="sale-config" data-monthly-from="2027-01-01" hidden></div>
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden data-presale-from="" data-presale-until=""></div>
       <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日 販売開始</p>
@@ -75,10 +75,12 @@
 
         <article class="plan coming">
           <p class="plan-badge soon" data-monthly-soon><span data-price="monthly.from">2027年1月1日</span> 販売開始</p>
+          <p class="plan-badge live" data-monthly-presale hidden>先行申し込み · <span data-price="monthly.presale.until">2026年12月31日</span> まで</p>
           <h2>月額プラン</h2>
           <p class="plan-for">必要な間だけ毎月支払って使いたい方</p>
           <p class="price"><span data-price="commercial.price_monthly">US$3</span> / 月</p>
           <p class="price-note">毎月自動で決済 · Mac <span data-price="monthly.devices">4</span> 台（税別）<br>買い切りライセンスではありません — 購読中だけすべての機能を使えます。</p>
+          <p class="price-note" data-monthly-presale hidden><strong>先行申し込み特典</strong> — <span data-price="monthly.presale.until">2026年12月31日</span> までに申し込むと、最初の <span data-price="monthly.presale.months">3</span> 回のお支払いが各 <span data-price="monthly.presale.price">US$2</span> になります（その後は <span data-price="commercial.price_monthly">US$3</span>）。今お支払いいただく <span data-price="monthly.presale.price">US$2</span> は無料期間終了後の最初の 1 か月分で、次回のお支払い日は <span data-price="monthly.presale.next_bill">2027年2月1日</span> です — 無料期間は料金に含みません。<span data-price="monthly.presale.until">2026年12月31日</span> まではご請求いただければ全額返金します。</p>
           <ul class="plan-feats">
             <li><strong>購読中はすべての機能</strong> — ShouArchive ライセンスと同じ機能をすべて使えます</li>
             <li><strong>いつでも解約</strong> — アプリの「設定 › ライセンス › 支払い管理…」または Paddle の決済案内メールの管理リンクから。解約してもその月の支払い期間が終わるまで使えます</li>

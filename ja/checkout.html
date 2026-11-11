@@ -96,6 +96,25 @@
         <p><strong>アップデート期間を延長しました。ありがとうございます。</strong>ライセンスキーは変わらず、再入力は不要です。ShouArchive がまもなく新しい期間を確認します。すぐに反映するには「設定 › ライセンス › 自動確認」を押してください。お知らせメールも決済に使ったメールアドレスに送ります。</p>
       </div>
 
+      <div class="plan checkout-box" id="checkout-owned" hidden>
+        <h2>このメールアドレスにはすでにライセンスがあります</h2>
+        <p class="plan-for">まだ決済していません。目的を選んでください。</p>
+        <ul>
+          <li><strong>アップデート期間を延長</strong> — お使いのライセンスのアップデート期間を 1 年延ばします（<span data-price="commercial.price_renewal">US$15</span>）。キーはそのままです。</li>
+          <li><strong>ライセンスを追加購入</strong> — Mac を増やす場合 — 新しいキー（Mac <span data-price="commercial.devices">2</span> 台）をもう 1 つ受け取ります。お使いのライセンスはそのままです。</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>このライセンスはアップデートが自動更新されているため、延長の必要はありません。決済はしていません。</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>現在、延長の決済を開けませんでした。しばらくしてからもう一度お試しください。</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">アップデート期間を延長</button>
+          <button class="btn outline" type="button" id="checkout-add">ライセンスを追加購入</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive ライセンス</h2>
         <p class="plan-for">ライセンス＋1 年間のアップデート · その後のアップデートは年 <span data-price="commercial.price_renewal">US$15</span>（自動更新 · いつでもオフにできます）</p>

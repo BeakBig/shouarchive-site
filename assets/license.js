@@ -172,44 +172,15 @@
           completed((event.data && event.data.transaction_id) || transactionId);
         }
         // 결제 창에서 이메일을 넣었다 — 이미 라이선스가 있는 구매자면 결제 전에 갱신 · 추가 구매를 고르게 한다 (2026-11-11)
-        if (event.name === 'checkout.customer.created' || event.name === 'checkout.customer.updated') {
-          checkOwned((event.data && event.data.transaction_id) || transactionId);
+        // sandbox 확인(11/11): 이벤트 이름은 길마다 다르다(checkout.customer.created · checkout.updated …) — 이름 대신 「고객이 붙었다」 로 본다. 고객마다 한 번만 묻는다
+        var customerId = event.data && event.data.customer && event.data.customer.id;
+        if (customerId && customerId !== checkedCustomer) {
+          checkedCustomer = customerId;
+          checkOwned(event.data.transaction_id || transactionId);
         }
       }
     });
     show('checkout-closed', false);
-
-    // ?_ptxn= (라이선스 서버가 만든 앱 구매 · 갱신 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
-    if (transactionId) return;
-    if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
-    show('checkout-buy', true);
-
-    byId('checkout-open').addEventListener('click', function () {
-      var button = this;
-      button.disabled = true;
-      show('checkout-limit', false);
-      post('/v1/web/checkout', { locale: pageLocale() })
-        .then(function (result) {
-          transactionId = result.transaction_id;
-          claim = result.claim;
-          Paddle.Checkout.open({ transactionId: transactionId });
-        })
-        .catch(function (error) {
-          // 시간당 결제 만들기 상한(409 checkout_limit) — 잠시 뒤 다시 누르라고 안내하고 결제 창은 열지 않는다
-          if (error && error.code === 'checkout_limit') { show('checkout-limit', true); return; }
-          // 라이선스 서버에 닿지 못하면 예전처럼 연다 — 키는 메일로만 받는다
-          claim = null;
-          var settings = { items: [
-            { priceId: cfg.priceLicense, quantity: 1 },
-            { priceId: cfg.priceUpdates, quantity: 1 }
-          ] };
-          // 얼리버드 — 서버가 붙이는 할인을 이 예비 길에서도 붙인다
-          var discount = earlyBirdDiscount(cfg);
-          if (discount) settings.discountId = discount;
-          Paddle.Checkout.open(settings);
-        })
-        .then(function () { button.disabled = false; });
-    });
 
     /*
      * 이미 라이선스가 있는 구매자 — 막지 않고 고르게 한다. 이메일은 보내지 않는다(거래 id + 확인 값으로 서버가 Paddle 에서 고객을 읽는다).
@@ -217,6 +188,7 @@
      * 서버에 닿지 못하면 그대로 둔다 — 결제하면 지금처럼 라이선스가 하나 더 생긴다.
      */
     var forkDone = addIntent;
+    var checkedCustomer = null;
     var purchaseId = null;
     function checkOwned(id) {
       if (forkDone || renewal || !claim || !id) return;
@@ -261,6 +233,39 @@
       if (!transactionId || transactionId !== purchaseId) transactionId = purchaseId;
       if (byId('checkout-open') && !new URLSearchParams(location.search).get('_ptxn')) show('checkout-buy', true);
       Paddle.Checkout.open({ transactionId: purchaseId });
+    });
+    // (앱에서 시작한 ?_ptxn= 결제에서도 버튼이 살아 있도록 아래 return 보다 앞에 둔다)
+
+    // ?_ptxn= (라이선스 서버가 만든 앱 구매 · 갱신 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
+    if (transactionId) return;
+    if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
+    show('checkout-buy', true);
+
+    byId('checkout-open').addEventListener('click', function () {
+      var button = this;
+      button.disabled = true;
+      show('checkout-limit', false);
+      post('/v1/web/checkout', { locale: pageLocale() })
+        .then(function (result) {
+          transactionId = result.transaction_id;
+          claim = result.claim;
+          Paddle.Checkout.open({ transactionId: transactionId });
+        })
+        .catch(function (error) {
+          // 시간당 결제 만들기 상한(409 checkout_limit) — 잠시 뒤 다시 누르라고 안내하고 결제 창은 열지 않는다
+          if (error && error.code === 'checkout_limit') { show('checkout-limit', true); return; }
+          // 라이선스 서버에 닿지 못하면 예전처럼 연다 — 키는 메일로만 받는다
+          claim = null;
+          var settings = { items: [
+            { priceId: cfg.priceLicense, quantity: 1 },
+            { priceId: cfg.priceUpdates, quantity: 1 }
+          ] };
+          // 얼리버드 — 서버가 붙이는 할인을 이 예비 길에서도 붙인다
+          var discount = earlyBirdDiscount(cfg);
+          if (discount) settings.discountId = discount;
+          Paddle.Checkout.open(settings);
+        })
+        .then(function () { button.disabled = false; });
     });
 
     function completed(id) {

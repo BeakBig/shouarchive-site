@@ -60,7 +60,7 @@
     button.type = 'button';
     button.className = 'btn';
     button.textContent = el.dataset.ok || 'OK';
-    button.addEventListener('click', function () { dialog.close(); });
+    button.addEventListener('click', function () { dialog.close(); dialog.remove(); });
     actions.appendChild(button);
     dialog.appendChild(actions);
     dialog.addEventListener('close', function () { dialog.remove(); });

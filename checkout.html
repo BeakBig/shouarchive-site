@@ -44,13 +44,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>ShouArchive 구매</h1>
-      <p>한 번 구매 <span data-price="commercial.price">US$29</span> · Mac <span data-price="commercial.devices">2</span>대 · 업데이트 1년 포함 (세금 별도)</p>
+      <p data-plan-perpetual>한 번 구매 <span data-price="commercial.price">US$29</span> · Mac <span data-price="commercial.devices">2</span>대 · 업데이트 1년 포함 (세금 별도)</p>
+      <p data-plan-monthly hidden>월 구독 <span data-price="commercial.price_monthly">US$3</span> / 월 · Mac <span data-price="monthly.devices">4</span>대 · 구독하는 동안 모든 기능 (세금 별도)</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31"></div>
+      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31" data-price-monthly="pri_01m74znys84yfqtvve8c6rhs54" data-monthly-from="2027-01-01" data-presale-from="2026-11-13" data-presale-until="2026-12-31"></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>결제를 아직 열지 않았습니다.</strong> ShouArchive 는 출시 전이라 지금은 살 수 없습니다. 가격과 출시 소식은 <a href="pricing">가격 페이지</a>에서 확인해 주세요.</p>
@@ -62,6 +63,23 @@
 
       <div class="note note-warn" id="checkout-limit" hidden>
         <p>지금은 결제 요청이 많습니다. 잠시 뒤 다시 시도하세요.</p>
+      </div>
+
+      <div class="note" id="checkout-monthly-soon" hidden>
+        <p><strong>월 구독은 아직 구독할 수 없습니다.</strong> <span data-price="monthly.from">2027년 1월 1일</span>부터 이 페이지에서 구독할 수 있습니다. 그 전에는 <a href="pricing">가격 페이지</a>의 ShouArchive 라이선스를 이용해 주세요.</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-already-subscribed" role="alert" tabindex="-1" data-ok="확인" hidden>
+        <h2>이미 월 구독 중입니다</h2>
+        <p class="plan-for">이 이메일로 쓰고 있는 월 구독이 있어 결제 창을 닫았습니다. 결제는 되지 않았습니다. 쓰던 라이선스 키를 그대로 쓰면 됩니다 — 키가 없으면 <a href="license">키 다시 받기</a> 에서 받으세요. 결제 수단 변경 · 해지는 앱의 설정 › 라이선스 › 「결제 관리…」 에서 합니다.</p>
+        <div class="plan-actions">
+          <a class="btn" href="license">키 다시 받기</a>
+        </div>
+      </div>
+
+      <div class="note" id="checkout-duplicate" hidden>
+        <p><strong>이미 월 구독 중이라 이 결제를 취소하고 있습니다.</strong> 방금 만든 구독의 해지와 환불 요청은 <em class="key">5분 안에</em> 끝나고, 끝나면 결제 이메일로 <em class="key">취소 안내 메일</em>을 보냅니다. 환불은 카드사에 따라 며칠 걸릴 수 있습니다. <em class="key">쓰던 라이선스 키를 그대로</em> 쓰면 됩니다.</p>
+        <p>결제 대행사 Paddle 이 보내는 <em class="key">구독 확정 메일</em>이 먼저 도착할 수 있습니다. 결제 때 자동으로 나가는 메일이니 따로 하실 일은 없습니다 — 구독은 해지됩니다.</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
@@ -83,6 +101,7 @@
       <div class="plan checkout-box" id="checkout-ready" hidden>
         <h2>결제가 끝났습니다. 고맙습니다.</h2>
         <p>이 라이선스 키를 ShouArchive 에 등록하세요. 같은 키를 결제한 이메일 주소로도 보냈습니다.</p>
+        <p class="price-note" id="checkout-ready-monthly" hidden>월 구독 키입니다 — 구독하는 동안 Mac <span data-price="monthly.devices">4</span>대에서 모든 기능을 씁니다. ShouArchive <span data-price="monthly.min_app">1.2.0</span> 이상에서 등록하세요. 해지는 앱의 설정 › 라이선스 › 「결제 관리…」 에서 합니다.</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
           <a class="btn" id="license-open" href="#" data-mac-only>ShouArchive 에서 열기</a>
@@ -96,14 +115,50 @@
         <p><strong>업데이트 기간을 연장했습니다. 고맙습니다.</strong> 라이선스 키는 그대로이고 다시 넣을 필요가 없습니다. ShouArchive 가 곧 새 기간을 확인합니다 — 바로 반영하려면 설정 › 라이선스 › 「자동 확인」 을 누르세요. 안내 메일도 결제한 이메일 주소로 보냅니다.</p>
       </div>
 
+      <div class="note" id="checkout-resubscribed" hidden>
+        <p><strong>월 구독을 다시 시작했습니다. 고맙습니다.</strong> 라이선스 키는 그대로이고 다시 넣을 필요가 없습니다. ShouArchive 가 곧 새 결제 기간을 확인합니다 — 바로 반영하려면 설정 › 라이선스 › 「자동 확인」 을 누르세요.</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-owned" role="alert" tabindex="-1" data-ok="확인" hidden>
+        <h2>이 이메일로 이미 라이선스가 있습니다</h2>
+        <p class="plan-for">아직 결제하지 않았습니다. 무엇을 하려는지 골라 주세요.</p>
+        <ul>
+          <li><strong>업데이트 기간 연장</strong> — 쓰던 라이선스의 업데이트 기간을 1년 늘립니다 (<span data-price="commercial.price_renewal">US$15</span>). 키는 그대로입니다.</li>
+          <li><strong>라이선스 추가 구매</strong> — Mac 을 더 쓰려면 새 키(Mac <span data-price="commercial.devices">2</span>대)를 하나 더 받습니다. 쓰던 라이선스는 그대로입니다.</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>이 라이선스는 업데이트가 자동으로 갱신되고 있어 따로 연장할 필요가 없습니다. 결제하지 않았습니다.</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>지금은 연장 결제를 열지 못했습니다. 잠시 뒤 다시 시도하세요.</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">업데이트 기간 연장</button>
+          <button class="btn outline" type="button" id="checkout-add">라이선스 추가 구매</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive 라이선스</h2>
         <p class="plan-for">라이선스 + 업데이트 1년 · 그 뒤 업데이트는 1년에 <span data-price="commercial.price_renewal">US$15</span> (자동 갱신 · 언제든 끄기)</p>
-        <p class="price"><span data-price="commercial.price">US$29</span></p>
+        <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
         <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>얼리버드 <span data-price="early_bird.percent">30%</span> 할인</strong> — <span data-price="early_bird.until">2026년 12월 31일</span>까지 첫 구매에 적용 · 갱신 요금은 그대로</p>
         <p class="price-note">세금은 결제 화면에서 지역에 맞춰 더해집니다. 결제 화면은 지역 통화로 보여 줍니다.</p>
         <div class="plan-actions">
           <button class="btn" type="button" id="checkout-open">구매하기</button>
+        </div>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-buy-monthly" hidden>
+        <h2>월 구독</h2>
+        <p class="plan-for">매달 자동 결제 · 언제든 해지 — 해지해도 그 달 결제 기간이 끝날 때까지 씁니다 · 영구 라이선스가 아닙니다</p>
+        <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / 월</p>
+        <p class="price-early" data-monthly-presale hidden><strong>미리 구독 할인: 처음 <span data-price="monthly.presale.months">3</span>번 결제 <span data-price="monthly.presale.price">US$2</span></strong> — <span data-price="monthly.presale.until">2026년 12월 31일</span>까지 구독하면 적용 · 그 뒤로는 <span data-price="commercial.price_monthly">US$3</span></p>
+        <p class="price-note">세금은 결제 화면에서 지역에 맞춰 더해집니다. 결제 화면은 지역 통화로 보여 줍니다. 결제한 달은 환불하지 않습니다.</p>
+        <p class="price-note" data-monthly-presale hidden><strong>미리 구독은 전액 환불</strong> — <span data-price="monthly.presale.until">2026년 12월 31일</span>까지 요청하면 결제한 금액을 모두 환불합니다.</p>
+        <p class="price-note" data-monthly-presale hidden><strong>미리 구독 결제일</strong> — 지금 결제하는 <span data-price="monthly.presale.price">US$2</span> 는 무료 기간이 끝난 뒤 첫 달 요금이고, 다음 결제일은 <span data-price="monthly.presale.next_bill">2027년 2월 1일</span>입니다 — 무료 기간은 요금에 넣지 않습니다.</p>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-open-monthly">구독하기</button>
         </div>
       </div>
 
@@ -112,15 +167,17 @@
         <li>결제가 끝나면 이 페이지에 라이선스 키가 나오고, 같은 키가 결제한 이메일 주소로도 옵니다.</li>
         <li>「ShouArchive 에서 열기」 나 메일의 「앱에서 바로 등록하기」 링크를 누르면 앱이 열리고 이 Mac 에 등록할지 묻습니다. 「등록」 을 누르면 끝입니다.</li>
         <li>링크가 열리지 않으면 ShouArchive 의 <strong>설정 › 라이선스 › 키 입력…</strong> 에 결제한 이메일과 키를 넣고 「활성화」 를 누릅니다. 앱에서 결제했다면 그 Mac 에서 「자동 확인」 만 눌러도 됩니다.</li>
-        <li>키 하나로 Mac <span data-price="commercial.devices">2</span>대에서 쓸 수 있습니다. 키를 잃어버렸으면 <a href="license">키 다시 받기</a> 에서 다시 받으세요.</li>
+        <li>키 하나로 Mac <span data-price="commercial.devices">2</span>대(월 구독은 <span data-price="monthly.devices">4</span>대)에서 쓸 수 있습니다. 키를 잃어버렸으면 <a href="license">키 다시 받기</a> 에서 다시 받으세요.</li>
       </ol>
 
       <h2 id="about">결제에 관해</h2>
       <ul>
         <li><strong>판매대행 — Paddle.</strong> 결제는 <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> 이 판매대행(Merchant of Record)으로 처리합니다. 영수증과 결제 관련 메일은 Paddle 이 보냅니다.</li>
         <li><strong>세금</strong>은 가격에 들어 있지 않고, 결제 화면에서 지역에 맞춰 더해집니다.</li>
-        <li><strong>업데이트 갱신</strong>은 1년마다 자동으로 이루어지고(갱신 7일 전에 결제 이메일과 앱에서 알립니다), Paddle 결제 안내 메일의 관리 링크 또는 앱의 설정 › 라이선스 › 「결제 관리…」 에서 언제든 끌 수 있습니다. 꺼도 앱은 계속 씁니다.</li>
-        <li><strong>환불</strong> — 결제 후 <span data-price="commercial.refund_days">14</span>일 안이면 전액 환불합니다. <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%ED%99%98%EB%B6%88%20%EC%9A%94%EC%B2%AD&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a> 으로 결제 이메일과 주문 번호를 보내 주세요. <a href="refund">환불 정책</a></li>
+        <li data-plan-perpetual><strong>업데이트 갱신</strong>은 1년마다 자동으로 이루어지고(갱신 7일 전에 결제 이메일과 앱에서 알립니다), Paddle 결제 안내 메일의 관리 링크 또는 앱의 설정 › 라이선스 › 「결제 관리…」 에서 언제든 끌 수 있습니다. 꺼도 앱은 계속 씁니다.</li>
+        <li data-plan-perpetual><strong>환불</strong> — 결제 후 <span data-price="commercial.refund_days">14</span>일 안이면 전액 환불합니다. <a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%ED%99%98%EB%B6%88%20%EC%9A%94%EC%B2%AD&amp;body=%0A%0A%0A---%0A%EB%B3%B4%EB%82%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a> 으로 결제 이메일과 주문 번호를 보내 주세요. <a href="refund">환불 정책</a></li>
+        <li data-plan-monthly hidden><strong>월 구독</strong>은 매달 자동으로 결제되고, Paddle 결제 안내 메일의 관리 링크 또는 앱의 설정 › 라이선스 › 「결제 관리…」 에서 언제든 해지할 수 있습니다. 해지해도 그 달 결제 기간이 끝날 때까지 씁니다. 결제가 실패하면 Paddle 이 다시 시도하고, 그동안은 계속 씁니다.</li>
+        <li data-plan-monthly hidden><strong>환불</strong> — 월 구독은 결제한 달을 환불하지 않습니다. 다만 사는 나라의 법이 정한 권리는 그대로입니다. <a href="refund">환불 정책</a></li>
         <li>구매 전에 <a href="terms">이용약관</a> 과 <a href="privacy">개인정보 처리방침</a> 을 확인해 주세요.</li>
       </ul>
     </div>

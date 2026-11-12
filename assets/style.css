@@ -360,8 +360,11 @@ h2 {
 .cta p { color: var(--hero-muted); margin: 0 0 20px; }
 
 /* ---------- pricing (두 판 · 가격) ---------- */
-.plans { display: grid; gap: 16px; }
+/* 카드 높이는 저마다 내용만큼 — 가장 긴 카드(라이선스)에 맞춰 늘이지 않는다 (Jin 11/11) */
+.plans { display: grid; gap: 16px; align-items: start; }
 @media (min-width: 860px) { .plans { grid-template-columns: 1fr 1fr; } }
+/* 체험 · 라이선스 · 월 구독 세 판 (가격 페이지 · 2026-11-02) — 넓으면 한 줄에 셋, 좁으면 둘씩 */
+@media (min-width: 1000px) { .plans.plans-3 { grid-template-columns: repeat(3, 1fr); } }
 .plan {
   display: flex;
   flex-direction: column;
@@ -397,6 +400,8 @@ h2 {
 }
 .plan .price-note { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
 .plan .price-early { font-size: 13.5px; color: var(--accent); margin: 0 0 8px; }
+/* 할인 중 (2026-11-11) — 할인 금액(.price-now)이 보이면 원래 금액(.price-was)은 작게 · 취소선 */
+.plan .price:has(> .price-now:not([hidden])) > .price-was { font-size: 0.55em; font-weight: 600; color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; margin-right: 0.1em; }
 .plan-feats { flex: 1; margin: 0 0 20px; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
 .plan-feats li { margin: 5px 0; }
 .plan-feats strong { color: var(--text); font-weight: 600; }
@@ -412,6 +417,14 @@ h2 {
 .compare td.yes { color: var(--accent); font-weight: 700; font-size: 16px; line-height: 1.2; }
 .compare td.no { color: var(--muted); }
 .compare td small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.compare tbody th small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; margin-top: 3px; }
+.compare tbody th { width: 30%; }
+
+/* 결제 안내 — 공통 · 라이선스 · 월 구독 묶음 */
+.pay-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 22px; margin: 14px 0 0; }
+.doc .pay-group h3 { margin: 0 0 8px; }
+.doc .pay-group ul { margin: 0; }
+.doc .pay-group li { margin: 6px 0; }
 
 /* ---------- footer ---------- */
 .site-footer {
@@ -494,6 +507,8 @@ code {
   margin: 16px 0;
 }
 .note p:last-child { margin-bottom: 0; }
+/* 안내 글에서 꼭 읽어야 할 말 (기다릴 시간 · 올 메일 · 할 일) */
+.note em.key { font-style: normal; font-weight: 700; color: var(--accent); }
 
 .faq details {
   border: 1px solid var(--line);
@@ -544,6 +559,20 @@ code {
 /* ---------- checkout (Paddle 결제) ---------- */
 .checkout-box { max-width: 560px; }
 .checkout-box .plan-actions { margin: 4px 0 0; }
+/* 결제 창을 닫은 이유를 알리는 팝업 (license.js reveal) */
+.checkout-dialog {
+  width: min(480px, calc(100vw - 32px));
+  padding: 26px 24px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 48px rgba(10, 10, 30, 0.35);
+}
+.checkout-dialog::backdrop { background: rgba(10, 10, 30, 0.55); }
+.checkout-dialog h2 { font-size: 22px; margin: 0 0 10px; }
+.checkout-dialog p { color: var(--muted); font-size: 14.5px; margin: 0 0 20px; }
+.checkout-dialog .plan-actions { justify-content: flex-end; }
 
 /* 결제 확인 중 — 앱과 같은 Lottie 퍼즐 로딩 + 제목, 가운데 정렬 (결제 완료 화면 · assets/license.js)
    Lottie 를 불러오기 전 · 못 불러오면 도는 원을 그대로 보인다 */

@@ -49,6 +49,37 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-2-0">1.2.0 — 2026年11月13日</h2>
+      <h3>新增</h3>
+      <ul>
+        <li><strong>新主題「海報」</strong> — 透過帶編號的欄目列在各畫面之間切換，並在首頁「今天」一眼看到需要留意的事項。按 ⌘K「前往何處」可直接跳到想去的畫面。若從未選過主題，App 會以「海報」開啟，可在視窗右上角的主題選單中變更</li>
+        <li><strong>工作流程</strong> — 把專案、編譯、簽署、建立安裝檔案、檢查和上傳用節點串起來一次執行。可放置多個簽署分支，同時產生 Development、Ad Hoc 和 App Store。「App 建置」分頁已由工作流程取代。上傳到 Google Play 正式版軌道時，執行前一定會先確認</li>
+        <li><strong>Mac App 直接發布</strong> — 在工作流程中選擇簽署方式「Direct Distribution (Mac)」，即可完成 Developer ID 簽署、公證並產生 DMG</li>
+        <li><strong>自動建立描述檔</strong> — 有 App Store Connect API 金鑰但沒有相符的描述檔時，會在建置過程中建立並安裝。也可以透過簽署欄中的「建立描述檔…」事先建立。只使用這台 Mac 上已有的憑證，不會新建憑證或 App ID</li>
+        <li><strong>儀表板</strong> — 把需要留意的事項、工作流程、行程、iOS、Android 和資訊匯集到一個畫面</li>
+        <li><strong>記錄 › 時間軸 · 計畫</strong> — 記下開發筆記，安排工作流程在指定日期執行，並提醒重疊的行程。可匯出為行事曆檔案（.ics）</li>
+        <li><strong>瀏海處的建置進度</strong> — 建置時在螢幕頂端中央顯示 App 名稱和目前步驟（設定 › 一般「在瀏海處顯示建置進度」）</li>
+        <li><strong>同時建置</strong> — 建置佇列可同時執行 iOS 與 Android 合計 2～3 個建置</li>
+        <li><strong>月訂閱</strong> — 可以登錄並使用月訂閱（每月 US$3 · 4 台 Mac）的金鑰。在設定 › 授權中查看狀態和下次付款日期，並透過「管理付款…」取消訂閱或更換付款方式。2026年12月31日前可在<a href="pricing">價格</a>頁面提前訂閱（前 3 次付款各 US$2，下次付款日為 2027年2月1日）</li>
+        <li><strong>加購授權</strong> — 想在更多 Mac 上使用時，可透過設定 › 授權中的「加購授權…」購買新金鑰</li>
+        <li><strong>App Store 截圖新方式</strong> — 透過 App Store Connect 的新截圖方式（App Asset Library）讀取、上傳、排序和刪除截圖，並支援 iPhone Duo 尺寸</li>
+        <li><strong>Google Play</strong> — 可為圖片加上「AI 生成的圖片」標記，並顯示每個軌道的審核與發布階段</li>
+        <li><strong>網路連線檢查</strong> — 需要連網的畫面在斷線時顯示「網路連線已中斷」，恢復連線後會重新載入。上傳不再長時間等待，而是立即提示失敗</li>
+        <li><strong>使用統計</strong> — 每天傳送一次無法識別個人身分的使用統計（當天是否開啟、開啟的畫面和各功能的使用次數）（<a href="privacy">隱私權政策</a>第 5 條）</li>
+      </ul>
+      <h3>變更</h3>
+      <ul>
+        <li><strong>管理描述檔</strong> — 匯出和依團隊檢視已配合新畫面；選取多個時，可在清單上方的一行列中匯出或刪除</li>
+        <li><strong>首次發布</strong> — 尚無已發布版本的 App 不再要求填寫「此版本的新功能」</li>
+        <li><strong>清理</strong> — 也會刪除建置留下的系統資料</li>
+      </ul>
+      <h3>修正</h3>
+      <ul>
+        <li><strong>輸入速度</strong> — 修正了輸入商店資訊等內容時每輸入一個字都會變慢的問題</li>
+        <li><strong>取消建置</strong> — 修正了取消建置後無法立即停止的問題</li>
+        <li><strong>翻譯</strong> — 修正了在其他語言中部分文字顯示為韓文的問題</li>
+      </ul>
+
       <h2 id="v1-1-4">1.1.4 — 2026年11月10日</h2>
       <h3>修正</h3>
       <ul>

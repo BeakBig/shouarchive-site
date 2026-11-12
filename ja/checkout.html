@@ -44,13 +44,14 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>ShouArchive の購入</h1>
-      <p>買い切り <span data-price="commercial.price">US$29</span> · Mac <span data-price="commercial.devices">2</span> 台 · 1 年間のアップデート付き（税別）</p>
+      <p data-plan-perpetual>買い切り <span data-price="commercial.price">US$29</span> · Mac <span data-price="commercial.devices">2</span> 台 · 1 年間のアップデート付き（税別）</p>
+      <p data-plan-monthly hidden>月額プラン <span data-price="commercial.price_monthly">US$3</span> / 月 · Mac <span data-price="monthly.devices">4</span> 台 · 購読中はすべての機能（税別）</p>
     </div>
   </section>
 
   <section class="doc">
     <div class="wrap">
-      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31"></div>
+      <div id="paddle-config" data-env="production" data-token="live_a0bd4c8c7e9363e43927f1bbc7b" data-price-license="pri_01m5h1dgzqa0txf61e02e647kk" data-price-updates="pri_01m5h1gf3grpcq2ez2s572wwxf" hidden data-license-api="https://license.beakbig.com" data-discount="dsc_01m668tcg6xt2be9nrq4yzzg0g" data-discount-last-day="2026-12-31" data-price-monthly="pri_01m74znys84yfqtvve8c6rhs54" data-monthly-from="2027-01-01" data-presale-from="2026-11-13" data-presale-until="2026-12-31"></div>
 
       <div class="note" id="checkout-closed">
         <p><strong>決済はまだ受け付けていません。</strong>ShouArchive は発売前のため、現在は購入できません。価格と発売のお知らせは<a href="pricing">価格ページ</a>でご確認ください。</p>
@@ -62,6 +63,23 @@
 
       <div class="note note-warn" id="checkout-limit" hidden>
         <p>現在、決済のリクエストが混み合っています。しばらくしてからもう一度お試しください。</p>
+      </div>
+
+      <div class="note" id="checkout-monthly-soon" hidden>
+        <p><strong>月額プランはまだ申し込めません。</strong><span data-price="monthly.from">2027年1月1日</span> からこのページで申し込めます。それまでは<a href="pricing">価格ページ</a>の ShouArchive ライセンスをご利用ください。</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-already-subscribed" role="alert" tabindex="-1" data-ok="OK" hidden>
+        <h2>すでに月額プランをご利用中です</h2>
+        <p class="plan-for">このメールアドレスで利用中の月額プランがあるため、決済画面を閉じました。決済は行っていません。お使いのライセンスキーをそのままご利用ください。キーが見つからない場合は<a href="license">キーの再送</a>から受け取れます。支払い方法の変更・解約はアプリの「設定 › ライセンス › 支払い管理…」で行えます。</p>
+        <div class="plan-actions">
+          <a class="btn" href="license">キーの再送</a>
+        </div>
+      </div>
+
+      <div class="note" id="checkout-duplicate" hidden>
+        <p><strong>すでに月額プランをご利用中のため、この決済を取り消しています。</strong>今回作成されたプランの解約と返金の手続きは <em class="key">5 分以内</em>に完了し、完了後、決済に使ったメールアドレスへ<em class="key">取り消しのご案内</em>をお送りします。返金はカード会社によっては数日かかることがあります。<em class="key">お使いのライセンスキーをそのまま</em>ご利用ください。</p>
+        <p>決済代行会社 Paddle から<em class="key">サブスクリプション確定のメール</em>が先に届くことがあります。決済時に自動で送信されるメールですので、お手続きは不要です — このサブスクリプションは解約されます。</p>
       </div>
 
       <div class="note" id="checkout-done" hidden>
@@ -83,6 +101,7 @@
       <div class="plan checkout-box" id="checkout-ready" hidden>
         <h2>決済が完了しました。ありがとうございます。</h2>
         <p>このライセンスキーを ShouArchive に登録してください。同じキーを決済に使ったメールアドレスにも送りました。</p>
+        <p class="price-note" id="checkout-ready-monthly" hidden>月額プランのキーです — 購読中は Mac <span data-price="monthly.devices">4</span> 台ですべての機能を使えます。ShouArchive <span data-price="monthly.min_app">1.2.0</span> 以降で登録してください。解約はアプリの「設定 › ライセンス › 支払い管理…」から行います。</p>
         <p><code class="license-key" id="license-key"></code></p>
         <div class="license-actions">
           <a class="btn" id="license-open" href="#" data-mac-only>ShouArchive で開く</a>
@@ -96,14 +115,50 @@
         <p><strong>アップデート期間を延長しました。ありがとうございます。</strong>ライセンスキーは変わらず、再入力は不要です。ShouArchive がまもなく新しい期間を確認します。すぐに反映するには「設定 › ライセンス › 自動確認」を押してください。お知らせメールも決済に使ったメールアドレスに送ります。</p>
       </div>
 
+      <div class="note" id="checkout-resubscribed" hidden>
+        <p><strong>月額プランを再開しました。ありがとうございます。</strong>ライセンスキーは変わらず、再入力は不要です。ShouArchive がまもなく新しい支払い期間を確認します。すぐに反映するには「設定 › ライセンス › 自動確認」を押してください。</p>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-owned" role="alert" tabindex="-1" data-ok="OK" hidden>
+        <h2>このメールアドレスにはすでにライセンスがあります</h2>
+        <p class="plan-for">まだ決済していません。目的を選んでください。</p>
+        <ul>
+          <li><strong>アップデート期間を延長</strong> — お使いのライセンスのアップデート期間を 1 年延ばします（<span data-price="commercial.price_renewal">US$15</span>）。キーはそのままです。</li>
+          <li><strong>ライセンスを追加購入</strong> — Mac を増やす場合 — 新しいキー（Mac <span data-price="commercial.devices">2</span> 台）をもう 1 つ受け取ります。お使いのライセンスはそのままです。</li>
+        </ul>
+        <div class="note note-warn" id="checkout-auto-renew" hidden>
+          <p>このライセンスはアップデートが自動更新されているため、延長の必要はありません。決済はしていません。</p>
+        </div>
+        <div class="note note-warn" id="checkout-fork-failed" hidden>
+          <p>現在、延長の決済を開けませんでした。しばらくしてからもう一度お試しください。</p>
+        </div>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-renew">アップデート期間を延長</button>
+          <button class="btn outline" type="button" id="checkout-add">ライセンスを追加購入</button>
+        </div>
+      </div>
+
       <div class="plan checkout-box" id="checkout-buy" hidden>
         <h2>ShouArchive ライセンス</h2>
         <p class="plan-for">ライセンス＋1 年間のアップデート · その後のアップデートは年 <span data-price="commercial.price_renewal">US$15</span>（自動更新 · いつでもオフにできます）</p>
-        <p class="price"><span data-price="commercial.price">US$29</span></p>
+        <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
         <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>早期購入 <span data-price="early_bird.percent">30%</span> オフ</strong> — <span data-price="early_bird.until">2026年12月31日</span>までの初回購入に適用 · 更新料金は変わりません</p>
         <p class="price-note">税は決済画面で地域に合わせて加算されます。決済画面は現地通貨で表示されます。</p>
         <div class="plan-actions">
           <button class="btn" type="button" id="checkout-open">購入する</button>
+        </div>
+      </div>
+
+      <div class="plan checkout-box" id="checkout-buy-monthly" hidden>
+        <h2>月額プラン</h2>
+        <p class="plan-for">毎月自動で決済 · いつでも解約 — 解約してもその月の支払い期間が終わるまで使えます · 買い切りライセンスではありません</p>
+        <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / 月</p>
+        <p class="price-early" data-monthly-presale hidden><strong>先行申し込み割引：最初の <span data-price="monthly.presale.months">3</span> 回 <span data-price="monthly.presale.price">US$2</span></strong> — <span data-price="monthly.presale.until">2026年12月31日</span>までの申し込みに適用 · その後は <span data-price="commercial.price_monthly">US$3</span></p>
+        <p class="price-note">税は決済画面で地域に合わせて加算されます。決済画面は現地の通貨で表示されます。支払い済みの月は返金しません。</p>
+        <p class="price-note" data-monthly-presale hidden><strong>先行申し込みは全額返金</strong> — <span data-price="monthly.presale.until">2026年12月31日</span> までにご請求いただければ、お支払いいただいた全額を返金します。</p>
+        <p class="price-note" data-monthly-presale hidden><strong>先行申し込みのお支払い日</strong> — 今お支払いいただく <span data-price="monthly.presale.price">US$2</span> は無料期間終了後の最初の 1 か月分で、次回のお支払い日は <span data-price="monthly.presale.next_bill">2027年2月1日</span> です — 無料期間は料金に含みません。</p>
+        <div class="plan-actions">
+          <button class="btn" type="button" id="checkout-open-monthly">申し込む</button>
         </div>
       </div>
 
@@ -112,15 +167,17 @@
         <li>決済が完了すると、このページにライセンスキーが表示され、同じキーが決済に使ったメールアドレスにも届きます。</li>
         <li>「ShouArchive で開く」またはメールの「アプリでそのまま登録」リンクを押すとアプリが開き、この Mac に登録するか確認します。「登録」を押せば完了です。</li>
         <li>リンクが開かない場合は、ShouArchive の<strong>「設定 › ライセンス › キーを入力…」</strong>で決済に使ったメールアドレスとキーを入力し、「有効化」を押します。アプリから購入した場合は、その Mac で「自動確認」を押すだけでも登録できます。</li>
-        <li>キー 1 つで Mac <span data-price="commercial.devices">2</span> 台で使えます。キーをなくした場合は<a href="license">キーの再送</a>から受け取れます。</li>
+        <li>キー 1 つで Mac <span data-price="commercial.devices">2</span> 台（月額プランは <span data-price="monthly.devices">4</span> 台）で使えます。キーをなくした場合は<a href="license">キーの再送</a>から受け取れます。</li>
       </ol>
 
       <h2 id="about">決済について</h2>
       <ul>
         <li><strong>販売代理店 — Paddle。</strong>決済は <a href="https://www.paddle.com" rel="noopener" target="_blank">Paddle</a> が販売代理店（Merchant of Record）として処理します。領収書と決済に関するメールは Paddle から届きます。</li>
         <li><strong>税</strong>は価格に含まれておらず、決済画面で地域に合わせて加算されます。</li>
-        <li><strong>アップデートの更新</strong>は 1 年ごとに自動で行われ（更新の 7 日前に決済時のメールアドレスとアプリでお知らせします）、Paddle の決済案内メールにある管理リンク、またはアプリの「設定 › ライセンス › お支払いの管理…」からいつでもオフにできます。オフにしてもアプリは引き続き使えます。</li>
-        <li><strong>返金</strong> — 決済から <span data-price="commercial.refund_days">14</span> 日以内であれば全額返金します。<a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%E8%BF%94%E9%87%91%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a> まで決済時のメールアドレスと注文番号をお送りください。<a href="refund">返金ポリシー</a></li>
+        <li data-plan-perpetual><strong>アップデートの更新</strong>は 1 年ごとに自動で行われ（更新の 7 日前に決済時のメールアドレスとアプリでお知らせします）、Paddle の決済案内メールにある管理リンク、またはアプリの「設定 › ライセンス › 支払い管理…」からいつでもオフにできます。オフにしてもアプリは引き続き使えます。</li>
+        <li data-plan-perpetual><strong>返金</strong> — 決済から <span data-price="commercial.refund_days">14</span> 日以内であれば全額返金します。<a href="mailto:support@shouarchive.beakbig.com?subject=%5BShouArchive%5D%5BW-BUY%5D%20%E8%BF%94%E9%87%91%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&amp;body=%0A%0A%0A---%0A%E9%80%81%E4%BF%A1%E5%85%83%E3%83%9A%E3%83%BC%E3%82%B8%3A%20https%3A%2F%2Fshouarchive.beakbig.com%2Fja%2Fcheckout%20%28W-BUY%29">support@shouarchive.beakbig.com</a> まで決済時のメールアドレスと注文番号をお送りください。<a href="refund">返金ポリシー</a></li>
+        <li data-plan-monthly hidden><strong>月額プラン</strong>は毎月自動で決済され、Paddle の決済案内メールにある管理リンク、またはアプリの「設定 › ライセンス › 支払い管理…」からいつでも解約できます。解約してもその月の支払い期間が終わるまで使えます。決済に失敗すると Paddle が再試行し、その間も引き続き使えます。</li>
+        <li data-plan-monthly hidden><strong>返金</strong> — 月額プランは支払い済みの月を返金しません。ただし、お住まいの国の法律が定める権利はそのまま適用されます。<a href="refund">返金ポリシー</a></li>
         <li>購入前に<a href="terms">利用規約</a>と<a href="privacy">プライバシーポリシー</a>をご確認ください。</li>
       </ul>
     </div>

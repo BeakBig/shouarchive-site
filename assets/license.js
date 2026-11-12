@@ -8,7 +8,8 @@
  *
  * 라이선스 서버 계약: shouarchive-license 저장소 docs/app-contract.md §2.10 ~ §2.13, 개인정보 삭제는 2026-10-20 계약 §8.
  *   POST /v1/web/checkout             사이트에서 사는 결제를 만든다 → { transaction_id, claim } · 409 checkout_limit 이면 잠시 뒤 다시
- *   POST /v1/purchase/status          결제가 끝나면 그 확인 값으로 키를 받는다 → { status: processing | ready, key, … }
+ *                                     월 구독은 { plan: "monthly" } (2026-11-02 · §2.20) — 판매 전이면 403 not_on_sale
+ *   POST /v1/purchase/status          결제가 끝나면 그 확인 값으로 키를 받는다 → { status: processing | ready, key, plan, paid_until, … }
  *   POST /v1/licenses/resend          구매 이메일로 같은 키를 다시 보낸다 → 늘 { status: accepted }
  *   POST /v1/licenses/rotate          구매 이메일로 키 바꾸기 확인 링크를 보낸다 → 늘 { status: accepted }
  *   POST /v1/licenses/rotate/confirm  확인 링크의 값으로 키를 바꾼다 → { status: rotated, email_hint, email_sent }
@@ -36,6 +37,37 @@
 
   function byId(id) { return document.getElementById(id); }
   function show(id, on) { var el = byId(id); if (el) el.hidden = !on; }
+  /** 결제 창을 닫고 보여 주는 안내 — 그냥 닫힌 것처럼 보이지 않게 팝업으로 띄운다(Jin 11/11 「왜 창을 닫았는지 알려줘야」).
+   *  상자는 페이지에도 남긴다(팝업을 닫은 뒤에도 읽을 수 있게). 팝업은 그 상자의 제목 · 글을 그대로 옮긴 <dialog> 다. */
+  function reveal(id) {
+    show(id, true);
+    var el = byId(id);
+    if (!el) return;
+    try { el.scrollIntoView({ block: 'center' }); } catch (e) { /* 옛 브라우저 */ }
+    var title = el.querySelector('h2');
+    var text = el.querySelector('p');
+    if (!title || !text || typeof HTMLDialogElement === 'undefined') { try { el.focus({ preventScroll: true }); } catch (e) { /* 그대로 */ } return; }
+    var old = byId(id + '-dialog');
+    if (old) old.remove();
+    var dialog = document.createElement('dialog');
+    dialog.id = id + '-dialog';
+    dialog.className = 'checkout-dialog';
+    dialog.appendChild(title.cloneNode(true));
+    dialog.appendChild(text.cloneNode(true));
+    var actions = document.createElement('div');
+    actions.className = 'plan-actions';
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn';
+    button.textContent = el.dataset.ok || 'OK';
+    button.addEventListener('click', function () { dialog.close(); dialog.remove(); });
+    actions.appendChild(button);
+    dialog.appendChild(actions);
+    dialog.addEventListener('close', function () { dialog.remove(); });
+    document.body.appendChild(dialog);
+    // Paddle 결제 창(iframe)이 닫히는 중이어도 맨 위 층에 뜬다
+    try { dialog.showModal(); button.focus(); } catch (e) { dialog.remove(); }
+  }
 
   function apiBase() {
     var config = byId('paddle-config');
@@ -127,6 +159,32 @@
     return Date.now() < ends ? cfg.discount : null;
   }
 
+  /** 이 브라우저의 오늘 (YYYY-MM-DD) — 월 구독 판매일은 방문자의 날짜로 본다 (assets/nav.js 와 같은 규칙) */
+  function localDay() {
+    var now = new Date();
+    return now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
+  }
+
+  /** 월 구독을 지금 열 수 있나 — 가격 id(data-price-monthly)가 있고 판매일(data-monthly-from)이 방문자의 날짜로 왔다 */
+  function monthlyOpen(cfg) {
+    if (!cfg.priceMonthly) return false;
+    return monthlyPresale(cfg) || (/^\d{4}-\d{2}-\d{2}$/.test(cfg.monthlyFrom || '') && localDay() >= cfg.monthlyFrom);
+  }
+
+  /** 미리 구독 기간인가 (2026-11-11) — data-presale-from ~ data-presale-until, 방문자의 날짜로 둘 다 포함 (assets/nav.js 와 같은 규칙) */
+  function monthlyPresale(cfg) {
+    var day = /^\d{4}-\d{2}-\d{2}$/, today = localDay();
+    return day.test(cfg.presaleFrom || '') && day.test(cfg.presaleUntil || '') && today >= cfg.presaleFrom && today <= cfg.presaleUntil;
+  }
+
+  /** 월 구독(?plan=monthly · #kind=monthly)이면 [data-plan-monthly] 문구를, 아니면 [data-plan-perpetual] 문구를 보인다 */
+  function fitPlan(monthly) {
+    var i, els = document.querySelectorAll('[data-plan-monthly]');
+    for (i = 0; i < els.length; i++) els[i].hidden = !monthly;
+    els = document.querySelectorAll('[data-plan-perpetual]');
+    for (i = 0; i < els.length; i++) els[i].hidden = monthly;
+  }
+
   function checkout() {
     var config = byId('paddle-config');
     if (!config) return;
@@ -137,8 +195,14 @@
     var claim = hash.get('claim');
     var fromApp = hash.get('from') === 'app';
     var renewal = hash.get('kind') === 'renewal';
+    // 월 구독 (2026-11-02) — 가격 페이지의 「구독하기」(?plan=monthly) · 앱의 「다시 구독…」(#kind=monthly) — 영구 문구 대신 월 구독 문구
+    var resubscribe = hash.get('kind') === 'monthly';
+    var monthly = params.get('plan') === 'monthly' || hash.get('plan') === 'monthly' || resubscribe;
+    // 앱의 「라이선스 추가 구매…」 — 이미 라이선스가 있는 것을 알고 왔으니 갱신 · 추가 구매를 다시 묻지 않는다
+    var addIntent = hash.get('intent') === 'add';
     var transactionId = params.get('_ptxn');
-    if (claim !== null || hash.get('from') !== null || hash.get('kind') !== null) {
+    fitPlan(monthly);
+    if (claim !== null || hash.get('from') !== null || hash.get('kind') !== null || hash.get('intent') !== null) {
       // 확인 값을 읽었으면 주소에서 지운다 — 방문 기록 · 화면 공유에 남지 않게 (# 뒤라 서버로는 애초에 가지 않았다). ?_ptxn= 은 남긴다
       try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* 그대로 둔다 */ }
     }
@@ -149,6 +213,11 @@
       return;
     }
     if (!cfg.token) return;                    // 아직 결제를 열지 않음 → 「출시 전」 안내만
+    if (monthly && !transactionId && !monthlyOpen(cfg)) {   // 월 구독 판매 전(또는 가격 id 없음) → 「아직 구독할 수 없습니다」
+      show('checkout-closed', false);
+      show('checkout-monthly-soon', true);
+      return;
+    }
     if (!window.Paddle) {                      // Paddle.js 를 불러오지 못함(광고 차단기 · 네트워크) — 출시 전 안내와 구분한다
       show('checkout-closed', false);
       show('checkout-blocked', true);
@@ -165,15 +234,79 @@
       token: cfg.token,
       checkout: { settings: settings },
       eventCallback: function (event) {
-        if (event && event.name === 'checkout.completed') {
+        if (!event) return;
+        if (event.name === 'checkout.completed') {
           completed((event.data && event.data.transaction_id) || transactionId);
+        }
+        // 결제 창에서 이메일을 넣었다 (2026-11-11) — 월 구독 결제: 이미 구독 중이면 결제 전에 막는다 · 영구 결제: 이미 라이선스가 있으면 갱신 · 추가 구매를 고르게 한다
+        // sandbox 확인(11/11): 이벤트 이름은 길마다 다르다(checkout.customer.created · checkout.updated …) — 이름 대신 「고객이 붙었다」 로 본다. 고객마다 한 번만 묻는다
+        var customerId = event.data && event.data.customer && event.data.customer.id;
+        if (customerId && customerId !== checkedCustomer) {
+          checkedCustomer = customerId;
+          checkOwned(event.data.transaction_id || transactionId);
+          checkSubscribed(event.data.transaction_id || transactionId);
         }
       }
     });
     show('checkout-closed', false);
 
-    // ?_ptxn= (라이선스 서버가 만든 앱 구매 · 갱신 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
+    /*
+     * 이미 라이선스가 있는 구매자 — 막지 않고 고르게 한다. 이메일은 보내지 않는다(거래 id + 확인 값으로 서버가 Paddle 에서 고객을 읽는다).
+     * 갱신 결제 · 앱의 「라이선스 추가 구매…」 · 확인 값이 없는 예비 길 · 이미 고른 뒤에는 묻지 않는다.
+     * 서버에 닿지 못하면 그대로 둔다 — 결제하면 지금처럼 라이선스가 하나 더 생긴다.
+     */
+    var forkDone = addIntent || monthly;   // 월 구독 결제에서는 묻지 않는다
+    var checkedCustomer = null;
+    var purchaseId = null;
+    function checkOwned(id) {
+      if (forkDone || renewal || !claim || !id) return;
+      post('/v1/web/checkout/check', { transaction_id: id, claim: claim })
+        .then(function (result) {
+          if (!result || !result.owned || forkDone) return;
+          forkDone = true;
+          purchaseId = id;
+          try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ }
+          show('checkout-buy', false);
+          reveal('checkout-owned');
+        })
+        .catch(function () { /* 묻지 못함 — 결제를 막지 않는다 */ });
+    }
+
+    var renewButton = byId('checkout-renew');
+    var addButton = byId('checkout-add');
+    if (renewButton) renewButton.addEventListener('click', function () {
+      if (!purchaseId) return;
+      renewButton.disabled = true;
+      show('checkout-auto-renew', false);
+      show('checkout-fork-failed', false);
+      show('checkout-limit', false);
+      // 업데이트 기간 연장 — 쓰던 라이선스의 갱신 결제를 새로 받아 연다. 끝나면 「연장했습니다」 안내 (키는 그대로)
+      post('/v1/web/checkout/renew', { transaction_id: purchaseId, claim: claim })
+        .then(function (result) {
+          renewal = true;
+          transactionId = result.transaction_id;
+          show('checkout-owned', false);
+          Paddle.Checkout.open({ transactionId: transactionId });
+        })
+        .catch(function (error) {
+          var code = error && error.code;
+          show(code === 'auto_renew_active' ? 'checkout-auto-renew' : code === 'checkout_limit' ? 'checkout-limit' : 'checkout-fork-failed', true);
+        })
+        .then(function () { renewButton.disabled = false; });
+    });
+    if (addButton) addButton.addEventListener('click', function () {
+      if (!purchaseId) return;
+      // 라이선스 추가 구매 — 열려 있던 첫 구매 결제를 그대로 다시 연다. 끝나면 새 키가 나온다
+      show('checkout-owned', false);
+      if (!transactionId || transactionId !== purchaseId) transactionId = purchaseId;
+      if (byId('checkout-open') && !new URLSearchParams(location.search).get('_ptxn')) show('checkout-buy', true);
+      Paddle.Checkout.open({ transactionId: purchaseId });
+    });
+    // (앱에서 시작한 ?_ptxn= 결제에서도 버튼이 살아 있도록 아래 return 보다 앞에 둔다)
+
+    // ?_ptxn= (라이선스 서버가 만든 앱 구매 · 갱신 · 다시 구독 거래) 이면 Paddle.js 가 결제 화면을 스스로 연다.
     if (transactionId) return;
+    if (monthly) { openMonthly(); return; }
     if (!cfg.priceLicense || !cfg.priceUpdates) { show('checkout-closed', true); return; }
     show('checkout-buy', true);
 
@@ -204,11 +337,61 @@
         .then(function () { button.disabled = false; });
     });
 
+    /** 월 구독 「구독하기」 — 서버가 월 구독 거래를 만든다. 판매 전(403 not_on_sale)이면 안내로 바꾼다 */
+    function openMonthly() {
+      show('checkout-buy-monthly', true);
+      byId('checkout-open-monthly').addEventListener('click', function () {
+        var button = this;
+        button.disabled = true;
+        show('checkout-limit', false);
+        post('/v1/web/checkout', { locale: pageLocale(), plan: 'monthly' })
+          .then(function (result) {
+            transactionId = result.transaction_id;
+            claim = result.claim;
+            Paddle.Checkout.open({ transactionId: transactionId });
+          })
+          .catch(function (error) {
+            if (error && error.code === 'checkout_limit') { show('checkout-limit', true); return; }
+            // 서버의 판매일이 아직이다 (사이트의 판매일 · 방문자의 시계와 어긋남) — 결제 창을 열지 않는다
+            if (error && error.code === 'not_on_sale') {
+              show('checkout-buy-monthly', false);
+              show('checkout-monthly-soon', true);
+              return;
+            }
+            // 미리 구독 기간에는 예비 길로 열지 않는다 — 할인과 다음 결제일은 서버만 붙일 수 있어, 그대로 열면 제값이 바로 결제된다
+            if (monthlyPresale(cfg)) { show('checkout-limit', true); return; }
+            // 라이선스 서버에 닿지 못하면 월 구독 가격 하나로 연다 — 영구 라이선스 항목 · 얼리버드 할인은 넣지 않는다. 키는 메일로만 받는다
+            claim = null;
+            Paddle.Checkout.open({ items: [{ priceId: cfg.priceMonthly, quantity: 1 }] });
+          })
+          .then(function () { button.disabled = false; });
+      });
+    }
+
+    /** 이 결제의 고객이 이미 월 구독 중인지 서버에 묻는다 (이메일은 보내지 않는다 — 거래 id + 확인 값). 구독 중이면 결제 창을 닫고 안내한다.
+     *  앱의 「다시 구독…」 · 영구 라이선스 결제 · 확인 값이 없는 예비 길에서는 묻지 않는다. 서버에 닿지 못하면 그대로 둔다(결제 뒤 서버가 해지 · 환불한다). */
+    var subscribedShown = false;
+    function checkSubscribed(id) {
+      if (!monthly || resubscribe || !claim || !id || subscribedShown) return;
+      post('/v1/web/checkout/check', { transaction_id: id, claim: claim })
+        .then(function (result) {
+          if (!result || !result.subscribed || subscribedShown) return;
+          subscribedShown = true;
+          try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ }
+          show('checkout-buy-monthly', false);
+          reveal('checkout-already-subscribed');
+        })
+        .catch(function () { /* 묻지 못함 — 결제를 막지 않는다 */ });
+    }
+
     function completed(id) {
       show('checkout-buy', false);
+      show('checkout-buy-monthly', false);
       // Paddle 의 완료 화면을 잠깐 보여 준 뒤 닫고, 이 페이지의 안내로 넘어간다
       setTimeout(function () { try { Paddle.Checkout.close(); } catch (e) { /* 이미 닫힘 */ } }, 1500);
+      show('checkout-owned', false);
       if (renewal) { show('checkout-renewed', true); return; }
+      if (resubscribe) { show('checkout-resubscribed', true); return; }   // 같은 키 · 같은 Mac 으로 월 구독을 다시 시작
       if (!claim || !id) { show('checkout-done', true); return; }
       show('checkout-processing', true);
       startWaitingAnimation();
@@ -219,6 +402,7 @@
       post('/v1/purchase/status', { transaction_id: id, claim: claim })
         .then(function (result) {
           if (result.status === 'ready') return ready(result);
+          if (result.status === 'already_subscribed') return duplicate();   // 이미 구독 중 — 서버가 새 구독을 해지 · 환불했다
           retry(id, attempt);
         })
         .catch(function (error) {
@@ -248,9 +432,18 @@
       show('checkout-slow', false);
       if (!result.key) return mailed();  // 서버가 키를 보관하지 않는 설정 — 메일로 받는다
       fillKey('license', result.key);
+      // 월 구독 키 — 앱에서 시작한 결제는 주소에 종류가 없어 서버 답(plan)으로 고른다
+      show('checkout-ready-monthly', monthly || result.plan === 'monthly');
       show('checkout-ready', true);
       // 앱에서 시작한 결제면 앱을 바로 연다 (브라우저가 열지 묻는다 · 앱은 등록할지 한 번 더 묻는다)
       if (fromApp) location.href = appUrl(result.key);
+    }
+
+    function duplicate() {
+      show('checkout-processing', false);
+      stopWaitingAnimation();
+      show('checkout-slow', false);
+      show('checkout-duplicate', true);
     }
 
     function mailed() {

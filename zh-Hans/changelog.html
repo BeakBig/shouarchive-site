@@ -49,6 +49,37 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-2-0">1.2.0 — 2026年11月13日</h2>
+      <h3>新增</h3>
+      <ul>
+        <li><strong>新主题「海报」</strong> — 通过带编号的栏目栏在各画面之间切换，并在首屏「今天」一眼看到需要留意的事项。按 ⌘K「前往何处」可直接跳到想去的画面。若从未选过主题，应用会以「海报」打开，可在窗口右上角的主题菜单中更改</li>
+        <li><strong>工作流</strong> — 把项目、编译、签名、创建安装文件、检查和上传用节点串起来一次执行。可放置多个签名分支，同时生成 Development、Ad Hoc 和 App Store。「应用构建」标签页已由工作流取代。上传到 Google Play 正式版轨道时，运行前总会先确认</li>
+        <li><strong>Mac 应用直接分发</strong> — 在工作流中选择签名方式「Direct Distribution (Mac)」，即可完成 Developer ID 签名、公证并生成 DMG</li>
+        <li><strong>自动创建描述文件</strong> — 有 App Store Connect API 密钥但没有匹配的描述文件时，会在构建过程中创建并安装。也可以通过签名栏中的「创建描述文件…」提前创建。只使用这台 Mac 上已有的证书，不会新建证书或 App ID</li>
+        <li><strong>仪表盘</strong> — 把需要留意的事项、工作流、日程、iOS、Android 和资讯汇集到一个画面</li>
+        <li><strong>记录 › 时间线 · 计划</strong> — 记录开发笔记，安排工作流在指定日期运行，并提醒重叠的日程。可导出为日历文件（.ics）</li>
+        <li><strong>刘海处的构建进度</strong> — 构建时在屏幕顶部中央显示应用名称和当前步骤（设置 › 通用「在刘海处显示构建进度」）</li>
+        <li><strong>同时构建</strong> — 构建队列可同时运行 iOS 与 Android 合计 2～3 个构建</li>
+        <li><strong>月度订阅</strong> — 可以登记并使用月度订阅（每月 US$3 · 4 台 Mac）的密钥。在设置 › 许可证中查看状态和下次付款日期，并通过「管理付款…」取消订阅或更换付款方式。2026年12月31日前可在<a href="pricing">价格</a>页面提前订阅（前 3 次付款各 US$2，下次付款日为 2027年2月1日）</li>
+        <li><strong>加购许可证</strong> — 想在更多 Mac 上使用时，可通过设置 › 许可证中的「加购许可证…」购买新密钥</li>
+        <li><strong>App Store 截图新方式</strong> — 通过 App Store Connect 的新截图方式（App Asset Library）读取、上传、排序和删除截图，并支持 iPhone Duo 尺寸</li>
+        <li><strong>Google Play</strong> — 可为图片加上「AI 生成的图片」标记，并显示每个轨道的审核与发布阶段</li>
+        <li><strong>网络连接检查</strong> — 需要联网的画面在断网时显示「网络连接已断开」，恢复连接后会重新加载。上传不再长时间等待，而是立即提示失败</li>
+        <li><strong>使用统计</strong> — 每天发送一次无法识别个人身份的使用统计（当天是否打开、打开的画面和各功能的使用次数）（<a href="privacy">隐私政策</a>第 5 条）</li>
+      </ul>
+      <h3>变更</h3>
+      <ul>
+        <li><strong>管理描述文件</strong> — 导出和按团队查看已适配新画面；选中多个时，可在列表上方的一行栏中导出或删除</li>
+        <li><strong>首次发布</strong> — 尚无已发布版本的应用不再要求填写「此版本的新功能」</li>
+        <li><strong>清理</strong> — 也会删除构建留下的系统数据</li>
+      </ul>
+      <h3>修复</h3>
+      <ul>
+        <li><strong>输入速度</strong> — 修复了输入商店信息等内容时每输入一个字都会变慢的问题</li>
+        <li><strong>取消构建</strong> — 修复了取消构建后不能立即停止的问题</li>
+        <li><strong>翻译</strong> — 修复了在其他语言中部分文字显示为韩语的问题</li>
+      </ul>
+
       <h2 id="v1-1-4">1.1.4 — 2026年11月10日</h2>
       <h3>修复</h3>
       <ul>

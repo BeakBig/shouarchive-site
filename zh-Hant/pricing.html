@@ -43,7 +43,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>價格</h1>
-      <p>ShouArchive 是在本網站買一次就能一直使用的 App。<span data-if="!free_period.until" hidden>請先在 <span data-price="trial_days">14</span> 天內不需付款方式試用所有功能，滿意後再購買授權。</span>這是一套開發者工具，以您本人的 Apple · Google 開發者帳號與憑證，建置、簽署並發佈您自己開發的 App。</p>
+      <p>ShouArchive 是在本網站購買使用的 App。<span data-if="!free_period.until" hidden>請先在 <span data-price="trial_days">14</span> 天內不需付款方式試用所有功能，滿意後再購買授權。</span>這是一套開發者工具，以您本人的 Apple · Google 開發者帳號與憑證，建置、簽署並發佈您自己開發的 App。</p>
       <div class="note" data-if="free_period.until">
         <p><strong>免費期至 <span data-price="free_period.until">2026年12月31日</span>。</strong>無需授權即可使用所有功能。自 <span data-price="free_period.paid_from">2027年1月1日</span> 起適用下方價格，免費期間使用過的 Mac 也需要授權才能使用 App 建置、資源庫、OTA 發佈與商店發佈。若你在免費期最後 <span data-price="trial_days">14</span> 天內首次啟動 App，試用會持續到首次啟動後 <span data-price="trial_days">14</span> 天。描述檔管理、產物檢查、API 金鑰管理與檢視歷史記錄仍然免費。</p>
       </div>
@@ -52,7 +52,8 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="plans">
+      <div id="sale-config" data-monthly-from="2027-01-01" hidden data-presale-from="2026-11-13" data-presale-until="2026-12-31"></div>
+      <div class="plans plans-3">
         <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日開始販售</p>
           <h2><span data-price="trial_days">14</span> 天試用</h2>
@@ -73,10 +74,33 @@
         </article>
 
         <article class="plan coming">
+          <p class="plan-badge soon" data-monthly-soon><span data-price="monthly.from">2027年1月1日</span>開始販售</p>
+          <p class="plan-badge live" data-monthly-presale hidden>提前訂閱 · 至 <span data-price="monthly.presale.until">2026年12月31日</span> 止</p>
+          <h2>月訂閱</h2>
+          <p class="plan-for">只想在需要期間按月付費使用的人</p>
+          <p class="price"><span class="price-was" data-price="commercial.price_monthly">US$3</span><span class="price-now" data-monthly-presale hidden> <span data-price="monthly.presale.price">US$2</span></span> / 月</p>
+          <p class="price-early" data-monthly-presale hidden><strong>提前訂閱優惠：前 <span data-price="monthly.presale.months">3</span> 次付款 <span data-price="monthly.presale.price">US$2</span></strong> — <span data-price="monthly.presale.until">2026年12月31日</span> 前訂閱適用 · 之後為 <span data-price="commercial.price_monthly">US$3</span></p>
+          <p class="price-note">每月自動扣款 · <span data-price="monthly.devices">4</span> 台 Mac（未稅）<br>不是永久授權 — 僅在訂閱期間可使用所有功能。</p>
+          <p class="price-note" data-monthly-presale hidden><strong>提前訂閱的付款日</strong> — 現在支付的 <span data-price="monthly.presale.price">US$2</span> 是免費期結束後第一個月的費用，下次付款日為 <span data-price="monthly.presale.next_bill">2027年2月1日</span> — 免費期不計費。</p>
+          <ul class="plan-feats">
+            <li><strong>訂閱期間所有功能</strong> — 與 ShouArchive 授權的功能相同</li>
+            <li><strong>隨時取消</strong> — 在 App 的「設定」›「授權」›「管理付款…」或 Paddle 付款通知郵件中的管理連結取消。取消後仍可使用到當月付款期間結束</li>
+            <li><strong>訂閱結束後</strong> — 與試用結束時一樣，只保留描述檔管理 · 產物檢查 · API 金鑰管理 · 歷史記錄檢視。可在 App 的「重新訂閱…」以同一組金鑰重新訂閱</li>
+            <li><strong>不退款</strong> — 已付款的月份不予退款（<a href="refund">退款政策</a>第 10 項）</li>
+            <li data-monthly-presale hidden><strong>提前訂閱可全額退款</strong> — <span data-price="monthly.presale.until">2026年12月31日</span> 前申請，退還全部已付金額（<a href="refund">退款政策</a>第 10 項）</li>
+            <li><strong>需要 ShouArchive <span data-price="monthly.min_app">1.2.0</span> 或更新版本</strong></li>
+          </ul>
+          <div class="plan-actions">
+            <a class="btn" href="checkout?plan=monthly" data-monthly-open hidden>訂閱</a>
+          </div>
+          <p class="plan-foot" data-monthly-soon>月訂閱自 <span data-price="monthly.from">2027年1月1日</span>起可以訂閱。在此之前，請使用 ShouArchive 授權。</p>
+        </article>
+
+        <article class="plan coming">
           <p class="plan-badge soon" data-live-hide hidden>2027年1月1日開始販售</p>
           <h2>ShouArchive 授權</h2>
           <p class="plan-for">想在網頁上一次購買、持續使用的人</p>
-          <p class="price"><span data-price="commercial.price">US$29</span></p>
+          <p class="price"><span class="price-was" data-price="commercial.price">US$29</span><span class="price-now" data-if="early_bird.percent commercial.checkout"> <span data-price="early_bird.price">US$20.30</span></span></p>
           <p class="price-early" data-if="early_bird.percent commercial.checkout"><strong>早鳥優惠 省 <span data-price="early_bird.percent">30%</span></strong> — 至 <span data-price="early_bird.until">2026年12月31日</span>的首次購買適用 · 續訂價格不變</p>
           <p class="price-note">一次購買 · <span data-price="commercial.devices">2</span> 台 Mac · 含 1 年更新（未稅）<br>之後的更新每年 <span data-price="commercial.price_renewal">US$15</span> — 不續訂也能繼續使用 App。</p>
           <ul class="plan-feats">
@@ -106,7 +130,7 @@
       <div class="section-head">
         <p class="eyebrow violet">功能</p>
         <h2>什麼時候能用哪些功能</h2>
-        <p class="lead">試用期間可使用所有功能。即使試用結束時沒有金鑰，描述檔管理 · 產物檢查 · API 金鑰管理 · 歷史記錄檢視仍會保留。</p>
+        <p class="lead">試用期間可使用所有功能。即使試用結束時沒有金鑰，描述檔管理 · 產物檢查 · API 金鑰管理 · 歷史記錄檢視仍會保留。月訂閱結束後也一樣。</p>
       </div>
       <div class="table-wrap">
         <table class="compare">
@@ -115,25 +139,17 @@
               <th scope="col">功能</th>
               <th scope="col">試用期間</th>
               <th scope="col">試用結束後（無金鑰）</th>
-              <th scope="col">購買後</th>
+              <th scope="col">月訂閱期間</th>
+              <th scope="col">購買授權後</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">期間 · 費用</th><td><span data-price="trial_days">14</span> 天 · 免費<small>不需付款方式 · 不會自動扣款</small></td><td>免費 · 無期限</td><td>一次購買 · <span data-price="commercial.price">US$29</span><small>含 1 年更新 · 之後每年 <span data-price="commercial.price_renewal">US$15</span> — 自動續訂（可隨時關閉）</small></td></tr>
-            <tr><th scope="row">描述檔管理 · 比較</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">描述檔下載 · 建立 · 裝置註冊</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">API 金鑰儲存 · 管理</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">產物檢查（IPA · APK · AAB）</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">歷史記錄</th><td class="yes">✓</td><td class="yes">僅檢視記錄</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">App 建置 · 工作佇列</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">App 上傳</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">裝置安裝</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">重新簽署 · 資源庫 · IPA 整理</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">OTA 發佈</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">商店發佈（iOS · Android）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">AI 整合（MCP）</th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
-            <tr><th scope="row">更新</th><td>試用期間推出的版本</td><td class="no">—</td><td>更新期間內在 App 內更新<small>期間結束後，在那之前推出的版本仍可繼續使用</small></td></tr>
-            <tr><th scope="row">授權金鑰</th><td class="no">不需要</td><td class="no">不需要</td><td>一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac<small>寄送到付款時的電子郵件</small></td></tr>
+            <tr><th scope="row">期間 · 費用</th><td><span data-price="trial_days">14</span> 天 · 免費<small>不需付款方式 · 不會自動扣款</small></td><td>免費 · 無期限</td><td>每月 <span data-price="commercial.price_monthly">US$3</span> · 自動扣款<small>可隨時取消 · 取消後仍可使用到當月付款期間結束</small></td><td>一次購買 · <span data-price="commercial.price">US$29</span><small>含 1 年更新 · 之後每年 <span data-price="commercial.price_renewal">US$15</span> — 自動續訂（可隨時關閉）</small></td></tr>
+            <tr><th scope="row">隨時可用的功能<small>描述檔管理 · 比較、描述檔下載 · 建立 · 裝置註冊、API 金鑰儲存 · 管理、產物檢查（IPA · APK · AAB）</small></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">歷史記錄</th><td class="yes">✓</td><td class="yes">僅檢視記錄</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">付費功能<small>App 建置 · 工作佇列、App 上傳、裝置安裝、重新簽署 · 資源庫 · IPA 整理、OTA 發佈、商店發佈（iOS · Android）、AI 整合（MCP）</small></th><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th scope="row">更新</th><td>試用期間推出的版本</td><td class="no">—</td><td>訂閱期間在 App 內更新<small>訂閱結束後與試用結束後相同</small></td><td>更新期間內在 App 內更新<small>期間結束後，在那之前推出的版本仍可繼續使用</small></td></tr>
+            <tr><th scope="row">授權金鑰</th><td class="no">不需要</td><td class="no">不需要</td><td>一組金鑰可用於 <span data-price="monthly.devices">4</span> 台 Mac<small>寄送到付款時的電子郵件</small></td><td>一組金鑰可用於 <span data-price="commercial.devices">2</span> 台 Mac<small>寄送到付款時的電子郵件</small></td></tr>
           </tbody>
         </table>
       </div>
@@ -146,16 +162,30 @@
       <div class="note" data-live-hide hidden>
         <p><strong>尚未開始販售。</strong> 2027 年 1 月 1 日開始販售。本節內容是屆時的付款方式 — 如果在此之前有所變更，我們會先更新本頁面。</p>
       </div>
-      <ul>
-        <li><strong>付款代理 — Paddle。</strong> 付款由 Paddle 以銷售代理（Merchant of Record）身分處理。Paddle 會代為處理付款與稅額計算，並開立收據。價格以美元標示，付款畫面會以當地貨幣顯示。</li>
-        <li><strong>稅金另計。</strong> 上述價格不含稅金。付款時，Paddle 會依客戶所在地自動計算稅金並加收。</li>
-        <li><strong>買一次就能一直使用。</strong> <span data-price="commercial.price">US$29</span> 包含授權與 1 年更新。更新期間結束後 App 也不會停止運作，期間內推出的所有版本都可以繼續使用。</li>
-        <li><strong>更新續訂 — 每年 <span data-price="commercial.price_renewal">US$15</span>。</strong> 更新期間每年自動續訂。自動續訂可以隨時關閉（透過 Paddle 付款通知郵件中的管理連結，或 App 的「設定」›「授權」›「管理付款…」）。續訂前 7 天，我們會透過付款電子郵件與 App 通知您。若在期間結束後才重新續訂，會從該次付款日起重新開始 1 年。</li>
-        <li><strong>期間結束後推出的版本。</strong> 更新期間結束後推出的版本，需要續訂後才能安裝 · 啟用。App 內的更新檢查只會顯示期間內推出的版本。</li>
-        <li><strong><span data-price="trial_days">14</span> 天試用。</strong> 不需付款方式即可在 App 內開始，結束後也不會自動扣款。若試用結束時沒有金鑰，描述檔管理（含下載 · 建立 · 裝置註冊）· 產物檢查 · API 金鑰管理 · 歷史記錄（僅檢視）仍可繼續使用；App 建置 · 工作佇列 · App 上傳 · 裝置安裝 · 重新簽署 · 資源庫 · IPA 整理 · OTA 發佈 · 商店發佈會在購買後重新開放。</li>
-        <li><strong>退款。</strong> 首次購買與更新續訂，皆可在付款後 <span data-price="commercial.refund_days">14</span> 天內申請全額退款。詳細標準已寫在 <a href="refund">退款政策</a> 中。</li>
-        <li><strong>使用條件。</strong> 購買前，請先閱讀 <a href="terms">服務條款</a> 與 <a href="privacy">隱私權政策</a>。</li>
-      </ul>
+      <div class="pay-group">
+        <h3>通用</h3>
+        <ul>
+          <li><strong>付款代理 — Paddle。</strong> 付款由 Paddle 以銷售代理（Merchant of Record）身分處理。Paddle 會代為處理付款與稅額計算，並開立收據。價格以美元標示，付款畫面會以當地貨幣顯示。</li>
+          <li><strong>稅金另計。</strong> 上述價格不含稅金。付款時，Paddle 會依客戶所在地自動計算稅金並加收。</li>
+          <li><strong>使用條件。</strong> 購買前，請先閱讀 <a href="terms">服務條款</a> 與 <a href="privacy">隱私權政策</a>。</li>
+        </ul>
+      </div>
+      <div class="pay-group">
+        <h3>ShouArchive 授權</h3>
+        <ul>
+          <li><strong>買一次就能一直使用。</strong> <span data-price="commercial.price">US$29</span> 包含授權與 1 年更新。更新期間結束後 App 也不會停止運作，期間內新增的所有功能都可以繼續使用。</li>
+          <li><strong>更新續訂 — 每年 <span data-price="commercial.price_renewal">US$15</span>。</strong> 更新期間每年自動續訂。自動續訂可以隨時關閉（透過 Paddle 付款通知郵件中的管理連結，或 App 的「設定」›「授權」›「管理付款…」）。續訂前 7 天，我們會透過付款電子郵件與 App 通知您。若在期間結束後才重新續訂，會從該次付款日起重新開始 1 年。</li>
+          <li><strong>期間結束後新增的功能。</strong> 無論更新期間是否結束，都可以隨時安裝新版本。只有更新期間結束後新增的功能需要續訂才能使用，先前已有的功能照常可用。</li>
+          <li><strong>退款。</strong> 首次購買與更新續訂，皆可在付款後 <span data-price="commercial.refund_days">14</span> 天內申請全額退款。詳細標準已寫在 <a href="refund">退款政策</a> 中。</li>
+        </ul>
+      </div>
+      <div class="pay-group">
+        <h3>月訂閱</h3>
+        <ul>
+          <li><strong>取消。</strong>可隨時取消。取消後從下個月起不再扣款，並可使用到已付款期間結束。</li>
+          <li><strong>退款。</strong>已付款的月份不予退款。您所在國家法律規定的權利不受影響（<a href="refund">退款政策</a>第 10 項）。</li>
+        </ul>
+      </div>
     </div>
   </section>
 

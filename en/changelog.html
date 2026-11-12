@@ -49,6 +49,37 @@
 
   <section class="doc">
     <div class="wrap">
+      <h2 id="v1-2-0">1.2.0 — November 13, 2026</h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>New “Poster” theme</strong> — Move between screens with the numbered section bar, and see what needs attention at a glance on the first screen, Today. Press ⌘K (“Where to?”) to jump straight to any screen. If you’ve never picked a theme, the app opens in Poster; you can switch themes from the theme menu at the top right of the window</li>
+        <li><strong>Workflows</strong> — Chain project, compile, signing, install file, inspection and upload as nodes and run them in one go. Add several signing branches to build Development, Ad Hoc and App Store together. The App Build tab has been replaced by Workflows. Uploading to the Google Play production track always asks for confirmation before running</li>
+        <li><strong>Direct distribution for Mac apps</strong> — With the signing method “Direct Distribution (Mac)” in a workflow, ShouArchive signs with Developer ID, notarizes and builds a DMG</li>
+        <li><strong>Automatic profile creation</strong> — If you have an App Store Connect API key and no matching profile, one is created and installed during the build. You can also create it ahead of time with “Create Profile…” in the signing field. Only certificates already on this Mac are used; no new certificates or App IDs are created</li>
+        <li><strong>Dashboard</strong> — Things to know, workflows, schedule, iOS, Android and news on one screen</li>
+        <li><strong>History › Timeline · Plans</strong> — Keep dev notes, plan a workflow to run on a set day, and get warned about overlapping schedules. You can export them as a calendar file (.ics)</li>
+        <li><strong>Build progress at the notch</strong> — While a build runs, the app name and current step appear at the top center of the screen (Settings › General “Show build progress at the notch”)</li>
+        <li><strong>Concurrent builds</strong> — The build queue runs 2–3 builds at once across iOS and Android</li>
+        <li><strong>Monthly subscription</strong> — You can activate a monthly subscription key (US$3/month · 4 Macs). See its status and next payment date in Settings › License, and cancel or change your payment method with “Manage Billing…”. Until December 31, 2026 you can subscribe early from <a href="pricing">Pricing</a> (first 3 payments US$2, next payment on February 1, 2027)</li>
+        <li><strong>Buy another license</strong> — To use more Macs, buy a new key with “Buy Another License…” in Settings › License</li>
+        <li><strong>New App Store screenshot system</strong> — Screenshots are read, uploaded, reordered and deleted through App Store Connect’s new screenshot system (App Asset Library), including the iPhone Duo size</li>
+        <li><strong>Google Play</strong> — Mark images as “AI-generated image”, and see each track’s review and publishing stage</li>
+        <li><strong>Connection check</strong> — Screens that need the internet show “Network Disconnected” when the connection drops and reload when it comes back. Uploads now fail right away instead of waiting a long time</li>
+        <li><strong>Usage counts</strong> — Once a day the app sends anonymous usage counts (whether it was opened that day, and how often each screen and feature was used) (<a href="privacy">Privacy Policy</a>, section 5)</li>
+      </ul>
+      <h3>Changes</h3>
+      <ul>
+        <li><strong>Manage Profiles</strong> — Export and the per-team view now fit the new layout, and when several packages are selected you export or delete them from a single bar above the list</li>
+        <li><strong>First release</strong> — Apps with no released version are no longer asked for “What’s New in This Version”</li>
+        <li><strong>Clean Up</strong> — Also removes system data left behind by builds</li>
+      </ul>
+      <h3>Fixes</h3>
+      <ul>
+        <li><strong>Typing speed</strong> — Fixed typing slowing down with every character, for example when entering store information</li>
+        <li><strong>Cancelling builds</strong> — Fixed a cancelled build not stopping right away</li>
+        <li><strong>Translations</strong> — Fixed some text appearing in Korean in other languages</li>
+      </ul>
+
       <h2 id="v1-1-4">1.1.4 — November 10, 2026</h2>
       <h3>Fixes</h3>
       <ul>

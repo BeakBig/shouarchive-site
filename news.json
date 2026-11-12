@@ -2,6 +2,33 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-11-smileid-camerax-case-study",
+      "platforms": [
+        "android"
+      ],
+      "category": "story",
+      "published": "2026-11-11",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/smileid-camerax-android-identity-verification",
+      "title": {
+        "ko": "SmileID 사례 — CameraX 로 Android 기기 18,000종에서 본인 확인",
+        "en": "SmileID case study — identity verification on 18,000+ Android device types with CameraX",
+        "ja": "SmileID の事例 — CameraX で 18,000 種以上の Android 端末に本人確認を対応",
+        "zh-Hans": "SmileID 案例 — 借助 CameraX 在 18,000 多种 Android 设备上完成身份验证",
+        "zh-Hant": "SmileID 案例 — 透過 CameraX 在 18,000 多種 Android 裝置上完成身分驗證",
+        "es": "Caso de SmileID — verificación de identidad en más de 18.000 tipos de dispositivos Android con CameraX"
+      },
+      "summary": {
+        "ko": "아프리카의 본인 확인 SDK SmileID 가 Camera1 · Camera2 에서 CameraX 로 옮겨, 미리보기 늘어짐 · 회전 · 메모리 부족 크래시를 줄이고 Android 기기 18,000종 이상을 지원했으며 셀피 해상도가 4배, 확인 통과율이 20% 올랐다고 밝혔습니다. 카메라 기능을 만든다면 글의 ResolutionSelector · STRATEGY_KEEP_ONLY_LATEST 설정 예시와 AI 코딩 에이전트용 CameraX Skill 을 참고하세요.",
+        "en": "SmileID, an identity verification SDK in Africa, moved from Camera1 and Camera2 to CameraX and reports fewer stretched or rotated previews and out-of-memory crashes, support for 18,000+ Android device types, 4x higher selfie resolution and a 20% higher verification pass rate. If you build camera features, see the post's ResolutionSelector and STRATEGY_KEEP_ONLY_LATEST sample and the CameraX Skill for AI coding agents.",
+        "ja": "アフリカの本人確認 SDK「SmileID」は Camera1・Camera2 から CameraX に移行し、プレビューの引き伸ばし・回転やメモリ不足によるクラッシュを減らして 18,000 種以上の Android 端末に対応、自撮りの解像度は 4 倍、確認の通過率は 20% 上がったとしています。カメラ機能を作る場合は、記事の ResolutionSelector・STRATEGY_KEEP_ONLY_LATEST の設定例と、AI コーディングエージェント向けの CameraX Skill を参考にしてください。",
+        "zh-Hans": "非洲身份验证 SDK SmileID 从 Camera1、Camera2 迁移到 CameraX 后，预览拉伸、旋转和内存不足崩溃减少，支持 18,000 多种 Android 设备，自拍分辨率提高到 4 倍，验证通过率提高 20%。如果你在开发相机功能，可参考文中 ResolutionSelector 与 STRATEGY_KEEP_ONLY_LATEST 的配置示例，以及面向 AI 编程代理的 CameraX Skill。",
+        "zh-Hant": "非洲身分驗證 SDK SmileID 從 Camera1、Camera2 遷移到 CameraX 後，預覽拉伸、旋轉和記憶體不足當機減少，支援 18,000 多種 Android 裝置，自拍解析度提高到 4 倍，驗證通過率提高 20%。如果你在開發相機功能，可參考文中 ResolutionSelector 與 STRATEGY_KEEP_ONLY_LATEST 的設定範例，以及給 AI 程式設計代理使用的 CameraX Skill。",
+        "es": "SmileID, un SDK de verificación de identidad en África, pasó de Camera1 y Camera2 a CameraX y afirma que redujo las vistas previas estiradas o giradas y los fallos por falta de memoria, admite más de 18.000 tipos de dispositivos Android, cuadruplicó la resolución de los selfis y subió un 20 % la tasa de verificaciones superadas. Si creas funciones de cámara, consulta el ejemplo de ResolutionSelector y STRATEGY_KEEP_ONLY_LATEST del artículo y la CameraX Skill para agentes de programación con IA."
+      }
+    },
+    {
       "id": "2026-11-10-google-sign-in-unity-plugin",
       "platforms": [
         "android"

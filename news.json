@@ -724,6 +724,41 @@
       }
     },
     {
+      "id": "shouarchive-1.2.2",
+      "platforms": [
+        "shouarchive"
+      ],
+      "category": "update",
+      "version": "1.2.2",
+      "published": "2026-11-13",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-2-2",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-2-2",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-2-2",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-2-2",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-2-2",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-2-2"
+      },
+      "title": {
+        "ko": "ShouArchive 1.2.2",
+        "en": "ShouArchive 1.2.2",
+        "ja": "ShouArchive 1.2.2",
+        "zh-Hans": "ShouArchive 1.2.2",
+        "zh-Hant": "ShouArchive 1.2.2",
+        "es": "ShouArchive 1.2.2"
+      },
+      "summary": {
+        "ko": "- 인증서로 프로비저닝 거르기 — 프로파일 관리의 「인증서」 카드에서 키체인 인증서를 누르면 그 인증서가 든 프로비저닝 프로파일만 보입니다. 다시 누르면 모두 보입니다\n- 스크린샷 필수 크기 — 스토어 › App Store › 스크린샷의 「크기」 목록에 App Store 에 내려면 꼭 있어야 하는 크기를 「필수」 로 표시합니다 (iPhone 6.3″ · iPad 13″(iPad 를 지원하면) · Mac 등, Apple 「스크린샷 사양」 기준)\n- 기록 — 왼쪽에 빌드 기록을 최신이 위로 세로로 쌓고, 오른쪽에 계획을 크게 보여 줍니다. 빌드를 누르면 오른쪽 맨 위에 상세가 열립니다 (모든 테마)\n- 자동 업데이트 — 자동 확인이 새 버전을 찾으면 앱을 쓰는 중에도 업데이트 창이 바로 뜹니다\n- App Store 실패 안내 — 실패했을 때 오류 번호와 Apple 원문 대신 무엇을 하면 되는지 알려 줍니다\n- ShouArchive 다크 테마 — 「새 워크플로…」 › 「시작 모양」 등에서 고른 버튼이 흰 바탕에 흰 글자로 보이던 것\n- 번역 — 영어 · 스페인어에서 곧 만료되는 프로파일 수가 뒤바뀌어 보이던 것(10 of 1), 영어 · 스페인어 · 중국어의 정리 완료 문구 등에서 값이 뒤섞일 수 있던 것",
+        "en": "- Filter provisioning by certificate — In Manage Profiles, click a keychain certificate in the “Certificate” card to see only the provisioning profiles that contain it. Click it again to see all\n- Required screenshot sizes — The “Size” list in Store › App Store › Screenshots marks the sizes you must have to submit to the App Store as “Required” (iPhone 6.3″, iPad 13″ if your app supports iPad, Mac and more, per Apple’s “Screenshot specifications”)\n- History — Build records are stacked on the left with the newest on top, and your plans are shown large on the right. Click a build to open its details at the top right (all themes)\n- Automatic updates — When the automatic check finds a new version, the update window now appears right away, even while you’re using the app\n- App Store failure messages — When something fails, ShouArchive now tells you what to do instead of showing error codes and Apple’s raw messages\n- ShouArchive dark theme — Selected buttons, such as in “New Workflow…” › “Start with”, showed white text on a white background\n- Translations — In English and Spanish the number of profiles expiring soon was reversed (“10 of 1”), and some messages, such as Clean Up completion messages in English, Spanish and Chinese, could mix up their values",
+        "ja": "- 証明書でプロビジョニングを絞り込む — プロファイル管理の「証明書」カードでキーチェーンの証明書をクリックすると、その証明書を含むプロビジョニングプロファイルだけを表示します。もう一度クリックするとすべて表示します\n- スクリーンショットの必須サイズ — ストア › App Store › スクリーンショットの「サイズ」リストで、App Store への提出に必要なサイズを「必須」と表示します（iPhone 6.3″・iPad 13″（iPad 対応時）・Mac など、Apple「スクリーンショットの仕様」に基づく）\n- 履歴 — 左にビルド記録を新しい順に縦に並べ、右に計画を大きく表示します。ビルドをクリックすると右上に詳細が開きます（すべてのテーマ）\n- 自動アップデート — 自動確認で新しいバージョンが見つかると、アプリを使っている最中でもすぐにアップデートのウインドウが表示されます\n- App Store の失敗の案内 — 失敗したとき、エラー番号や Apple の原文ではなく、何をすればよいかを表示します\n- ShouArchive ダークテーマ — 「新しいワークフロー…」›「開始の形」などで選んだボタンが白地に白文字で表示されていた問題\n- 翻訳 — 英語・スペイン語でまもなく期限切れになるプロファイルの数が逆に表示されていた問題（10 of 1）、英語・スペイン語・中国語の整理完了メッセージなどで値が入れ替わることがあった問題",
+        "zh-Hans": "- 按证书筛选描述文件 — 在管理描述文件的「证书」卡片中点按钥匙串证书，只显示包含该证书的描述文件。再次点按即显示全部\n- 截图必填尺寸 — 商店 › App Store › 截图的「大小」列表会把提交 App Store 必须提供的尺寸标为「必填」（iPhone 6.3″、iPad 13″（支持 iPad 时）、Mac 等，依据 Apple「截图规格」）\n- 记录 — 左侧按由新到旧纵向列出构建记录，右侧放大显示计划。点按构建会在右上方打开详情（所有主题）\n- 自动更新 — 自动检查发现新版本时，即使正在使用 App，也会立即显示更新窗口\n- App Store 失败提示 — 失败时不再显示错误代码和 Apple 原文，而是告诉你该怎么做\n- ShouArchive 深色主题 — 「新建工作流…」›「起始模板」等处选中的按钮显示为白底白字的问题\n- 翻译 — 英语和西班牙语中即将过期的描述文件数量顺序颠倒（10 of 1）的问题；英语、西班牙语和中文的清理完成提示等可能出现数值错乱的问题",
+        "zh-Hant": "- 依憑證篩選描述檔 — 在管理描述檔的「憑證」卡片中按一下鑰匙圈憑證，只顯示包含該憑證的描述檔。再按一下即顯示全部\n- 截圖必填尺寸 — 商店 › App Store › 截圖的「大小」列表會把提交 App Store 必須提供的尺寸標為「必填」（iPhone 6.3″、iPad 13″（支援 iPad 時）、Mac 等，依據 Apple「截圖規格」）\n- 記錄 — 左側由新到舊縱向列出建置記錄，右側放大顯示計畫。按一下建置會在右上方開啟詳細資訊（所有主題）\n- 自動更新 — 自動檢查發現新版本時，即使正在使用 App，也會立即顯示更新視窗\n- App Store 失敗提示 — 失敗時不再顯示錯誤代碼和 Apple 原文，而是告訴你該怎麼做\n- ShouArchive 深色主題 — 「新增工作流程…」›「起始範本」等處選取的按鈕顯示為白底白字的問題\n- 翻譯 — 英文和西班牙文中即將過期的描述檔數量順序顛倒（10 of 1）的問題；英文、西班牙文和中文的清理完成提示等可能出現數值錯亂的問題",
+        "es": "- Filtrar el aprovisionamiento por certificado — En Gestionar perfiles, haz clic en un certificado del llavero en la tarjeta «Certificado» para ver solo los perfiles de aprovisionamiento que lo contienen. Vuelve a hacer clic para verlos todos\n- Tamaños de captura obligatorios — La lista «Tamaño» de Tienda › App Store › Capturas marca como «Obligatorio» los tamaños necesarios para enviar a la App Store (iPhone 6.3″, iPad 13″ si la app admite iPad, Mac y más, según las «Especificaciones de capturas» de Apple)\n- Historial — Los registros de compilación se apilan a la izquierda, del más reciente al más antiguo, y los planes se muestran en grande a la derecha. Haz clic en una compilación para abrir sus detalles arriba a la derecha (todos los temas)\n- Actualizaciones automáticas — Cuando la comprobación automática encuentra una versión nueva, la ventana de actualización aparece enseguida, aunque estés usando la app\n- Mensajes de error de App Store — Cuando algo falla, ShouArchive te dice qué hacer en lugar de mostrar códigos de error y el texto original de Apple\n- Tema oscuro ShouArchive — Los botones seleccionados, como en «Nuevo flujo de trabajo…» › «Empezar con», se veían con texto blanco sobre fondo blanco\n- Traducciones — En inglés y español el número de perfiles que caducan pronto aparecía invertido («10 of 1»), y algunos mensajes, como los de fin de limpieza en inglés, español y chino, podían mezclar sus valores"
+      }
+    },
+    {
       "id": "shouarchive-1.2.1",
       "platforms": [
         "shouarchive"

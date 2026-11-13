@@ -724,6 +724,41 @@
       }
     },
     {
+      "id": "shouarchive-1.2.1",
+      "platforms": [
+        "shouarchive"
+      ],
+      "category": "update",
+      "version": "1.2.1",
+      "published": "2026-11-13",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-2-1",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-2-1",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-2-1",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-2-1",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-2-1",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-2-1"
+      },
+      "title": {
+        "ko": "ShouArchive 1.2.1",
+        "en": "ShouArchive 1.2.1",
+        "ja": "ShouArchive 1.2.1",
+        "zh-Hans": "ShouArchive 1.2.1",
+        "zh-Hant": "ShouArchive 1.2.1",
+        "es": "ShouArchive 1.2.1"
+      },
+      "summary": {
+        "ko": "- 오해할 만한 문구 수정 — 스토어 › Google Play › 앱 설정에서 개발자 연락처를 읽거나 저장할 때 나오던 「연락처를 읽는 중…」 · 「연락처를 저장하는 중…」 을 「스토어에 저장된 정보를 읽는 중…」 · 「스토어에 정보를 저장하는 중…」 으로 바꿨습니다. Mac 의 연락처를 읽는 것처럼 보일 수 있었습니다. ShouArchive 는 Mac 의 연락처를 읽지 않습니다",
+        "en": "- Misleading wording — In Store › Google Play › App setup, the messages shown while reading or saving the developer contact details, “Reading contact details…” and “Saving contact details…”, now say “Reading the information saved in the store…” and “Saving the information to the store…”. They could look as if ShouArchive was reading your Mac’s contacts. ShouArchive doesn’t read your Mac’s contacts",
+        "ja": "- 誤解を招く表現 — ストア › Google Play › アプリの設定でデベロッパの連絡先を読み込む・保存するときに表示されていた「連絡先を読み込んでいます…」「連絡先を保存しています…」を、「ストアに保存された情報を読み込んでいます…」「ストアに情報を保存しています…」に変更しました。Mac の連絡先を読み込んでいるように見えるおそれがありました。ShouArchive は Mac の連絡先を読み込みません",
+        "zh-Hans": "- 容易误解的文字 — 在 商店 › Google Play › 应用设置 中读取或保存开发者联系方式时显示的「正在读取联系方式…」「正在保存联系方式…」已改为「正在读取商店中保存的信息…」「正在将信息保存到商店…」。原来的文字可能让人误以为在读取 Mac 上的联系人。ShouArchive 不会读取 Mac 上的联系人",
+        "zh-Hant": "- 容易誤解的文字 — 在 商店 › Google Play › App 設定 中讀取或儲存開發者聯絡資訊時顯示的「正在讀取聯絡資訊…」「正在儲存聯絡資訊…」已改為「正在讀取商店中儲存的資訊…」「正在將資訊儲存到商店…」。原本的文字可能讓人誤以為在讀取 Mac 上的聯絡人。ShouArchive 不會讀取 Mac 上的聯絡人",
+        "es": "- Texto que podía confundir — En Tienda › Google Play › Configuración de la app, los mensajes que aparecían al leer o guardar los datos de contacto del desarrollador, «Leyendo los datos de contacto…» y «Guardando los datos de contacto…», ahora dicen «Leyendo la información guardada en la tienda…» y «Guardando la información en la tienda…». Podían dar a entender que ShouArchive leía los contactos de tu Mac. ShouArchive no lee los contactos de tu Mac"
+      }
+    },
+    {
       "id": "shouarchive-1.2.0",
       "platforms": [
         "shouarchive"

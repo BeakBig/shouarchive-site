@@ -724,6 +724,41 @@
       }
     },
     {
+      "id": "shouarchive-1.2.3",
+      "platforms": [
+        "shouarchive"
+      ],
+      "category": "update",
+      "version": "1.2.3",
+      "published": "2026-11-13",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-2-3",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-2-3",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-2-3",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-2-3",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-2-3",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-2-3"
+      },
+      "title": {
+        "ko": "ShouArchive 1.2.3",
+        "en": "ShouArchive 1.2.3",
+        "ja": "ShouArchive 1.2.3",
+        "zh-Hans": "ShouArchive 1.2.3",
+        "zh-Hant": "ShouArchive 1.2.3",
+        "es": "ShouArchive 1.2.3"
+      },
+      "summary": {
+        "ko": "- 기록 — 빌드 기록이 있을 때 「기록」 탭을 연 뒤 앱이 그 화면을 계속 다시 그려 CPU 를 쓰던 것 (1.2.2 에서 생김)",
+        "en": "- History — After you opened the History tab with build records, the app kept redrawing it and using the CPU (introduced in 1.2.2)",
+        "ja": "- 履歴 — ビルド記録があるときに「履歴」タブを開くと、アプリがその画面を描き直し続けて CPU を使い続けていた問題（1.2.2 で発生）",
+        "zh-Hans": "- 记录 — 有构建记录时打开「记录」标签页后，App 会不断重绘该画面并持续占用 CPU 的问题（1.2.2 引入）",
+        "zh-Hant": "- 記錄 — 有建置記錄時開啟「記錄」分頁後，App 會不斷重繪該畫面並持續佔用 CPU 的問題（1.2.2 引入）",
+        "es": "- Historial — Después de abrir la pestaña Historial con registros de compilación, la app seguía redibujándola y usando la CPU (desde 1.2.2)"
+      }
+    },
+    {
       "id": "shouarchive-1.2.2",
       "platforms": [
         "shouarchive"

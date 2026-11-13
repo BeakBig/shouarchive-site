@@ -3,6 +3,22 @@
     <channel>
         <title>ShouArchive</title>
         <item>
+            <title>1.2.3</title>
+            <pubDate>Fri, 13 Nov 2026 16:11:15 +0900</pubDate>
+            <link>https://shouarchive.beakbig.com</link>
+            <sparkle:version>2026111304</sparkle:version>
+            <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive-1.2.3-2026111304.dmg" length="29995617" type="application/octet-stream" sparkle:edSignature="PyZCtOnw1gOQEG+/8ntpFeDW0UZd5hv698UY+rbIT6sB/XmQ0Q+q0g8Dmy5OJSpUBbqpsZP7PIRKbJV7TwNmDA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111304-2026111303.delta" sparkle:deltaFrom="2026111303" length="2066738" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="OZjJODF9YmsvAEI/8KT/iaVjL/XyvDlH1mOZm/1hBMwNLQZScCOZ3BVbGOjIe4Xtkj5KBZf+cXtktp/q91b1Dw=="/>
+                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111304-2026111302.delta" sparkle:deltaFrom="2026111302" length="3170138" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="vwU/z0CuyomLfTPqnUuOxJxRl6LSkEK3JDU6HoRn2pnZ9cH9Nguveyb86J3/t3u2n8wEJMMMCsAUh98hzuT5BA=="/>
+                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111304-2026111301.delta" sparkle:deltaFrom="2026111301" length="3172902" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="hvNoPaZCxSwNCmlBmabCC4k0ftuEcesgRmHs+s8dj5YbxPbooiHHzLk+pWARd3/tSyjKArEAuR9vJr+7xe79Bg=="/>
+                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111304-2026111002.delta" sparkle:deltaFrom="2026111002" length="9119930" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="JRL1nHa5tHN02eyn7LDpgSjTOD7M7vxka/2kjx/4s+jKvH6ZyZVOi9xg5fOVhdH497PhLGwRoicSo3pjBI8/Cw=="/>
+                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111304-2026111001.delta" sparkle:deltaFrom="2026111001" length="9134362" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="um4pppcIGfoXAnVrnYcwDOhjgtGsoMMTh8I+4Kb8IhS5nZt2aq/0dZpN+u1rDauzR2tgQ9QVFgv9nLsIHoF8DA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.2</title>
             <pubDate>Fri, 13 Nov 2026 14:19:38 +0900</pubDate>
             <link>https://shouarchive.beakbig.com</link>
@@ -32,22 +48,6 @@
                 <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111302-2026111001.delta" sparkle:deltaFrom="2026111001" length="8994114" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="jOIZYoHi/BP+VZkpo8frh8jDOMdCXmATjRBgI+B3t+TfXGWB6Z0FEgsuoJjVFxc4PO/fZPYc67AMC9kCQSUDBA=="/>
                 <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111302-2026110320.delta" sparkle:deltaFrom="2026110320" length="9056066" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="yzW5Jbg/4PlunBOqPGlSuj3poJg4evx7WqE8N1ar9t3gmIvWIsWYkoyKq7rb51fnbs+rouOql9BRnnWSlSvEBw=="/>
                 <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111302-2026110319.delta" sparkle:deltaFrom="2026110319" length="9086266" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="tbVuLPM0N9lM+urR39XPkuJiZJh+VILdqU0Nhv9Y8cwHNIwM+dsiGlb4bd4TGu2S1TeYf91op7x0cmxvHSbuDQ=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.2.0</title>
-            <pubDate>Thu, 12 Nov 2026 22:23:07 +0900</pubDate>
-            <link>https://shouarchive.beakbig.com</link>
-            <sparkle:version>2026111301</sparkle:version>
-            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive-1.2.0-2026111301.dmg" length="29879035" type="application/octet-stream" sparkle:edSignature="ZMR3T1rh0hCrM+Ad+VmJLkAgjydDuXyzX15Pr/yWV14a7dGWb5fTOyYrmkX5tJju0qy+oUniFM7ltwcF2kj7AQ=="/>
-            <sparkle:deltas>
-                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111301-2026111002.delta" sparkle:deltaFrom="2026111002" length="8968530" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="59Dr3aFzt8yuyy4+EPhCWxV0OOnUAB39siIyIl6uhtWxpKS/2ajmJk/2R0xOiUaBwJl54QgJoF3qqdXdGGKcDg=="/>
-                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111301-2026111001.delta" sparkle:deltaFrom="2026111001" length="8996722" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="FTOjQajc+KaiBCrgwTAu62eXbhoElI3+hZQGoMuQOzWvB2K9tyQNDDFLsAe8H63AJVGcdt+PWBX+uxTkIB+TAA=="/>
-                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111301-2026110320.delta" sparkle:deltaFrom="2026110320" length="9052630" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Qb+DOgoyvWYJit2Ve2jqyxzB1yGAPTZB45H4IlXGPTlOlGYq8XvQJsXoO2GZAm6dXDjFgAWdKwu6r3VGwcVWDA=="/>
-                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111301-2026110319.delta" sparkle:deltaFrom="2026110319" length="9082790" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="FTn1Ezr5Y+z1qRkMOWSruTeNGC/4t1+08j0bs6kovnqhG8DGItei4na45D/rITC/OFiKkx8cbW3GAMQvqZAvDQ=="/>
-                <enclosure url="https://download.beakbig.com/shouarchive/ShouArchive2026111301-2026110318.delta" sparkle:deltaFrom="2026110318" length="9221866" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="979088" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="gNyGDqo18KqfCY1N5TMSLWGBito6KapETrjr/O3IneBewsT3onoMu/tHoZTJk6iFaNhJfVmcVGkYMWNQf1tzBw=="/>
             </sparkle:deltas>
         </item>
     </channel>

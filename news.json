@@ -724,6 +724,41 @@
       }
     },
     {
+      "id": "shouarchive-1.2.4",
+      "platforms": [
+        "shouarchive"
+      ],
+      "category": "update",
+      "version": "1.2.4",
+      "published": "2026-11-14",
+      "deadline": null,
+      "source": "ShouArchive",
+      "url": "https://shouarchive.beakbig.com/en/changelog#v1-2-4",
+      "urls": {
+        "ko": "https://shouarchive.beakbig.com/changelog#v1-2-4",
+        "ja": "https://shouarchive.beakbig.com/ja/changelog#v1-2-4",
+        "zh-Hans": "https://shouarchive.beakbig.com/zh-Hans/changelog#v1-2-4",
+        "zh-Hant": "https://shouarchive.beakbig.com/zh-Hant/changelog#v1-2-4",
+        "es": "https://shouarchive.beakbig.com/es/changelog#v1-2-4"
+      },
+      "title": {
+        "ko": "ShouArchive 1.2.4",
+        "en": "ShouArchive 1.2.4",
+        "ja": "ShouArchive 1.2.4",
+        "zh-Hans": "ShouArchive 1.2.4",
+        "zh-Hant": "ShouArchive 1.2.4",
+        "es": "ShouArchive 1.2.4"
+      },
+      "summary": {
+        "ko": "- 기록 — 타임라인의 개발 노트 줄은 8줄까지만 보이고, 나머지는 「＋N개 더 · 펼치기」 로 펼칩니다\n- 검색 칸 — 목록이 많을 때 글자를 칠 때마다 목록을 다시 거르느라 잠깐씩 멈추던 것 — 이제 입력을 멈추고 0.15초 뒤에 한 번 거릅니다\n- 탭 옮기기 — 탭을 옮길 때마다 화면을 처음부터 다시 만들어 느리던 것\n- 많은 데이터 — 개발 노트 · 프로파일 · API 키가 많을 때 「기록」 · 「대시보드」 · 「오늘」 · API 키 목록(ShouArchive 테마)이 느리게 열리던 것, 가만히 둬도 1분마다 잠깐 멈추던 것\n- 포스터 테마 — 개발 노트 카드에 마우스를 올리거나 계획 칸을 끌 때 글자가 겹쳐 두 번 보이던 것 (1.2.0 부터)\n- 중국어(간체) — 스크린샷을 가리키는 낱말을 「截图」 하나로 맞춤",
+        "en": "- History — The timeline shows up to 8 rows of dev notes; open the rest with “+N more · Expand”\n- Search fields — With long lists, the app re-filtered the list on every key you typed and paused briefly — it now filters once, 0.15 seconds after you stop typing\n- Switching tabs — Every tab switch rebuilt the whole screen from scratch, which made it slow\n- Large data — With many dev notes, profiles or API keys, History, Dashboard, Today and the API key list (ShouArchive theme) opened slowly, and the app paused briefly every minute even when idle\n- Poster theme — Text looked doubled when you hovered over a dev note card or dragged a plan block (since 1.2.0)\n- Chinese (Simplified) — Screenshots are now called by one consistent word everywhere",
+        "ja": "- 履歴 — タイムラインの開発ノートの行は 8 行まで表示し、残りは「他 N 件 · 展開」で開きます\n- 検索欄 — リストが多いとき、1 文字入力するたびにリストを絞り込み直して少し止まっていた問題 — 入力を止めて 0.15 秒後に 1 回だけ絞り込むようにしました\n- タブの切り替え — タブを切り替えるたびに画面を最初から作り直していて遅かった問題\n- 大量のデータ — 開発ノート · プロファイル · API キーが多いとき、「履歴」 · 「ダッシュボード」 · 「今日」 · API キーの一覧（ShouArchive テーマ）が開くのが遅かった問題と、何もしていなくても 1 分ごとに少し止まっていた問題\n- ポスターテーマ — 開発ノートのカードにマウスを乗せたときや計画のブロックをドラッグしたときに、文字が二重に見えていた問題（1.2.0 から）\n- 中国語（簡体字） — スクリーンショットを指す語を 1 つに統一",
+        "zh-Hans": "- 记录 — 时间线中的开发笔记最多显示 8 行，其余可通过「还有 N 个 · 展开」展开\n- 搜索栏 — 列表较多时，每输入一个字都会重新筛选列表而短暂卡顿的问题 — 现在停止输入 0.15 秒后只筛选一次\n- 切换标签页 — 每次切换标签页都会从头重建整个画面而变慢的问题\n- 大量数据 — 开发笔记 · 描述文件 · API 密钥较多时，「记录」 · 「仪表盘」 · 「今天」 · API 密钥列表（ShouArchive 主题）打开缓慢的问题，以及闲置时也每分钟短暂卡顿的问题\n- 海报主题 — 将鼠标悬停在开发笔记卡片上或拖动计划块时，文字看起来重影的问题（自 1.2.0 起）\n- 简体中文 — 指代截图的用词统一为「截图」",
+        "zh-Hant": "- 記錄 — 時間軸中的開發筆記最多顯示 8 行，其餘可透過「還有 N 個 · 展開」展開\n- 搜尋欄 — 列表較多時，每輸入一個字都會重新篩選列表而短暫卡頓的問題 — 現在停止輸入 0.15 秒後只篩選一次\n- 切換分頁 — 每次切換分頁都會從頭重建整個畫面而變慢的問題\n- 大量資料 — 開發筆記 · 描述檔 · API 金鑰較多時，「記錄」 · 「儀表板」 · 「今天」 · API 金鑰列表（ShouArchive 主題）開啟緩慢的問題，以及閒置時也每分鐘短暫卡頓的問題\n- 海報主題 — 將滑鼠停在開發筆記卡片上或拖曳計畫區塊時，文字看起來重疊兩次的問題（自 1.2.0 起）\n- 簡體中文 — 指稱截圖的用詞統一為同一個詞",
+        "es": "- Historial — La línea de tiempo muestra hasta 8 filas de notas de desarrollo; abre el resto con «+N más · Expandir»\n- Campos de búsqueda — Con listas largas, la app volvía a filtrar la lista con cada tecla y se detenía un momento; ahora filtra una sola vez, 0,15 segundos después de que dejas de escribir\n- Cambiar de pestaña — Cada cambio de pestaña reconstruía toda la pantalla desde cero y la hacía lenta\n- Muchos datos — Con muchas notas de desarrollo, perfiles o claves de API, Historial, Panel, Hoy y la lista de claves de API (tema ShouArchive) tardaban en abrirse, y la app se detenía un momento cada minuto aunque no hicieras nada\n- Tema Póster — El texto se veía doble al pasar el ratón sobre una tarjeta de nota de desarrollo o al arrastrar un bloque de plan (desde 1.2.0)\n- Chino (simplificado) — Las capturas de pantalla ahora se llaman con una sola palabra en toda la app"
+      }
+    },
+    {
       "id": "shouarchive-1.2.3",
       "platforms": [
         "shouarchive"

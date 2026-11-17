@@ -2,6 +2,67 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-16-macos-device-control-full-disk-access",
+      "platforms": [
+        "ios"
+      ],
+      "category": "requirement",
+      "published": "2026-11-16",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=oqng0zjk",
+      "title": {
+        "ko": "macOS 27.3 베타 2 — Device Control and Data Access · Full Disk Access 권한 방식이 바뀜",
+        "en": "macOS 27.3 beta 2 — changes to Device Control and Data Access and Full Disk Access",
+        "ja": "macOS 27.3 ベータ 2 — Device Control and Data Access と Full Disk Access の許可方法が変更",
+        "zh-Hans": "macOS 27.3 beta 2 — Device Control and Data Access 与 Full Disk Access 的授权方式变更",
+        "zh-Hant": "macOS 27.3 beta 2 — Device Control and Data Access 與 Full Disk Access 的授權方式變更",
+        "es": "macOS 27.3 beta 2 — cambios en Device Control and Data Access y Full Disk Access"
+      },
+      "summary": {
+        "ko": "macOS 27.3 베타 2 부터 Device Control and Data Access 가 System & App Protection Override 와 Accessibility 두 설정으로 나뉘고, 사용자는 목록에서 요청한 앱을 골라 권한을 주며 필요한 앱 · 폴더에만 허용하거나 매번 묻게 할 수 있습니다(이미 준 권한은 그대로 유지). 이 API 를 쓰는 앱은 처음 안내 흐름을 고치고 일부 폴더 · 앱에만 접근해도 제대로 동작하게 해 두세요 — 디스크 백업용 Full Disk Access 나 보조 기술용 Accessibility 를 쓰는 앱은 새로 설치할 때도 예전 경험을 주는 entitlement 를 요청할 수 있습니다.",
+        "en": "Starting in macOS 27.3 beta 2, Device Control and Data Access splits into two settings, System & App Protection Override and Accessibility, and users grant access by picking the requesting app from a list, can limit it to just the apps or folders they need, or have the app ask every time (permissions already granted stay in effect). If your app uses these APIs, update your onboarding and make sure it handles access to only some folders or apps — apps that use Full Disk Access for disk backup or the new Accessibility settings for assistive technologies can request an entitlement to keep their previous experience on new installations.",
+        "ja": "macOS 27.3 ベータ 2 から Device Control and Data Access が System & App Protection Override と Accessibility の 2 つの設定に分かれ、ユーザーは要求したアプリを一覧から選んで許可し、必要なアプリ・フォルダだけに許可したり、毎回確認させたりできるようになります(すでに許可した権限はそのまま有効)。これらの API を使うアプリはオンボーディングの流れを見直し、一部のフォルダ・アプリにしかアクセスできなくても正しく動くようにしてください — ディスクのバックアップに Full Disk Access を、支援技術に新しい Accessibility 設定を使うアプリは、新規インストールでも以前と同じ体験を提供するための entitlement を申請できます。",
+        "zh-Hans": "从 macOS 27.3 beta 2 起，Device Control and Data Access 拆分为 System & App Protection Override 和 Accessibility 两项设置，用户从列表中选择发出请求的 App 来授权，可以只允许所需的 App 或文件夹，也可以让 App 每次都询问（已授予的权限继续有效）。使用这些 API 的 App 请调整引导流程，并确保只能访问部分文件夹或 App 时也能正常工作——将 Full Disk Access 用于磁盘备份、或将新的 Accessibility 设置用于辅助技术的 App，可以申请 entitlement，让新安装时也保持以前的体验。",
+        "zh-Hant": "從 macOS 27.3 beta 2 起，Device Control and Data Access 拆分為 System & App Protection Override 與 Accessibility 兩項設定，使用者從列表中選擇發出請求的 App 來授權，可以只允許所需的 App 或檔案夾，也可以讓 App 每次都詢問（已授予的權限繼續有效）。使用這些 API 的 App 請調整引導流程，並確保只能存取部分檔案夾或 App 時也能正常運作——將 Full Disk Access 用於磁碟備份、或將新的 Accessibility 設定用於輔助技術的 App，可以申請 entitlement，讓新安裝時也維持以前的體驗。",
+        "es": "Desde macOS 27.3 beta 2, Device Control and Data Access se divide en dos ajustes, System & App Protection Override y Accessibility, y el usuario concede el acceso eligiendo de una lista la app que lo solicita, puede limitarlo a las apps o carpetas que necesite o hacer que la app pregunte cada vez (los permisos ya concedidos siguen vigentes). Si tu app usa estas API, revisa el proceso de bienvenida y asegúrate de que funcione con acceso solo a algunas carpetas o apps; las apps que usan Full Disk Access para copias de seguridad del disco o los nuevos ajustes de Accessibility para tecnologías de asistencia pueden solicitar un entitlement para mantener la experiencia anterior en instalaciones nuevas."
+      }
+    },
+    {
+      "id": "2026-11-16-google-play-buyer-reach-new-surfaces",
+      "platforms": [
+        "android"
+      ],
+      "category": "business",
+      "published": "2026-11-16",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach?hl=es"
+      },
+      "title": {
+        "ko": "Google Play — 앱 밖(스토어 검색 · 웹 스토어 · Gemini)에서도 인앱 상품 판매, 「상품화 및 최적화」",
+        "en": "Google Play — sell in-app products outside your app (Store search, web store, Gemini) with Merchandising and optimization",
+        "ja": "Google Play — アプリの外(ストア検索・ウェブストア・Gemini)でもアプリ内アイテムを販売、[収益化と最適化]",
+        "zh-Hans": "Google Play — 在应用之外（商店搜索、网上商店、Gemini）销售应用内商品，“推销和优化”",
+        "zh-Hant": "Google Play — 在應用程式之外（商店搜尋、網路商店、Gemini）銷售應用程式內產品，「宣傳與最佳化」",
+        "es": "Google Play — vende productos integrados fuera de tu app (búsqueda de Play Store, tienda web, Gemini) con Promoción y optimización"
+      },
+      "summary": {
+        "ko": "Google Play 가 Play Console 의 「상품화 및 최적화」 페이지에서 상품을 한 번 골라 두면 Play 스토어 검색 결과 · 스토어 등록정보의 추천 상품, 장바구니 이탈 알림, Google Play 웹 스토어, 외부 웹 스토어의 Play 결제, Gemini 대화(초기 시범) 같은 앱 밖 경로에서도 팔 수 있게 넓혔습니다. 쓰려면 Play Console 의 'Play를 통한 수익 창출' > '상품화 및 최적화' 에서 상품을 추가하고, 구매 수량 제한 · 일회성 제품 타겟층 · 제외 그룹 등은 사전 체험 프로그램(EAP)으로 나오니 Play Billing Lab 앱으로 흐름을 미리 시험해 보세요.",
+        "en": "Google Play now lets you opt products in once on the Merchandising and optimization page in Play Console and sell them outside your app — featured products in Play Store search results and on your store listing, cart abandonment reminders, the Google Play Web Store, Play Billing on external web stores, and Gemini conversations (early access pilots). To start, add products under Monetize with Play > Merchandising and optimization in Play Console; purchase quantity limits, one-time product target audiences and exclusion groups are rolling out through the Early Access Program, and the Play Billing Lab app lets you test these journeys first.",
+        "ja": "Google Play では、Play Console の [収益化と最適化] ページで商品を一度選んでおくと、Play ストアの検索結果やストアの掲載情報でのおすすめ商品、カート放棄のリマインダー、Google Play ウェブストア、外部ウェブストアでの Play 課金、Gemini での会話(早期アクセスの試験運用)など、アプリの外でも販売できるようになりました。利用するには Google Play Console の [Google Play で収益化] > [収益化と最適化] で商品を追加し、購入数量の上限、1 回限りのアイテムの対象オーディエンス、除外グループなどは早期アクセス プログラム(EAP)で提供されるため、Play Billing Lab アプリで流れを事前にテストしてください。",
+        "zh-Hans": "Google Play 现在允许你在 Play 管理中心的“推销和优化”页面中一次性选定商品，即可在应用之外销售，包括 Play 商店搜索结果和商品详情页中的精选商品、购物车放弃提醒、Google Play 网上商店、外部网上商店中的 Play 结算，以及 Gemini 对话（抢先体验试点）。如需使用，请在 Play 管理中心依次前往“借助 Google Play 变现”>“推销和优化”添加商品；购买数量限制、一次性商品目标受众群体和排除群组等功能通过抢先体验计划 (EAP) 推出，可先用 Play Billing Lab 应用测试这些流程。",
+        "zh-Hant": "Google Play 現在允許你在 Play 管理中心的「宣傳與最佳化」頁面一次選定產品，即可在應用程式之外銷售，包括 Play 商店搜尋結果和商店資訊中的精選產品、購物車放棄提醒、Google Play 網路商店、外部網路商店中的 Play 帳款服務，以及 Gemini 對話（搶先體驗試辦）。如要使用，請在 Play 管理中心依序前往「透過 Google Play 營利」>「宣傳與最佳化」新增產品；購買數量限制、單次產品目標對象和排除群組等功能透過搶先體驗計畫 (EAP) 推出，可先用 Play Billing Lab 應用程式測試這些流程。",
+        "es": "Google Play ahora permite activar productos una sola vez en la página Promoción y optimización de Play Console y venderlos fuera de tu app: productos destacados en los resultados de búsqueda de Play Store y en la ficha de la tienda, recordatorios de carritos abandonados, Google Play Web Store, Play Billing en tiendas web externas y conversaciones de Gemini (pruebas piloto de acceso anticipado). Para empezar, agrega productos en Monetiza con Play > Promoción y optimización en Play Console; los límites de cantidad de compra, los públicos objetivo de productos únicos y los grupos de exclusión llegan mediante el Programa de Acceso Anticipado, y la app Play Billing Lab permite probar estos recorridos antes."
+      }
+    },
+    {
       "id": "2026-11-11-smileid-camerax-case-study",
       "platforms": [
         "android"

@@ -2,6 +2,196 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-18-app-store-award-finalists-2026",
+      "platforms": [
+        "ios"
+      ],
+      "category": "story",
+      "published": "2026-11-18",
+      "deadline": null,
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=vb753j92",
+      "title": {
+        "ko": "2026 App Store Award 결선 후보 발표 — 12개 부문 45개",
+        "en": "2026 App Store Award finalists announced — 45 across 12 categories",
+        "ja": "2026 App Store Award のファイナリスト発表 — 12 部門 45 本",
+        "zh-Hans": "2026 App Store Award 决选名单公布 — 12 个类别共 45 款",
+        "zh-Hant": "2026 App Store Award 決選名單公布 — 12 個類別共 45 款",
+        "es": "Finalistas de los App Store Award 2026 — 45 en 12 categorías"
+      },
+      "summary": {
+        "ko": "Apple 이 올해 App Store Award 결선 후보로 12개 부문 45개 앱 · 게임을 발표했습니다(iPhone · iPad · Mac · Apple Vision Pro · Apple Watch 올해의 앱 등). 수상작은 몇 주 안에 발표되며, 부문별 후보는 원문의 「Meet the finalists」 페이지에서 볼 수 있습니다.",
+        "en": "Apple named 45 apps and games across 12 categories as this year's App Store Award finalists, including iPhone, iPad, Mac, Apple Vision Pro and Apple Watch App of the Year. Winners will be announced in the coming weeks, and the finalists for each category are listed on the \"Meet the finalists\" page linked from the article.",
+        "ja": "Apple は今年の App Store Award のファイナリストとして、12 部門 45 本のアプリ・ゲームを発表しました(iPhone・iPad・Mac・Apple Vision Pro・Apple Watch の App of the Year など)。受賞作は数週間以内に発表され、部門ごとのファイナリストは記事からリンクされた「Meet the finalists」ページで確認できます。",
+        "zh-Hans": "Apple 公布了今年 App Store Award 的决选名单，共 12 个类别 45 款 App 和游戏（包括 iPhone、iPad、Mac、Apple Vision Pro 和 Apple Watch 年度 App 等）。获奖作品将在几周内公布，各类别的入围作品可在原文链接的“Meet the finalists”页面查看。",
+        "zh-Hant": "Apple 公布了今年 App Store Award 的決選名單，共 12 個類別 45 款 App 和遊戲（包括 iPhone、iPad、Mac、Apple Vision Pro 和 Apple Watch 年度 App 等）。得獎作品將在幾週內公布，各類別的入圍作品可在原文連結的「Meet the finalists」頁面查看。",
+        "es": "Apple presentó 45 apps y juegos en 12 categorías como finalistas de los App Store Award de este año, entre ellas App of the Year para iPhone, iPad, Mac, Apple Vision Pro y Apple Watch. Los ganadores se anunciarán en las próximas semanas y los finalistas de cada categoría aparecen en la página «Meet the finalists» enlazada en el artículo."
+      }
+    },
+    {
+      "id": "2026-11-18-google-play-adaptive-app-quality",
+      "platforms": [
+        "android"
+      ],
+      "category": "requirement",
+      "published": "2026-11-18",
+      "deadline": "2027-04-01",
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards?hl=es"
+      },
+      "title": {
+        "ko": "Google Play 적응형 앱 품질 기준 — 2027년 4월부터 폴더블 Tier 3 · 폴더블 스크린샷 필요",
+        "en": "Google Play adaptive app quality — foldable Tier 3 and foldable screenshots required from April 2027",
+        "ja": "Google Play のアダプティブ アプリ品質基準 — 2027 年 4 月から折りたたみ式の Tier 3 とスクリーンショットが必須",
+        "zh-Hans": "Google Play 自适应应用质量标准 — 2027 年 4 月起须达到可折叠设备第 3 级并提供可折叠设备屏幕截图",
+        "zh-Hant": "Google Play 自動調整式應用程式品質標準 — 2027 年 4 月起須符合摺疊式裝置第 3 級並提供摺疊式裝置螢幕截圖",
+        "es": "Calidad adaptable de apps en Google Play — nivel 3 para plegables y capturas de plegables obligatorias desde abril de 2027"
+      },
+      "summary": {
+        "ko": "2027년 4월부터 Google Play 의 앱은 폴더블용 Android 적응형 앱 품질 가이드라인의 3단계(Tier 3 — 레터박스 없이 화면을 채우고 회전 · 접기 · 크기 조절 때 상태 유지, 멀티 윈도 지원) 이상을 충족해야 하며, 충족하지 못하면 게시 · 업데이트를 할 수 없고 스토어 노출이 줄 수 있습니다. 같은 때부터 스토어 등록정보에 휴대전화 스크린샷 2개 외에 폴더블 스크린샷 3개가 필요하니(Play Console 에서 지금 올릴 수 있음), 폴더블에서 앱을 확인하고 스크린샷을 준비하세요.",
+        "en": "From April 2027, apps on Google Play must meet at least Tier 3 of the Android adaptive app quality guidelines for foldables (fill the display without letterboxing, keep state through rotation, folding and resizing, and support multi-window), or they can no longer publish or update and may get reduced visibility. From the same date, store listings need 3 foldable screenshots in addition to the 2 phone screenshots (you can upload them in Play Console now), so check your app on foldables and prepare the screenshots.",
+        "ja": "2027 年 4 月から、Google Play のアプリは折りたたみ式デバイス向けの Android アダプティブ アプリ品質ガイドラインの Tier 3 以上(レターボックスなしで画面を埋め、回転・折りたたみ・サイズ変更で状態を保持し、マルチウィンドウに対応)を満たす必要があり、満たさないと公開や更新ができず、ストアでの表示が制限される可能性があります。同じ時期から、ストアの掲載情報に標準のスマートフォン スクリーンショット 2 枚に加えて折りたたみ式デバイスのスクリーンショット 3 枚が必要になるため(Google Play Console で今からアップロード可能)、折りたたみ式デバイスでアプリを確認し、スクリーンショットを準備してください。",
+        "zh-Hans": "自 2027 年 4 月起，Google Play 上的应用必须至少达到《Android 自适应应用质量指南》中针对可折叠设备的第 3 级要求（不加黑边地填满屏幕，在旋转、折叠和调整大小时保留状态，并支持多窗口），否则将无法发布或更新，且曝光度可能降低。同时，Play 商店商品详情除 2 张手机屏幕截图外还需提供 3 张可折叠设备屏幕截图（现在即可在 Play 管理中心上传），请在可折叠设备上检查应用并准备屏幕截图。",
+        "zh-Hant": "自 2027 年 4 月起，Google Play 應用程式必須至少符合 Android 自動調整式應用程式品質指南中摺疊式裝置的第 3 級標準（不加黑邊地填滿螢幕，在旋轉、摺疊和調整大小時保留狀態，並支援多視窗），否則將無法發布或更新，商店曝光度也可能降低。同時，Play 商店資訊除了 2 張手機螢幕截圖外，還需提供 3 張摺疊式裝置螢幕截圖（現在即可在 Play 管理中心上傳），請在摺疊式裝置上檢查應用程式並準備螢幕截圖。",
+        "es": "Desde abril de 2027, las apps de Google Play deberán cumplir al menos el nivel 3 de los lineamientos de calidad de apps adaptables de Android para plegables (ocupar la pantalla sin formato letterbox, conservar el estado al rotar, plegar y cambiar de tamaño, y admitir varias ventanas); si no, no podrán publicarse ni actualizarse y podrían tener menos visibilidad. Desde esa fecha, la ficha de Play Store también necesitará 3 capturas de pantalla de plegables además de las 2 de teléfono (ya puedes subirlas en Play Console), así que revisa tu app en plegables y prepara las capturas."
+      }
+    },
+    {
+      "id": "2026-11-18-google-play-game-large-screen-quality",
+      "platforms": [
+        "android"
+      ],
+      "category": "requirement",
+      "published": "2026-11-18",
+      "deadline": "2027-04-01",
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play?hl=es"
+      },
+      "title": {
+        "ko": "Google Play 게임 대형 화면 · 폴더블 품질 기준 — 2027년 4월 폴더블 스크린샷 · 8월 Tier 3",
+        "en": "Google Play large screen and foldable quality for games — foldable screenshots in April 2027, Tier 3 in August",
+        "ja": "Google Play のゲーム向け大画面・折りたたみ式品質基準 — 2027 年 4 月にスクリーンショット、8 月に Tier 3",
+        "zh-Hans": "Google Play 游戏大屏与可折叠设备质量标准 — 2027 年 4 月需可折叠设备屏幕截图，8 月需达到第 3 层级",
+        "zh-Hant": "Google Play 遊戲大螢幕與摺疊式裝置品質標準 — 2027 年 4 月需摺疊式裝置螢幕截圖，8 月需符合第 3 級",
+        "es": "Calidad para pantallas grandes y plegables en juegos de Google Play — capturas de plegables en abril de 2027 y nivel 3 en agosto"
+      },
+      "summary": {
+        "ko": "Google Play 는 2027년 8월부터 게임이 대형 화면 및 폴더블 품질 가이드라인의 기본 단계(Tier 3 준비됨 — 지원하는 방향에서 전체 화면 · 가리지 않는 HUD 안전 영역, 지원하지 않는 방향은 엔진 안에서 레터박스, 접기 · 펴기 · 회전 · 멀티 윈도 크기 조절 때 상태와 터치 위치 유지)를 충족하도록 요구합니다. 그보다 먼저 2027년 4월부터는 게임의 주 방향으로 휴대전화 스크린샷 1개 외에 폴더블 스크린샷을 3개 이상 넣어야 하니(Play Console 에서 지금 올릴 수 있음) 미리 준비하세요.",
+        "en": "From August 2027, Google Play will require games to meet at least the baseline Tier 3 (Ready) of the large screen and foldables quality guidelines: full screen in supported orientations with unobstructed HUD safe areas, in-engine letterboxing in unsupported orientations, and state and touch alignment kept through folding, unfolding, rotation and multi-window resizing. Earlier, from April 2027, games must provide at least 3 foldable screenshots in their primary orientation in addition to 1 phone screenshot (you can upload them in Play Console now), so prepare them ahead of time.",
+        "ja": "Google Play は 2027 年 8 月から、ゲームに大画面と折りたたみ式デバイスの品質ガイドラインの最低基準 Tier 3(対応済み — 対応する向きで全画面表示・HUD のセーフエリアを妨げない、非対応の向きではエンジン内でレターボックス、折りたたみ・展開・回転・マルチウィンドウのサイズ変更で状態とタッチ位置を保持)を満たすことを求めます。それに先立ち 2027 年 4 月からは、ゲームのメインの向きで標準のスマートフォン スクリーンショット 1 枚に加えて折りたたみ式デバイスのスクリーンショットを 3 枚以上用意する必要があるため(Google Play Console で今からアップロード可能)、早めに準備してください。",
+        "zh-Hans": "自 2027 年 8 月起，Google Play 将要求游戏至少达到大屏设备和可折叠设备质量指南的基准第 3 层级（就绪：在支持的方向全屏显示且 HUD 安全区域不被遮挡，在不支持的方向于引擎内加黑边，并在折叠、展开、旋转和多窗口调整大小时保持状态和触控位置）。在此之前，自 2027 年 4 月起，游戏须在主要方向上提供 1 张手机屏幕截图之外的至少 3 张可折叠设备屏幕截图（现在即可在 Play 管理中心上传），请提前准备。",
+        "zh-Hant": "自 2027 年 8 月起，Google Play 將要求遊戲至少符合大螢幕和摺疊式裝置品質指南的基本第 3 級（就緒：在支援的方向全螢幕顯示且 HUD 安全區域不被遮擋，在不支援的方向於引擎內加黑邊，並在摺疊、展開、旋轉和多視窗調整大小時保留狀態和觸控位置）。在此之前，自 2027 年 4 月起，遊戲須在主要方向上提供 1 張手機螢幕截圖之外的至少 3 張摺疊式裝置螢幕截圖（現在即可在 Play 管理中心上傳），請提前準備。",
+        "es": "Desde agosto de 2027, Google Play exigirá que los juegos cumplan al menos el nivel 3 (Listo) de los lineamientos de calidad para pantallas grandes y plegables: pantalla completa en las orientaciones admitidas con áreas seguras del HUD despejadas, formato letterbox dentro del motor en las no admitidas, y estado y alineación táctil conservados al plegar, desplegar, rotar y cambiar el tamaño en varias ventanas. Antes, desde abril de 2027, los juegos deberán incluir al menos 3 capturas de pantalla de plegables en su orientación principal además de 1 de teléfono (ya puedes subirlas en Play Console), así que prepáralas con tiempo."
+      }
+    },
+    {
+      "id": "2026-11-18-jetpack-compose-november-2026",
+      "platforms": [
+        "android"
+      ],
+      "category": "tools",
+      "published": "2026-11-18",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release?hl=es"
+      },
+      "title": {
+        "ko": "Jetpack Compose 2026년 11월 출시(1.13) — Kotlin 2.2 · compileSdk 37.1 필요, 지원 중단 항목 있음",
+        "en": "Jetpack Compose November '26 release (1.13) — needs Kotlin 2.2 and compileSdk 37.1, with deprecations",
+        "ja": "Jetpack Compose 2026 年 11 月リリース(1.13) — Kotlin 2.2・compileSdk 37.1 が必要、非推奨あり",
+        "zh-Hans": "Jetpack Compose 2026 年 11 月版（1.13）— 需要 Kotlin 2.2 和 compileSdk 37.1，含弃用项",
+        "zh-Hant": "Jetpack Compose 2026 年 11 月版本（1.13）— 需要 Kotlin 2.2 和 compileSdk 37.1，含淘汰項目",
+        "es": "Versión de noviembre de 2026 de Jetpack Compose (1.13) — requiere Kotlin 2.2 y compileSdk 37.1, con elementos obsoletos"
+      },
+      "summary": {
+        "ko": "Jetpack Compose 2026년 11월 출시가 안정판이 되어 핵심 모듈이 1.13 이 됐고(BOM 2026.11.01 — Kotlin 2.2 이상 · compileSdk 37.1 필요), 점진적 흐림 · 다각형 모양 · 줄마다 줄 높이 등이 추가됐습니다. 값 기반 BasicTextField · Material 2 TextField · VisualTransformation · Compose 의 ConstraintLayout · MotionLayout 이 지원 중단되고 Modifier.onFocusedBoundsChanged 는 더 이상 동작하지 않으며 clickable 이 시스템 클릭음을 내니, 올리기 전에 이 변경을 확인하세요.",
+        "en": "The Jetpack Compose November '26 release is stable, bringing core modules to 1.13 (BOM 2026.11.01, which requires Kotlin 2.2 or newer and compileSdk 37.1) with progressive blur, polygon shapes, per-line line height and more. Value-based BasicTextField, Material 2 TextField, VisualTransformation and ConstraintLayout and MotionLayout in Compose are deprecated, Modifier.onFocusedBoundsChanged no longer has any effect, and clickable now plays system sound effects, so review these changes before you upgrade.",
+        "ja": "Jetpack Compose 2026 年 11 月リリースが安定版になり、コアモジュールが 1.13 になりました(BOM 2026.11.01 — Kotlin 2.2 以降と compileSdk 37.1 が必要)。プログレッシブ ブラー・多角形シェイプ・行ごとの行の高さなどが追加されています。値ベースの BasicTextField・Material 2 の TextField・VisualTransformation・Compose の ConstraintLayout と MotionLayout が非推奨になり、Modifier.onFocusedBoundsChanged は効果がなくなり、clickable がシステムの操作音を鳴らすようになったため、アップグレード前にこれらの変更を確認してください。",
+        "zh-Hans": "Jetpack Compose 2026 年 11 月版已稳定，核心模块升级到 1.13（BOM 2026.11.01，需要 Kotlin 2.2 或更高版本以及 compileSdk 37.1），新增渐进式模糊、多边形形状、逐行行高等功能。基于值的 BasicTextField、Material 2 TextField、VisualTransformation 以及 Compose 中的 ConstraintLayout 和 MotionLayout 已弃用，Modifier.onFocusedBoundsChanged 不再起作用，clickable 现在会播放系统提示音，升级前请检查这些变更。",
+        "zh-Hant": "Jetpack Compose 2026 年 11 月版本已穩定，核心模組升級至 1.13（BOM 2026.11.01，需要 Kotlin 2.2 或更新版本以及 compileSdk 37.1），新增漸進式模糊、多邊形形狀、逐行行高等功能。以值為基礎的 BasicTextField、Material 2 TextField、VisualTransformation 以及 Compose 中的 ConstraintLayout 和 MotionLayout 已淘汰，Modifier.onFocusedBoundsChanged 不再有作用，clickable 現在會播放系統音效，升級前請檢查這些變更。",
+        "es": "La versión de noviembre de 2026 de Jetpack Compose es estable y lleva los módulos principales a 1.13 (BoM 2026.11.01, que requiere Kotlin 2.2 o posterior y compileSdk 37.1), con desenfoque progresivo, formas poligonales, altura de línea por línea y más. BasicTextField basado en valores, TextField de Material 2, VisualTransformation y ConstraintLayout y MotionLayout en Compose quedan obsoletos, Modifier.onFocusedBoundsChanged ya no tiene efecto y clickable ahora reproduce los sonidos del sistema, así que revisa estos cambios antes de actualizar."
+      }
+    },
+    {
+      "id": "2026-11-17-tax-price-updates-december",
+      "platforms": [
+        "ios"
+      ],
+      "category": "business",
+      "published": "2026-11-17",
+      "deadline": "2026-12-03",
+      "source": "Apple",
+      "url": "https://developer.apple.com/news/?id=4o5ie73a",
+      "title": {
+        "ko": "세금 · 가격 변경 — 12월 3일부터 보츠와나 · 콜롬비아 · 이집트 · 르완다 · 튀르키예 가격 조정",
+        "en": "Tax and price updates — prices change in Botswana, Colombia, Egypt, Rwanda and Türkiye from December 3",
+        "ja": "税金・価格の更新 — 12 月 3 日からボツワナ・コロンビア・エジプト・ルワンダ・トルコの価格を調整",
+        "zh-Hans": "税务与价格更新 — 12 月 3 日起调整博茨瓦纳、哥伦比亚、埃及、卢旺达和土耳其的价格",
+        "zh-Hant": "稅務與價格更新 — 12 月 3 日起調整波札那、哥倫比亞、埃及、盧安達和土耳其的價格",
+        "es": "Cambios de impuestos y precios — los precios cambian en Botsuana, Colombia, Egipto, Ruanda y Turquía desde el 3 de diciembre"
+      },
+      "summary": {
+        "ko": "보츠와나(VAT 14%) · 르완다(VAT 18%) 도입과 카메룬 · 코트디부아르의 SEP 세(3%) 도입으로 수익금이 조정됐고, 12월 3일부터 보츠와나 · 콜롬비아 · 이집트 · 르완다 · 튀르키예의 앱 · 앱 내 구입 가격이 바뀝니다(자동 갱신 구독, 직접 가격을 정한 스토어, 그 나라를 기준 스토어로 고른 경우는 그대로). 세금 범주에 「Software as a Service (SaaS)」 속성이 새로 생겼고 2027년 1월 1일부터 캘리포니아에서 SaaS 등 일부 범주에 판매세가 붙으니, App Store Connect 의 Pricing and Availability 에서 다가오는 가격과 세금 범주를 확인하세요.",
+        "en": "Proceeds were adjusted for new VAT in Botswana (14%) and Rwanda (18%) and a new 3% SEP tax in Cameroon and Côte d'Ivoire, and from December 3 prices for apps and In-App Purchases change in Botswana, Colombia, Egypt, Rwanda and Türkiye (not for auto-renewable subscriptions, storefronts where you set prices manually, or if that country is your base storefront). A new \"Software as a Service (SaaS)\" tax attribute is available and some categories including SaaS become subject to California sales tax from January 1, 2027, so check upcoming prices and your tax categories in Pricing and Availability in App Store Connect.",
+        "ja": "ボツワナ(VAT 14%)・ルワンダ(VAT 18%)の導入と、カメルーン・コートジボワールの SEP 税(3%)の導入により収益が調整され、12 月 3 日からボツワナ・コロンビア・エジプト・ルワンダ・トルコのアプリと App 内課金の価格が変わります(自動更新サブスクリプション、手動で価格を設定しているストア、その国を基準ストアに選んでいる場合は変わりません)。税カテゴリに「Software as a Service (SaaS)」属性が新たに加わり、2027 年 1 月 1 日からはカリフォルニア州で SaaS など一部のカテゴリに売上税がかかるため、App Store Connect の Pricing and Availability で今後の価格と税カテゴリを確認してください。",
+        "zh-Hans": "因博茨瓦纳（增值税 14%）、卢旺达（增值税 18%）开征以及喀麦隆、科特迪瓦开征 3% 的 SEP 税，收益已作调整；自 12 月 3 日起，博茨瓦纳、哥伦比亚、埃及、卢旺达和土耳其的 App 与 App 内购买项目价格将变更（自动续期订阅、手动定价的店面，以及将该国家选为基准店面的情况除外）。税务类别新增“Software as a Service (SaaS)”属性，且自 2027 年 1 月 1 日起加利福尼亚州将对 SaaS 等部分类别征收销售税，请在 App Store Connect 的 Pricing and Availability 中检查即将生效的价格和税务类别。",
+        "zh-Hant": "因波札那（加值稅 14%）、盧安達（加值稅 18%）開徵以及喀麥隆、象牙海岸開徵 3% 的 SEP 稅，收益已作調整；自 12 月 3 日起，波札那、哥倫比亞、埃及、盧安達和土耳其的 App 與 App 內購買項目價格將變更（自動續訂型訂閱、手動定價的店面，以及將該國家選為基準店面的情況除外）。稅務類別新增「Software as a Service (SaaS)」屬性，且自 2027 年 1 月 1 日起加州將對 SaaS 等部分類別課徵銷售稅，請在 App Store Connect 的 Pricing and Availability 中檢查即將生效的價格和稅務類別。",
+        "es": "Las ganancias se ajustaron por el nuevo IVA en Botsuana (14 %) y Ruanda (18 %) y el nuevo impuesto SEP del 3 % en Camerún y Costa de Marfil, y desde el 3 de diciembre cambian los precios de apps y compras dentro de la app en Botsuana, Colombia, Egipto, Ruanda y Turquía (salvo suscripciones con renovación automática, tiendas con precios fijados manualmente o si ese país es tu tienda base). Hay un nuevo atributo fiscal «Software as a Service (SaaS)» y desde el 1 de enero de 2027 algunas categorías, entre ellas SaaS, pagarán el impuesto sobre las ventas de California, así que revisa los próximos precios y tus categorías fiscales en Pricing and Availability de App Store Connect."
+      }
+    },
+    {
+      "id": "2026-11-17-r8-consumer-keep-rules",
+      "platforms": [
+        "android"
+      ],
+      "category": "tools",
+      "published": "2026-11-17",
+      "deadline": null,
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/ship-smarter-keep-rules-unblock-dex-optimization",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/ship-smarter-keep-rules-unblock-dex-optimization?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/ship-smarter-keep-rules-unblock-dex-optimization?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/ship-smarter-keep-rules-unblock-dex-optimization?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/ship-smarter-keep-rules-unblock-dex-optimization?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/ship-smarter-keep-rules-unblock-dex-optimization?hl=es"
+      },
+      "title": {
+        "ko": "라이브러리의 소비자 유지 규칙을 좁게 — Google Play DEX 코드 최적화 기준을 위한 안내",
+        "en": "Narrow consumer keep rules in libraries — guidance for Google Play's DEX code optimization thresholds",
+        "ja": "ライブラリのコンシューマー保持ルールを狭く — Google Play の DEX コード最適化基準に向けたガイド",
+        "zh-Hans": "收窄库中的使用方保留规则 — 面向 Google Play DEX 代码优化门槛的指南",
+        "zh-Hant": "縮小程式庫中的消費者保留規則 — 因應 Google Play DEX 程式碼最佳化門檻的指南",
+        "es": "Reglas de conservación más acotadas en bibliotecas — guía para los umbrales de optimización de código DEX de Google Play"
+      },
+      "summary": {
+        "ko": "Google Play 의 DEX 코드 최적화 기준은 앱만이 아니라 앱이 쓰는 라이브러리에 든 소비자 유지 규칙(consumer keep rules)의 영향도 받으며, Play Console 의 DEX 코드 최적화 지표는 둘을 합친 결과를 보여 줍니다. 라이브러리를 만든다면 샘플 앱에서 R8 구성 분석기로 규칙의 영향을 보고, 패키지 전체를 남기는 넓은 규칙을 필요한 부분만 남기는 좁은 규칙으로 바꾸세요.",
+        "en": "Google Play's DEX code optimization thresholds are affected not only by an app's own keep rules but also by the consumer keep rules bundled in the libraries it uses, and the DEX code optimization metrics in Play Console show their combined impact. If you ship a library, run the R8 Configuration Analyzer on a sample app to see the effect of your rules, and replace package-wide or other broad rules with narrowly scoped ones.",
+        "ja": "Google Play の DEX コード最適化基準は、アプリ自身のルールだけでなく、アプリが依存するライブラリにバンドルされたコンシューマーの保持ルールの影響も受け、Google Play Console の DEX コード最適化の指標は両方を合わせた結果を示します。ライブラリを提供している場合は、サンプルアプリで R8 構成アナライザを実行してルールの影響を確認し、パッケージ全体を保持するような広いルールを範囲を絞ったルールに置き換えてください。",
+        "zh-Hans": "Google Play 的 DEX 代码优化门槛不仅受应用自身规则的影响，也受应用所依赖的库中捆绑的使用方保留规则影响，Play 管理中心的 DEX 代码优化指标反映的是两者的综合影响。如果您提供库，请在示例应用上运行 R8 配置分析器查看规则的影响，并将保留整个软件包等过于宽泛的规则改为范围狭窄的规则。",
+        "zh-Hant": "Google Play 的 DEX 程式碼最佳化門檻不僅受應用程式本身規則的影響，也受應用程式依附的程式庫中隨附的消費者保留規則影響，Play 管理中心的 DEX 程式碼最佳化指標反映的是兩者的綜合影響。如果您提供程式庫，請在範例應用程式上執行 R8 設定分析器查看規則的影響，並將保留整個套件等過於廣泛的規則改為範圍較窄的規則。",
+        "es": "Los umbrales de optimización de código DEX de Google Play dependen no solo de las reglas de la app, sino también de las reglas de conservación para consumidores incluidas en las bibliotecas que usa, y las métricas de optimización de código DEX de Play Console muestran el impacto combinado. Si publicas una biblioteca, ejecuta el Analizador de configuración de R8 en una app de ejemplo para ver el efecto de tus reglas y reemplaza las reglas amplias, como las de paquete completo, por reglas acotadas."
+      }
+    },
+    {
       "id": "2026-11-16-macos-device-control-full-disk-access",
       "platforms": [
         "ios"

@@ -2,6 +2,40 @@
   "version": 1,
   "items": [
     {
+      "id": "2026-11-19-android-developer-verification-2027",
+      "platforms": [
+        "android"
+      ],
+      "category": "requirement",
+      "published": "2026-11-19",
+      "deadline": "2027-01-01",
+      "source": "Android",
+      "url": "https://developer.android.com/blog/posts/android-developer-verification-2027",
+      "urls": {
+        "ko": "https://developer.android.com/blog/posts/android-developer-verification-2027?hl=ko",
+        "ja": "https://developer.android.com/blog/posts/android-developer-verification-2027?hl=ja",
+        "zh-Hans": "https://developer.android.com/blog/posts/android-developer-verification-2027?hl=zh-cn",
+        "zh-Hant": "https://developer.android.com/blog/posts/android-developer-verification-2027?hl=zh-tw",
+        "es": "https://developer.android.com/blog/posts/android-developer-verification-2027?hl=es"
+      },
+      "title": {
+        "ko": "Android 개발자 인증 — 2027년 1월부터 전 세계로 확대",
+        "en": "Android developer verification — global rollout from January 2027",
+        "ja": "Android デベロッパーの確認 — 2027 年 1 月からグローバルに拡大",
+        "zh-Hans": "Android 开发者验证 — 2027 年 1 月起扩展至全球",
+        "zh-Hant": "Android 開發人員驗證 — 2027 年 1 月起擴大至全球",
+        "es": "Verificación de desarrolladores de Android — expansión global desde enero de 2027"
+      },
+      "summary": {
+        "ko": "Android 개발자 인증의 사용자 보호가 2027년 1월 7개 앱 배포자(Google Play · Galaxy Store · Honor · Oppo · Xiaomi · Transsion · Vivo)와 함께 전 세계로 시작돼, 몇 달에 걸쳐 모든 국가의 인증된 Android 기기의 모든 설치 경로로 넓어집니다(학생 · 취미 개발자용 제한적 배포 계정은 승인된 기기 20대 → 50대). Play 밖에서만 배포한다면 Android Developer Console 계정을 만들어 본인 인증과 앱 등록을 하고, Play 개발자라면 Google Play Console 에서 패키지 등록 상태를 확인해 Play 밖에서 배포하는 앱까지 등록하세요.",
+        "en": "Android developer verification's user protections start rolling out globally in January 2027 with seven app distributors (Google Play, Galaxy Store, Honor, Oppo, Xiaomi, Transsion and Vivo) and will expand over several months to all installation sources on certified Android devices in every country (limited distribution accounts for students and hobbyists now allow 50 authorized devices, up from 20). If you only distribute outside Google Play, create an Android Developer Console account to verify your identity and register your apps; if you publish on Google Play, check your package registration status in Google Play Console and register any unregistered apps, including those you distribute outside Play.",
+        "ja": "Android デベロッパーの確認によるユーザー保護は、2027 年 1 月に 7 つのアプリ配信事業者(Google Play、Galaxy Store、Honor、Oppo、Xiaomi、Transsion、Vivo)とともにグローバル展開が始まり、数か月かけてすべての国の認定済み Android デバイスのすべてのインストール ソースに拡大されます(学生や趣味の開発者向けの制限付き配布アカウントは承認済みデバイス 20 台から 50 台に)。Google Play 以外でのみ配信している場合は Android Developer Console アカウントを作成して身元確認とアプリ登録を行い、Google Play デベロッパーは Google Play Console でパッケージの登録ステータスを確認して、Google Play 以外で配信するアプリも含めて未登録のアプリを登録してください。",
+        "zh-Hans": "Android 开发者验证的用户保护措施将于 2027 年 1 月与七家应用分发商（Google Play、Galaxy Store、荣耀、OPPO、小米、传音和 vivo）合作在全球推行，并在几个月内逐步扩展到所有国家/地区已获认证的 Android 设备上的所有安装来源（面向学生和爱好者的受限分发账号已从 20 部授权设备增至 50 部）。仅在 Google Play 之外分发应用时，请创建 Android 开发者管理中心账号以验证身份并注册应用；Google Play 开发者请在 Google Play 管理中心内查看软件包注册状态，并注册所有尚未注册的应用（包括在 Google Play 之外分发的应用）。",
+        "zh-Hant": "Android 開發人員驗證的使用者保護措施將於 2027 年 1 月與七家應用程式發行商（Google Play、Galaxy Store、Honor、Oppo、Xiaomi、Transsion 和 Vivo）合作在全球推出，並在未來幾個月逐步擴展至所有國家/地區 Android 認證裝置上的所有安裝來源（學生和業餘人士的有限發布帳戶已從 20 部授權裝置增至 50 部）。僅透過 Google Play 以外管道發行時，請建立 Android 開發人員控制台帳戶以驗證身分及註冊應用程式；Google Play 開發人員請前往 Google Play 管理中心查看套件註冊狀態，並註冊所有未註冊的應用程式（包括透過 Google Play 以外平台發布的應用程式）。",
+        "es": "Las protecciones para usuarios de la verificación de desarrolladores de Android comenzarán a implementarse a nivel global en enero de 2027 con siete distribuidores de apps (Google Play, Galaxy Store, Honor, Oppo, Xiaomi, Transsion y Vivo) y se ampliarán durante varios meses a todas las fuentes de instalación en dispositivos Android certificados de todos los países (las cuentas de distribución limitada para estudiantes y aficionados pasan de 20 a 50 dispositivos autorizados). Si solo distribuyes fuera de Google Play, crea tu cuenta de Android Developer Console para verificar tu identidad y registrar tus apps; si publicas en Google Play, verifica el estado de registro de tus paquetes en Google Play Console y registra las apps que no estén registradas, incluidas las que distribuyas fuera de Play."
+      }
+    },
+    {
       "id": "2026-11-18-app-store-award-finalists-2026",
       "platforms": [
         "ios"
